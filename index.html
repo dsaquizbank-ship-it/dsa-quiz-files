@@ -223,7 +223,8 @@
         subject: "ZOOLOGY",
         topic: "CELL AND MOLECULAR BIOLOGY",
         duration: "30",
-        totalMarks: "50"
+        totalMarks: "50",
+        negativeMark: 0 // Change this to 0.25 for IBPS tests
     };
 
     let QUESTIONS = [
@@ -257,6 +258,9 @@
     ];
 
     dashboard.totalMarks = QUESTIONS.length.toString();
+    
+    // ⚠️ YOUR UPDATED GOOGLE SHEET URL IS HERE
+    let GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbymL_S6HAFMWpZNGSHJv5QKXhHhxdyGg9TaElwdqBjF04BhH-JX4gNjufWG42D5Dz8ejQ/exec";
 
     function escapeHtml(s) { if(!s) return ''; return s.replace(/[&<>]/g, function(m){ return m==='&'?'&amp;':m==='<'?'&lt;':'>'?'&gt;':m;}); }
 
@@ -476,6 +480,31 @@
         if(window.MathJax) MathJax.typesetPromise();
     }
 
+alert("About to send to sheet! Final Score: " + finalScore + " | URL: " + GOOGLE_SHEET_URL);
+sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);    
+async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    "Candidate Name": "Student",
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+
     function submitQuiz() {
         if(isSubmitted) return;
         isSubmitted = true; quizActive = false; clearInterval(timerInterval);
@@ -486,6 +515,10 @@
             else if(userAnswers[i] === QUESTIONS[i].answer) correct++;
             else incorrect++;
         }
+
+        // Calculate final score
+        const negMark = dashboard.negativeMark || 0; 
+        const finalScore = correct - (incorrect * negMark);
 
         // Send score to Android app
         try {
@@ -505,15 +538,21 @@
         const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
         const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,'0')}`;
         
-        document.getElementById('finalScore').innerText = correct;
+        document.getElementById('finalScore').innerText = finalScore;
         document.getElementById('correctCountStat').innerText = correct;
         document.getElementById('incorrectCountStat').innerText = incorrect;
         document.getElementById('notAttemptedStat').innerText = na;
         document.getElementById('accuracySpan').innerHTML = `${acc.toFixed(1)}%`;
         document.getElementById('timeTakenSpan').innerHTML = timeStr;
         document.getElementById('resultTopicName').innerHTML = `📖 Topic: ${dashboard.topic}`;
-        document.getElementById('scoreRing').style.setProperty('--score-percent', `${acc}%`);
+        
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById('scoreRing').style.setProperty('--score-percent', `${pct}%`);
+        
         buildDetailedReview();
+        
+        // Send to Google Sheet
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
         
         document.getElementById('startScreen').style.display = 'none';
         document.getElementById('quizContainer').style.display = 'none';
