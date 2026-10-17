@@ -6,31 +6,9 @@
       "name": "DEMO",
       "order": 1
     },
-    {
-      "id": "PGTRB",
-      "name": "PGTRB",
-      "order": 2
-    }
   ],
   "exams": [
-    {
-      "id": "DEMO-EXAM",
-      "name": "DEMO-EXAM",
-      "categoryId": "DEMO",
-      "order": 1
-    },
-    {
-      "id": "PGTRB ENGLISH",
-      "name": "PGTRB ENGLISH",
-      "categoryId": "PGTRB",
-      "order": 2
-    },
-    {
-      "id": "PGTRB-ENGLISH",
-      "name": "PGTRB-ENGLISH",
-      "categoryId": "PGTRB",
-      "order": 3
-    }
+
   ],
   "tests": [
     {
