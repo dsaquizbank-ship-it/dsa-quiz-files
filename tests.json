@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-17T19:42:04.137Z",
+  "version": "2026-10-17T19:45:33.889Z",
   "categories": [
     {
       "id": "DEMO",
@@ -23,7 +23,7 @@
       "durationMinutes": 10,
       "order": 1,
       "questionCount": 3,
-      "negativeMark": 0.25,
+      "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/index.html"
     }
   ]
