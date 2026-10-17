@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-17T12:21:55.795Z",
+  "version": "2026-10-17T12:47:00.714Z",
   "categories": [
     {
       "id": "UGTRB",
@@ -28,15 +28,6 @@
   ],
   "tests": [
     {
-      "testId": "UGZ-69",
-      "examId": "UG-TRB-ZOOLOGY",
-      "name": "UGZ-69 CELL AND MOLECULAR BIOLOGY",
-      "durationMinutes": 30,
-      "order": 69,
-      "questionCount": 50,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/"
-    },
-    {
       "testId": "TNA-41",
       "examId": "TNPSC-PRE",
       "name": "REVISION",
@@ -45,6 +36,5 @@
       "questionCount": 50,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TNA-41.html"
     }
-
   ]
 }
