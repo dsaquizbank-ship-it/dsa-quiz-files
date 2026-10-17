@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>BSR 23 · Sentence Rearrangement</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+            options: { ignoreHtmlClass: 'no-mathjax' }
+        };
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root {
+            --bg-gradient: linear-gradient(145deg, #f0fdf4, #dcfce7);
+            --card-bg: #ffffff;
+            --text-primary: #14532d;
+            --border-light: #bbf7d0;
+            --accent: #10b981;
+            --accent-dark: #059669;
+            --timer-bg: #fef3c7;
+            --timer-text: #b45309;
+            --palette-btn: #f0fdf4;
+            --shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            --correct-color: #dc2626;
+            --modal-overlay: rgba(0,0,0,0.5);
+        }
+        [data-theme="dark"] {
+            --bg-gradient: linear-gradient(135deg, #022c22, #064e3b);
+            --card-bg: #0f2b1f;
+            --text-primary: #d1fae5;
+            --border-light: #2d6a4f;
+            --accent: #34d399;
+            --accent-dark: #10b981;
+            --timer-bg: #451a03;
+            --timer-text: #fcd34d;
+            --palette-btn: #1e3a2f;
+            --shadow: 0 10px 25px -5px rgba(0,0,0,0.4);
+            --correct-color: #f87171;
+            --modal-overlay: rgba(0,0,0,0.7);
+        }
+        body { font-family: 'Segoe UI', system-ui, 'Inter', sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap');
+        .institute-name { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.8rem; background: linear-gradient(135deg, #059669, #10b981); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .language-toggle:hover { background: var(--accent); }
+        .question-container { padding: 20px 16px; }
+        .question-text { font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.5; }
+        .question-image {
+            display: block;
+            max-width: 100%;
+            max-height: 250px;
+            width: auto;
+            height: auto;
+            margin: 0 auto 20px auto;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-light);
+            object-fit: contain;
+        }
+        .option-item { background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card img.review-question-img {
+            max-width: 100%;
+            max-height: 180px;
+            margin: 10px 0;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+        }
+        .correct-option { font-weight: bold; color: var(--correct-color); }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .name-input { width: 100%; padding: 14px 18px; border-radius: 60px; border: 2px solid var(--border-light); background: var(--card-bg); color: var(--text-primary); font-size: 1rem; outline: none; }
+        .name-input:focus { border-color: var(--accent); }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        
+        /* Modal styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--modal-overlay);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .modal-container {
+            background: var(--card-bg);
+            border-radius: 1.5rem;
+            max-width: 400px;
+            width: 90%;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3);
+            border: 1px solid var(--border-light);
+        }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        
+        /* PRINT STYLES */
+        @media print {
+            body { background: white; padding: 0; margin: 0; }
+            .quiz-wrapper { max-width: 100%; margin: 0; border-radius: 0; box-shadow: none; background: white; }
+            .header-bar .top-buttons, .header-bar .timer-box, .palette-area, .nav-buttons, .btn:not(.btn-pdf), .icon-btn, .flex-buttons .btn:not(.btn-pdf) { display: none !important; }
+            .result-dashboard { background: #064e3b; print-color-adjust: exact; -webkit-print-color-adjust: exact; break-inside: avoid; }
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc; margin-bottom: 15px; }
+            .question-image, .review-question-img { max-width: 60% !important; max-height: 150px !important; page-break-inside: avoid; }
+            .stats .stat-card { background: rgba(0,0,0,0.1); print-color-adjust: exact; }
+            .btn-pdf { display: inline-block !important; background: #ef4444; color: white; print-color-adjust: exact; }
+            a, button { text-decoration: none; }
+            @page { size: A4; margin: 1.5cm; }
+        }
+        
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } .question-image { max-height: 180px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <h3 id="candidateNameLabel">Candidate Name</h3>
+        <input type="text" id="candidateNameInput" placeholder="YOUR NAME Please" class="name-input">
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">25:00</div>
+            <div class="top-buttons">
+                <button id="darkModeToggleBtn" class="icon-btn" onclick="toggleTheme()">🌙 Dark</button>
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none;">
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing">
+                <div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div>
+            </div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()" id="newAttemptBtnText">🔄 New Attempt</button>
+                <button id="downloadPdfBtn" class="btn btn-pdf" onclick="downloadPDFWithImages()" id="downloadPdfBtnText">📄 Download PDF (with Images)</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = 'en';
+    
+    const translations = {
+        en: {
+            candidateNameLabel: "Candidate Name",
+            startExamBtn: "▶ START NEW EXAM",
+            prevBtn: "◀ PREV",
+            nextBtn: "NEXT ▶",
+            submitBtn: "✅ SUBMIT QUIZ",
+            paletteTitle: "📌 JUMP TO QUESTION",
+            quizCompleted: "✨ QUIZ COMPLETED ✨",
+            correct: "✅ Correct",
+            incorrect: "❌ Incorrect",
+            notAttempted: "⚠️ Not Attempted",
+            accuracy: "Accuracy",
+            timeTaken: "Time taken",
+            newAttempt: "🔄 New Attempt",
+            downloadPdf: "📄 Download PDF (with Images)",
+            detailedReview: "📖 Detailed Review (with images)",
+            enterName: "Enter candidate name",
+            pdfAlert: "📄 Preparing PDF. The browser's print dialog will open.\nChoose 'Save as PDF' to download.\nAll images will be included.",
+            langToggleBtnEn: "தமிழ்",
+            langToggleBtnTa: "English",
+            darkMode: "🌙 Dark",
+            lightMode: "☀️ Light"
+        },
+        ta: {
+            candidateNameLabel: "விண்ணப்பதாரர் பெயர்",
+            startExamBtn: "▶ START NEW EXAM",
+            prevBtn: "◀ முந்தைய",
+            nextBtn: "அடுத்த ▶",
+            submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்",
+            paletteTitle: "📌 கேள்விக்குச் செல்க",
+            quizCompleted: "✨ தேர்வு முடிந்தது ✨",
+            correct: "✅ சரியானவை",
+            incorrect: "❌ தவறானவை",
+            notAttempted: "⚠️ முயற்சிக்கப்படாதவை",
+            accuracy: "துல்லியம்",
+            timeTaken: "எடுத்த நேரம்",
+            newAttempt: "🔄 புதிய முயற்சி",
+            downloadPdf: "📄 PDF ஐப் பதிவிறக்கவும் (படங்களுடன்)",
+            detailedReview: "📖 விரிவான மதிப்பாய்வு (படங்களுடன்)",
+            enterName: "விண்ணப்பதாரர் பெயரை உள்ளிடுக",
+            pdfAlert: "📄 PDF தயாராகிறது. உலாவியின் அச்சு உரையாடல் திறக்கும்.\n'PDF ஆகச் சேமி' என்பதைத் தேர்ந்தெடுக்கவும்.\nஅனைத்துப் படங்களும் சேர்க்கப்படும்.",
+            langToggleBtnEn: "தமிழ்",
+            langToggleBtnTa: "English",
+            darkMode: "🌙 இருண்ட",
+            lightMode: "☀️ ஒளி"
+        }
+    };
+    
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const candidateLabel = document.getElementById('candidateNameLabel');
+        if (candidateLabel) candidateLabel.innerText = t.candidateNameLabel;
+        // Start button always stays in English - do not update
+        const paletteTitle = document.getElementById('paletteTitle');
+        if (paletteTitle) paletteTitle.innerText = t.paletteTitle;
+        const quizCompleted = document.getElementById('quizCompletedLabel');
+        if (quizCompleted) quizCompleted.innerText = t.quizCompleted;
+        const correctLabel = document.getElementById('correctLabel');
+        if (correctLabel) correctLabel.innerText = t.correct;
+        const incorrectLabel = document.getElementById('incorrectLabel');
+        if (incorrectLabel) incorrectLabel.innerText = t.incorrect;
+        const notAttemptedLabel = document.getElementById('notAttemptedLabel');
+        if (notAttemptedLabel) notAttemptedLabel.innerText = t.notAttempted;
+        const accuracyLabel = document.getElementById('accuracyLabel');
+        if (accuracyLabel) accuracyLabel.innerText = t.accuracy;
+        const timeTakenLabel = document.getElementById('timeTakenLabel');
+        if (timeTakenLabel) timeTakenLabel.innerText = t.timeTaken;
+        const newAttemptBtn = document.getElementById('restartQuizBtn');
+        if (newAttemptBtn) newAttemptBtn.innerText = t.newAttempt;
+        const downloadPdfBtn = document.getElementById('downloadPdfBtn');
+        if (downloadPdfBtn) downloadPdfBtn.innerText = t.downloadPdf;
+        const detailedReview = document.getElementById('detailedReviewLabel');
+        if (detailedReview) detailedReview.innerText = t.detailedReview;
+        const langBtn = document.getElementById('langToggleBtn');
+        if (langBtn) {
+            langBtn.innerText = currentLanguage === 'en' ? t.langToggleBtnEn : t.langToggleBtnTa;
+        }
+        if (quizActive && !isSubmitted && document.getElementById('navButtons')) {
+            updateNavButtons();
+        }
+    }
+    
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === 'en' ? 'ta' : 'en';
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) {
+            renderQuestion();
+        }
+        if (document.getElementById('resultContainer').style.display === 'block') {
+            buildDetailedReview();
+        }
+        renderDashboard();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let dashboard = {
+    examTitle: "TNPSC PRELIMS",
+    testNo: "TNA-41",
+    date: "19/10/2026",
+    subject: "TN SOCIETY",
+    topic: "REVISION",
+    duration: "35",
+    totalMarks: "50"
+};
+
+let QUESTIONS = [
+    {
+        en: "Which of the following is regarded as \"Cradle of Civilization?\"",
+        optionsEn: ["Rainfall", "Cultural monuments", "Religion", "River valleys", "Answer not known"],
+        ta: "பின்வருவனவற்றுள் எது \"நாகரிகத்தின் தொட்டில்\" என்று கருதப்படுகிறது?",
+        optionsTa: ["மழைப்பொழிவு", "பண்பாட்டு நினைவுச்சின்னங்கள்", "மதம்", "ஆற்றுப் பள்ளத்தாக்குகள்", "விடை தெரியவில்லை"],
+        answer: 3,
+        imageUrl: null
+    },
+    {
+        en: "The length of the history of the Tamil language is estimated as",
+        optionsEn: ["3500 years", "2500 years", "1500 years", "400 years", "Answer not known"],
+        ta: "தமிழ் மொழியின் வரலாற்றின் நீளம் மதிப்பிடப்பட்டுள்ளது",
+        optionsTa: ["3500 ஆண்டுகள்", "2500 ஆண்டுகள்", "1500 ஆண்டுகள்", "400 ஆண்டுகள்", "விடை தெரியவில்லை"],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "Paleolithic stone tool was first discovered in India in 1863 by",
+        optionsEn: ["Le Mesrier", "Miles Burkett", "Subba Rao", "Robert Bruce", "Answer not known"],
+        ta: "பழைய கற்காலக் கருவி இந்தியாவில் முதன்முதலில் 1863 ஆம் ஆண்டில் கண்டுபிடிக்கப்பட்டது யாரால்?",
+        optionsTa: ["லே மெஸ்ரியர்", "மைல்ஸ் பர்கெட்", "சுப்பா ராவ்", "ராபர்ட் புரூஸ்", "விடை தெரியவில்லை"],
+        answer: 3,
+        imageUrl: null
+    },
+    {
+        en: "Which one of the following language is not an Indo-Aryan linguistic family?",
+        optionsEn: ["Balti", "Bihari", "Bengali", "Bagheli", "Answer not known"],
+        ta: "பின்வரும் மொழிகளில் எது இந்தோ-ஆரிய மொழிக் குடும்பத்தைச் சார்ந்தது அல்ல?",
+        optionsTa: ["பால்டி", "பீகாரி", "வங்காளம்", "பாகேலி", "விடை தெரியவில்லை"],
+        answer: 0,
+        imageUrl: null
+    },
+    {
+        en: "The capital city of Sangam Cheras was",
+        optionsEn: ["Kanchi", "Musiri", "Venni", "Vanji", "Answer not known"],
+        ta: "சங்ககால சேரர்களின் தலைநகரம் எது?",
+        optionsTa: ["காஞ்சி", "முசிரி", "வெண்ணி", "வஞ்சி", "விடை தெரியவில்லை"],
+        answer: 3,
+        imageUrl: null
+    },
+    {
+        en: "Match the following Titles of the Kings:<br><br><table style='border-collapse:collapse;'><tr><th style='padding-right:20px;text-align:left;'>List-I (Dynasty)</th><th style='text-align:left;'>List-II (Title)</th></tr><tr><td style='padding-right:20px;'>(a) Pandiyar</td><td>1. Aadhavan</td></tr><tr><td style='padding-right:20px;'>(b) Cherar</td><td>2. Thithiyan</td></tr><tr><td style='padding-right:20px;'>(c) Chola</td><td>3. Chezhiyan</td></tr><tr><td style='padding-right:20px;'>(d) Aai</td><td>4. Sembian</td></tr></table>",
+        optionsEn: ["(A) 3 4 2 1", "(B) 3 1 4 2", "(C) 3 2 1 4", "(D) 4 3 1 2", "Answer not known"],
+        ta: "பின்வரும் மன்னர்களின் பட்டங்களைப் பொருத்துக:<br><br><table style='border-collapse:collapse;'><tr><th style='padding-right:20px;text-align:left;'>பட்டியல்-I (வம்சம்)</th><th style='text-align:left;'>பட்டியல்-II (பட்டம்)</th></tr><tr><td style='padding-right:20px;'>(a) பாண்டியர்</td><td>1. ஆதவன்</td></tr><tr><td style='padding-right:20px;'>(b) சேரர்</td><td>2. திதியன்</td></tr><tr><td style='padding-right:20px;'>(c) சோழர்</td><td>3. செழியன்</td></tr><tr><td style='padding-right:20px;'>(d) ஆய்</td><td>4. செம்பியன்</td></tr></table>",
+        optionsTa: ["(A) 3 4 2 1", "(B) 3 1 4 2", "(C) 3 2 1 4", "(D) 4 3 1 2", "விடை தெரியவில்லை"],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "Match the following:<br><br><table style='border-collapse:collapse;'><tr><th style='padding-right:20px;text-align:left;'>List-I (Term)</th><th style='text-align:left;'>List-II (Meaning)</th></tr><tr><td style='padding-right:20px;'>(a) Manram</td><td>1. Common place</td></tr><tr><td style='padding-right:20px;'>(b) Saptanga</td><td>2. Administrative unit</td></tr><tr><td style='padding-right:20px;'>(c) Enperayam</td><td>3. Meeting hall</td></tr><tr><td style='padding-right:20px;'>(d) Podiyil</td><td>4. Seven limbs</td></tr></table>",
+        optionsEn: ["(A) 3 4 2 1", "(B) 3 2 1 4", "(C) 4 3 2 1", "(D) 4 2 1 3", "Answer not known"],
+        ta: "பொருத்துக:<br><br><table style='border-collapse:collapse;'><tr><th style='padding-right:20px;text-align:left;'>பட்டியல்-I (சொல்)</th><th style='text-align:left;'>பட்டியல்-II (பொருள்)</th></tr><tr><td style='padding-right:20px;'>(a) மன்றம்</td><td>1. பொது இடம்</td></tr><tr><td style='padding-right:20px;'>(b) சப்தாங்கம்</td><td>2. நிர்வாக அலகு</td></tr><tr><td style='padding-right:20px;'>(c) எண்பேராயம்</td><td>3. கூட்ட அரங்கம்</td></tr><tr><td style='padding-right:20px;'>(d) பொடியில்</td><td>4. ஏழு உறுப்புகள்</td></tr></table>",
+        optionsTa: ["(A) 3 4 2 1", "(B) 3 2 1 4", "(C) 4 3 2 1", "(D) 4 2 1 3", "விடை தெரியவில்லை"],
+        answer: 0,
+        imageUrl: null
+    },
+    {
+        en: "The ascending order of the administrative division in the ancient Tamizhagam was<br>(1) Oor<br>(2) Nadu<br>(3) Kootram<br>(4) Mandalam",
+        optionsEn: ["(3), (2), (1), (4)", "(4), (3), (2), (1)", "(1), (3), (2), (4)", "(1), (2), (3), (4)", "Answer not known"],
+        ta: "பண்டைய தமிழகத்தில் நிர்வாகப் பிரிவுகளின் ஏறுவரிசை<br>(1) ஊர்<br>(2) நாடு<br>(3) கூற்றம்<br>(4) மண்டலம்",
+        optionsTa: ["(3), (2), (1), (4)", "(4), (3), (2), (1)", "(1), (3), (2), (4)", "(1), (2), (3), (4)", "விடை தெரியவில்லை"],
+        answer: 2,
+        imageUrl: null
+    },
+    {
+        en: "Find out which one of the following pair is wrong :<br>Aingurunooru was written by",
+        optionsEn: ["Marudham - Oorambogi", "Neidhal - Avmoovanaar", "Kurinji - Kabilan", "Palai - Perunkadunko", "Answer not known"],
+        ta: "பின்வரும் எந்த இணை தவறானது என்பதைக் கண்டறியவும்:<br>ஐங்குறுநூறு எழுதியவர்",
+        optionsTa: ["மருதம் - ஊரம்போகி", "நெய்தல் - ஆவ்மூவனார்", "குறிஞ்சி - கபிலன்", "பாலை - பெருங்கடுங்கோ", "விடை தெரியவில்லை"],
+        answer: 3,
+        imageUrl: null
+    },
+    {
+        en: "Who was the female poet who gave focused on heroism in the Tamil Society of Sangam Era as 'Thondriuvan Matho Porkalathane'?",
+        optionsEn: ["Okkur Masathiyar", "Kaval Pendu", "Velliveethiyar", "Avvaiyar", "Answer not known"],
+        ta: "சங்ககாலத் தமிழ்ச் சமூகத்தில் 'தோன்றியுவன் மாதோ போர்களத்தனையே' என்று வீரத்தை மையமாகக் கொண்டு பாடிய பெண் புலவர் யார்?",
+        optionsTa: ["ஒக்கூர் மாசாத்தியார்", "காவற்பெண்டு", "வெள்ளிவீதியார்", "ஔவையார்", "விடை தெரியவில்லை"],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "\"Kadukai thulaithaezh kadalaippukatkik kuruga thariththa kural\" who said this?",
+        optionsEn: ["Avaiyar", "Eadaikkadar", "Nakkeerar", "Arisilkkizhar", "Answer not known"],
+        ta: "\"கடுகைத் துளைத்தேழ் கடலைப் புகட்டிக் குறுகத் தரித்த குரல்\" என்று கூறியவர் யார்?",
+        optionsTa: ["ஔவையார்", "யாத்திரைக்கடவுளார்", "நக்கீரர்", "அரிசில்கிழார்", "விடை தெரியவில்லை"],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "Find out whose statement is this? --<br>Like a bird that flies to a tree bearing fruit, I went to the broad palace of Karikal's court.",
+        optionsEn: ["Kapilar", "Mudathamakanniyar", "Nedumkiliiyar", "Alawanthar", "Answer not known"],
+        ta: "இது யாருடைய கூற்று என்பதைக் கண்டறியவும்? --<br>காய்த்த மரத்திற்குப் பறவை பறந்தாற் போல, கரிகாலன் மன்றத்திற்கு விரிந்த பக்கல் சென்றேன்.",
+        optionsTa: ["கபிலர்", "முடத்தாமக் கண்ணியார்", "நெடுங்கிள்ளியார்", "அழுவந்தையார்", "விடை தெரியவில்லை"],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "Match List I with List II and write the correct answer:<br><br><table style='border-collapse:collapse;'><tr><th style='padding-right:20px;text-align:left;'>List-I (Author)</th><th style='text-align:left;'>List-II (Work)</th></tr><tr><td style='padding-right:20px;'>(a) Buddhamitra</td><td>1. Thirumandiram</td></tr><tr><td style='padding-right:20px;'>(b) Amitasagaranar</td><td>2. Kalingattuparani</td></tr><tr><td style='padding-right:20px;'>(c) Jayankondar</td><td>3. Virasoliyam</td></tr><tr><td style='padding-right:20px;'>(d) Thirumular</td><td>4. Yapparumgalam</td></tr></table>",
+        optionsEn: ["(A) 1 3 2 4", "(B) 2 3 4 1", "(C) 1 2 4 3", "(D) 3 4 2 1", "Answer not known"],
+        ta: "பட்டியல்-I உடன் பட்டியல்-II ஐப் பொருத்தி சரியான விடையை எழுதுக:<br><br><table style='border-collapse:collapse;'><tr><th style='padding-right:20px;text-align:left;'>பட்டியல்-I (ஆசிரியர்)</th><th style='text-align:left;'>பட்டியல்-II (நூல்)</th></tr><tr><td style='padding-right:20px;'>(a) புத்தமித்ரர்</td><td>1. திருமந்திரம்</td></tr><tr><td style='padding-right:20px;'>(b) அமிதசாகரனார்</td><td>2. கலிங்கத்துப்பரணி</td></tr><tr><td style='padding-right:20px;'>(c) செயங்கொண்டார்</td><td>3. வீரசோழியம்</td></tr><tr><td style='padding-right:20px;'>(d) திருமூலர்</td><td>4. யாப்பருங்கலம்</td></tr></table>",
+        optionsTa: ["(A) 1 3 2 4", "(B) 2 3 4 1", "(C) 1 2 4 3", "(D) 3 4 2 1", "விடை தெரியவில்லை"],
+        answer: 3,
+        imageUrl: null
+    },
+    {
+        en: "Where is a large number of polished stone culls are found in Tamil Nadu.",
+        optionsEn: ["Payyampalli", "Pudukkottai", "Tirunelveli", "Tiruvannamalai", "Answer not known"],
+        ta: "தமிழ்நாட்டில் அதிக எண்ணிக்கையிலான மெருகூட்டப்பட்ட கற்கருவிகள் காணப்படும் இடம் எது.",
+        optionsTa: ["பையம்பள்ளி", "புதுக்கோட்டை", "திருநெல்வேலி", "திருவண்ணாமலை", "விடை தெரியவில்லை"],
+        answer: 0,
+        imageUrl: null
+    },
+    {
+        en: "The first Old Stone Age tool was discovered at Pallavaram in Tamil Nadu by",
+        optionsEn: ["Robert Bruce Foote", "Alexander Flemming", "Joseph Prestwich", "Henry Geoghegan", "Answer not known"],
+        ta: "தமிழ்நாட்டின் பல்லாவரத்தில் முதல் பழைய கற்காலக் கருவியைக் கண்டுபிடித்தவர் யார்?",
+        optionsTa: ["ராபர்ட் புரூஸ் ஃபூட்", "அலெக்சாண்டர் ஃபிளெமிங்", "ஜோசப் பிரெஸ்ட்விச்", "ஹென்றி ஜியோகெகன்", "விடை தெரியவில்லை"],
+        answer: 0,
+        imageUrl: null
+    },
+    {
+        en: "Which of the following statements are true about the Vatteluttu?<br>(i) Vatteluttu Script emerged from the Dravida or Tamil Brahmi script about the 3rd Century A.D.<br>(ii) It assumed its full form in the 6th Century A.D.<br>(iii) The Vatteluttu script continued to be in vogue in the Chola Kingdom down to the 13th Century A.D.",
+        optionsEn: ["(i) only", "(i) and (iii)", "(i) and (ii)", "(ii) and (iii)", "Answer not known"],
+        ta: "வட்டெழுத்து பற்றிய பின்வரும் கூற்றுகளில் எவை சரியானவை?<br>(i) வட்டெழுத்து கி.பி. 3 ஆம் நூற்றாண்டில் திராவிட அல்லது தமிழ் பிராமி எழுத்திலிருந்து தோன்றியது.<br>(ii) இது கி.பி. 6 ஆம் நூற்றாண்டில் அதன் முழு வடிவத்தை அடைந்தது.<br>(iii) வட்டெழுத்து சோழப் பேரரசில் கி.பி. 13 ஆம் நூற்றாண்டு வரை பயன்பாட்டில் இருந்தது.",
+        optionsTa: ["(i) மட்டும்", "(i) மற்றும் (iii)", "(i) மற்றும் (ii)", "(ii) மற்றும் (iii)", "விடை தெரியவில்லை"],
+        answer: 0,
+        imageUrl: null
+    },
+    {
+        en: "Match the Column-I (Archaeological Sites) with their districts in Column II<br><br><table style='border-collapse:collapse;'><tr><th style='padding-right:20px;text-align:left;'>Column-I (Site)</th><th style='text-align:left;'>Column-II (District)</th></tr><tr><td style='padding-right:20px;'>(a) Kodumanal</td><td>1. Thoothukudi</td></tr><tr><td style='padding-right:20px;'>(b) Porunthal</td><td>2. Villupuram</td></tr><tr><td style='padding-right:20px;'>(c) Tiruvakkarai</td><td>3. Erode</td></tr><tr><td style='padding-right:20px;'>(d) Adichanallur</td><td>4. Dindigul</td></tr></table>",
+        optionsEn: ["(A) 1 3 2 4", "(B) 3 4 2 1", "(C) 3 4 1 2", "(D) 1 2 4 3", "Answer not known"],
+        ta: "நெடுவரிசை-I (தொல்லியல் தளங்கள்) உடன் நெடுவரிசை-II இல் உள்ள மாவட்டங்களைப் பொருத்துக<br><br><table style='border-collapse:collapse;'><tr><th style='padding-right:20px;text-align:left;'>நெடுவரிசை-I (தளம்)</th><th style='text-align:left;'>நெடுவரிசை-II (மாவட்டம்)</th></tr><tr><td style='padding-right:20px;'>(a) கொடுமணல்</td><td>1. தூத்துக்குடி</td></tr><tr><td style='padding-right:20px;'>(b) பொருந்தல்</td><td>2. விழுப்புரம்</td></tr><tr><td style='padding-right:20px;'>(c) திருவக்கரை</td><td>3. ஈரோடு</td></tr><tr><td style='padding-right:20px;'>(d) ஆதிச்சநல்லூர்</td><td>4. திண்டுக்கல்</td></tr></table>",
+        optionsTa: ["(A) 1 3 2 4", "(B) 3 4 2 1", "(C) 3 4 1 2", "(D) 1 2 4 3", "விடை தெரியவில்லை"],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "Choose the right matches among type.<br>Arikamedu Excavation - 1992<br>Boom buhar excavation - 1942<br>Kodumanal excavation - 1992<br>Karur excavation - 1942",
+        optionsEn: ["1 and 3 are correct", "1 and 2 are correct", "2 and 3 are correct", "3 and 4 are correct", "Answer not known"],
+        ta: "வகைகளுக்கு இடையே சரியான பொருத்தங்களைத் தேர்ந்தெடுக்கவும்.<br>அரிக்கமேடு அகழ்வாராய்ச்சி - 1992<br>பூம்புகார் அகழ்வாராய்ச்சி - 1942<br>கொடுமணல் அகழ்வாராய்ச்சி - 1992<br>கரூர் அகழ்வாராய்ச்சி - 1942",
+        optionsTa: ["1 மற்றும் 3 சரி", "1 மற்றும் 2 சரி", "2 மற்றும் 3 சரி", "3 மற்றும் 4 சரி", "விடை தெரியவில்லை"],
+        answer: 2,
+        imageUrl: null
+    },
+    {
+        en: "During the Sangam age, in which place Roman coins were minted?",
+        optionsEn: ["Adichanallur", "Arikkamedu", "Korkai", "Puhar", "Answer not known"],
+        ta: "சங்க காலத்தில், ரோமானிய நாணயங்கள் எந்த இடத்தில் அச்சிடப்பட்டன?",
+        optionsTa: ["ஆதிச்சநல்லூர்", "அரிக்கமேடு", "கொற்கை", "பூம்புகார்", "விடை தெரியவில்லை"],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "The earliest discovery of rock painting in TamilNadu was at",
+        optionsEn: ["Perumukkal", "Mallapadi", "Kilvalai", "Sethavarai", "Answer not known"],
+        ta: "தமிழ்நாட்டில் பாறை ஓவியங்களின் ஆரம்பகால கண்டுபிடிப்பு எங்கு நிகழ்ந்தது?",
+        optionsTa: ["பெருமுக்கல்", "மல்லபாடி", "கீல்வளை", "சேத்தவரை", "விடை தெரியவில்லை"],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "Thirunavukkarasar said, \"__________ as Kalviyil Karai Illatha\"",
+        optionsEn: ["Madurai", "Kanchi", "Poombuhar", "Thanjai", "Answer not known"],
+        ta: "திருநாவுக்கரசர் கூறினார், \"__________ கல்வியில் கரை இல்லாத\"",
+        optionsTa: ["மதுரை", "காஞ்சி", "பூம்புகார்", "தஞ்சை", "விடை தெரியவில்லை"],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "Reason and Assertion type :<br>Assertion [A] : Archaeological excavations conducted in Pattanam, Ernakulam, Kerala unearthed signs of early Roman trade.<br>Reason [R] : The excavation proved that Pattanam was a part of Muziris, the port city of the Sangam Cheras.",
+        optionsEn: [
+            "[A] is true but [R] is false",
+            "Both [A] and [R] are true and [R] is correct explanation of [A]",
+            "[A] is false",
+            "Both [A] and [R] are true but [R] is not the correct explanation of [A]",
+            "Answer not known"
+        ],
+        ta: "காரணம் மற்றும் கூற்று வகை :<br>கூற்று [A] : கேரளாவின் எர்ணாகுளம், பட்டணத்தில் நடத்தப்பட்ட தொல்லியல் அகழ்வாராய்ச்சிகள் ஆரம்பகால ரோமானிய வர்த்தகத்தின் அறிகுறிகளை வெளிக்கொணர்ந்தன.<br>காரணம் [R] : பட்டணம் சங்ககால சேரர்களின் துறைமுக நகரமான முசிரியின் ஒரு பகுதி என்பதை அகழ்வாராய்ச்சி நிரூபித்தது.",
+        optionsTa: [
+            "[A] சரி ஆனால் [R] தவறு",
+            "[A] மற்றும் [R] இரண்டும் சரி மற்றும் [R] என்பது [A] வுக்கான சரியான விளக்கம்",
+            "[A] தவறு",
+            "[A] மற்றும் [R] இரண்டும் சரி ஆனால் [R] என்பது [A] வுக்கான சரியான விளக்கம் அல்ல",
+            "விடை தெரியவில்லை"
+        ],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "How many chapters and sections does Tolkappiyam have?",
+        optionsEn: ["2 Chapters and 18 Sections", "3 Chapters and 27 Sections", "4 Chapters and 27 Sections", "3 Chapters and 18 Sections", "Answer not known"],
+        ta: "தொல்காப்பியத்தில் எத்தனை அதிகாரங்கள் மற்றும் பிரிவுகள் உள்ளன?",
+        optionsTa: ["2 அதிகாரங்கள் மற்றும் 18 பிரிவுகள்", "3 அதிகாரங்கள் மற்றும் 27 பிரிவுகள்", "4 அதிகாரங்கள் மற்றும் 27 பிரிவுகள்", "3 அதிகாரங்கள் மற்றும் 18 பிரிவுகள்", "விடை தெரியவில்லை"],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "Thirunangaigal (Transgenders) -- Who has written about them in Puthukavithai (free verse)?",
+        optionsEn: ["M. Rajendran", "N. Kamarajan", "M. Mehta", "Abdul Rahman", "Answer not known"],
+        ta: "திருநங்கைகள் -- புதுக்கவிதையில் அவர்களைப் பற்றி எழுதியவர் யார்?",
+        optionsTa: ["எம். ராஜேந்திரன்", "என். காமராஜன்", "எம். மேத்தா", "அப்துல் ரகுமான்", "விடை தெரியவில்லை"],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "Find out the author of the novel \"Auttrankarai Pillaiyar\" from the following:",
+        optionsEn: ["Arignar Anna", "Jayakanthan", "Thu. Sa. Iraamarmithram", "Pudumaipithan", "Answer not known"],
+        ta: "பின்வருவனவற்றிலிருந்து \"ஆற்றங்கரைப் பிள்ளையார்\" நாவலின் ஆசிரியரைக் கண்டறியவும்:",
+        optionsTa: ["அறிஞர் அண்ணா", "ஜெயகாந்தன்", "து. ச. ராமாமிர்தம்", "புதுமைப்பித்தன்", "விடை தெரியவில்லை"],
+        answer: 3,
+        imageUrl: null
+    },
+    {
+        en: "Who is the Author of the Novel \"Malarum Sarukum\"?",
+        optionsEn: ["Agilan", "D. Selvaraj", "N. Parthasarathy", "Jayakanthan", "Answer not known"],
+        ta: "\"மலரும் சருகும்\" நாவலின் ஆசிரியர் யார்?",
+        optionsTa: ["அகிலன்", "டி. செல்வராஜ்", "என். பார்த்தசாரதி", "ஜெயகாந்தன்", "விடை தெரியவில்லை"],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "What is the Tamil Name for \"Haikku\" poem?",
+        optionsEn: ["Seyyul", "Puthuk kavithai", "Kurumpaa", "Vasanakavithai", "Answer not known"],
+        ta: "\"ஹைக்கூ\" கவிதைக்கான தமிழ்ப் பெயர் என்ன?",
+        optionsTa: ["செய்யுள்", "புதுக்கவிதை", "குறும்பா", "வசன கவிதை", "விடை தெரியவில்லை"],
+        answer: 2,
+        imageUrl: null
+    },
+    {
+        en: "The ethical values of Thiruvalluvar belongs to<br>(1) belongs to past<br>(2) belongs to Tamil Nadu only<br>(3) belongs to present only<br>(4) belongs to everyone, everywhere, at any time",
+        optionsEn: ["(1) and (3) only", "(2) and (3) only", "(1) and (2) only", "(4) only", "Answer not known"],
+        ta: "திருவள்ளுவரின் அறவிழுமியங்கள் எதைச் சார்ந்தவை?<br>(1) கடந்த காலத்தைச் சார்ந்தவை<br>(2) தமிழ்நாட்டை மட்டும் சார்ந்தவை<br>(3) நிகழ்காலத்தை மட்டும் சார்ந்தவை<br>(4) எவருக்கும், எங்கும், எப்போதும் சார்ந்தவை",
+        optionsTa: ["(1) மற்றும் (3) மட்டும்", "(2) மற்றும் (3) மட்டும்", "(1) மற்றும் (2) மட்டும்", "(4) மட்டும்", "விடை தெரியவில்லை"],
+        answer: 3,
+        imageUrl: null
+    },
+    {
+        en: "The saying \"Thirukkural\" has a balanced religious quality is because<br>1. People from all religions say that it belongs to them<br>2. Because people who say there is God and people who say there is no God accept it whole heartedly<br>3. It is beyond Type, caste, religion, class<br>4. Because it writes about ethics and knowledge needed for human race.",
+        optionsEn: ["Only 1 is right", "Only 2 is right", "Only 3 and 4 are right", "All the above are right", "Answer not known"],
+        ta: "\"திருக்குறள்\" சமநிலையான மத குணத்தைக் கொண்டுள்ளது என்று கூறுவது ஏனெனில்<br>1. அனைத்து மதங்களைச் சேர்ந்தவர்களும் அது தங்களுக்குச் சொந்தமானது என்று கூறுகிறார்கள்<br>2. கடவுள் உண்டு என்பவர்களும், கடவுள் இல்லை என்பவர்களும் இதை முழு மனதுடன் ஏற்றுக்கொள்கிறார்கள்<br>3. இது இனம், சாதி, மதம், வர்க்கத்திற்கு அப்பாற்பட்டது<br>4. இது மனித இனத்திற்குத் தேவையான நெறிமுறைகள் மற்றும் அறிவைப் பற்றி எழுதுவதால்.",
+        optionsTa: ["1 மட்டும் சரி", "2 மட்டும் சரி", "3 மற்றும் 4 மட்டும் சரி", "மேற்கூறிய அனைத்தும் சரி", "விடை தெரியவில்லை"],
+        answer: 3,
+        imageUrl: null
+    },
+    {
+        en: "Which is the book that stands before Thirukkural with the title \"the most translated\" book?",
+        optionsEn: ["Dhammapada", "The Bible", "Manu-Smriti", "Quraan", "Answer not known"],
+        ta: "\"அதிகம் மொழிபெயர்க்கப்பட்ட\" புத்தகம் என்ற தலைப்பில் திருக்குறளுக்கு முன் நிற்கும் புத்தகம் எது?",
+        optionsTa: ["தம்மபதம்", "பைபிள்", "மனுஸ்மிருதி", "குர்ஆன்", "விடை தெரியவில்லை"],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "\"The Ocean of birth swims, swims and does not join the Lord\" - What is the philosophy of this Kural?",
+        optionsEn: ["Siva Philosophy", "Vidhya Philosophy", "Surrender Philosophy", "Soul Philosophy", "Answer not known"],
+        ta: "\"பிறவிப் பெருங்கடல் நீந்துவர் நீந்தார் இறைவன் அடிசேரார்\" - இந்தக் குறளின் தத்துவம் என்ன?",
+        optionsTa: ["சைவத் தத்துவம்", "வித்யா தத்துவம்", "சரணாகதி தத்துவம்", "ஆன்ம தத்துவம்", "விடை தெரியவில்லை"],
+        answer: 2,
+        imageUrl: null
+    },
+    {
+        en: "Which of the following statements are true?<br>1. All the religions were accepted and appreciated in Thirukkural<br>2. Every religions ratified the views of Thiruvalluvar<br>3. He didn't believe morality<br>4. Valluvar said that men with high principles deserved to live as.",
+        optionsEn: ["1 and 2 only correct", "2 and 3 only correct", "2 and 4 only correct", "3 and 4 only correct", "Answer not known"],
+        ta: "பின்வரும் கூற்றுகளில் எவை சரியானவை?<br>1. திருக்குறளில் அனைத்து மதங்களும் ஏற்றுக்கொள்ளப்பட்டு பாராட்டப்பட்டன<br>2. ஒவ்வொரு மதமும் திருவள்ளுவரின் கருத்துகளை உறுதிப்படுத்தியது<br>3. அவர் ஒழுக்கத்தை நம்பவில்லை<br>4. உயர் கோட்பாடுகளைக் கொண்ட மனிதர்கள் வாழத் தகுந்தவர்கள் என்று வள்ளுவர் கூறினார்.",
+        optionsTa: ["1 மற்றும் 2 மட்டும் சரி", "2 மற்றும் 3 மட்டும் சரி", "2 மற்றும் 4 மட்டும் சரி", "3 மற்றும் 4 மட்டும் சரி", "விடை தெரியவில்லை"],
+        answer: 2,
+        imageUrl: null
+    },
+    {
+        en: "Which of the following statements are wrong about Home Rule Agitation in Tamil Nadu?<br>(a) Its first conference was held in Coimbatore under the Presidency of V.P. Madhava Rao<br>(b) In July 1916, students staged a massive demonstration in front of Egmore Railway Station<br>(c) Governor Lord Pentland banned participation of students in the political activities of Home Rule League.<br>(d) Rajagopalachari plunged into the Home rule agitation after the arrest of Annie Besant",
+        optionsEn: ["(a) and (b)", "(b) and (c)", "(c) and (d)", "(a) and (d)", "Answer not known"],
+        ta: "தமிழ்நாட்டில் ஹோம் ரூல் இயக்கம் பற்றிய பின்வரும் கூற்றுகளில் எவை தவறானவை?<br>(a) இதன் முதல் மாநாடு வி.பி. மாதவ ராவ் தலைமையில் கோயம்புத்தூரில் நடைபெற்றது<br>(b) ஜூலை 1916 இல், மாணவர்கள் எழும்பூர் ரயில் நிலையத்தின் முன் பாரிய ஆர்ப்பாட்டத்தை நடத்தினர்<br>(c) ஆளுநர் லார்ட் பென்ட்லேண்ட் ஹோம் ரூல் லீக்கின் அரசியல் நடவடிக்கைகளில் மாணவர்கள் பங்கேற்பதைத் தடை செய்தார்.<br>(d) அன்னி பெசன்ட் கைதான பிறகு ராஜகோபாலாச்சாரி ஹோம் ரூல் இயக்கத்தில் இறங்கினார்",
+        optionsTa: ["(a) மற்றும் (b)", "(b) மற்றும் (c)", "(c) மற்றும் (d)", "(a) மற்றும் (d)", "விடை தெரியவில்லை"],
+        answer: 3,
+        imageUrl: null
+    },
+    {
+        en: "Who established the Tamilarasu Party in the year 1947 for the welfare of the Tamil People?",
+        optionsEn: ["Ma. Pae. Sivagnanam", "S.B. Athithan", "E.V.K. Sampath", "Kannadasan", "Answer not known"],
+        ta: "தமிழ் மக்களின் நலனுக்காக 1947 ஆம் ஆண்டில் தமிழரசு கட்சியை நிறுவியவர் யார்?",
+        optionsTa: ["ம. பொ. சிவஞானம்", "எஸ்.பி. ஆதித்தன்", "இ.வெ.கி. சம்பத்", "கண்ணதாசன்", "விடை தெரியவில்லை"],
+        answer: 0,
+        imageUrl: null
+    },
+    {
+        en: "Which of the following was organised to educate by the Madras Mahajana Sabha in 1884?",
+        optionsEn: ["Social Education", "Economic Education", "Political Education", "Cultural Education", "Answer not known"],
+        ta: "1884 இல் மெட்ராஸ் மகாஜன சபையால் கல்வி கற்பிக்க எது ஏற்பாடு செய்யப்பட்டது?",
+        optionsTa: ["சமூகக் கல்வி", "பொருளாதாரக் கல்வி", "அரசியல் கல்வி", "பண்பாட்டுக் கல்வி", "விடை தெரியவில்லை"],
+        answer: 2,
+        imageUrl: null
+    },
+    {
+        en: "Choose the correct answer : The Madras Native Association was founded in the year",
+        optionsEn: ["1845", "1852", "1862", "1875", "Answer not known"],
+        ta: "சரியான பதிலைத் தேர்ந்தெடுக்கவும் : மெட்ராஸ் நேட்டிவ் அசோசியேஷன் நிறுவப்பட்ட ஆண்டு",
+        optionsTa: ["1845", "1852", "1862", "1875", "விடை தெரியவில்லை"],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "__________ hoisted the National Flag atop of Fort St. George on 26th January, 1932.",
+        optionsEn: ["Tiruppur Kumaran", "Arya (Bhashyam)", "T. Prakasam", "K. Nageswara Rao", "Answer not known"],
+        ta: "ஜனவரி 26, 1932 அன்று புனித ஜார்ஜ் கோட்டையின் உச்சியில் தேசியக் கொடியை ஏற்றியவர் __________.",
+        optionsTa: ["திருப்பூர் குமரன்", "ஆர்யா (பாஷ்யம்)", "டி. பிரகாசம்", "கே. நாகேஸ்வர ராவ்", "விடை தெரியவில்லை"],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "Arrange the following events related to K. Kamaraj in their chronological order<br>(1) K. Kamaraj was chosen to lead the struggle against Neill statue after the arrest of other frontline leaders.<br>(2) He was arrested for enlisting volunteers for salt satyagraha.<br>(3) He was arrested at Guntur while he was on his way to Wardha.<br>(4) He was accused in an inter provincial conspiracy case known as 'Madras conspiracy case'.",
+        optionsEn: ["(1), (2), (4), (3)", "(1), (3), (2), (4)", "(4), (3), (2), (1)", "(3), (1), (4), (2)", "Answer not known"],
+        ta: "கே. காமராஜர் தொடர்பான பின்வரும் நிகழ்வுகளை காலவரிசைப்படி வரிசைப்படுத்துக<br>(1) மற்ற முன்னணித் தலைவர்கள் கைதான பிறகு நீல் சிலைக்கு எதிரான போராட்டத்திற்குத் தலைமை தாங்க காமராஜர் தேர்ந்தெடுக்கப்பட்டார்.<br>(2) உப்பு சத்தியாகிரகத்திற்கு தொண்டர்களைச் சேர்த்ததற்காக அவர் கைது செய்யப்பட்டார்.<br>(3) வார்த்தாவுக்குச் செல்லும் வழியில் குண்டூரில் அவர் கைது செய்யப்பட்டார்.<br>(4) 'மெட்ராஸ் சதி வழக்கு' என்று அழைக்கப்படும் மாகாணங்களுக்கு இடையேயான சதி வழக்கில் அவர் குற்றம் சாட்டப்பட்டார்.",
+        optionsTa: ["(1), (2), (4), (3)", "(1), (3), (2), (4)", "(4), (3), (2), (1)", "(3), (1), (4), (2)", "விடை தெரியவில்லை"],
+        answer: 0,
+        imageUrl: null
+    },
+    {
+        en: "Name the person who delivered speech in Tamil Firstly at the Third session of the Indian National Congress held at Madras.",
+        optionsEn: ["Thanjai R. Ramaswami Pillai", "G. Subramania Iyer", "M. Viraghavachariar", "Rao Saheb Mulkunanchar", "Answer not known"],
+        ta: "மெட்ராஸில் நடைபெற்ற இந்திய தேசிய காங்கிரஸின் மூன்றாவது அமர்வில் முதன்முதலில் தமிழில் உரையாற்றிய நபரின் பெயரைக் கூறுங்கள்.",
+        optionsTa: ["தஞ்சை ஆர். ராமசாமி பிள்ளை", "ஜி. சுப்பிரமணிய ஐயர்", "எம். வீராசாமி செட்டியார்", "ராவ் சாகேப் முல்குனாஞ்சர்", "விடை தெரியவில்லை"],
+        answer: 3,
+        imageUrl: null
+    },
+    {
+        en: "__________ organised the Home Rule League at Madurai.",
+        optionsEn: ["C. Rajaji", "Kasturirangan", "George Joseph", "V. Kalyana Sundaram", "Answer not known"],
+        ta: "மதுரையில் ஹோம் ரூல் லீக்கை ஒழுங்கமைத்தவர் __________.",
+        optionsTa: ["சி. ராஜாஜி", "கஸ்தூரிரங்கன்", "ஜார்ஜ் ஜோசப்", "வி. கல்யாணசுந்தரம்", "விடை தெரியவில்லை"],
+        answer: 2,
+        imageUrl: null
+    },
+    {
+        en: "Non Co-operation movement in Tamil Nadu was led by",
+        optionsEn: ["V.O. Chidambaram", "Rajaji", "Subramaniya Siva", "Subbarayan", "Answer not known"],
+        ta: "தமிழ்நாட்டில் ஒத்துழையாமை இயக்கத்திற்குத் தலைமை தாங்கியவர்",
+        optionsTa: ["வி.ஓ. சிதம்பரம்", "ராஜாஜி", "சுப்பிரமணிய சிவா", "சுப்பராயன்", "விடை தெரியவில்லை"],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "Identify the person who uttered that, \"Nothing can be done without shedding of blood. Japan was prepared to sacrifice 20,000 men and gained a victory over Russia. If 15 crores of Indians do the same, \"Swaraj will be obtained\".",
+        optionsEn: ["V.O. Chidambaram Pillai", "Subramania Siva", "Subramania Bharathi", "Vanchi Aiyar", "Answer not known"],
+        ta: "\"இரத்தம் சிந்தாமல் எதையும் செய்ய முடியாது. ரஷ்யாவின் மீது வெற்றி பெற ஜப்பான் 20,000 வீரர்களைத் தியாகம் செய்யத் தயாராக இருந்தது. 15 கோடி இந்தியர்கள் அதையே செய்தால், \"சுயராஜ்யம் கிடைக்கும்\" என்று கூறியவரை அடையாளம் காணவும்.",
+        optionsTa: ["வி.ஓ. சிதம்பரம் பிள்ளை", "சுப்பிரமணிய சிவா", "சுப்பிரமணிய பாரதி", "வாஞ்சி அய்யர்", "விடை தெரியவில்லை"],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "Choose the right matches among the following:<br>(1) Madurai Gandhi - N.M. Subburaman<br>(2) Thatchina Gandhi - Rajaji<br>(3) Vidyalaya Iyya - Kamaraj<br>(4) Father of Tamilnadu Library Movement - A. Ramasamy",
+        optionsEn: ["(1) and (3) are correct", "(1) and (2) are correct", "(2) and (3) are correct", "(3) and (4) are correct", "Answer not known"],
+        ta: "பின்வருவனவற்றில் சரியான பொருத்தங்களைத் தேர்ந்தெடுக்கவும்:<br>(1) மதுரை காந்தி - என்.எம். சுப்புராமன்<br>(2) தட்சிண காந்தி - ராஜாஜி<br>(3) வித்யாலயா ஐயா - காமராஜர்<br>(4) தமிழ்நாடு நூலக இயக்கத்தின் தந்தை - ஏ. ராமசாமி",
+        optionsTa: ["(1) மற்றும் (3) சரி", "(1) மற்றும் (2) சரி", "(2) மற்றும் (3) சரி", "(3) மற்றும் (4) சரி", "விடை தெரியவில்லை"],
+        answer: 0,
+        imageUrl: null
+    },
+    {
+        en: "Which one of the statement is correct regarding Bharathiar?<br>1. Bharathiar participated in the Indian National Conferance at Kasi in 1905.<br>2. In 1906 he started Balabharata Sabha at Chennai.<br>3. He composed the Poem Vangame Valiyave'.<br>4. He participated 'Surat Congress' in 1907 along with VOC.",
+        optionsEn: [
+            "1, 2 are correct 3, 4 are incorrect",
+            "1, 2, 3, 4 statement are correct",
+            "1, 2, 3 are correct 4 is incorrect",
+            "1, 2, 3, 4 are incorrect statement",
+            "Answer not known"
+        ],
+        ta: "பாரதியார் தொடர்பாக எந்தக் கூற்று சரியானது?<br>1. பாரதியார் 1905 இல் காசியில் நடைபெற்ற இந்திய தேசிய மாநாட்டில் கலந்து கொண்டார்.<br>2. 1906 இல் சென்னையில் பாலபாரத சபையைத் தொடங்கினார்.<br>3. 'வந்தே மாதரம்' என்ற கவிதையை இயற்றினார்.<br>4. வி.ஓ.சி.யுடன் 1907 இல் 'சூரத் காங்கிரஸில்' கலந்து கொண்டார்.",
+        optionsTa: [
+            "1, 2 சரி 3, 4 தவறு",
+            "1, 2, 3, 4 கூற்றுகள் சரி",
+            "1, 2, 3 சரி 4 தவறு",
+            "1, 2, 3, 4 கூற்றுகள் தவறு",
+            "விடை தெரியவில்லை"
+        ],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "Match correctly the Nationalist Papers and its Authors:<br><br><table style='border-collapse:collapse;'><tr><th style='padding-right:20px;text-align:left;'>List-I (Author)</th><th style='text-align:left;'>List-II (Paper)</th></tr><tr><td style='padding-right:20px;'>(a) Subramaniya Bharathi</td><td>1. Swadesamithran</td></tr><tr><td style='padding-right:20px;'>(b) Mrs. Annie Besant</td><td>2. Madras Mahajana Sabha</td></tr><tr><td style='padding-right:20px;'>(c) G. Subramanya Iyer</td><td>3. India</td></tr><tr><td style='padding-right:20px;'>(d) P. Anandacharlu</td><td>4. New India</td></tr></table>",
+        optionsEn: ["(A) 1 3 2 4", "(B) 3 1 4 2", "(C) 3 4 1 2", "(D) 2 1 4 3", "Answer not known"],
+        ta: "தேசியவாத பத்திரிகைகளையும் அதன் ஆசிரியர்களையும் சரியாகப் பொருத்துக:<br><br><table style='border-collapse:collapse;'><tr><th style='padding-right:20px;text-align:left;'>பட்டியல்-I (ஆசிரியர்)</th><th style='text-align:left;'>பட்டியல்-II (பத்திரிகை)</th></tr><tr><td style='padding-right:20px;'>(a) சுப்பிரமணிய பாரதி</td><td>1. சுதேசமித்திரன்</td></tr><tr><td style='padding-right:20px;'>(b) திருமதி. அன்னி பெசன்ட்</td><td>2. மெட்ராஸ் மகாஜன சபை</td></tr><tr><td style='padding-right:20px;'>(c) ஜி. சுப்பிரமணிய ஐயர்</td><td>3. இந்தியா</td></tr><tr><td style='padding-right:20px;'>(d) பி. ஆனந்தசார்லு</td><td>4. நியூ இந்தியா</td></tr></table>",
+        optionsTa: ["(A) 1 3 2 4", "(B) 3 1 4 2", "(C) 3 4 1 2", "(D) 2 1 4 3", "விடை தெரியவில்லை"],
+        answer: 2,
+        imageUrl: null
+    },
+    {
+        en: "Match the following with their correct year.<br><br><table style='border-collapse:collapse;'><tr><th style='padding-right:20px;text-align:left;'>List-I (Event)</th><th style='text-align:left;'>List-II (Year)</th></tr><tr><td style='padding-right:20px;'>(a) Neill Statue Satyagraha</td><td>1. 1921</td></tr><tr><td style='padding-right:20px;'>(b) Purna Swaraj Day</td><td>2. 1926</td></tr><tr><td style='padding-right:20px;'>(c) Boycott of the Duke of Connaught</td><td>3. 1927</td></tr><tr><td style='padding-right:20px;'>(d) Justice party set back in the Election</td><td>4. 1930</td></tr></table>",
+        optionsEn: ["(A) 2 1 4 3", "(B) 3 4 2 1", "(C) 3 4 1 2", "(D) 4 1 2 3", "Answer not known"],
+        ta: "பின்வருவனவற்றை அவற்றின் சரியான ஆண்டுடன் பொருத்துக.<br><br><table style='border-collapse:collapse;'><tr><th style='padding-right:20px;text-align:left;'>பட்டியல்-I (நிகழ்வு)</th><th style='text-align:left;'>பட்டியல்-II (ஆண்டு)</th></tr><tr><td style='padding-right:20px;'>(a) நீல் சிலை சத்தியாகிரகம்</td><td>1. 1921</td></tr><tr><td style='padding-right:20px;'>(b) பூரண சுயராஜ்ய தினம்</td><td>2. 1926</td></tr><tr><td style='padding-right:20px;'>(c) கானாட் டியூக் புறக்கணிப்பு</td><td>3. 1927</td></tr><tr><td style='padding-right:20px;'>(d) தேர்தலில் நீதிக்கட்சி பின்னடைவு</td><td>4. 1930</td></tr></table>",
+        optionsTa: ["(A) 2 1 4 3", "(B) 3 4 2 1", "(C) 3 4 1 2", "(D) 4 1 2 3", "விடை தெரியவில்லை"],
+        answer: 2,
+        imageUrl: null
+    },
+    {
+        en: "Which of the following are true about Velu Thambi?<br>(i) Thambi had planned a secret attack with the native people<br>(ii) He was a Tahsildar incharge of a Southern Travancore tract<br>(iii) He worked closely with the British Government",
+        optionsEn: ["(iii) only", "(i) only", "(ii) only", "(i) and (ii) only", "Answer not known"],
+        ta: "வேலு தம்பி பற்றிய பின்வரும் கூற்றுகளில் எவை சரியானவை?<br>(i) தம்பி உள்ளூர் மக்களுடன் ஒரு ரகசிய தாக்குதலைத் திட்டமிட்டிருந்தார்<br>(ii) அவர் தெற்கு திருவிதாங்கூர் பகுதியின் பொறுப்பில் இருந்த தாலுக்கா தahsildar ஆவார்<br>(iii) அவர் பிரிட்டிஷ் அரசாங்கத்துடன் நெருக்கமாக பணியாற்றினார்",
+        optionsTa: ["(iii) மட்டும்", "(i) மட்டும்", "(ii) மட்டும்", "(i) மற்றும் (ii) மட்டும்", "விடை தெரியவில்லை"],
+        answer: 3,
+        imageUrl: null
+    },
+    {
+        en: "Which of the following statements are true about the Vellore mutiny?<br>1. Sir John Cradock was the commander-in-chief of the Chennai Army.<br>2. Sir George Barlow was the Governor of Chennai.<br>3. Lord William Bending was the Governor General of India.<br>4. Major Payers was appointed as the Discipline trainer for the soldiers.",
+        optionsEn: ["1, 4 is true", "1, 2 is true", "1, 2, 3 is true", "1, 3 is true", "Answer not known"],
+        ta: "வேலூர் கலகம் பற்றிய பின்வரும் கூற்றுகளில் எவை சரியானவை?<br>1. சர் ஜான் கிராடாக் சென்னை இராணுவத்தின் தளபதியாக இருந்தார்.<br>2. சர் ஜார்ஜ் பார்லோ சென்னையின் கவர்னராக இருந்தார்.<br>3. லார்ட் வில்லியம் பெண்டிங் இந்தியாவின் கவர்னர் ஜெனரலாக இருந்தார்.<br>4. மேஜர் பேயர்ஸ் வீரர்களுக்கு ஒழுங்கு பயிற்சியாளராக நியமிக்கப்பட்டார்.",
+        optionsTa: ["1, 4 சரி", "1, 2 சரி", "1, 2, 3 சரி", "1, 3 சரி", "விடை தெரியவில்லை"],
+        answer: 0,
+        imageUrl: null
+    },
+    {
+        en: "\"Mathi Petra Minor\" Novelist",
+        optionsEn: ["Ramamirtham", "Dharmambal", "Kothai Nayagi", "Nagamai", "Answer not known"],
+        ta: "\"மதி பெற்ற மைனர்\" நாவலாசிரியர்",
+        optionsTa: ["ராமாமிர்தம்", "தர்மாம்பாள்", "கோதை நாயகி", "நாகமை", "விடை தெரியவில்லை"],
+        answer: 0,
+        imageUrl: null
+    },
+    {
+        en: "The amount given under the Dr. Muthulakshmi Reddy Maternity Benefit Scheme has been increased since 2018 to Rs.",
+        optionsEn: ["18,000/-", "24,000/-", "12,000/-", "32,000/-", "Answer not known"],
+        ta: "டாக்டர் முத்துலட்சுமி ரெட்டி மகப்பேறு நலத்திட்டத்தின் கீழ் வழங்கப்படும் தொகை 2018 முதல் ரூ. எவ்வளவாக அதிகரிக்கப்பட்டுள்ளது?",
+        optionsTa: ["18,000/-", "24,000/-", "12,000/-", "32,000/-", "விடை தெரியவில்லை"],
+        answer: 0,
+        imageUrl: null
+    }
+];
+
+
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    let GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbziC0ooBCFlAvfWit4lZsxFRVLnLKX56lNzW8cZmVvNiGR0A_EJG7VG8A9OgRtup88BoQ/exec";
+    
+    function escapeHtml(s) { if(!s) return ''; return s.replace(/[&<>]/g, function(m){ return m==='&'?'&amp;':m==='<'?'&lt;':'>'?'&gt;':m;}); }
+    
+    function renderDashboard() {
+        const container = document.getElementById('dashboardContainer');
+        if(container) {
+            container.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div>
+                <div style="font-size:0.9rem;">(Since 2025)</div>
+                <div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div>
+                <div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div>
+                <div>📅 DATE: ${escapeHtml(dashboard.date)}</div>
+                <div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div>
+                <div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div>
+                <div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div>
+                <div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        }
+        let totalSpan = document.getElementById('totalQsSpan');
+        if(totalSpan) totalSpan.innerText = `/${dashboard.totalMarks}`;
+    }
+    
+    function autoSaveState() {
+        if (!quizActive || isSubmitted) return;
+        const state = {
+            candidateName: candidateName,
+            userAnswers: userAnswers,
+            currentIndex: currentIndex,
+            timeLeft: timeLeft,
+            startTimestamp: startTimestamp,
+            isSubmitted: false,
+            quizActive: true,
+            savedAt: Date.now(),
+            language: currentLanguage
+        };
+        localStorage.setItem('tetEnglishAutoResume', JSON.stringify(state));
+    }
+    
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        const t = translations[currentLanguage];
+        const modalHtml = `
+            <div id="resumeModal" class="modal-overlay">
+                <div class="modal-container">
+                    <h3>🔄 Unfinished Exam Found</h3>
+                    <p>You have an incomplete exam.<br>
+                    <strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>
+                    Last saved: ${new Date(savedState.savedAt).toLocaleTimeString()}<br><br>
+                    Do you want to continue where you left off?</p>
+                    <div class="modal-buttons">
+                        <button id="modalResumeBtn" class="btn">✅ Resume Exam</button>
+                        <button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHtml);
+        
+        document.getElementById('modalResumeBtn').onclick = () => {
+            document.getElementById('resumeModal').remove();
+            autoResumeExam(savedState);
+        };
+        document.getElementById('modalNewBtn').onclick = () => {
+            document.getElementById('resumeModal').remove();
+            localStorage.removeItem('tetEnglishAutoResume');
+            document.getElementById('candidateNameInput').value = '';
+        };
+    }
+    
+    function checkForAutoResume() {
+        const saved = localStorage.getItem('tetEnglishAutoResume');
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted && state.candidateName && state.candidateName.trim() !== "") {
+                    document.getElementById('candidateNameInput').value = state.candidateName;
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else {
+                    localStorage.removeItem('tetEnglishAutoResume');
+                }
+            } catch(e) { localStorage.removeItem('tetEnglishAutoResume'); }
+        }
+        return false;
+    }
+    
+    function autoResumeExam(state) {
+        candidateName = state.candidateName;
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true;
+        isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        
+        document.getElementById('quizCandidateName').innerText = candidateName;
+        const m = Math.floor(timeLeft/60);
+        const s = timeLeft%60;
+        document.getElementById('timerDisplay').innerText = `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
+        renderQuestion();
+        startTimer();
+        document.getElementById('startScreen').style.display = 'none';
+        document.getElementById('quizContainer').style.display = 'block';
+        document.getElementById('resultContainer').style.display = 'none';
+    }
+    
+    function clearAllAndRestart() {
+        localStorage.removeItem('tetEnglishAutoResume');
+        document.getElementById('resultContainer').style.display = 'none';
+        document.getElementById('startScreen').style.display = 'flex';
+        document.getElementById('quizContainer').style.display = 'none';
+        document.getElementById('candidateNameInput').value = '';
+        if(timerInterval) clearInterval(timerInterval);
+        quizActive = false;
+    }
+    
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let candidateName = "";
+    let isSubmitted = false;
+    
+    function getCurrentQuestionText(q) { 
+        let raw = currentLanguage === 'en' ? q.en : q.ta;
+        return raw;
+    }
+    
+    function getCurrentOptions(q) { 
+        return currentLanguage === 'en' ? q.optionsEn : q.optionsTa; 
+    }
+    
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) { 
+            document.getElementById('questionArea').innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>'; 
+            return; 
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        
+        let imageHtml = '';
+        if (q.imageUrl && q.imageUrl.trim() !== '') {
+            imageHtml = `<img class="question-image" src="${escapeHtml(q.imageUrl)}" alt="Question image" loading="lazy">`;
+        }
+        
+        let optsHtml = '';
+        optsArray.forEach((opt, i) => { 
+            optsHtml += `<div class="option-item ${sel===i ? 'selected' : ''}" onclick="selectOption(${i})">${String.fromCharCode(65+i)}. ${escapeHtml(opt)}</div>`; 
+        });
+        
+        document.getElementById('questionArea').innerHTML = `
+            ${imageHtml}
+            <div class="question-text">${currentIndex+1}. ${txt}</div>
+            <div>${optsHtml}</div>
+        `;
+        updateNavButtons(); 
+        updatePalette(); 
+        if(window.MathJax) MathJax.typesetPromise();
+    }
+    
+    function selectOption(optIndex) {
+        if(isSubmitted) return;
+        if(userAnswers[currentIndex] === optIndex) return;
+        userAnswers[currentIndex] = optIndex;
+        renderQuestion();
+        updatePalette();
+        autoSaveState();
+    }
+    
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById('navButtons').innerHTML = ''; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if(currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById('navButtons').innerHTML = html;
+    }
+    
+    function prevQuestion() { if(!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if(!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    
+    function updatePalette() {
+        const ps = document.getElementById('paletteScroll');
+        if(!ps) return;
+        ps.innerHTML = '';
+        if (QUESTIONS.length === 0) return;
+        for(let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement('button');
+            btn.innerText = i+1; btn.classList.add('q-palette');
+            if(userAnswers[i] !== null) btn.classList.add('answered');
+            if(i === currentIndex) btn.classList.add('current');
+            btn.onclick = (function(idx) { return function() { if(!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    
+    function startTimer() {
+        if(timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if(!quizActive || isSubmitted) return;
+            if(timeLeft <= 0) { 
+                clearInterval(timerInterval); 
+                if(!isSubmitted) submitQuiz(); 
+            } else { 
+                timeLeft--; 
+                const m = Math.floor(timeLeft/60), s = timeLeft%60; 
+                document.getElementById('timerDisplay').innerText = `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`; 
+                if(timeLeft % 10 === 0) autoSaveState();
+                if(timeLeft===0) submitQuiz(); 
+            }
+        }, 1000);
+    }
+    
+    function buildDetailedReview() {
+        let html = '';
+        for(let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i];
+            const u = userAnswers[i];
+            const corr = q.answer;
+            const isCorr = (u !== null && u === corr);
+            const txt = getCurrentQuestionText(q);
+            const optsArray = getCurrentOptions(q);
+            
+            let imageHtml = '';
+            if (q.imageUrl && q.imageUrl.trim() !== '') {
+                imageHtml = `<img class="review-question-img" src="${escapeHtml(q.imageUrl)}" alt="Question image" loading="lazy"><br>`;
+            }
+            
+            let optsHtml = '';
+            optsArray.forEach((_, idx) => {
+                let marker = '';
+                if(idx === corr) marker = ' ✅ (Correct)';
+                if(u === idx && idx !== corr) marker = ' ❌ (Your choice)';
+                else if(u === idx && idx === corr) marker = ' ✅ (Correct)';
+                const styleClass = (idx === corr) ? 'correct-option' : '';
+                const userWrongStyle = (u === idx && idx !== corr) ? 'color:#ef4444;' : '';
+                optsHtml += `<div class="${styleClass}" style="${userWrongStyle}">${String.fromCharCode(65+idx)}. ${escapeHtml(optsArray[idx])}${marker}</div>`;
+            });
+            const userAns = (u !== null) ? `${String.fromCharCode(65+u)}. ${escapeHtml(optsArray[u])}` : "Not answered";
+            html += `<div class="review-card" style="border-left-color:${isCorr?'#10b981':'#ef4444'}">
+                        <strong>Q${i+1}. ${txt}</strong>
+                        ${imageHtml}
+                        <div><strong>Your answer:</strong> ${userAns}</div>
+                        <div><strong>Options:</strong></div>
+                        <div>${optsHtml}</div>
+                        <div><strong>Correct:</strong> ${String.fromCharCode(65+corr)}. ${escapeHtml(optsArray[corr])}</div>
+                    </div>`;
+        }
+        document.getElementById('reviewList').innerHTML = html;
+        if(window.MathJax) MathJax.typesetPromise();
+    }
+    
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr) {
+        if (!GOOGLE_SHEET_URL) return;
+        try {
+            await fetch(GOOGLE_SHEET_URL, { 
+                method: 'POST', 
+                mode: 'no-cors', 
+                headers: { 'Content-Type': 'application/json' }, 
+                body: JSON.stringify({ 
+                    "Candidate Name": candidateName, 
+                    "Subject": dashboard.subject, 
+                    "Topic Name": dashboard.topic, 
+                    "Total": QUESTIONS.length, 
+                    "Correct": correct, 
+                    "Incorrect": incorrect, 
+                    "Not Attempted": na, 
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1), 
+                    "Time Taken": timeStr, 
+                    "Timestamp": new Date().toISOString() 
+                }) 
+            });
+        } catch(err) { console.error(err); }
+    }
+    
+    function submitQuiz() {
+        if(isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        localStorage.removeItem('tetEnglishAutoResume');
+        let correct=0, incorrect=0, na=0;
+        for(let i=0; i<QUESTIONS.length; i++) { 
+            if(userAnswers[i] === null) na++; 
+            else if(userAnswers[i] === QUESTIONS[i].answer) correct++; 
+            else incorrect++; 
+        }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,'0')}`;
+        document.getElementById('finalScore').innerText = correct;
+        document.getElementById('correctCountStat').innerText = correct;
+        document.getElementById('incorrectCountStat').innerText = incorrect;
+        document.getElementById('notAttemptedStat').innerText = na;
+        document.getElementById('accuracySpan').innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById('timeTakenSpan').innerHTML = timeStr;
+        document.getElementById('resultCandidateName').innerHTML = `🏆 ${escapeHtml(candidateName)}`;
+        document.getElementById('resultTopicName').innerHTML = `📖 Topic: ${escapeHtml(dashboard.topic)}`;
+        const pct = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById('scoreRing').style.setProperty('--score-percent', `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr);
+        document.getElementById('startScreen').style.display = 'none';
+        document.getElementById('quizContainer').style.display = 'none';
+        document.getElementById('resultContainer').style.display = 'block';
+    }
+    
+    function startNewExam() {
+        const name = document.getElementById('candidateNameInput').value.trim();
+        if(!name){ alert(translations[currentLanguage].enterName); return; }
+        localStorage.removeItem('tetEnglishAutoResume');
+        candidateName = name;
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true;
+        isSubmitted = false;
+        document.getElementById('quizCandidateName').innerText = candidateName;
+        renderQuestion();
+        startTimer();
+        document.getElementById('startScreen').style.display = 'none';
+        document.getElementById('quizContainer').style.display = 'block';
+        document.getElementById('resultContainer').style.display = 'none';
+        autoSaveState();
+    }
+    
+    function toggleTheme() { 
+        const curr = document.documentElement.getAttribute('data-theme');
+        const next = curr === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('themeGreen', next);
+        const darkBtn = document.getElementById('darkModeToggleBtn');
+        if(darkBtn) darkBtn.innerText = next === 'dark' ? translations[currentLanguage].lightMode : translations[currentLanguage].darkMode;
+    }
+    
+    function downloadPDFWithImages() {
+        alert(translations[currentLanguage].pdfAlert);
+        setTimeout(() => { window.print(); }, 100);
+    }
+    
+    renderDashboard();
+    const savedTheme = localStorage.getItem('themeGreen');
+    if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    else document.documentElement.setAttribute('data-theme', 'light');
+    updateUILanguage();
+    checkForAutoResume();
+    window.addEventListener('beforeunload', function() {
+        if (quizActive && !isSubmitted) { autoSaveState(); }
+    });
+</script>
+</body>
+</html>
