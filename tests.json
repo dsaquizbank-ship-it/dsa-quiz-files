@@ -44,15 +44,7 @@
       "order": 2,
       "questionCount": 50,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TNA-41.html"
-    },
-    {
-      "testId": "UGZ-21",
-      "examId": "UG-TRB-ZOOLOGY",
-      "name": "BIOOOOOOOO",
-      "durationMinutes": 30,
-      "order": 3,
-      "questionCount": 36,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/index.html"
     }
+
   ]
 }
