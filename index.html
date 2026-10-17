@@ -480,9 +480,7 @@
         if(window.MathJax) MathJax.typesetPromise();
     }
 
-alert("About to send to sheet! Final Score: " + finalScore + " | URL: " + GOOGLE_SHEET_URL);
-sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);    
-async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
         if (!GOOGLE_SHEET_URL) return;
         try {
             await fetch(GOOGLE_SHEET_URL, {
