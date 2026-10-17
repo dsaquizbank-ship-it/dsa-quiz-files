@@ -228,35 +228,426 @@
         negativeMark: 0.25 // Changed to 0.25 for negative marking
     };
 
-    let QUESTIONS = [
-        {
-            type: "mcq",
-            en: "What organism produces a sperm reaching a length of 12 mm?",
-            optionsEn: ["Sea urchin", "Hemipteran bug", "Opossum", "Toad-fish"],
-            ta: "12 மிமீ நீளத்தை எட்டும் விந்தணுவை உற்பத்தி செய்யும் உயிரினம் எது?",
-            optionsTa: ["கடல் முள்ளெலி", "ஹெமிப்டெரான் பூச்சி", "ஒபசம்", "தoad-மீன்"],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            type: "rc",
-            en: "<b>PASSAGE:</b><br>What organism produces a sperm reaching a length of 12 mm?<br><br><b>Q: Which of the following taxon-sperm associations is FALSE based on the text?</b>",
-            optionsEn: ["Sea urchin sperm size - 40μ", "Hemipteran bug sperm length - 12 mm", "Toad-fish sperm - Biflagellate", "Grasshopper sperm - Monoflagellate with no head association"],
-            ta: "<b>பத்தி:</b><br>12 மிமீ நீளத்தை எட்டும் விந்தணுவை உற்பத்தி செய்யும் உயிரினம் எது?<br><br><b>கேள்வி: உரையின் அடிப்படையில் பின்வரும் வகைப்பாட்டு-விந்தணு தொடர்புகளில் எது தவறானது?</b>",
-            optionsTa: ["கடல் முள்ளெலி விந்தணு அளவு - 40μ", "ஹெமிப்டெரான் பூச்சி விந்தணு நீளம் - 12 மிமீ", "தoad-மீன் விந்தணு - இரட்டைக் கசையிழை", "வெட்டுக்கிளி விந்தணு - தலை தொடர்பு இல்லாத ஒற்றைக் கசையிழை"],
-            answer: 3,
-            imageUrl: null
-        },
-        {
-            type: "puzzle",
-            en: "<b>Directions (Q3):</b> Study the following information carefully.<br><br>Eight people A, B, C, D, E, F, G and H are sitting around a circular table facing the center. A sits second to the right of B. C is an immediate neighbor of A.<br><br><b>Who sits third to the left of H?</b>",
-            optionsEn: ["A", "B", "C", "D"],
-            ta: "<b>வழிமுறைகள் (Q3):</b> பின்வரும் தகவல்களை கவனமாக படிக்கவும்.<br><br>எட்டு நபர்கள் A, B, C, D, E, F, G மற்றும் H ஒரு வட்ட மேசையைச் சுற்றி மையத்தை நோக்கி அமர்ந்துள்ளனர். A, B-க்கு வலதுபுறம் இரண்டாவதாக அமர்ந்துள்ளார். C, A-வுக்கு அருகில் அமர்ந்துள்ளார்.<br><br><b>H-க்கு இடதுபுறம் மூன்றாவதாக அமர்ந்திருப்பது யார்?</b>",
-            optionsTa: ["A", "B", "C", "D"],
-            answer: 1,
-            imageUrl: null
-        }
-    ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let dashboard = {
+    examTitle: "PG TRB ENGLISH",
+    testNo: "PGE-46",
+    date: "18/10/2026",
+    subject: "ENGLISH",
+    topic: "Tennyson's Ulysses",
+    duration: "20",
+    totalMarks: "25",
+    negativeMark: 0
+};
+
+let QUESTIONS = [
+    {
+        en: "In which year was \"Ulysses\" first published?",
+        optionsEn: ["1832", "1833", "1842", "1850"],
+        ta: "",
+        optionsTa: [],
+        answer: 2,
+        imageUrl: null
+    },
+    {
+        en: "\"Ulysses\" is best described as which of the following poetic forms?",
+        optionsEn: ["An epic simile", "A dramatic monologue", "A lyrical ballad", "An ode"],
+        ta: "",
+        optionsTa: [],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "Who is the speaker of the poem?",
+        optionsEn: ["Telemachus", "Homer", "Ulysses (Odysseus)", "Dante"],
+        ta: "",
+        optionsTa: [],
+        answer: 2,
+        imageUrl: null
+    },
+    {
+        en: "According to the poem, Ulysses is the king of which place?",
+        optionsEn: ["Ithaca", "Troy", "Sparta", "Elysium"],
+        ta: "",
+        optionsTa: [],
+        answer: 0,
+        imageUrl: null
+    },
+    {
+        en: "Which two major literary sources primarily influenced Tennyson's portrayal of Ulysses?",
+        optionsEn: [
+            "Virgil's Aeneid and Ovid's Metamorphoses",
+            "Homer's Odyssey and Dante's Inferno",
+            "Sophocles' Ajax and Euripides' Trojan Women",
+            "Chaucer's Troilus and Shakespeare's Troilus and Cressida"
+        ],
+        ta: "",
+        optionsTa: [],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "Tennyson wrote \"Ulysses\" shortly after the death of which close friend?",
+        optionsEn: ["Edward FitzGerald", "Thomas Carlyle", "Robert Browning", "Arthur Henry Hallam"],
+        ta: "",
+        optionsTa: [],
+        answer: 3,
+        imageUrl: null
+    },
+    {
+        en: "How does Ulysses describe the people of Ithaca (his subjects)?",
+        optionsEn: [
+            "A savage race that hoards, sleeps, and feeds",
+            "A noble and loyal race",
+            "A race of warriors",
+            "A god-fearing people"
+        ],
+        ta: "",
+        optionsTa: [],
+        answer: 0,
+        imageUrl: null
+    },
+    {
+        en: "What does Ulysses intend to leave to his son, Telemachus?",
+        optionsEn: [
+            "His ship and crew",
+            "His memories of Troy",
+            "The sceptre and the island",
+            "His armor and shield"
+        ],
+        ta: "",
+        optionsTa: [],
+        answer: 2,
+        imageUrl: null
+    },
+    {
+        en: "In the poem, how does Ulysses view his son Telemachus?",
+        optionsEn: [
+            "As a weak and incapable ruler",
+            "As a traitor",
+            "As a fellow adventurer",
+            "As a suitable successor who is prudent and blameless"
+        ],
+        ta: "",
+        optionsTa: [],
+        answer: 3,
+        imageUrl: null
+    },
+    {
+        en: "What does the phrase \"drink life to the lees\" mean?",
+        optionsEn: [
+            "To live life to the fullest extent",
+            "To avoid the bitterness of life",
+            "To waste one's life away",
+            "To drink only the finest wines"
+        ],
+        ta: "",
+        optionsTa: [],
+        answer: 0,
+        imageUrl: null
+    },
+    {
+        en: "Ulysses says, \"I am a part of all that I have met.\" What does this suggest?",
+        optionsEn: [
+            "He is a social chameleon",
+            "His identity has been shaped by his vast experiences",
+            "He has lost his original self",
+            "He prefers the company of strangers"
+        ],
+        ta: "",
+        optionsTa: [],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "What does Ulysses mean when he says, \"I am become a name\"?",
+        optionsEn: [
+            "He has been forgotten by his people",
+            "He has lost his identity",
+            "He is renowned and legendary",
+            "He is merely a title, not a man"
+        ],
+        ta: "",
+        optionsTa: [],
+        answer: 2,
+        imageUrl: null
+    },
+    {
+        en: "In the metaphor of the sword, what does Ulysses fear will happen if he remains idle?",
+        optionsEn: [
+            "It will break",
+            "It will rust unburnished",
+            "It will be stolen",
+            "It will lose its edge"
+        ],
+        ta: "",
+        optionsTa: [],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "What does Ulysses compare knowledge to in the poem?",
+        optionsEn: ["A sinking star", "A shining sun", "A deep ocean", "A vast arch"],
+        ta: "",
+        optionsTa: [],
+        answer: 0,
+        imageUrl: null
+    },
+    {
+        en: "Who are the \"Hyades\" mentioned in the poem?",
+        optionsEn: [
+            "A group of Greek warriors",
+            "A constellation of stars associated with rain",
+            "The gods of the underworld",
+            "Ulysses's old sailors"
+        ],
+        ta: "",
+        optionsTa: [],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "What does Ulysses plan to do with his old mariners?",
+        optionsEn: [
+            "Sail with them once more to seek a newer world",
+            "Leave them behind to guard Ithaca",
+            "Send them back to their families",
+            "Sacrifice them to the gods"
+        ],
+        ta: "",
+        optionsTa: [],
+        answer: 0,
+        imageUrl: null
+    },
+    {
+        en: "According to Ulysses, what is the ultimate goal of his final voyage?",
+        optionsEn: [
+            "To conquer new lands",
+            "To find treasure",
+            "To sail beyond the sunset and the baths of all the western stars",
+            "To return to Troy"
+        ],
+        ta: "",
+        optionsTa: [],
+        answer: 2,
+        imageUrl: null
+    },
+    {
+        en: "What does the phrase \"the deep / Moans round with many voices\" suggest about Ulysses's surroundings at the start of the poem?",
+        optionsEn: [
+            "The sounds of the city",
+            "The call of the sea and adventure",
+            "The voices of his subjects complaining",
+            "The ghosts of his past crew"
+        ],
+        ta: "",
+        optionsTa: [],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "How does Ulysses describe his past experiences of battle?",
+        optionsEn: [
+            "As a delight, having \"drunk delight of battle with my peers\"",
+            "With regret and horror",
+            "As a necessary evil",
+            "He refuses to speak of them"
+        ],
+        ta: "",
+        optionsTa: [],
+        answer: 0,
+        imageUrl: null
+    },
+    {
+        en: "What does Ulysses mean by \"Life piled on life / Were all too little\"?",
+        optionsEn: [
+            "Life is too short to waste on family",
+            "Even an infinite amount of life would not be enough to satisfy his thirst for experience",
+            "He wishes he could live forever",
+            "He regrets his past actions"
+        ],
+        ta: "",
+        optionsTa: [],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "In the poem, what is the \"untravelled world\" compared to?",
+        optionsEn: ["A dark cave", "A stormy sea", "A closed book", "A fading gleam or margin"],
+        ta: "",
+        optionsTa: [],
+        answer: 3,
+        imageUrl: null
+    },
+    {
+        en: "Which of the following lines is NOT from \"Ulysses\"?",
+        optionsEn: [
+            "\"I cannot rest from travel\"",
+            "\"To strive, to seek, to find, and not to yield\"",
+            "\"The woods decay, the woods decay and fall\"",
+            "\"I am become a name\""
+        ],
+        ta: "",
+        optionsTa: [],
+        answer: 2,
+        imageUrl: null
+    },
+    {
+        en: "In Dante's Inferno, which Ulysses is used as a contrast to Tennyson's, what is Ulysses's fate?",
+        optionsEn: [
+            "He returns safely to Ithaca",
+            "He is killed by Telemachus",
+            "He is condemned for pursuing knowledge beyond human bounds",
+            "He becomes a god"
+        ],
+        ta: "",
+        optionsTa: [],
+        answer: 2,
+        imageUrl: null
+    },
+    {
+        en: "What tone does Ulysses adopt when describing his son Telemachus's future rule?",
+        optionsEn: [
+            "Jealous and angry",
+            "Respectful but indifferent to the work itself",
+            "Fearful and anxious",
+            "Proud and eager to help"
+        ],
+        ta: "",
+        optionsTa: [],
+        answer: 1,
+        imageUrl: null
+    },
+    {
+        en: "What does Ulysses mean by \"the gulfs\" in the final stanza?",
+        optionsEn: [
+            "The unknown dangers and the possibility of death",
+            "The waters around Ithaca",
+            "The gap between him and his son",
+            "The memories of the Trojan War"
+        ],
+        ta: "",
+        optionsTa: [],
+        answer: 0,
+        imageUrl: null
+    }
+];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     dashboard.totalMarks = QUESTIONS.length.toString();
     
