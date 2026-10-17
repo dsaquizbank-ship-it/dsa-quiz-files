@@ -26,6 +26,10 @@
             --shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
             --correct-color: #dc2626;
             --modal-overlay: rgba(0,0,0,0.5);
+            --rc-bg: #f8fafc;
+            --rc-border: #3b82f6;
+            --puzzle-bg: #fffbeb;
+            --puzzle-border: #f59e0b;
         }
         [data-theme="dark"] {
             --bg-gradient: linear-gradient(135deg, #022c22, #064e3b);
@@ -40,6 +44,10 @@
             --shadow: 0 10px 25px -5px rgba(0,0,0,0.4);
             --correct-color: #f87171;
             --modal-overlay: rgba(0,0,0,0.7);
+            --rc-bg: #1e293b;
+            --rc-border: #60a5fa;
+            --puzzle-bg: #451a03;
+            --puzzle-border: #fbbf24;
         }
         body { font-family: 'Segoe UI', system-ui, 'Inter', sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap');
@@ -54,19 +62,12 @@
         .language-toggle { background: var(--accent-dark); color: white; border: none; }
         .language-toggle:hover { background: var(--accent); }
         .question-container { padding: 20px 16px; }
-        .question-text { font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.5; }
-        .question-image {
-            display: block;
-            max-width: 100%;
-            max-height: 250px;
-            width: auto;
-            height: auto;
-            margin: 0 auto 20px auto;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border: 1px solid var(--border-light);
-            object-fit: contain;
-        }
+        
+        /* Smart styles for RC and Puzzles */
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin-bottom: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin-bottom: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.5; }
+        
         .option-item { background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; }
         .option-item:hover { background: var(--border-light); transform: scale(0.99); }
         .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
@@ -99,8 +100,6 @@
         .btn-pdf { background: #ef4444; }
         .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
         .start-panel > * { width: 100%; }
-        .name-input { width: 100%; padding: 14px 18px; border-radius: 60px; border: 2px solid var(--border-light); background: var(--card-bg); color: var(--text-primary); font-size: 1rem; outline: none; }
-        .name-input:focus { border-color: var(--accent); }
         .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
         .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
@@ -176,52 +175,8 @@
     let currentLanguage = 'en';
     
     const translations = {
-        en: {
-            candidateNameLabel: "Candidate Name",
-            startExamBtn: "▶ START NEW EXAM",
-            prevBtn: "◀ PREV",
-            nextBtn: "NEXT ▶",
-            submitBtn: "✅ SUBMIT QUIZ",
-            paletteTitle: "📌 JUMP TO QUESTION",
-            quizCompleted: "✨ QUIZ COMPLETED ✨",
-            correct: "✅ Correct",
-            incorrect: "❌ Incorrect",
-            notAttempted: "⚠️ Not Attempted",
-            accuracy: "Accuracy",
-            timeTaken: "Time taken",
-            newAttempt: "🔄 New Attempt",
-            downloadPdf: "📄 Download PDF (with Images)",
-            detailedReview: "📖 Detailed Review (with images)",
-            enterName: "Enter candidate name",
-            pdfAlert: "📄 Preparing PDF. The browser's print dialog will open.\nChoose 'Save as PDF' to download.\nAll images will be included.",
-            langToggleBtnEn: "தமிழ்",
-            langToggleBtnTa: "English",
-            darkMode: "🌙 Dark",
-            lightMode: "☀️ Light"
-        },
-        ta: {
-            candidateNameLabel: "விண்ணப்பதாரர் பெயர்",
-            startExamBtn: "▶ START NEW EXAM",
-            prevBtn: "◀ முந்தைய",
-            nextBtn: "அடுத்த ▶",
-            submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்",
-            paletteTitle: "📌 கேள்விக்குச் செல்க",
-            quizCompleted: "✨ தேர்வு முடிந்தது ✨",
-            correct: "✅ சரியானவை",
-            incorrect: "❌ தவறானவை",
-            notAttempted: "⚠️ முயற்சிக்கப்படாதவை",
-            accuracy: "துல்லியம்",
-            timeTaken: "எடுத்த நேரம்",
-            newAttempt: "🔄 புதிய முயற்சி",
-            downloadPdf: "📄 PDF ஐப் பதிவிறக்கவும் (படங்களுடன்)",
-            detailedReview: "📖 விரிவான மதிப்பாய்வு (படங்களுடன்)",
-            enterName: "விண்ணப்பதாரர் பெயரை உள்ளிடுக",
-            pdfAlert: "📄 PDF தயாராகிறது. உலாவியின் அச்சு உரையாடல் திறக்கும்.\n'PDF ஆகச் சேமி' என்பதைத் தேர்ந்தெடுக்கவும்.\nஅனைத்துப் படங்களும் சேர்க்கப்படும்.",
-            langToggleBtnEn: "தமிழ்",
-            langToggleBtnTa: "English",
-            darkMode: "🌙 இருண்ட",
-            lightMode: "☀️ ஒளி"
-        }
+        en: { candidateNameLabel: "Candidate Name", startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", downloadPdf: "📄 Download PDF (with Images)", detailedReview: "📖 Detailed Review (with images)", pdfAlert: "📄 Preparing PDF.", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 Dark", lightMode: "☀️ Light" },
+        ta: { candidateNameLabel: "விண்ணப்பதாரர் பெயர்", startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", downloadPdf: "📄 PDF ஐப் பதிவிறக்கவும்", detailedReview: "📖 விரிவான மதிப்பாய்வு", pdfAlert: "📄 PDF தயாராகிறது.", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 இருண்ட", lightMode: "☀️ ஒளி" }
     };
     
     function updateUILanguage() {
@@ -249,23 +204,15 @@
         const detailedReview = document.getElementById('detailedReviewLabel');
         if (detailedReview) detailedReview.innerText = t.detailedReview;
         const langBtn = document.getElementById('langToggleBtn');
-        if (langBtn) {
-            langBtn.innerText = currentLanguage === 'en' ? t.langToggleBtnEn : t.langToggleBtnTa;
-        }
-        if (quizActive && !isSubmitted && document.getElementById('navButtons')) {
-            updateNavButtons();
-        }
+        if (langBtn) langBtn.innerText = currentLanguage === 'en' ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && document.getElementById('navButtons')) updateNavButtons();
     }
     
     function toggleLanguage() {
         currentLanguage = currentLanguage === 'en' ? 'ta' : 'en';
         updateUILanguage();
-        if (quizActive && !isSubmitted && QUESTIONS.length > 0) {
-            renderQuestion();
-        }
-        if (document.getElementById('resultContainer').style.display === 'block') {
-            buildDetailedReview();
-        }
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById('resultContainer').style.display === 'block') buildDetailedReview();
         renderDashboard();
     }
 
@@ -281,6 +228,7 @@
 
     let QUESTIONS = [
         {
+            type: "mcq",
             en: "What organism produces a sperm reaching a length of 12 mm?",
             optionsEn: ["Sea urchin", "Hemipteran bug", "Opossum", "Toad-fish"],
             ta: "12 மிமீ நீளத்தை எட்டும் விந்தணுவை உற்பத்தி செய்யும் உயிரினம் எது?",
@@ -289,611 +237,26 @@
             imageUrl: null
         },
         {
-            en: "Into how many primary types are sperms classified based on the presence or absence of flagella?",
-            optionsEn: ["Three types", "Four types", "Two types", "Five types"],
-            ta: "கசையிழை இருப்பு அல்லது இல்லாமையின் அடிப்படையில் விந்தணுக்கள் எத்தனை முதன்மை வகைகளாக வகைப்படுத்தப்படுகின்றன?",
-            optionsTa: ["மூன்று வகைகள்", "நான்கு வகைகள்", "இரண்டு வகைகள்", "ஐந்து வகைகள்"],
-            answer: 2,
-            imageUrl: null
-        },
-        {
-            en: "Which beetle is mentioned in the text as an example of an animal with conjugate sperms?",
-            optionsEn: ["Dytiscus", "Melolontha", "Cicindela", "Carabus"],
-            ta: "இணைந்த விந்தணுக்கள் கொண்ட விலங்குக்கு எடுத்துக்காட்டாக உரையில் குறிப்பிடப்பட்டுள்ள வண்டு எது?",
-            optionsTa: ["டைடிஸ்கஸ்", "மெலolontha", "சிசின்டெலா", "கராபஸ்"],
-            answer: 0,
-            imageUrl: null
-        },
-        {
-            en: "Which of the following taxon-sperm associations is FALSE based on the text?",
-            optionsEn: [
-                "Sea urchin sperm size - 40μ",
-                "Hemipteran bug sperm length - 12 mm",
-                "Toad-fish sperm - Biflagellate",
-                "Grasshopper sperm - Monoflagellate with no head association"
-            ],
-            ta: "உரையின் அடிப்படையில் பின்வரும் வகைப்பாட்டு-விந்தணு தொடர்புகளில் எது தவறானது?",
-            optionsTa: [
-                "கடல் முள்ளெலி விந்தணு அளவு - 40μ",
-                "ஹெமிப்டெரான் பூச்சி விந்தணு நீளம் - 12 மிமீ",
-                "தoad-மீன் விந்தணு - இரட்டைக் கசையிழை",
-                "வெட்டுக்கிளி விந்தணு - தலை தொடர்பு இல்லாத ஒற்றைக் கசையிழை"
-            ],
+            type: "rc",
+            en: "<b>PASSAGE:</b><br>What organism produces a sperm reaching a length of 12 mm?<br><br><b>Q: Which of the following taxon-sperm associations is FALSE based on the text?</b>",
+            optionsEn: ["Sea urchin sperm size - 40μ", "Hemipteran bug sperm length - 12 mm", "Toad-fish sperm - Biflagellate", "Grasshopper sperm - Monoflagellate with no head association"],
+            ta: "<b>பத்தி:</b><br>12 மிமீ நீளத்தை எட்டும் விந்தணுவை உற்பத்தி செய்யும் உயிரினம் எது?<br><br><b>கேள்வி: உரையின் அடிப்படையில் பின்வரும் வகைப்பாட்டு-விந்தணு தொடர்புகளில் எது தவறானது?</b>",
+            optionsTa: ["கடல் முள்ளெலி விந்தணு அளவு - 40μ", "ஹெமிப்டெரான் பூச்சி விந்தணு நீளம் - 12 மிமீ", "தoad-மீன் விந்தணு - இரட்டைக் கசையிழை", "வெட்டுக்கிளி விந்தணு - தலை தொடர்பு இல்லாத ஒற்றைக் கசையிழை"],
             answer: 3,
             imageUrl: null
         },
         {
-            en: "What was the general consensus on the status of sperm prior to the 18th century, contrasted with its modern definition?",
-            optionsEn: [
-                "Considered an active gamete vs. modern view as a parasite",
-                "Considered parasites living inside the body vs. modern view as a specialized male gamete",
-                "Considered a nutritive carrier vs. modern view as non-functional waste",
-                "Considered a diploid cell vs. modern view as a haploid carrier"
-            ],
-            ta: "18 ஆம் நூற்றாண்டுக்கு முன் விந்தணுவின் நிலை குறித்த பொதுவான கருத்து என்ன, அதன் நவீன வரையறையுடன் ஒப்பிடும்போது?",
-            optionsTa: [
-                "செயலில் உள்ள பாலணு என்று கருதப்பட்டது vs. நவீன பார்வையில் ஒரு ஒட்டுண்ணி",
-                "உடலுக்குள் வாழும் ஒட்டுண்ணிகள் என்று கருதப்பட்டது vs. நவீன பார்வையில் ஒரு சிறப்பு ஆண் பாலணு",
-                "ஊட்டச்சத்து கடத்தி என்று கருதப்பட்டது vs. நவீன பார்வையில் செயல்படாத கழிவு",
-                "இரட்டை மடியம் செல் என்று கருதப்பட்டது vs. நவீன பார்வையில் ஒற்றை மடியம் கடத்தி"
-            ],
+            type: "puzzle",
+            en: "<b>Directions (Q3):</b> Study the following information carefully.<br><br>Eight people A, B, C, D, E, F, G and H are sitting around a circular table facing the center. A sits second to the right of B. C is an immediate neighbor of A.<br><br><b>Who sits third to the left of H?</b>",
+            optionsEn: ["A", "B", "C", "D"],
+            ta: "<b>வழிமுறைகள் (Q3):</b> பின்வரும் தகவல்களை கவனமாக படிக்கவும்.<br><br>எட்டு நபர்கள் A, B, C, D, E, F, G மற்றும் H ஒரு வட்ட மேசையைச் சுற்றி மையத்தை நோக்கி அமர்ந்துள்ளனர். A, B-க்கு வலதுபுறம் இரண்டாவதாக அமர்ந்துள்ளார். C, A-வுக்கு அருகில் அமர்ந்துள்ளார்.<br><br><b>H-க்கு இடதுபுறம் மூன்றாவதாக அமர்ந்திருப்பது யார்?</b>",
+            optionsTa: ["A", "B", "C", "D"],
             answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "What marks the posterior end of the middle piece in some species?",
-            optionsEn: ["Ring centriole", "Proximal centriole", "Distal centriole", "End piece"],
-            ta: "சில இனங்களில் நடுப்பகுதியின் பின்புற முனையை எது குறிக்கிறது?",
-            optionsTa: ["வளைய சென்ட்ரியோல்", "ப்ராக்சிமல் சென்ட்ரியோல்", "டிஸ்டல் சென்ட்ரியோல்", "இறுதிப் பகுதி"],
-            answer: 0,
-            imageUrl: null
-        },
-        {
-            en: "What are the two distinct regions of the sperm tail?",
-            optionsEn: ["Head and middle piece", "Main piece and end piece", "Proximal and distal pieces", "Acrosome and nucleus"],
-            ta: "விந்தணு வாலின் இரண்டு தனித்துவமான பகுதிகள் யாவை?",
-            optionsTa: ["தலை மற்றும் நடுப்பகுதி", "முக்கிய பகுதி மற்றும் இறுதிப் பகுதி", "ப்ராக்சிமல் மற்றும் டிஸ்டல் பகுதிகள்", "அக்ரோசோம் மற்றும் அணுக்கரு"],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "What component does the sperm supply to the egg for cell division?",
-            optionsEn: ["Mitochondria", "A centriole or division centre", "Acrosome", "Ribosomes"],
-            ta: "செல் பிரிவுக்காக விந்தணு முட்டைக்கு எந்தக் கூறை வழங்குகிறது?",
-            optionsTa: ["மைட்டோகாண்ட்ரியா", "ஒரு சென்ட்ரியோல் அல்லது பிரிவு மையம்", "அக்ரோசோம்", "ரைபோசோம்கள்"],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "What surrounds the axial filament of the tail in terms of double microtubules?",
-            optionsEn: [
-                "A ring of nine double microtubules",
-                "A ring of two double microtubules",
-                "A ring of twelve double microtubules",
-                "A ring of four double microtubules"
-            ],
-            ta: "இரட்டை நுண்குழாய்கள் அடிப்படையில் வாலின் அச்சு இழையை எது சூழ்கிறது?",
-            optionsTa: [
-                "ஒன்பது இரட்டை நுண்குழாய்களின் வளையம்",
-                "இரண்டு இரட்டை நுண்குழாய்களின் வளையம்",
-                "பன்னிரண்டு இரட்டை நுண்குழாய்களின் வளையம்",
-                "நான்கு இரட்டை நுண்குழாய்களின் வளையம்"
-            ],
-            answer: 0,
-            imageUrl: null
-        },
-        {
-            en: "Which of the following statements about the sperm is TRUE?",
-            optionsEn: [
-                "The sperm supplies nutritive material to the embryo",
-                "The sperm supplies a haploid nucleus to the embryo",
-                "The sperm has four centrioles in the middle piece",
-                "The tail has no axial filament"
-            ],
-            ta: "விந்தணு பற்றிய பின்வரும் கூற்றுகளில் எது சரியானது?",
-            optionsTa: [
-                "விந்தணு கருவுக்கு ஊட்டச்சத்துப் பொருளை வழங்குகிறது",
-                "விந்தணு கருவுக்கு ஒற்றை மடியம் அணுக்கருவை வழங்குகிறது",
-                "விந்தணுவின் நடுப்பகுதியில் நான்கு சென்ட்ரியோல்கள் உள்ளன",
-                "வாலில் அச்சு இழை இல்லை"
-            ],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "Which fishes possess oval-shaped eggs according to the text?",
-            optionsEn: ["Cartilaginous fishes", "Ganoid fishes", "Lungfishes", "Bony fishes generally"],
-            ta: "உரையின் படி எந்த மீன்கள் நீள்வட்ட வடிவ முட்டைகளைக் கொண்டுள்ளன?",
-            optionsTa: ["குருத்தெலும்பு மீன்கள்", "கனாய்டு மீன்கள்", "நுரையீரல் மீன்கள்", "பொதுவாக எலும்பு மீன்கள்"],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "What is the true cellular shape of bird egg cells internally, despite appearing externally oval?",
-            optionsEn: ["Cylindrical", "Spherical", "Elongated", "Irregular"],
-            ta: "வெளிப்புறமாக நீள்வட்டமாகத் தோன்றினாலும், பறவை முட்டை செல்களின் உண்மையான உள் செல் வடிவம் என்ன?",
-            optionsTa: ["உருளை வடிவம்", "கோள வடிவம்", "நீளமானது", "ஒழுங்கற்றது"],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "What happens to the vitelline membrane immediately after fertilization?",
-            optionsEn: [
-                "It dissolves completely",
-                "It becomes separated and lifted off from the surface of the egg",
-                "It thickens into a hard shell",
-                "It merges with the nucleus"
-            ],
-            ta: "கருவுறுதலுக்குப் பிறகு உடனடியாக விடெல்லைன் சவ்வுக்கு என்ன நடக்கிறது?",
-            optionsTa: [
-                "இது முற்றிலும் கரைந்துவிடும்",
-                "இது முட்டையின் மேற்பரப்பிலிருந்து பிரிந்து மேலே உயர்த்தப்படுகிறது",
-                "இது கடினமான ஓட்டாக தடிமனாகிறது",
-                "இது அணுக்கருவுடன் இணைகிறது"
-            ],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "What is the vitelline membrane called after fertilization?",
-            optionsEn: ["Plasma membrane", "Chorion", "Fertilization membrane", "Primary membrane"],
-            ta: "கருவுறுதலுக்குப் பிறகு விடெல்லைன் சவ்வு என அழைக்கப்படுகிறது?",
-            optionsTa: ["பிளாஸ்மா சவ்வு", "கோரியான்", "கருவுறுதல் சவ்வு", "முதன்மை சவ்வு"],
-            answer: 2,
-            imageUrl: null
-        },
-        {
-            en: "Which of the following is TRUE regarding primary membranes?",
-            optionsEn: [
-                "They are secreted by the egg-cytoplasm",
-                "They are produced by the mother's genital ducts",
-                "They are formed exclusively by follicle cells",
-                "They are absent in all vertebrates"
-            ],
-            ta: "முதன்மை சவ்வுகள் தொடர்பாக பின்வருவனவற்றுள் எது சரியானது?",
-            optionsTa: [
-                "அவை முட்டை-சைட்டோபிளாஸத்தால் சுரக்கப்படுகின்றன",
-                "அவை தாயின் இனப்பெருக்கக் குழாய்களால் உற்பத்தி செய்யப்படுகின்றன",
-                "அவை நுண்குமிழ் செல்களால் மட்டுமே உருவாகின்றன",
-                "அவை அனைத்து முதுகெலும்பிகளிலும் இல்லை"
-            ],
-            answer: 0,
-            imageUrl: null
-        },
-        {
-            en: "How many functions of the egg are explicitly listed in the introductory section of the text?",
-            optionsEn: ["Two functions", "Three functions", "Four functions", "Five functions"],
-            ta: "உரையின் அறிமுகப் பகுதியில் முட்டையின் எத்தனை செயல்பாடுகள் வெளிப்படையாக பட்டியலிடப்பட்டுள்ளன?",
-            optionsTa: ["இரண்டு செயல்பாடுகள்", "மூன்று செயல்பாடுகள்", "நான்கு செயல்பாடுகள்", "ஐந்து செயல்பாடுகள்"],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "Which structure produces tertiary membranes?",
-            optionsEn: ["Oviduct", "Ovary follicle cells", "Surface ooplasm", "Plasma membrane"],
-            ta: "எந்த அமைப்பு மூன்றாம் நிலை சவ்வுகளை உற்பத்தி செய்கிறது?",
-            optionsTa: ["கருமுட்டைக் குழாய்", "சூலக நுண்குமிழ் செல்கள்", "மேற்பரப்பு ஊபிளாஸம்", "பிளாஸ்மா சவ்வு"],
-            answer: 0,
-            imageUrl: null
-        },
-        {
-            en: "How many layers make up the white albumen in a hen's egg?",
-            optionsEn: ["Two layers", "Three layers", "Four layers", "Five layers"],
-            ta: "கோழி முட்டையில் வெள்ளை கரு எத்தனை அடுக்குகளால் ஆனது?",
-            optionsTa: ["இரண்டு அடுக்குகள்", "மூன்று அடுக்குகள்", "நான்கு அடுக்குகள்", "ஐந்து அடுக்குகள்"],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "Which structure secretes the jelly coat in amphibians?",
-            optionsEn: ["Ovary follicle cells", "Oviduct", "Surface ooplasm", "Uterus"],
-            ta: "நீர்நில வாழ்வனவற்றில் ஜெல்லி உறையை எந்த அமைப்பு சுரக்கிறது?",
-            optionsTa: ["சூலக நுண்குமிழ் செல்கள்", "கருமுட்டைக் குழாய்", "மேற்பரப்பு ஊபிளாஸம்", "கருப்பை"],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "What is another name for zona pellucida?",
-            optionsEn: ["Zona radiata", "Chorion", "Vitelline membrane", "Manchette"],
-            ta: "ஜோனா பெல்லூசிடாவின் மற்றொரு பெயர் என்ன?",
-            optionsTa: ["ஜோனா ரேடியேட்டா", "கோரியான்", "விடெல்லைன் சவ்வு", "மான்செட்"],
-            answer: 0,
-            imageUrl: null
-        },
-        {
-            en: "What is the spatial relationship between the two shell membranes in a hen's egg?",
-            optionsEn: [
-                "They do not touch each other",
-                "They adhere closely and are separated by an air space at the blunt end",
-                "They merge into a single layer entirely",
-                "They float freely inside the albumen"
-            ],
-            ta: "கோழி முட்டையில் இரண்டு ஓட்டு சவ்வுகளுக்கு இடையேயான இடஞ்சார்ந்த உறவு என்ன?",
-            optionsTa: [
-                "அவை ஒன்றையொன்று தொடுவதில்லை",
-                "அவை நெருக்கமாக ஒட்டிக்கொண்டு, மழுங்கிய முனையில் காற்று இடைவெளியால் பிரிக்கப்படுகின்றன",
-                "அவை முழுவதுமாக ஒரே அடுக்காக இணைகின்றன",
-                "அவை வெள்ளைக் கருவுக்குள் சுதந்திரமாக மிதக்கின்றன"
-            ],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "Which cellular elements protrude into the zona pellucida?",
-            optionsEn: [
-                "Microvilli and macrovilli",
-                "Centrioles and axial filaments",
-                "Mitochondria and manchette",
-                "Follicle nuclei and ooplasm granules"
-            ],
-            ta: "எந்த செல் கூறுகள் ஜோனா பெல்லூசிடாவுக்குள் நீண்டு செல்கின்றன?",
-            optionsTa: [
-                "நுண்குறுங்குடல்கள் மற்றும் பெருங்குறுங்குடல்கள்",
-                "சென்ட்ரியோல்கள் மற்றும் அச்சு இழைகள்",
-                "மைட்டோகாண்ட்ரியா மற்றும் மான்செட்",
-                "நுண்குமிழ் அணுக்கரு மற்றும் ஊபிளாஸம் துகள்கள்"
-            ],
-            answer: 0,
-            imageUrl: null
-        },
-        {
-            en: "In which organism does development completely occur within the Mermaid's Purse?",
-            optionsEn: ["Dog-fish Chiloscyllium", "Scyllium canicula shark", "Hen", "Toad"],
-            ta: "எந்த உயிரினத்தில் வளர்ச்சி முழுவதுமாக மெர்மெய்டின் பர்ஸுக்குள் நிகழ்கிறது?",
-            optionsTa: ["நாய்-மீன் சிலோசில்லியம்", "சில்லியம் கேனிகுலா சுறா", "கோழி", "தoad"],
-            answer: 0,
-            imageUrl: null
-        },
-        {
-            en: "Which primary membrane is found in ALL animals?",
-            optionsEn: ["Vitelline membrane", "Plasma membrane", "Chorion", "Zona pellucida"],
-            ta: "அனைத்து விலங்குகளிலும் காணப்படும் முதன்மை சவ்வு எது?",
-            optionsTa: ["விடெல்லைன் சவ்வு", "பிளாஸ்மா சவ்வு", "கோரியான்", "ஜோனா பெல்லூசிடா"],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "Which animals have corona radiata as a secondary membrane?",
-            optionsEn: ["Birds", "Mammals", "Amphibians", "Fishes"],
-            ta: "எந்த விலங்குகள் இரண்டாம் நிலை சவ்வாக கரோனா ரேடியேட்டாவைக் கொண்டுள்ளன?",
-            optionsTa: ["பறவைகள்", "பாலூட்டிகள்", "நீர்நில வாழ்வன", "மீன்கள்"],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "Who produces tertiary membranes according to the summary chart?",
-            optionsEn: ["The oocyte", "The follicle cells", "The genital ducts", "The surface ooplasm"],
-            ta: "சுருக்க விளக்கப்படத்தின் படி மூன்றாம் நிலை சவ்வுகளை உற்பத்தி செய்வது யார்?",
-            optionsTa: ["முட்டை செல்", "நுண்குமிழ் செல்கள்", "இனப்பெருக்கக் குழாய்கள்", "மேற்பரப்பு ஊபிளாஸம்"],
-            answer: 2,
-            imageUrl: null
-        },
-        {
-            en: "How are the corners of the Mermaid's Purse structured to aid in attachment?",
-            optionsEn: [
-                "Drawn out into four long twisted elastic filaments",
-                "Formed into sharp hooks",
-                "Formed into sticky disks",
-                "Tied with cellular threads"
-            ],
-            ta: "இணைப்புக்கு உதவ மெர்மெய்டின் பர்ஸின் மூலைகள் எவ்வாறு கட்டமைக்கப்பட்டுள்ளன?",
-            optionsTa: [
-                "நான்கு நீண்ட முறுக்கப்பட்ட மீள் இழைகளாக இழுக்கப்பட்டுள்ளன",
-                "கூர்மையான கொக்கிகளாக உருவாகின்றன",
-                "ஒட்டும் வட்டுகளாக உருவாகின்றன",
-                "செல் இழைகளால் கட்டப்படுகின்றன"
-            ],
-            answer: 0,
-            imageUrl: null
-        },
-        {
-            en: "What type of development is noted for the dog-fish Chiloscyllium?",
-            optionsEn: [
-                "Within the mother's uterus",
-                "Completed within the Mermaid's Purse",
-                "Freely in water column",
-                "Inside a plant leaf"
-            ],
-            ta: "நாய்-மீன் சிலோசில்லியத்திற்கு எந்த வகை வளர்ச்சி குறிப்பிடப்பட்டுள்ளது?",
-            optionsTa: [
-                "தாயின் கருப்பைக்குள்",
-                "மெர்மெய்டின் பர்ஸுக்குள் முடிக்கப்படுகிறது",
-                "நீர் நிரலில் சுதந்திரமாக",
-                "ஒரு தாவர இலையின் உள்ளே"
-            ],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "What characterizes an isolecithal or homolecithal egg?",
-            optionsEn: [
-                "Yolk is highly concentrated at the vegetal pole",
-                "Yolk materials are uniformly distributed throughout the eggs",
-                "Eggs contain no yolk",
-                "Yolk is confined to the animal pole"
-            ],
-            ta: "ஐசோலெசிதல் அல்லது ஹோமோலெசிதல் முட்டையை எது வகைப்படுத்துகிறது?",
-            optionsTa: [
-                "மஞ்சள் கரு தாவர துருவத்தில் அதிகம் குவிந்துள்ளது",
-                "மஞ்சள் கரு பொருட்கள் முட்டைகள் முழுவதும் சீராக விநியோகிக்கப்படுகின்றன",
-                "முட்டைகளில் மஞ்சள் கரு இல்லை",
-                "மஞ்சள் கரு விலங்கு துருவத்திற்கு மட்டுப்படுத்தப்பட்டுள்ளது"
-            ],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "Which organisms possess homolecithal or isolecithal eggs?",
-            optionsEn: ["Echinoderms and Amphioxus", "Birds and reptiles", "Bony fishes", "Monotremes"],
-            ta: "எந்த உயிரினங்கள் ஹோமோலெசிதல் அல்லது ஐசோலெசிதல் முட்டைகளைக் கொண்டுள்ளன?",
-            optionsTa: ["முட்தோலிகள் மற்றும் ஆம்பியாக்சஸ்", "பறவைகள் மற்றும் ஊர்வன", "எலும்பு மீன்கள்", "மோனோட்ரீம்கள்"],
-            answer: 0,
-            imageUrl: null
-        },
-        {
-            en: "Which of the following features is shared by mesolecithal eggs?",
-            optionsEn: [
-                "They have no yolk",
-                "They have an amount of yolk that is not very high",
-                "They have massive amounts of yolk like ostriches",
-                "They are strictly alecithal"
-            ],
-            ta: "மீசோலெசிதல் முட்டைகளால் பகிரப்படும் பின்வரும் அம்சம் எது?",
-            optionsTa: [
-                "அவற்றில் மஞ்சள் கரு இல்லை",
-                "அவை மிக அதிகமில்லாத அளவு மஞ்சள் கருவைக் கொண்டுள்ளன",
-                "அவை தீக்கோழி போன்ற பெரும் அளவு மஞ்சள் கருவைக் கொண்டுள்ளன",
-                "அவை கண்டிப்பாக அலெசிதல்"
-            ],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "Which animal groups are cited as having mesolecithal eggs?",
-            optionsEn: [
-                "Amphibians, Dipnoi, and Petromyzon",
-                "Mammals and birds",
-                "Echinoderms and Tunicates",
-                "Insects only"
-            ],
-            ta: "எந்த விலங்குக் குழுக்கள் மீசோலெசிதல் முட்டைகளைக் கொண்டவையாக மேற்கோள் காட்டப்படுகின்றன?",
-            optionsTa: [
-                "நீர்நில வாழ்வன, டிப்னோய் மற்றும் பெட்ரோமைசான்",
-                "பாலூட்டிகள் மற்றும் பறவைகள்",
-                "முட்தோலிகள் மற்றும் ட்யூனிகேட்டுகள்",
-                "பூச்சிகள் மட்டும்"
-            ],
-            answer: 0,
-            imageUrl: null
-        },
-        {
-            en: "What happens in determinate or mosaic eggs if a particular portion of the egg is removed?",
-            optionsEn: [
-                "The developing embryo will develop normally",
-                "The developing embryo will be lacking in a particular organ",
-                "Development stops completely",
-                "The egg becomes a regulative egg"
-            ],
-            ta: "நிர்ணயிக்கப்பட்ட அல்லது மொசைக் முட்டைகளில் முட்டையின் ஒரு குறிப்பிட்ட பகுதி அகற்றப்பட்டால் என்ன நடக்கிறது?",
-            optionsTa: [
-                "வளரும் கரு சாதாரணமாக வளரும்",
-                "வளரும் கருவில் ஒரு குறிப்பிட்ட உறுப்பு இல்லாமல் இருக்கும்",
-                "வளர்ச்சி முற்றிலும் நின்றுவிடும்",
-                "முட்டை ஒரு ஒழுங்குபடுத்தும் முட்டையாக மாறும்"
-            ],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "Which of the following groups contains animals with determinate or mosaic eggs?",
-            optionsEn: [
-                "Amphioxus and mammals",
-                "Polyclads, nemertines, annelids, molluscs, ascidians, etc.",
-                "Birds and reptiles",
-                "Teleost fishes"
-            ],
-            ta: "பின்வரும் குழுக்களில் எது நிர்ணயிக்கப்பட்ட அல்லது மொசைக் முட்டைகளைக் கொண்ட விலங்குகளை உள்ளடக்கியது?",
-            optionsTa: [
-                "ஆம்பியாக்சஸ் மற்றும் பாலூட்டிகள்",
-                "பாலிகிளாட்கள், நெமர்டைன்கள், அனெலிட்கள், மொல்லஸ்க்குகள், அஸிடியன்கள் போன்றவை",
-                "பறவைகள் மற்றும் ஊர்வன",
-                "டெலியோஸ்ட் மீன்கள்"
-            ],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "What type of egg is produced when development is internal and the embryo receives nutrition from the mother?",
-            optionsEn: ["Macrolecithal egg", "Alecithal egg containing negligible or no yolk", "Centrolecithal egg", "Telolecithal egg"],
-            ta: "வளர்ச்சி உள் மற்றும் கரு தாயிடமிருந்து ஊட்டச்சத்தைப் பெறும்போது எந்த வகை முட்டை உற்பத்தி செய்யப்படுகிறது?",
-            optionsTa: ["மேக்ரோலெசிதல் முட்டை", "மிகக் குறைவான அல்லது மஞ்சள் கரு இல்லாத அலெசிதல் முட்டை", "சென்ட்ரோலெசிதல் முட்டை", "டெலோலெசிதல் முட்டை"],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "What is carried by the egg when development is external?",
-            optionsEn: [
-                "A considerable amount of yolk as food for early development",
-                "No yolk at all",
-                "Maternal blood cells",
-                "Active placental tissues"
-            ],
-            ta: "வளர்ச்சி வெளிப்புறமாக இருக்கும்போது முட்டையால் என்ன கொண்டு செல்லப்படுகிறது?",
-            optionsTa: [
-                "ஆரம்ப வளர்ச்சிக்கான உணவாக கணிசமான அளவு மஞ்சள் கரு",
-                "மஞ்சள் கரு இல்லவே இல்லை",
-                "தாயின் இரத்த அணுக்கள்",
-                "செயலில் உள்ள நஞ்சுக்கொடி திசுக்கள்"
-            ],
-            answer: 0,
-            imageUrl: null
-        },
-        {
-            en: "Why does an alecithal egg contain negligible or no yolk?",
-            optionsEn: [
-                "Because development is internal and nutrition comes from the mother",
-                "Because it floats on water",
-                "Because it has a hard cleidoic shell",
-                "Because it is a centrolecithal egg"
-            ],
-            ta: "ஒரு அலெசிதல் முட்டை ஏன் மிகக் குறைவான அல்லது மஞ்சள் கரு இல்லாமல் உள்ளது?",
-            optionsTa: [
-                "வளர்ச்சி உள் மற்றும் ஊட்டச்சத்து தாயிடமிருந்து வருவதால்",
-                "இது தண்ணீரில் மிதப்பதால்",
-                "இது கடினமான கிளீடோயிக் ஓட்டைக் கொண்டிருப்பதால்",
-                "இது ஒரு சென்ட்ரோலெசிதல் முட்டை என்பதால்"
-            ],
-            answer: 0,
-            imageUrl: null
-        },
-        {
-            en: "What causes polarity to develop within the egg cytoplasm?",
-            optionsEn: [
-                "Homogeneous mixing of all substances",
-                "Unequal distribution of egg components like yolk, pigments, and cortical granules",
-                "Complete absence of yolk",
-                "Formation of the blastoderm"
-            ],
-            ta: "முட்டை சைட்டோபிளாஸத்திற்குள் துருவமுனைப்பு உருவாகக் காரணம் என்ன?",
-            optionsTa: [
-                "அனைத்து பொருட்களின் ஒரே மாதிரியான கலவை",
-                "மஞ்சள் கரு, நிறமிகள் மற்றும் புறணி துகள்கள் போன்ற முட்டை கூறுகளின் சமமற்ற விநியோகம்",
-                "மஞ்சள் கரு முற்றிலும் இல்லாமை",
-                "பிளாஸ்டோடெர்ம் உருவாக்கம்"
-            ],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "How many molecules of phosvitin are associated with one molecule of lipovitellin to form a structural unit?",
-            optionsEn: ["One molecule", "Two molecules", "Three molecules", "Four molecules"],
-            ta: "ஒரு கட்டமைப்பு அலகை உருவாக்க ஒரு லிபோவிடெல்லின் மூலக்கூறுடன் எத்தனை ஃபாஸ்விடின் மூலக்கூறுகள் தொடர்புடையவை?",
-            optionsTa: ["ஒரு மூலக்கூறு", "இரண்டு மூலக்கூறுகள்", "மூன்று மூலக்கூறுகள்", "நான்கு மூலக்கூறுகள்"],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "What shape does the structural unit formed by phosvitin and lipovitellin take?",
-            optionsEn: ["Hexagonal crystal", "Spherical ball", "Linear chain", "Triangular sheet"],
-            ta: "ஃபாஸ்விடின் மற்றும் லிபோவிடெல்லினால் உருவாகும் கட்டமைப்பு அலகு எந்த வடிவத்தை எடுக்கிறது?",
-            optionsTa: ["அறுகோண படிகம்", "கோள பந்து", "நேரியல் சங்கிலி", "முக்கோண தாள்"],
-            answer: 0,
-            imageUrl: null
-        },
-        {
-            en: "How many distinct areas are present in the egg of Dentalium based on pigment distribution?",
-            optionsEn: ["Two areas", "Three distinct areas", "Four areas", "Uniform single area"],
-            ta: "நிறமி விநியோகத்தின் அடிப்படையில் டென்டாலியத்தின் முட்டையில் எத்தனை தனித்துவமான பகுதிகள் உள்ளன?",
-            optionsTa: ["இரண்டு பகுதிகள்", "மூன்று தனித்துவமான பகுதிகள்", "நான்கு பகுதிகள்", "ஒரே மாதிரியான ஒற்றை பகுதி"],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "Which pigment is found in the sea urchin Paracentretus lividus egg?",
-            optionsEn: ["Red pigments", "Yellow-grey pigments", "Green pigments", "Brown pigments"],
-            ta: "கடல் முள்ளெலி பாரசென்ட்ரெடஸ் லிவிடஸ் முட்டையில் எந்த நிறமி காணப்படுகிறது?",
-            optionsTa: ["சிவப்பு நிறமிகள்", "மஞ்சள்-சாம்பல் நிறமிகள்", "பச்சை நிறமிகள்", "பழுப்பு நிறமிகள்"],
-            answer: 0,
-            imageUrl: null
-        },
-        {
-            en: "What is the primary function of Sertoli cells in the seminiferous tubules?",
-            optionsEn: [
-                "To produce testosterone",
-                "To nourish the developing spermatozoa",
-                "To form the basement membrane",
-                "To undergo meiotic divisions"
-            ],
-            ta: "விந்தணு நுண்குழாய்களில் செர்டோலி செல்களின் முதன்மை செயல்பாடு என்ன?",
-            optionsTa: [
-                "டெஸ்டோஸ்டிரோனை உற்பத்தி செய்ய",
-                "வளரும் விந்தணுக்களுக்கு ஊட்டமளிக்க",
-                "அடித்தள சவ்வை உருவாக்க",
-                "ஒடுக்கற்பிரிவுக்கு உட்பட"
-            ],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "How many main stages comprise the entire process of spermatogenesis?",
-            optionsEn: ["Two stages", "Three stages", "Four stages", "Five stages"],
-            ta: "விந்தணு உருவாக்கத்தின் முழு செயல்முறையும் எத்தனை முக்கிய நிலைகளை உள்ளடக்கியது?",
-            optionsTa: ["இரண்டு நிலைகள்", "மூன்று நிலைகள்", "நான்கு நிலைகள்", "ஐந்து நிலைகள்"],
-            answer: 0,
-            imageUrl: null
-        },
-        {
-            en: "What happens to the spermatogonium during the growth phase?",
-            optionsEn: [
-                "It divides into four cells",
-                "It grows and its volume increases",
-                "It degenerates completely",
-                "It loses its nucleus"
-            ],
-            ta: "வளர்ச்சி கட்டத்தில் விந்தணு மூல செல்லுக்கு என்ன நடக்கிறது?",
-            optionsTa: [
-                "இது நான்கு செல்களாகப் பிரிகிறது",
-                "இது வளர்ந்து அதன் அளவு அதிகரிக்கிறது",
-                "இது முற்றிலும் சிதைந்துவிடும்",
-                "இது அதன் அணுக்கருவை இழக்கிறது"
-            ],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "What is the cell called after the growth phase of the spermatogonium?",
-            optionsEn: ["Secondary spermatocyte", "Primary spermatocyte", "Mature sperm", "Spermatid"],
-            ta: "விந்தணு மூல செல்லின் வளர்ச்சி கட்டத்திற்குப் பிறகு அந்த செல் என அழைக்கப்படுகிறது?",
-            optionsTa: ["இரண்டாம் நிலை விந்தணு செல்", "முதன்மை விந்தணு செல்", "முதிர்ந்த விந்தணு", "விந்தணு முன்னோடி"],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "Each vertebrate possesses how many testes as stated in the topic?",
-            optionsEn: ["A single testis", "A pair of testes", "Three testes", "Four testes"],
-            ta: "தலைப்பில் கூறப்பட்டுள்ளபடி ஒவ்வொரு முதுகெலும்பியும் எத்தனை விரைகளைக் கொண்டுள்ளது?",
-            optionsTa: ["ஒற்றை விரை", "ஒரு ஜோடி விரைகள்", "மூன்று விரைகள்", "நான்கு விரைகள்"],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "What is the transformation of the spermatid into a spermatozoon called?",
-            optionsEn: ["Spermatogenesis", "Spermiogenesis", "Oogenesis", "Mitosis"],
-            ta: "விந்தணு முன்னோடி விந்தணுவாக மாறுவது என அழைக்கப்படுகிறது?",
-            optionsTa: ["விந்தணு உருவாக்கம்", "விந்தணு மாற்றம்", "முட்டை உருவாக்கம்", "இழைப்பிரிவு"],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            en: "What organelles are typically present in a typical cell form of a spermatid?",
-            optionsEn: [
-                "Nucleus, Golgi bodies, mitochondria, centriole, etc.",
-                "Chloroplasts and cell walls only",
-                "Nucleus and vacuoles only",
-                "Ribosomes and mesosomes only"
-            ],
-            ta: "விந்தணு முன்னோடியின் வழக்கமான செல் வடிவத்தில் பொதுவாக என்ன நுண்ணுறுப்புகள் உள்ளன?",
-            optionsTa: [
-                "அணுக்கரு, கோல்கை உறுப்புகள், மைட்டோகாண்ட்ரியா, சென்ட்ரியோல் போன்றவை",
-                "பசுங்கணிகங்கள் மற்றும் செல் சுவர்கள் மட்டும்",
-                "அணுக்கரு மற்றும் வெற்றிடங்கள் மட்டும்",
-                "ரைபோசோம்கள் மற்றும் மீசோசோம்கள் மட்டும்"
-            ],
-            answer: 0,
-            imageUrl: null
-        },
-        {
-            en: "What specific component forms at the tip during spermiogenesis as shown in the text?",
-            optionsEn: ["Acrosomal granule", "Axial filament", "Ring centriole", "Manchette layer"],
-            ta: "உரையில் காட்டப்பட்டுள்ளபடி விந்தணு மாற்றத்தின் போது நுனியில் உருவாகும் குறிப்பிட்ட கூறு எது?",
-            optionsTa: ["அக்ரோசோமல் துகள்", "அச்சு இழை", "வளைய சென்ட்ரியோல்", "மான்செட் அடுக்கு"],
-            answer: 0,
             imageUrl: null
         }
     ];
 
     dashboard.totalMarks = QUESTIONS.length.toString();
-    let GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbziC0ooBCFlAvfWit4lZsxFRVLnLKX56lNzW8cZmVvNiGR0A_EJG7VG8A9OgRtup88BoQ/exec";
 
     function escapeHtml(s) { if(!s) return ''; return s.replace(/[&<>]/g, function(m){ return m==='&'?'&amp;':m==='<'?'&lt;':'>'?'&gt;':m;}); }
 
@@ -916,18 +279,11 @@
 
     function autoSaveState() {
         if (!quizActive || isSubmitted) return;
-        const state = {
-            candidateName: candidateName,
-            userAnswers: userAnswers,
-            currentIndex: currentIndex,
-            timeLeft: timeLeft,
-            startTimestamp: startTimestamp,
-            isSubmitted: false,
-            quizActive: true,
-            savedAt: Date.now(),
-            language: currentLanguage
-        };
-        localStorage.setItem('tetEnglishAutoResume', JSON.stringify(state));
+        localStorage.setItem('tetEnglishAutoResume', JSON.stringify({
+            userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft,
+            startTimestamp: startTimestamp, isSubmitted: false, quizActive: true,
+            savedAt: Date.now(), language: currentLanguage
+        }));
     }
 
     function showResumePopup(savedState) {
@@ -937,28 +293,16 @@
             <div id="resumeModal" class="modal-overlay">
                 <div class="modal-container">
                     <h3>🔄 Unfinished Exam Found</h3>
-                    <p>You have an incomplete exam.<br>
-                    <strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>
-                    Last saved: ${new Date(savedState.savedAt).toLocaleTimeString()}<br><br>
-                    Do you want to continue where you left off?</p>
+                    <p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p>
                     <div class="modal-buttons">
-                        <button id="modalResumeBtn" class="btn">✅ Resume Exam</button>
+                        <button id="modalResumeBtn" class="btn">✅ Resume</button>
                         <button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button>
                     </div>
                 </div>
-            </div>
-        `;
+            </div>`;
         document.body.insertAdjacentHTML('beforeend', modalHtml);
-
-        document.getElementById('modalResumeBtn').onclick = () => {
-            document.getElementById('resumeModal').remove();
-            autoResumeExam(savedState);
-        };
-        document.getElementById('modalNewBtn').onclick = () => {
-            document.getElementById('resumeModal').remove();
-            localStorage.removeItem('tetEnglishAutoResume');
-            document.getElementById('candidateNameInput').value = '';
-        };
+        document.getElementById('modalResumeBtn').onclick = () => { document.getElementById('resumeModal').remove(); autoResumeExam(savedState); };
+        document.getElementById('modalNewBtn').onclick = () => { document.getElementById('resumeModal').remove(); localStorage.removeItem('tetEnglishAutoResume'); };
     }
 
     function checkForAutoResume() {
@@ -966,37 +310,28 @@
         if (saved) {
             try {
                 const state = JSON.parse(saved);
-                if (state && !state.isSubmitted && state.candidateName && state.candidateName.trim() !== "") {
-                    document.getElementById('candidateNameInput').value = state.candidateName;
+                if (state && !state.isSubmitted) {
                     if (state.language) currentLanguage = state.language;
                     updateUILanguage();
                     showResumePopup(state);
                     return true;
-                } else {
-                    localStorage.removeItem('tetEnglishAutoResume');
-                }
+                } else localStorage.removeItem('tetEnglishAutoResume');
             } catch(e) { localStorage.removeItem('tetEnglishAutoResume'); }
         }
         return false;
     }
 
     function autoResumeExam(state) {
-        candidateName = state.candidateName;
         userAnswers = state.userAnswers;
         currentIndex = state.currentIndex;
         timeLeft = state.timeLeft;
         startTimestamp = state.startTimestamp;
-        quizActive = true;
-        isSubmitted = false;
+        quizActive = true; isSubmitted = false;
         if (state.language) currentLanguage = state.language;
         updateUILanguage();
-
-        document.getElementById('quizCandidateName').innerText = candidateName;
-        const m = Math.floor(timeLeft/60);
-        const s = timeLeft%60;
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
         document.getElementById('timerDisplay').innerText = `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
-        renderQuestion();
-        startTimer();
+        renderQuestion(); startTimer();
         document.getElementById('startScreen').style.display = 'none';
         document.getElementById('quizContainer').style.display = 'block';
         document.getElementById('resultContainer').style.display = 'none';
@@ -1007,7 +342,6 @@
         document.getElementById('resultContainer').style.display = 'none';
         document.getElementById('startScreen').style.display = 'flex';
         document.getElementById('quizContainer').style.display = 'none';
-        document.getElementById('candidateNameInput').value = '';
         if(timerInterval) clearInterval(timerInterval);
         quizActive = false;
     }
@@ -1018,17 +352,10 @@
     let timerInterval = null;
     let quizActive = false;
     let startTimestamp = null;
-    let candidateName = "";
     let isSubmitted = false;
 
-    function getCurrentQuestionText(q) {
-        let raw = currentLanguage === 'en' ? q.en : q.ta;
-        return raw;
-    }
-
-    function getCurrentOptions(q) {
-        return currentLanguage === 'en' ? q.optionsEn : q.optionsTa;
-    }
+    function getCurrentQuestionText(q) { return currentLanguage === 'en' ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === 'en' ? q.optionsEn : q.optionsTa; }
 
     function renderQuestion() {
         if (QUESTIONS.length === 0) {
@@ -1039,6 +366,18 @@
         const txt = getCurrentQuestionText(q);
         const optsArray = getCurrentOptions(q);
         const sel = userAnswers[currentIndex];
+        
+        let displayTxt = txt;
+        let extraClass = "question-text";
+
+        // Smart formatting based on question type
+        if (q.type === 'rc') {
+            displayTxt = `<div class="passage-box">${txt}</div>`;
+            extraClass = "question-text"; 
+        } else if (q.type === 'puzzle') {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
 
         let imageHtml = '';
         if (q.imageUrl && q.imageUrl.trim() !== '') {
@@ -1047,16 +386,15 @@
 
         let optsHtml = '';
         optsArray.forEach((opt, i) => {
-            optsHtml += `<div class="option-item ${sel===i ? 'selected' : ''}" onclick="selectOption(${i})">${String.fromCharCode(65+i)}. ${escapeHtml(opt)}</div>`;
+            optsHtml += `<div class="option-item ${sel===i ? 'selected' : ''}" onclick="selectOption(${i})">${String.fromCharCode(65+i)}. ${opt}</div>`;
         });
 
         document.getElementById('questionArea').innerHTML = `
             ${imageHtml}
-            <div class="question-text">${currentIndex+1}. ${txt}</div>
+            <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
             <div>${optsHtml}</div>
         `;
-        updateNavButtons();
-        updatePalette();
+        updateNavButtons(); updatePalette();
         if(window.MathJax) MathJax.typesetPromise();
     }
 
@@ -1064,9 +402,7 @@
         if(isSubmitted) return;
         if(userAnswers[currentIndex] === optIndex) return;
         userAnswers[currentIndex] = optIndex;
-        renderQuestion();
-        updatePalette();
-        autoSaveState();
+        renderQuestion(); updatePalette(); autoSaveState();
     }
 
     function updateNavButtons() {
@@ -1100,10 +436,8 @@
         if(timerInterval) clearInterval(timerInterval);
         timerInterval = setInterval(() => {
             if(!quizActive || isSubmitted) return;
-            if(timeLeft <= 0) {
-                clearInterval(timerInterval);
-                if(!isSubmitted) submitQuiz();
-            } else {
+            if(timeLeft <= 0) { clearInterval(timerInterval); if(!isSubmitted) submitQuiz(); }
+            else {
                 timeLeft--;
                 const m = Math.floor(timeLeft/60), s = timeLeft%60;
                 document.getElementById('timerDisplay').innerText = `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
@@ -1116,17 +450,10 @@
     function buildDetailedReview() {
         let html = '';
         for(let i=0; i<QUESTIONS.length; i++) {
-            const q = QUESTIONS[i];
-            const u = userAnswers[i];
-            const corr = q.answer;
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
             const isCorr = (u !== null && u === corr);
             const txt = getCurrentQuestionText(q);
             const optsArray = getCurrentOptions(q);
-
-            let imageHtml = '';
-            if (q.imageUrl && q.imageUrl.trim() !== '') {
-                imageHtml = `<img class="review-question-img" src="${escapeHtml(q.imageUrl)}" alt="Question image" loading="lazy"><br>`;
-            }
 
             let optsHtml = '';
             optsArray.forEach((_, idx) => {
@@ -1136,43 +463,17 @@
                 else if(u === idx && idx === corr) marker = ' ✅ (Correct)';
                 const styleClass = (idx === corr) ? 'correct-option' : '';
                 const userWrongStyle = (u === idx && idx !== corr) ? 'color:#ef4444;' : '';
-                optsHtml += `<div class="${styleClass}" style="${userWrongStyle}">${String.fromCharCode(65+idx)}. ${escapeHtml(optsArray[idx])}${marker}</div>`;
+                optsHtml += `<div class="${styleClass}" style="${userWrongStyle}">${String.fromCharCode(65+idx)}. ${optsArray[idx]}${marker}</div>`;
             });
-            const userAns = (u !== null) ? `${String.fromCharCode(65+u)}. ${escapeHtml(optsArray[u])}` : "Not answered";
+            const userAns = (u !== null) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
             html += `<div class="review-card" style="border-left-color:${isCorr?'#10b981':'#ef4444'}">
-                        <strong>Q${i+1}. ${txt}</strong>
-                        ${imageHtml}
+                        <strong>Q${i+1}. ${txt}</strong><br><br>
                         <div><strong>Your answer:</strong> ${userAns}</div>
-                        <div><strong>Options:</strong></div>
-                        <div>${optsHtml}</div>
-                        <div><strong>Correct:</strong> ${String.fromCharCode(65+corr)}. ${escapeHtml(optsArray[corr])}</div>
+                        <div><strong>Correct:</strong> ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
                     </div>`;
         }
         document.getElementById('reviewList').innerHTML = html;
         if(window.MathJax) MathJax.typesetPromise();
-    }
-
-    async function sendToGoogleSheet(correct, incorrect, na, timeStr) {
-        if (!GOOGLE_SHEET_URL) return;
-        try {
-            await fetch(GOOGLE_SHEET_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    "Candidate Name": candidateName,
-                    "Subject": dashboard.subject,
-                    "Topic Name": dashboard.topic,
-                    "Total": QUESTIONS.length,
-                    "Correct": correct,
-                    "Incorrect": incorrect,
-                    "Not Attempted": na,
-                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
-                    "Time Taken": timeStr,
-                    "Timestamp": new Date().toISOString()
-                })
-            });
-        } catch(err) { console.error(err); }
     }
 
     function submitQuiz() {
@@ -1186,7 +487,7 @@
             else incorrect++;
         }
 
-        // Send score to Android app (if running inside it)
+        // Send score to Android app
         try {
             if (window.AndroidBridge && window.AndroidBridge.submitScore) {
                 window.AndroidBridge.submitScore(JSON.stringify({
@@ -1195,46 +496,39 @@
                     correct: correct,
                     wrong: incorrect,
                     skipped: na,
-                    total: QUESTIONS.length,
-                    percent: parseFloat(((correct / QUESTIONS.length) * 100).toFixed(1))
+                    total: QUESTIONS.length
                 }));
             }
-        } catch (e) {
-            console.log("Bridge not available (browser mode)");
-        }
+        } catch (e) { console.log("Bridge error", e); }
 
         const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
         const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
         const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,'0')}`;
+        
         document.getElementById('finalScore').innerText = correct;
         document.getElementById('correctCountStat').innerText = correct;
         document.getElementById('incorrectCountStat').innerText = incorrect;
         document.getElementById('notAttemptedStat').innerText = na;
         document.getElementById('accuracySpan').innerHTML = `${acc.toFixed(1)}%`;
         document.getElementById('timeTakenSpan').innerHTML = timeStr;
-        document.getElementById('resultCandidateName').innerHTML = `🏆 ${escapeHtml(candidateName)}`;
-        document.getElementById('resultTopicName').innerHTML = `📖 Topic: ${escapeHtml(dashboard.topic)}`;
-        const pct = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
-        document.getElementById('scoreRing').style.setProperty('--score-percent', `${pct}%`);
+        document.getElementById('resultTopicName').innerHTML = `📖 Topic: ${dashboard.topic}`;
+        document.getElementById('scoreRing').style.setProperty('--score-percent', `${acc}%`);
         buildDetailedReview();
-        sendToGoogleSheet(correct, incorrect, na, timeStr);
+        
         document.getElementById('startScreen').style.display = 'none';
         document.getElementById('quizContainer').style.display = 'none';
         document.getElementById('resultContainer').style.display = 'block';
     }
 
-function startNewExam() {
-    localStorage.removeItem('tetEnglishAutoResume');
-    candidateName = "Student"; // No name required
+    function startNewExam() {
+        localStorage.removeItem('tetEnglishAutoResume');
         userAnswers = new Array(QUESTIONS.length).fill(null);
         currentIndex = 0;
         timeLeft = (parseInt(dashboard.duration) || 15) * 60;
         startTimestamp = Date.now();
-        quizActive = true;
-        isSubmitted = false;
-        document.getElementById('quizCandidateName').innerText = candidateName;
-        renderQuestion();
-        startTimer();
+        quizActive = true; isSubmitted = false;
+        document.getElementById('quizCandidateName').innerText = "Student";
+        renderQuestion(); startTimer();
         document.getElementById('startScreen').style.display = 'none';
         document.getElementById('quizContainer').style.display = 'block';
         document.getElementById('resultContainer').style.display = 'none';
@@ -1261,9 +555,7 @@ function startNewExam() {
     else document.documentElement.setAttribute('data-theme', 'light');
     updateUILanguage();
     checkForAutoResume();
-    window.addEventListener('beforeunload', function() {
-        if (quizActive && !isSubmitted) { autoSaveState(); }
-    });
+    window.addEventListener('beforeunload', function() { if (quizActive && !isSubmitted) autoSaveState(); });
 </script>
 </body>
 </html>
