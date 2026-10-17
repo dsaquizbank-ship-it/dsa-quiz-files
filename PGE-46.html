@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>BSR 23 · Sentence Rearrangement</title>
+    <title>UGZ 61</title>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
     <script>
         window.MathJax = {
@@ -26,6 +26,10 @@
             --shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
             --correct-color: #dc2626;
             --modal-overlay: rgba(0,0,0,0.5);
+            --rc-bg: #f8fafc;
+            --rc-border: #3b82f6;
+            --puzzle-bg: #fffbeb;
+            --puzzle-border: #f59e0b;
         }
         [data-theme="dark"] {
             --bg-gradient: linear-gradient(135deg, #022c22, #064e3b);
@@ -40,6 +44,10 @@
             --shadow: 0 10px 25px -5px rgba(0,0,0,0.4);
             --correct-color: #f87171;
             --modal-overlay: rgba(0,0,0,0.7);
+            --rc-bg: #1e293b;
+            --rc-border: #60a5fa;
+            --puzzle-bg: #451a03;
+            --puzzle-border: #fbbf24;
         }
         body { font-family: 'Segoe UI', system-ui, 'Inter', sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap');
@@ -54,19 +62,12 @@
         .language-toggle { background: var(--accent-dark); color: white; border: none; }
         .language-toggle:hover { background: var(--accent); }
         .question-container { padding: 20px 16px; }
-        .question-text { font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.5; }
-        .question-image {
-            display: block;
-            max-width: 100%;
-            max-height: 250px;
-            width: auto;
-            height: auto;
-            margin: 0 auto 20px auto;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border: 1px solid var(--border-light);
-            object-fit: contain;
-        }
+        
+        /* Smart styles for RC and Puzzles */
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin-bottom: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin-bottom: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.5; }
+        
         .option-item { background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; }
         .option-item:hover { background: var(--border-light); transform: scale(0.99); }
         .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
@@ -99,39 +100,13 @@
         .btn-pdf { background: #ef4444; }
         .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
         .start-panel > * { width: 100%; }
-        .name-input { width: 100%; padding: 14px 18px; border-radius: 60px; border: 2px solid var(--border-light); background: var(--card-bg); color: var(--text-primary); font-size: 1rem; outline: none; }
-        .name-input:focus { border-color: var(--accent); }
         .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
-        
-        /* Modal styles */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--modal-overlay);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
-        .modal-container {
-            background: var(--card-bg);
-            border-radius: 1.5rem;
-            max-width: 400px;
-            width: 90%;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3);
-            border: 1px solid var(--border-light);
-        }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
         .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
         .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
         .modal-buttons { display: flex; gap: 12px; justify-content: center; }
         .modal-buttons .btn { min-width: 100px; }
-        
-        /* PRINT STYLES */
         @media print {
             body { background: white; padding: 0; margin: 0; }
             .quiz-wrapper { max-width: 100%; margin: 0; border-radius: 0; box-shadow: none; background: white; }
@@ -144,7 +119,6 @@
             a, button { text-decoration: none; }
             @page { size: A4; margin: 1.5cm; }
         }
-        
         @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } .question-image { max-height: 180px; } }
     </style>
 </head>
@@ -152,8 +126,6 @@
 <div class="quiz-wrapper" id="app">
     <div id="startScreen" class="start-panel">
         <div id="dashboardContainer"></div>
-        <h3 id="candidateNameLabel">Candidate Name</h3>
-        <input type="text" id="candidateNameInput" placeholder="YOUR NAME Please" class="name-input">
         <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
     </div>
     <div id="quizContainer" style="display: none;">
@@ -187,9 +159,10 @@
                 <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
                 <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
             </div>
-            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center;">
-                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()" id="newAttemptBtnText">🔄 New Attempt</button>
-                <button id="downloadPdfBtn" class="btn btn-pdf" onclick="downloadPDFWithImages()" id="downloadPdfBtnText">📄 Download PDF (with Images)</button>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <!-- NEW LEADERBOARD BUTTON -->
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
             </div>
         </div>
         <div style="padding:0 1.2rem 1.2rem 1.2rem;">
@@ -203,59 +176,14 @@
     let currentLanguage = 'en';
     
     const translations = {
-        en: {
-            candidateNameLabel: "Candidate Name",
-            startExamBtn: "▶ START NEW EXAM",
-            prevBtn: "◀ PREV",
-            nextBtn: "NEXT ▶",
-            submitBtn: "✅ SUBMIT QUIZ",
-            paletteTitle: "📌 JUMP TO QUESTION",
-            quizCompleted: "✨ QUIZ COMPLETED ✨",
-            correct: "✅ Correct",
-            incorrect: "❌ Incorrect",
-            notAttempted: "⚠️ Not Attempted",
-            accuracy: "Accuracy",
-            timeTaken: "Time taken",
-            newAttempt: "🔄 New Attempt",
-            downloadPdf: "📄 Download PDF (with Images)",
-            detailedReview: "📖 Detailed Review (with images)",
-            enterName: "Enter candidate name",
-            pdfAlert: "📄 Preparing PDF. The browser's print dialog will open.\nChoose 'Save as PDF' to download.\nAll images will be included.",
-            langToggleBtnEn: "தமிழ்",
-            langToggleBtnTa: "English",
-            darkMode: "🌙 Dark",
-            lightMode: "☀️ Light"
-        },
-        ta: {
-            candidateNameLabel: "விண்ணப்பதாரர் பெயர்",
-            startExamBtn: "▶ START NEW EXAM",
-            prevBtn: "◀ முந்தைய",
-            nextBtn: "அடுத்த ▶",
-            submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்",
-            paletteTitle: "📌 கேள்விக்குச் செல்க",
-            quizCompleted: "✨ தேர்வு முடிந்தது ✨",
-            correct: "✅ சரியானவை",
-            incorrect: "❌ தவறானவை",
-            notAttempted: "⚠️ முயற்சிக்கப்படாதவை",
-            accuracy: "துல்லியம்",
-            timeTaken: "எடுத்த நேரம்",
-            newAttempt: "🔄 புதிய முயற்சி",
-            downloadPdf: "📄 PDF ஐப் பதிவிறக்கவும் (படங்களுடன்)",
-            detailedReview: "📖 விரிவான மதிப்பாய்வு (படங்களுடன்)",
-            enterName: "விண்ணப்பதாரர் பெயரை உள்ளிடுக",
-            pdfAlert: "📄 PDF தயாராகிறது. உலாவியின் அச்சு உரையாடல் திறக்கும்.\n'PDF ஆகச் சேமி' என்பதைத் தேர்ந்தெடுக்கவும்.\nஅனைத்துப் படங்களும் சேர்க்கப்படும்.",
-            langToggleBtnEn: "தமிழ்",
-            langToggleBtnTa: "English",
-            darkMode: "🌙 இருண்ட",
-            lightMode: "☀️ ஒளி"
-        }
+        en: { candidateNameLabel: "Candidate Name", startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", downloadPdf: "📄 Download PDF (with Images)", detailedReview: "📖 Detailed Review (with images)", pdfAlert: "📄 Preparing PDF.", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 Dark", lightMode: "☀️ Light" },
+        ta: { candidateNameLabel: "விண்ணப்பதாரர் பெயர்", startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", downloadPdf: "📄 PDF ஐப் பதிவிறக்கவும்", detailedReview: "📖 விரிவான மதிப்பாய்வு", pdfAlert: "📄 PDF தயாராகிறது.", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 இருண்ட", lightMode: "☀️ ஒளி" }
     };
     
     function updateUILanguage() {
         const t = translations[currentLanguage];
         const candidateLabel = document.getElementById('candidateNameLabel');
         if (candidateLabel) candidateLabel.innerText = t.candidateNameLabel;
-        // Start button always stays in English - do not update
         const paletteTitle = document.getElementById('paletteTitle');
         if (paletteTitle) paletteTitle.innerText = t.paletteTitle;
         const quizCompleted = document.getElementById('quizCompletedLabel');
@@ -277,369 +205,66 @@
         const detailedReview = document.getElementById('detailedReviewLabel');
         if (detailedReview) detailedReview.innerText = t.detailedReview;
         const langBtn = document.getElementById('langToggleBtn');
-        if (langBtn) {
-            langBtn.innerText = currentLanguage === 'en' ? t.langToggleBtnEn : t.langToggleBtnTa;
-        }
-        if (quizActive && !isSubmitted && document.getElementById('navButtons')) {
-            updateNavButtons();
-        }
+        if (langBtn) langBtn.innerText = currentLanguage === 'en' ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && document.getElementById('navButtons')) updateNavButtons();
     }
     
     function toggleLanguage() {
         currentLanguage = currentLanguage === 'en' ? 'ta' : 'en';
         updateUILanguage();
-        if (quizActive && !isSubmitted && QUESTIONS.length > 0) {
-            renderQuestion();
-        }
-        if (document.getElementById('resultContainer').style.display === 'block') {
-            buildDetailedReview();
-        }
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById('resultContainer').style.display === 'block') buildDetailedReview();
         renderDashboard();
     }
 
+    let dashboard = {
+        examTitle: "UG-TRB ZOOLOGY",
+        testNo: "UGZ-69",
+        date: "16/10/2026",
+        subject: "ZOOLOGY",
+        topic: "CELL AND MOLECULAR BIOLOGY",
+        duration: "30",
+        totalMarks: "50",
+        negativeMark: 0.25 // Changed to 0.25 for negative marking
+    };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-let dashboard = {
-    examTitle: "PG TRB ENGLISH",
-    testNo: "PGE-46",
-    date: "18/10/2026",
-    subject: "ENGLISH",
-    topic: "Tennyson's Ulysses",
-    duration: "20",
-    totalMarks: "25",
-    negativeMark: 0
-};
-
-let QUESTIONS = [
-    {
-        en: "In which year was \"Ulysses\" first published?",
-        optionsEn: ["1832", "1833", "1842", "1850"],
-        ta: "",
-        optionsTa: [],
-        answer: 2,
-        imageUrl: null
-    },
-    {
-        en: "\"Ulysses\" is best described as which of the following poetic forms?",
-        optionsEn: ["An epic simile", "A dramatic monologue", "A lyrical ballad", "An ode"],
-        ta: "",
-        optionsTa: [],
-        answer: 1,
-        imageUrl: null
-    },
-    {
-        en: "Who is the speaker of the poem?",
-        optionsEn: ["Telemachus", "Homer", "Ulysses (Odysseus)", "Dante"],
-        ta: "",
-        optionsTa: [],
-        answer: 2,
-        imageUrl: null
-    },
-    {
-        en: "According to the poem, Ulysses is the king of which place?",
-        optionsEn: ["Ithaca", "Troy", "Sparta", "Elysium"],
-        ta: "",
-        optionsTa: [],
-        answer: 0,
-        imageUrl: null
-    },
-    {
-        en: "Which two major literary sources primarily influenced Tennyson's portrayal of Ulysses?",
-        optionsEn: [
-            "Virgil's Aeneid and Ovid's Metamorphoses",
-            "Homer's Odyssey and Dante's Inferno",
-            "Sophocles' Ajax and Euripides' Trojan Women",
-            "Chaucer's Troilus and Shakespeare's Troilus and Cressida"
-        ],
-        ta: "",
-        optionsTa: [],
-        answer: 1,
-        imageUrl: null
-    },
-    {
-        en: "Tennyson wrote \"Ulysses\" shortly after the death of which close friend?",
-        optionsEn: ["Edward FitzGerald", "Thomas Carlyle", "Robert Browning", "Arthur Henry Hallam"],
-        ta: "",
-        optionsTa: [],
-        answer: 3,
-        imageUrl: null
-    },
-    {
-        en: "How does Ulysses describe the people of Ithaca (his subjects)?",
-        optionsEn: [
-            "A savage race that hoards, sleeps, and feeds",
-            "A noble and loyal race",
-            "A race of warriors",
-            "A god-fearing people"
-        ],
-        ta: "",
-        optionsTa: [],
-        answer: 0,
-        imageUrl: null
-    },
-    {
-        en: "What does Ulysses intend to leave to his son, Telemachus?",
-        optionsEn: [
-            "His ship and crew",
-            "His memories of Troy",
-            "The sceptre and the island",
-            "His armor and shield"
-        ],
-        ta: "",
-        optionsTa: [],
-        answer: 2,
-        imageUrl: null
-    },
-    {
-        en: "In the poem, how does Ulysses view his son Telemachus?",
-        optionsEn: [
-            "As a weak and incapable ruler",
-            "As a traitor",
-            "As a fellow adventurer",
-            "As a suitable successor who is prudent and blameless"
-        ],
-        ta: "",
-        optionsTa: [],
-        answer: 3,
-        imageUrl: null
-    },
-    {
-        en: "What does the phrase \"drink life to the lees\" mean?",
-        optionsEn: [
-            "To live life to the fullest extent",
-            "To avoid the bitterness of life",
-            "To waste one's life away",
-            "To drink only the finest wines"
-        ],
-        ta: "",
-        optionsTa: [],
-        answer: 0,
-        imageUrl: null
-    },
-    {
-        en: "Ulysses says, \"I am a part of all that I have met.\" What does this suggest?",
-        optionsEn: [
-            "He is a social chameleon",
-            "His identity has been shaped by his vast experiences",
-            "He has lost his original self",
-            "He prefers the company of strangers"
-        ],
-        ta: "",
-        optionsTa: [],
-        answer: 1,
-        imageUrl: null
-    },
-    {
-        en: "What does Ulysses mean when he says, \"I am become a name\"?",
-        optionsEn: [
-            "He has been forgotten by his people",
-            "He has lost his identity",
-            "He is renowned and legendary",
-            "He is merely a title, not a man"
-        ],
-        ta: "",
-        optionsTa: [],
-        answer: 2,
-        imageUrl: null
-    },
-    {
-        en: "In the metaphor of the sword, what does Ulysses fear will happen if he remains idle?",
-        optionsEn: [
-            "It will break",
-            "It will rust unburnished",
-            "It will be stolen",
-            "It will lose its edge"
-        ],
-        ta: "",
-        optionsTa: [],
-        answer: 1,
-        imageUrl: null
-    },
-    {
-        en: "What does Ulysses compare knowledge to in the poem?",
-        optionsEn: ["A sinking star", "A shining sun", "A deep ocean", "A vast arch"],
-        ta: "",
-        optionsTa: [],
-        answer: 0,
-        imageUrl: null
-    },
-    {
-        en: "Who are the \"Hyades\" mentioned in the poem?",
-        optionsEn: [
-            "A group of Greek warriors",
-            "A constellation of stars associated with rain",
-            "The gods of the underworld",
-            "Ulysses's old sailors"
-        ],
-        ta: "",
-        optionsTa: [],
-        answer: 1,
-        imageUrl: null
-    },
-    {
-        en: "What does Ulysses plan to do with his old mariners?",
-        optionsEn: [
-            "Sail with them once more to seek a newer world",
-            "Leave them behind to guard Ithaca",
-            "Send them back to their families",
-            "Sacrifice them to the gods"
-        ],
-        ta: "",
-        optionsTa: [],
-        answer: 0,
-        imageUrl: null
-    },
-    {
-        en: "According to Ulysses, what is the ultimate goal of his final voyage?",
-        optionsEn: [
-            "To conquer new lands",
-            "To find treasure",
-            "To sail beyond the sunset and the baths of all the western stars",
-            "To return to Troy"
-        ],
-        ta: "",
-        optionsTa: [],
-        answer: 2,
-        imageUrl: null
-    },
-    {
-        en: "What does the phrase \"the deep / Moans round with many voices\" suggest about Ulysses's surroundings at the start of the poem?",
-        optionsEn: [
-            "The sounds of the city",
-            "The call of the sea and adventure",
-            "The voices of his subjects complaining",
-            "The ghosts of his past crew"
-        ],
-        ta: "",
-        optionsTa: [],
-        answer: 1,
-        imageUrl: null
-    },
-    {
-        en: "How does Ulysses describe his past experiences of battle?",
-        optionsEn: [
-            "As a delight, having \"drunk delight of battle with my peers\"",
-            "With regret and horror",
-            "As a necessary evil",
-            "He refuses to speak of them"
-        ],
-        ta: "",
-        optionsTa: [],
-        answer: 0,
-        imageUrl: null
-    },
-    {
-        en: "What does Ulysses mean by \"Life piled on life / Were all too little\"?",
-        optionsEn: [
-            "Life is too short to waste on family",
-            "Even an infinite amount of life would not be enough to satisfy his thirst for experience",
-            "He wishes he could live forever",
-            "He regrets his past actions"
-        ],
-        ta: "",
-        optionsTa: [],
-        answer: 1,
-        imageUrl: null
-    },
-    {
-        en: "In the poem, what is the \"untravelled world\" compared to?",
-        optionsEn: ["A dark cave", "A stormy sea", "A closed book", "A fading gleam or margin"],
-        ta: "",
-        optionsTa: [],
-        answer: 3,
-        imageUrl: null
-    },
-    {
-        en: "Which of the following lines is NOT from \"Ulysses\"?",
-        optionsEn: [
-            "\"I cannot rest from travel\"",
-            "\"To strive, to seek, to find, and not to yield\"",
-            "\"The woods decay, the woods decay and fall\"",
-            "\"I am become a name\""
-        ],
-        ta: "",
-        optionsTa: [],
-        answer: 2,
-        imageUrl: null
-    },
-    {
-        en: "In Dante's Inferno, which Ulysses is used as a contrast to Tennyson's, what is Ulysses's fate?",
-        optionsEn: [
-            "He returns safely to Ithaca",
-            "He is killed by Telemachus",
-            "He is condemned for pursuing knowledge beyond human bounds",
-            "He becomes a god"
-        ],
-        ta: "",
-        optionsTa: [],
-        answer: 2,
-        imageUrl: null
-    },
-    {
-        en: "What tone does Ulysses adopt when describing his son Telemachus's future rule?",
-        optionsEn: [
-            "Jealous and angry",
-            "Respectful but indifferent to the work itself",
-            "Fearful and anxious",
-            "Proud and eager to help"
-        ],
-        ta: "",
-        optionsTa: [],
-        answer: 1,
-        imageUrl: null
-    },
-    {
-        en: "What does Ulysses mean by \"the gulfs\" in the final stanza?",
-        optionsEn: [
-            "The unknown dangers and the possibility of death",
-            "The waters around Ithaca",
-            "The gap between him and his son",
-            "The memories of the Trojan War"
-        ],
-        ta: "",
-        optionsTa: [],
-        answer: 0,
-        imageUrl: null
-    }
-];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    let QUESTIONS = [
+        {
+            type: "mcq",
+            en: "What organism produces a sperm reaching a length of 12 mm?",
+            optionsEn: ["Sea urchin", "Hemipteran bug", "Opossum", "Toad-fish"],
+            ta: "12 மிமீ நீளத்தை எட்டும் விந்தணுவை உற்பத்தி செய்யும் உயிரினம் எது?",
+            optionsTa: ["கடல் முள்ளெலி", "ஹெமிப்டெரான் பூச்சி", "ஒபசம்", "தoad-மீன்"],
+            answer: 1,
+            imageUrl: null
+        },
+        {
+            type: "rc",
+            en: "<b>PASSAGE:</b><br>What organism produces a sperm reaching a length of 12 mm?<br><br><b>Q: Which of the following taxon-sperm associations is FALSE based on the text?</b>",
+            optionsEn: ["Sea urchin sperm size - 40μ", "Hemipteran bug sperm length - 12 mm", "Toad-fish sperm - Biflagellate", "Grasshopper sperm - Monoflagellate with no head association"],
+            ta: "<b>பத்தி:</b><br>12 மிமீ நீளத்தை எட்டும் விந்தணுவை உற்பத்தி செய்யும் உயிரினம் எது?<br><br><b>கேள்வி: உரையின் அடிப்படையில் பின்வரும் வகைப்பாட்டு-விந்தணு தொடர்புகளில் எது தவறானது?</b>",
+            optionsTa: ["கடல் முள்ளெலி விந்தணு அளவு - 40μ", "ஹெமிப்டெரான் பூச்சி விந்தணு நீளம் - 12 மிமீ", "தoad-மீன் விந்தணு - இரட்டைக் கசையிழை", "வெட்டுக்கிளி விந்தணு - தலை தொடர்பு இல்லாத ஒற்றைக் கசையிழை"],
+            answer: 3,
+            imageUrl: null
+        },
+        {
+            type: "puzzle",
+            en: "<b>Directions (Q3):</b> Study the following information carefully.<br><br>Eight people A, B, C, D, E, F, G and H are sitting around a circular table facing the center. A sits second to the right of B. C is an immediate neighbor of A.<br><br><b>Who sits third to the left of H?</b>",
+            optionsEn: ["A", "B", "C", "D"],
+            ta: "<b>வழிமுறைகள் (Q3):</b> பின்வரும் தகவல்களை கவனமாக படிக்கவும்.<br><br>எட்டு நபர்கள் A, B, C, D, E, F, G மற்றும் H ஒரு வட்ட மேசையைச் சுற்றி மையத்தை நோக்கி அமர்ந்துள்ளனர். A, B-க்கு வலதுபுறம் இரண்டாவதாக அமர்ந்துள்ளார். C, A-வுக்கு அருகில் அமர்ந்துள்ளார்.<br><br><b>H-க்கு இடதுபுறம் மூன்றாவதாக அமர்ந்திருப்பது யார்?</b>",
+            optionsTa: ["A", "B", "C", "D"],
+            answer: 1,
+            imageUrl: null
+        }
+    ];
 
     dashboard.totalMarks = QUESTIONS.length.toString();
-    let GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbziC0ooBCFlAvfWit4lZsxFRVLnLKX56lNzW8cZmVvNiGR0A_EJG7VG8A9OgRtup88BoQ/exec";
     
+    // ⚠️ YOUR UPDATED GOOGLE SHEET URL IS HERE
+    let GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbymL_S6HAFMWpZNGSHJv5QKXhHhxdyGg9TaElwdqBjF04BhH-JX4gNjufWG42D5Dz8ejQ/exec";
+
     function escapeHtml(s) { if(!s) return ''; return s.replace(/[&<>]/g, function(m){ return m==='&'?'&amp;':m==='<'?'&lt;':'>'?'&gt;':m;}); }
-    
+
     function renderDashboard() {
         const container = document.getElementById('dashboardContainer');
         if(container) {
@@ -656,163 +281,144 @@ let QUESTIONS = [
         let totalSpan = document.getElementById('totalQsSpan');
         if(totalSpan) totalSpan.innerText = `/${dashboard.totalMarks}`;
     }
-    
+
     function autoSaveState() {
         if (!quizActive || isSubmitted) return;
-        const state = {
-            candidateName: candidateName,
-            userAnswers: userAnswers,
-            currentIndex: currentIndex,
-            timeLeft: timeLeft,
-            startTimestamp: startTimestamp,
-            isSubmitted: false,
-            quizActive: true,
-            savedAt: Date.now(),
-            language: currentLanguage
-        };
-        localStorage.setItem('tetEnglishAutoResume', JSON.stringify(state));
+        localStorage.setItem('tetEnglishAutoResume', JSON.stringify({
+            userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft,
+            startTimestamp: startTimestamp, isSubmitted: false, quizActive: true,
+            savedAt: Date.now(), language: currentLanguage
+        }));
     }
-    
+
     function showResumePopup(savedState) {
         const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
         const remaining = QUESTIONS.length - answeredCount;
-        const t = translations[currentLanguage];
         const modalHtml = `
             <div id="resumeModal" class="modal-overlay">
                 <div class="modal-container">
                     <h3>🔄 Unfinished Exam Found</h3>
-                    <p>You have an incomplete exam.<br>
-                    <strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>
-                    Last saved: ${new Date(savedState.savedAt).toLocaleTimeString()}<br><br>
-                    Do you want to continue where you left off?</p>
+                    <p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p>
                     <div class="modal-buttons">
-                        <button id="modalResumeBtn" class="btn">✅ Resume Exam</button>
+                        <button id="modalResumeBtn" class="btn">✅ Resume</button>
                         <button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button>
                     </div>
                 </div>
-            </div>
-        `;
+            </div>`;
         document.body.insertAdjacentHTML('beforeend', modalHtml);
-        
-        document.getElementById('modalResumeBtn').onclick = () => {
-            document.getElementById('resumeModal').remove();
-            autoResumeExam(savedState);
-        };
-        document.getElementById('modalNewBtn').onclick = () => {
-            document.getElementById('resumeModal').remove();
-            localStorage.removeItem('tetEnglishAutoResume');
-            document.getElementById('candidateNameInput').value = '';
-        };
+        document.getElementById('modalResumeBtn').onclick = () => { document.getElementById('resumeModal').remove(); autoResumeExam(savedState); };
+        document.getElementById('modalNewBtn').onclick = () => { document.getElementById('resumeModal').remove(); localStorage.removeItem('tetEnglishAutoResume'); };
     }
-    
+
     function checkForAutoResume() {
         const saved = localStorage.getItem('tetEnglishAutoResume');
         if (saved) {
             try {
                 const state = JSON.parse(saved);
-                if (state && !state.isSubmitted && state.candidateName && state.candidateName.trim() !== "") {
-                    document.getElementById('candidateNameInput').value = state.candidateName;
+                if (state && !state.isSubmitted) {
                     if (state.language) currentLanguage = state.language;
                     updateUILanguage();
                     showResumePopup(state);
                     return true;
-                } else {
-                    localStorage.removeItem('tetEnglishAutoResume');
-                }
+                } else localStorage.removeItem('tetEnglishAutoResume');
             } catch(e) { localStorage.removeItem('tetEnglishAutoResume'); }
         }
         return false;
     }
-    
+
     function autoResumeExam(state) {
-        candidateName = state.candidateName;
         userAnswers = state.userAnswers;
         currentIndex = state.currentIndex;
         timeLeft = state.timeLeft;
         startTimestamp = state.startTimestamp;
-        quizActive = true;
-        isSubmitted = false;
+        quizActive = true; isSubmitted = false;
         if (state.language) currentLanguage = state.language;
         updateUILanguage();
-        
-        document.getElementById('quizCandidateName').innerText = candidateName;
-        const m = Math.floor(timeLeft/60);
-        const s = timeLeft%60;
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
         document.getElementById('timerDisplay').innerText = `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
-        renderQuestion();
-        startTimer();
+        renderQuestion(); startTimer();
         document.getElementById('startScreen').style.display = 'none';
         document.getElementById('quizContainer').style.display = 'block';
         document.getElementById('resultContainer').style.display = 'none';
     }
-    
+
     function clearAllAndRestart() {
         localStorage.removeItem('tetEnglishAutoResume');
         document.getElementById('resultContainer').style.display = 'none';
         document.getElementById('startScreen').style.display = 'flex';
         document.getElementById('quizContainer').style.display = 'none';
-        document.getElementById('candidateNameInput').value = '';
         if(timerInterval) clearInterval(timerInterval);
         quizActive = false;
     }
     
+    // NEW FUNCTION FOR LEADERBOARD BUTTON
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+
     let userAnswers = new Array(QUESTIONS.length).fill(null);
     let currentIndex = 0;
     let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
     let timerInterval = null;
     let quizActive = false;
     let startTimestamp = null;
-    let candidateName = "";
     let isSubmitted = false;
-    
-    function getCurrentQuestionText(q) { 
-        let raw = currentLanguage === 'en' ? q.en : q.ta;
-        return raw;
-    }
-    
-    function getCurrentOptions(q) { 
-        return currentLanguage === 'en' ? q.optionsEn : q.optionsTa; 
-    }
-    
+
+    function getCurrentQuestionText(q) { return currentLanguage === 'en' ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === 'en' ? q.optionsEn : q.optionsTa; }
+
     function renderQuestion() {
-        if (QUESTIONS.length === 0) { 
-            document.getElementById('questionArea').innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>'; 
-            return; 
+        if (QUESTIONS.length === 0) {
+            document.getElementById('questionArea').innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
         }
         const q = QUESTIONS[currentIndex];
         const txt = getCurrentQuestionText(q);
         const optsArray = getCurrentOptions(q);
         const sel = userAnswers[currentIndex];
         
+        let displayTxt = txt;
+        let extraClass = "question-text";
+
+        // Smart formatting based on question type
+        if (q.type === 'rc') {
+            displayTxt = `<div class="passage-box">${txt}</div>`;
+            extraClass = "question-text"; 
+        } else if (q.type === 'puzzle') {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+
         let imageHtml = '';
         if (q.imageUrl && q.imageUrl.trim() !== '') {
             imageHtml = `<img class="question-image" src="${escapeHtml(q.imageUrl)}" alt="Question image" loading="lazy">`;
         }
-        
+
         let optsHtml = '';
-        optsArray.forEach((opt, i) => { 
-            optsHtml += `<div class="option-item ${sel===i ? 'selected' : ''}" onclick="selectOption(${i})">${String.fromCharCode(65+i)}. ${escapeHtml(opt)}</div>`; 
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? 'selected' : ''}" onclick="selectOption(${i})">${String.fromCharCode(65+i)}. ${opt}</div>`;
         });
-        
+
         document.getElementById('questionArea').innerHTML = `
             ${imageHtml}
-            <div class="question-text">${currentIndex+1}. ${txt}</div>
+            <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
             <div>${optsHtml}</div>
         `;
-        updateNavButtons(); 
-        updatePalette(); 
+        updateNavButtons(); updatePalette();
         if(window.MathJax) MathJax.typesetPromise();
     }
-    
+
     function selectOption(optIndex) {
         if(isSubmitted) return;
         if(userAnswers[currentIndex] === optIndex) return;
         userAnswers[currentIndex] = optIndex;
-        renderQuestion();
-        updatePalette();
-        autoSaveState();
+        renderQuestion(); updatePalette(); autoSaveState();
     }
-    
+
     function updateNavButtons() {
         if (QUESTIONS.length === 0) { document.getElementById('navButtons').innerHTML = ''; return; }
         const t = translations[currentLanguage];
@@ -821,10 +427,10 @@ let QUESTIONS = [
         else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
         document.getElementById('navButtons').innerHTML = html;
     }
-    
+
     function prevQuestion() { if(!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
     function nextQuestion() { if(!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
-    
+
     function updatePalette() {
         const ps = document.getElementById('paletteScroll');
         if(!ps) return;
@@ -839,39 +445,30 @@ let QUESTIONS = [
             ps.appendChild(btn);
         }
     }
-    
+
     function startTimer() {
         if(timerInterval) clearInterval(timerInterval);
         timerInterval = setInterval(() => {
             if(!quizActive || isSubmitted) return;
-            if(timeLeft <= 0) { 
-                clearInterval(timerInterval); 
-                if(!isSubmitted) submitQuiz(); 
-            } else { 
-                timeLeft--; 
-                const m = Math.floor(timeLeft/60), s = timeLeft%60; 
-                document.getElementById('timerDisplay').innerText = `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`; 
+            if(timeLeft <= 0) { clearInterval(timerInterval); if(!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById('timerDisplay').innerText = `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
                 if(timeLeft % 10 === 0) autoSaveState();
-                if(timeLeft===0) submitQuiz(); 
+                if(timeLeft===0) submitQuiz();
             }
         }, 1000);
     }
-    
+
     function buildDetailedReview() {
         let html = '';
         for(let i=0; i<QUESTIONS.length; i++) {
-            const q = QUESTIONS[i];
-            const u = userAnswers[i];
-            const corr = q.answer;
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
             const isCorr = (u !== null && u === corr);
             const txt = getCurrentQuestionText(q);
             const optsArray = getCurrentOptions(q);
-            
-            let imageHtml = '';
-            if (q.imageUrl && q.imageUrl.trim() !== '') {
-                imageHtml = `<img class="review-question-img" src="${escapeHtml(q.imageUrl)}" alt="Question image" loading="lazy"><br>`;
-            }
-            
+
             let optsHtml = '';
             optsArray.forEach((_, idx) => {
                 let marker = '';
@@ -880,96 +477,114 @@ let QUESTIONS = [
                 else if(u === idx && idx === corr) marker = ' ✅ (Correct)';
                 const styleClass = (idx === corr) ? 'correct-option' : '';
                 const userWrongStyle = (u === idx && idx !== corr) ? 'color:#ef4444;' : '';
-                optsHtml += `<div class="${styleClass}" style="${userWrongStyle}">${String.fromCharCode(65+idx)}. ${escapeHtml(optsArray[idx])}${marker}</div>`;
+                optsHtml += `<div class="${styleClass}" style="${userWrongStyle}">${String.fromCharCode(65+idx)}. ${optsArray[idx]}${marker}</div>`;
             });
-            const userAns = (u !== null) ? `${String.fromCharCode(65+u)}. ${escapeHtml(optsArray[u])}` : "Not answered";
+            const userAns = (u !== null) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
             html += `<div class="review-card" style="border-left-color:${isCorr?'#10b981':'#ef4444'}">
-                        <strong>Q${i+1}. ${txt}</strong>
-                        ${imageHtml}
+                        <strong>Q${i+1}. ${txt}</strong><br><br>
                         <div><strong>Your answer:</strong> ${userAns}</div>
-                        <div><strong>Options:</strong></div>
-                        <div>${optsHtml}</div>
-                        <div><strong>Correct:</strong> ${String.fromCharCode(65+corr)}. ${escapeHtml(optsArray[corr])}</div>
+                        <div><strong>Correct:</strong> ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
                     </div>`;
         }
         document.getElementById('reviewList').innerHTML = html;
         if(window.MathJax) MathJax.typesetPromise();
     }
-    
-    async function sendToGoogleSheet(correct, incorrect, na, timeStr) {
+
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
         if (!GOOGLE_SHEET_URL) return;
         try {
-            await fetch(GOOGLE_SHEET_URL, { 
-                method: 'POST', 
-                mode: 'no-cors', 
-                headers: { 'Content-Type': 'application/json' }, 
-                body: JSON.stringify({ 
-                    "Candidate Name": candidateName, 
-                    "Subject": dashboard.subject, 
-                    "Topic Name": dashboard.topic, 
-                    "Total": QUESTIONS.length, 
-                    "Correct": correct, 
-                    "Incorrect": incorrect, 
-                    "Not Attempted": na, 
-                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1), 
-                    "Time Taken": timeStr, 
-                    "Timestamp": new Date().toISOString() 
-                }) 
+            await fetch(GOOGLE_SHEET_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    "Candidate Name": "Student",
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
             });
-        } catch(err) { console.error(err); }
+        } catch(err) { console.error("Sheet Error:", err); }
     }
-    
+
     function submitQuiz() {
         if(isSubmitted) return;
         isSubmitted = true; quizActive = false; clearInterval(timerInterval);
         localStorage.removeItem('tetEnglishAutoResume');
         let correct=0, incorrect=0, na=0;
-        for(let i=0; i<QUESTIONS.length; i++) { 
-            if(userAnswers[i] === null) na++; 
-            else if(userAnswers[i] === QUESTIONS[i].answer) correct++; 
-            else incorrect++; 
+        for(let i=0; i<QUESTIONS.length; i++) {
+            if(userAnswers[i] === null) na++;
+            else if(userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
         }
+
+        // 1. Calculate final score using the negative mark setting
+        const negMark = dashboard.negativeMark || 0; 
+        const finalScore = correct - (incorrect * negMark);
+
+        // 2. Send score to Android app
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct,
+                    wrong: incorrect,
+                    skipped: na,
+                    total: QUESTIONS.length,
+                    stayOnScreen: true // Tells Android not to close the WebView
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+
+        // 3. Update the HTML Result Screen with the PENALIZED score
         const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
         const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
         const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,'0')}`;
-        document.getElementById('finalScore').innerText = correct;
+        
+        document.getElementById('finalScore').innerText = finalScore; // Show penalized score
         document.getElementById('correctCountStat').innerText = correct;
         document.getElementById('incorrectCountStat').innerText = incorrect;
         document.getElementById('notAttemptedStat').innerText = na;
         document.getElementById('accuracySpan').innerHTML = `${acc.toFixed(1)}%`;
         document.getElementById('timeTakenSpan').innerHTML = timeStr;
-        document.getElementById('resultCandidateName').innerHTML = `🏆 ${escapeHtml(candidateName)}`;
-        document.getElementById('resultTopicName').innerHTML = `📖 Topic: ${escapeHtml(dashboard.topic)}`;
-        const pct = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById('resultTopicName').innerHTML = `📖 Topic: ${dashboard.topic}`;
+        
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
         document.getElementById('scoreRing').style.setProperty('--score-percent', `${pct}%`);
+        
         buildDetailedReview();
-        sendToGoogleSheet(correct, incorrect, na, timeStr);
+        
+        // 4. Send to Google Sheet
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        
         document.getElementById('startScreen').style.display = 'none';
         document.getElementById('quizContainer').style.display = 'none';
         document.getElementById('resultContainer').style.display = 'block';
     }
-    
+
     function startNewExam() {
-        const name = document.getElementById('candidateNameInput').value.trim();
-        if(!name){ alert(translations[currentLanguage].enterName); return; }
         localStorage.removeItem('tetEnglishAutoResume');
-        candidateName = name;
         userAnswers = new Array(QUESTIONS.length).fill(null);
         currentIndex = 0;
         timeLeft = (parseInt(dashboard.duration) || 15) * 60;
         startTimestamp = Date.now();
-        quizActive = true;
-        isSubmitted = false;
-        document.getElementById('quizCandidateName').innerText = candidateName;
-        renderQuestion();
-        startTimer();
+        quizActive = true; isSubmitted = false;
+        document.getElementById('quizCandidateName').innerText = "Student";
+        renderQuestion(); startTimer();
         document.getElementById('startScreen').style.display = 'none';
         document.getElementById('quizContainer').style.display = 'block';
         document.getElementById('resultContainer').style.display = 'none';
         autoSaveState();
     }
-    
-    function toggleTheme() { 
+
+    function toggleTheme() {
         const curr = document.documentElement.getAttribute('data-theme');
         const next = curr === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', next);
@@ -977,21 +592,19 @@ let QUESTIONS = [
         const darkBtn = document.getElementById('darkModeToggleBtn');
         if(darkBtn) darkBtn.innerText = next === 'dark' ? translations[currentLanguage].lightMode : translations[currentLanguage].darkMode;
     }
-    
+
     function downloadPDFWithImages() {
         alert(translations[currentLanguage].pdfAlert);
         setTimeout(() => { window.print(); }, 100);
     }
-    
+
     renderDashboard();
     const savedTheme = localStorage.getItem('themeGreen');
     if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
     else document.documentElement.setAttribute('data-theme', 'light');
     updateUILanguage();
     checkForAutoResume();
-    window.addEventListener('beforeunload', function() {
-        if (quizActive && !isSubmitted) { autoSaveState(); }
-    });
+    window.addEventListener('beforeunload', function() { if (quizActive && !isSubmitted) autoSaveState(); });
 </script>
 </body>
 </html>
