@@ -226,7 +226,7 @@
         topic: "CELL AND MOLECULAR BIOLOGY",
         duration: "30",
         totalMarks: "50",
-        negativeMark: 0 // Change this to 0.25 for IBPS tests
+        negativeMark: 0.25 // Changed to 0.25 for negative marking
     };
 
     let QUESTIONS = [
@@ -525,11 +525,11 @@
             else incorrect++;
         }
 
-        // Calculate final score
+        // 1. Calculate final score using the negative mark setting
         const negMark = dashboard.negativeMark || 0; 
         const finalScore = correct - (incorrect * negMark);
 
-        // Send score to Android app
+        // 2. Send score to Android app
         try {
             if (window.AndroidBridge && window.AndroidBridge.submitScore) {
                 window.AndroidBridge.submitScore(JSON.stringify({
@@ -544,11 +544,12 @@
             }
         } catch (e) { console.log("Bridge error", e); }
 
+        // 3. Update the HTML Result Screen with the PENALIZED score
         const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
         const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
         const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,'0')}`;
         
-        document.getElementById('finalScore').innerText = finalScore;
+        document.getElementById('finalScore').innerText = finalScore; // Show penalized score
         document.getElementById('correctCountStat').innerText = correct;
         document.getElementById('incorrectCountStat').innerText = incorrect;
         document.getElementById('notAttemptedStat').innerText = na;
@@ -561,7 +562,7 @@
         
         buildDetailedReview();
         
-        // Send to Google Sheet
+        // 4. Send to Google Sheet
         sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
         
         document.getElementById('startScreen').style.display = 'none';
