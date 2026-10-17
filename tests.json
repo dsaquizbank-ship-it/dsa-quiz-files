@@ -1,40 +1,12 @@
 {
   "version": "2026-10-17T13:23:03.617Z",
   "categories": [
-    {
-      "id": "UGTRB",
-      "name": "UGTRB",
-      "order": 1
-    },
-    {
-      "id": "TNPSC",
-      "name": "TNPSC",
-      "order": 2
-    }
+
   ],
   "exams": [
-    {
-      "id": "UG-TRB-ZOOLOGY",
-      "name": "UG TRB ZOOLOGY",
-      "categoryId": "UGTRB",
-      "order": 1
-    },
-    {
-      "id": "TNPSC-PRE",
-      "name": "TNPSC-PRE",
-      "categoryId": "TNPSC",
-      "order": 2
-    }
+
   ],
   "tests": [
-    {
-      "testId": "TNA-41",
-      "examId": "TNPSC-PRE",
-      "name": "REVISION",
-      "durationMinutes": 35,
-      "order": 2,
-      "questionCount": 50,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TNA-41.html"
-    }
+
   ]
 }
