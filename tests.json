@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-17T11:38:51.900Z",
+  "version": "2026-10-17T12:21:55.795Z",
   "categories": [
     {
       "id": "UGTRB",
@@ -44,6 +44,15 @@
       "order": 2,
       "questionCount": 50,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TNA-41.html"
+    },
+    {
+      "testId": "UGZ-21",
+      "examId": "UG-TRB-ZOOLOGY",
+      "name": "BIOOOOOOOO",
+      "durationMinutes": 30,
+      "order": 3,
+      "questionCount": 36,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/index.html"
     }
   ]
 }
