@@ -1,12 +1,30 @@
 {
-  "version": "2026-10-17T13:23:03.617Z",
+  "version": "2026-10-17T13:38:09.026Z",
   "categories": [
-
+    {
+      "id": "DEMO",
+      "name": "DEMO",
+      "order": 1
+    }
   ],
   "exams": [
-
+    {
+      "id": "DEMO-EXAM",
+      "name": "DEMO-EXAM",
+      "categoryId": "DEMO",
+      "order": 1
+    }
   ],
   "tests": [
-
+    {
+      "testId": "TEST-01",
+      "examId": "DEMO-EXAM",
+      "name": "SAMPLE TEST",
+      "durationMinutes": 10,
+      "order": 1,
+      "questionCount": 3,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/index.html"
+    }
   ]
 }
