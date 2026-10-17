@@ -127,8 +127,6 @@
 <div class="quiz-wrapper" id="app">
     <div id="startScreen" class="start-panel">
         <div id="dashboardContainer"></div>
-        <h3 id="candidateNameLabel">Candidate Name</h3>
-        <input type="text" id="candidateNameInput" placeholder="YOUR NAME Please" class="name-input">
         <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
     </div>
     <div id="quizContainer" style="display: none;">
@@ -1225,11 +1223,9 @@
         document.getElementById('resultContainer').style.display = 'block';
     }
 
-    function startNewExam() {
-        const name = document.getElementById('candidateNameInput').value.trim();
-        if(!name){ alert(translations[currentLanguage].enterName); return; }
-        localStorage.removeItem('tetEnglishAutoResume');
-        candidateName = name;
+function startNewExam() {
+    localStorage.removeItem('tetEnglishAutoResume');
+    candidateName = "Student"; // No name required
         userAnswers = new Array(QUESTIONS.length).fill(null);
         currentIndex = 0;
         timeLeft = (parseInt(dashboard.duration) || 15) * 60;
