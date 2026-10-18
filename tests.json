@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-18T08:01:55.081Z",
+  "version": "2026-10-18T08:21:15.382Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -47,6 +47,17 @@
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-93.html",
       "releaseTimestamp": 0
+    },
+    {
+      "testId": "UGM-92",
+      "examId": "UG-MATHS",
+      "name": "UGM-92 UNIT 8 SIMPLE HARMONIC MOTION (S.H.M) – S.H.M ALONG A HORIZONTAL LINE – S.H.M ALONG A VERTICAL LINE – MOTION UNDER GRAVITY IN A RESISTING MEDIUM.",
+      "durationMinutes": 30,
+      "order": 92,
+      "questionCount": 20,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-92.html",
+      "releaseTimestamp": 1792312800000
     }
   ]
 }
