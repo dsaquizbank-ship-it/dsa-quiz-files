@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-18T10:50:51.433Z",
+  "version": "2026-10-18T16:52:57.594Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -51,6 +51,12 @@
       "id": "UG-ENG",
       "name": "UGTRB ENGLISH",
       "categoryId": "UGTRB",
+      "order": 2
+    },
+    {
+      "id": "PG-CS",
+      "name": "PGTRB COMPUTER SCIENCE",
+      "categoryId": "PGTRB",
       "order": 2
     }
   ],
@@ -131,6 +137,17 @@
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGE-96.html",
       "releaseTimestamp": 1792567800000
+    },
+    {
+      "testId": "PGCS-12",
+      "examId": "PG-CS",
+      "name": "PGCS – 12 UNIT 10 CYBER SECURITY TECHNIQUES",
+      "durationMinutes": 15,
+      "order": 12,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGCS-12.html",
+      "releaseTimestamp": 0
     }
   ]
 }
