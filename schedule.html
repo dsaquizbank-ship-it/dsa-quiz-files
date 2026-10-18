@@ -7,8 +7,6 @@
     <style>
         body { font-family: "Segoe UI", system-ui, sans-serif; background: #0D1B2A; color: #FFF; padding: 16px; }
         h2 { color: #F5B700; text-align: center; margin-bottom: 20px; }
-        
-        /* Date Selector Styles */
         .date-selector-wrapper { display: flex; overflow-x: auto; gap: 10px; padding-bottom: 10px; margin-bottom: 20px; scrollbar-width: thin; }
         .date-selector-wrapper::-webkit-scrollbar { height: 6px; }
         .date-selector-wrapper::-webkit-scrollbar-thumb { background: #2E4374; border-radius: 4px; }
@@ -17,8 +15,6 @@
         .date-btn.active { background: #F5B700; border-color: #F5B700; color: #0D1B2A; }
         .date-btn .day { font-size: 18px; font-weight: bold; display: block; }
         .date-btn .weekday { font-size: 12px; opacity: 0.8; display: block; margin-top: 2px; }
-        
-        /* Card Styles */
         .card { background: #1A2A5E; border-radius: 12px; padding: 16px; margin-bottom: 16px; border-left: 4px solid #10b981; animation: fadeIn 0.3s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
         .exam-title { color: #F5B700; font-size: 20px; font-weight: bold; margin-bottom: 12px; border-bottom: 1px solid #2E4374; padding-bottom: 8px; }
@@ -31,13 +27,8 @@
 </head>
 <body>
     <h2>📅 Mock Test Schedule</h2>
-    
-    <!-- Scrollable Date Selector -->
     <div class="date-selector-wrapper" id="dateSelector"></div>
-    
-    <!-- Container for filtered exams -->
     <div id="scheduleContainer"></div>
-
     <script>
 const SCHEDULE = [
     {
@@ -87,9 +78,9 @@ const SCHEDULE = [
             ]},
             { date: "19/10/2026", weekday: "Monday", entries: [
                 { testNo: "NTN - 50", subject: "TNPSC Maths", topic: "Rational Numbers, Square & Roots, Cube & Roots" },
-                { testNo: "NTE - 50", subject: "TET", topic: "Tamil 8th Iyal 5, 6 | Maths 7th Unit I | SS 8th Geo: Algebra, Map Reading" },
+                { testNo: "NTE - 50", subject: "TET", topic: "Tamil 8th Iyal 5, 6 | Maths 7th Unit 1 | SS 8th Geo: Algebra, Map Reading" },
                 { testNo: "SGT - 32", subject: "SGT Tamil", topic: "9th Revision 6-9" },
-                { testNo: "BSR - 51", subject: "SSC/RRB Math & Phy", topic: "Full Revision" },
+                { testNo: "BSR - 51", subject: "BANK/SSC/RRB Math & Phy", topic: "Profit & Loss" },
                 { testNo: "TNA - 41", subject: "TNPSC Prelims", topic: "Unit VI: History, Culture, Heritage and Socio-Political Movements in TN" }
             ]},
             { date: "21/10/2026", weekday: "Wednesday", entries: [
@@ -286,9 +277,7 @@ const SCHEDULE = [
 ];
         const dateSelector = document.getElementById("dateSelector");
         const container = document.getElementById("scheduleContainer");
-        
         if (typeof SCHEDULE !== "undefined" && Array.isArray(SCHEDULE)) {
-            // 1. Gather all unique dates from the schedule
             let allDates = [];
             SCHEDULE.forEach(exam => {
                 exam.dates.forEach(d => {
@@ -297,15 +286,11 @@ const SCHEDULE = [
                     }
                 });
             });
-
-            // 2. Render Date Buttons
             allDates.forEach((d, index) => {
                 const btn = document.createElement("button");
                 btn.className = "date-btn" + (index === 0 ? " active" : "");
-                // Extracting just the DD/MM part for the button display
                 let dateParts = d.date.split("/"); 
                 let shortDate = dateParts[0] + "/" + dateParts[1];
-                
                 btn.innerHTML = `<span class="day">${shortDate}</span><span class="weekday">${d.weekday}</span>`;
                 btn.onclick = () => {
                     document.querySelectorAll(".date-btn").forEach(b => b.classList.remove("active"));
@@ -314,21 +299,15 @@ const SCHEDULE = [
                 };
                 dateSelector.appendChild(btn);
             });
-
-            // 3. Function to Render exams for a specific date
             function renderScheduleForDate(targetDate) {
                 container.innerHTML = "";
                 let hasExams = false;
-
                 SCHEDULE.forEach(exam => {
-                    // Find if this exam has a match for the target date
                     const dateMatch = exam.dates.find(d => d.date === targetDate);
-                    
                     if (dateMatch) {
                         hasExams = true;
                         const examDiv = document.createElement("div");
                         examDiv.className = "card";
-                        
                         let html = `<div class="exam-title">${exam.examName}</div>`;
                         dateMatch.entries.forEach(e => {
                             html += `<div class="test-item">
@@ -341,17 +320,13 @@ const SCHEDULE = [
                         container.appendChild(examDiv);
                     }
                 });
-
                 if (!hasExams) {
                     container.innerHTML = `<div class="empty-state">No tests scheduled for this date.</div>`;
                 }
             }
-
-            // 4. Initial render for the first date
             if (allDates.length > 0) {
                 renderScheduleForDate(allDates[0].date);
             }
-
         } else {
             container.innerHTML = `<p style="text-align:center;color:#A8C8E1;">No schedule data found.</p>`;
         }
