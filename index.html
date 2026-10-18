@@ -468,22 +468,24 @@
     async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
         if (!GOOGLE_SHEET_URL) return;
         try {
+            // Google Apps Script requires URL-encoded data, not JSON, for no-cors fetch
+            const formData = new URLSearchParams();
+            formData.append("Candidate Name", "Student");
+            formData.append("Test No", dashboard.testNo);
+            formData.append("Subject", dashboard.subject);
+            formData.append("Topic Name", dashboard.topic);
+            formData.append("Total Questions", QUESTIONS.length);
+            formData.append("Correct Answers", correct);
+            formData.append("Incorrect Answers", incorrect);
+            formData.append("Final Score (after negative marking)", finalScore);
+            formData.append("Accuracy (%)", ((correct/QUESTIONS.length)*100).toFixed(1));
+            formData.append("Time Taken", timeStr);
+
             await fetch(GOOGLE_SHEET_URL, {
                 method: 'POST',
                 mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    "Candidate Name": "Student",
-                    "Test No": dashboard.testNo,
-                    "Subject": dashboard.subject,
-                    "Topic Name": dashboard.topic,
-                    "Total Questions": QUESTIONS.length,
-                    "Correct Answers": correct,
-                    "Incorrect Answers": incorrect,
-                    "Final Score (after negative marking)": finalScore,
-                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
-                    "Time Taken": timeStr
-                })
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: formData.toString()
             });
         } catch(err) { console.error("Sheet Error:", err); }
     }
