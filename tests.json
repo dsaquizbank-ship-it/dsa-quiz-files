@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-18T10:23:01.299Z",
+  "version": "2026-10-18T10:36:02.202Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -15,6 +15,11 @@
       "id": "TNPSC",
       "name": "TNPSC",
       "order": 3
+    },
+    {
+      "id": "TNTET",
+      "name": "TNTET",
+      "order": 6
     }
   ],
   "exams": [
@@ -35,6 +40,12 @@
       "name": "TNPSC NEW",
       "categoryId": "TNPSC",
       "order": 2
+    },
+    {
+      "id": "TETTAM",
+      "name": "TET TAMIL",
+      "categoryId": "TNTET",
+      "order": 6
     }
   ],
   "tests": [
@@ -92,6 +103,17 @@
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTN-51.html",
       "releaseTimestamp": 1792567800000
+    },
+    {
+      "testId": "NTE-TAMIL-50",
+      "examId": "TETTAM",
+      "name": "NTE-TAMIL-50 IYAL 5,6 ILAKKANAM",
+      "durationMinutes": 20,
+      "order": 50,
+      "questionCount": 30,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTE-TAMIL-50.html",
+      "releaseTimestamp": 1792395000000
     }
   ]
 }
