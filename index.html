@@ -63,7 +63,6 @@
         .language-toggle:hover { background: var(--accent); }
         .question-container { padding: 20px 16px; }
         
-        /* Smart styles for RC and Puzzles */
         .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin-bottom: 15px; font-size: 0.95rem; line-height: 1.6; }
         .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin-bottom: 15px; font-size: 0.95rem; line-height: 1.6; }
         .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.5; }
@@ -89,13 +88,7 @@
         .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
         .stat-number { font-size: 1.6rem; font-weight: 800; }
         .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
-        .review-card img.review-question-img {
-            max-width: 100%;
-            max-height: 180px;
-            margin: 10px 0;
-            border-radius: 12px;
-            border: 1px solid var(--border-light);
-        }
+        .review-card img.review-question-img { max-width: 100%; max-height: 180px; margin: 10px 0; border-radius: 12px; border: 1px solid var(--border-light); }
         .correct-option { font-weight: bold; color: var(--correct-color); }
         .btn-pdf { background: #ef4444; }
         .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
@@ -465,27 +458,23 @@
         if(window.MathJax) MathJax.typesetPromise();
     }
 
-    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+    function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
         if (!GOOGLE_SHEET_URL) return;
         try {
-            // Send JSON exactly as the Apps Script expects
-            await fetch(GOOGLE_SHEET_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    "Candidate Name": "Student",
-                    "Test No": dashboard.testNo,
-                    "Subject": dashboard.subject,
-                    "Topic Name": dashboard.topic,
-                    "Total Questions": QUESTIONS.length,
-                    "Correct Answers": correct,
-                    "Incorrect Answers": incorrect,
-                    "Final Score (after negative marking)": finalScore,
-                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
-                    "Time Taken": timeStr
-                })
-            });
+            const params = new URLSearchParams();
+            params.append("Candidate Name", "Student");
+            params.append("Test No", dashboard.testNo);
+            params.append("Subject", dashboard.subject);
+            params.append("Topic Name", dashboard.topic);
+            params.append("Total Questions", QUESTIONS.length);
+            params.append("Correct Answers", correct);
+            params.append("Incorrect Answers", incorrect);
+            params.append("Final Score (after negative marking)", finalScore);
+            params.append("Accuracy (%)", ((correct/QUESTIONS.length)*100).toFixed(1));
+            params.append("Time Taken", timeStr);
+            
+            const img = new Image();
+            img.src = GOOGLE_SHEET_URL + "?" + params.toString();
         } catch(err) { console.error("Sheet Error:", err); }
     }
 
