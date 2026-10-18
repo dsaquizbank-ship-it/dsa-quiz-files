@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-18T16:52:57.594Z",
+  "version": "2026-10-18T18:12:13.941Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -58,6 +58,12 @@
       "name": "PGTRB COMPUTER SCIENCE",
       "categoryId": "PGTRB",
       "order": 2
+    },
+    {
+      "id": "TETMS",
+      "name": "TET MATHS",
+      "categoryId": "TNTET",
+      "order": 3
     }
   ],
   "tests": [
@@ -148,6 +154,17 @@
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGCS-12.html",
       "releaseTimestamp": 0
+    },
+    {
+      "testId": "NTEMS-50",
+      "examId": "TETMS",
+      "name": "NTEMS-50 UNIT 7 TERM 1 ALGEBRA",
+      "durationMinutes": 20,
+      "order": 50,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTEMS-50.html",
+      "releaseTimestamp": 1792395000000
     }
   ]
 }
