@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>UGZ 61</title>
+    <title>DSA Academy Test</title>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
     <script>
         window.MathJax = {
@@ -217,50 +217,27 @@
         renderDashboard();
     }
 
+    // --- DASHBOARD (Admin panel injects this) ---
     let dashboard = {
-        examTitle: "UG-TRB ZOOLOGY",
-        testNo: "UGZ-69",
-        date: "16/10/2026",
-        subject: "ZOOLOGY",
-        topic: "CELL AND MOLECULAR BIOLOGY",
+        examTitle: "EXAM TITLE",
+        testNo: "TEST-01",
+        date: new Date().toLocaleDateString("en-GB"),
+        subject: "SUBJECT",
+        topic: "TOPIC",
         duration: "30",
-        totalMarks: "50",
-        negativeMark: 0.25 // Changed to 0.25 for negative marking
+        totalMarks: "", // Left blank so the code below calculates it automatically
+        negativeMark: 0
     };
 
+    // --- QUESTIONS (Admin panel injects this) ---
     let QUESTIONS = [
-        {
-            type: "mcq",
-            en: "What organism produces a sperm reaching a length of 12 mm?",
-            optionsEn: ["Sea urchin", "Hemipteran bug", "Opossum", "Toad-fish"],
-            ta: "12 மிமீ நீளத்தை எட்டும் விந்தணுவை உற்பத்தி செய்யும் உயிரினம் எது?",
-            optionsTa: ["கடல் முள்ளெலி", "ஹெமிப்டெரான் பூச்சி", "ஒபசம்", "தoad-மீன்"],
-            answer: 1,
-            imageUrl: null
-        },
-        {
-            type: "rc",
-            en: "<b>PASSAGE:</b><br>What organism produces a sperm reaching a length of 12 mm?<br><br><b>Q: Which of the following taxon-sperm associations is FALSE based on the text?</b>",
-            optionsEn: ["Sea urchin sperm size - 40μ", "Hemipteran bug sperm length - 12 mm", "Toad-fish sperm - Biflagellate", "Grasshopper sperm - Monoflagellate with no head association"],
-            ta: "<b>பத்தி:</b><br>12 மிமீ நீளத்தை எட்டும் விந்தணுவை உற்பத்தி செய்யும் உயிரினம் எது?<br><br><b>கேள்வி: உரையின் அடிப்படையில் பின்வரும் வகைப்பாட்டு-விந்தணு தொடர்புகளில் எது தவறானது?</b>",
-            optionsTa: ["கடல் முள்ளெலி விந்தணு அளவு - 40μ", "ஹெமிப்டெரான் பூச்சி விந்தணு நீளம் - 12 மிமீ", "தoad-மீன் விந்தணு - இரட்டைக் கசையிழை", "வெட்டுக்கிளி விந்தணு - தலை தொடர்பு இல்லாத ஒற்றைக் கசையிழை"],
-            answer: 3,
-            imageUrl: null
-        },
-        {
-            type: "puzzle",
-            en: "<b>Directions (Q3):</b> Study the following information carefully.<br><br>Eight people A, B, C, D, E, F, G and H are sitting around a circular table facing the center. A sits second to the right of B. C is an immediate neighbor of A.<br><br><b>Who sits third to the left of H?</b>",
-            optionsEn: ["A", "B", "C", "D"],
-            ta: "<b>வழிமுறைகள் (Q3):</b> பின்வரும் தகவல்களை கவனமாக படிக்கவும்.<br><br>எட்டு நபர்கள் A, B, C, D, E, F, G மற்றும் H ஒரு வட்ட மேசையைச் சுற்றி மையத்தை நோக்கி அமர்ந்துள்ளனர். A, B-க்கு வலதுபுறம் இரண்டாவதாக அமர்ந்துள்ளார். C, A-வுக்கு அருகில் அமர்ந்துள்ளார்.<br><br><b>H-க்கு இடதுபுறம் மூன்றாவதாக அமர்ந்திருப்பது யார்?</b>",
-            optionsTa: ["A", "B", "C", "D"],
-            answer: 1,
-            imageUrl: null
-        }
+        // QUESTIONS WILL BE INJECTED HERE
     ];
 
+    // THIS LINE FORCES THE TOTAL MARKS TO MATCH THE NUMBER OF QUESTIONS
     dashboard.totalMarks = QUESTIONS.length.toString();
     
-    // ⚠️ YOUR UPDATED GOOGLE SHEET URL IS HERE
+    // ⚠️ YOUR GOOGLE SHEET URL
     let GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbymL_S6HAFMWpZNGSHJv5QKXhHhxdyGg9TaElwdqBjF04BhH-JX4gNjufWG42D5Dz8ejQ/exec";
 
     function escapeHtml(s) { if(!s) return ''; return s.replace(/[&<>]/g, function(m){ return m==='&'?'&amp;':m==='<'?'&lt;':'>'?'&gt;':m;}); }
@@ -351,7 +328,6 @@
         quizActive = false;
     }
     
-    // NEW FUNCTION FOR LEADERBOARD BUTTON
     function openNativeLeaderboard() {
         if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
             window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
@@ -384,7 +360,6 @@
         let displayTxt = txt;
         let extraClass = "question-text";
 
-        // Smart formatting based on question type
         if (q.type === 'rc') {
             displayTxt = `<div class="passage-box">${txt}</div>`;
             extraClass = "question-text"; 
@@ -524,11 +499,9 @@
             else incorrect++;
         }
 
-        // 1. Calculate final score using the negative mark setting
         const negMark = dashboard.negativeMark || 0; 
         const finalScore = correct - (incorrect * negMark);
 
-        // 2. Send score to Android app
         try {
             if (window.AndroidBridge && window.AndroidBridge.submitScore) {
                 window.AndroidBridge.submitScore(JSON.stringify({
@@ -538,17 +511,16 @@
                     wrong: incorrect,
                     skipped: na,
                     total: QUESTIONS.length,
-                    stayOnScreen: true // Tells Android not to close the WebView
+                    stayOnScreen: true
                 }));
             }
         } catch (e) { console.log("Bridge error", e); }
 
-        // 3. Update the HTML Result Screen with the PENALIZED score
         const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
         const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
         const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,'0')}`;
         
-        document.getElementById('finalScore').innerText = finalScore; // Show penalized score
+        document.getElementById('finalScore').innerText = finalScore;
         document.getElementById('correctCountStat').innerText = correct;
         document.getElementById('incorrectCountStat').innerText = incorrect;
         document.getElementById('notAttemptedStat').innerText = na;
@@ -560,8 +532,6 @@
         document.getElementById('scoreRing').style.setProperty('--score-percent', `${pct}%`);
         
         buildDetailedReview();
-        
-        // 4. Send to Google Sheet
         sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
         
         document.getElementById('startScreen').style.display = 'none';
