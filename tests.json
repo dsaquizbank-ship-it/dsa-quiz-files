@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-18T07:18:27.576Z",
+  "version": "2026-10-18T07:19:56.828Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -36,6 +36,16 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGE-46.html"
+    },
+    {
+      "testId": "UGM-93",
+      "examId": "UG-MATHS",
+      "name": "UGM-93 UNIT 8 PROJECTILE PATH · PROJECTILE ON INCLINED PLANE · STATIC EQUILIBRIUM & EQUIVALENT FORCE SYSTEMS · FRICTION · CENTROIDS & MOMENT OF INERTIA · ELASTIC MEDIUM.",
+      "durationMinutes": 30,
+      "order": 93,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-93.html"
     }
   ]
 }
