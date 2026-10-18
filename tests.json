@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-18T09:54:06.102Z",
+  "version": "2026-10-18T10:01:58.199Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -10,6 +10,11 @@
       "id": "UGTRB",
       "name": "UGTRB",
       "order": 5
+    },
+    {
+      "id": "TNPSC",
+      "name": "TNPSC",
+      "order": 3
     }
   ],
   "exams": [
@@ -24,6 +29,12 @@
       "name": "UGTRB MATHS",
       "categoryId": "UGTRB",
       "order": 3
+    },
+    {
+      "id": "TNPSC-NEW",
+      "name": "TNPSC NEW",
+      "categoryId": "TNPSC",
+      "order": 2
     }
   ],
   "tests": [
@@ -69,6 +80,17 @@
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-91.html",
       "releaseTimestamp": 1792395000000
+    },
+    {
+      "testId": "NTN-51",
+      "examId": "TNPSC-NEW",
+      "name": "NTN-51 6TH TERM 3 ILAKKANAM",
+      "durationMinutes": 15,
+      "order": 51,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTN-51.html",
+      "releaseTimestamp": 1792567800000
     }
   ]
 }
