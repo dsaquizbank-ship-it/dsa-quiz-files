@@ -154,7 +154,6 @@
             </div>
             <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
                 <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
-                <!-- NEW LEADERBOARD BUTTON -->
                 <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
             </div>
         </div>
@@ -218,7 +217,7 @@
         subject: "SUBJECT",
         topic: "TOPIC",
         duration: "30",
-        totalMarks: "", // Left blank so the code below calculates it automatically
+        totalMarks: "",
         negativeMark: 0
     };
 
@@ -230,8 +229,8 @@
     // THIS LINE FORCES THE TOTAL MARKS TO MATCH THE NUMBER OF QUESTIONS
     dashboard.totalMarks = QUESTIONS.length.toString();
     
-    // ⚠️ YOUR GOOGLE SHEET URL
-    let GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbymL_S6HAFMWpZNGSHJv5QKXhHhxdyGg9TaElwdqBjF04BhH-JX4gNjufWG42D5Dz8ejQ/exec";
+    // ⚠️ YOUR GOOGLE SHEET URL (UPDATED)
+    let GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbwZT_-RigE3LJnFmaDiEDk6z_kDVdQTYJd_dxRXBmqzwnU8QQxEMBFn88W-zoN0z5odGQ/exec";
 
     function escapeHtml(s) { if(!s) return ''; return s.replace(/[&<>]/g, function(m){ return m==='&'?'&amp;':m==='<'?'&lt;':'>'?'&gt;':m;}); }
 
