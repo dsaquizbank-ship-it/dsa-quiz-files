@@ -4,13 +4,13 @@
     {
       "id": "PGTRB",
       "name": "PGTRB",
-      "order": 1
+      "order": 4
     }
   ],
   "exams": [
     {
-      "id": "ENGLISH",
-      "name": "ENGLISH",
+      "id": "PG-ENG",
+      "name": "PGTRB ENGLISH",
       "categoryId": "PGTRB",
       "order": 1
     }
@@ -18,7 +18,7 @@
   "tests": [
     {
       "testId": "PGE-46",
-      "examId": "ENGLISH",
+      "examId": "PG-ENG",
       "name": "PGE-46 UNIT IV ALFRED LORD TENNYSON ULYSSES",
       "durationMinutes": 15,
       "order": 1,
