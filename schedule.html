@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Test Schedule</title>
+    <style>
+        body { font-family: "Segoe UI", system-ui, sans-serif; background: #0D1B2A; color: #FFF; padding: 16px; }
+        h2 { color: #F5B700; text-align: center; margin-bottom: 20px; }
+        .card { background: #1A2A5E; border-radius: 12px; padding: 16px; margin-bottom: 16px; border-left: 4px solid #10b981; }
+        .exam-title { color: #F5B700; font-size: 22px; font-weight: bold; margin-bottom: 16px; border-bottom: 2px solid #2E4374; padding-bottom: 8px; }
+        .date-block { margin-top: 16px; }
+        .date-header { color: #34d399; font-size: 15px; font-weight: bold; margin-bottom: 6px; display: block; }
+        .test-item { background: #0F1B3D; padding: 12px; border-radius: 8px; margin-top: 8px; border-left: 2px solid #3b82f6; }
+        .subject { color: #34d399; font-weight: bold; font-size: 14px; }
+        .topic { font-size: 15px; margin-top: 4px; }
+        .test-no { display: inline-block; background: #10b981; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px; margin-top: 8px; }
+    </style>
+</head>
+<body>
+    <h2>📅 Mock Test Schedule</h2>
+    <div id="scheduleContainer"></div>
+
+    <script>
+const SCHEDULE = [
+    {
+        examName: "TNPSC - NEW (NTN)",
+        dates: [
+            {
+                date: "05/10/2026", weekday: "Monday",
+                entries: [
+                    { testNo: "NTN - 44", subject: "Maths", topic: "Numbers, Odd-Even, Fractions" }
+                ]
+            },
+            {
+                date: "07/10/2026", weekday: "Wednesday",
+                entries: [
+                    { testNo: "NTN - 45", subject: "Tamil", topic: "6th Term I - அரசியலமைப்பு" }
+                ]
+            },
+            {
+                date: "09/10/2026", weekday: "Friday",
+                entries: [
+                    { testNo: "NTN - 46", subject: "TNS", topic: "நடப்பு நிகழ்வுகள், CA: Oct 1 - 7" }
+                ]
+            },
+            {
+                date: "12/10/2026", weekday: "Monday",
+                entries: [
+                    { testNo: "NTN - 47", subject: "Maths", topic: "Integers, Decimal, Exponents & Powers" }
+                ]
+            },
+            {
+                date: "14/10/2026", weekday: "Wednesday",
+                entries: [
+                    { testNo: "NTN - 48", subject: "Tamil", topic: "6th Term II - இலக்கணம்" }
+                ]
+            },
+            {
+                date: "16/10/2026", weekday: "Friday",
+                entries: [
+                    { testNo: "NTN - 49", subject: "Geo", topic: "Rock and Soil, CA: Oct 8 - 15" }
+                ]
+            },
+            {
+                date: "19/10/2026", weekday: "Monday",
+                entries: [
+                    { testNo: "NTN - 50", subject: "Maths", topic: "Rational Numbers, Square & Roots, Cube & Roots" }
+                ]
+            },
+            {
+                date: "21/10/2026", weekday: "Wednesday",
+                entries: [
+                    { testNo: "NTN - 51", subject: "Tamil", topic: "6th Term III - இலக்கணம்" }
+                ]
+            },
+            {
+                date: "23/10/2026", weekday: "Friday",
+                entries: [
+                    { testNo: "NTN - 52", subject: "TNS", topic: "தமிழ் இலக்கியம், CA: Oct 16 - 21" }
+                ]
+            },
+            {
+                date: "26/10/2026", weekday: "Monday",
+                entries: [
+                    { testNo: "NTN - 53", subject: "Maths", topic: "Simplification" }
+                ]
+            },
+            {
+                date: "28/10/2026", weekday: "Wednesday",
+                entries: [
+                    { testNo: "NTN - 54", subject: "Tamil", topic: "6th Full - இலக்கணம்" }
+                ]
+            },
+            {
+                date: "30/10/2026", weekday: "Friday",
+                entries: [
+                    { testNo: "NTN - 55", subject: "INM", topic: "Moderate-Extremist-Bengal Partition, CA: Oct 22 - 28" }
+                ]
+            }
+        ]
+    },
+    {
+        examName: "TET (NTE)",
+        dates: [
+            {
+                date: "05/10/2026", weekday: "Monday",
+                entries: [
+                    { testNo: "NTE - 44", subject: "Tamil: 8th Iyal 1, 2 | Maths: 7th Unit 1 | SS: 8th Geo", topic: "Number System - Migration and Urbanisation" }
+                ]
+            },
+            {
+                date: "07/10/2026", weekday: "Wednesday",
+                entries: [
+                    { testNo: "NTE - 45", subject: "English: 8th Unit 5, 6 | Sci: 7th Force & Motion | SS: 8th Geo", topic: "Hazards" }
+                ]
+            },
+            {
+                date: "09/10/2026", weekday: "Friday",
+                entries: [
+                    { testNo: "NTE - 46", subject: "Psychology: Unit 6", topic: "Intelligence & Creativity" }
+                ]
+            },
+            {
+                date: "12/10/2026", weekday: "Monday",
+                entries: [
+                    { testNo: "NTE - 47", subject: "Tamil: 8th Iyal 3, 4 | Maths: 7th Unit 2 | SS: 8th Geo", topic: "Measurements - Industries" }
+                ]
+            },
+            {
+                date: "14/10/2026", weekday: "Wednesday",
+                entries: [
+                    { testNo: "NTE - 48", subject: "English: 8th Unit 7, 8 | Sci: 7th Heat and Temperature | SS: 8th Geo", topic: "Exploring Continents Africa, Australia and Antarctica" }
+                ]
+            },
+            {
+                date: "16/10/2026", weekday: "Friday",
+                entries: [
+                    { testNo: "NTE - 49", subject: "Psychology: Unit 7", topic: "Personality Theories upto Type and Trait" }
+                ]
+            },
+            {
+                date: "19/10/2026", weekday: "Monday",
+                entries: [
+                    { testNo: "NTE - 50", subject: "Tamil: 8th Iyal 5, 6 | Maths: 7th Unit 1 | SS: 8th Geo", topic: "Algebra - Map Reading" }
+                ]
+            },
+            {
+                date: "21/10/2026", weekday: "Wednesday",
+                entries: [
+                    { testNo: "NTE - 51", subject: "English: 8th Unit 1-4 | Sci: 7th Electricity | SS: 8th", topic: "Human Rights and UNO" }
+                ]
+            },
+            {
+                date: "23/10/2026", weekday: "Friday",
+                entries: [
+                    { testNo: "NTE - 52", subject: "Psychology: Unit 7", topic: "Personality Full" }
+                ]
+            },
+            {
+                date: "26/10/2026", weekday: "Monday",
+                entries: [
+                    { testNo: "NTE - 53", subject: "Tamil: 8th Iyal 7, 8 | Maths: 7th Unit 4 | SS: 8th", topic: "Direct and Road Safety Rules and Regulations" }
+                ]
+            },
+            {
+                date: "28/10/2026", weekday: "Wednesday",
+                entries: [
+                    { testNo: "NTE - 54", subject: "English: 8th Unit 5-8 | Sci: 7th Light | SS: 8th", topic: "Geography Full" }
+                ]
+            },
+            {
+                date: "30/10/2026", weekday: "Friday",
+                entries: [
+                    { testNo: "NTE - 55", subject: "Psychology: Unit 8", topic: "Full Revision" }
+                ]
+            }
+        ]
+    },
+    {
+        examName: "SGT",
+        dates: [
+            {
+                date: "05/10/2026", weekday: "Monday",
+                entries: [
+                    { testNo: "SGT - 26", subject: "Tamil", topic: "9th இயல் 5 - அறிமுகம்" }
+                ]
+            },
+            {
+                date: "07/10/2026", weekday: "Wednesday",
+                entries: [
+                    { testNo: "SGT - 27", subject: "His", topic: "1-3" }
+                ]
+            },
+            {
+                date: "09/10/2026", weekday: "Friday",
+                entries: [
+                    { testNo: "SGT - 28", subject: "Tamil", topic: "10th இயல் 1" }
+                ]
+            },
+            {
+                date: "12/10/2026", weekday: "Monday",
+                entries: [
+                    { testNo: "SGT - 29", subject: "Tamil", topic: "9th Revision 1-5" }
+                ]
+            },
+            {
+                date: "14/10/2026", weekday: "Wednesday",
+                entries: [
+                    { testNo: "SGT - 30", subject: "His", topic: "4-6" }
+                ]
+            },
+            {
+                date: "16/10/2026", weekday: "Friday",
+                entries: [
+                    { testNo: "SGT - 31", subject: "Tamil", topic: "10th இயல் 2" }
+                ]
+            },
+            {
+                date: "19/10/2026", weekday: "Monday",
+                entries: [
+                    { testNo: "SGT - 32", subject: "Tamil", topic: "9th Revision 6-9" }
+                ]
+            },
+            {
+                date: "21/10/2026", weekday: "Wednesday",
+                entries: [
+                    { testNo: "SGT - 33", subject: "His", topic: "7-9" }
+                ]
+            },
+            {
+                date: "23/10/2026", weekday: "Friday",
+                entries: [
+                    { testNo: "SGT - 34", subject: "Tamil", topic: "10th இயல் 3" }
+                ]
+            },
+            {
+                date: "26/10/2026", weekday: "Monday",
+                entries: [
+                    { testNo: "SGT - 35", subject: "Phy", topic: "9th Measurement - Motion" }
+                ]
+            },
+            {
+                date: "28/10/2026", weekday: "Wednesday",
+                entries: [
+                    { testNo: "SGT - 36", subject: "His", topic: "10-11" }
+                ]
+            },
+            {
+                date: "30/10/2026", weekday: "Friday",
+                entries: [
+                    { testNo: "SGT - 37", subject: "Tamil", topic: "10th இயல் 4" }
+                ]
+            }
+        ]
+    },
+    {
+        examName: "SSC | RRB | BANK (BSR)",
+        dates: [
+            {
+                date: "05/10/2026", weekday: "Monday",
+                entries: [
+                    { testNo: "BSR - 45", subject: "Math", topic: "Simple Interest, Phy: Physical Quantities" }
+                ]
+            },
+            {
+                date: "07/10/2026", weekday: "Wednesday",
+                entries: [
+                    { testNo: "BSR - 46", subject: "Rea: Compound Interest", topic: "Che: Matter & States of Matter" }
+                ]
+            },
+            {
+                date: "09/10/2026", weekday: "Friday",
+                entries: [
+                    { testNo: "BSR - 47", subject: "Eng", topic: "CA: Oct 1 - 7" }
+                ]
+            },
+            {
+                date: "12/10/2026", weekday: "Monday",
+                entries: [
+                    { testNo: "BSR - 48", subject: "Math", topic: "Phy" }
+                ]
+            },
+            {
+                date: "14/10/2026", weekday: "Wednesday",
+                entries: [
+                    { testNo: "BSR - 49", subject: "Rea: Atomic Structure", topic: "Che: Atomic Structure" }
+                ]
+            },
+            {
+                date: "16/10/2026", weekday: "Friday",
+                entries: [
+                    { testNo: "BSR - 50", subject: "Eng", topic: "CA: Oct 8 - 15" }
+                ]
+            },
+            {
+                date: "19/10/2026", weekday: "Monday",
+                entries: [
+                    { testNo: "BSR - 51", subject: "Math", topic: "Phy" }
+                ]
+            },
+            {
+                date: "21/10/2026", weekday: "Wednesday",
+                entries: [
+                    { testNo: "BSR - 52", subject: "Rea: Periodic Classification", topic: "Che: Periodic Classification" }
+                ]
+            },
+            {
+                date: "23/10/2026", weekday: "Friday",
+                entries: [
+                    { testNo: "BSR - 53", subject: "Eng", topic: "CA: Oct 16 - 21" }
+                ]
+            },
+            {
+                date: "26/10/2026", weekday: "Monday",
+                entries: [
+                    { testNo: "BSR - 54", subject: "Math", topic: "Phy" }
+                ]
+            },
+            {
+                date: "28/10/2026", weekday: "Wednesday",
+                entries: [
+                    { testNo: "BSR - 55", subject: "Rea: Chemical Reactions & Bonds", topic: "Che: Chemical Reactions & Bonds" }
+                ]
+            },
+            {
+                date: "30/10/2026", weekday: "Friday",
+                entries: [
+                    { testNo: "BSR - 56", subject: "Eng", topic: "CA: Oct 22 - 28" }
+                ]
+            }
+        ]
+    },
+    {
+        examName: "TNPSC - PRELIMS (TNA)",
+        dates: [
+            {
+                date: "05/10/2026", weekday: "Monday",
+                entries: [
+                    { testNo: "TNA - 35", subject: "Unit IV", topic: "Indian Polity" }
+                ]
+            },
+            {
+                date: "07/10/2026", weekday: "Wednesday",
+                entries: [
+                    { testNo: "TNA - 36", subject: "Unit III: Indian History (only) | Maths", topic: "Full Test" }
+                ]
+            },
+            {
+                date: "09/10/2026", weekday: "Friday",
+                entries: [
+                    { testNo: "TNA - 37", subject: "Unit III: INM (only) | Tamil", topic: "Full Test" }
+                ]
+            },
+            {
+                date: "12/10/2026", weekday: "Monday",
+                entries: [
+                    { testNo: "TNA - 38", subject: "Unit II", topic: "Indian Geography" }
+                ]
+            },
+            {
+                date: "14/10/2026", weekday: "Wednesday",
+                entries: [
+                    { testNo: "TNA - 39", subject: "Unit V: Indian Economy (only) | Maths", topic: "Full Test" }
+                ]
+            },
+            {
+                date: "16/10/2026", weekday: "Friday",
+                entries: [
+                    { testNo: "TNA - 40", subject: "Unit V: Development Administration in TN (only) | Tamil", topic: "Full Test" }
+                ]
+            },
+            {
+                date: "19/10/2026", weekday: "Monday",
+                entries: [
+                    { testNo: "TNA - 41", subject: "Unit VI", topic: "History, Culture, Heritage and Socio-Political Movements in TN" }
+                ]
+            },
+            {
+                date: "21/10/2026", weekday: "Wednesday",
+                entries: [
+                    { testNo: "TNA - 42", subject: "Part B", topic: "Aptitude and Mental Ability" }
+                ]
+            },
+            {
+                date: "23/10/2026", weekday: "Friday",
+                entries: [
+                    { testNo: "TNA - 43", subject: "Unit I: General Science | Tamil", topic: "Full Test" }
+                ]
+            },
+            {
+                date: "28/10/2026", weekday: "Wednesday",
+                entries: [
+                    { testNo: "Full Mock Test (OMR)", subject: "Full Syllabus", topic: "Full Mock Test" }
+                ]
+            }
+        ]
+    }
+];
+        const container = document.getElementById("scheduleContainer");
+        
+        if (typeof SCHEDULE !== "undefined" && Array.isArray(SCHEDULE)) {
+            SCHEDULE.forEach(exam => {
+                const examDiv = document.createElement("div");
+                examDiv.className = "card";
+                
+                let html = `<div class="exam-title">${exam.examName}</div>`;
+                
+                exam.dates.forEach(d => {
+                    html += `<div class="date-block">
+                        <div class="date-header">📅 ${d.date} (${d.weekday})</div>`;
+                        
+                    d.entries.forEach(e => {
+                        html += `<div class="test-item">
+                            <div class="subject">${e.subject}</div>
+                            <div class="topic">${e.topic}</div>
+                            <div class="test-no">Test ID: ${e.testNo}</div>
+                        </div>`;
+                    });
+                    
+                    html += `</div>`;
+                });
+                
+                examDiv.innerHTML = html;
+                container.appendChild(examDiv);
+            });
+        } else {
+            container.innerHTML = `<p style="text-align:center;color:#A8C8E1;">No schedule data found.</p>`;
+        }
+    </script>
+</body>
+</html>
