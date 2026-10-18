@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-18T07:25:00.697Z",
+  "version": "2026-10-18T07:26:11.488Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -44,7 +44,7 @@
       "durationMinutes": 30,
       "order": 93,
       "questionCount": 25,
-      "negativeMark": 0,
+      "negativeMark": 0.25,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-93.html"
     }
   ]
