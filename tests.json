@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-19T07:12:23.929Z",
+  "version": "2026-10-19T07:49:26.834Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -20,6 +20,11 @@
       "id": "TNTET",
       "name": "TNTET",
       "order": 6
+    },
+    {
+      "id": "BANK",
+      "name": "BANK",
+      "order": 1
     }
   ],
   "exams": [
@@ -64,6 +69,12 @@
       "name": "TET MATHS",
       "categoryId": "TNTET",
       "order": 3
+    },
+    {
+      "id": "BANK-PRACTICE",
+      "name": "PRACTICE TEST",
+      "categoryId": "BANK",
+      "order": 19
     }
   ],
   "tests": [
@@ -176,6 +187,17 @@
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGE-97.html",
       "releaseTimestamp": 1792567800000
+    },
+    {
+      "testId": "BSR-51",
+      "examId": "BANK-PRACTICE",
+      "name": "BSR-51 QUANTITATIVE PROFIT & LOSS",
+      "durationMinutes": 30,
+      "order": 51,
+      "questionCount": 25,
+      "negativeMark": 0.25,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BSR-51.html",
+      "releaseTimestamp": 0
     }
   ]
 }
