@@ -739,7 +739,8 @@ let QUESTIONS = [
                     wrong: incorrect,
                     skipped: na,
                     total: QUESTIONS.length,
-                    stayOnScreen: true 
+                    stayOnScreen: true,
+                    answers: userAnswers
                 }));
             }
         } catch (e) { console.log("Bridge error", e); }
@@ -796,7 +797,38 @@ let QUESTIONS = [
     if (savedTheme === "dark") document.documentElement.setAttribute("data-theme", "dark");
     else document.documentElement.setAttribute("data-theme", "light");
     updateUILanguage();
-    checkForAutoResume();
+    
+    // --- REVIEW MODE CHECK ---
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get("review") === "true") {
+        isSubmitted = true;
+        quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        
+        let correct=0, incorrect=0, na=0;
+        for(let i=0; i<QUESTIONS.length; i++) {
+            if(userAnswers[i] === null || userAnswers[i] === undefined) na++;
+            else if(userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+    } else {
+        checkForAutoResume();
+    }
     window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
 </script>
 </body>
