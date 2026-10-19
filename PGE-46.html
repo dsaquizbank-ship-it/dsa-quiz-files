@@ -570,6 +570,9 @@ let QUESTIONS = [
     }
 
     let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) {
+        userAnswers = injectedAnswers;
+    }
     let currentIndex = 0;
     let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
     let timerInterval = null;
@@ -798,37 +801,39 @@ let QUESTIONS = [
     else document.documentElement.setAttribute("data-theme", "light");
     updateUILanguage();
     
-    // --- REVIEW MODE CHECK ---
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get("review") === "true") {
-        isSubmitted = true;
-        quizActive = false;
-        document.getElementById("startScreen").style.display = "none";
-        document.getElementById("quizContainer").style.display = "none";
-        document.getElementById("resultContainer").style.display = "block";
-        
-        let correct=0, incorrect=0, na=0;
-        for(let i=0; i<QUESTIONS.length; i++) {
-            if(userAnswers[i] === null || userAnswers[i] === undefined) na++;
-            else if(userAnswers[i] === QUESTIONS[i].answer) correct++;
-            else incorrect++;
+    // --- REVIEW MODE CHECK (DELAYED) ---
+    setTimeout(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get("review") === "true") {
+            isSubmitted = true;
+            quizActive = false;
+            document.getElementById("startScreen").style.display = "none";
+            document.getElementById("quizContainer").style.display = "none";
+            document.getElementById("resultContainer").style.display = "block";
+            
+            let correct=0, incorrect=0, na=0;
+            for(let i=0; i<QUESTIONS.length; i++) {
+                if(userAnswers[i] === null || userAnswers[i] === undefined) na++;
+                else if(userAnswers[i] === QUESTIONS[i].answer) correct++;
+                else incorrect++;
+            }
+            const negMark = dashboard.negativeMark || 0;
+            const finalScore = correct - (incorrect * negMark);
+            const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+            
+            document.getElementById("finalScore").innerText = finalScore;
+            document.getElementById("correctCountStat").innerText = correct;
+            document.getElementById("incorrectCountStat").innerText = incorrect;
+            document.getElementById("notAttemptedStat").innerText = na;
+            document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+            document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+            const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+            document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+            buildDetailedReview();
+        } else {
+            checkForAutoResume();
         }
-        const negMark = dashboard.negativeMark || 0;
-        const finalScore = correct - (incorrect * negMark);
-        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
-        
-        document.getElementById("finalScore").innerText = finalScore;
-        document.getElementById("correctCountStat").innerText = correct;
-        document.getElementById("incorrectCountStat").innerText = incorrect;
-        document.getElementById("notAttemptedStat").innerText = na;
-        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
-        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
-        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
-        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
-        buildDetailedReview();
-    } else {
-        checkForAutoResume();
-    }
+    }, 100);
     window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
 </script>
 </body>
