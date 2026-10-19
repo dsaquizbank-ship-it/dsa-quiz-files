@@ -802,9 +802,18 @@ let QUESTIONS = [
     updateUILanguage();
     
     // --- REVIEW MODE CHECK (DELAYED) ---
-    setTimeout(() => {
+    window.checkForReview = function() {
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get("review") === "true") {
+            // READ THE ANSWERS FROM LOCAL STORAGE
+            const savedAnswers = localStorage.getItem("reviewAnswers");
+            if (savedAnswers) {
+                try {
+                    userAnswers = JSON.parse(savedAnswers);
+                    localStorage.removeItem("reviewAnswers");
+                } catch(e) { console.log("Error parsing answers: " + e.message); }
+            }
+            
             isSubmitted = true;
             quizActive = false;
             document.getElementById("startScreen").style.display = "none";
@@ -833,7 +842,7 @@ let QUESTIONS = [
         } else {
             checkForAutoResume();
         }
-    }, 100);
+    };
     window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
 </script>
 </body>
