@@ -632,9 +632,10 @@ let QUESTIONS = [
                     wrong: incorrect,
                     skipped: na,
                     total: QUESTIONS.length,
-                    score: finalScore, // <--- ADDED THIS LINE
+                    score: finalScore,
                     stayOnScreen: true,
-                    answers: userAnswers
+                    answers: userAnswers,
+                    questions: QUESTIONS
                 }));
             }
         } catch (e) { console.log("Bridge error", e); }
