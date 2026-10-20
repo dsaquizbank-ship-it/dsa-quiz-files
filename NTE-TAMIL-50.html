@@ -80,7 +80,7 @@
             <div class="timer-box" id="timerDisplay">25:00</div>
             <div class="top-buttons">
                 <button id="darkModeToggleBtn" class="icon-btn" onclick="toggleTheme()">🌙 Dark</button>
-                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="display: none;">தமிழ்</button>
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
             </div>
         </div>
         <div class="question-container" id="questionArea"></div>
@@ -118,7 +118,7 @@
 </div>
 
 <script>
-    let currentLanguage = "ta";
+    let currentLanguage = "en";
     const translations = {
         en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 Dark", lightMode: "☀️ Light" },
         ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 இருண்ட", lightMode: "☀️ ஒளி" }
@@ -670,6 +670,9 @@ let QUESTIONS = [
     }
 
     let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) {
+        userAnswers = injectedAnswers;
+    }
     let currentIndex = 0;
     let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
     let timerInterval = null;
@@ -794,13 +797,14 @@ let QUESTIONS = [
 
     async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
         if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
         try {
             await fetch(GOOGLE_SHEET_URL, {
                 method: "POST",
                 mode: "no-cors",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    "Candidate Name": "Student",
+                    "Candidate Name": studentName,
                     "Test No": dashboard.testNo,
                     "Subject": dashboard.subject,
                     "Topic Name": dashboard.topic,
@@ -838,7 +842,10 @@ let QUESTIONS = [
                     wrong: incorrect,
                     skipped: na,
                     total: QUESTIONS.length,
-                    stayOnScreen: true 
+                    score: finalScore,
+                    stayOnScreen: true,
+                    answers: userAnswers,
+                    questions: QUESTIONS
                 }));
             }
         } catch (e) { console.log("Bridge error", e); }
@@ -873,7 +880,7 @@ let QUESTIONS = [
         timeLeft = (parseInt(dashboard.duration) || 15) * 60;
         startTimestamp = Date.now();
         quizActive = true; isSubmitted = false;
-        document.getElementById("quizCandidateName").innerText = "Student";
+        document.getElementById("quizCandidateName").innerText = window.actualStudentName || "Student";
         renderQuestion(); startTimer();
         document.getElementById("startScreen").style.display = "none";
         document.getElementById("quizContainer").style.display = "block";
@@ -895,7 +902,49 @@ let QUESTIONS = [
     if (savedTheme === "dark") document.documentElement.setAttribute("data-theme", "dark");
     else document.documentElement.setAttribute("data-theme", "light");
     updateUILanguage();
-    checkForAutoResume();
+    
+    // --- REVIEW MODE CHECK (DELAYED) ---
+    window.checkForReview = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get("review") === "true") {
+            // READ THE ANSWERS FROM LOCAL STORAGE
+            const savedAnswers = localStorage.getItem("reviewAnswers");
+            if (savedAnswers) {
+                try {
+                    userAnswers = JSON.parse(savedAnswers);
+                    localStorage.removeItem("reviewAnswers");
+                } catch(e) { console.log("Error parsing answers: " + e.message); }
+            }
+            
+            isSubmitted = true;
+            quizActive = false;
+            document.getElementById("startScreen").style.display = "none";
+            document.getElementById("quizContainer").style.display = "none";
+            document.getElementById("resultContainer").style.display = "block";
+            
+            let correct=0, incorrect=0, na=0;
+            for(let i=0; i<QUESTIONS.length; i++) {
+                if(userAnswers[i] === null || userAnswers[i] === undefined) na++;
+                else if(userAnswers[i] === QUESTIONS[i].answer) correct++;
+                else incorrect++;
+            }
+            const negMark = dashboard.negativeMark || 0;
+            const finalScore = correct - (incorrect * negMark);
+            const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+            
+            document.getElementById("finalScore").innerText = finalScore;
+            document.getElementById("correctCountStat").innerText = correct;
+            document.getElementById("incorrectCountStat").innerText = incorrect;
+            document.getElementById("notAttemptedStat").innerText = na;
+            document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+            document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+            const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+            document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+            buildDetailedReview();
+        } else {
+            checkForAutoResume();
+        }
+    };
     window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
 </script>
 </body>
