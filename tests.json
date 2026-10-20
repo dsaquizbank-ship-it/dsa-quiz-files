@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-20T03:17:34.814Z",
+  "version": "2026-10-20T04:56:56.112Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -86,6 +86,12 @@
       "name": "GENERAL SCIENCE",
       "categoryId": "SSC-RRB",
       "order": 30
+    },
+    {
+      "id": "TETSS",
+      "name": "TET SOCIAL SCIENCE",
+      "categoryId": "TNTET",
+      "order": 2
     }
   ],
   "tests": [
@@ -219,6 +225,17 @@
       "questionCount": 25,
       "negativeMark": 0.33,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SSR-51.html",
+      "releaseTimestamp": 0
+    },
+    {
+      "testId": "NTESS-50",
+      "examId": "TETSS",
+      "name": "NTESS-50 8TH GEO- MAP READING",
+      "durationMinutes": 15,
+      "order": 50,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTESS-50.html",
       "releaseTimestamp": 0
     }
   ]
