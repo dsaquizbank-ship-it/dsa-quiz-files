@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-21T08:53:46.229Z",
+  "version": "2026-10-21T16:39:27.061Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -30,6 +30,11 @@
       "id": "SSC-RRB",
       "name": "SSC-RRB",
       "order": 2
+    },
+    {
+      "id": "DEMO",
+      "name": "DEMO",
+      "order": 9
     }
   ],
   "exams": [
@@ -97,6 +102,12 @@
       "id": "TETSC",
       "name": "TET SCIENCE",
       "categoryId": "TNTET",
+      "order": 1
+    },
+    {
+      "id": "DEMO",
+      "name": "DEMO",
+      "categoryId": "DEMO",
       "order": 1
     }
   ],
@@ -297,6 +308,17 @@
       "questionCount": 15,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGCS-13.html",
+      "releaseTimestamp": 0
+    },
+    {
+      "testId": "DEMO",
+      "examId": "DEMO",
+      "name": "DEMO",
+      "durationMinutes": 30,
+      "order": 1,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/DEMO.html",
       "releaseTimestamp": 0
     }
   ]
