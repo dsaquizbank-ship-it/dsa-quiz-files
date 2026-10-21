@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-21T07:53:20.376Z",
+  "version": "2026-10-21T07:56:51.568Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -242,7 +242,7 @@
       "testId": "BSR-52",
       "examId": "BANK-PRACTICE",
       "name": "BSR-52 REASONING - CODING DECODING",
-      "durationMinutes": 20,
+      "durationMinutes": 30,
       "order": 52,
       "questionCount": 25,
       "negativeMark": 0.25,
