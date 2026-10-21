@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-21T06:56:31.515Z",
+  "version": "2026-10-21T07:01:22.660Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -204,17 +204,6 @@
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGE-97.html",
       "releaseTimestamp": 1792567800000
-    },
-    {
-      "testId": "BSR-51",
-      "examId": "BANK-PRACTICE",
-      "name": "BSR-51 REASONING - CODING DECODING",
-      "durationMinutes": 20,
-      "order": 51,
-      "questionCount": 25,
-      "negativeMark": 0.25,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BSR-51.html",
-      "releaseTimestamp": 0
     },
     {
       "testId": "SSR-51",
