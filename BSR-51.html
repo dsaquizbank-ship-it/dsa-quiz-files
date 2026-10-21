@@ -152,30 +152,212 @@
         testNo: "BSR-51",
         date: new Date().toLocaleDateString("en-GB"),
         subject: "PRACTICE TEST",
-        topic: "REASONING - CODING DECODING",
-        duration: "20",
+        topic: "PROFIT & LOSS",
+        duration: "25",
         totalMarks: "0",
         negativeMark: 0.25,
     };
 
 let QUESTIONS = [
   {
-    "type": "rc",
-    "en": "In a certain code language, \n‘good time to buy’ is written as ‘sy bo nj kw’ \n‘invest money and time’ is written as ‘sy ta ge mr’. \n‘buy good stuff only’ is written as ‘kw bo rd fp’. \n‘only work and money’ is written as ‘ta fp mr ux’.\n\n1. What is the code for “invest time to work” in the give code language?",
-    "ta": "In a certain code language, \n‘good time to buy’ is written as ‘sy bo nj kw’ \n‘invest money and time’ is written as ‘sy ta ge mr’. \n‘buy good stuff only’ is written as ‘kw bo rd fp’. \n‘only work and money’ is written as ‘ta fp mr ux’.\n\n1. What is the code for “invest time to work” in the give code language?",
-    "optionsEn": [
-      "sy bo mr fp",
-      "ta nj kw rd",
-      "ta fp ux nj",
-      "ux ge nj sy"
-    ],
-    "optionsTa": [
-      "sy bo mr fp",
-      "ta nj kw rd",
-      "ta fp ux nj",
-      "ux ge nj sy"
-    ],
-    "answer": 3
+    type: "mcq",
+    en: "If the cost price of 12 pens is equal to selling price of 8 pens, the profit % is?",
+    ta: "",
+    optionsEn: ["30%", "40%", "50%", "60%"],
+    optionsTa: ["", "", "", ""],
+    answer: 2
+  },
+  {
+    type: "mcq",
+    en: "If the selling price of 50 articles is equal to the cost price of 40 articles, then the loss or gain % is?",
+    ta: "",
+    optionsEn: ["20% loss", "30% loss", "25% gain", "10% gain"],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Some articles are bought at 6 for Rs. 5 and sold for 5 for Rs. 6. Gain % is?",
+    ta: "",
+    optionsEn: ["40%", "30%", "35%", "44%"],
+    optionsTa: ["", "", "", ""],
+    answer: 3
+  },
+  {
+    type: "mcq",
+    en: "A sells a bicycle to B at a profit of 20%. B sells to C at a profit of 25%. If C pays Rs. 225 for it, the cost price of the bicycle for A is?",
+    ta: "",
+    optionsEn: ["120", "130", "140", "150"],
+    optionsTa: ["", "", "", ""],
+    answer: 3
+  },
+  {
+    type: "mcq",
+    en: "A shopkeeper sells two watches for Rs. 308 each. On one he got 12% profit and on the other 12% loss. His profit or loss in the entire transaction is?",
+    ta: "",
+    optionsEn: ["1 11/25% loss", "1 2/25% profit", "1 3/45% loss", "1 4/55% loss"],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Successive discounts of 10%, 12% and 15% equal to a single discount of?",
+    ta: "",
+    optionsEn: ["32.68%", "33.58%", "34.28%", "35.18%"],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "List price of an article at a showroom is Rs. 2000 and it is being sold at successive discounts of 20% and 10%. Its net selling price will be?",
+    ta: "",
+    optionsEn: ["1240", "1440", "1540", "1640"],
+    optionsTa: ["", "", "", ""],
+    answer: 1
+  },
+  {
+    type: "mcq",
+    en: "After successive discounts of 12% and 5% an article was sold for Rs. 209. What was the original price of the article?",
+    ta: "",
+    optionsEn: ["200", "220", "230", "250"],
+    optionsTa: ["", "", "", ""],
+    answer: 3
+  },
+  {
+    type: "mcq",
+    en: "The marked price of an article is 45% above the cost price. Calculate the gain percentage after allowing a discount of 20%?",
+    ta: "",
+    optionsEn: ["16%", "18%", "20%", "22%"],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "A trader marked the price of his commodity so as to include a profit of 25%. He allowed a discount of 16% on the marked price. His actual profit was?",
+    ta: "",
+    optionsEn: ["5%", "10%", "8%", "3%"],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "By selling a bicycle for Rs. 4,275 a shopkeeper loses 5%. For how much should he sell it to have a profit of 5%?",
+    ta: "",
+    optionsEn: ["4725", "4575", "4450", "4255"],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "A man buys an article for Rs. 27.50 and sells it for Rs. 30. Find the gain percent?",
+    ta: "",
+    optionsEn: ["9.09%", "10.23%", "11.34%", "15.23%"],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "If a radio is purchased for Rs. 490 and sold for Rs. 441. Find the loss%?",
+    ta: "",
+    optionsEn: ["5%", "3%", "10%", "15%"],
+    optionsTa: ["", "", "", ""],
+    answer: 2
+  },
+  {
+    type: "mcq",
+    en: "Find SP when CP = Rs. 56.25 and Gain = 20%.",
+    ta: "",
+    optionsEn: ["65", "66", "67.5", "68.5"],
+    optionsTa: ["", "", "", ""],
+    answer: 2
+  },
+  {
+    type: "mcq",
+    en: "Find CP when SP = Rs. 40.60, gain = 16%?",
+    ta: "",
+    optionsEn: ["35", "25", "45", "65"],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "A dishonest dealer professes to sell his goods at cost price, but he uses a weight of 960 gm for the 1 kg weight. Find his gain percent.",
+    ta: "",
+    optionsEn: ["23/5%", "21/5%", "25/6%", "20/7%"],
+    optionsTa: ["", "", "", ""],
+    answer: 2
+  },
+  {
+    type: "mcq",
+    en: "A man sold two cows at Rs. 1995 each. On one he lost 10% and on the other he gained 10%. What is his gain or loss percent?",
+    ta: "",
+    optionsEn: ["1%", "2%", "3%", "4%"],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Two discounts of 40% and 20% are equal to a single discount of?",
+    ta: "",
+    optionsEn: ["48%", "52%", "25%", "40%"],
+    optionsTa: ["", "", "", ""],
+    answer: 1
+  },
+  {
+    type: "mcq",
+    en: "Amit purchased 13 chairs at Rs. 115 each and sold all at Rs. 1220. Then find the profit or loss on the transaction?",
+    ta: "",
+    optionsEn: ["200 loss", "275 loss", "225 loss", "235 loss"],
+    optionsTa: ["", "", "", ""],
+    answer: 1
+  },
+  {
+    type: "mcq",
+    en: "If the CP of 13 bats is Rs. 390. What is the price when it is sold at 10% loss?",
+    ta: "",
+    optionsEn: ["351", "300", "330", "450"],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "A shopkeeper earns profit of 16 2/3% after selling a book at 12.5% discount on the printed price. Then find the ratio of the cost price and printed price of the book?",
+    ta: "",
+    optionsEn: ["1:2", "3:4", "2:5", "3:1"],
+    optionsTa: ["", "", "", ""],
+    answer: 1
+  },
+  {
+    type: "mcq",
+    en: "On selling 40 articles for Rs. 68 a shopkeeper incurred a loss of 25%. How many articles should he sell for Rs. 51 to earn a profit of 12.5%?",
+    ta: "",
+    optionsEn: ["15", "20", "25", "30"],
+    optionsTa: ["", "", "", ""],
+    answer: 1
+  },
+  {
+    type: "mcq",
+    en: "A shopkeeper sells a product after allowing two successive discounts of 10% and 20% on it. Find the profit percent if the profit is 30% of the price by which the product is marked up?",
+    ta: "",
+    optionsEn: ["10%", "20%", "25%", "30%"],
+    optionsTa: ["", "", "", ""],
+    answer: 1
+  },
+  {
+    type: "mcq",
+    en: "When an article is sold at 75% of a certain selling price, there is a loss of 20%. Calculate the profit percent when the same article is sold at 125% of the certain selling price?",
+    ta: "",
+    optionsEn: ["33.33%", "25%", "20%", "11.11%"],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "An article is sold at 40% discount on M.P. and the ratio of C.P. to S.P. is 5:8. What is the M.P. of the article if the profit obtained on the article is Rs. 450?",
+    ta: "",
+    optionsEn: ["1000", "1500", "2000", "2500"],
+    optionsTa: ["", "", "", ""],
+    answer: 2
   }
 ];
 
