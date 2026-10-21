@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-21T08:46:50.737Z",
+  "version": "2026-10-21T08:53:46.229Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -286,6 +286,17 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGE-47.html",
+      "releaseTimestamp": 0
+    },
+    {
+      "testId": "PGCS-13",
+      "examId": "PG-CS",
+      "name": "PGCS-13 CYBER AUTHENTICATION",
+      "durationMinutes": 15,
+      "order": 13,
+      "questionCount": 15,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGCS-13.html",
       "releaseTimestamp": 0
     }
   ]
