@@ -532,7 +532,15 @@ let QUESTIONS = [
         timeLeft = (parseInt(dashboard.duration) || 15) * 60;
         startTimestamp = Date.now();
         quizActive = true; isSubmitted = false;
-        document.getElementById("quizCandidateName").innerText = window.actualStudentName || "Student";
+        
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        
         renderQuestion(); startTimer();
         document.getElementById("startScreen").style.display = "none";
         document.getElementById("quizContainer").style.display = "block";
