@@ -64,6 +64,7 @@
         .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
         .modal-buttons { display: flex; gap: 12px; justify-content: center; }
         .modal-buttons .btn { min-width: 100px; }
+        mark { background-color: #fef08a; color: #000; padding: 0 4px; border-radius: 3px; }
         @media print { body { background: white; padding: 0; margin: 0; } .quiz-wrapper { max-width: 100%; margin: 0; border-radius: 0; box-shadow: none; background: white; } .header-bar .top-buttons, .header-bar .timer-box, .palette-area, .nav-buttons, .btn:not(.btn-pdf), .icon-btn, .flex-buttons .btn:not(.btn-pdf) { display: none !important; } .result-dashboard { background: #064e3b; print-color-adjust: exact; -webkit-print-color-adjust: exact; break-inside: avoid; } .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc; margin-bottom: 15px; } .question-image, .review-question-img { max-width: 60% !important; max-height: 150px !important; page-break-inside: avoid; } .stats .stat-card { background: rgba(0,0,0,0.1); print-color-adjust: exact; } .btn-pdf { display: inline-block !important; background: #ef4444; color: white; print-color-adjust: exact; } a, button { text-decoration: none; } @page { size: A4; margin: 1.5cm; } }
         @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } .question-image { max-height: 180px; } }
     </style>
@@ -80,7 +81,7 @@
             <div class="timer-box" id="timerDisplay">25:00</div>
             <div class="top-buttons">
                 <button id="darkModeToggleBtn" class="icon-btn" onclick="toggleTheme()">🌙 Dark</button>
-                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="display: none;">தமிழ்</button>
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
             </div>
         </div>
         <div class="question-container" id="questionArea"></div>
@@ -108,6 +109,7 @@
             <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
                 <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
                 <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="window.AndroidBridge.printPage()">📄 Download PDF</button>
             </div>
         </div>
         <div style="padding:0 1.2rem 1.2rem 1.2rem;">
@@ -118,7 +120,7 @@
 </div>
 
 <script>
-    let currentLanguage = "ta";
+    let currentLanguage = "en";
     const translations = {
         en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 Dark", lightMode: "☀️ Light" },
         ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 இருண்ட", lightMode: "☀️ ஒளி" }
@@ -429,11 +431,13 @@ let QUESTIONS = [
 
     function autoSaveState() {
         if (!quizActive || isSubmitted) return;
-        localStorage.setItem("tetEnglishAutoResume", JSON.stringify({
-            userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft,
-            startTimestamp: startTimestamp, isSubmitted: false, quizActive: true,
-            savedAt: Date.now(), language: currentLanguage
-        }));
+        try {
+            localStorage.setItem("tetEnglishAutoResume", JSON.stringify({
+                userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft,
+                startTimestamp: startTimestamp, isSubmitted: false, quizActive: true,
+                savedAt: Date.now(), language: currentLanguage
+            }));
+        } catch(e) {}
     }
 
     function showResumePopup(savedState) {
@@ -452,11 +456,12 @@ let QUESTIONS = [
             </div>`;
         document.body.insertAdjacentHTML("beforeend", modalHtml);
         document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
-        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); localStorage.removeItem("tetEnglishAutoResume"); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
     }
 
     function checkForAutoResume() {
-        const saved = localStorage.getItem("tetEnglishAutoResume");
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
         if (saved) {
             try {
                 const state = JSON.parse(saved);
@@ -465,8 +470,8 @@ let QUESTIONS = [
                     updateUILanguage();
                     showResumePopup(state);
                     return true;
-                } else localStorage.removeItem("tetEnglishAutoResume");
-            } catch(e) { localStorage.removeItem("tetEnglishAutoResume"); }
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
         }
         return false;
     }
@@ -488,7 +493,7 @@ let QUESTIONS = [
     }
 
     function clearAllAndRestart() {
-        localStorage.removeItem("tetEnglishAutoResume");
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
         document.getElementById("resultContainer").style.display = "none";
         document.getElementById("startScreen").style.display = "flex";
         document.getElementById("quizContainer").style.display = "none";
@@ -505,6 +510,9 @@ let QUESTIONS = [
     }
 
     let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) {
+        userAnswers = injectedAnswers;
+    }
     let currentIndex = 0;
     let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
     let timerInterval = null;
@@ -629,13 +637,14 @@ let QUESTIONS = [
 
     async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
         if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
         try {
             await fetch(GOOGLE_SHEET_URL, {
                 method: "POST",
                 mode: "no-cors",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    "Candidate Name": "Student",
+                    "Candidate Name": studentName,
                     "Test No": dashboard.testNo,
                     "Subject": dashboard.subject,
                     "Topic Name": dashboard.topic,
@@ -653,7 +662,7 @@ let QUESTIONS = [
     function submitQuiz() {
         if(isSubmitted) return;
         isSubmitted = true; quizActive = false; clearInterval(timerInterval);
-        localStorage.removeItem("tetEnglishAutoResume");
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
         let correct=0, incorrect=0, na=0;
         for(let i=0; i<QUESTIONS.length; i++) {
             if(userAnswers[i] === null) na++;
@@ -673,7 +682,10 @@ let QUESTIONS = [
                     wrong: incorrect,
                     skipped: na,
                     total: QUESTIONS.length,
-                    stayOnScreen: true 
+                    score: finalScore,
+                    stayOnScreen: true,
+                    answers: userAnswers,
+                    questions: QUESTIONS
                 }));
             }
         } catch (e) { console.log("Bridge error", e); }
@@ -702,13 +714,13 @@ let QUESTIONS = [
     }
 
     function startNewExam() {
-        localStorage.removeItem("tetEnglishAutoResume");
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
         userAnswers = new Array(QUESTIONS.length).fill(null);
         currentIndex = 0;
         timeLeft = (parseInt(dashboard.duration) || 15) * 60;
         startTimestamp = Date.now();
         quizActive = true; isSubmitted = false;
-        document.getElementById("quizCandidateName").innerText = "Student";
+        document.getElementById("quizCandidateName").innerText = window.actualStudentName || "Student";
         renderQuestion(); startTimer();
         document.getElementById("startScreen").style.display = "none";
         document.getElementById("quizContainer").style.display = "block";
@@ -720,17 +732,60 @@ let QUESTIONS = [
         const curr = document.documentElement.getAttribute("data-theme");
         const next = curr === "dark" ? "light" : "dark";
         document.documentElement.setAttribute("data-theme", next);
-        localStorage.setItem("themeGreen", next);
+        try { localStorage.setItem("themeGreen", next); } catch(e) {}
         const darkBtn = document.getElementById("darkModeToggleBtn");
         if(darkBtn) darkBtn.innerText = next === "dark" ? translations[currentLanguage].lightMode : translations[currentLanguage].darkMode;
     }
 
     renderDashboard();
-    const savedTheme = localStorage.getItem("themeGreen");
+    let savedTheme = null; try { savedTheme = localStorage.getItem("themeGreen"); } catch(e) {}
     if (savedTheme === "dark") document.documentElement.setAttribute("data-theme", "dark");
     else document.documentElement.setAttribute("data-theme", "light");
     updateUILanguage();
+    
+    // --- FIXED: CALL AUTO RESUME IMMEDIATELY ---
     checkForAutoResume();
+    
+    // --- REVIEW MODE CHECK (DELAYED) ---
+    window.checkForReview = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get("review") === "true") {
+            // READ THE ANSWERS FROM LOCAL STORAGE
+            let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+            if (savedAnswers) {
+                try {
+                    userAnswers = JSON.parse(savedAnswers);
+                    try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+                } catch(e) { console.log("Error parsing answers: " + e.message); }
+            }
+            
+            isSubmitted = true;
+            quizActive = false;
+            document.getElementById("startScreen").style.display = "none";
+            document.getElementById("quizContainer").style.display = "none";
+            document.getElementById("resultContainer").style.display = "block";
+            
+            let correct=0, incorrect=0, na=0;
+            for(let i=0; i<QUESTIONS.length; i++) {
+                if(userAnswers[i] === null || userAnswers[i] === undefined) na++;
+                else if(userAnswers[i] === QUESTIONS[i].answer) correct++;
+                else incorrect++;
+            }
+            const negMark = dashboard.negativeMark || 0;
+            const finalScore = correct - (incorrect * negMark);
+            const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+            
+            document.getElementById("finalScore").innerText = finalScore;
+            document.getElementById("correctCountStat").innerText = correct;
+            document.getElementById("incorrectCountStat").innerText = incorrect;
+            document.getElementById("notAttemptedStat").innerText = na;
+            document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+            document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+            const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+            document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+            buildDetailedReview();
+        }
+    };
     window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
 </script>
 </body>
