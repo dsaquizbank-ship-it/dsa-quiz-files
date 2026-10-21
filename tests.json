@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-20T05:04:33.734Z",
+  "version": "2026-10-21T06:56:31.515Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -208,8 +208,8 @@
     {
       "testId": "BSR-51",
       "examId": "BANK-PRACTICE",
-      "name": "BSR-51 QUANTITATIVE PROFIT & LOSS",
-      "durationMinutes": 30,
+      "name": "BSR-51 REASONING - CODING DECODING",
+      "durationMinutes": 20,
       "order": 51,
       "questionCount": 25,
       "negativeMark": 0.25,
