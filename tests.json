@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-22T14:43:21.436Z",
+  "version": "2026-10-22T14:44:43.917Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -308,6 +308,17 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTE-SC-51.html",
+      "releaseTimestamp": 0
+    },
+    {
+      "testId": "NTE-SS-50",
+      "examId": "TETSS",
+      "name": "NTESS-50 8TH GEO- MAP READING",
+      "durationMinutes": 15,
+      "order": 50,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTE-SS-50.html",
       "releaseTimestamp": 0
     }
   ]
