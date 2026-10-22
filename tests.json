@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-22T14:33:43.665Z",
+  "version": "2026-10-22T14:34:51.914Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -242,17 +242,6 @@
       "questionCount": 25,
       "negativeMark": 0.25,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BSR-52.html",
-      "releaseTimestamp": 0
-    },
-    {
-      "testId": "NTESC-51",
-      "examId": "TETSC",
-      "name": "NTESC-51 7TH ELECTRICITY",
-      "durationMinutes": 15,
-      "order": 51,
-      "questionCount": 25,
-      "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTESC-51.html",
       "releaseTimestamp": 0
     },
     {
