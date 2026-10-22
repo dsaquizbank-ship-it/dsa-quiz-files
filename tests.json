@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-22T14:46:03.936Z",
+  "version": "2026-10-22T14:54:57.626Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -308,6 +308,17 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTE-SS-50.html",
+      "releaseTimestamp": 0
+    },
+    {
+      "testId": "NTE-SS-51",
+      "examId": "TETSS",
+      "name": "NTESS-51 8TH HUMAN RIGHTS AND UNO",
+      "durationMinutes": 15,
+      "order": 51,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTE-SS-51.html",
       "releaseTimestamp": 0
     }
   ]
