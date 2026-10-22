@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-22T14:31:06.426Z",
+  "version": "2026-10-22T14:33:08.351Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -177,17 +177,6 @@
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGCS-12.html",
       "releaseTimestamp": 0
-    },
-    {
-      "testId": "NTEMS-50",
-      "examId": "TETMS",
-      "name": "NTEMS-50 UNIT 7 TERM 1 ALGEBRA",
-      "durationMinutes": 20,
-      "order": 50,
-      "questionCount": 25,
-      "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTEMS-50.html",
-      "releaseTimestamp": 1792395000000
     },
     {
       "testId": "UGE-96",
