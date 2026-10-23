@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-23T07:27:44.816Z",
+  "version": "2026-10-23T07:50:20.596Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -431,6 +431,17 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTN-TS-52.html",
+      "releaseTimestamp": 1792742400000
+    },
+    {
+      "testId": "BSR-53",
+      "examId": "BANK-PRACTICE",
+      "name": "BSR-53 WORD REPLACEMENT",
+      "durationMinutes": 20,
+      "order": 53,
+      "questionCount": 25,
+      "negativeMark": 0.25,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BSR-53.html",
       "releaseTimestamp": 1792742400000
     }
   ]
