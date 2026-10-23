@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-23T08:12:15.860Z",
+  "version": "2026-10-23T08:16:48.409Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -144,6 +144,12 @@
       "name": "TAMILNADU SOCIETY",
       "categoryId": "TNPSC",
       "order": 4
+    },
+    {
+      "id": "TNPSC-GS",
+      "name": "GENERAL SCIENCE",
+      "categoryId": "TNPSC",
+      "order": 5
     }
   ],
   "tests": [
@@ -442,6 +448,17 @@
       "questionCount": 25,
       "negativeMark": 0.25,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BSR-53.html",
+      "releaseTimestamp": 0
+    },
+    {
+      "testId": "TNA-GS-43",
+      "examId": "TNPSC-GS",
+      "name": "TNA-GS-43 FULL TEST",
+      "durationMinutes": 50,
+      "order": 43,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TNA-GS-43.html",
       "releaseTimestamp": 0
     }
   ]
