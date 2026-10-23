@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-23T06:46:49.367Z",
+  "version": "2026-10-23T07:00:36.154Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -126,6 +126,12 @@
       "name": "CURRENT AFFAIRS",
       "categoryId": "BANK",
       "order": 20
+    },
+    {
+      "id": "TNPSC-CA",
+      "name": "CURRENT AFFAIRS",
+      "categoryId": "TNPSC",
+      "order": 3
     }
   ],
   "tests": [
@@ -359,6 +365,17 @@
       "negativeMark": 0.25,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BSR-CA-53.html",
       "releaseTimestamp": 1792742400000
+    },
+    {
+      "testId": "NTN-CA-52",
+      "examId": "TNPSC-CA",
+      "name": "NTN-CA-52 OCTOBER 13-15",
+      "durationMinutes": 10,
+      "order": 52,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTN-CA-52.html",
+      "releaseTimestamp": 0
     }
   ]
 }
