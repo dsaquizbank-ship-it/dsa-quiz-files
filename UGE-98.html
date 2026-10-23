@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>UGE-98</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]], displayMath: [["$$", "$$"], ["\\[", "\\]"]] },
+            options: { ignoreHtmlClass: "no-mathjax" }
+        };
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(145deg, #f0fdf4, #dcfce7); --card-bg: #ffffff; --text-primary: #14532d; --border-light: #bbf7d0; --accent: #10b981; --accent-dark: #059669; --timer-bg: #fef3c7; --timer-text: #b45309; --palette-btn: #f0fdf4; --shadow: 0 10px 25px -5px rgba(0,0,0,0.1); --correct-color: #dc2626; --modal-overlay: rgba(0,0,0,0.5); --rc-bg: #f8fafc; --rc-border: #3b82f6; --puzzle-bg: #fffbeb; --puzzle-border: #f59e0b; }
+        [data-theme="dark"] { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; background: linear-gradient(135deg, #059669, #10b981); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .language-toggle:hover { background: var(--accent); }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.5; }
+        .option-item { background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card img.review-question-img { max-width: 100%; max-height: 180px; margin: 10px 0; border-radius: 12px; border: 1px solid var(--border-light); }
+        .correct-option { font-weight: bold; color: var(--correct-color); }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        mark { background-color: #fef08a; color: #000; padding: 0 4px; border-radius: 3px; }
+        .question-image { max-width: 100%; max-height: 250px; border-radius: 12px; border: 1px solid var(--border-light); cursor: zoom-in; transition: transform 0.3s; }
+        .question-image.zoomed { transform: scale(1.5); cursor: zoom-out; z-index: 1000; position: relative; }
+        @media print { body { background: white; padding: 0; margin: 0; } .quiz-wrapper { max-width: 100%; margin: 0; border-radius: 0; box-shadow: none; background: white; } .header-bar .top-buttons, .header-bar .timer-box, .palette-area, .nav-buttons, .btn:not(.btn-pdf), .icon-btn, .flex-buttons .btn:not(.btn-pdf) { display: none !important; } .result-dashboard { background: #064e3b; print-color-adjust: exact; -webkit-print-color-adjust: exact; break-inside: avoid; } .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc; margin-bottom: 15px; } .question-image, .review-question-img { max-width: 60% !important; max-height: 150px !important; page-break-inside: avoid; } .stats .stat-card { background: rgba(0,0,0,0.1); print-color-adjust: exact; } .btn-pdf { display: inline-block !important; background: #ef4444; color: white; print-color-adjust: exact; } a, button { text-decoration: none; } @page { size: A4; margin: 1.5cm; } }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } .question-image { max-height: 180px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">25:00</div>
+            <div class="top-buttons">
+                <button id="darkModeToggleBtn" class="icon-btn" onclick="toggleTheme()">🌙 Dark</button>
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="display: none;">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none;">
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing">
+                <div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div>
+            </div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="window.AndroidBridge.printPage()">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 Dark", lightMode: "☀️ Light" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 இருண்ட", lightMode: "☀️ ஒளி" }
+    };
+    
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const paletteTitle = document.getElementById("paletteTitle"); if (paletteTitle) paletteTitle.innerText = t.paletteTitle;
+        const quizCompleted = document.getElementById("quizCompletedLabel"); if (quizCompleted) quizCompleted.innerText = t.quizCompleted;
+        const correctLabel = document.getElementById("correctLabel"); if (correctLabel) correctLabel.innerText = t.correct;
+        const incorrectLabel = document.getElementById("incorrectLabel"); if (incorrectLabel) incorrectLabel.innerText = t.incorrect;
+        const notAttemptedLabel = document.getElementById("notAttemptedLabel"); if (notAttemptedLabel) notAttemptedLabel.innerText = t.notAttempted;
+        const accuracyLabel = document.getElementById("accuracyLabel"); if (accuracyLabel) accuracyLabel.innerText = t.accuracy;
+        const timeTakenLabel = document.getElementById("timeTakenLabel"); if (timeTakenLabel) timeTakenLabel.innerText = t.timeTaken;
+        const newAttemptBtn = document.getElementById("restartQuizBtn"); if (newAttemptBtn) newAttemptBtn.innerText = t.newAttempt;
+        const langBtn = document.getElementById("langToggleBtn"); if (langBtn) langBtn.innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && document.getElementById("navButtons")) updateNavButtons();
+    }
+    
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+
+    let dashboard = {
+        examTitle: "UGTRB ENGLISH",
+        testNo: "UGE-98",
+        date: new Date().toLocaleDateString("en-GB"),
+        subject: "UGTRB ENGLISH",
+        topic: "UNIT V & VI REVISION",
+        duration: "40",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+
+let QUESTIONS = [
+  {
+    type: "mcq",
+    en: "Choose the correct pair.<br>A. R.W. Emerson - Self-Reliance<br>B. Martin Luther King Jr. - The American Scholar<br>C. Abraham Lincoln - I Have a Dream<br>D. H.D. Thoreau - Gettysburg Address",
+    ta: "",
+    optionsEn: [
+      "A only",
+      "A and B only",
+      "B and C only",
+      "All four"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct statement about Emerson's Self-Reliance.<br>A. It emphasizes conformity to established social opinion.<br>B. It advocates trust in one's own thoughts and individuality.<br>C. It argues that individual judgment must always be rejected.<br>D. It is primarily a dramatic monologue.",
+    ta: "",
+    optionsEn: [
+      "A only",
+      "B only",
+      "A and C only",
+      "C and D only"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 1
+  },
+  {
+    type: "mcq",
+    en: "Match the following authors with their works.<br><br><table style=\"width:100%; border-collapse:collapse;\"><tr><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">List I</th><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">List II</th></tr><tr><td style=\"padding:4px;\">1. Martin Luther King Jr.</td><td style=\"padding:4px;\">a. Gettysburg Address</td></tr><tr><td style=\"padding:4px;\">2. Abraham Lincoln</td><td style=\"padding:4px;\">b. A Battle of Ants</td></tr><tr><td style=\"padding:4px;\">3. H.D. Thoreau</td><td style=\"padding:4px;\">c. I Have a Dream</td></tr><tr><td style=\"padding:4px;\">4. R.W. Emerson</td><td style=\"padding:4px;\">d. Self-Reliance</td></tr></table>",
+    ta: "",
+    optionsEn: [
+      "1-c, 2-a, 3-b, 4-d",
+      "1-a, 2-b, 3-c, 4-d",
+      "1-b, 2-c, 3-d, 4-a",
+      "1-d, 2-c, 3-b, 4-a"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Identify the odd one out.",
+    ta: "",
+    optionsEn: [
+      "Self-Reliance",
+      "The American Scholar",
+      "A Battle of Ants",
+      "Gettysburg Address"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 3
+  },
+  {
+    type: "mcq",
+    en: "Assertion (A): Emerson is a major figure associated with American Transcendentalism.<br>Reason (R): Transcendentalism emphasizes intuition, individual conscience, and the spiritual significance of nature.",
+    ta: "",
+    optionsEn: [
+      "Both A and R are true, and R correctly explains A.",
+      "Both A and R are true, but R does not explain A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct statement about I Have a Dream.<br>A. It was delivered by Martin Luther King Jr. in 1963.<br>B. It was delivered at the Gettysburg battlefield by Abraham Lincoln.<br>C. It advocates racial segregation.<br>D. It is a short story by Edgar Allan Poe.",
+    ta: "",
+    optionsEn: [
+      "A only",
+      "A and B only",
+      "B and C only",
+      "C and D only"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct statement about Abraham Lincoln's Gettysburg Address.",
+    ta: "",
+    optionsEn: [
+      "It commemorates fallen soldiers and reaffirms the principles of equality and democracy.",
+      "It advocates individualism as the central principle of Transcendentalism.",
+      "It narrates the life of a travelling salesman.",
+      "It presents the story of a girl selling matches."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Match the following works with their principal concerns.<br><br><table style=\"width:100%; border-collapse:collapse;\"><tr><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">List I</th><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">List II</th></tr><tr><td style=\"padding:4px;\">1. Self-Reliance</td><td style=\"padding:4px;\">a. Democracy and national identity</td></tr><tr><td style=\"padding:4px;\">2. I Have a Dream</td><td style=\"padding:4px;\">b. Individualism and intuition</td></tr><tr><td style=\"padding:4px;\">3. Gettysburg Address</td><td style=\"padding:4px;\">c. Racial equality and civil rights</td></tr><tr><td style=\"padding:4px;\">4. A Battle of Ants</td><td style=\"padding:4px;\">d. Nature and human conflict</td></tr></table>",
+    ta: "",
+    optionsEn: [
+      "1-b, 2-c, 3-a, 4-d",
+      "1-c, 2-a, 3-d, 4-b",
+      "1-a, 2-d, 3-b, 4-c",
+      "1-d, 2-b, 3-c, 4-a"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Identify the odd one out based on authorship.",
+    ta: "",
+    optionsEn: [
+      "R.W. Emerson",
+      "H.D. Thoreau",
+      "Martin Luther King Jr.",
+      "Emily Dickinson"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 3
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct statement about Thoreau's A Battle of Ants.",
+    ta: "",
+    optionsEn: [
+      "It is a dramatic play about the American Civil War.",
+      "It describes a conflict between ants observed in nature and invites reflection on human conflict.",
+      "It is a speech delivered during the American Revolution.",
+      "It is a novel about the Salem witch trials."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 1
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct pair.<br>A. Robert Frost — West Running Brook<br>B. Walt Whitman — Out of the Cradle Endlessly Rocking<br>C. Emily Dickinson — I Felt a Funeral, in My Brain<br>D. H.W. Longfellow — Nature",
+    ta: "",
+    optionsEn: [
+      "A and B only",
+      "B and C only",
+      "A, B and C only",
+      "All four"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 2
+  },
+  {
+    type: "mcq",
+    en: "Identify the odd one out.",
+    ta: "",
+    optionsEn: [
+      "West Running Brook",
+      "Out of the Cradle Endlessly Rocking",
+      "I Felt a Funeral, in My Brain",
+      "The Glass Menagerie"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 3
+  },
+  {
+    type: "mcq",
+    en: "Assertion (A): Walt Whitman's Out of the Cradle Endlessly Rocking explores the relationship between nature, loss, and the emergence of poetic consciousness.<br>Reason (R): The poem uses the experience of a mockingbird and its song as an important part of the speaker's poetic awakening.",
+    ta: "",
+    optionsEn: [
+      "Both A and R are true, and R correctly explains A.",
+      "Both A and R are true, but R does not explain A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct statement about Emily Dickinson's I Felt a Funeral, in My Brain.<br>A. It uses funeral imagery to represent an intense inner psychological experience.<br>B. It is a celebratory poem about a royal wedding.<br>C. It is written by Sylvia Plath.<br>D. It is a dramatic comedy.",
+    ta: "",
+    optionsEn: [
+      "A only",
+      "A and B only",
+      "B and C only",
+      "C and D only"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct statement about Walt Whitman's poetic style.",
+    ta: "",
+    optionsEn: [
+      "His poetry is known for free verse, expansive catalogues and democratic themes.",
+      "His poetry is exclusively written in strict heroic couplets.",
+      "His works focus entirely on Puritan religious doctrine.",
+      "His poetry avoids ordinary people and everyday experiences."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Match the following works with their major themes.<br><br><table style=\"width:100%; border-collapse:collapse;\"><tr><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">List I</th><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">List II</th></tr><tr><td style=\"padding:4px;\">1. Brahma</td><td style=\"padding:4px;\">a. Rebirth, suffering, and defiant survival</td></tr><tr><td style=\"padding:4px;\">2. Lady Lazarus</td><td style=\"padding:4px;\">b. Hindu philosophical ideas and the unity of existence</td></tr><tr><td style=\"padding:4px;\">3. West Running Brook</td><td style=\"padding:4px;\">c. The relationship between opposites and the movement of life</td></tr><tr><td style=\"padding:4px;\">4. Happiness</td><td style=\"padding:4px;\">d. The nature of happiness and human experience</td></tr></table>",
+    ta: "",
+    optionsEn: [
+      "1-b, 2-a, 3-c, 4-d",
+      "1-a, 2-c, 3-d, 4-b",
+      "1-d, 2-b, 3-a, 4-c",
+      "1-c, 2-d, 3-b, 4-a"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct statement about Brahma.<br>A. It was written by Ralph Waldo Emerson.<br>B. It draws on ideas associated with Hindu philosophy and the Upanishads.<br>C. It is a short story by O. Henry.<br>D. It is a play by Tennessee Williams.",
+    ta: "",
+    optionsEn: [
+      "A and B only",
+      "B and C only",
+      "A, B and D only",
+      "C and D only"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Assertion (A): Sylvia Plath's Lady Lazarus presents a speaker who confronts suffering and repeatedly returns in a defiant manner.<br>Reason (R): The poem draws on the biblical figure Lazarus and uses resurrection imagery.",
+    ta: "",
+    optionsEn: [
+      "Both A and R are true, and R correctly explains A.",
+      "Both A and R are true, but R does not explain A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct pair.",
+    ta: "",
+    optionsEn: [
+      "Robert Frost — dramatic monologue My Last Duchess",
+      "Walt Whitman — Out of the Cradle Endlessly Rocking",
+      "Emily Dickinson — Lady Lazarus",
+      "Carl Sandburg — Brahma"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 1
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct statement about Robert Frost's West Running Brook.",
+    ta: "",
+    optionsEn: [
+      "It is a novel about Puritan society.",
+      "It is a poem that uses a brook and its movement to explore ideas about life and opposing forces.",
+      "It is a speech delivered by Abraham Lincoln.",
+      "It is a short story about a stolen necklace."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 1
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct pair.<br>A. Arthur Miller - Death of a Salesman<br>B. Tennessee Williams - The Glass Menagerie<br>C. Eugene O'Neill - The Scarlet Letter<br>D. Edward Albee - The Cask of Amontillado",
+    ta: "",
+    optionsEn: [
+      "A only",
+      "A and B only",
+      "B and C only",
+      "All four"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 1
+  },
+  {
+    type: "mcq",
+    en: "Assertion (A): Death of a Salesman examines the American Dream and the pressures associated with success.<br>Reason (R): Willy Loman's expectations of popularity and material achievement contribute to his personal and family conflicts.",
+    ta: "",
+    optionsEn: [
+      "Both A and R are true, and R correctly explains A.",
+      "Both A and R are true, but R does not explain A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct statement about Arthur Miller's dramatic writing.",
+    ta: "",
+    optionsEn: [
+      "He frequently examines social pressures, moral responsibility and the struggles of ordinary people.",
+      "He is primarily known for writing Romantic sonnets.",
+      "He wrote The Little Match Girl.",
+      "He is the author of The Scarlet Letter."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Match the playwrights with their plays.<br><br><table style=\"width:100%; border-collapse:collapse;\"><tr><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">List I</th><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">List II</th></tr><tr><td style=\"padding:4px;\">1. Arthur Miller</td><td style=\"padding:4px;\">a. The Glass Menagerie</td></tr><tr><td style=\"padding:4px;\">2. Tennessee Williams</td><td style=\"padding:4px;\">b. Death of a Salesman</td></tr><tr><td style=\"padding:4px;\">3. Eugene O'Neill</td><td style=\"padding:4px;\">c. Long Day's Journey into Night</td></tr><tr><td style=\"padding:4px;\">4. Edward Albee</td><td style=\"padding:4px;\">d. Who's Afraid of Virginia Woolf?</td></tr></table>",
+    ta: "",
+    optionsEn: [
+      "1-b, 2-a, 3-c, 4-d",
+      "1-a, 2-c, 3-d, 4-b",
+      "1-d, 2-b, 3-a, 4-c",
+      "1-c, 2-d, 3-b, 4-a"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct statement about the structure of Death of a Salesman.",
+    ta: "",
+    optionsEn: [
+      "The play moves between Willy Loman's present experiences and memories of the past.",
+      "The entire play is narrated by an omniscient third-person novelist.",
+      "The play is structured as a sequence of unrelated short stories.",
+      "The play takes place entirely in ancient Greece."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct pair.",
+    ta: "",
+    optionsEn: [
+      "M.K. Gandhi — The Gospel of Non-Violence",
+      "S. Radhakrishnan — The Power of Prayer",
+      "A.P.J. Abdul Kalam — The World Community",
+      "R.W. Emerson — The Gospel of Non-Violence"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct statement about Gandhi's philosophy of non-violence.",
+    ta: "",
+    optionsEn: [
+      "It requires passive acceptance of every injustice.",
+      "It combines non-violence with truth, courage, and resistance to injustice.",
+      "It supports violence as the only means of political change.",
+      "It rejects moral responsibility."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 1
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct statement about Gandhi's method of non-violent resistance.",
+    ta: "",
+    optionsEn: [
+      "It seeks to defeat opponents through physical force.",
+      "It combines ethical conviction with disciplined resistance to injustice.",
+      "It requires unconditional obedience to unjust laws.",
+      "It rejects the importance of truth."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 1
+  },
+  {
+    type: "mcq",
+    en: "Identify the odd one out based on the principal literary concept.",
+    ta: "",
+    optionsEn: [
+      "Ahimsa",
+      "Satyagraha",
+      "Truth",
+      "Revenge through physical violence"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 3
+  },
+  {
+    type: "mcq",
+    en: "Assertion (A): Satyagraha is associated with truth-force and non-violent resistance.<br>Reason (R): Non-violence, in Gandhi's philosophy, can involve courageous resistance to injustice without hatred or physical violence.",
+    ta: "",
+    optionsEn: [
+      "Both A and R are true, and R correctly explains A.",
+      "Both A and R are true, but R does not explain A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct statement about Satyagraha.",
+    ta: "",
+    optionsEn: [
+      "It means obtaining political power through revenge.",
+      "It is associated with truth-force and non-violent resistance.",
+      "It requires abandoning truth to achieve victory.",
+      "It is a literary movement originating in Puritan America."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 1
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct pair.",
+    ta: "",
+    optionsEn: [
+      "Ahimsa - non-violence",
+      "Satyagraha - revenge",
+      "Truth - deliberate deception",
+      "Moral courage - cowardice"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Match the concepts with their meanings.<br><br><table style=\"width:100%; border-collapse:collapse;\"><tr><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">List I</th><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">List II</th></tr><tr><td style=\"padding:4px;\">1. Ahimsa</td><td style=\"padding:4px;\">a. Commitment to truth</td></tr><tr><td style=\"padding:4px;\">2. Satyagraha</td><td style=\"padding:4px;\">b. Non-violence</td></tr><tr><td style=\"padding:4px;\">3. Satya</td><td style=\"padding:4px;\">c. Truth-force or insistence on truth</td></tr><tr><td style=\"padding:4px;\">4. Self-discipline</td><td style=\"padding:4px;\">d. Control over one's conduct and impulses</td></tr></table>",
+    ta: "",
+    optionsEn: [
+      "1-b, 2-c, 3-a, 4-d",
+      "1-a, 2-b, 3-d, 4-c",
+      "1-c, 2-d, 3-b, 4-a",
+      "1-d, 2-a, 3-c, 4-b"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Identify the odd one out.",
+    ta: "",
+    optionsEn: [
+      "Compassion",
+      "Forgiveness",
+      "Truthfulness",
+      "Retaliatory hatred"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 3
+  },
+  {
+    type: "mcq",
+    en: "Identify the odd one out based on its relationship to Gandhian ethics.",
+    ta: "",
+    optionsEn: [
+      "Truthfulness",
+      "Self-discipline",
+      "Compassion",
+      "Deliberate exploitation of the weak"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 3
+  },
+  {
+    type: "mcq",
+    en: "Assertion (A): Gandhi's philosophy connects personal conduct with social and political transformation.<br>Reason (R): Gandhi believed that ethical means were important in pursuing political and social goals.",
+    ta: "",
+    optionsEn: [
+      "Both A and R are true, and R correctly explains A.",
+      "Both A and R are true, but R does not explain A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct statement about The Gospel of Non-Violence.",
+    ta: "",
+    optionsEn: [
+      "Its central concern is the superiority of armed conquest.",
+      "It presents non-violence as an ethical principle relevant to individual and social life.",
+      "It is a novel about the American Civil War.",
+      "It is a play by Girish Karnad."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 1
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct statement about S. Radhakrishnan's philosophical outlook.",
+    ta: "",
+    optionsEn: [
+      "It is associated with philosophical idealism and an engagement with Indian philosophical traditions.",
+      "It is exclusively concerned with modern detective fiction.",
+      "It rejects all philosophical inquiry.",
+      "It is primarily known for developing the Theatre of the Absurd."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct statement about the poetry of A.K. Ramanujan.",
+    ta: "",
+    optionsEn: [
+      "It often explores memory, family relationships, cultural identity, and the complexities of personal experience.",
+      "It consists exclusively of heroic epics about Greek warriors.",
+      "It is primarily known for its development of Restoration comedy.",
+      "It is limited to political speeches."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Match the poetic features with their descriptions.<br><br><table style=\"width:100%; border-collapse:collapse;\"><tr><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">List I</th><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">List II</th></tr><tr><td style=\"padding:4px;\">1. Imagery</td><td style=\"padding:4px;\">a. Repetition of initial consonant sounds</td></tr><tr><td style=\"padding:4px;\">2. Alliteration</td><td style=\"padding:4px;\">b. Language that appeals to the senses</td></tr><tr><td style=\"padding:4px;\">3. Metaphor</td><td style=\"padding:4px;\">c. An implied comparison between unlike things</td></tr><tr><td style=\"padding:4px;\">4. Personification</td><td style=\"padding:4px;\">d. Giving human qualities to non-human things</td></tr></table>",
+    ta: "",
+    optionsEn: [
+      "1-b, 2-a, 3-c, 4-d",
+      "1-a, 2-b, 3-d, 4-c",
+      "1-c, 2-d, 3-a, 4-b",
+      "1-d, 2-c, 3-b, 4-a"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Identify the odd one out based on poetic form and literary tradition.",
+    ta: "",
+    optionsEn: [
+      "An Introduction",
+      "Good Bye Party",
+      "Of Mothers, Among other Things",
+      "Nagamandala"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 3
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct statement about the role of folklore in Indian English drama.",
+    ta: "",
+    optionsEn: [
+      "Folklore can provide traditional narratives, supernatural elements, and cultural symbols for dramatic exploration.",
+      "Folklore is restricted to scientific writing.",
+      "Folklore excludes oral storytelling traditions.",
+      "Folklore can be used only in modern American drama."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct statement about the development of Indian English fiction.",
+    ta: "",
+    optionsEn: [
+      "It has explored social inequality, everyday life, cultural change, and contemporary urban experiences.",
+      "It is limited to translations of classical Sanskrit plays.",
+      "It does not engage with social problems.",
+      "It focuses exclusively on supernatural themes."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct statement about the fictional town of Malgudi.",
+    ta: "",
+    optionsEn: [
+      "It is an imaginary South Indian town associated with R.K. Narayan's fiction.",
+      "It is the setting of Mulk Raj Anand's Coolie.",
+      "It is a real American town in Toni Morrison's Beloved.",
+      "It is the principal setting of The Three Mistakes of My Life."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct statement about the narrative style of Indian English novels.",
+    ta: "",
+    optionsEn: [
+      "Indian English novels may use regional settings, local speech, social observation, and culturally specific experiences.",
+      "Indian English novels must always use a single fixed narrative style.",
+      "Indian English fiction cannot portray childhood.",
+      "Indian English novels cannot address social inequality."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct statement about the social realism of Mulk Raj Anand.",
+    ta: "",
+    optionsEn: [
+      "His fiction frequently portrays caste oppression, poverty, and the exploitation of marginalised people.",
+      "His fiction deals exclusively with supernatural kingdoms.",
+      "He is primarily known for writing Indian English courtroom plays.",
+      "His major works are exclusively detective stories."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct statement about Swami and Friends.",
+    ta: "",
+    optionsEn: [
+      "It is set in the fictional South Indian town of Malgudi and centres on the childhood experiences of Swaminathan.",
+      "It follows Munoo's experiences as an exploited labourer.",
+      "It is a play about a courtroom trial.",
+      "It is a novel by Chetan Bhagat."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Match the characters with their novels.<br><br><table style=\"width:100%; border-collapse:collapse;\"><tr><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">List I</th><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">List II</th></tr><tr><td style=\"padding:4px;\">1. Swaminathan</td><td style=\"padding:4px;\">a. Coolie</td></tr><tr><td style=\"padding:4px;\">2. Munoo</td><td style=\"padding:4px;\">b. The Three Mistakes of My Life</td></tr><tr><td style=\"padding:4px;\">3. Govind</td><td style=\"padding:4px;\">c. Swami and Friends</td></tr></table>",
+    ta: "",
+    optionsEn: [
+      "1-c, 2-a, 3-b",
+      "1-a, 2-b, 3-c",
+      "1-b, 2-c, 3-a",
+      "1-c, 2-b, 3-a"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Choose the correct statement about Chetan Bhagat's The Three Mistakes of My Life.",
+    ta: "",
+    optionsEn: [
+      "It combines friendship, cricket, business ambitions, and religious tensions in contemporary Gujarat.",
+      "It depicts the Puritan society of seventeenth-century New England.",
+      "It is a play about classical dance.",
+      "It is a collection of poems about the American landscape."
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Identify the odd one out based on the principal literary concern.",
+    ta: "",
+    optionsEn: [
+      "Coolie — exploitation and poverty",
+      "Swami and Friends — childhood and growing up",
+      "The Three Mistakes of My Life — friendship and ambition",
+      "The Gospel of Non-Violence — a fictional schoolboy's adventures in Malgudi"
+    ],
+    optionsTa: ["", "", "", ""],
+    answer: 3
+  }
+];
+
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    
+    function escapeHtml(s) { if(!s) return ""; return s.replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    
+    function renderDashboard() {
+        const container = document.getElementById("dashboardContainer");
+        if(container) {
+            container.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div>
+                <div style="font-size:0.9rem;">(Since 2025)</div>
+                <div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div>
+                <div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div>
+                <div>📅 DATE: ${escapeHtml(dashboard.date)}</div>
+                <div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div>
+                <div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div>
+                <div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div>
+                <div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        }
+        let totalSpan = document.getElementById("totalQsSpan");
+        if(totalSpan) totalSpan.innerText = `/${dashboard.totalMarks}`;
+    }
+
+    function autoSaveState() {
+        if (!quizActive || isSubmitted) return;
+        try {
+            localStorage.setItem("tetEnglishAutoResume", JSON.stringify({
+                userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft,
+                startTimestamp: startTimestamp, isSubmitted: false, quizActive: true,
+                savedAt: Date.now(), language: currentLanguage
+            }));
+        } catch(e) {}
+    }
+
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        const modalHtml = `
+            <div id="resumeModal" class="modal-overlay">
+                <div class="modal-container">
+                    <h3>🔄 Unfinished Exam Found</h3>
+                    <p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p>
+                    <div class="modal-buttons">
+                        <button id="modalResumeBtn" class="btn">✅ Resume</button>
+                        <button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button>
+                    </div>
+                </div>
+            </div>`;
+        document.body.insertAdjacentHTML("beforeend", modalHtml);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if(timerInterval) clearInterval(timerInterval);
+        quizActive = false;
+    }
+    
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) {
+        userAnswers = injectedAnswers;
+    }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc" && q.passageEn) {
+            passageHtml = `<div class="passage-box">${q.passageEn}</div>`;
+            extraClass = "question-text";
+        } else if (q.type === "rc") {
+            displayTxt = `<div class="passage-box">${txt}</div>`; 
+            extraClass = "question-text";
+        } else if (q.type === "puzzle") { 
+            displayTxt = `<div class="puzzle-box">${txt}</div>`; 
+            extraClass = "question-text"; 
+        }
+
+        let imageHtml = "";
+        if (q.imageUrl && q.imageUrl.trim() !== "") {
+            imageHtml = `<img class="question-image" src="${escapeHtml(q.imageUrl)}" alt="Question image" loading="lazy" onclick="this.classList.toggle('zoomed')">`;
+        }
+
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">${String.fromCharCode(65+i)}. ${opt}</div>`;
+        });
+
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+            </div>
+        `;
+        updateNavButtons(); updatePalette();
+        if(window.MathJax) MathJax.typesetPromise();
+    }
+
+    function selectOption(optIndex) {
+        if(isSubmitted) return;
+        if(userAnswers[currentIndex] === optIndex) return;
+        userAnswers[currentIndex] = optIndex;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if(currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+
+    function prevQuestion() { if(!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if(!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if(!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for(let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if(userAnswers[i] !== null) btn.classList.add("answered");
+            if(i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if(!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+
+    function startTimer() {
+        if(timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if(!quizActive || isSubmitted) return;
+            if(timeLeft <= 0) { clearInterval(timerInterval); if(!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if(timeLeft % 10 === 0) autoSaveState();
+                if(timeLeft===0) submitQuiz();
+            }
+        }, 1000);
+    }
+
+    function buildDetailedReview() {
+        let html = "";
+        for(let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u === corr);
+            const txt = getCurrentQuestionText(q);
+            const optsArray = getCurrentOptions(q);
+
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let marker = "";
+                if(idx === corr) marker = " ✅ (Correct)";
+                if(u === idx && idx !== corr) marker = " ❌ (Your choice)";
+                else if(u === idx && idx === corr) marker = " ✅ (Correct)";
+                const styleClass = (idx === corr) ? "correct-option" : "";
+                const userWrongStyle = (u === idx && idx !== corr) ? "color:#ef4444;" : "";
+                optsHtml += `<div class="${styleClass}" style="${userWrongStyle}">${String.fromCharCode(65+idx)}. ${optsArray[idx]}${marker}</div>`;
+            });
+            const userAns = (u !== null) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" style="border-left-color:${isCorr?"#10b981":"#ef4444"}">
+                        <strong>Q${i+1}. ${txt}</strong><br><br>
+                        <div><strong>Your answer:</strong> ${userAns}</div>
+                        <div><strong>Correct:</strong> ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if(window.MathJax) MathJax.typesetPromise();
+    }
+
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+
+    function submitQuiz() {
+        if(isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for(let i=0; i<QUESTIONS.length; i++) {
+            if(userAnswers[i] === null) na++;
+            else if(userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+
+        const negMark = dashboard.negativeMark || 0; 
+        const finalScore = correct - (incorrect * negMark);
+
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct,
+                    wrong: incorrect,
+                    skipped: na,
+                    total: QUESTIONS.length,
+                    score: finalScore,
+                    stayOnScreen: true,
+                    answers: userAnswers,
+                    questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        
+        document.getElementById("finalScore").innerText = finalScore; 
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+    }
+
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+
+    function toggleTheme() {
+        const curr = document.documentElement.getAttribute("data-theme");
+        const next = curr === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", next);
+        try { localStorage.setItem("themeGreen", next); } catch(e) {}
+        const darkBtn = document.getElementById("darkModeToggleBtn");
+        if(darkBtn) darkBtn.innerText = next === "dark" ? translations[currentLanguage].lightMode : translations[currentLanguage].darkMode;
+    }
+
+    renderDashboard();
+    let savedTheme = null; try { savedTheme = localStorage.getItem("themeGreen"); } catch(e) {}
+    if (savedTheme === "dark") document.documentElement.setAttribute("data-theme", "dark");
+    else document.documentElement.setAttribute("data-theme", "light");
+    updateUILanguage();
+    
+    // --- FIXED: CALL AUTO RESUME IMMEDIATELY ---
+    checkForAutoResume();
+    
+    // --- REVIEW MODE CHECK (DELAYED) ---
+    window.checkForReview = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get("review") === "true") {
+            // READ THE ANSWERS FROM LOCAL STORAGE
+            let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+            if (savedAnswers) {
+                try {
+                    userAnswers = JSON.parse(savedAnswers);
+                    try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+                } catch(e) { console.log("Error parsing answers: " + e.message); }
+            }
+            
+            isSubmitted = true;
+            quizActive = false;
+            document.getElementById("startScreen").style.display = "none";
+            document.getElementById("quizContainer").style.display = "none";
+            document.getElementById("resultContainer").style.display = "block";
+            
+            let correct=0, incorrect=0, na=0;
+            for(let i=0; i<QUESTIONS.length; i++) {
+                if(userAnswers[i] === null || userAnswers[i] === undefined) na++;
+                else if(userAnswers[i] === QUESTIONS[i].answer) correct++;
+                else incorrect++;
+            }
+            const negMark = dashboard.negativeMark || 0;
+            const finalScore = correct - (incorrect * negMark);
+            const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+            
+            document.getElementById("finalScore").innerText = finalScore;
+            document.getElementById("correctCountStat").innerText = correct;
+            document.getElementById("incorrectCountStat").innerText = incorrect;
+            document.getElementById("notAttemptedStat").innerText = na;
+            document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+            document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+            const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+            document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+            buildDetailedReview();
+        }
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
