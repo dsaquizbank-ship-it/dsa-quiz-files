@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-23T07:16:24.917Z",
+  "version": "2026-10-23T07:21:59.501Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -132,6 +132,12 @@
       "name": "CURRENT AFFAIRS",
       "categoryId": "TNPSC",
       "order": 3
+    },
+    {
+      "id": "TET-PSY",
+      "name": "TET PSYCOLOGY",
+      "categoryId": "TNTET",
+      "order": 5
     }
   ],
   "tests": [
@@ -397,6 +403,17 @@
       "questionCount": 30,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGE-48.html",
+      "releaseTimestamp": 1792742400000
+    },
+    {
+      "testId": "NTE-PY-52",
+      "examId": "TET-PSY",
+      "name": "NTE-PY-52 PERSONALITY",
+      "durationMinutes": 20,
+      "order": 52,
+      "questionCount": 30,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTE-PY-52.html",
       "releaseTimestamp": 1792742400000
     }
   ]
