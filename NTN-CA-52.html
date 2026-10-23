@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>NTN-CA-52</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]], displayMath: [["$$", "$$"], ["\\[", "\\]"]] },
+            options: { ignoreHtmlClass: "no-mathjax" }
+        };
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(145deg, #f0fdf4, #dcfce7); --card-bg: #ffffff; --text-primary: #14532d; --border-light: #bbf7d0; --accent: #10b981; --accent-dark: #059669; --timer-bg: #fef3c7; --timer-text: #b45309; --palette-btn: #f0fdf4; --shadow: 0 10px 25px -5px rgba(0,0,0,0.1); --correct-color: #dc2626; --modal-overlay: rgba(0,0,0,0.5); --rc-bg: #f8fafc; --rc-border: #3b82f6; --puzzle-bg: #fffbeb; --puzzle-border: #f59e0b; }
+        [data-theme="dark"] { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; background: linear-gradient(135deg, #059669, #10b981); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .language-toggle:hover { background: var(--accent); }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.5; }
+        .option-item { background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card img.review-question-img { max-width: 100%; max-height: 180px; margin: 10px 0; border-radius: 12px; border: 1px solid var(--border-light); }
+        .correct-option { font-weight: bold; color: var(--correct-color); }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        mark { background-color: #fef08a; color: #000; padding: 0 4px; border-radius: 3px; }
+        .question-image { max-width: 100%; max-height: 250px; border-radius: 12px; border: 1px solid var(--border-light); cursor: zoom-in; transition: transform 0.3s; }
+        .question-image.zoomed { transform: scale(1.5); cursor: zoom-out; z-index: 1000; position: relative; }
+        @media print { body { background: white; padding: 0; margin: 0; } .quiz-wrapper { max-width: 100%; margin: 0; border-radius: 0; box-shadow: none; background: white; } .header-bar .top-buttons, .header-bar .timer-box, .palette-area, .nav-buttons, .btn:not(.btn-pdf), .icon-btn, .flex-buttons .btn:not(.btn-pdf) { display: none !important; } .result-dashboard { background: #064e3b; print-color-adjust: exact; -webkit-print-color-adjust: exact; break-inside: avoid; } .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc; margin-bottom: 15px; } .question-image, .review-question-img { max-width: 60% !important; max-height: 150px !important; page-break-inside: avoid; } .stats .stat-card { background: rgba(0,0,0,0.1); print-color-adjust: exact; } .btn-pdf { display: inline-block !important; background: #ef4444; color: white; print-color-adjust: exact; } a, button { text-decoration: none; } @page { size: A4; margin: 1.5cm; } }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } .question-image { max-height: 180px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">25:00</div>
+            <div class="top-buttons">
+                <button id="darkModeToggleBtn" class="icon-btn" onclick="toggleTheme()">🌙 Dark</button>
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none;">
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing">
+                <div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div>
+            </div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="window.AndroidBridge.printPage()">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 Dark", lightMode: "☀️ Light" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 இருண்ட", lightMode: "☀️ ஒளி" }
+    };
+    
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const paletteTitle = document.getElementById("paletteTitle"); if (paletteTitle) paletteTitle.innerText = t.paletteTitle;
+        const quizCompleted = document.getElementById("quizCompletedLabel"); if (quizCompleted) quizCompleted.innerText = t.quizCompleted;
+        const correctLabel = document.getElementById("correctLabel"); if (correctLabel) correctLabel.innerText = t.correct;
+        const incorrectLabel = document.getElementById("incorrectLabel"); if (incorrectLabel) incorrectLabel.innerText = t.incorrect;
+        const notAttemptedLabel = document.getElementById("notAttemptedLabel"); if (notAttemptedLabel) notAttemptedLabel.innerText = t.notAttempted;
+        const accuracyLabel = document.getElementById("accuracyLabel"); if (accuracyLabel) accuracyLabel.innerText = t.accuracy;
+        const timeTakenLabel = document.getElementById("timeTakenLabel"); if (timeTakenLabel) timeTakenLabel.innerText = t.timeTaken;
+        const newAttemptBtn = document.getElementById("restartQuizBtn"); if (newAttemptBtn) newAttemptBtn.innerText = t.newAttempt;
+        const langBtn = document.getElementById("langToggleBtn"); if (langBtn) langBtn.innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && document.getElementById("navButtons")) updateNavButtons();
+    }
+    
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+
+    let dashboard = {
+        examTitle: "CURRENT AFFAIRS",
+        testNo: "NTN-CA-52",
+        date: new Date().toLocaleDateString("en-GB"),
+        subject: "CURRENT AFFAIRS",
+        topic: "OCTOBER 13-15",
+        duration: "10",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+
+let QUESTIONS = [
+  {
+    type: "mcq",
+    en: "Consider the following statements regarding the PM Dhan-Dhaanya Krishi Yojana (PMDDKY) which recently completed one year:<br>1. It is a six-year, district-focused agricultural mission covering 100 Aspirational Agricultural Districts, with at least one district selected per State/UT.<br>2. At the State level, the scheme is governed by a Samiti headed by the Chief Minister.<br>3. The scheme's progress is tracked using 121 indicators (74 output and 47 outcome) with monthly rankings on the NITI Aayog portal.<br><br>Which of the statements given above are correct?",
+    ta: "சமீபத்தில் ஒரு வருடம் நிறைவடைந்த பிரதான் மந்திரி தான்-தான்ய கிருஷி யோஜனா (PMDDKY) தொடர்பான பின்வரும் கூற்றுகளைக் கவனியுங்கள்:<br>1. இது ஆறு ஆண்டுகள் கொண்ட, மாவட்டம் சார்ந்த விவசாயத் திட்டமாகும், இது 100 ஆசை விவசாய மாவட்டங்களை உள்ளடக்கியது, ஒவ்வொரு மாநிலம்/யூனியன் பிரதேசத்திற்கும் குறைந்தது ஒரு மாவட்டம் தேர்ந்தெடுக்கப்படுகிறது.<br>2. மாநில அளவில், இத்திட்டம் முதலமைச்சர் தலைமையிலான சமிதியால் நிர்வகிக்கப்படுகிறது.<br>3. இத்திட்டத்தின் முன்னேற்றம் 121 குறிகாட்டிகளைப் (74 வெளியீடு மற்றும் 47 விளைவு) பயன்படுத்தி NITI ஆயோக் போர்ட்டலில் மாதாந்திர தரவரிசையுடன் கண்காணிக்கப்படுகிறது.<br><br>மேற்கூறிய கூற்றுகளில் எவை சரியானவை?",
+    optionsEn: [
+      "1 and 2 only",
+      "1 and 3 only",
+      "2 and 3 only",
+      "1, 2, and 3"
+    ],
+    optionsTa: [
+      "1 மற்றும் 2 மட்டும்",
+      "1 மற்றும் 3 மட்டும்",
+      "2 மற்றும் 3 மட்டும்",
+      "1, 2, மற்றும் 3"
+    ],
+    answer: 1
+  },
+  {
+    type: "mcq",
+    en: "Match the following GI-tagged coffees with their respective States as mentioned in the text:<br><br><table style=\"width:100%; border-collapse:collapse;\"><tr><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">List I (Coffee)</th><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">List II (State)</th></tr><tr><td style=\"padding:4px;\">A. Coorg Arabica</td><td style=\"padding:4px;\">1. Kerala</td></tr><tr><td style=\"padding:4px;\">B. Wayanad Robusta</td><td style=\"padding:4px;\">2. Karnataka</td></tr><tr><td style=\"padding:4px;\">C. Araku Coffee</td><td style=\"padding:4px;\">3. Andhra Pradesh</td></tr></table>",
+    ta: "உரையில் குறிப்பிடப்பட்டுள்ளபடி, பின்வரும் GI-குறியிடப்பட்ட காபிகளை அவற்றின் மாநிலங்களுடன் பொருத்துக:<br><br><table style=\"width:100%; border-collapse:collapse;\"><tr><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">பட்டியல் I (காபி)</th><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">பட்டியல் II (மாநிலம்)</th></tr><tr><td style=\"padding:4px;\">A. கூர்க் அரபிகா</td><td style=\"padding:4px;\">1. கேரளா</td></tr><tr><td style=\"padding:4px;\">B. வயநாடு ரோபஸ்டா</td><td style=\"padding:4px;\">2. கர்நாடகா</td></tr><tr><td style=\"padding:4px;\">C. அரக்கு காபி</td><td style=\"padding:4px;\">3. ஆந்திரப் பிரதேசம்</td></tr></table>",
+    optionsEn: [
+      "A-2, B-1, C-3",
+      "A-1, B-2, C-3",
+      "A-2, B-3, C-1",
+      "A-3, B-2, C-1"
+    ],
+    optionsTa: [
+      "A-2, B-1, C-3",
+      "A-1, B-2, C-3",
+      "A-2, B-3, C-1",
+      "A-3, B-2, C-1"
+    ],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "According to the evolution of the Election Commission of India (ECI) mentioned in the text, what is the correct constitutional procedure regarding the removal of the other Election Commissioners (ECs)?",
+    ta: "உரையில் குறிப்பிடப்பட்டுள்ள இந்திய தேர்தல் ஆணையத்தின் (ECI) பரிணாம வளர்ச்சியின்படி, பிற தேர்தல் ஆணையர்களை (EC) நீக்குவது தொடர்பான சரியான அரசியலமைப்பு நடைமுறை என்ன?",
+    optionsEn: [
+      "They are removed by the President on the recommendation of the Chief Justice of India.",
+      "They hold office during the pleasure of the President and can be removed at any time.",
+      "They are removed by a two-thirds majority in the Parliament.",
+      "They can be removed only on the recommendation of the Chief Election Commissioner (CEC)."
+    ],
+    optionsTa: [
+      "இந்திய தலைமை நீதிபதியின் பரிந்துரையின் பேரில் குடியரசுத் தலைவரால் அவர்கள் நீக்கப்படுகிறார்கள்.",
+      "அவர்கள் குடியரசுத் தலைவரின் விருப்பத்தின் போது பதவியில் இருப்பார்கள் மற்றும் எந்த நேரத்திலும் நீக்கப்படலாம்.",
+      "நாடாளுமன்றத்தில் மூன்றில் இரண்டு பங்கு பெரும்பான்மையால் அவர்கள் நீக்கப்படுகிறார்கள்.",
+      "தலைமைத் தேர்தல் ஆணையரின் (CEC) பரிந்துரையின் பேரில் மட்டுமே அவர்கள் நீக்கப்பட முடியும்."
+    ],
+    answer: 3
+  },
+  {
+    type: "mcq",
+    en: "Who were awarded the 2026 Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel for their contributions linking macroeconomic outcomes to the rational expectations of households and firms, and for developing the concept of forward guidance?",
+    ta: "மேக்ரோ பொருளாதார விளைவுகளை குடும்பங்கள் மற்றும் நிறுவனங்களின் பகுத்தறிவு எதிர்பார்ப்புகளுடன் இணைத்தமைக்காகவும், முன்னோக்கி வழிகாட்டுதல் என்ற கருத்தை உருவாக்கியதற்காகவும் 2026 ஆம் ஆண்டு ஆல்ஃபிரட் நோபல் நினைவு Sveriges Riksbank பொருளாதார அறிவியல் பரிசு யாருக்கு வழங்கப்பட்டது?",
+    optionsEn: [
+      "Ben Bernanke and Douglas Diamond",
+      "Abhijit Banerjee and Esther Duflo",
+      "Robert E. Hall and Michael Woodford",
+      "Richard Thaler and Robert Shiller"
+    ],
+    optionsTa: [
+      "பென் பெர்னான்கே மற்றும் டக்ளஸ் டயமண்ட்",
+      "அபிஜித் பானர்ஜி மற்றும் எஸ்தர் டஃப்லோ",
+      "ராபர்ட் ஈ. ஹால் மற்றும் மைக்கேல் வுட்ஃபோர்ட்",
+      "ரிச்சர்ட் தாலர் மற்றும் ராபர்ட் ஷில்லர்"
+    ],
+    answer: 2
+  },
+  {
+    type: "mcq",
+    en: "The National Social Assistance Programme (NSAP) has been continued and renamed as Pradhan Mantri Samajik Sahayata Yojana (PMSSY). Which of the following is NOT a component of this renamed scheme?",
+    ta: "தேசிய சமூக உதவித் திட்டம் (NSAP) தொடரப்பட்டு பிரதான் மந்திரி சமாஜிக் சகாயதா யோஜனா (PMSSY) என மறுபெயரிடப்பட்டுள்ளது. பின்வருவனவற்றில் எது இந்த மறுபெயரிடப்பட்ட திட்டத்தின் கூறு அல்ல?",
+    optionsEn: [
+      "Pradhan Mantri Vridhavastha Pension Yojana",
+      "Pradhan Mantri Vidhawa Pension Yojana",
+      "Pradhan Mantri Divyangjan Pension Yojana",
+      "Pradhan Mantri Fasal Bima Yojana"
+    ],
+    optionsTa: [
+      "பிரதான் மந்திரி விருதாவஸ்தா பென்ஷன் யோஜனா",
+      "பிரதான் மந்திரி விதவா பென்ஷன் யோஜனா",
+      "பிரதான் மந்திரி திவ்யாங்கன் பென்ஷன் யோஜனா",
+      "பிரதான் மந்திரி பசல் பீமா யோஜனா"
+    ],
+    answer: 3
+  },
+  {
+    type: "mcq",
+    en: "Consider the following statements regarding the causes and impacts of flash floods in the Himalayas:<br>1. The 2021 Chamoli disaster was triggered by a rock-ice detachment in the Rishiganga valley, which destroyed hydropower projects.<br>2. The South Lhonak lake outburst in Sikkim led to the destruction of the Chungthang dam on the Teesta River.<br>3. Landslide Dam Outburst Floods (LDOFs), such as the Chumke Khola blockage, can cause flash floods even without heavy rainfall.<br><br>Which of the statements given above are correct?",
+    ta: "இமயமலையில் ஏற்படும் திடீர் வெள்ளங்களின் காரணங்கள் மற்றும் தாக்கங்கள் தொடர்பான பின்வரும் கூற்றுகளைக் கவனியுங்கள்:<br>1. 2021 சாமோலி பேரழிவு ரிஷிகங்கா பள்ளத்தாக்கில் பாறை-பனிக்கட்டி பிரிதலால் தூண்டப்பட்டது, இது நீர் மின் திட்டங்களை அழித்தது.<br>2. சிக்கிமில் தெற்கு லோனாக் ஏரி வெடித்ததால் தீஸ்தா ஆற்றின் மேல் உள்ள சுங்தாங் அணை அழிந்தது.<br>3. நிலச்சரிவு அணை வெடிப்பு வெள்ளங்கள் (LDOF), சும்கே கோலா அடைப்பு போன்றவை, கனமழை இல்லாமல் கூட திடீர் வெள்ளத்தை ஏற்படுத்தலாம்.<br><br>மேற்கூறிய கூற்றுகளில் எவை சரியானவை?",
+    optionsEn: [
+      "1, 2 and 3",
+      "2 and 3 only",
+      "1 and 3 only",
+      "1 and 2 only"
+    ],
+    optionsTa: [
+      "1, 2 மற்றும் 3",
+      "2 மற்றும் 3 மட்டும்",
+      "1 மற்றும் 3 மட்டும்",
+      "1 மற்றும் 2 மட்டும்"
+    ],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Match the following newly appointed Governors with their respective States in the October 2026 gubernatorial reshuffle:<br><br><table style=\"width:100%; border-collapse:collapse;\"><tr><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">List I (Governor)</th><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">List II (State)</th></tr><tr><td style=\"padding:4px;\">A. Rajendra Arlekar</td><td style=\"padding:4px;\">1. Keralam</td></tr><tr><td style=\"padding:4px;\">B. Om Prakash Mathur</td><td style=\"padding:4px;\">2. Karnataka</td></tr><tr><td style=\"padding:4px;\">C. Dr. Sudha Yadav</td><td style=\"padding:4px;\">3. Tamil Nadu</td></tr><tr><td style=\"padding:4px;\">D. Dushyant Gautam</td><td style=\"padding:4px;\">4. Sikkim</td></tr></table>",
+    ta: "அக்டோபர் 2026 ஆளுநர் மாற்றத்தில் பின்வரும் புதிதாக நியமிக்கப்பட்ட ஆளுநர்களை அவற்றின் மாநிலங்களுடன் பொருத்துக:<br><br><table style=\"width:100%; border-collapse:collapse;\"><tr><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">பட்டியல் I (ஆளுநர்)</th><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">பட்டியல் II (மாநிலம்)</th></tr><tr><td style=\"padding:4px;\">A. ராஜேந்திர ஆர்லேகர்</td><td style=\"padding:4px;\">1. கேரளம்</td></tr><tr><td style=\"padding:4px;\">B. ஓம் பிரகாஷ் மாத்தூர்</td><td style=\"padding:4px;\">2. கர்நாடகா</td></tr><tr><td style=\"padding:4px;\">C. டாக்டர் சுதா யாதவ்</td><td style=\"padding:4px;\">3. தமிழ்நாடு</td></tr><tr><td style=\"padding:4px;\">D. துஷ்யந்த் கவுதம்</td><td style=\"padding:4px;\">4. சிக்கிம்</td></tr></table>",
+    optionsEn: [
+      "A-2, B-1, C-3, D-4",
+      "A-1, B-3, C-4, D-2",
+      "A-3, B-1, C-2, D-4",
+      "A-3, B-4, C-1, D-2"
+    ],
+    optionsTa: [
+      "A-2, B-1, C-3, D-4",
+      "A-1, B-3, C-4, D-2",
+      "A-3, B-1, C-2, D-4",
+      "A-3, B-4, C-1, D-2"
+    ],
+    answer: 2
+  },
+  {
+    type: "mcq",
+    en: "Consider the following statements regarding the E-Mobility landscape in India:<br>1. India's EV sales share has increased from 0.08% in FY15-16 to 8.26% in FY25-26.<br>2. The PLI Scheme for Automobile & Auto Components requires a minimum of 50% Domestic Value Addition (DVA).<br>3. India aims to achieve 30% of vehicle sales being electric by 2030, aligning with the global EV30@30 initiative.<br><br>Which of the statements given above are correct?",
+    ta: "இந்தியாவில் மின்-இயக்க நிலப்பரப்பு தொடர்பான பின்வரும் கூற்றுகளைக் கவனியுங்கள்:<br>1. இந்தியாவின் EV விற்பனை பங்கு FY15-16 இல் 0.08% இலிருந்து FY25-26 இல் 8.26% ஆக அதிகரித்துள்ளது.<br>2. ஆட்டோமொபைல் & ஆட்டோ கூறுகளுக்கான PLI திட்டம் குறைந்தபட்சம் 50% உள்நாட்டு மதிப்பு கூட்டல் (DVA) தேவைப்படுகிறது.<br>3. உலகளாவிய EV30@30 முன்முயற்சியுடன் இணைந்து, 2030 ஆம் ஆண்டுக்குள் வாகன விற்பனையில் 30% மின்சாரமாக இருக்க இந்தியா இலக்கு வைத்துள்ளது.<br><br>மேற்கூறிய கூற்றுகளில் எவை சரியானவை?",
+    optionsEn: [
+      "1 and 2 only",
+      "1, 2 and 3",
+      "2 and 3 only",
+      "1 and 3 only"
+    ],
+    optionsTa: [
+      "1 மற்றும் 2 மட்டும்",
+      "1, 2 மற்றும் 3",
+      "2 மற்றும் 3 மட்டும்",
+      "1 மற்றும் 3 மட்டும்"
+    ],
+    answer: 1
+  },
+  {
+    type: "mcq",
+    en: "According to the State of the World's Forests (SOFO) 2026 report released by the FAO, which country ranks first globally in forest area under restoration?",
+    ta: "FAO வெளியிட்ட உலக காடுகளின் நிலை (SOFO) 2026 அறிக்கையின்படி, மீட்பு நிலையில் உள்ள காடுகளின் பரப்பளவில் உலகளவில் முதல் இடத்தில் உள்ள நாடு எது?",
+    optionsEn: [
+      "China",
+      "Ethiopia",
+      "India",
+      "Indonesia"
+    ],
+    optionsTa: [
+      "சீனா",
+      "எத்தியோப்பியா",
+      "இந்தியா",
+      "இந்தோனேசியா"
+    ],
+    answer: 2
+  },
+  {
+    type: "mcq",
+    en: "Under Article 22 of the Indian Constitution, which of the following safeguards does NOT apply to a person detained under preventive detention laws?",
+    ta: "இந்திய அரசியலமைப்பின் 22 வது பிரிவின் கீழ், தடுப்பு காவல் சட்டங்களின் கீழ் தடுத்து வைக்கப்பட்ட ஒருவருக்கு பின்வரும் எந்த பாதுகாப்பு பொருந்தாது?",
+    optionsEn: [
+      "The detained person must be produced before the nearest magistrate within 24 hours of arrest.",
+      "The grounds of detention must be communicated to the detenu.",
+      "The detention cannot exceed three months without the approval of an Advisory Board.",
+      "Facts considered against the public interest may be withheld from the detenu."
+    ],
+    optionsTa: [
+      "கைது செய்யப்பட்ட 24 மணி நேரத்திற்குள் தடுத்து வைக்கப்பட்ட நபர் அருகிலுள்ள நீதிபதி முன் ஆஜர்படுத்தப்பட வேண்டும்.",
+      "தடுப்பு காவலுக்கான காரணங்கள் தடுத்து வைக்கப்பட்டவருக்கு தெரிவிக்கப்பட வேண்டும்.",
+      "ஆலோசனைக் குழுவின் ஒப்புதல் இல்லாமல் தடுப்பு காவல் மூன்று மாதங்களுக்கு மேல் இருக்கக்கூடாது.",
+      "பொது நலனுக்கு எதிரான உண்மைகள் தடுத்து வைக்கப்பட்டவரிடமிருந்து தடுத்து வைக்கப்படலாம்."
+    ],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Who was recently elected as the first President of the Indian UniSport Federation (IUSF), a platform established in 2026 for university sports with the approval of the Ministry of Youth Affairs and Sports?",
+    ta: "இளைஞர் விவகாரம் மற்றும் விளையாட்டு அமைச்சகத்தின் ஒப்புதலுடன் பல்கலைக்கழக விளையாட்டுக்காக 2026 இல் நிறுவப்பட்ட இந்திய யூனிஸ்போர்ட் கூட்டமைப்பின் (IUSF) முதல் தலைவராக சமீபத்தில் யார் தேர்ந்தெடுக்கப்பட்டார்?",
+    optionsEn: [
+      "Sunil Gavaskar",
+      "Achyuta Samanta",
+      "Mithun Manhas",
+      "Prakash Rajpurohit"
+    ],
+    optionsTa: [
+      "சுனில் காவஸ்கர்",
+      "அச்சுத சமந்தா",
+      "மிதுன் மன்ஹாஸ்",
+      "பிரகாஷ் ராஜ்புரோஹித்"
+    ],
+    answer: 1
+  },
+  {
+    type: "mcq",
+    en: "Consider the following statements regarding the Long-Term Capital Gains (LTCG) tax regime in India following the Budget 2024:<br>1. Listed Equity LTCG is taxed at 12.5% for gains above ₹1.25 lakh per year.<br>2. The indexation benefit has been completely removed for all property sales, regardless of the purchase date.<br>3. For property bought before 23 July 2024, taxpayers have the option to choose a 20% tax rate with indexation.<br><br>Which of the statements given above are correct?",
+    ta: "பட்ஜெட் 2024 ஐத் தொடர்ந்து இந்தியாவில் நீண்ட கால மூலதன ஆதாயங்கள் (LTCG) வரி முறை தொடர்பான பின்வரும் கூற்றுகளைக் கவனியுங்கள்:<br>1. பட்டியலிடப்பட்ட பங்கு LTCG ஆண்டுக்கு ₹1.25 லட்சத்திற்கு மேல் உள்ள ஆதாயங்களுக்கு 12.5% வரி விதிக்கப்படுகிறது.<br>2. கொள்முதல் தேதியைப் பொருட்படுத்தாமல் அனைத்து சொத்து விற்பனைகளுக்கும் குறியீட்டு நன்மை முழுமையாக நீக்கப்பட்டுள்ளது.<br>3. ஜூலை 23, 2024 க்கு முன் வாங்கிய சொத்துக்களுக்கு, வரி செலுத்துவோர் குறியீட்டுடன் 20% வரி விகிதத்தைத் தேர்வு செய்ய விருப்பம் உள்ளது.<br><br>மேற்கூறிய கூற்றுகளில் எவை சரியானவை?",
+    optionsEn: [
+      "1 and 2 only",
+      "1, 2 and 3",
+      "2 and 3 only",
+      "1 and 3 only"
+    ],
+    optionsTa: [
+      "1 மற்றும் 2 மட்டும்",
+      "1, 2 மற்றும் 3",
+      "2 மற்றும் 3 மட்டும்",
+      "1 மற்றும் 3 மட்டும்"
+    ],
+    answer: 3
+  },
+  {
+    type: "mcq",
+    en: "Match the following Articles of the Indian Constitution with their respective provisions regarding the Governor:<br><br><table style=\"width:100%; border-collapse:collapse;\"><tr><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">List I (Article)</th><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">List II (Provision)</th></tr><tr><td style=\"padding:4px;\">A. Article 153</td><td style=\"padding:4px;\">1. Appointed by the President by warrant under his hand and seal.</td></tr><tr><td style=\"padding:4px;\">B. Article 155</td><td style=\"padding:4px;\">2. A Governor for each State; one person may serve two or more States.</td></tr><tr><td style=\"padding:4px;\">C. Article 156</td><td style=\"padding:4px;\">3. Holds office during the pleasure of the President (normal term 5 years).</td></tr><tr><td style=\"padding:4px;\">D. Article 157</td><td style=\"padding:4px;\">4. Must be an Indian citizen and at least 35 years old.</td></tr></table>",
+    ta: "ஆளுநர் தொடர்பான இந்திய அரசியலமைப்பின் பின்வரும் பிரிவுகளை அவற்றின் விதிகளுடன் பொருத்துக:<br><br><table style=\"width:100%; border-collapse:collapse;\"><tr><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">பட்டியல் I (பிரிவு)</th><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">பட்டியல் II (விதி)</th></tr><tr><td style=\"padding:4px;\">A. பிரிவு 153</td><td style=\"padding:4px;\">1. குடியரசுத் தலைவரால் அவரது கையொப்பம் மற்றும் முத்திரையின் கீழ் உத்தரவின் மூலம் நியமிக்கப்படுகிறார்.</td></tr><tr><td style=\"padding:4px;\">B. பிரிவு 155</td><td style=\"padding:4px;\">2. ஒவ்வொரு மாநிலத்திற்கும் ஒரு ஆளுநர்; ஒரு நபர் இரண்டு அல்லது அதற்கு மேற்பட்ட மாநிலங்களுக்கு சேவை செய்யலாம்.</td></tr><tr><td style=\"padding:4px;\">C. பிரிவு 156</td><td style=\"padding:4px;\">3. குடியரசுத் தலைவரின் விருப்பத்தின் போது பதவியில் இருக்கிறார் (சாதாரண பதவிக்காலம் 5 ஆண்டுகள்).</td></tr><tr><td style=\"padding:4px;\">D. பிரிவு 157</td><td style=\"padding:4px;\">4. இந்திய குடிமகனாக இருக்க வேண்டும் மற்றும் குறைந்தது 35 வயது இருக்க வேண்டும்.</td></tr></table>",
+    optionsEn: [
+      "A-2, B-1, C-3, D-4",
+      "A-1, B-2, C-4, D-3",
+      "A-2, B-3, C-1, D-4",
+      "A-3, B-1, C-2, D-4"
+    ],
+    optionsTa: [
+      "A-2, B-1, C-3, D-4",
+      "A-1, B-2, C-4, D-3",
+      "A-2, B-3, C-1, D-4",
+      "A-3, B-1, C-2, D-4"
+    ],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Consider the following statements regarding India's recent accession to the Southern Indian Ocean Fisheries Agreement (SIOFA):<br>1. India upgraded its status from a Cooperating Non-Contracting Party to a full Contracting Party.<br>2. SIOFA manages highly migratory tuna species listed in Annex I of UNCLOS.<br>3. The Indian Ocean Tuna Commission (IOTC) deals with non-tuna high seas resources.<br><br>Which of the statements given above are correct?",
+    ta: "தென்னிந்தியப் பெருங்கடல் மீன்வள ஒப்பந்தத்தில் (SIOFA) இந்தியா சமீபத்தில் இணைந்தது தொடர்பான பின்வரும் கூற்றுகளைக் கவனியுங்கள்:<br>1. இந்தியா தனது அந்தஸ்தை ஒத்துழைக்கும் ஒப்பந்தம் செய்யாத கட்சியிலிருந்து முழு ஒப்பந்தக் கட்சியாக தரம் உயர்த்தியது.<br>2. SIOFA UNCLOS இன் இணைப்பு I இல் பட்டியலிடப்பட்டுள்ள அதிக இடம்பெயரும் டுனா இனங்களை நிர்வகிக்கிறது.<br>3. இந்தியப் பெருங்கடல் டுனா ஆணையம் (IOTC) டுனா அல்லாத உயர் கடல் வளங்களைக் கையாள்கிறது.<br><br>மேற்கூறிய கூற்றுகளில் எவை சரியானவை?",
+    optionsEn: [
+      "1 and 2 only",
+      "1 only",
+      "2 and 3 only",
+      "1, 2, and 3"
+    ],
+    optionsTa: [
+      "1 மற்றும் 2 மட்டும்",
+      "1 மட்டும்",
+      "2 மற்றும் 3 மட்டும்",
+      "1, 2, மற்றும் 3"
+    ],
+    answer: 1
+  },
+  {
+    type: "mcq",
+    en: "Under Section 135 of the Companies Act, 2013, what is the mandated spending on Corporate Social Responsibility (CSR) for eligible companies, and what are the applicability thresholds?",
+    ta: "நிறுவனங்கள் சட்டம், 2013 இன் பிரிவு 135 இன் கீழ், தகுதியுள்ள நிறுவனங்களுக்கு கார்ப்பரேட் சமூக பொறுப்புணர்வு (CSR) செலவினத்திற்கான கட்டாயம் என்ன, மற்றும் பொருந்தக்கூடிய வரம்புகள் என்ன?",
+    optionsEn: [
+      "1% of average net profit of the last 3 years; Net worth ≥ ₹500 crore, Turnover ≥ ₹1,000 crore, or Net Profit ≥ ₹5 crore.",
+      "5% of average net profit of the last 5 years; Net worth ≥ ₹1,000 crore, Turnover ≥ ₹500 crore, or Net Profit ≥ ₹10 crore.",
+      "2% of annual net profit; Net worth ≥ ₹100 crore, Turnover ≥ ₹500 crore, or Net Profit ≥ ₹2 crore.",
+      "2% of average net profit of the last 3 years; Net worth ≥ ₹500 crore, Turnover ≥ ₹1,000 crore, or Net Profit ≥ ₹5 crore."
+    ],
+    optionsTa: [
+      "கடந்த 3 ஆண்டுகளின் சராசரி நிகர லாபத்தில் 1%; நிகர மதிப்பு ≥ ₹500 கோடி, விற்றுமுதல் ≥ ₹1,000 கோடி, அல்லது நிகர லாபம் ≥ ₹5 கோடி.",
+      "கடந்த 5 ஆண்டுகளின் சராசரி நிகர லாபத்தில் 5%; நிகர மதிப்பு ≥ ₹1,000 கோடி, விற்றுமுதல் ≥ ₹500 கோடி, அல்லது நிகர லாபம் ≥ ₹10 கோடி.",
+      "ஆண்டு நிகர லாபத்தில் 2%; நிகர மதிப்பு ≥ ₹100 கோடி, விற்றுமுதல் ≥ ₹500 கோடி, அல்லது நிகர லாபம் ≥ ₹2 கோடி.",
+      "கடந்த 3 ஆண்டுகளின் சராசரி நிகர லாபத்தில் 2%; நிகர மதிப்பு ≥ ₹500 கோடி, விற்றுமுதல் ≥ ₹1,000 கோடி, அல்லது நிகர லாபம் ≥ ₹5 கோடி."
+    ],
+    answer: 3
+  },
+  {
+    type: "mcq",
+    en: "Who has been appointed as the Deputy Election Commissioner (DEC) by the Appointments Committee of the Cabinet (ACC), with a tenure extending till 8 April 2030?",
+    ta: "அமைச்சரவை நியமனக் குழுவால் (ACC) துணைத் தேர்தல் ஆணையராக (DEC) யார் நியமிக்கப்பட்டுள்ளார், அவரது பதவிக்காலம் ஏப்ரல் 8, 2030 வரை நீட்டிக்கப்பட்டுள்ளது?",
+    optionsEn: [
+      "Gyanesh Kumar",
+      "Rajiv Kumar",
+      "Prakash Rajpurohit",
+      "S.S. Dhanoa"
+    ],
+    optionsTa: [
+      "ஞானேஷ் குமார்",
+      "ராஜீவ் குமார்",
+      "பிரகாஷ் ராஜ்புரோஹித்",
+      "எஸ்.எஸ். தனோவா"
+    ],
+    answer: 2
+  },
+  {
+    type: "mcq",
+    en: "Consider the following statements regarding the recent Delhi Police notification declaring Jantar Mantar as no longer a designated protest site:<br>1. New designated protest venues include Ramlila Maidan, Burari Ground, and CBD Ground.<br>2. Article 19(1)(b) of the Constitution guarantees the right to assemble peacefully and without arms.<br>3. Article 19(3) allows the State to impose reasonable restrictions on this right in the interests of public order.<br><br>Which of the statements given above are correct?",
+    ta: "ஜந்தர் மந்தரை இனி நியமிக்கப்பட்ட எதிர்ப்பு தளமாக இருக்காது என்று அறிவித்த சமீபத்திய டெல்லி போலீஸ் அறிவிப்பு தொடர்பான பின்வரும் கூற்றுகளைக் கவனியுங்கள்:<br>1. புதிய நியமிக்கப்பட்ட எதிர்ப்பு இடங்களில் ராம்லீலா மைதானம், புராரி மைதானம் மற்றும் CBD மைதானம் அடங்கும்.<br>2. அரசியலமைப்பின் 19(1)(b) பிரிவு அமைதியாகவும் ஆயுதமின்றியும் கூடுவதற்கான உரிமையை உத்தரவாதம் செய்கிறது.<br>3. பிரிவு 19(3) பொது ஒழுங்கின் நலன்களில் இந்த உரிமைக்கு நியாயமான கட்டுப்பாடுகளை விதிக்க மாநிலத்திற்கு அனுமதிக்கிறது.<br><br>மேற்கூறிய கூற்றுகளில் எவை சரியானவை?",
+    optionsEn: [
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 and 3 only",
+      "1, 2, and 3"
+    ],
+    optionsTa: [
+      "1 மற்றும் 2 மட்டும்",
+      "2 மற்றும் 3 மட்டும்",
+      "1 மற்றும் 3 மட்டும்",
+      "1, 2, மற்றும் 3"
+    ],
+    answer: 3
+  },
+  {
+    type: "mcq",
+    en: "According to the NDMA guidelines for mitigating flash floods mentioned in the text, which of the following is NOT a recommended measure?",
+    ta: "உரையில் குறிப்பிடப்பட்டுள்ள திடீர் வெள்ளங்களைத் தணிக்கும் NDMA வழிகாட்டுதல்களின்படி, பின்வருவனவற்றில் எது பரிந்துரைக்கப்பட்ட நடவடிக்கை அல்ல?",
+    optionsEn: [
+      "Promoting construction in active riverbeds to improve economic activity.",
+      "De-risking lakes through siphoning, pumping, and constructing outlet channels.",
+      "Hazard zonation and monitoring lakes using Synthetic Aperture Radar (SAR).",
+      "Establishing Early Warning Systems using Doppler radars, river sensors, and acoustic alarms."
+    ],
+    optionsTa: [
+      "பொருளாதார செயல்பாட்டை மேம்படுத்த செயலில் உள்ள ஆற்றுப் படுகைகளில் கட்டுமானத்தை ஊக்குவித்தல்.",
+      "உறிஞ்சுதல், உந்தித் தள்ளுதல் மற்றும் கடையின் சேனல்களைக் கட்டுதல் மூலம் ஏரிகளை ஆபத்திலிருந்து காப்பாற்றுதல்.",
+      "செயற்கை துளை ரேடார் (SAR) பயன்படுத்தி ஏரிகளைக் கண்காணித்தல் மற்றும் ஆபத்து மண்டலமிடல்.",
+      "டாப்ளர் ரேடார்கள், ஆற்று உணரிகள் மற்றும் ஒலி எச்சரிக்கைகளைப் பயன்படுத்தி முன்னெச்சரிக்கை அமைப்புகளை நிறுவுதல்."
+    ],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Consider the following statements about the PM GatiShakti National Master Plan, which recently completed five years:<br>1. It brings together 58 Central Ministries and all 36 States/UTs on a single digital planning framework.<br>2. The Empowered Group of Secretaries (EGOs), which oversees the initiative, is chaired by the Cabinet Secretary.<br>3. The newly approved Integrated Transport & Logistics Authority (ITLA) will appraise infrastructure projects worth ₹500 crore or more.<br><br>Which of the statements given above are correct?",
+    ta: "சமீபத்தில் ஐந்து ஆண்டுகளை நிறைவு செய்த பிரதான் மந்திரி கதி சக்தி தேசிய முதன்மைத் திட்டம் பற்றிய பின்வரும் கூற்றுகளைக் கவனியுங்கள்:<br>1. இது 58 மத்திய அமைச்சகங்கள் மற்றும் அனைத்து 36 மாநிலங்கள்/யூனியன் பிரதேசங்களை ஒரே டிஜிட்டல் திட்டமிடல் கட்டமைப்பில் ஒன்றிணைக்கிறது.<br>2. இந்த முன்முயற்சியை மேற்பார்வையிடும் அதிகாரமளிக்கப்பட்ட செயலாளர்கள் குழு (EGO), அமைச்சரவை செயலாளரால் தலைமை தாங்கப்படுகிறது.<br>3. புதிதாக அங்கீகரிக்கப்பட்ட ஒருங்கிணைந்த போக்குவரத்து & தளவாட ஆணையம் (ITLA) ₹500 கோடி அல்லது அதற்கு மேற்பட்ட உள்கட்டமைப்பு திட்டங்களை மதிப்பிடும்.<br><br>மேற்கூறிய கூற்றுகளில் எவை சரியானவை?",
+    optionsEn: [
+      "1 and 2 only",
+      "1, 2 and 3",
+      "1 and 3 only",
+      "1 and 2"
+    ],
+    optionsTa: [
+      "1 மற்றும் 2 மட்டும்",
+      "1, 2 மற்றும் 3",
+      "1 மற்றும் 3 மட்டும்",
+      "1 மற்றும் 2"
+    ],
+    answer: 1
+  },
+  {
+    type: "mcq",
+    en: "Who is the Chairperson of the High-Level Committee on Demographic Changes (HLCDC) constituted by the Ministry of Home Affairs (MHA) in 2026 to examine challenges arising from demographic changes, including illegal immigration?",
+    ta: "மக்கள்தொகை மாற்றங்களால் எழும் சவால்களை, குறிப்பாக சட்டவிரோத குடியேற்றத்தை ஆராய உள்துறை அமைச்சகத்தால் (MHA) 2026 இல் அமைக்கப்பட்ட மக்கள்தொகை மாற்றங்கள் குறித்த உயர் மட்டக் குழுவின் (HLCDC) தலைவர் யார்?",
+    optionsEn: [
+      "Justice A.N. Mulla",
+      "Justice Amitava Roy",
+      "Justice Prakash Prabhakar Naolekar",
+      "Justice K.A. Najeeb"
+    ],
+    optionsTa: [
+      "நீதிபதி ஏ.என். முல்லா",
+      "நீதிபதி அமிதவா ராய்",
+      "நீதிபதி பிரகாஷ் பிரபாகர் நாவ்லேகர்",
+      "நீதிபதி கே.ஏ. நஜீப்"
+    ],
+    answer: 2
+  },
+  {
+    type: "mcq",
+    en: "Match the following newly appointed Governors with their previous roles or affiliations mentioned in the text:<br><br><table style=\"width:100%; border-collapse:collapse;\"><tr><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">List I (Governor)</th><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">List II (Previous Role)</th></tr><tr><td style=\"padding:4px;\">A. Dr. Sudha Yadav</td><td style=\"padding:4px;\">1. Former Governor of Sikkim</td></tr><tr><td style=\"padding:4px;\">B. Om Prakash Mathur</td><td style=\"padding:4px;\">2. Former Rajya Sabha member and BJP general secretary</td></tr><tr><td style=\"padding:4px;\">C. Dushyant Gautam</td><td style=\"padding:4px;\">3. Former MP from Mahendragarh (Haryana)</td></tr></table>",
+    ta: "உரையில் குறிப்பிடப்பட்டுள்ள புதிதாக நியமிக்கப்பட்ட ஆளுநர்களை அவர்களின் முந்தைய பங்குகள் அல்லது இணைப்புகளுடன் பொருத்துக:<br><br><table style=\"width:100%; border-collapse:collapse;\"><tr><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">பட்டியல் I (ஆளுநர்)</th><th style=\"border-bottom:1px solid #ccc; padding:4px; text-align:left;\">பட்டியல் II (முந்தைய பங்கு)</th></tr><tr><td style=\"padding:4px;\">A. டாக்டர் சுதா யாதவ்</td><td style=\"padding:4px;\">1. சிக்கிமின் முன்னாள் ஆளுநர்</td></tr><tr><td style=\"padding:4px;\">B. ஓம் பிரகாஷ் மாத்தூர்</td><td style=\"padding:4px;\">2. முன்னாள் ராஜ்யசபா உறுப்பினர் மற்றும் பாஜக பொதுச் செயலாளர்</td></tr><tr><td style=\"padding:4px;\">C. துஷ்யந்த் கவுதம்</td><td style=\"padding:4px;\">3. மகேந்திரகர் (ஹரியானா) முன்னாள் எம்.பி.</td></tr></table>",
+    optionsEn: [
+      "A-3, B-1, C-2",
+      "A-1, B-2, C-3",
+      "A-2, B-3, C-1",
+      "A-3, B-2, C-1"
+    ],
+    optionsTa: [
+      "A-3, B-1, C-2",
+      "A-1, B-2, C-3",
+      "A-2, B-3, C-1",
+      "A-3, B-2, C-1"
+    ],
+    answer: 0
+  },
+  {
+    type: "mcq",
+    en: "Consider the following statements regarding the Kerala Ecosystem Red List Assessment (RLE), India's first State-level initiative of its kind:<br>1. It assesses the risk of collapse of entire ecosystems rather than just individual species, using the IUCN Red List of Ecosystems framework.<br>2. The one-year project will cover all 14 districts of Kerala, producing outputs like an Ecosystem Risk Register and Typology Atlas.<br>3. The primary objective of the RLE is to evaluate the extinction risk of the Jeypore ground gecko.<br><br>Which of the statements given above are correct?",
+    ta: "கேரள சுற்றுச்சூழல் சிவப்பு பட்டியல் மதிப்பீடு (RLE), இந்தியாவின் முதல் மாநில அளவிலான முன்முயற்சி தொடர்பான பின்வரும் கூற்றுகளைக் கவனியுங்கள்:<br>1. இது IUCN சுற்றுச்சூழல் சிவப்பு பட்டியல் கட்டமைப்பைப் பயன்படுத்தி தனிப்பட்ட இனங்களை மட்டுமல்ல, முழு சுற்றுச்சூழல் அமைப்புகளின் சரிவு அபாயத்தையும் மதிப்பிடுகிறது.<br>2. ஒரு வருட திட்டம் கேரளாவின் அனைத்து 14 மாவட்டங்களையும் உள்ளடக்கும், சுற்றுச்சூழல் அபாயப் பதிவு மற்றும் வகைப்பாட்டியல் அட்லஸ் போன்ற வெளியீடுகளை உருவாக்கும்.<br>3. RLE இன் முதன்மை நோக்கம் ஜெய்ப்பூர் தரை ஓணானின் அழிவு அபாயத்தை மதிப்பிடுவதாகும்.<br><br>மேற்கூறிய கூற்றுகளில் எவை சரியானவை?",
+    optionsEn: [
+      "1 and 3 only",
+      "1 and 2 only",
+      "2 and 3 only",
+      "1, 2, and 3"
+    ],
+    optionsTa: [
+      "1 மற்றும் 3 மட்டும்",
+      "1 மற்றும் 2 மட்டும்",
+      "2 மற்றும் 3 மட்டும்",
+      "1, 2, மற்றும் 3"
+    ],
+    answer: 1
+  },
+  {
+    type: "mcq",
+    en: "According to NITI Aayog's Frontier Tech Hub recommendations for AI Data Centres in India, which of the following is NOT a suggested policy measure for State governments?",
+    ta: "இந்தியாவில் AI தரவு மையங்களுக்கான NITI ஆயோக்கின் ஃபிரண்டியர் டெக் ஹப் பரிந்துரைகளின்படி, பின்வருவனவற்றில் எது மாநில அரசுகளுக்கான பரிந்துரைக்கப்பட்ட கொள்கை நடவடிக்கை அல்ல?",
+    optionsEn: [
+      "Mandating grid readiness checks and 20-30 year water impact assessments before approval.",
+      "Tying outcome-linked incentives to domestic procurement, R&D, green energy, and local jobs.",
+      "Creating \"Data-Centre-Ready\" zones with surplus renewable power and No-Go zones in fragile regions.",
+      "Promoting diesel generator backups as the primary power source to ensure uninterrupted operations."
+    ],
+    optionsTa: [
+      "ஒப்புதல் வழங்குவதற்கு முன் கிரிட் தயார்நிலை சரிபார்ப்புகள் மற்றும் 20-30 ஆண்டு நீர் தாக்க மதிப்பீடுகளை கட்டாயமாக்குதல்.",
+      "விளைவு-இணைக்கப்பட்ட ஊக்கத்தொகைகளை உள்நாட்டு கொள்முதல், ஆராய்ச்சி மற்றும் மேம்பாடு, பசுமை ஆற்றல் மற்றும் உள்ளூர் வேலைகளுடன் இணைத்தல்.",
+      "உபரி புதுப்பிக்கத்தக்க ஆற்றல் கொண்ட \"தரவு-மையம்-தயார்\" மண்டலங்களை உருவாக்குதல் மற்றும் பலவீனமான பகுதிகளில் செல்லக்கூடாத மண்டலங்களை உருவாக்குதல்.",
+      "தடையற்ற செயல்பாடுகளை உறுதிப்படுத்த டீசல் ஜெனரேட்டர் காப்புப்பிரதிகளை முதன்மை மின் ஆதாரமாக ஊக்குவித்தல்."
+    ],
+    answer: 3
+  },
+  {
+    type: "mcq",
+    en: "Consider the following statements based on the NCRB Prison Statistics 2024 highlighted in the text:<br>1. The overall occupancy rate of Indian prisons stands at 112.7%, with Delhi having the highest occupancy rate.<br>2. Over three-quarters (about 73%) of prisoners in 2022 were undertrials, with Delhi and Bihar having the highest undertrial share (over 87%).<br>3. The Justice A.N. Mulla Committee (1980-83) primarily recommended decongestion, speedy trials, and the use of technology.<br><br>Which of the statements given above are correct?",
+    ta: "உரையில் முன்னிலைப்படுத்தப்பட்ட NCRB சிறை புள்ளிவிவரங்கள் 2024 அடிப்படையிலான பின்வரும் கூற்றுகளைக் கவனியுங்கள்:<br>1. இந்திய சிறைகளின் ஒட்டுமொத்த ஆக்கிரமிப்பு விகிதம் 112.7% ஆக உள்ளது, டெல்லியில் அதிக ஆக்கிரமிப்பு விகிதம் உள்ளது.<br>2. 2022 இல் மூன்றில் இரண்டு பங்குக்கும் அதிகமான (சுமார் 73%) கைதிகள் விசாரணைக் கைதிகள், டெல்லி மற்றும் பீகாரில் அதிக விசாரணைக் கைதி பங்கு (87% க்கும் அதிகம்) உள்ளது.<br>3. நீதிபதி ஏ.என். முல்லா குழு (1980-83) முதன்மையாக நெரிசலைக் குறைத்தல், விரைவான விசாரணைகள் மற்றும் தொழில்நுட்பத்தைப் பயன்படுத்துதல் ஆகியவற்றைப் பரிந்துரைத்தது.<br><br>மேற்கூறிய கூற்றுகளில் எவை சரியானவை?",
+    optionsEn: [
+      "1 and 3 only",
+      "2 and 3 only",
+      "1 and 2 only",
+      "1, 2, and 3"
+    ],
+    optionsTa: [
+      "1 மற்றும் 3 மட்டும்",
+      "2 மற்றும் 3 மட்டும்",
+      "1 மற்றும் 2 மட்டும்",
+      "1, 2, மற்றும் 3"
+    ],
+    answer: 2
+  },
+  {
+    type: "mcq",
+    en: "The 2026 Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel was awarded by which institution, and where is the prize presented?",
+    ta: "2026 ஆம் ஆண்டு ஆல்ஃபிரட் நோபல் நினைவு Sveriges Riksbank பொருளாதார அறிவியல் பரிசு எந்த நிறுவனத்தால் வழங்கப்பட்டது, மற்றும் பரிசு எங்கே வழங்கப்படுகிறது?",
+    optionsEn: [
+      "The Nobel Foundation; Oslo, Norway",
+      "The Royal Swedish Academy of Sciences; Stockholm, Sweden",
+      "The Swedish Central Bank; Geneva, Switzerland",
+      "The Norwegian Nobel Committee; Helsinki, Finland"
+    ],
+    optionsTa: [
+      "நோபல் அறக்கட்டளை; ஒஸ்லோ, நார்வே",
+      "ஸ்வீடிஷ் அரச அறிவியல் அகாடமி; ஸ்டாக்ஹோம், ஸ்வீடன்",
+      "ஸ்வீடிஷ் மத்திய வங்கி; ஜெனீவா, சுவிட்சர்லாந்து",
+      "நார்வேஜியன் நோபல் கமிட்டி; ஹெல்சின்கி, பின்லாந்து"
+    ],
+    answer: 1
+  }
+];
+
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    
+    function escapeHtml(s) { if(!s) return ""; return s.replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    
+    function renderDashboard() {
+        const container = document.getElementById("dashboardContainer");
+        if(container) {
+            container.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div>
+                <div style="font-size:0.9rem;">(Since 2025)</div>
+                <div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div>
+                <div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div>
+                <div>📅 DATE: ${escapeHtml(dashboard.date)}</div>
+                <div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div>
+                <div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div>
+                <div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div>
+                <div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        }
+        let totalSpan = document.getElementById("totalQsSpan");
+        if(totalSpan) totalSpan.innerText = `/${dashboard.totalMarks}`;
+    }
+
+    function autoSaveState() {
+        if (!quizActive || isSubmitted) return;
+        try {
+            localStorage.setItem("tetEnglishAutoResume", JSON.stringify({
+                userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft,
+                startTimestamp: startTimestamp, isSubmitted: false, quizActive: true,
+                savedAt: Date.now(), language: currentLanguage
+            }));
+        } catch(e) {}
+    }
+
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        const modalHtml = `
+            <div id="resumeModal" class="modal-overlay">
+                <div class="modal-container">
+                    <h3>🔄 Unfinished Exam Found</h3>
+                    <p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p>
+                    <div class="modal-buttons">
+                        <button id="modalResumeBtn" class="btn">✅ Resume</button>
+                        <button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button>
+                    </div>
+                </div>
+            </div>`;
+        document.body.insertAdjacentHTML("beforeend", modalHtml);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if(timerInterval) clearInterval(timerInterval);
+        quizActive = false;
+    }
+    
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) {
+        userAnswers = injectedAnswers;
+    }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc" && q.passageEn) {
+            passageHtml = `<div class="passage-box">${q.passageEn}</div>`;
+            extraClass = "question-text";
+        } else if (q.type === "rc") {
+            displayTxt = `<div class="passage-box">${txt}</div>`; 
+            extraClass = "question-text";
+        } else if (q.type === "puzzle") { 
+            displayTxt = `<div class="puzzle-box">${txt}</div>`; 
+            extraClass = "question-text"; 
+        }
+
+        let imageHtml = "";
+        if (q.imageUrl && q.imageUrl.trim() !== "") {
+            imageHtml = `<img class="question-image" src="${escapeHtml(q.imageUrl)}" alt="Question image" loading="lazy" onclick="this.classList.toggle('zoomed')">`;
+        }
+
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">${String.fromCharCode(65+i)}. ${opt}</div>`;
+        });
+
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+            </div>
+        `;
+        updateNavButtons(); updatePalette();
+        if(window.MathJax) MathJax.typesetPromise();
+    }
+
+    function selectOption(optIndex) {
+        if(isSubmitted) return;
+        if(userAnswers[currentIndex] === optIndex) return;
+        userAnswers[currentIndex] = optIndex;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if(currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+
+    function prevQuestion() { if(!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if(!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if(!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for(let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if(userAnswers[i] !== null) btn.classList.add("answered");
+            if(i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if(!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+
+    function startTimer() {
+        if(timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if(!quizActive || isSubmitted) return;
+            if(timeLeft <= 0) { clearInterval(timerInterval); if(!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if(timeLeft % 10 === 0) autoSaveState();
+                if(timeLeft===0) submitQuiz();
+            }
+        }, 1000);
+    }
+
+    function buildDetailedReview() {
+        let html = "";
+        for(let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u === corr);
+            const txt = getCurrentQuestionText(q);
+            const optsArray = getCurrentOptions(q);
+
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let marker = "";
+                if(idx === corr) marker = " ✅ (Correct)";
+                if(u === idx && idx !== corr) marker = " ❌ (Your choice)";
+                else if(u === idx && idx === corr) marker = " ✅ (Correct)";
+                const styleClass = (idx === corr) ? "correct-option" : "";
+                const userWrongStyle = (u === idx && idx !== corr) ? "color:#ef4444;" : "";
+                optsHtml += `<div class="${styleClass}" style="${userWrongStyle}">${String.fromCharCode(65+idx)}. ${optsArray[idx]}${marker}</div>`;
+            });
+            const userAns = (u !== null) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" style="border-left-color:${isCorr?"#10b981":"#ef4444"}">
+                        <strong>Q${i+1}. ${txt}</strong><br><br>
+                        <div><strong>Your answer:</strong> ${userAns}</div>
+                        <div><strong>Correct:</strong> ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if(window.MathJax) MathJax.typesetPromise();
+    }
+
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+
+    function submitQuiz() {
+        if(isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for(let i=0; i<QUESTIONS.length; i++) {
+            if(userAnswers[i] === null) na++;
+            else if(userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+
+        const negMark = dashboard.negativeMark || 0; 
+        const finalScore = correct - (incorrect * negMark);
+
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct,
+                    wrong: incorrect,
+                    skipped: na,
+                    total: QUESTIONS.length,
+                    score: finalScore,
+                    stayOnScreen: true,
+                    answers: userAnswers,
+                    questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        
+        document.getElementById("finalScore").innerText = finalScore; 
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+    }
+
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+
+    function toggleTheme() {
+        const curr = document.documentElement.getAttribute("data-theme");
+        const next = curr === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", next);
+        try { localStorage.setItem("themeGreen", next); } catch(e) {}
+        const darkBtn = document.getElementById("darkModeToggleBtn");
+        if(darkBtn) darkBtn.innerText = next === "dark" ? translations[currentLanguage].lightMode : translations[currentLanguage].darkMode;
+    }
+
+    renderDashboard();
+    let savedTheme = null; try { savedTheme = localStorage.getItem("themeGreen"); } catch(e) {}
+    if (savedTheme === "dark") document.documentElement.setAttribute("data-theme", "dark");
+    else document.documentElement.setAttribute("data-theme", "light");
+    updateUILanguage();
+    
+    // --- FIXED: CALL AUTO RESUME IMMEDIATELY ---
+    checkForAutoResume();
+    
+    // --- REVIEW MODE CHECK (DELAYED) ---
+    window.checkForReview = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get("review") === "true") {
+            // READ THE ANSWERS FROM LOCAL STORAGE
+            let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+            if (savedAnswers) {
+                try {
+                    userAnswers = JSON.parse(savedAnswers);
+                    try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+                } catch(e) { console.log("Error parsing answers: " + e.message); }
+            }
+            
+            isSubmitted = true;
+            quizActive = false;
+            document.getElementById("startScreen").style.display = "none";
+            document.getElementById("quizContainer").style.display = "none";
+            document.getElementById("resultContainer").style.display = "block";
+            
+            let correct=0, incorrect=0, na=0;
+            for(let i=0; i<QUESTIONS.length; i++) {
+                if(userAnswers[i] === null || userAnswers[i] === undefined) na++;
+                else if(userAnswers[i] === QUESTIONS[i].answer) correct++;
+                else incorrect++;
+            }
+            const negMark = dashboard.negativeMark || 0;
+            const finalScore = correct - (incorrect * negMark);
+            const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+            
+            document.getElementById("finalScore").innerText = finalScore;
+            document.getElementById("correctCountStat").innerText = correct;
+            document.getElementById("incorrectCountStat").innerText = incorrect;
+            document.getElementById("notAttemptedStat").innerText = na;
+            document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+            document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+            const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+            document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+            buildDetailedReview();
+        }
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
