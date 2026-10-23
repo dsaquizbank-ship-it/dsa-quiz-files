@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-22T14:54:57.626Z",
+  "version": "2026-10-23T06:25:45.559Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -35,6 +35,11 @@
       "id": "DEMO",
       "name": "DEMO",
       "order": 9
+    },
+    {
+      "id": "SGT",
+      "name": "SGT",
+      "order": 7
     }
   ],
   "exams": [
@@ -109,6 +114,12 @@
       "name": "DEMO",
       "categoryId": "DEMO",
       "order": 1
+    },
+    {
+      "id": "SGT-10",
+      "name": "10TH",
+      "categoryId": "SGT",
+      "order": 5
     }
   ],
   "tests": [
@@ -320,6 +331,17 @@
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTE-SS-51.html",
       "releaseTimestamp": 0
+    },
+    {
+      "testId": "SGT-TA-34",
+      "examId": "SGT-10",
+      "name": "SGT-TA-34 TAMIL IYAL 3",
+      "durationMinutes": 20,
+      "order": 34,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGT-TA-34.html",
+      "releaseTimestamp": 1792742400000
     }
   ]
 }
