@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-23T06:25:45.559Z",
+  "version": "2026-10-23T06:36:49.878Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -120,6 +120,12 @@
       "name": "10TH",
       "categoryId": "SGT",
       "order": 5
+    },
+    {
+      "id": "BANK-CA",
+      "name": "CURRENT AFFAIRS",
+      "categoryId": "BANK",
+      "order": 20
     }
   ],
   "tests": [
@@ -341,6 +347,17 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGT-TA-34.html",
+      "releaseTimestamp": 1792742400000
+    },
+    {
+      "testId": "BSR-CA-53",
+      "examId": "BANK-CA",
+      "name": "BSR-CA-53 OCTOBER 15-21",
+      "durationMinutes": 15,
+      "order": 53,
+      "questionCount": 30,
+      "negativeMark": 0.25,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BSR-CA-53.html",
       "releaseTimestamp": 1792742400000
     }
   ]
