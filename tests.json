@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-23T07:21:59.501Z",
+  "version": "2026-10-23T07:27:44.816Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -138,6 +138,12 @@
       "name": "TET PSYCOLOGY",
       "categoryId": "TNTET",
       "order": 5
+    },
+    {
+      "id": "TNPSC-TS",
+      "name": "TAMILNADU SOCIETY",
+      "categoryId": "TNPSC",
+      "order": 4
     }
   ],
   "tests": [
@@ -414,6 +420,17 @@
       "questionCount": 30,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTE-PY-52.html",
+      "releaseTimestamp": 1792742400000
+    },
+    {
+      "testId": "NTN-TS-52",
+      "examId": "TNPSC-TS",
+      "name": "NTN-TS-52",
+      "durationMinutes": 15,
+      "order": 52,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTN-TS-52.html",
       "releaseTimestamp": 1792742400000
     }
   ]
