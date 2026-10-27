@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
     <title>DEMO</title>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
     <script>
         window.MathJax = {
             tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]], displayMath: [["$$", "$$"], ["\\[", "\\]"]] },
@@ -64,53 +65,13 @@
         .modal-buttons { display: flex; gap: 12px; justify-content: center; }
         .modal-buttons .btn { min-width: 100px; }
         mark { background-color: #fef08a; color: #000; padding: 0 4px; border-radius: 3px; }
-        
-        /* --- NEW IMAGE ZOOM CSS --- */
-        .img-zoom-wrapper {
-            width: 100%;
-            max-height: 300px;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            margin: 15px 0;
-            background: var(--rc-bg);
-            border-radius: 12px;
-            border: 1px solid var(--border-light);
-            padding: 5px;
-        }
-        .img-zoom-wrapper img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            transition: transform 0.3s ease;
-            cursor: zoom-in;
-            touch-action: pan-x pan-y;
-        }
-        .img-zoom-wrapper img.zoomed {
-            transform: scale(2.2);
-            z-index: 1000;
-            position: relative;
-            cursor: grab;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border-radius: 8px;
-            background: var(--card-bg);
-        }
-        .review-question-img {
-            max-width: 100%;
-            max-height: 200px;
-            border-radius: 12px;
-            border: 1px solid var(--border-light);
-            margin: 10px 0;
-            cursor: zoom-in;
-            transition: transform 0.3s ease;
-        }
-        .review-question-img.zoomed {
-            transform: scale(2.2);
-            position: relative;
-            z-index: 1000;
-            cursor: grab;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
+
+        /* --- IMAGE CSS --- */
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
 
         @media print { 
             body { background: white !important; color: black !important; padding: 0; margin: 0; font-family: "Segoe UI", "Noto Sans Tamil", "Latha", system-ui, sans-serif !important; } 
@@ -120,19 +81,7 @@
             .result-dashboard { background: #064e3b !important; color: white !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; break-inside: avoid; border-radius: 0; margin: 0 0 20px 0; padding: 20px; } 
             .review-card { background: white !important; color: black !important; break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc; margin-bottom: 15px; box-shadow: none; overflow: visible !important; } 
             .review-card .passage-box, .review-card .puzzle-box { background: #f8fafc !important; color: black !important; border-left: 4px solid #3b82f6 !important; padding: 10px !important; margin: 8px 0 !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; } 
-            .question-image, .review-question-img { 
-                display: block !important; 
-                max-width: 100% !important; 
-                max-height: 220px !important; 
-                width: auto !important; 
-                height: auto !important; 
-                margin: 8px 0 !important; 
-                page-break-inside: avoid !important; 
-                break-inside: avoid !important; 
-                -webkit-print-color-adjust: exact !important; 
-                print-color-adjust: exact !important; 
-                transform: none !important;
-            } 
+            .question-image, .review-question-img { display: block !important; max-width: 100% !important; max-height: 220px !important; width: auto !important; height: auto !important; margin: 8px 0 !important; page-break-inside: avoid !important; break-inside: avoid !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; transform: none !important; } 
             .stats .stat-card { background: rgba(0,0,0,0.1) !important; color: black !important; print-color-adjust: exact; } 
             .btn-pdf { display: none !important; } 
             a, button { text-decoration: none; } 
@@ -181,7 +130,7 @@
             <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
                 <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
                 <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
-                <button class="btn btn-pdf" onclick="downloadPdfWithAssets()">📄 Download PDF</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
             </div>
         </div>
         <div style="padding:0 1.2rem 1.2rem 1.2rem;">
@@ -235,8 +184,8 @@ let QUESTIONS = [
   {
     "type": "rc",
     "passageEn": "<b>Directions:</b> Rearrange the <mark>following</mark> five sentences A, B, C, D and E in the proper sequence to form a meaningful paragraph.<br><br>A. Therefore, book stores play an important role in a writer's growth.<br>B. These books introduce new topics that expand a writer's knowledge.<br>C. Book stores also help writers understand readers' interests and preferences.<br>D. With greater knowledge, writers can create more interesting and meaningful content.<br>E. Many writers regularly visit book stores to explore books and ideas.",
-"imageUrl": "https://raw.githubusercontent.com/dsaquizbank-ship-it/dsa-quiz-files/main/IMAGES/Screenshot%202026-10-27%20211030.png",     
-"en": "Which of the following statements will be the <b>first</b> sentence after rearrangement?",
+    "imageUrl": "https://raw.githubusercontent.com/dsaquizbank-ship-it/dsa-quiz-files/main/IMAGES/Screenshot%202026-10-27%20211030.png",
+    "en": "Which of the following statements will be the <b>first</b> sentence after rearrangement?",
     "ta": "",
     "optionsEn": ["A", "D", "E", "C"],
     "optionsTa": [],
@@ -283,9 +232,8 @@ let QUESTIONS = [
     dashboard.totalMarks = QUESTIONS.length.toString();
     const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
     
-    function escapeHtml(s) { if(!s) return ""; return s.replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
     
-    // --- NEW URL FIXER FOR GITHUB IMAGES ---
     function getSafeImageUrl(url) {
         if (!url) return "";
         let cleanUrl = url.trim();
@@ -293,6 +241,15 @@ let QUESTIONS = [
             cleanUrl = cleanUrl.replace("github.com", "raw.githubusercontent.com").replace("/blob/", "/").replace("?raw=true", "");
         }
         return cleanUrl;
+    }
+
+    function initImageZoom() {
+        if (typeof mediumZoom !== "undefined") {
+            mediumZoom(".img-zoom-wrapper img, .review-question-img", {
+                background: "rgba(0,0,0,0.9)",
+                margin: 20
+            });
+        }
     }
 
     function renderDashboard() {
@@ -435,7 +392,7 @@ let QUESTIONS = [
             let safeUrl = getSafeImageUrl(q.imageUrl);
             imageHtml = `
             <div class="img-zoom-wrapper">
-                <img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy" onclick="toggleZoom(this)" ondragstart="return false;">
+                <img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy">
             </div>`;
         }
 
@@ -454,6 +411,7 @@ let QUESTIONS = [
         `;
         updateNavButtons(); updatePalette();
         if(window.MathJax) MathJax.typesetPromise();
+        initImageZoom();
     }
 
     function selectOption(optIndex) {
@@ -536,7 +494,7 @@ let QUESTIONS = [
             let imgHtml = "";
             if (q.imageUrl && String(q.imageUrl).trim() !== "") {
                 let safeUrl = getSafeImageUrl(q.imageUrl);
-                imgHtml = `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager" onclick="toggleZoom(this)" ondragstart="return false;">`;
+                imgHtml = `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
             }
 
             const userAns = (u !== null && u !== undefined)
@@ -553,14 +511,14 @@ let QUESTIONS = [
         }
         document.getElementById("reviewList").innerHTML = html;
         if(window.MathJax && MathJax.typesetPromise) { try { MathJax.typesetPromise(); } catch(e) {} }
+        initImageZoom();
 
         document.querySelectorAll("#reviewList img").forEach(img => {
             if (!img.complete) { const pre = new Image(); pre.src = img.src; }
         });
     }
 
-    async function downloadPdfWithAssets() {
-        const btn = event && event.target ? event.target : null;
+    async function downloadPdfWithAssets(btn) {
         const originalText = btn ? btn.innerText : "📄 Download PDF";
         if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
 
@@ -705,47 +663,6 @@ let QUESTIONS = [
         const darkBtn = document.getElementById("darkModeToggleBtn");
         if(darkBtn) darkBtn.innerText = next === "dark" ? translations[currentLanguage].lightMode : translations[currentLanguage].darkMode;
     }
-
-    // --- IMAGE ZOOM LOGIC ---
-    function toggleZoom(img) {
-        img.classList.toggle("zoomed");
-        if (img.classList.contains("zoomed")) {
-            img.style.cursor = "grab";
-        } else {
-            img.style.cursor = "zoom-in";
-        }
-    }
-
-    let isDragging = false;
-    let startX, startY, scrollLeft, scrollTop;
-
-    document.addEventListener("mousedown", (e) => {
-        if (e.target.tagName === "IMG" && e.target.classList.contains("zoomed")) {
-            isDragging = true;
-            const img = e.target;
-            startX = e.pageX - img.offsetLeft;
-            startY = e.pageY - img.offsetTop;
-            img.style.cursor = "grabbing";
-        }
-    });
-
-    document.addEventListener("mouseup", () => {
-        isDragging = false;
-        document.querySelectorAll("img.zoomed").forEach(img => img.style.cursor = "grab");
-    });
-
-    document.addEventListener("mousemove", (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-        const img = e.target;
-        if (img.tagName !== "IMG" || !img.classList.contains("zoomed")) return;
-        const x = e.pageX - img.offsetLeft;
-        const y = e.pageY - img.offsetTop;
-        const walkX = (x - startX) * 1.5;
-        const walkY = (y - startY) * 1.5;
-        img.style.transform = `scale(2.2) translate(${walkX}px, ${walkY}px)`;
-    });
-    // --- END IMAGE ZOOM LOGIC ---
 
     renderDashboard();
     let savedTheme = null; try { savedTheme = localStorage.getItem("themeGreen"); } catch(e) {}
