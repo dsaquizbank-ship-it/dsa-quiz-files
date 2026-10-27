@@ -65,7 +65,33 @@
         .modal-buttons { display: flex; gap: 12px; justify-content: center; }
         .modal-buttons .btn { min-width: 100px; }
         mark { background-color: #fef08a; color: #000; padding: 0 4px; border-radius: 3px; }
-        @media print { body { background: white; padding: 0; margin: 0; } .quiz-wrapper { max-width: 100%; margin: 0; border-radius: 0; box-shadow: none; background: white; } .header-bar .top-buttons, .header-bar .timer-box, .palette-area, .nav-buttons, .btn:not(.btn-pdf), .icon-btn, .flex-buttons .btn:not(.btn-pdf) { display: none !important; } .result-dashboard { background: #064e3b; print-color-adjust: exact; -webkit-print-color-adjust: exact; break-inside: avoid; } .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc; margin-bottom: 15px; } .question-image, .review-question-img { max-width: 60% !important; max-height: 150px !important; page-break-inside: avoid; } .stats .stat-card { background: rgba(0,0,0,0.1); print-color-adjust: exact; } .btn-pdf { display: inline-block !important; background: #ef4444; color: white; print-color-adjust: exact; } a, button { text-decoration: none; } @page { size: A4; margin: 1.5cm; } }
+        .question-image { max-width: 100%; max-height: 250px; border-radius: 12px; border: 1px solid var(--border-light); cursor: zoom-in; transition: transform 0.3s; }
+        .question-image.zoomed { transform: scale(1.5); cursor: zoom-out; z-index: 1000; position: relative; }
+        @media print { 
+            body { background: white !important; color: black !important; padding: 0; margin: 0; font-family: "Segoe UI", "Noto Sans Tamil", "Latha", system-ui, sans-serif !important; } 
+            .quiz-wrapper { max-width: 100%; margin: 0; border-radius: 0; box-shadow: none; border: none; background: white !important; } 
+            .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn:not(.btn-pdf), .icon-btn { display: none !important; } 
+            #resultContainer { max-height: none !important; overflow: visible !important; padding-bottom: 0 !important; display: block !important; } 
+            .result-dashboard { background: #064e3b !important; color: white !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; break-inside: avoid; border-radius: 0; margin: 0 0 20px 0; padding: 20px; } 
+            .review-card { background: white !important; color: black !important; break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc; margin-bottom: 15px; box-shadow: none; overflow: visible !important; } 
+            .review-card .passage-box, .review-card .puzzle-box { background: #f8fafc !important; color: black !important; border-left: 4px solid #3b82f6 !important; padding: 10px !important; margin: 8px 0 !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; } 
+            .question-image, .review-question-img { 
+                display: block !important; 
+                max-width: 100% !important; 
+                max-height: 220px !important; 
+                width: auto !important; 
+                height: auto !important; 
+                margin: 8px 0 !important; 
+                page-break-inside: avoid !important; 
+                break-inside: avoid !important; 
+                -webkit-print-color-adjust: exact !important; 
+                print-color-adjust: exact !important; 
+            } 
+            .stats .stat-card { background: rgba(0,0,0,0.1) !important; color: black !important; print-color-adjust: exact; } 
+            .btn-pdf { display: none !important; } 
+            a, button { text-decoration: none; } 
+            @page { size: A4; margin: 1cm; } 
+        }
         @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } .question-image { max-height: 180px; } }
     </style>
 </head>
@@ -91,7 +117,7 @@
             <div class="palette-scroll" id="paletteScroll"></div>
         </div>
     </div>
-    <div id="resultContainer" style="display: none;">
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
         <div class="result-dashboard">
             <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
             <div id="resultCandidateName"></div>
@@ -109,7 +135,7 @@
             <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
                 <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
                 <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
-                <button class="btn btn-pdf" onclick="window.AndroidBridge.printPage()">📄 Download PDF</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets()">📄 Download PDF</button>
             </div>
         </div>
         <div style="padding:0 1.2rem 1.2rem 1.2rem;">
@@ -349,7 +375,7 @@ let QUESTIONS = [
 
         let imageHtml = "";
         if (q.imageUrl && q.imageUrl.trim() !== "") {
-            imageHtml = `<img class="question-image" src="${escapeHtml(q.imageUrl)}" alt="Question image" loading="lazy">`;
+            imageHtml = `<img class="question-image" src="${escapeHtml(q.imageUrl)}" alt="Question image" loading="lazy" onclick="this.classList.toggle('zoomed')">`;
         }
 
         let optsHtml = "";
@@ -422,9 +448,9 @@ let QUESTIONS = [
         let html = "";
         for(let i=0; i<QUESTIONS.length; i++) {
             const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
-            const isCorr = (u !== null && u === corr);
-            const txt = getCurrentQuestionText(q);
-            const optsArray = getCurrentOptions(q);
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
 
             let optsHtml = "";
             optsArray.forEach((_, idx) => {
@@ -436,15 +462,75 @@ let QUESTIONS = [
                 const userWrongStyle = (u === idx && idx !== corr) ? "color:#ef4444;" : "";
                 optsHtml += `<div class="${styleClass}" style="${userWrongStyle}">${String.fromCharCode(65+idx)}. ${optsArray[idx]}${marker}</div>`;
             });
-            const userAns = (u !== null) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+
+            let passageHtml = "";
+            if (q.type === "rc" && q.passageEn && currentLanguage === "en") {
+                passageHtml = `<div class="passage-box">${q.passageEn}</div>`;
+            } else if (q.type === "rc" && q.passageTa && currentLanguage === "ta") {
+                passageHtml = `<div class="passage-box">${q.passageTa}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+
+            const imgHtml = (q.imageUrl && String(q.imageUrl).trim() !== "")
+                ? `<img class="review-question-img" src="${escapeHtml(q.imageUrl)}" alt="Q${i+1} image" loading="eager">`
+                : "";
+
+            const userAns = (u !== null && u !== undefined)
+                ? `${String.fromCharCode(65+u)}. ${optsArray[u]}`
+                : "Not answered";
+
             html += `<div class="review-card" style="border-left-color:${isCorr?"#10b981":"#ef4444"}">
-                        <strong>Q${i+1}. ${txt}</strong><br><br>
-                        <div><strong>Your answer:</strong> ${userAns}</div>
+                        <strong>Q${i+1}. ${txt}</strong>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div style="margin-top:8px;"><strong>Your answer:</strong> ${userAns}</div>
                         <div><strong>Correct:</strong> ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
                     </div>`;
         }
         document.getElementById("reviewList").innerHTML = html;
-        if(window.MathJax) MathJax.typesetPromise();
+        if(window.MathJax && MathJax.typesetPromise) { try { MathJax.typesetPromise(); } catch(e) {} }
+
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+    }
+
+    async function downloadPdfWithAssets() {
+        const btn = event && event.target ? event.target : null;
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+
+        try {
+            if (window.MathJax && MathJax.typesetPromise) {
+                try { await MathJax.typesetPromise(); } catch(e) { console.log("MathJax await error", e); }
+            }
+
+            const imgs = Array.from(document.querySelectorAll("#reviewList img"));
+            await Promise.all(imgs.map(img => {
+                if (img.complete && img.naturalWidth > 0) return Promise.resolve();
+                return new Promise(resolve => {
+                    let done = false;
+                    const finish = () => { if (!done) { done = true; resolve(); } };
+                    img.addEventListener("load", finish, { once: true });
+                    img.addEventListener("error", finish, { once: true });
+                    setTimeout(finish, 5000);
+                });
+            }));
+
+            await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+            alert("Could not prepare PDF. Please try again.");
+        } finally {
+            setTimeout(() => { if (btn) { btn.disabled = false; btn.innerText = originalText; } }, 800);
+        }
     }
 
     async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
