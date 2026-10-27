@@ -180,28 +180,6 @@
         negativeMark: 0.25,
     };
 
-    // 🔥 SMART AUTO-FORMATTER 🔥
-    QUESTIONS = QUESTIONS.map(function(q) {
-        if (q.type === "match" && q.leftColumnEN && q.rightColumnEN) {
-            let tableHtml = q.en + "<br><br><table style='width:100%; border-collapse:collapse; color:#FFFFFF;'>";
-            tableHtml += "<tr><td style='width:50%; padding:6px; font-weight:bold; color:#F5B700;'>List-I</td><td style='width:50%; padding:6px; font-weight:bold; color:#F5B700;'>List-II</td></tr>";
-            let maxLen = Math.max(q.leftColumnEN.length, q.rightColumnEN.length);
-            for (let i = 0; i < maxLen; i++) {
-                let left = q.leftColumnEN[i] || "";
-                let right = q.rightColumnEN[i] || "";
-                tableHtml += "<tr><td style='padding:8px 6px; border-top:1px solid #2E4374;'>" + left + "</td><td style='padding:8px 6px; border-top:1px solid #2E4374;'>" + right + "</td></tr>";
-            }
-            tableHtml += "</table>";
-            q.en = tableHtml;
-            q.type = "mcq";
-        }
-        if (q.type === "mcq" && q.en.includes("Assertion (A):")) {
-            q.en = q.en.replace("Assertion (A):", "<br><br>Assertion (A):");
-            q.en = q.en.replace("Reason (R):", "<br><br>Reason (R):");
-        }
-        return q;
-    });
-    window.QUESTIONS = QUESTIONS;
 let QUESTIONS = [
   // ==========================================
   // 1. RC WITH MULTIPLE IMAGES
@@ -236,18 +214,6 @@ let QUESTIONS = [
   // ==========================================
   // 3. MATCH THE FOLLOWING
   // ==========================================
-  {
-    "type": "match",
-    "en": "Match List-I with List-II:",
-    "ta": "",
-    "leftColumnEN": ["A. India", "B. Japan", "C. Australia", "D. France"],
-    "leftColumnTA": [],
-    "rightColumnEN": ["1. Tokyo", "2. Paris", "3. New Delhi", "4. Canberra"],
-    "rightColumnTA": [],
-    "optionsEn": ["A-3, B-1, C-4, D-2", "A-1, B-2, C-3, D-4", "A-4, B-2, C-1, D-3", "A-2, B-4, C-3, D-1"],
-    "optionsTa": [],
-    "answer": 0
-  },
 
   // ==========================================
   // 4. ASSERTION & REASON
