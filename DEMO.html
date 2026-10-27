@@ -181,41 +181,155 @@
     };
 
 let QUESTIONS = [
+  // ==========================================
+  // 1. RC WITH MULTIPLE IMAGES
+  // ==========================================
   {
     "type": "rc",
-    "passageEn": "<b>Directions:</b> Rearrange the following five sentences A, B, C, D and E in the proper sequence to form a meaningful paragraph.<br><br>A. Therefore, book stores play an important role in a writer's growth.<br>B. These books introduce new topics that expand a writer's knowledge.<br>C. Book stores also help writers understand readers' interests and preferences.<br>D. With greater knowledge, writers can create more interesting and meaningful content.<br>E. Many writers regularly visit book stores to explore books and ideas.",
-    "en": "Which of the following statements will be the <b>first</b> sentence after rearrangement?",
+    "passageEn": "<b>Directions:</b> Study the given images and answer the question.",
+    "en": "Based on the images, what is the correct sequence?",
     "ta": "",
-    "optionsEn": ["A", "D", "E", "C"],
+    "optionsEn": ["Image 1 then Image 2", "Image 2 then Image 1", "Both simultaneously", "Cannot be determined"],
     "optionsTa": [],
-    "answer": 2,
+    "answer": 0,
     "imageUrls": [
+      "https://github.com/dsaquizbank-ship-it/dsa-quiz-files/blob/main/IMAGES/Screenshot%202026-10-27%20211030.png?raw=true",
       "https://github.com/dsaquizbank-ship-it/dsa-quiz-files/blob/main/IMAGES/Screenshot%202026-10-27%20211030.png?raw=true"
     ]
   },
+  
+  // ==========================================
+  // 2. STANDARD MCQ WITH SINGLE IMAGE
+  // ==========================================
   {
-    "type": "rc",
-    "passageEn": "<b>Directions:</b> Rearrange the following five sentences A, B, C, D and E in the proper sequence to form a meaningful paragraph.<br><br>A. Therefore, book stores play an important role in a writer's growth.<br>B. These books introduce new topics that expand a writer's knowledge.<br>C. Book stores also help writers understand readers' interests and preferences.<br>D. With greater knowledge, writers can create more interesting and meaningful content.<br>E. Many writers regularly visit book stores to explore books and ideas.",
-    "en": "Which of the following statements will be the <b>last</b> sentence after rearrangement?",
+    "type": "mcq",
+    "en": "Look at the reasoning image carefully. Which conclusion is correct?",
     "ta": "",
-    "optionsEn": ["C", "D", "A", "E"],
+    "optionsEn": ["Only I follows", "Only II follows", "Both follow", "None follows"],
     "optionsTa": [],
     "answer": 2,
-    "imageUrls": [
-      "https://github.com/dsaquizbank-ship-it/dsa-quiz-files/blob/main/IMAGES/Screenshot%202026-10-27%20211030.png?raw=true"
-    ]
+    "imageUrl": "https://github.com/dsaquizbank-ship-it/dsa-quiz-files/blob/main/IMAGES/Screenshot%202026-10-27%20211030.png?raw=true"
   },
+
+  // ==========================================
+  // 3. MATCH THE FOLLOWING
+  // ==========================================
+  {
+    "type": "match",
+    "en": "Match List-I (Vitamin) with List-II (Deficiency Disease) and select the correct answer:",
+    "ta": "",
+    "leftColumnEN": ["A. Vitamin A", "B. Vitamin B1", "C. Vitamin C", "D. Vitamin D"],
+    "leftColumnTA": [],
+    "rightColumnEN": ["1. Scurvy", "2. Rickets", "3. Night Blindness", "4. Beri-Beri"],
+    "rightColumnTA": [],
+    "optionsEn": ["A-3, B-4, C-1, D-2", "A-1, B-2, C-3, D-4", "A-4, B-3, C-2, D-1", "A-2, B-1, C-4, D-3"],
+    "optionsTa": [],
+    "answer": 0
+  },
+
+  // ==========================================
+  // 4. ASSERTION & REASON
+  // ==========================================
+  {
+    "type": "mcq",
+    "en": "<b>Assertion (A):</b> The Sun rises in the East.<br><br><b>Reason (R):</b> The Earth rotates from West to East.<br><br>Choose the correct option:",
+    "ta": "",
+    "optionsEn": [
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is NOT the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true"
+    ],
+    "optionsTa": [],
+    "answer": 0
+  },
+
+  // ==========================================
+  // 5. RC WITHOUT IMAGE (TEXT ONLY)
+  // ==========================================
   {
     "type": "rc",
-    "passageEn": "<b>Directions:</b> Rearrange the following five sentences A, B, C, D and E in the proper sequence to form a meaningful paragraph.<br><br>A. Therefore, book stores play an important role in a writer's growth.<br>B. These books introduce new topics that expand a writer's knowledge.<br>C. Book stores also help writers understand readers' interests and preferences.<br>D. With greater knowledge, writers can create more interesting and meaningful content.<br>E. Many writers regularly visit book stores to explore books and ideas.",
-    "en": "Which of the following will be the <b>position of sentence B</b> after rearrangement?",
+    "passageEn": "<b>Directions:</b> Read the following passage and answer the question.<br><br>Book stores play an important role in a writer's growth. They introduce new topics that expand a writer's knowledge. Book stores also help writers understand readers' interests and preferences. With greater knowledge, writers can create more interesting and meaningful content. Therefore, many writers regularly visit book stores.",
+    "en": "What is the main idea of the passage?",
     "ta": "",
-    "optionsEn": ["First", "Fourth", "Second", "Third"],
+    "optionsEn": ["Writers should avoid book stores", "Book stores are vital for a writer's growth", "Readers do not like book stores", "Writers write only for money"],
     "optionsTa": [],
-    "answer": 2,
-    "imageUrls": [
-      "https://github.com/dsaquizbank-ship-it/dsa-quiz-files/blob/main/IMAGES/Screenshot%202026-10-27%20211030.png?raw=true"
-    ]
+    "answer": 1
+  },
+
+  // ==========================================
+  // 6. STANDARD MCQ (NO IMAGE)
+  // ==========================================
+  {
+    "type": "mcq",
+    "en": "Who is known as the Father of the Indian Constitution?",
+    "ta": "",
+    "optionsEn": ["Mahatma Gandhi", "Jawaharlal Nehru", "Dr. B.R. Ambedkar", "Sardar Patel"],
+    "optionsTa": [],
+    "answer": 2
+  },
+
+  // ==========================================
+  // 7. MATCH THE FOLLOWING
+  // ==========================================
+  {
+    "type": "match",
+    "en": "Match List-I (Country) with List-II (Capital):",
+    "ta": "",
+    "leftColumnEN": ["A. India", "B. Japan", "C. Australia", "D. France"],
+    "leftColumnTA": [],
+    "rightColumnEN": ["1. Tokyo", "2. Paris", "3. New Delhi", "4. Canberra"],
+    "rightColumnTA": [],
+    "optionsEn": ["A-3, B-1, C-4, D-2", "A-1, B-2, C-3, D-4", "A-4, B-2, C-1, D-3", "A-2, B-4, C-3, D-1"],
+    "optionsTa": [],
+    "answer": 0
+  },
+
+  // ==========================================
+  // 8. ASSERTION & REASON
+  // ==========================================
+  {
+    "type": "mcq",
+    "en": "<b>Assertion (A):</b> Diamond is the hardest known natural substance.<br><br><b>Reason (R):</b> Carbon atoms in diamond are arranged in a rigid tetrahedral structure.<br><br>Choose the correct option:",
+    "ta": "",
+    "optionsEn": [
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is NOT the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true"
+    ],
+    "optionsTa": [],
+    "answer": 0
+  },
+
+  // ==========================================
+  // 9. RC WITH SINGLE IMAGE
+  // ==========================================
+  {
+    "type": "rc",
+    "passageEn": "<b>Directions:</b> Observe the image and answer the following question.",
+    "en": "Which logical conclusion can be drawn from the given statements?",
+    "ta": "",
+    "optionsEn": ["Y > B", "R < F", "Both I and II follow", "Neither I nor II follows"],
+    "optionsTa": [],
+    "answer": 0,
+    "imageUrl": "https://github.com/dsaquizbank-ship-it/dsa-quiz-files/blob/main/IMAGES/Screenshot%202026-10-27%20211030.png?raw=true"
+  },
+
+  // ==========================================
+  // 10. MATCH THE FOLLOWING
+  // ==========================================
+  {
+    "type": "match",
+    "en": "Match List-I (Scientist) with List-II (Invention/Discovery):",
+    "ta": "",
+    "leftColumnEN": ["A. Alexander Graham Bell", "B. Thomas Edison", "C. Isaac Newton", "D. Albert Einstein"],
+    "leftColumnTA": [],
+    "rightColumnEN": ["1. Law of Gravity", "2. Telephone", "3. Theory of Relativity", "4. Light Bulb"],
+    "rightColumnTA": [],
+    "optionsEn": ["A-2, B-4, C-1, D-3", "A-1, B-2, C-3, D-4", "A-4, B-3, C-2, D-1", "A-3, B-1, C-4, D-2"],
+    "optionsTa": [],
+    "answer": 0
   }
 ];
 
