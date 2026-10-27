@@ -181,142 +181,404 @@
     };
 
 let QUESTIONS = [
-  // ==========================================
-  // 1. RC WITH MULTIPLE IMAGES
-  // ==========================================
-  {
-    "type": "rc",
-    "passageEn": "<b>Directions:</b> Study the given images and answer the question.",
-    "en": "Based on the images, what is the correct sequence?",
-    "ta": "",
-    "optionsEn": ["Image 1 then Image 2", "Image 2 then Image 1", "Both simultaneously", "Cannot be determined"],
-    "optionsTa": [],
-    "answer": 0,
-    "imageUrls": [
-      "https://github.com/dsaquizbank-ship-it/dsa-quiz-files/blob/main/IMAGES/Screenshot%202026-10-27%20211030.png?raw=true",
-      "https://github.com/dsaquizbank-ship-it/dsa-quiz-files/blob/main/IMAGES/Screenshot%202026-10-27%20211030.png?raw=true"
-    ]
-  },
-  
-  // ==========================================
-  // 2. STANDARD MCQ WITH SINGLE IMAGE
-  // ==========================================
   {
     "type": "mcq",
-    "en": "Look at the reasoning image carefully. Which conclusion is correct?",
-    "ta": "",
-    "optionsEn": ["Only I follows", "Only II follows", "Both follow", "None follows"],
-    "optionsTa": [],
-    "answer": 2,
-    "imageUrl": "https://github.com/dsaquizbank-ship-it/dsa-quiz-files/blob/main/IMAGES/Screenshot%202026-10-27%20211030.png?raw=true"
-  },
-
-  // ==========================================
-  // 3. MATCH THE FOLLOWING
-  // ==========================================
-
-  // ==========================================
-  // 4. ASSERTION & REASON
-  // ==========================================
-  {
-    "type": "mcq",
-    "en": "<b>Assertion (A):</b> The Sun rises in the East.<br><br><b>Reason (R):</b> The Earth rotates from West to East.<br><br>Choose the correct option:",
-    "ta": "",
-    "optionsEn": [
-      "Both A and R are true and R is the correct explanation of A",
-      "Both A and R are true but R is NOT the correct explanation of A",
-      "A is true but R is false",
-      "A is false but R is true"
-    ],
-    "optionsTa": [],
-    "answer": 0
-  },
-
-  // ==========================================
-  // 5. RC WITHOUT IMAGE (TEXT ONLY)
-  // ==========================================
-  {
-    "type": "rc",
-    "passageEn": "<b>Directions:</b> Read the following passage and answer the question.<br><br>Book stores play an important role in a writer's growth. They introduce new topics that expand a writer's knowledge. Book stores also help writers understand readers' interests and preferences. With greater knowledge, writers can create more interesting and meaningful content. Therefore, many writers regularly visit book stores.",
-    "en": "What is the main idea of the passage?",
-    "ta": "",
-    "optionsEn": ["Writers should avoid book stores", "Book stores are vital for a writer's growth", "Readers do not like book stores", "Writers write only for money"],
-    "optionsTa": [],
+    "en": "A man sitting in a revolving chair with stretched hands suddenly bends his hands. What happens to his angular velocity?",
+    "ta": "சுழலும் நாற்காலியில் கைகளை நீட்டி அமர்ந்திருக்கும் ஒரு நபர் திடீரென தனது கைகளை மடிக்கும் போது, அவரது கோண திசைவேகம் என்னவாகும்?",
+    "optionsEn": ["Decreases", "Increases", "Remains constant", "First increases then decreases"],
+    "optionsTa": ["குறையும்", "அதிகரிக்கும்", "மாறாமல் இருக்கும்", "முதலில் அதிகரித்து பின் குறையும்"],
     "answer": 1
   },
-
-  // ==========================================
-  // 6. STANDARD MCQ (NO IMAGE)
-  // ==========================================
   {
     "type": "mcq",
-    "en": "Who is known as the Father of the Indian Constitution?",
-    "ta": "",
-    "optionsEn": ["Mahatma Gandhi", "Jawaharlal Nehru", "Dr. B.R. Ambedkar", "Sardar Patel"],
-    "optionsTa": [],
+    "en": "A current of 0.5 A passes through a lamp for two minutes. What is the number of electrons that pass through the lamp?",
+    "ta": "ஒரு விளக்கின் வழியாக 0.5 A மின்னோட்டம் இரண்டு நிமிடங்களுக்கு பாய்கிறது எனில், விளக்கு வழியே பாயும் எலக்ட்ரான்களின் எண்ணிக்கை யாது?",
+    "optionsEn": ["$6.25 \\times 10^{18}$", "$3.75 \\times 10^{20}$", "$6.023 \\times 10^{23}$", "$3.8 \\times 10^{20}$"],
+    "optionsTa": ["$6.25 \\times 10^{18}$", "$3.75 \\times 10^{20}$", "$6.023 \\times 10^{23}$", "$3.8 \\times 10^{20}$"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Match List 1 with List 2 and answer through the codes given:<br><br>List 1 || List 2<br>(a) Infrared spectrometer || 1. Measures the purity of sugar<br>(b) Polarimeter || 2. Test aeroplane surface under stress<br>(c) Barometer || 3. Study of molecular structure<br>(d) Strain gauge || 4. Measure atmospheric pressure",
+    "ta": "பட்டியல் 1 ஐ பட்டியல் 2 உடன் பொருத்தி சரியான விடையைத் தேர்ந்தெடுக்க:<br><br>பட்டியல் 1 || பட்டியல் 2<br>(a) அகச்சிவப்பு நிறமாலைமானி || 1. சர்க்கரையின் தூய்மையை அளவிட<br>(b) முனைவாக்கமானி (Polarimeter) || 2. அழுத்தத்தின் கீழ் விமானத்தின் மேற்பரப்பை சோதிக்க<br>(c) பார்மானியமை (Barometer) || 3. மூலக்கூறு அமைப்பை ஆய்வு செய்ய<br>(d) ஸ்ட்ரெய்ன் கேஜ் (Strain gauge) || 4. வளிமண்டல அழுத்தத்தை அளவிட",
+    "optionsEn": ["(a)-(1), (b)-(2), (c)-(3), (d)-(4)", "(a)-(2), (b)-(3), (c)-(4), (d)-(1)", "(a)-(3), (b)-(4), (c)-(1), (d)-(2)", "(a)-(3), (b)-(1), (c)-(4), (d)-(2)"],
+    "optionsTa": ["(a)-(1), (b)-(2), (c)-(3), (d)-(4)", "(a)-(2), (b)-(3), (c)-(4), (d)-(1)", "(a)-(3), (b)-(4), (c)-(1), (d)-(2)", "(a)-(3), (b)-(1), (c)-(4), (d)-(2)"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "What is the basic concept of the Raman effect?",
+    "ta": "ராமன் விளைவின் அடிப்படை தத்துவம் என்ன?",
+    "optionsEn": ["Reflection", "Incoherent scattering", "Coherent scattering", "Refraction"],
+    "optionsTa": ["எதிரொளிப்பு", "சீரற்ற ஒளிச்சிதறல் (Incoherent scattering)", "சீரான ஒளிச்சிதறல் (Coherent scattering)", "ஒளிவிலகல்"],
     "answer": 2
   },
-
-  // ==========================================
-  // 7. MATCH THE FOLLOWING
-  // ==========================================
-  {
-    "type": "match",
-    "en": "Match List-I (Country) with List-II (Capital):",
-    "ta": "",
-    "leftColumnEN": ["A. India", "B. Japan", "C. Australia", "D. France"],
-    "leftColumnTA": [],
-    "rightColumnEN": ["1. Tokyo", "2. Paris", "3. New Delhi", "4. Canberra"],
-    "rightColumnTA": [],
-    "optionsEn": ["A-3, B-1, C-4, D-2", "A-1, B-2, C-3, D-4", "A-4, B-2, C-1, D-3", "A-2, B-4, C-3, D-1"],
-    "optionsTa": [],
-    "answer": 0
-  },
-
-  // ==========================================
-  // 8. ASSERTION & REASON
-  // ==========================================
   {
     "type": "mcq",
-    "en": "<b>Assertion (A):</b> Diamond is the hardest known natural substance.<br><br><b>Reason (R):</b> Carbon atoms in diamond are arranged in a rigid tetrahedral structure.<br><br>Choose the correct option:",
-    "ta": "",
-    "optionsEn": [
-      "Both A and R are true and R is the correct explanation of A",
-      "Both A and R are true but R is NOT the correct explanation of A",
-      "A is true but R is false",
-      "A is false but R is true"
-    ],
-    "optionsTa": [],
+    "en": "A force of 1N acts on a body of mass 10 kg. As a result, the body covers 100 cm in 4 seconds moving along a straight line. Find the initial velocity of the body.",
+    "ta": "10 kg நிறையுள்ள ஒரு பொருளின் மீது 1 N விசை செயல்படுகிறது. இதனால் அப்பொருள் 4 வினாடிகளில் நேர்கோட்டில் 100 cm தூரத்தை கடக்கிறது எனில், அப்பொருளின் ஆரம்ப திசைவேகத்தைக் காண்க.",
+    "optionsEn": ["6 cm/s", "8 cm/s", "10 cm/s", "12 cm/s"],
+    "optionsTa": ["6 cm/s", "8 cm/s", "10 cm/s", "12 cm/s"],
     "answer": 0
   },
-
-  // ==========================================
-  // 9. RC WITH SINGLE IMAGE
-  // ==========================================
   {
-    "type": "rc",
-    "passageEn": "<b>Directions:</b> Observe the image and answer the following question.",
-    "en": "Which logical conclusion can be drawn from the given statements?",
-    "ta": "",
-    "optionsEn": ["Y > B", "R < F", "Both I and II follow", "Neither I nor II follows"],
-    "optionsTa": [],
-    "answer": 0,
-    "imageUrl": "https://github.com/dsaquizbank-ship-it/dsa-quiz-files/blob/main/IMAGES/Screenshot%202026-10-27%20211030.png?raw=true"
+    "type": "mcq",
+    "en": "Which of the following pairs are incorrect?<br><br>I. Chlorofluorocarbons - Refrigerators<br>II. Methane - Ploughing of fields<br>III. Nitrous oxide - Enteric fermentation in cows<br>IV. Carbon dioxide - Burning of fossil fuels",
+    "ta": "பின்வருவனவற்றில் தவறான இணைகள் எவை?<br><br>I. குளோரோபுளோரோகார்பன்கள் - குளிர்சாதனப் பெட்டிகள்<br>II. மீத்தேன் - நிலங்களை உழுதல்<br>III. நைட்ரஸ் ஆக்சைடு - பசுக்களின் குடல் நொதித்தல்<br>IV. கார்பன் டை ஆக்சைடு - புதைபடிவ எரிபொருட்களை எரித்தல்",
+    "optionsEn": ["I and II", "II and III", "III and IV", "I and IV"],
+    "optionsTa": ["I மற்றும் II", "II மற்றும் III", "III மற்றும் IV", "I மற்றும் IV"],
+    "answer": 1
   },
-
-  // ==========================================
-  // 10. MATCH THE FOLLOWING
-  // ==========================================
   {
-    "type": "match",
-    "en": "Match List-I (Scientist) with List-II (Invention/Discovery):",
-    "ta": "",
-    "leftColumnEN": ["A. Alexander Graham Bell", "B. Thomas Edison", "C. Isaac Newton", "D. Albert Einstein"],
-    "leftColumnTA": [],
-    "rightColumnEN": ["1. Law of Gravity", "2. Telephone", "3. Theory of Relativity", "4. Light Bulb"],
-    "rightColumnTA": [],
-    "optionsEn": ["A-2, B-4, C-1, D-3", "A-1, B-2, C-3, D-4", "A-4, B-3, C-2, D-1", "A-3, B-1, C-4, D-2"],
-    "optionsTa": [],
+    "type": "mcq",
+    "en": "The Epsom salt which is used as a laxative is:",
+    "ta": "மலமிளக்கியாகப் பயன்படும் எப்சம் உப்பு எது?",
+    "optionsEn": ["$MgSO_{4} \\cdot 7H_{2}O$", "$CaSO_{4} \\cdot 2H_{2}O$", "$ZnSO_{4} \\cdot 7H_{2}O$", "$CuSO_{4} \\cdot 5H_{2}O$"],
+    "optionsTa": ["$MgSO_{4} \\cdot 7H_{2}O$", "$CaSO_{4} \\cdot 2H_{2}O$", "$ZnSO_{4} \\cdot 7H_{2}O$", "$CuSO_{4} \\cdot 5H_{2}O$"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which one of the following is the correct composition of Brass?",
+    "ta": "பித்தளையின் சரியான இயைபு/கலவை பின்வருவனவற்றில் எது?",
+    "optionsEn": ["Cu - 50% ; Sn - 50%", "Cu - 60% ; Zn - 40%", "Zn - 70% ; Sn - 30%", "Fe - 40% ; Ni - 60%"],
+    "optionsTa": ["Cu - 50% ; Sn - 50%", "Cu - 60% ; Zn - 40%", "Zn - 70% ; Sn - 30%", "Fe - 40% ; Ni - 60%"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Tarnishing of silver is due to the formation of:",
+    "ta": "வெள்ளி மங்குவது எதன் உருவாக்கத்தால் ஏற்படுகிறது?",
+    "optionsEn": ["Silver chloride", "Silver carbonate", "Silver oxide", "Silver sulphide"],
+    "optionsTa": ["சில்வர் குளோரைடு", "சில்வர் கார்பனேட்", "சில்வர் ஆக்சைடு", "சில்வர் சல்பைடு"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Match the following:<br><br>(a) NaHCO₃ || 1. Plaster of Paris<br>(b) CaSO₄·½H₂O || 2. Antacid<br>(c) CaOCl₂ || 3. Bleaching powder",
+    "ta": "பொருத்துக:<br><br>(a) NaHCO₃ || 1. பாரிஸ் சாந்து<br>(b) CaSO₄·½H₂O || 2. அமிலநீக்கி (Antacid)<br>(c) CaOCl₂ || 3. சலவைத் தூள்",
+    "optionsEn": ["a-1, b-2, c-3", "a-2, b-1, c-3", "a-3, b-1, c-2", "a-2, b-3, c-1"],
+    "optionsTa": ["a-1, b-2, c-3", "a-2, b-1, c-3", "a-3, b-1, c-2", "a-2, b-3, c-1"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Match the following and choose the correct option:<br><br>Column A || Column B<br>(a) Chloroform || 1. CCl₃NO₂<br>(b) Phosgene || 2. ClC₂H₄-S-C₂H₄Cl<br>(c) Tear gas || 3. CHCl₃<br>(d) Mustard gas || 4. COCl₂",
+    "ta": "பொருத்தி சரியான விடையைத் தேர்ந்தெடுக்க:<br><br>பத்தி A || பத்தி B<br>(a) குளோரோஃபார்ம் || 1. CCl₃NO₂<br>(b) பாஸ்ஜீன் || 2. ClC₂H₄-S-C₂H₄Cl<br>(c) கண்ணீர்ப்புகை || 3. CHCl₃<br>(d) கடுகு வாயு (Mustard gas) || 4. COCl₂",
+    "optionsEn": ["a-3, b-4, c-1, d-2", "a-2, b-3, c-4, d-1", "a-3, b-4, c-2, d-1", "a-3, b-1, c-4, d-2"],
+    "optionsTa": ["a-3, b-4, c-1, d-2", "a-2, b-3, c-4, d-1", "a-3, b-4, c-2, d-1", "a-3, b-1, c-4, d-2"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Match the following Brain Regions with their Functions:<br><br>BRAIN REGION || FUNCTIONS<br>(a) Cerebral cortex || 1. Temperature control<br>(b) Hypothalamus || 2. Sensory perception<br>(c) Cerebellum || 3. Sleep-awake cycle<br>(d) Pons || 4. Posture and balance",
+    "ta": "மூளையின் பகுதிகளை அவற்றின் பணிகளுடன் பொருத்துக:<br><br>மூளைப் பகுதி || பணிகள்<br>(a) பெருமூளைப் புறணி (Cerebral cortex) || 1. உடல் வெப்பநிலையைக் கட்டுப்படுத்துதல்<br>(b) ஹைபோதலாமஸ் || 2. உணர்ச்சி உணர்வு (Sensory perception)<br>(c) சிறுமூளை (Cerebellum) || 3. தூக்க-விழிப்பு சுழற்சி<br>(d) பான்ஸ் (Pons) || 4. உடல் நிலை மற்றும் சமநிலை",
+    "optionsEn": ["a-2, b-4, c-1, d-3", "a-1, b-2, c-3, d-4", "a-2, b-1, c-4, d-3", "a-3, b-1, c-2, d-4"],
+    "optionsTa": ["a-2, b-4, c-1, d-3", "a-1, b-2, c-3, d-4", "a-2, b-1, c-4, d-3", "a-3, b-1, c-2, d-4"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "The acids present in Grape and Tomato are respectively:",
+    "ta": "திராட்சை மற்றும் தக்காளியில் உள்ள அமிலங்கள் முறையே:",
+    "optionsEn": ["Tartaric acid and Oxalic acid", "Citric acid and Malic acid", "Tartaric acid and Citric acid", "Malic acid and Oxalic acid"],
+    "optionsTa": ["டார்ட்டாரிக் அமிலம் மற்றும் ஆக்சாலிக் அமிலம்", "சிட்ரிக் அமிலம் மற்றும் மாலிக் அமிலம்", "டார்ட்டாரிக் அமிலம் மற்றும் சிட்ரிக் அமிலம்", "மாலிக் அமிலம் மற்றும் ஆக்சாலிக் அமிலம்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following Assertion (A) and Reason (R):<br><br>Assertion (A): Insectivorous plants digest proteins of insect body.<br>Reason (R): Insectivorous plants grow in Nitrogen ($N_{2}$) deficient soil.<br><br>Choose the correct option:",
+    "ta": "பின்வரும் கூற்று (A) மற்றும் காரணம் (R) ஆகியவற்றைக் கருதுக:<br><br>கூற்று (A): பூச்சியுண்ணும் தாவரங்கள் பூச்சிகளின் உடலில் உள்ள புரதங்களைச் செமிக்கின்றன.<br>காரணம் (R): பூச்சியுண்ணும் தாவரங்கள் நைட்ரஜன் ($N_{2}$) பற்றாக்குறை உள்ள மண்ணில் வளர்கின்றன.<br><br>சரியான விருப்பத்தைத் தேர்ந்தெடுக்க:",
+    "optionsEn": ["Both A and R are true, and R is the correct explanation of A.", "Both A and R are true, but R is not the correct explanation of A.", "A is true, but R is false.", "A is false, but R is true."],
+    "optionsTa": ["A மற்றும் R இரண்டும் சரி, மேலும் R என்பது A விற்கு சரியான விளக்கமாகும்.", "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A விற்கு சரியான விளக்கமல்ல.", "A சரி, ஆனால் R தவறு.", "A தவறு, ஆனால் R சரி."],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "What is phototropism?",
+    "ta": "ஒளிச்சார்பசைவு (Phototropism) என்றால் என்ன?",
+    "optionsEn": ["Movement of plants towards chemicals", "Movement of plants towards light", "Movement of plants towards soil", "Response of plants for day length"],
+    "optionsTa": ["தாவரங்கள் வேதிப்பொருட்களை நோக்கி நகர்தல்", "தாவரங்கள் ஒளியை நோக்கி நகர்தல்", "தாவரங்கள் மண்ணை நோக்கி நகர்தல்", "பகல் வெளிச்ச நேரத்திற்கு தாவரங்களின் துலங்கல்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Match List I with List II correctly:<br><br>Column A || Column B<br>(a) Pulmonary artery || 1. Carries oxygenated blood<br>(b) Capillary || 2. Connects arteries and veins<br>(c) Vein || 3. Carries deoxygenated blood",
+    "ta": "பட்டியல் I ஐ பட்டியல் II உடன் சரியாகப் பொருத்துக:<br><br>பத்தி A || பத்தி B<br>(a) நுரையீரல் தமனி || 1. ஆக்சிஜன் மிகுந்த இரத்தத்தை எடுத்துச் செல்கிறது<br>(b) தந்துகி (Capillary) || 2. தமனிகளையும் சிரைகளையும் இணைக்கிறது<br>(c) சிரை (Vein) || 3. ஆக்சிஜன் அற்ற இரத்தத்தை எடுத்துச் செல்கிறது",
+    "optionsEn": ["a-1, b-2, c-3", "a-3, b-2, c-1", "a-2, b-1, c-3", "a-3, b-1, c-2"],
+    "optionsTa": ["a-1, b-2, c-3", "a-3, b-2, c-1", "a-2, b-1, c-3", "a-3, b-1, c-2"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "The respiratory pigment present in cockroach is:",
+    "ta": "கரப்பான் பூச்சியில் உள்ள சுவாச நிறமி எது?",
+    "optionsEn": ["Haemoglobin", "Haemocyanin", "Oxyhaemoglobin", "No respiratory pigment"],
+    "optionsTa": ["ஹீமோகுளோபின்", "ஹீமோசயனின்", "ஆக்ஸிஹீமோகுளோபின்", "சுவாச நிறமி இல்லை"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following sets includes all viral diseases?",
+    "ta": "பின்வரும் தொகுப்புகளில் அனைத்துமே வைரஸ் நோய்களைக் கொண்ட தொகுதி எது?",
+    "optionsEn": ["Cancer, Tuberculosis, Poliomyelitis", "AIDS, Poliomyelitis, Rabies", "Typhoid, Cholera, Tuberculosis", "Malaria, Dengue, Poliomyelitis"],
+    "optionsTa": ["புற்றுநோய், காசநோய், போலியோமைலிடிஸ்", "எய்ட்ஸ் (AIDS), போலியோமைலிடிஸ், வெறிநாய்க்கடி (Rabies)", "டைபாய்டு, காலரா, காசநோய்", "மலேரியா, டெங்கு, போலியோமைலிடிஸ்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "In which part of the nephron is maximum reabsorption of glucose from the glomerular filtrate taking place?",
+    "ta": "நெஃப்ரானின் எந்தப் பகுதியில் கிளாமருலார் வடிநீரிலிருந்து குளுக்கோஸின் அதிகபட்ச மீள்உறிஞ்சுதல் நடைபெறுகிறது?",
+    "optionsEn": ["Henle's loop", "Distal convoluted tubule", "Proximal convoluted tubule", "Collecting duct"],
+    "optionsTa": ["ஹென்லே வளைவு", "சேய்மை சுருள் நுண்குழல்", "அண்மை சுருள் நுண்குழல்", "சேகரிக்கும் நாளம்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Match the following Celestial Bodies with their Features:<br><br>Celestial Body || Feature/Description<br>(a) Ganymede || 1. Moves in opposite direction to the spin of its planet<br>(b) Titan || 2. Greenish star-like appearance<br>(c) Neptune || 3. Moon with clouds in our solar system<br>(d) Triton || 4. Largest moon of our solar system",
+    "ta": "பின்வரும் விண்வெளிப் பொருள்களை அவற்றின் சிறப்பம்சங்களுடன் பொருத்துக:<br><br>விண்வெளிப் பொருள் || அம்சம்/விளக்கம்<br>(a) கணினிமீடு (Ganymede) || 1. தனது கோளின் சுழற்சிக்கு எதிர் திசையில் இயங்குகிறது<br>(b) டைட்டன் || 2. பச்சை நிற நட்சத்திர போன்ற தோற்றம்<br>(c) நெப்டியூன் || 3. மேகங்களைக் கொண்ட சூரிய குடும்பத்தின் நிலவு<br>(d) டிரைட்டான் (Triton) || 4. சூரிய குடும்பத்தின் மிகப்பெரிய நிலவு",
+    "optionsEn": ["a-4, b-3, c-2, d-1", "a-1, b-2, c-3, d-4", "a-3, b-4, c-1, d-2", "a-2, b-1, c-4, d-3"],
+    "optionsTa": ["a-4, b-3, c-2, d-1", "a-1, b-2, c-3, d-4", "a-3, b-4, c-1, d-2", "a-2, b-1, c-4, d-3"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Match the following:<br><br>Disease || Pathogen<br>(a) Malaria || 1. Virus<br>(b) AIDS || 2. Protozoan<br>(c) Ringworm || 3. Fungus",
+    "ta": "பொருத்துக:<br><br>நோய் || நோய்க்காரணி<br>(a) மலேரியா || 1. வைரஸ்<br>(b) எய்ட்ஸ் (AIDS) || 2. புரோட்டோசோவா<br>(c) படைத்தாமரை (Ringworm) || 3. பூஞ்சை",
+    "optionsEn": ["a-1, b-2, c-3", "a-2, b-1, c-3", "a-3, b-2, c-1", "a-1, b-3, c-2"],
+    "optionsTa": ["a-1, b-2, c-3", "a-2, b-1, c-3", "a-3, b-2, c-1", "a-1, b-3, c-2"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements about the human circulatory system and choose the correct option:<br><br>Assertion (A): The wall of the left ventricle is thicker than that of the right ventricle.<br>Reason (R): The left ventricle has to pump blood to the entire body, requiring more pressure.",
+    "ta": "மனித இரத்த ஓட்ட மண்டலம் பற்றிய பின்வரும் கூற்றுகளைக் கருதி சரியான விருப்பத்தைத் தேர்ந்தெடுக்கவும்:<br><br>கூற்று (A): வலது வென்ட்ரிக்கிளை விட இடது வென்ட்ரிக்கிளின் சுவர் தடிமனாக உள்ளது.<br>Reason (R): இடது வென்ட்ரிக்கிள் உடல் முழுவதற்கும் இரத்தத்தை அழுத்தத்துடன் செலுத்த வேண்டும்.",
+    "optionsEn": ["Both A and R are true, and R is the correct explanation of A.", "Both A and R are true, but R is not the correct explanation of A.", "A is true, but R is false.", "A is false, but R is true."],
+    "optionsTa": ["A மற்றும் R இரண்டும் சரி, மேலும் R என்பது A விற்கு சரியான விளக்கமாகும்.", "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A விற்கு சரியான விளக்கமல்ல.", "A சரி, ஆனால் R தவறு.", "A தவறு, ஆனால் R சரி."],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Match the following lists:<br><br>Column A || Column B<br>(a) Na₂CO₃ || 1. Baking powder<br>(b) NaHCO₃ || 2. Glass manufacturing<br>(c) CaOCl₂ || 3. Bleaching",
+    "ta": "பொருத்துக:<br><br>பத்தி A || பத்தி B<br>(a) Na₂CO₃ || 1. சமையல் சோடா<br>(b) NaHCO₃ || 2. கண்ணாடி தயாரிப்பு<br>(c) CaOCl₂ || 3. சலவை செய்தல்",
+    "optionsEn": ["a-1, b-2, c-3", "a-2, b-1, c-3", "a-3, b-2, c-1", "a-1, b-3, c-2"],
+    "optionsTa": ["a-1, b-2, c-3", "a-2, b-1, c-3", "a-3, b-2, c-1", "a-1, b-3, c-2"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "In the nuclear reaction, which of the following is a triatomic molecule?",
+    "ta": "அணுக்கரு வினையில், பின்வருவனவற்றில் மூவணு மூலக்கூறு எது?",
+    "optionsEn": ["$O_{2}$", "$H_{2}$", "$O_{3}$", "$N_{2}$"],
+    "optionsTa": ["$O_{2}$", "$H_{2}$", "$O_{3}$", "$N_{2}$"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "The general molecular formula of alkane is ______.",
+    "ta": "அல்கேனின் பொதுவான மூலக்கூறு வாய்ப்பாடு ______ ஆகும்.",
+    "optionsEn": ["$C_{n}H_{2n}$", "$C_{n}H_{2n + 2}$", "$C_{n}H_{2n - 2}$", "$C_{n}H_{n}$"],
+    "optionsTa": ["$C_{n}H_{2n}$", "$C_{n}H_{2n + 2}$", "$C_{n}H_{2n - 2}$", "$C_{n}H_{n}$"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Assertion [A]: Databases of the Digital Herbarium simplify taxonomical references.<br>Reason [R]: Databased images cannot help in confirming a specimen's historical collection data or location.",
+    "ta": "கூற்று [A]: டிஜிட்டல் ஹெர்பேரியத்தின் தரவுத்தளங்கள் வகைப்பாட்டியல் குறிப்புகளை எளிதாக்குகின்றன.<br>காரணம் [R]: தரவுத்தளப் படங்கள் ஒரு மாதிரிப் பொருளின் வரலாற்றுச் சேகரிப்பு தரவு அல்லது இருப்பிடத்தை உறுதிப்படுத்த உதவாது.",
+    "optionsEn": ["[A] is false, [R] is false", "[A] is true, but [R] is true", "Both [A] and [R] are true; and [R] is the correct explanation of [A]", "Both [A] and [R] are true; but [R] is not the correct explanation of [A]"],
+    "optionsTa": ["[A] தவறு, [R] தவறு", "[A] சரி, ஆனால் [R] சரி", "[A] மற்றும் [R] இரண்டும் சரி; மேலும் [R] என்பது [A] விற்கு சரியான விளக்கமாகும்", "[A] மற்றும் [R] இரண்டும் சரி; ஆனால் [R] என்பது [A] விற்கு சரியான விளக்கமல்ல"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Assertion [A]: Mendel's law of independent assortment states the genes for each character separate and enter the gametes independently of the genes of the other characters.<br>Reason [R]: Closely located genes assort independently.",
+    "ta": "கூற்று [A]: மெண்டலின் சார்பின்றி ஒதுங்குதல் விதிப்படி, ஒவ்வொரு பண்பிற்குமான ஜீன்கள் மற்ற பண்புகளின் ஜீன்களிலிருந்து சார்பின்றி பிரிந்து கேமீட்டுகளுக்குள் நுழைகின்றன.<br>காரணம் [R]: அருகில் அமைந்துள்ள ஜீன்கள் சார்பின்றி ஒதுங்குகின்றன.",
+    "optionsEn": ["[A] is correct but [R] is correct", "[A] is not correct but [R] is not correct", "Both [A] and [R] are correct and [R] is the correct explanation of [A]", "Both [A] and [R] are correct but [R] is not the correct explanation of [A]"],
+    "optionsTa": ["[A] சரி ஆனால் [R] சரி", "[A] தவறானது ஆனால் [R] தவறானது", "[A] மற்றும் [R] இரண்டும் சரி மேலும் [R] என்பது [A] விற்கு சரியான விளக்கமாகும்", "[A] மற்றும் [R] இரண்டும் சரி ஆனால் [R] என்பது [A] விற்கு சரியான விளக்கமல்ல"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Match the following:<br><br>(a) Minamata disease || 1. Nitrate<br>(b) Itai-Itai disease || 2. Mercury<br>(c) Black foot disease || 3. Cadmium<br>(d) Blue baby syndrome || 4. Arsenic",
+    "ta": "பொருத்துக:<br><br>(a) மினமாடா நோய் || 1. நைட்ரேட்<br>(b) இடாய்-இடாய் நோய் || 2. பாதரசம்<br>(c) கறுப்புப் பாத நோய் (Black foot disease) || 3. காட்மியம்<br>(d) புளூ பேபி சின்றோம் (Blue baby syndrome) || 4. ஆர்சனிக்",
+    "optionsEn": ["4 3 2 1", "1 2 3 4", "3 1 2 4", "2 3 4 1"],
+    "optionsTa": ["4 3 2 1", "1 2 3 4", "3 1 2 4", "2 3 4 1"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statements are true about the functions of ecosystem?<br><br>(i) Energy flow is the key function<br>(ii) The flow of energy in the ecosystem is through food chain and food web<br>(iii) Transfer of energy not follows thermodynamic laws",
+    "ta": "சூழ்நிலை மண்டலத்தின் செயல்பாடுகள் குறித்த பின்வரும் கூற்றுகளில் எவை சரியானவை?<br><br>(i) ஆற்றல் ஓட்டமே முதன்மையான செயல்பாடாகும்<br>(ii) சூழ்நிலை மண்டலத்தில் ஆற்றல் ஓட்டம் உணவுச் சங்கிலி மற்றும் உணவு வலை வழியாக நடைபெறுகிறது<br>(iii) ஆற்றல் மாற்றம் வெப்ப இயக்கவியல் விதிகளைப் பின்பற்றுவதில்லை",
+    "optionsEn": ["(i) only", "(i) and (iii) only", "(i) and (ii) only", "(ii) and (iii) only"],
+    "optionsTa": ["(i) மட்டும்", "(i) மற்றும் (iii) மட்டும்", "(i) மற்றும் (ii) மட்டும்", "(ii) மற்றும் (iii) மட்டும்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Assertion: Haemoglobin contains Iron.<br>Reason: Iron deficiency leads to anemia.",
+    "ta": "கூற்று: ஹீமோகுளோபினில் இரும்புச்சத்து உள்ளது.<br>காரணம்: இரும்புச்சத்து குறைபாடு இரத்த சோகைக்கு வழிவகுக்கிறது.",
+    "optionsEn": ["Both Assertion and Reason are true -- Reason is the correct explanation of Assertion", "Both Assertion and Reason are true -- Reason not the correct explanation of Assertion", "Assertion is true -- Reason is false", "Assertion and Reason are false"],
+    "optionsTa": ["கூற்று மற்றும் காரணம் இரண்டும் சரி -- காரணம் கூற்றிற்கு சரியான விளக்கமாகும்", "கூற்று மற்றும் காரணம் இரண்டும் சரி -- காரணம் கூற்றிற்கு சரியான விளக்கமல்ல", "கூற்று சரி -- காரணம் தவறு", "கூற்று மற்றும் காரணம் இரண்டும் தவறு"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Find out the correct statements from the following:<br><br>(i) Jumping genes in maize were discovered by Barbara Mc. Clintock<br>(ii) The name plasmid was first used by G.J. Mendel<br>(iii) The plasmid DNA replicates by semi-conservative method<br>(iv) The retroviruses are exogenous, whose genomes are made up of RNA.",
+    "ta": "பின்வருவனவற்றில் சரியான கூற்றுகளைக் கண்டறியவும்:<br><br>(i) சோளத்தில் தாவும் ஜீன்களை (Jumping genes) பர்பாரா மெக்ளிண்டாக் கண்டுபிடித்தார்<br>(ii) பிளாஸ்மிட் என்ற பெயரை முதலில் பயன்படுத்தியவர் ஜி.ஜே. மெண்டல் ஆவார்<br>(iii) பிளாஸ்மிட் DNA அரை-பாதுகாப்பு முறையில் (semi-conservative) இரட்டிப்படைகிறது<br>(iv) ரெட்ரோவைரஸ்கள் வெளிப்புற மூலத்தைச் சேர்ந்தவை, அவற்றின் மரபணுத் தொகை RNA ஆல் ஆனது.",
+    "optionsEn": ["(i) alone is correct", "(i) and (ii) are correct", "(i), (iii) and (iv) are correct", "(i), (ii), (iii) and (iv) are correct"],
+    "optionsTa": ["(i) மட்டும் சரி", "(i) மற்றும் (ii) சரி", "(i), (iii) மற்றும் (iv) சரி", "(i), (ii), (iii) மற்றும் (iv) சரி"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Assertion [A]: Aqueous solution of hydrofluoric acid is weak acid.<br>Reason [R]: The dissociation energy of H-F bond in HF molecule is high.",
+    "ta": "கூற்று [A]: ஹைட்ரோபுளூரிக் அமிலத்தின் நீர்மக் கரைசல் ஒரு மென் அமிலமாகும்.<br>காரணம் [R]: HF மூலக்கூறில் உள்ள H-F பிணைப்பின் பிணைப்பு பிளவு ஆற்றல் அதிகம்.",
+    "optionsEn": ["[A] is true, [R] is false", "Both [A] and [R] are true, but [R] is not correct explanation of [A]", "Both [A] and [R] are false", "Both [A] and [R] are true, [R] is the correct explanation of [A]"],
+    "optionsTa": ["[A] சரி, [R] தவறு", "[A] மற்றும் [R] இரண்டும் சரி, ஆனால் [R] என்பது [A] விற்கு சரியான விளக்கமல்ல", "[A] மற்றும் [R] இரண்டும் தவறு", "[A] மற்றும் [R] இரண்டும் சரி, [R] என்பது [A] விற்கு சரியான விளக்கமாகும்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "The greenhouse effect in the earth's environment takes place because:",
+    "ta": "புவியின் சுற்றுச்சூழலில் பசுமை இல்ல விளைவு ஏற்படுவதற்கான காரணம்:",
+    "optionsEn": ["the polar ice caps are melting", "the atmosphere is transparent to IR at some wavelength and opaque to IR at other wavelengths", "the atmosphere does not contain enough oxygen to block IR from the sun", "the ozone hole is growing, letting in more and more IR."],
+    "optionsTa": ["துருவப் பனிப்பாறைகள் உருகுவதால்", "வளிமண்டலம் குறிப்பிட்ட அலைநீளத்தில் அகச்சிவப்பு கதிர்களுக்கு ஊடுருவும் தன்மையையும் மற்ற அலைநீளங்களில் ஊடுருவாத் தன்மையையும் கொண்டிருப்பதால்", "சூரியனிடமிருந்து வரும் அகச்சிவப்பு கதிர்களைத் தடுக்க வளிமண்டலத்தில் போதுமான ஆக்சிஜன் இல்லாததால்", "ஓசோன் துளை பெரிதாகி அதிக அகச்சிவப்பு கதிர்களை உள்ளே அனுமதிப்பதால்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the incorrect matches:<br><br>(1) Albert Bruce Sabin -- Live Polio Vaccine<br>(2) Max Theiler -- BCG Vaccine<br>(3) Jonas Salk -- Killed Polio Vaccine<br>(4) Albert Calmette -- Yellow Fever Vaccine",
+    "ta": "தவறான இணைகளைத் தேர்ந்தெடுக்க:<br><br>(1) ஆல்பர்ட் புரூஸ் சேபின் -- உயிருள்ள போலியோ தடுப்பூசி<br>(2) மேக்ஸ் தைலர் -- பிசிஜி (BCG) தடுப்பூசி<br>(3) ஜோனாஸ் சால்க் -- கொல்லப்பட்ட போலியோ தடுப்பூசி<br>(4) ஆல்பர்ட் கல்மெட் -- மஞ்சள் காய்ச்சல் தடுப்பூசி",
+    "optionsEn": ["(1) and (3)", "(1) and (2)", "(2) and (4)", "(3) and (4)"],
+    "optionsTa": ["(1) மற்றும் (3)", "(1) மற்றும் (2)", "(2) மற்றும் (4)", "(3) மற்றும் (4)"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statements are true about M.S. Swaminathan?<br><br>(i) He was the Father of Green Revolution in India<br>(ii) He was an Agronomist and Plant Geneticist<br>(iii) He wrote the book \"Cotton\"<br>(iv) He was a Pioneer in mutation plant breeding",
+    "ta": "எம்.எஸ். சுவாமிநாதன் பற்றிய பின்வரும் கூற்றுகளில் எவை சரியானவை?<br><br>(i) இவர் இந்தியாவின் பசுமைப் புரட்சியின் தந்தை ஆவார்<br>(ii) இவர் ஒரு வேளாண் விஞ்ஞானி மற்றும் தாவர மரபியலாளர்<br>(iii) இவர் \"பருத்தி\" (Cotton) என்ற நூலை எழுதினார்<br>(iv) இவர் திடீர்மாற்றத் தாவரப் பெருக்கத்தில் (Mutation plant breeding) முன்னோடியாக இருந்தார்",
+    "optionsEn": ["(i), (ii) and (iii) only", "(i) and (iii) only", "(i), (ii) and (iv) only", "(ii) and (iii) only"],
+    "optionsTa": ["(i), (ii) மற்றும் (iii) மட்டும்", "(i) மற்றும் (iii) மட்டும்", "(i), (ii) மற்றும் (iv) மட்டும்", "(ii) மற்றும் (iii) மட்டும்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Mention the tool used for detecting specific DNA sequences in molecular diagnostics.",
+    "ta": "மூலக்கூறு நோயறிதலில் குறிப்பிட்ட DNA வரிசைகளைக் கண்டறியப் பயன்படும் கருவி/தொழில்நுட்பத்தைக் குறிப்பிடுக.",
+    "optionsEn": ["Southern Blotting", "ELISA", "PCR", "Flow cytometry"],
+    "optionsTa": ["சாஃப்டர்ன் பிளாட்டிங் (Southern Blotting)", "எலிசா (ELISA)", "பிசிஆர் (PCR)", "ஃப்ளோ சைட்டோமெட்ரி (Flow cytometry)"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct answer:<br><br>(1) Natural Polymer - DNA<br>(2) Synthetic Polymer - PVC<br>(3) Addition Polymerisation - Loss of H2O, HCl, NH3<br>(4) Condensation Polymerisation - Monomer Addition",
+    "ta": "சரியான விடையைத் தேர்ந்தெடுக்கவும்:<br><br>(1) இயற்கை படிய Severe/பல்படி - DNA<br>(2) செயற்கை படிய Severe/பல்படி - PVC<br>(3) சேர்க்கை பலபடியாக்கல் - H2O, HCl, NH3 இழப்பு<br>(4) குறுக்க பலபடியாக்கல் - ஒற்றைப்படி சேர்க்கை",
+    "optionsEn": ["(1) and (4) are correct", "(2) and (3) are correct", "(1) and (2) are correct", "(4) and (3) are correct"],
+    "optionsTa": ["(1) மற்றும் (4) சரி", "(2) மற்றும் (3) சரி", "(1) மற்றும் (2) சரி", "(4) மற்றும் (3) சரி"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Match correctly the gaseous fuels with their corresponding calorific values:<br><br>(a) Oil gas || 1. 12,000 to 14,000 K.cal/m3<br>(b) Natural gas || 2. 4,500 to 5,400 K.cal/m3<br>(c) Producer gas || 3. 27,800 K.cal/m3<br>(d) Liquefied petroleum gas || 4. 1,300 K.cal/m3",
+    "ta": "வாயு எரிபொருட்களை அவற்றின் கலோரி மதிப்புகளுடன் சரியாகப் பொருத்துக:<br><br>(a) எண்ணெய் வாயு (Oil gas) || 1. 12,000 முதல் 14,000 K.cal/m3<br>(b) இயற்கை வாயு || 2. 4,500 முதல் 5,400 K.cal/m3<br>(c) உற்பத்தி வாயு (Producer gas) || 3. 27,800 K.cal/m3<br>(d) திரவமாக்கப்பட்ட பெட்ரோலிய வாயு (LPG) || 4. 1,300 K.cal/m3",
+    "optionsEn": ["2 1 4 3", "2 3 4 1", "4 1 2 3", "4 2 1 3"],
+    "optionsTa": ["2 1 4 3", "2 3 4 1", "4 1 2 3", "4 2 1 3"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "The most important use of Schmitt trigger circuit is to convert",
+    "ta": "ஷ்மிட் ட்ரிக்கர் சுற்றின் (Schmitt trigger circuit) மிக முக்கியமான பயன்பாடு எதனை எதனாக மாற்றுவதாகும்?",
+    "optionsEn": ["A very slowly varying input voltage into an output having an abrupt waveform", "Steady input into a steady output waveform", "Abrupt input into a very slowly varying output", "A Sawtooth waveform to a square waveform"],
+    "optionsTa": ["மிக மெதுவாக மாறும் உள்ளீட்டு மின்னழுத்தத்தை சட்டென மாறும் வெளியீட்டு அலைவடிவமாக மாற்றுவது", "சீரான உள்ளீட்டை சீரான வெளியீட்டு அலைவடிவமாக மாற்றுவது", "சடாரென மாறும் உள்ளீட்டை மெதுவாக மாறும் வெளியீடாக மாற்றுவது", "ரம்பப்பல் அலைவடிவத்தை சதுர அலைவடிவமாக மாற்றுவது"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statement(s) is/are true about the techniques used for nanomaterial synthesis?<br><br>(i) Ordered structural organisation of molecules occur when the system is in equilibrium without dissipating energy which is called static self assembly.<br>(ii) Electron beam Lithography uses beam of electromagnetic wave to generate patterns for integrated circuits at nanoscale.<br>(iii) Atomic force microscope tips can be used as a nanoscale write head to deposit chemicals on a surface.",
+    "ta": "நானோ பொருட்கள் தயாரிப்பு நுட்பங்கள் பற்றிய பின்வரும் கூற்றுகளில் எது/எவை சரியானவை?<br><br>(i) கண அமைப்பானது ஆற்றலை விரயம் செய்யாமல் சமநிலையில் இருக்கும்போது மூலக்கூறுகளின் ஒழுங்குபடுத்தப்பட்ட அமைப்பு ஏற்படுகிறது; இது நிலையான சுய அசெம்பிளி (Static self assembly) எனப்படும்.<br>(ii) எலக்ட்ரான் கற்றை லித்தோகிராஃபி நானோ அளவில் ஒருங்கிணைக்கப்பட்ட சுற்றுகளுக்கான வடிவங்களை உருவாக்க மின்காந்த அலை கற்றையைப் பயன்படுத்துகிறது.<br>(iii) அணு விசை நுண்ணோக்கி (AFM) முனைகளை ஒரு மேற்பரப்பில் வேதிப்பொருட்களை படிய வைக்க நானோ அளவிலான எழுத்து முனையாகப் பயன்படுத்தலாம்.",
+    "optionsEn": ["(i) and (ii) only", "(i) and (iii) only", "(ii) and (iii) only", "(ii) only"],
+    "optionsTa": ["(i) மற்றும் (ii) மட்டும்", "(i) மற்றும் (iii) மட்டும்", "(ii) மற்றும் (iii) மட்டும்", "(ii) மட்டும்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Minisatellites are DNA",
+    "ta": "மினிசாட்டிலைட்டுகள் (Minisatellites) என்பவை எந்த வகை DNA?",
+    "optionsEn": ["DNA profiles detected with 32P labelled probes", "Restriction Fragment Length Polymorphism (RFLP)", "Other name of PCR", "DNA consisting of a 10-60 bp long base pairs"],
+    "optionsTa": ["32P குறியிடப்பட்ட புரோப்கள் மூலம் கண்டறியப்படும் DNA சுயவிவரங்கள்", "ரெஸ்ட்ரிக்ஷன் துண்டு நீள பன்முகத்தன்மை (RFLP)", "PCR இன் வேறு பெயர்", "10-60 bp நீளமுள்ள கார இணைகளைக் கொண்ட DNA"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statements on antibiotics are true?<br><br>(i) Antibiotics are biologically active against a large number of microorganisms<br>(ii) They enhance growth of fungi<br>(iii) Minimum inhibitory concentration of an antibiotic is effective against different microorganism.",
+    "ta": "ஆன்டிபயாடிக்குகள் (நுண்ணுயிர் எதிர்ப்பிகள்) பற்றிய பின்வரும் கூற்றுகளில் எவை சரியானவை?<br><br>(i) ஆன்டிபயாடிக்குகள் அதிக எண்ணிக்கையிலான நுண்ணுயிரிகளுக்கு எதிராக உயிரியல் ரீதியாக செயல்படுகின்றன<br>(ii) அவை பூஞ்சைகளின் வளர்ச்சியை உயர்த்துகின்றன<br>(iii) ஒரு ஆன்டிபயாட்டிக்கின் குறைந்தபட்ச தடுப்பு செறிவு (MIC) வெவ்வேறு நுண்ணுயிரிகளுக்கு எதிராகச் செயல்படுகிறது.",
+    "optionsEn": ["(i) only", "(i) and (iii) only", "(i) and (ii) only", "(ii) and (iii) only"],
+    "optionsTa": ["(i) மட்டும்", "(i) மற்றும் (iii) மட்டும்", "(i) மற்றும் (ii) மட்டும்", "(ii) மற்றும் (iii) மட்டும்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Infectious Bovine Rhinotracheitis (IBR) disease is caused by ______ in cattle.",
+    "ta": "கால்நடைகளில் தொற்று நோய் வகை ரைனோட்ராக்கெய்ட்டிஸ் (IBR) நோய் ______ மூலம் ஏற்படுகிறது.",
+    "optionsEn": ["bacteria", "virus", "fungus", "protozoa"],
+    "optionsTa": ["பாக்டீரியா", "வைரஸ்", "பூஞ்சை", "புரோட்டோசோவா"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct steps in Enzyme Immobilization.<br><br>(1) Copolymerisation and Encapsulation<br>(2) Entrapment<br>(3) Adsorption<br>(4) Covalent bonding",
+    "ta": "என்சைம் நிலைநிறுத்தலில் (Enzyme Immobilization) சரியான படிகளைத் தேர்ந்தெடுக்கவும்.<br><br>(1) இணைப்பலபடியாக்கல் மற்றும் உறைபொதியாக்கம் (Encapsulation)<br>(2) சிறைப்படுத்துதல் (Entrapment)<br>(3) பரப்புறிஞ்சுதல் (Adsorption)<br>(4) சகப்பிணைப்பு பிணைப்பு (Covalent bonding)",
+    "optionsEn": ["(3), (4), (2), (1)", "(1), (2), (3), (4)", "(2), (3), (4), (1)", "(4), (3), (2), (1)"],
+    "optionsTa": ["(3), (4), (2), (1)", "(1), (2), (3), (4)", "(2), (3), (4), (1)", "(4), (3), (2), (1)"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements:<br><br>Assertion [A]: Bacillus thuringiensis formed crystals containing toxic insecticidal protein. But it is not killed by that toxic protein.<br>Reason [R]: Actually the Bt. toxin protein exist as inactive protoxins.",
+    "ta": "பின்வரும் கூற்றுகளைக் கருதுக:<br><br>கூற்று [A]: பாசில்லஸ் துரிஞ்சியன்சிஸ் நச்சுப் பூச்சிக்கொல்லி புரதத்தைக் கொண்ட படிகங்களை உருவாக்குகிறது. ஆனால் அந்த நச்சுப் புரதத்தால் அது கொல்லப்படுவதில்லை.<br>காரணம் [R]: உண்மையில் Bt நச்சுப் புரதம் செயலற்ற புரோடாக்சின்களாகக் (inactive protoxins) காணப்படுகிறது.",
+    "optionsEn": ["[A] is true [R] is false", "Both [A] and [R] are true but [R] is not the correct explanation of [A]", "Both [A] and [R] are true and [R] is the correct explanation of [A]", "[A] is false [R] is correct"],
+    "optionsTa": ["[A] சரி, [R] தவறு", "[A] மற்றும் [R] இரண்டும் சரி, ஆனால் [R] என்பது [A] விற்கு சரியான விளக்கமல்ல", "[A] மற்றும் [R] இரண்டும் சரி, மேலும் [R] என்பது [A] விற்கு சரியான விளக்கமாகும்", "[A] தவறு, [R] சரி"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is incorrectly paired?<br><br>(i) Cellulose nitrate -- 35 mm motion picture film<br>(ii) Polyvinyl pyrrolidone -- Additive for dyes<br>(iii) Polystyrene -- Substitute for blood plasma<br>(iv) Polymethyl methacrylate -- X-ray film",
+    "ta": "பின்வருவனவற்றில் எது தவறாகப் பொருத்தப்பட்டுள்ளது?<br><br>(i) செல்லுலோஸ் நைட்ரேட் -- 35 mm திரைப்பட ஃபிலிம்<br>(ii) பாலிவினைல் பைரோலிடோன் -- சாயங்களுக்கான சேர்க்கைப்பொருள்<br>(iii) பாலிஸ்டைரீன் -- இரத்த பிளாஸ்மாவிற்கான மாற்று<br>(iv) பாலிமெத்தில் மெதக்ரிலேட் -- X-ரே ஃபிலிம்",
+    "optionsEn": ["(i) and (iii) only", "(ii) and (iv) only", "(iii) and (iv) only", "(i) and (ii) only"],
+    "optionsTa": ["(i) மற்றும் (iii) மட்டும்", "(ii) மற்றும் (iv) மட்டும்", "(iii) மற்றும் (iv) மட்டும்", "(i) மற்றும் (ii) மட்டும்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Match the following Scientists from Tamilnadu with their respective fields.<br><br>(a) Sir Chandra Sekara Venkataraman || 1. Function of ribosomes<br>(b) Venki Ramakrishnan || 2. Light scattering<br>(c) Mylswamy Annadurai || 3. Green Revolution in India<br>(d) M.S. Swaminathan || 4. Chandrayan - I",
+    "ta": "தமிழ்நாட்டைச் சேர்ந்த விஞ்ஞானிகளை அவர்களின் துறைகளுடன் பொருத்துக.<br><br>(a) சர் சர்.சி.வி. ராமன் || 1. ரைபோசோம்களின் செயல்பாடு<br>(b) வெங்கடராமன் ராமகிருஷ்ணன் || 2. ஒளிச்சிதறல்<br>(c) மயில்சாமி அண்ணாதுரை || 3. இந்தியாவில் பசுமைப் புரட்சி<br>(d) எம்.எஸ். சுவாமிநாதன் || 4. சந்திரயான் - I",
+    "optionsEn": ["2 1 4 3", "1 2 3 4", "4 2 3 1", "4 3 2 1"],
+    "optionsTa": ["2 1 4 3", "1 2 3 4", "4 2 3 1", "4 3 2 1"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements:<br><br>Assertion [A]: Corrosion reaction in Nickel - Metal hydride battery cell, accelerates water loss by changing the balance between positive and negative electrode.<br>Reason [R]: Corrosion reduces the active material in the negative electrode, shifting the capacity balance toward positive electrode and reducing the material available for hydrogen absorption.",
+    "ta": "பின்வரும் கூற்றுகளைக் கருதுக:<br><br>கூற்று [A]: நிக்கல்-மெட்டல் ஹைட்ரைடு பேட்டரி செல்லில் ஏற்படும் அரிப்பு வினை, நேர் மற்றும் எதிர் எலக்ட்ரோடுகளுக்கு இடையிலான சமநிலையை மாற்றுவதன் மூலம் நீர் இழப்பை முடுக்கிவிடுகிறது.<br>காரணம் [R]: அரிப்பு எதிர் எலக்ட்ரோடில் உள்ள செயலில் உள்ள பொருளைக் குறைக்கிறது, கொள்ளளவு சமநிலையை நேர் எலக்ட்ரோடை நோக்கி நகர்த்துகிறது மற்றும் ஹைட்ரஜன் உறிஞ்சுதலுக்குக் கிடைக்கும் பொருளைக் குறைக்கிறது.",
+    "optionsEn": ["[A] is true but [R] is false", "Both [A] and [R] are true and [R] is the correct explanation of [A]", "[A] is false but [R] is true", "Both [A] and [R] are true, but [R] is not the correct explanation of [A]"],
+    "optionsTa": ["[A] சரி, ஆனால் [R] தவறு", "[A] மற்றும் [R] இரண்டும் சரி, மேலும் [R] என்பது [A] விற்கு சரியான விளக்கமாகும்", "[A] தவறு, ஆனால் [R] சரி", "[A] மற்றும் [R] இரண்டும் சரி, ஆனால் [R] என்பது [A] விற்கு சரியான விளக்கமல்ல"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following leucocytes are known as polymorphonuclear cells?<br><br>(1) Eosinophils and Basophils<br>(2) Monocytes and Lymphocytes<br>(3) Neutrophils only<br>(4) Lymphocytes only",
+    "ta": "பின்வரும் வெள்ளையணுக்களில் பாலிமார்ஃபோநியூக்ளியர் செல்கள் (Polymorphonuclear cells) என அழைக்கப்படுபவை எவை?<br><br>(1) ஈசினோஃபில்கள் மற்றும் பேசோஃபில்கள்<br>(2) மோனோசைட்டுகள் மற்றும் லிம்போசைட்டுகள்<br>(3) நியூட்ரோஃபில்கள் மட்டும்<br>(4) லிம்போசைட்டுகள் மட்டும்",
+    "optionsEn": ["(3) and (4) are correct", "(4) is only correct", "(3) is only correct", "(1) and (2) are correct"],
+    "optionsTa": ["(3) மற்றும் (4) சரி", "(4) மட்டும் சரி", "(3) மட்டும் சரி", "(1) மற்றும் (2) சரி"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Assertion [A]: Transparent Solar panels to function like regular glass.<br>Reason [R]: Transparent Solar panels that absorb invisible wavelengths of light, such as IR and UV light, using Organic Salts.",
+    "ta": "கூற்று [A]: வெளிப்படையான சூரிய மின்கலங்கள் (Transparent Solar panels) சாதாரணக் கண்ணாடியைப் போல செயல்படுகின்றன.<br>காரணம் [R]: வெளிப்படையான சூரிய மின்கலங்கள் ஆர்கானிக் உப்புகளைப் பயன்படுத்தி அகச்சிவப்பு (IR) மற்றும் புற ஊதா (UV) போன்ற கண்ணுக்குத் தெரியாத ஒளி அலைநீளங்களை உறிஞ்சுகின்றன.",
+    "optionsEn": ["Both [A] and [R] are true, and [R] is the correct explanation of A", "Both [A] and [R] are true; and [R] is not the correct explanation of [A]", "[A] is true, but [R] is false", "[A] is false, but [R] is true"],
+    "optionsTa": ["[A] மற்றும் [R] இரண்டும் சரி, மேலும் [R] என்பது [A] விற்கு சரியான விளக்கமாகும்", "[A] மற்றும் [R] இரண்டும் சரி; மேலும் [R] என்பது [A] விற்கு சரியான விளக்கமல்ல", "[A] சரி, ஆனால் [R] தவறு", "[A] தவறு, ஆனால் [R] சரி"],
     "answer": 0
   }
 ];
