@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-27T18:00:39.351Z",
+  "version": "2026-10-27T18:04:40.252Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -303,7 +303,7 @@
       "durationMinutes": 30,
       "order": 1,
       "questionCount": 50,
-      "negativeMark": 0,
+      "negativeMark": 0.25,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/DEMO.html",
       "releaseTimestamp": 0
     },
