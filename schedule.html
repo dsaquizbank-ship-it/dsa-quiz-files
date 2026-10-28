@@ -30,251 +30,567 @@
     <div class="date-selector-wrapper" id="dateSelector"></div>
     <div id="scheduleContainer"></div>
     <script>
-const SCHEDULE = [
-    {
-        examName: "TNPSC | TET | SGT | SSC | RRB | BANK",
-        dates: [
-            { date: "05/10/2026", weekday: "Monday", entries: [
-                { testNo: "NTN - 44", subject: "TNPSC Maths", topic: "Numbers, Odd-Even, Fractions" },
-                { testNo: "NTE - 44", subject: "TET", topic: "Tamil 8th Iyal 1, 2 | Maths 7th Unit 1 | SS 8th Geo: Number System, Migration and Urbanisation" },
-                { testNo: "SGT - 26", subject: "SGT Tamil", topic: "9th இயல் 5 - அறிமுகம்" },
-                { testNo: "BSR - 45", subject: "SSC/RRB Math & Phy", topic: "Simple Interest | Physical Quantities" },
-                { testNo: "TNA - 35", subject: "TNPSC Prelims", topic: "Unit IV - Indian Polity" }
-            ]},
-            { date: "07/10/2026", weekday: "Wednesday", entries: [
-                { testNo: "NTN - 45", subject: "TNPSC Tamil", topic: "6th Term I - அரசியலமைப்பு" },
-                { testNo: "NTE - 45", subject: "TET", topic: "English 8th Unit 5, 6 | Sci 7th Force & Motion | SS 8th Geo: Hazards" },
-                { testNo: "SGT - 27", subject: "SGT History", topic: "1-3" },
-                { testNo: "BSR - 46", subject: "SSC/RRB Rea & Che", topic: "Compound Interest | Matter & States of Matter" },
-                { testNo: "TNA - 36", subject: "TNPSC Prelims", topic: "Unit III: Indian History (only), Maths: Full Test" }
-            ]},
-            { date: "09/10/2026", weekday: "Friday", entries: [
-                { testNo: "NTN - 46", subject: "TNPSC TNS", topic: "நடப்பு நிகழ்வுகள், CA: Oct 1 - 7" },
-                { testNo: "NTE - 46", subject: "TET Psychology", topic: "Unit 6: Intelligence & Creativity" },
-                { testNo: "SGT - 28", subject: "SGT Tamil", topic: "10th இயல் 1" },
-                { testNo: "BSR - 47", subject: "SSC/RRB English", topic: "CA: Oct 1 - 7" },
-                { testNo: "TNA - 37", subject: "TNPSC Prelims", topic: "Unit III: INM (only), Tamil: Full Test" }
-            ]},
-            { date: "12/10/2026", weekday: "Monday", entries: [
-                { testNo: "NTN - 47", subject: "TNPSC Maths", topic: "Integers, Decimal, Exponents & Powers" },
-                { testNo: "NTE - 47", subject: "TET", topic: "Tamil 8th Iyal 3, 4 | Maths 7th Unit 2 | SS 8th Geo: Measurements, Industries" },
-                { testNo: "SGT - 29", subject: "SGT Tamil", topic: "9th Revision 1-5" },
-                { testNo: "BSR - 48", subject: "SSC/RRB Math & Phy", topic: "Full Revision" },
-                { testNo: "TNA - 38", subject: "TNPSC Prelims", topic: "Unit II - Indian Geography" }
-            ]},
-            { date: "14/10/2026", weekday: "Wednesday", entries: [
-                { testNo: "NTN - 48", subject: "TNPSC Tamil", topic: "6th Term II - இலக்கணம்" },
-                { testNo: "NTE - 48", subject: "TET", topic: "English 8th Unit 7, 8 | Sci 7th Heat and Temperature | SS 8th Geo: Exploring Continents" },
-                { testNo: "SGT - 30", subject: "SGT History", topic: "4-6" },
-                { testNo: "BSR - 49", subject: "SSC/RRB Rea & Che", topic: "Atomic Structure" },
-                { testNo: "TNA - 39", subject: "TNPSC Prelims", topic: "Unit V: Indian Economy (only), Maths: Full Test" }
-            ]},
-            { date: "16/10/2026", weekday: "Friday", entries: [
-                { testNo: "NTN - 49", subject: "TNPSC Geo", topic: "Rock and Soil, CA: Oct 8 - 15" },
-                { testNo: "NTE - 49", subject: "TET Psychology", topic: "Unit 7: Personality Theories upto Type and Trait" },
-                { testNo: "SGT - 31", subject: "SGT Tamil", topic: "10th இயல் 2" },
-                { testNo: "BSR - 50", subject: "SSC/RRB English", topic: "CA: Oct 8 - 15" },
-                { testNo: "TNA - 40", subject: "TNPSC Prelims", topic: "Unit V: Development Administration in TN (only), Tamil: Full Test" }
-            ]},
-            { date: "19/10/2026", weekday: "Monday", entries: [
-                { testNo: "NTN - 50", subject: "TNPSC Maths", topic: "Rational Numbers, Square & Roots, Cube & Roots" },
-                { testNo: "NTE - 50", subject: "TET", topic: "Tamil 8th Iyal 5, 6 | Maths 7th Unit 1 | SS 8th Geo: Algebra, Map Reading" },
-                { testNo: "SGT - 32", subject: "SGT Tamil", topic: "9th Revision 6-9" },
-                { testNo: "BSR - 51", subject: "BANK/SSC/RRB Math & Phy", topic: "Profit & Loss" },
-                { testNo: "TNA - 41", subject: "TNPSC Prelims", topic: "Unit VI: History, Culture, Heritage and Socio-Political Movements in TN" }
-            ]},
-            { date: "21/10/2026", weekday: "Wednesday", entries: [
-                { testNo: "NTN - 51", subject: "TNPSC Tamil", topic: "6th Term III - இலக்கணம்" },
-                { testNo: "NTE - 51", subject: "TET", topic: "English 8th Unit 1-4 | Sci 7th Electricity | SS 8th: Human Rights and UNO" },
-                { testNo: "SGT - 33", subject: "SGT History", topic: "7-9" },
-                { testNo: "BSR - 52", subject: "SSC/RRB Rea & Che", topic: "Periodic Classification" },
-                { testNo: "TNA - 42", subject: "TNPSC Prelims", topic: "Part B: Aptitude and Mental Ability" }
-            ]},
-            { date: "23/10/2026", weekday: "Friday", entries: [
-                { testNo: "NTN - 52", subject: "TNPSC TNS", topic: "தமிழ் இலக்கியம், CA: Oct 16 - 21" },
-                { testNo: "NTE - 52", subject: "TET Psychology", topic: "Unit 7: Personality Full" },
-                { testNo: "SGT - 34", subject: "SGT Tamil", topic: "10th இயல் 3" },
-                { testNo: "BSR - 53", subject: "SSC/RRB English", topic: "CA: Oct 16 - 21" },
-                { testNo: "TNA - 43", subject: "TNPSC Prelims", topic: "Unit I: General Science, Tamil: Full Test" }
-            ]},
-            { date: "26/10/2026", weekday: "Monday", entries: [
-                { testNo: "NTN - 53", subject: "TNPSC Maths", topic: "Simplification" },
-                { testNo: "NTE - 53", subject: "TET", topic: "Tamil 8th Iyal 7, 8 | Maths 7th Unit 4 | SS 8th: Direct and Road Safety Rules" },
-                { testNo: "SGT - 35", subject: "SGT Physics", topic: "9th Measurement - Motion" },
-                { testNo: "BSR - 54", subject: "SSC/RRB Math & Phy", topic: "Full Revision" }
-            ]},
-            { date: "28/10/2026", weekday: "Wednesday", entries: [
-                { testNo: "NTN - 54", subject: "TNPSC Tamil", topic: "6th Full - இலக்கணம்" },
-                { testNo: "NTE - 54", subject: "TET", topic: "English 8th Unit 5-8 | Sci 7th Light | SS 8th: Geography Full" },
-                { testNo: "SGT - 36", subject: "SGT History", topic: "10-11" },
-                { testNo: "BSR - 55", subject: "SSC/RRB Rea & Che", topic: "Chemical Reactions & Bonds" },
-                { testNo: "Full Mock Test (OMR)", subject: "TNPSC Prelims", topic: "Full Syllabus Mock Test" }
-            ]},
-            { date: "30/10/2026", weekday: "Friday", entries: [
-                { testNo: "NTN - 55", subject: "TNPSC INM", topic: "Moderate-Extremist-Bengal Partition, CA: Oct 22 - 28" },
-                { testNo: "NTE - 55", subject: "TET Psychology", topic: "Unit 8: Full Revision" },
-                { testNo: "SGT - 37", subject: "SGT Tamil", topic: "10th இயல் 4" },
-                { testNo: "BSR - 56", subject: "SSC/RRB English", topic: "CA: Oct 22 - 28" }
-            ]}
-        ]
-    },
-    {
-        examName: "UG TRB",
-        dates: [
-            { date: "05/10/2026", weekday: "Monday", entries: [
-                { testNo: "UGE - 90", subject: "English", topic: "UNIT – V AMERICAN LITERATURE: I. Prose Detailed Study: R.W. Emerson – Self – Reliance, Martin Luther King – I have a Dream, Abraham Lincoln – Gettysburg Address. Non-Detailed Study: H.D. Thoreau – A Battle of Ants" },
-                { testNo: "UGM – 85", subject: "Maths", topic: "Unit 8: Mechanics - Statics: Forces on a rigid body – Moment of a force – General motion of a rigid body – Equivalent system of forces – Parallel Forces – Forces along the sides of Triangle Couples." },
-                { testNo: "UGZ - 64", subject: "Zoology", topic: "Unit III - CELL AND MOLECULAR BIOLOGY: Compound microscope - Phase contrast microscope - Electron microscope - Light and Dark field microscopes - Cytological techniques - fixation - staining - centrifugation- sedimentation co-efficient" },
-                { testNo: "UGP - 65", subject: "Physics", topic: "Unit II – THERMAL PHYSICS: Kinetic theory of gases – postulates – mean free path – ideal gas equation – degrees of freedom – Boltzmann's law of equipartition of energy" }
-            ]},
-            { date: "07/10/2026", weekday: "Wednesday", entries: [
-                { testNo: "UGE - 91", subject: "English", topic: "UNIT – V: R.W. Emerson – The American Scholar. II. Poetry Detailed Study: Robert Frost – West Running Brook, Walt Whitman – Out of the Cradle, Endlessly Rocking, Emily Dickinson – I felt a Funeral" },
-                { testNo: "UGM – 86", subject: "Maths", topic: "Unit 8: Resultant of several coplanar forces – Equation of line of action of the resultant – Equilibrium of rigid body under three Coplanar forces – Reduction of Coplanar forces into single force and couples" },
-                { testNo: "UGZ - 65", subject: "Zoology", topic: "History of cell biology - Cell theory - the cell as the basic unit of living organism - Prokaryotic and Eukaryotic cell - ultrastructure of an animal cell - plasma membrane - Lipid bilayer, unit membrane, fluid mosaic and functions of plasma membrane - Cell organelles." },
-                { testNo: "UGP - 66", subject: "Physics", topic: "Unit II: Maxwell's law of distribution of molecular speed – atomicity of gases – specific heat capacity of gases ratio of cp and cv – calculation for monoatomic and diatomic gases." }
-            ]},
-            { date: "09/10/2026", weekday: "Friday", entries: [
-                { testNo: "UGE - 92", subject: "English", topic: "UNIT – V: H.W. Longfellow – Nature. Non-Detailed Study: Sylvia Plath – Lady Lazarus, Carl Sandburg – Happiness, R.W. Emerson – Brahma" },
-                { testNo: "UGM – 87", subject: "Maths", topic: "Unit 8: Laws of friction, angle of friction, Equilibrium of a body on a rough inclined plane acted on by several forces – Equilibrium of a uniform Homogeneous string" },
-                { testNo: "UGZ - 66", subject: "Zoology", topic: "ERC - Ribosomes - Golgi complex - Lysosomes - Centrioles and mitochondria - Nucleus - Nucleolus - structure and functions of chromosomes - heterochromatin and euchromatin - Giant chromosome - Polytene and Lambrush chromosome - cell cycle - mitosis and meiosis." },
-                { testNo: "UGP - 67", subject: "Physics", topic: "Unit II Mayer's relation – experimental determination of cp and cv – Joule-Kelvin effect – theory and experiment – liquefaction of gases – hydrogen, oxygen, air, helium – thermal conductivity of solids" }
-            ]},
-            { date: "12/10/2026", weekday: "Monday", entries: [
-                { testNo: "UGE - 93", subject: "English", topic: "UNIT – V: III. Drama Detailed Study: Arthur Miller – Death of a Salesman, Tennessee Williams – The Glass Menagerie. IV. Short Stories" },
-                { testNo: "UGM – 88", subject: "Maths", topic: "Unit 8: Catenary – Suspension bridge – Centre of Gravity of uniform rigid bodies." },
-                { testNo: "UGZ - 67", subject: "Zoology", topic: "Cancer - types - causes - diagnosis - characteristics and treatment - Gene responsible for aging - stem cells." },
-                { testNo: "UGP - 68", subject: "Physics", topic: "Unit II Forbe's and Lee's disc method – Stefan's law – determination of Stefan's constant – solar constant – temperature of the Sun – first law of thermodynamics – isothermal, adiabatic, isochoric, isobaric, cyclic processes" }
-            ]},
-            { date: "14/10/2026", weekday: "Wednesday", entries: [
-                { testNo: "UGE - 94", subject: "English", topic: "Edgar Allan Poe – The Cask of Amontillado, O. Henry – Let Me Feel Your Pulse. UNIT – V: Hans Christian Andersen – The Little Match Girl, T.S. Arthur – An Angel in Disguise. V. Fiction: Nathaniel Hawthorne – The Scarlet Letter, Toni Morrison – Beloved" },
-                { testNo: "UGM – 89", subject: "Maths", topic: "Unit 8: Dynamics: Velocity and Acceleration - Coplanar motion – Rectilinear motion under constant forces – Acceleration and retardation thrust on a plane." },
-                { testNo: "UGZ - 68", subject: "Zoology", topic: "Nucleic acids – Molecular structure of DNA and RNA - Types of RNA - DNA replication - Role of RNA and ribosome in protein synthesis - Regulation of Protein synthesis." },
-                { testNo: "UGP - 69", subject: "Physics", topic: "Unit II Carnot's engine – Carnot's cycle – second law of thermodynamics – Carnot's theorem – entropy – reversible and irreversible process" }
-            ]},
-            { date: "19/10/2026", weekday: "Monday", entries: [
-                { testNo: "UGE - 95", subject: "English", topic: "UNIT – VI INDIAN WRITING IN ENGLISH: I. Prose Detailed Study: M.K. Gandhi – The Gospel of Non-Violence. Non-Detailed Study: S. Radhakrishnan – The World Community, A.P.J. Abdul Kalam – The Power of Prayer. II. Poetry Detailed Study: Sir Aurobindo Ghosh – The Tiger and the Deer, Saroji Naiad – Love and Death" },
-                { testNo: "UGM – 90", subject: "Maths", topic: "Unit 8: Motion along a Vertical line under gravity – Motion along an inclined plane – motion of connected particles – Newton's Laws of motion." },
-                { testNo: "UGZ - 69", subject: "Zoology", topic: "UNIT VII - DEVELOPMENTAL BIOLOGY: Origin of germ cells - Gametogenesis - Process of spermatogenesis and oogenesis - Types of sperms - Types of eggs and egg membranes - Structure of sperm and ovum in mammals - Fertilization - Acrosomal reaction - Cortical reaction, physiological and biochemical changes and significance." },
-                { testNo: "UGP - 70", subject: "Physics", topic: "Unit II Maxwell's thermodynamic relations and their applications – thirdlaw of thermodynamics." }
-            ]},
-            { date: "21/10/2026", weekday: "Wednesday", entries: [
-                { testNo: "UGE - 96", subject: "English", topic: "UNIT – VI Non-Detailed Study: Vikram Seth – Evening Wheat, Nissim Ezekiel – Good Bye Party, Kamala Das – An Introduction, A.K. Ramanujam – Of Mothers, Among other Things. III. Drama Detailed Study: Girish Karnad – Nagamandala" },
-                { testNo: "UGM – 91", subject: "Maths", topic: "Unit 8: Work, Energy and power – Work – Conservative field of force – Power" },
-                { testNo: "UGZ - 70", subject: "Zoology", topic: "Cleavage – Types of cleavage patterns - Controlling factors and laws in cleavage - Fate maps in frog and chick. Blastulation and gastrulation in amphioxus, frog and chick." },
-                { testNo: "UGP - 71", subject: "Physics", topic: "Unit X: Experimental Physics: Errors and approximations – types of errors – absolute, relative and percentage of errors – significant figures – advantages of average – leastcount of instruments – calibration techniques – curve plotting – least square refinement – dimensional analysis and uses – parallax method" }
-            ]},
-            { date: "23/10/2026", weekday: "Friday", entries: [
-                { testNo: "UGE - 96", subject: "English", topic: "UNIT – VI: Mahesh Dattani – Dance Like a Man. Non-Detailed Study: Vijay Tendulkar – Silence! The court is in session" },
-                { testNo: "UGM – 92", subject: "Maths", topic: "Unit 8: Simple Harmonic Motion (S.H.M) – S.H.M along a horizontal line – S.H.M along a Vertical line – Motion under gravity in a resisting medium." },
-                { testNo: "UGZ - 71", subject: "Zoology", topic: "Organogenesis - Development of brain, eye and ear in vertebrate animals - Extra-embryonic membranes - Placentation in mammals - Mechanism of induction" },
-                { testNo: "UGP - 72", subject: "Physics", topic: "Unit X: Verniercalipers – screw gauge – travelling microscope – optic lever – Haier's apparatus – calorimeter" }
-            ]},
-            { date: "24/10/2026", weekday: "Monday", entries: [
-                { testNo: "UGE - 97", subject: "English", topic: "UNIT - V & VI REVISION" },
-                { testNo: "UGM - 93", subject: "Maths", topic: "Unit 8: Path of a projectile – Particle projected on an inclined plane – Analysis of forces acting on particles and rigid bodies on static equilibrium, equivalent systems of forces, friction, centroids and moments of inertia – Elastic Medium" },
-                { testNo: "UGZ - 72", subject: "Zoology", topic: "Human reproduction - Puberty - Menstrual cycle - Menopause - Pregnancy and related problems - Artificial insemination - Cryopreservation - IVF - Embryo transfer and its advantages - Test tube baby" },
-                { testNo: "UGP - 73", subject: "Physics", topic: "Unit X: Barton's radiation correction – focal length of concave lens by contact – galvanometer – conversion of galvanometer into ammeter and voltmeter – calibration of low range ammeter and voltmeter – ballistic galvanometer – figure of merit" }
-            ]},
-            { date: "26/10/2026", weekday: "Monday", entries: [
-                { testNo: "UGE - 98", subject: "English", topic: "UNIT IX LITERARY CRITICISM AND THEORIES: I. The Contributions of Plato and Aristotle to Literary Criticism" },
-                { testNo: "UGM - 94", subject: "Maths", topic: "Unit 8: Impact – Impulsive force – Impact of sphere – Impact of two smooth spheres – Impact of two spheres of two smooth sphere on a plane – oblique impact of two smooth spheres." },
-                { testNo: "UGZ - 73", subject: "Zoology", topic: "Aminoacetosis - Super ovulation - Artificial Reproductive Technology (ART) and embryo manipulation - Ethics in ART - Stem cells." },
-                { testNo: "UGP - 74", subject: "Physics", topic: "Unit X: Ohm meter – multimeter – tangent galvanometer – magnetometer – meter bridge – potentiometer – LCR circuits – registers and counters." }
-            ]},
-            { date: "28/10/2026", weekday: "Wednesday", entries: [
-                { testNo: "UGE - 99", subject: "English", topic: "UNIT IX: II. The Contributions of Horace, Quintilian, Longinus and Dante to the development of literary criticism." },
-                { testNo: "UGM - 95", subject: "Maths", topic: "Unit 8: Circular motion – Conical Pendulum motion of a cyclist on circular path – Circular motion on a vertical plane – relative rest in revolving cone – simple pendulum Central Orbits – Conic as Centered Orbit – Moment of inertia" },
-                { testNo: "UGZ - 74", subject: "Zoology", topic: "UNIT 3 – FULL REVISION" },
-                { testNo: "UGP - 75", subject: "Physics", topic: "Unit II: REVISION" }
-            ]},
-            { date: "30/10/2026", weekday: "Friday", entries: [
-                { testNo: "UGE - 100", subject: "English", topic: "UNIT IX: III. Orientation of Critical Theories: Mimetic Theory - Pragmatic Theories – Sidney - Dryden - Dr. Johnson – Coleridge - Arnold - T.S. Eliot." },
-                { testNo: "UGM - 96", subject: "Maths", topic: "Unit 8: REVISION" },
-                { testNo: "UGZ - 75", subject: "Zoology", topic: "UNIT 7 - FULL REVISION" },
-                { testNo: "UGP - 76", subject: "Physics", topic: "Unit X: REVISION" }
-            ]}
-        ]
-    },
-    {
-        examName: "PG TRB",
-        dates: [
-            { date: "05/10/2026", weekday: "Monday", entries: [
-                { testNo: "PGE - 15", subject: "English", topic: "Unit VII INDIAN WRITING IN ENGLISH: Nissim Ezeikel - Goodbye Party to Miss Pushpa" },
-                { testNo: "PGM: 19", subject: "Maths", topic: "Unit 2: Real Analysis - Elementary set theory – Finite, countable and uncountable sets" },
-                { testNo: "PGH-19", subject: "History", topic: "Unit 3: Babur – Jahangir" },
-                { testNo: "PGCS-06", subject: "CS", topic: "Unit 5: Data Communication: Components of a Data Communication System, Simplex, Half Duplex and Duplex Modes of Communication, Analog and Digital Signals" }
-            ]},
-            { date: "07/10/2026", weekday: "Wednesday", entries: [
-                { testNo: "PGE - 16", subject: "English", topic: "Kamala Das - An Introduction" },
-                { testNo: "PGM - 20", subject: "Maths", topic: "Unit 2: Real Analysis (Revision)" },
-                { testNo: "PGH-20", subject: "History", topic: "Unit 6: Integration of Indian States – Role of Sardar Vallabhbhai Patel – Republic – Constitution of India – Salient Features" },
-                { testNo: "PGCS-07", subject: "CS", topic: "Unit 5: Computer Networks: Network Topologies, LAN, MAN, WAN, Wireless Networks, Internet" }
-            ]},
-            { date: "09/10/2026", weekday: "Friday", entries: [
-                { testNo: "PGE - 17", subject: "English", topic: "Arundathi Roy - The God of Small Things" },
-                { testNo: "PGM - 21", subject: "Maths", topic: "Unit 2: Real Analysis (Revision)" },
-                { testNo: "PGH-21", subject: "History", topic: "Unit 6: FYPP" },
-                { testNo: "PGCS-08", subject: "CS", topic: "Unit 5 - Revision" }
-            ]},
-            { date: "12/10/2026", weekday: "Monday", entries: [
-                { testNo: "PGE - 18", subject: "English", topic: "Toru Dutt - Our Casuarina Tree" },
-                { testNo: "PGM - 22", subject: "Maths", topic: "Unit 2: Real Analysis (Revision)" },
-                { testNo: "PGH-22", subject: "History", topic: "Unit 6: Peshwa" },
-                { testNo: "PGCS-09", subject: "CS", topic: "Unit 5: World Wide Web (WWW): URL, DNS, Mapping Names to Addresses" }
-            ]},
-            { date: "14/10/2026", weekday: "Wednesday", entries: [
-                { testNo: "PGE - 19", subject: "English", topic: "Unit IV: LITERATURE FROM 1851 TO THE PRESENT DAY: Mathew Arnold - Dover Beach, The Scholar Gypsy" },
-                { testNo: "PGM - 23", subject: "Maths", topic: "Unit 2: Real Analysis (Revision)" },
-                { testNo: "PGH-23", subject: "History", topic: "Home Rule Movement – Rowlatt Act – Jallianwala Bagh massacre" },
-                { testNo: "PGCS-10", subject: "CS", topic: "Unit X: Cyber Crime: Introduction to Cyber Crime, Malware type, Kinds of Cyber Crime" }
-            ]},
-            { date: "16/10/2026", weekday: "Friday", entries: [
-                { testNo: "PGE - 20", subject: "English", topic: "Robert Browning - Andrea Del Sarto" },
-                { testNo: "PGM - 24", subject: "Maths", topic: "Unit 2: Real Analysis (Revision)" },
-                { testNo: "PGH-24", subject: "History", topic: "Gandhian Era – Non cooperation movement – Chauri Chaura" },
-                { testNo: "PGCS-11", subject: "CS", topic: "Unit 5 & 6 - Revision" }
-            ]},
-            { date: "19/10/2026", weekday: "Monday", entries: [
-                { testNo: "PGE - 21", subject: "English", topic: "Alfred Lord Tennyson - Ulysses" },
-                { testNo: "PGM - 25", subject: "Maths", topic: "Unit 2: Real Analysis (Revision)" },
-                { testNo: "PGH-25", subject: "History", topic: "Unit 3 - Full" },
-                { testNo: "PGCS-12", subject: "CS", topic: "Unit X: Cyber Security Techniques: Authentication, Encryption, Digital Signatures, Antivirus, Firewall, Steganography" },
-                { testNo: "PGT-10", subject: "Tamil", topic: "Full Test" }
-            ]},
-            { date: "21/10/2026", weekday: "Wednesday", entries: [
-                { testNo: "PGE - 22", subject: "English", topic: "Ted Hughes - The Thought Fox" },
-                { testNo: "PGM - 26", subject: "Maths", topic: "Unit 2: Real Analysis (Revision)" },
-                { testNo: "PGH-26", subject: "History", topic: "Unit IV: Carnatic Wars – Battle of Plassey – Battle of Buzar – Anglo-Mysore Wars – Peasant and Tribal Revolts" },
-                { testNo: "PGCS-13", subject: "CS", topic: "Unit 8: Revision" }
-            ]},
-            { date: "23/10/2026", weekday: "Friday", entries: [
-                { testNo: "PGE - 23", subject: "English", topic: "W.B. Yeats - Byzantium" },
-                { testNo: "PGM - 27", subject: "Maths", topic: "Unit 2: Real Analysis (Revision)" },
-                { testNo: "PGH-27", subject: "History", topic: "Unit VIII: Periyar and his Self-Respect Movement" },
-                { testNo: "PGCS-14", subject: "CS", topic: "Unit 2: Database System Concepts and Architecture: Data Models, Schemas and Instances, Three-Schema Architecture and Data Independence" }
-            ]},
-            { date: "26/10/2026", weekday: "Monday", entries: [
-                { testNo: "PGE - 24", subject: "English", topic: "Unit II: ENGLISH LITERATURE FROM 1601-1798: John Milton - Paradise Lost, Book - IX" },
-                { testNo: "PGM - 28", subject: "Maths", topic: "Unit 2: Real Analysis (Revision)" },
-                { testNo: "PGH-28", subject: "History", topic: "Unit 5 - Revision" },
-                { testNo: "PGCS-15", subject: "CS", topic: "Unit 2: Database Languages and Interfaces, Centralized and Client/Server Architectures for DBMS" },
-                { testNo: "PGT-10", subject: "Tamil", topic: "Full Test" }
-            ]},
-            { date: "28/10/2026", weekday: "Wednesday", entries: [
-                { testNo: "PGE - 25", subject: "English", topic: "Unit 7: Revision" },
-                { testNo: "PGM - 29", subject: "Maths", topic: "Unit 2: Real Analysis (Revision)" },
-                { testNo: "PGH-29", subject: "History", topic: "Unit 2 - Bhakti Movement" },
-                { testNo: "PGCS-16", subject: "CS", topic: "Unit 2: Revision" }
-            ]},
-            { date: "30/10/2026", weekday: "Friday", entries: [
-                { testNo: "PGE - 26", subject: "English", topic: "Unit 4: Revision" },
-                { testNo: "PGM - 30", subject: "Maths", topic: "Unit 2: Real Analysis (Revision)" },
-                { testNo: "PGH-30", subject: "History", topic: "Anna Success" },
-                { testNo: "PGCS-17", subject: "CS", topic: "Unit 5 & 2 Revision" }
-            ]}
-        ]
-    }
+// ============================================================
+// TNPSC GROUP 4 — TEST SCHEDULE (NOV-DEC 2026)
+// DR SAHITHA IAS ACADEMY | 79944 92940 | CHOOZHAL
+// Total: 45 Tests + 2 (Full Revision)
+// ============================================================
+
+let SCHEDULE = [
+  {
+    testNo: 1,
+    date: "02/11/2026",
+    day: "Monday",
+    unit: "HISTORY",
+    topic: "Indus Valley Civilization (IH-1) - Guptas (IH-2)",
+    topicTa: "சிந்து சமவெளி நாகரிகம் (IH-1) - குப்தர்கள் (IH-2)",
+    target: "TARGET - 1"
+  },
+  {
+    testNo: 2,
+    date: "03/11/2026",
+    day: "Tuesday",
+    unit: "POLITY",
+    topic: "Constitution of India (IP-1) - Preamble to the Constitution (IP-2) - Salient features of the Constitution (IP-3) - Union, State and Union Territory (IP-4)",
+    topicTa: "இந்திய அரசியலமைப்பு (IP-1) - முகவுரை (IP-2) - அரசியலமைப்பின் சிறப்பம்சங்கள் (IP-3) - ஒன்றியம், மாநிலம் மற்றும் யூனியன் பிரதேசம் (IP-4)",
+    target: "TARGET - 2"
+  },
+  {
+    testNo: 3,
+    date: "04/11/2026",
+    day: "Wednesday",
+    unit: "TNS",
+    topic: "History of Tamil Society (TNS-1), related archaeological discoveries (TNS-2)",
+    topicTa: "தமிழ்ச் சமூகத்தின் வரலாறு (TNS-1), தொடர்புடைய தொல்பொருள் கண்டுபிடிப்புகள் (TNS-2)",
+    target: "TARGET - 3"
+  },
+  {
+    testNo: 4,
+    date: "05/11/2026",
+    day: "Thursday",
+    unit: "MATHS + CA",
+    topic: "Simplification (TA-1) - Percentage (TA-2)",
+    topicTa: "எளிமைப்படுத்துதல் (TA-1) - சதவீதம் (TA-2)",
+    target: "TARGET - 4"
+  },
+  {
+    testNo: 5,
+    date: "06/11/2026",
+    day: "Friday",
+    unit: "TAMIL",
+    topic: "Unit I: Grammar (Ilakhanam)",
+    topicTa: "அலகு I: இலக்கணம்",
+    target: "TARGET - 5"
+  },
+  {
+    testNo: 6,
+    date: "09/11/2026",
+    day: "Monday",
+    unit: "HISTORY",
+    topic: "Delhi Sultans (IH-3) - South Indian History (IH-8)",
+    topicTa: "டெல்லி சுல்தான்கள் (IH-3) - தென்னிந்திய வரலாறு (IH-8)",
+    target: "TARGET - 6"
+  },
+  {
+    testNo: 7,
+    date: "10/11/2026",
+    day: "Tuesday",
+    unit: "POLITY",
+    topic: "Citizenship (IP-5) - Fundamental Rights (IP-6) - Fundamental Duties (IP-7) - Directive Principles of State Policy (IP-8)",
+    topicTa: "குடியுரிமை (IP-5) - அடிப்படை உரிமைகள் (IP-6) - அடிப்படைக் கடமைகள் (IP-7) - அரசு கொள்கை வழிகாட்டு நெறிமுறைகள் (IP-8)",
+    target: "TARGET - 7"
+  },
+  {
+    testNo: 8,
+    date: "11/11/2026",
+    day: "Wednesday",
+    unit: "TNS",
+    topic: "Tamil Literature from Sangam age till contemporary times (TNS-3)",
+    topicTa: "சங்க காலம் முதல் தற்காலம் வரையிலான தமிழ் இலக்கியம் (TNS-3)",
+    target: "TARGET - 8"
+  },
+  {
+    testNo: 9,
+    date: "12/11/2026",
+    day: "Thursday",
+    unit: "MATHS + CA",
+    topic: "Highest Common Factor (HCF) - Lowest Common Multiple (LCM) (TA-3)",
+    topicTa: "மீப்பெரு பொது வகுத்தி (HCF) - மீச்சிறு பொது மடங்கு (LCM) (TA-3)",
+    target: "TARGET - 9"
+  },
+  {
+    testNo: 10,
+    date: "13/11/2026",
+    day: "Friday",
+    unit: "TAMIL",
+    topic: "Unit II: Sollakarathi (Vocabulary)",
+    topicTa: "அலகு II: சொல்லகராதி",
+    target: "TARGET - 10"
+  },
+  {
+    testNo: 11,
+    date: "16/11/2026",
+    day: "Monday",
+    unit: "HISTORY",
+    topic: "Mughals (IH-4) - Marathas (IH-5)",
+    topicTa: "முகலாயர்கள் (IH-4) - மராட்டியர்கள் (IH-5)",
+    target: "TARGET - 11"
+  },
+  {
+    testNo: 12,
+    date: "17/11/2026",
+    day: "Tuesday",
+    unit: "POLITY",
+    topic: "Union Executive (IP-9) - Union Legislature (IP-10) - State Executive (IP-11) - State Legislature (IP-12)",
+    topicTa: "ஒன்றிய நிர்வாகம் (IP-9) - ஒன்றிய சட்டமன்றம் (IP-10) - மாநில நிர்வாகம் (IP-11) - மாநில சட்டமன்றம் (IP-12)",
+    target: "TARGET - 12"
+  },
+  {
+    testNo: 13,
+    date: "18/11/2026",
+    day: "Wednesday",
+    unit: "TNS",
+    topic: "Thirukkural - Significance as Secular Literature - Relevance to everyday life - Impact on Humanity - Universal Values - Relevance to Socio-politico-economic affairs - Philosophical content (TNS-4)",
+    topicTa: "திருக்குறள் - சமயச்சார்பற்ற இலக்கியமாக முக்கியத்துவம் - அன்றாட வாழ்வில் பொருத்தம் - மனிதகுலத்தில் தாக்கம் - உலகளாவிய மதிப்புகள் - சமூக-அரசியல்-பொருளாதார விவகாரங்களில் பொருத்தம் - தத்துவ உள்ளடக்கம் (TNS-4)",
+    target: "TARGET - 13"
+  },
+  {
+    testNo: 14,
+    date: "19/11/2026",
+    day: "Thursday",
+    unit: "MATHS + CA",
+    topic: "Ratio and Proportion (TA-4)",
+    topicTa: "விகிதம் மற்றும் விகிதாசாரம் (TA-4)",
+    target: "TARGET - 14"
+  },
+  {
+    testNo: 15,
+    date: "20/11/2026",
+    day: "Friday",
+    unit: "TAMIL",
+    topic: "Unit III: Writing Skills (Ezhuthum Thiran)",
+    topicTa: "அலகு III: எழுதும் திறன்",
+    target: "TARGET - 15"
+  },
+  {
+    testNo: 16,
+    date: "23/11/2026",
+    day: "Monday",
+    unit: "INM",
+    topic: "National Renaissance (INM-1) - Early Uprising against British Rule (INM-2) - Indian National Congress (INM-3)",
+    topicTa: "தேசிய மறுமலர்ச்சி (INM-1) - பிரிட்டிஷ் ஆட்சிக்கு எதிரான ஆரம்பகால எழுச்சி (INM-2) - இந்திய தேசிய காங்கிரஸ் (INM-3)",
+    target: "TARGET - 16"
+  },
+  {
+    testNo: 17,
+    date: "24/11/2026",
+    day: "Tuesday",
+    unit: "POLITY",
+    topic: "Local Governments - Panchayat Raj (IP-13) - Spirit of Federalism: Centre-State Relationships (IP-14)",
+    topicTa: "உள்ளாட்சி அமைப்புகள் - பஞ்சாயத்து ராஜ் (IP-13) - கூட்டாட்சி உணர்வு: மத்திய-மாநில உறவுகள் (IP-14)",
+    target: "TARGET - 17"
+  },
+  {
+    testNo: 18,
+    date: "25/11/2026",
+    day: "Wednesday",
+    unit: "TNS",
+    topic: "Role of Tamil Nadu in Freedom Struggle (TNS-5) - Role of Women in Freedom Struggle (TNS-6)",
+    topicTa: "விடுதலைப் போரில் தமிழ்நாட்டின் பங்கு (TNS-5) - விடுதலைப் போரில் பெண்களின் பங்கு (TNS-6)",
+    target: "TARGET - 18"
+  },
+  {
+    testNo: 19,
+    date: "26/11/2026",
+    day: "Thursday",
+    unit: "MATHS + CA",
+    topic: "Simple Interest - Compound Interest",
+    topicTa: "தனிவட்டி - கூட்டுவட்டி",
+    target: "TARGET - 19"
+  },
+  {
+    testNo: 20,
+    date: "27/11/2026",
+    day: "Friday",
+    unit: "TAMIL",
+    topic: "Unit IV: Technical Terms (Kalaichorkal)",
+    topicTa: "அலகு IV: கலைச் சொற்கள்",
+    target: "TARGET - 20"
+  },
+  {
+    testNo: 21,
+    date: "30/11/2026",
+    day: "Monday",
+    unit: "INM",
+    topic: "Emergence of Leaders - B.R. Ambedkar, Bhagat Singh, Bharathiar, V.O. Chidambaranar, Thanthai Periyar, Jawaharlal Nehru, Rabindranath Tagore, Kamarajar, Mahatma Gandhi, Maulana Abul Kalam Azad, Rajaji, Subhash Chandra Bose, Muthulakshmi Ammaiyar, Muvalur Ramamirtham, and other National Leaders",
+    topicTa: "தலைவர்களின் எழுச்சி - பி.ஆர். அம்பேத்கர், பகத் சிங், பாரதியார், வ.உ.சிதம்பரனார், தந்தை பெரியார், ஜவகர்லால் நேரு, ரவீந்திரநாத் தாகூர், காமராஜர், மகாத்மா காந்தி, மௌலானா அபுல் கலாம் ஆசாத், ராஜாஜி, சுபாஷ் சந்திர போஸ், முத்துலக்ஷ்மி அம்மையார், மூவலூர் ராமாமிர்தம் மற்றும் பிற தேசிய தலைவர்கள்",
+    target: "TARGET - 21"
+  },
+  {
+    testNo: 22,
+    date: "01/12/2026",
+    day: "Tuesday",
+    unit: "POLITY",
+    topic: "Election - Judiciary in India - Rule of Law",
+    topicTa: "தேர்தல் - இந்தியாவில் நீதித்துறை - சட்டத்தின் ஆட்சி",
+    target: "TARGET - 22"
+  },
+  {
+    testNo: 23,
+    date: "02/12/2026",
+    day: "Wednesday",
+    unit: "TNS",
+    topic: "Early Agitations against British Rule",
+    topicTa: "பிரிட்டிஷ் ஆட்சிக்கு எதிரான ஆரம்பகால போராட்டங்கள்",
+    target: "TARGET - 23"
+  },
+  {
+    testNo: 24,
+    date: "03/12/2026",
+    day: "Thursday",
+    unit: "MATHS + CA",
+    topic: "Time and Work",
+    topicTa: "நேரம் மற்றும் வேலை",
+    target: "TARGET - 24"
+  },
+  {
+    testNo: 25,
+    date: "04/12/2026",
+    day: "Friday",
+    unit: "TAMIL",
+    topic: "Unit V: Vaasithal - Purindhu Kollum Thiran (Reading Comprehension)",
+    topicTa: "அலகு V: வாசித்தல் - புரிந்து கொள்ளும் திறன்",
+    target: "TARGET - 25"
+  },
+  {
+    testNo: 26,
+    date: "07/12/2026",
+    day: "Monday",
+    unit: "INM",
+    topic: "Different modes of agitation of Tamil Nadu and movements",
+    topicTa: "தமிழ்நாட்டின் பல்வேறு போராட்ட முறைகள் மற்றும் இயக்கங்கள்",
+    target: "TARGET - 26"
+  },
+  {
+    testNo: 27,
+    date: "08/12/2026",
+    day: "Tuesday",
+    unit: "POLITY",
+    topic: "Corruption in Public Life - Anti-Corruption Measures: Lokpal and Lokayukta - Right to Information - Empowerment of Women - Consumer Protection Forums - Human Rights Charter",
+    topicTa: "பொது வாழ்வில் ஊழல் - ஊழல் எதிர்ப்பு நடவடிக்கைகள்: லோக்பால் மற்றும் லோகாயுக்தா - தகவல் அறியும் உரிமை - பெண்கள் அதிகாரமளித்தல் - நுகர்வோர் பாதுகாப்பு மன்றங்கள் - மனித உரிமைகள் சாசனம்",
+    target: "TARGET - 27"
+  },
+  {
+    testNo: 28,
+    date: "09/12/2026",
+    day: "Wednesday",
+    unit: "TNS",
+    topic: "Various Social Reformers, Social Reform Movements and Social Transformation of Tamil Nadu",
+    topicTa: "பல்வேறு சமூக சீர்திருத்தவாதிகள், சமூக சீர்திருத்த இயக்கங்கள் மற்றும் தமிழ்நாட்டின் சமூக மாற்றம்",
+    target: "TARGET - 28"
+  },
+  {
+    testNo: 29,
+    date: "10/12/2026",
+    day: "Thursday",
+    unit: "MATHS + CA",
+    topic: "Area",
+    topicTa: "பரப்பளவு",
+    target: "TARGET - 29"
+  },
+  {
+    testNo: 30,
+    date: "11/12/2026",
+    day: "Friday",
+    unit: "TAMIL",
+    topic: "Unit VI: Simple Translation (Eliya Mozhi Peyarpu)",
+    topicTa: "அலகு VI: எளிய மொழிபெயர்ப்பு",
+    target: "TARGET - 30"
+  },
+  {
+    testNo: 31,
+    date: "14/12/2026",
+    day: "Monday",
+    unit: "INM",
+    topic: "Characteristics of Indian Culture, Unity in Diversity - Race, Language, Custom; India as a Secular State",
+    topicTa: "இந்திய கலாச்சாரத்தின் பண்புகள், பல்வேறு வகையில் ஒற்றுமை - இனம், மொழி, வழக்கம்; மதச்சார்பற்ற நாடாக இந்தியா",
+    target: "TARGET - 31"
+  },
+  {
+    testNo: 32,
+    date: "15/12/2026",
+    day: "Tuesday",
+    unit: "POLITY",
+    topic: "Political Parties and Political System in TN and in India",
+    topicTa: "தமிழ்நாடு மற்றும் இந்தியாவில் அரசியல் கட்சிகள் மற்றும் அரசியல் அமைப்பு",
+    target: "TARGET - 32"
+  },
+  {
+    testNo: 33,
+    date: "16/12/2026",
+    day: "Wednesday",
+    unit: "TN-ADM",
+    topic: "Education and Health Systems in Tamil Nadu",
+    topicTa: "தமிழ்நாட்டில் கல்வி மற்றும் சுகாதார அமைப்புகள்",
+    target: "TARGET - 33"
+  },
+  {
+    testNo: 34,
+    date: "17/12/2026",
+    day: "Thursday",
+    unit: "MATHS + CA",
+    topic: "Volume",
+    topicTa: "கனஅளவு",
+    target: "TARGET - 34"
+  },
+  {
+    testNo: 35,
+    date: "18/12/2026",
+    day: "Friday",
+    unit: "TAMIL",
+    topic: "Unit VII: Literature, Tamil Scholars and Tamil Service",
+    topicTa: "அலகு VII: இலக்கியம், தமிழ் அறிஞர்களும், தமிழ்த்தொண்டும்",
+    target: "TARGET - 35"
+  },
+  {
+    testNo: 36,
+    date: "21/12/2026",
+    day: "Monday",
+    unit: "ECO",
+    topic: "Nature of Indian Economy - Five-Year Plan Models: An Assessment - Planning Commission and NITI Aayog; Sources of Revenue - Reserve Bank of India - Finance Commission - Resource Sharing between Union and State Governments - Goods and Services Tax (GST)",
+    topicTa: "இந்திய பொருளாதாரத்தின் தன்மை - ஐந்தாண்டு திட்ட மாதிரிகள்: மதிப்பீடு - திட்டக் கமிஷன் மற்றும் நிதி ஆயோக்; வருவாய் ஆதாரங்கள் - இந்திய ரிசர்வ் வங்கி - நிதி ஆணையம் - ஒன்றிய மற்றும் மாநில அரசுகளுக்கு இடையே வளப் பங்கீடு - சரக்கு மற்றும் சேவை வரி (GST)",
+    target: "TARGET - 36"
+  },
+  {
+    testNo: 37,
+    date: "22/12/2026",
+    day: "Tuesday",
+    unit: "GEO",
+    topic: "Earth Location - Physical Features - Monsoon, Rainfall, Weather and Climate - Water Resources - Rivers",
+    topicTa: "பூமியின் அமைவிடம் - இயற்கை அம்சங்கள் - பருவமழை, மழைப்பொழிவு, வானிலை மற்றும் காலநிலை - நீர் வளங்கள் - ஆறுகள்",
+    target: "TARGET - 37"
+  },
+  {
+    testNo: 38,
+    date: "23/12/2026",
+    day: "Wednesday",
+    unit: "TN-ADM",
+    topic: "Geography of Tamil Nadu and its Impact on Economic Growth",
+    topicTa: "தமிழ்நாட்டின் புவியியல் மற்றும் பொருளாதார வளர்ச்சியில் அதன் தாக்கம்",
+    target: "TARGET - 38"
+  },
+  {
+    testNo: 39,
+    date: "24/12/2026",
+    day: "Thursday",
+    unit: "MATHS + CA",
+    topic: "Logical Reasoning - Puzzles - Dice",
+    topicTa: "தர்க்க பகுத்தறிவு - புதிர்கள் - பகடை",
+    target: "TARGET - 39"
+  },
+  {
+    testNo: 40,
+    date: "25/12/2026",
+    day: "Friday",
+    unit: "TAMIL",
+    topic: "Tamil Full Revision",
+    topicTa: "தமிழ் முழு மறுவாய்ப்பு",
+    target: "TARGET - 40"
+  },
+  {
+    testNo: 41,
+    date: "28/12/2026",
+    day: "Monday",
+    unit: "ECO",
+    topic: "Economic Trends - Employment Generation, Land Reforms and Agriculture - Application of Science and Technology in Agriculture; Industrial Growth - Rural Welfare Oriented Programmes",
+    topicTa: "பொருளாதார போக்குகள் - வேலைவாய்ப்பு உருவாக்கம், நில சீர்திருத்தங்கள் மற்றும் விவசாயம் - விவசாயத்தில் அறிவியல் மற்றும் தொழில்நுட்பத்தின் பயன்பாடு; தொழில்துறை வளர்ச்சி - கிராமப்புற நலன் சார்ந்த திட்டங்கள்",
+    target: "TARGET - 41"
+  },
+  {
+    testNo: 42,
+    date: "29/12/2026",
+    day: "Tuesday",
+    unit: "GEO",
+    topic: "Soil, Minerals and Natural Resources - Forest and Wildlife - Agriculture Pattern; Transport - Communication; Population Density and Distribution in Tamil Nadu and India; Calamities - Disaster Management - Environment - Climate Change; Geographical Landmarks; Current Affairs",
+    topicTa: "மண், தாதுக்கள் மற்றும் இயற்கை வளங்கள் - காடு மற்றும் வனவிலங்கு - விவசாய முறை; போக்குவரத்து - தகவல் தொடர்பு; தமிழ்நாடு மற்றும் இந்தியாவில் மக்கள்தொகை அடர்த்தி மற்றும் பரவல்; பேரிடர்கள் - பேரிடர் மேலாண்மை - சுற்றுச்சூழல் - காலநிலை மாற்றம்; புவியியல் அடையாளங்கள்; நடப்பு நிகழ்வுகள்",
+    target: "TARGET - 42"
+  },
+  {
+    testNo: 43,
+    date: "30/12/2026",
+    day: "Wednesday",
+    unit: "TN-ADM",
+    topic: "Welfare Schemes of Government; Current Socio-Economic Issues; Current Affairs",
+    topicTa: "அரசின் நலத்திட்டங்கள்; தற்போதைய சமூக-பொருளாதார பிரச்சினைகள்; நடப்பு நிகழ்வுகள்",
+    target: "TARGET - 43"
+  },
+  {
+    testNo: 44,
+    date: "31/12/2026",
+    day: "Thursday",
+    unit: "MATHS + CA",
+    topic: "Visual Reasoning - Alpha Numeric Reasoning - Number Series",
+    topicTa: "காட்சி பகுத்தறிவு - எண்ணெழுத்து பகுத்தறிவு - எண் தொடர்",
+    target: "TARGET - 44"
+  },
+  {
+    testNo: 45,
+    date: "01/01/2027",
+    day: "Friday",
+    unit: "ECO",
+    topic: "Social Problems - Population, Education, Health, Employment, Poverty; Social Justice and Social Harmony as the Cornerstones of Socioeconomic Development",
+    topicTa: "சமூக பிரச்சினைகள் - மக்கள்தொகை, கல்வி, சுகாதாரம், வேலைவாய்ப்பு, வறுமை; சமூக நீதி மற்றும் சமூக நல்லிணக்கம் சமூக-பொருளாதார வளர்ச்சியின் மூலைக்கற்கள்",
+    target: "TARGET - 45"
+  }
 ];
+
+// ============================================================
+// SCHEDULE METADATA
+// ============================================================
+let SCHEDULE_META = {
+  examTitle: "TNPSC GROUP IV",
+  month: "NOVEMBER - DECEMBER 2026",
+  totalTests: "45 + 2",
+  institute: "DR SAHITHA IAS ACADEMY",
+  phone: "79944 92940",
+  location: "CHOOZHAL"
+};
+
+// ============================================================
+// SUBJECT INDEX — quick lookup by unit code
+// ============================================================
+const UNIT_NAMES = {
+  "HISTORY":  { en: "History",              ta: "வரலாறு",              color: "#ef4444" },
+  "POLITY":   { en: "Polity",               ta: "அரசியல்",             color: "#3b82f6" },
+  "TNS":      { en: "Tamil Nadu Studies",   ta: "தமிழ்நாடு ஆய்வுகள்",  color: "#8b5cf6" },
+  "MATHS + CA": { en: "Maths + Current Affairs", ta: "கணிதம் + நடப்பு", color: "#10b981" },
+  "TAMIL":    { en: "Tamil",                ta: "தமிழ்",               color: "#f59e0b" },
+  "INM":      { en: "Indian National Movement", ta: "இந்திய தேசிய இயக்கம்", color: "#ec4899" },
+  "ECO":      { en: "Economy",              ta: "பொருளாதாரம்",         color: "#14b8a6" },
+  "GEO":      { en: "Geography",            ta: "புவியியல்",           color: "#6366f1" },
+  "TN-ADM":   { en: "TN Administration",    ta: "தமிழ்நாடு நிர்வாகம்", color: "#f97316" }
+};
+
+// ============================================================
+// HELPER FUNCTIONS
+// ============================================================
+
+// Get tests by date range (format: "DD/MM/YYYY")
+function getTestsByDateRange(startDate, endDate) {
+  const parse = d => { const [dd, mm, yyyy] = d.split('/'); return new Date(yyyy, mm-1, dd); };
+  const start = parse(startDate), end = parse(endDate);
+  return SCHEDULE.filter(t => {
+    const d = parse(t.date);
+    return d >= start && d <= end;
+  });
+}
+
+// Get tests by unit
+function getTestsByUnit(unit) {
+  return SCHEDULE.filter(t => t.unit === unit);
+}
+
+// Get test by test number
+function getTestByNo(testNo) {
+  return SCHEDULE.find(t => t.testNo === testNo) || null;
+}
+
+// Get today's test (if any)
+function getTodaysTest() {
+  const today = new Date();
+  const dd = String(today.getDate()).padStart(2, '0');
+  const mm = String(today.getMonth()+1).padStart(2, '0');
+  const yyyy = today.getFullYear();
+  const todayStr = `${dd}/${mm}/${yyyy}`;
+  return SCHEDULE.filter(t => t.date === todayStr);
+}
+
+// Get next upcoming test
+function getNextTest() {
+  const today = new Date();
+  return SCHEDULE.find(t => {
+    const [dd, mm, yyyy] = t.date.split('/');
+    return new Date(yyyy, mm-1, dd) >= today;
+  }) || null;
+}
+
+// Group schedule by unit
+function groupByUnit() {
+  const grouped = {};
+  SCHEDULE.forEach(t => {
+    if (!grouped[t.unit]) grouped[t.unit] = [];
+    grouped[t.unit].push(t);
+  });
+  return grouped;
+}
+
+// Format date for display: "02/11/2026" -> "02 Nov 2026 (Monday)"
+function formatDate(dateStr, day) {
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const [dd, mm, yyyy] = dateStr.split('/');
+  return `${dd} ${months[parseInt(mm)-1]} ${yyyy} (${day})`;
+}
+
+// ============================================================
+// RENDER FUNCTION — call this to display schedule in your app
+// ============================================================
+function renderSchedule() {
+  const container = document.getElementById('scheduleContainer');
+  if (!container) return;
+
+  const grouped = groupByUnit();
+  let html = '';
+
+  // Header
+  html += `<div style="text-align:center; margin-bottom:20px;">
+    <div style="font-size:1.5rem; font-weight:800; color:var(--accent);">${SCHEDULE_META.institute}</div>
+    <div style="font-size:1.2rem; font-weight:700; margin-top:4px;">${SCHEDULE_META.examTitle}</div>
+    <div style="font-size:1rem; color:var(--text-primary); opacity:0.8;">${SCHEDULE_META.month} | Total: ${SCHEDULE_META.totalTests}</div>
+    <div style="font-size:0.8rem; opacity:0.6;">📞 ${SCHEDULE_META.phone} | 📍 ${SCHEDULE_META.location}</div>
+  </div>`;
+
+  // All tests in order
+  html += `<div style="margin-top:20px;">`;
+  SCHEDULE.forEach(t => {
+    const unitInfo = UNIT_NAMES[t.unit] || { color: "#888" };
+    html += `<div style="background:var(--card-bg); border-left:4px solid ${unitInfo.color}; border-radius:12px; padding:12px; margin-bottom:10px; box-shadow:0 2px 6px rgba(0,0,0,0.05);">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+        <div style="font-weight:800; font-size:1.1rem; color:${unitInfo.color};">TEST ${t.testNo}</div>
+        <div style="font-size:0.85rem; font-weight:600;">${formatDate(t.date, t.day)}</div>
+        <span style="background:${unitInfo.color}; color:white; padding:3px 10px; border-radius:20px; font-size:0.75rem; font-weight:700;">${t.unit}</span>
+      </div>
+      <div style="margin-top:6px; font-size:0.9rem;">${t.topic}</div>
+      <div style="margin-top:4px; font-size:0.85rem; opacity:0.8; font-style:italic;">${t.topicTa}</div>
+    </div>`;
+  });
+  html += `</div>`;
+
+  container.innerHTML = html;
+}
+
+// ============================================================
+// USAGE EXAMPLES
+// ============================================================
+// Call these anywhere in your app:
+
+// 1. Show all schedule:
+//    renderSchedule();
+
+// 2. Show next test:
+//    const next = getNextTest();
+//    console.log(next.topic);
+
+// 3. Show today's tests:
+//    const today = getTodaysTest();
+
+// 4. Show tests for a specific unit:
+//    const polityTests = getTestsByUnit('POLITY');
+
+// 5. Show tests between dates:
+//    const novTests = getTestsByDateRange('01/11/2026', '30/11/2026');
+
+// 6. Show a specific test:
+//    const test7 = getTestByNo(7);
         const dateSelector = document.getElementById("dateSelector");
         const container = document.getElementById("scheduleContainer");
         if (typeof SCHEDULE !== "undefined" && Array.isArray(SCHEDULE)) {
