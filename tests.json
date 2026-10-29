@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-29T11:01:12.668Z",
+  "version": "2026-10-29T11:03:12.238Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -442,6 +442,17 @@
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIH-01.html",
       "releaseTimestamp": 1793606400000
+    },
+    {
+      "testId": "TIH-02",
+      "examId": "TNPSC-IH",
+      "name": "TIH-02 GUPTAS (Set-1)",
+      "durationMinutes": 10,
+      "order": 1,
+      "questionCount": 20,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIH-02.html",
+      "releaseTimestamp": 0
     }
   ]
 }
