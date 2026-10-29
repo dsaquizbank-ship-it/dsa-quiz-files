@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-29T16:17:58.230Z",
+  "version": "2026-10-29T16:37:04.496Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -469,6 +469,17 @@
       "questionCount": 20,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-01.html",
+      "releaseTimestamp": 1793692800000
+    },
+    {
+      "testId": "TIP-02",
+      "examId": "TNPSC-IP",
+      "name": "TIP-02 PREAMBLE TO THE CONSTITUTION (Set-1)",
+      "durationMinutes": 10,
+      "order": 1,
+      "questionCount": 20,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-02.html",
       "releaseTimestamp": 1793692800000
     }
   ]
