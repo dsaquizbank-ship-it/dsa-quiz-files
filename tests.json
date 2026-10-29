@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-29T11:23:39.794Z",
+  "version": "2026-10-29T11:38:46.828Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -132,6 +132,12 @@
       "name": "HISTORY",
       "categoryId": "TNPSC",
       "order": 7
+    },
+    {
+      "id": "TNPSC-IP",
+      "name": "POLITY",
+      "categoryId": "TNPSC",
+      "order": 9
     }
   ],
   "tests": [
@@ -453,6 +459,17 @@
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIH-02.html",
       "releaseTimestamp": 0
+    },
+    {
+      "testId": "TIP-01",
+      "examId": "TNPSC-IP",
+      "name": "TIP-01 CONSTITUITION OF INDIA (Set-1)",
+      "durationMinutes": 10,
+      "order": 1,
+      "questionCount": 20,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-01.html",
+      "releaseTimestamp": 1793692800000
     }
   ]
 }
