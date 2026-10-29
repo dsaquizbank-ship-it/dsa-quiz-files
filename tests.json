@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-29T17:22:12.546Z",
+  "version": "2026-10-29T17:30:50.507Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -519,6 +519,17 @@
       "questionCount": 20,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TNS-1.html",
+      "releaseTimestamp": 1793779200000
+    },
+    {
+      "testId": "TNS-2",
+      "examId": "TNPSC-TS",
+      "name": "TNS-2 RELATED ARCHAEOLOGICAL DISCOVERIES (Set-1)",
+      "durationMinutes": 10,
+      "order": 1,
+      "questionCount": 20,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TNS-2.html",
       "releaseTimestamp": 1793779200000
     }
   ]
