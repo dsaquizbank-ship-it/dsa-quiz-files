@@ -56,12 +56,6 @@
       "order": 3
     },
     {
-      "id": "TNPSC-NEW",
-      "name": "TNPSC NEW",
-      "categoryId": "TNPSC",
-      "order": 2
-    },
-    {
       "id": "TETTAM",
       "name": "TET TAMIL",
       "categoryId": "TNTET",
@@ -128,27 +122,9 @@
       "order": 20
     },
     {
-      "id": "TNPSC-CA",
-      "name": "CURRENT AFFAIRS",
-      "categoryId": "TNPSC",
-      "order": 3
-    },
-    {
       "id": "TET-PSY",
       "name": "TET PSYCOLOGY",
       "categoryId": "TNTET",
-      "order": 5
-    },
-    {
-      "id": "TNPSC-TS",
-      "name": "TAMILNADU SOCIETY",
-      "categoryId": "TNPSC",
-      "order": 4
-    },
-    {
-      "id": "TNPSC-GS",
-      "name": "GENERAL SCIENCE",
-      "categoryId": "TNPSC",
       "order": 5
     },
     {
