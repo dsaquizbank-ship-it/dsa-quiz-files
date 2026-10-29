@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-29T16:50:35.636Z",
+  "version": "2026-10-29T17:03:57.003Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -491,6 +491,17 @@
       "questionCount": 20,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-03.html",
+      "releaseTimestamp": 1793692800000
+    },
+    {
+      "testId": "TIP-04",
+      "examId": "TNPSC-IP",
+      "name": "TIP-04 UNION, STATE AND UNION TERRITORY (Set-1)",
+      "durationMinutes": 10,
+      "order": 1,
+      "questionCount": 20,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-04.html",
       "releaseTimestamp": 1793692800000
     }
   ]
