@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-29T17:30:50.507Z",
+  "version": "2026-10-29T17:39:04.291Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -144,6 +144,12 @@
       "name": "TAMILNADU SOCIETY",
       "categoryId": "TNPSC",
       "order": 4
+    },
+    {
+      "id": "TNPSC-AP",
+      "name": "APTITUDE",
+      "categoryId": "TNPSC",
+      "order": 12
     }
   ],
   "tests": [
@@ -530,6 +536,17 @@
       "questionCount": 20,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TNS-2.html",
+      "releaseTimestamp": 1793779200000
+    },
+    {
+      "testId": "TAP-1",
+      "examId": "TNPSC-AP",
+      "name": "TAP-1 SIMPLIFICATION (Set-1)",
+      "durationMinutes": 20,
+      "order": 1,
+      "questionCount": 20,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TAP-1.html",
       "releaseTimestamp": 1793779200000
     }
   ]
