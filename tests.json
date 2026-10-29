@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-29T17:03:57.003Z",
+  "version": "2026-10-29T17:22:12.546Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -138,6 +138,12 @@
       "name": "POLITY",
       "categoryId": "TNPSC",
       "order": 9
+    },
+    {
+      "id": "TNPSC-TS",
+      "name": "TAMILNADU SOCIETY",
+      "categoryId": "TNPSC",
+      "order": 4
     }
   ],
   "tests": [
@@ -503,6 +509,17 @@
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-04.html",
       "releaseTimestamp": 1793692800000
+    },
+    {
+      "testId": "TNS-1",
+      "examId": "TNPSC-TS",
+      "name": "TNS-1 HISTORY OF TAMIL SOCIETY (Set-1)",
+      "durationMinutes": 10,
+      "order": 1,
+      "questionCount": 20,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TNS-1.html",
+      "releaseTimestamp": 1793779200000
     }
   ]
 }
