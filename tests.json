@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-29T10:07:44.858Z",
+  "version": "2026-10-29T10:26:21.007Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -178,17 +178,6 @@
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-91.html",
       "releaseTimestamp": 1792395000000
-    },
-    {
-      "testId": "NTN-51",
-      "examId": "TNPSC-NEW",
-      "name": "NTN-51 6TH TERM 3 ILAKKANAM",
-      "durationMinutes": 15,
-      "order": 51,
-      "questionCount": 25,
-      "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTN-51.html",
-      "releaseTimestamp": 1792567800000
     },
     {
       "testId": "PGCS-12",
