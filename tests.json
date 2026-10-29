@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-29T10:36:58.985Z",
+  "version": "2026-10-29T10:38:36.945Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -435,7 +435,7 @@
     {
       "testId": "TIH-01",
       "examId": "TNPSC-IH",
-      "name": "INDUS VALLEY CIVILIZATION (Set 1)",
+      "name": "TIH-01 INDUS VALLEY CIVILIZATION (Set 1)",
       "durationMinutes": 10,
       "order": 1,
       "questionCount": 20,
