@@ -492,11 +492,13 @@ let QUESTIONS = [
         let displayTxt = txt;
         let extraClass = "question-text";
         let passageHtml = "";
-        if (q.type === "rc" && q.passageEn) {
-            passageHtml = `<div class="passage-box">${q.passageEn}</div>`;
-            extraClass = "question-text";
-        } else if (q.type === "rc") {
-            displayTxt = `<div class="passage-box">${txt}</div>`; 
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) {
+                passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else {
+                displayTxt = `<div class="passage-box">${txt}</div>`; 
+            }
             extraClass = "question-text";
         } else if (q.type === "puzzle") { 
             displayTxt = `<div class="puzzle-box">${txt}</div>`; 
@@ -606,10 +608,9 @@ let QUESTIONS = [
             });
 
             let passageHtml = "";
-            if (q.type === "rc" && q.passageEn && currentLanguage === "en") {
-                passageHtml = `<div class="passage-box">${q.passageEn}</div>`;
-            } else if (q.type === "rc" && q.passageTa && currentLanguage === "ta") {
-                passageHtml = `<div class="passage-box">${q.passageTa}</div>`;
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
             } else if (q.type === "puzzle") {
                 passageHtml = `<div class="puzzle-box">${txt}</div>`;
             }
