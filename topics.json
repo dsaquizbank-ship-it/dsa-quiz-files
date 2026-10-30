@@ -1,10 +1,575 @@
 {
-  "version": "2026-10-30T16:52:14.590Z",
+  "version": "2026-10-30T16:58:02.904Z",
   "courses": [
     {
       "courseId": "TNPSC",
       "courseName": "TNPSC",
-      "topics": []
+      "topics": [
+        {
+          "topicId": "TNPSC-T001",
+          "topicName": "Unit I - General Science | Scientific knowledge and scientific temper"
+        },
+        {
+          "topicId": "TNPSC-T002",
+          "topicName": "Unit I - General Science | Power of reasoning"
+        },
+        {
+          "topicId": "TNPSC-T003",
+          "topicName": "Unit I - General Science | Rote learning vs conceptual learning"
+        },
+        {
+          "topicId": "TNPSC-T004",
+          "topicName": "Unit I - General Science | Science as a tool to understand the past, present, and future"
+        },
+        {
+          "topicId": "TNPSC-T005",
+          "topicName": "Unit I - General Science | Nature of universe"
+        },
+        {
+          "topicId": "TNPSC-T006",
+          "topicName": "Unit I - General Science | General scientific laws"
+        },
+        {
+          "topicId": "TNPSC-T007",
+          "topicName": "Unit I - General Science | Mechanics"
+        },
+        {
+          "topicId": "TNPSC-T008",
+          "topicName": "Unit I - General Science | Properties of matter, force, motion, and energy"
+        },
+        {
+          "topicId": "TNPSC-T009",
+          "topicName": "Unit I - General Science | Everyday application of mechanics"
+        },
+        {
+          "topicId": "TNPSC-T010",
+          "topicName": "Unit I - General Science | Everyday application of electricity and magnetism"
+        },
+        {
+          "topicId": "TNPSC-T011",
+          "topicName": "Unit I - General Science | Everyday application of light, sound, heat"
+        },
+        {
+          "topicId": "TNPSC-T012",
+          "topicName": "Unit I - General Science | Everyday application of nuclear physics, laser, electronics, and communications"
+        },
+        {
+          "topicId": "TNPSC-T013",
+          "topicName": "Unit I - General Science | Elements and compounds"
+        },
+        {
+          "topicId": "TNPSC-T014",
+          "topicName": "Unit I - General Science | Acids, bases, salts"
+        },
+        {
+          "topicId": "TNPSC-T015",
+          "topicName": "Unit I - General Science | Petroleum products, fertilizers, pesticides"
+        },
+        {
+          "topicId": "TNPSC-T016",
+          "topicName": "Unit I - General Science | Main concepts of life science"
+        },
+        {
+          "topicId": "TNPSC-T017",
+          "topicName": "Unit I - General Science | Classification of living organisms"
+        },
+        {
+          "topicId": "TNPSC-T018",
+          "topicName": "Unit I - General Science | Evolution"
+        },
+        {
+          "topicId": "TNPSC-T019",
+          "topicName": "Unit I - General Science | Genetics"
+        },
+        {
+          "topicId": "TNPSC-T020",
+          "topicName": "Unit I - General Science | Physiology"
+        },
+        {
+          "topicId": "TNPSC-T021",
+          "topicName": "Unit I - General Science | Nutrition, health and hygiene, human diseases"
+        },
+        {
+          "topicId": "TNPSC-T022",
+          "topicName": "Unit I - General Science | Environment and ecology"
+        },
+        {
+          "topicId": "TNPSC-T023",
+          "topicName": "Unit I - General Science | Latest inventions in science and technology"
+        },
+        {
+          "topicId": "TNPSC-T024",
+          "topicName": "Unit I - General Science | Current affairs in Science"
+        },
+        {
+          "topicId": "TNPSC-T025",
+          "topicName": "Unit II - Geography of India | Location"
+        },
+        {
+          "topicId": "TNPSC-T026",
+          "topicName": "Unit II - Geography of India | Physical features"
+        },
+        {
+          "topicId": "TNPSC-T027",
+          "topicName": "Unit II - Geography of India | Monsoon, rainfall, weather and climate"
+        },
+        {
+          "topicId": "TNPSC-T028",
+          "topicName": "Unit II - Geography of India | Water resources"
+        },
+        {
+          "topicId": "TNPSC-T029",
+          "topicName": "Unit II - Geography of India | Rivers in India"
+        },
+        {
+          "topicId": "TNPSC-T030",
+          "topicName": "Unit II - Geography of India | Soil, Minerals and Natural Resources"
+        },
+        {
+          "topicId": "TNPSC-T031",
+          "topicName": "Unit II - Geography of India | Forest and Wildlife"
+        },
+        {
+          "topicId": "TNPSC-T032",
+          "topicName": "Unit II - Geography of India | Agricultural pattern"
+        },
+        {
+          "topicId": "TNPSC-T033",
+          "topicName": "Unit II - Geography of India | Transport and Communication"
+        },
+        {
+          "topicId": "TNPSC-T034",
+          "topicName": "Unit II - Geography of India | Social Geography - Population density and distribution"
+        },
+        {
+          "topicId": "TNPSC-T035",
+          "topicName": "Unit II - Geography of India | Racial, linguistic groups and major tribes"
+        },
+        {
+          "topicId": "TNPSC-T036",
+          "topicName": "Unit II - Geography of India | Natural calamity and Disaster management"
+        },
+        {
+          "topicId": "TNPSC-T037",
+          "topicName": "Unit II - Geography of India | Environmental pollution - Reasons and preventive measures"
+        },
+        {
+          "topicId": "TNPSC-T038",
+          "topicName": "Unit II - Geography of India | Climate change and Green energy"
+        },
+        {
+          "topicId": "TNPSC-T039",
+          "topicName": "Unit II - Geography of India | Geographical landmarks"
+        },
+        {
+          "topicId": "TNPSC-T040",
+          "topicName": "Unit II - Geography of India | Current affairs in Geography"
+        },
+        {
+          "topicId": "TNPSC-T041",
+          "topicName": "Unit III - History, Culture & INM | Indus Valley Civilization"
+        },
+        {
+          "topicId": "TNPSC-T042",
+          "topicName": "Unit III - History, Culture & INM | Guptas, Delhi Sultans, Mughals, and Marathas"
+        },
+        {
+          "topicId": "TNPSC-T043",
+          "topicName": "Unit III - History, Culture & INM | Age of Vijayanagaram and Bahmani Kingdoms"
+        },
+        {
+          "topicId": "TNPSC-T044",
+          "topicName": "Unit III - History, Culture & INM | South Indian History"
+        },
+        {
+          "topicId": "TNPSC-T045",
+          "topicName": "Unit III - History, Culture & INM | Change and continuity in the socio-cultural history of India"
+        },
+        {
+          "topicId": "TNPSC-T046",
+          "topicName": "Unit III - History, Culture & INM | National Renaissance"
+        },
+        {
+          "topicId": "TNPSC-T047",
+          "topicName": "Unit III - History, Culture & INM | Early uprising against British rule"
+        },
+        {
+          "topicId": "TNPSC-T048",
+          "topicName": "Unit III - History, Culture & INM | Indian National Congress"
+        },
+        {
+          "topicId": "TNPSC-T049",
+          "topicName": "Unit III - History, Culture & INM | Emergence of leaders - B.R.Ambedkar, Bhagat Singh, Bharathiar, V.O.Chidambaranar"
+        },
+        {
+          "topicId": "TNPSC-T050",
+          "topicName": "Unit III - History, Culture & INM | Emergence of leaders - Jawaharlal Nehru, Kamarajar, Mahatma Gandhi"
+        },
+        {
+          "topicId": "TNPSC-T051",
+          "topicName": "Unit III - History, Culture & INM | Emergence of leaders - Maulana Abul Kalam Azad, Thanthai Periyar, Rajaji, Subash Chandra Bose, Rabindranath Tagore"
+        },
+        {
+          "topicId": "TNPSC-T052",
+          "topicName": "Unit III - History, Culture & INM | Different modes of agitation: Growth of Satyagraha and Militant Movements"
+        },
+        {
+          "topicId": "TNPSC-T053",
+          "topicName": "Unit III - History, Culture & INM | Communalism and Partition"
+        },
+        {
+          "topicId": "TNPSC-T054",
+          "topicName": "Unit III - History, Culture & INM | Characteristics of Indian Culture, Unity in Diversity (Race, Language, Custom)"
+        },
+        {
+          "topicId": "TNPSC-T055",
+          "topicName": "Unit III - History, Culture & INM | India as a Secular State, Social Harmony"
+        },
+        {
+          "topicId": "TNPSC-T056",
+          "topicName": "Unit III - History, Culture & INM | Prominent personalities in Arts, Science, Literature and Philosophy"
+        },
+        {
+          "topicId": "TNPSC-T057",
+          "topicName": "Unit III - History, Culture & INM | National symbols"
+        },
+        {
+          "topicId": "TNPSC-T058",
+          "topicName": "Unit III - History, Culture & INM | Eminent personalities and places in news"
+        },
+        {
+          "topicId": "TNPSC-T059",
+          "topicName": "Unit III - History, Culture & INM | Sports, Books and Authors"
+        },
+        {
+          "topicId": "TNPSC-T060",
+          "topicName": "Unit III - History, Culture & INM | Current affairs in History"
+        },
+        {
+          "topicId": "TNPSC-T061",
+          "topicName": "Unit IV - Indian Polity | Constitution of India"
+        },
+        {
+          "topicId": "TNPSC-T062",
+          "topicName": "Unit IV - Indian Polity | Preamble to the Constitution"
+        },
+        {
+          "topicId": "TNPSC-T063",
+          "topicName": "Unit IV - Indian Polity | Salient features of the Constitution"
+        },
+        {
+          "topicId": "TNPSC-T064",
+          "topicName": "Unit IV - Indian Polity | Union, State and Union Territory"
+        },
+        {
+          "topicId": "TNPSC-T065",
+          "topicName": "Unit IV - Indian Polity | Citizenship"
+        },
+        {
+          "topicId": "TNPSC-T066",
+          "topicName": "Unit IV - Indian Polity | Fundamental Rights, Fundamental Duties, Directive Principles of State Policy"
+        },
+        {
+          "topicId": "TNPSC-T067",
+          "topicName": "Unit IV - Indian Polity | Union Executive, Union Legislature"
+        },
+        {
+          "topicId": "TNPSC-T068",
+          "topicName": "Unit IV - Indian Polity | State Executive, State Legislature"
+        },
+        {
+          "topicId": "TNPSC-T069",
+          "topicName": "Unit IV - Indian Polity | Local Governments, Panchayat Raj"
+        },
+        {
+          "topicId": "TNPSC-T070",
+          "topicName": "Unit IV - Indian Polity | Spirit of federalism: Centre - State relationships"
+        },
+        {
+          "topicId": "TNPSC-T071",
+          "topicName": "Unit IV - Indian Polity | Election"
+        },
+        {
+          "topicId": "TNPSC-T072",
+          "topicName": "Unit IV - Indian Polity | Judiciary in India"
+        },
+        {
+          "topicId": "TNPSC-T073",
+          "topicName": "Unit IV - Indian Polity | Rule of Law"
+        },
+        {
+          "topicId": "TNPSC-T074",
+          "topicName": "Unit IV - Indian Polity | Corruption in public life, Anti-corruption measures"
+        },
+        {
+          "topicId": "TNPSC-T075",
+          "topicName": "Unit IV - Indian Polity | Lokpal and Lok Ayukta"
+        },
+        {
+          "topicId": "TNPSC-T076",
+          "topicName": "Unit IV - Indian Polity | Right to Information (RTI)"
+        },
+        {
+          "topicId": "TNPSC-T077",
+          "topicName": "Unit IV - Indian Polity | Empowerment of Women"
+        },
+        {
+          "topicId": "TNPSC-T078",
+          "topicName": "Unit IV - Indian Polity | Consumer Protection Forums, Human Rights Charter"
+        },
+        {
+          "topicId": "TNPSC-T079",
+          "topicName": "Unit IV - Indian Polity | Political parties and political system in India"
+        },
+        {
+          "topicId": "TNPSC-T080",
+          "topicName": "Unit IV - Indian Polity | Current affairs in Polity"
+        },
+        {
+          "topicId": "TNPSC-T081",
+          "topicName": "Unit V - Indian Economy & TN Admin | Nature of Indian Economy"
+        },
+        {
+          "topicId": "TNPSC-T082",
+          "topicName": "Unit V - Indian Economy & TN Admin | Five-year plan models - an assessment"
+        },
+        {
+          "topicId": "TNPSC-T083",
+          "topicName": "Unit V - Indian Economy & TN Admin | Planning Commission and Niti Aayog"
+        },
+        {
+          "topicId": "TNPSC-T084",
+          "topicName": "Unit V - Indian Economy & TN Admin | Sources of revenue, Reserve Bank of India"
+        },
+        {
+          "topicId": "TNPSC-T085",
+          "topicName": "Unit V - Indian Economy & TN Admin | Fiscal Policy and Monetary Policy"
+        },
+        {
+          "topicId": "TNPSC-T086",
+          "topicName": "Unit V - Indian Economy & TN Admin | Finance Commission, Resource sharing between Union and State"
+        },
+        {
+          "topicId": "TNPSC-T087",
+          "topicName": "Unit V - Indian Economy & TN Admin | Goods and Services Tax (GST)"
+        },
+        {
+          "topicId": "TNPSC-T088",
+          "topicName": "Unit V - Indian Economy & TN Admin | Structure of Indian economy and employment generation"
+        },
+        {
+          "topicId": "TNPSC-T089",
+          "topicName": "Unit V - Indian Economy & TN Admin | Land Reforms and Agriculture"
+        },
+        {
+          "topicId": "TNPSC-T090",
+          "topicName": "Unit V - Indian Economy & TN Admin | Application of Science and Technology in Agriculture"
+        },
+        {
+          "topicId": "TNPSC-T091",
+          "topicName": "Unit V - Indian Economy & TN Admin | Industrial growth"
+        },
+        {
+          "topicId": "TNPSC-T092",
+          "topicName": "Unit V - Indian Economy & TN Admin | Rural welfare oriented programmes"
+        },
+        {
+          "topicId": "TNPSC-T093",
+          "topicName": "Unit V - Indian Economy & TN Admin | Social problems (Population, Education, Health, Employment, Poverty)"
+        },
+        {
+          "topicId": "TNPSC-T094",
+          "topicName": "Unit V - Indian Economy & TN Admin | Human Development Indicators in Tamil Nadu and comparative assessment"
+        },
+        {
+          "topicId": "TNPSC-T095",
+          "topicName": "Unit V - Indian Economy & TN Admin | Impact of social reform movements in the socio-economic development of TN"
+        },
+        {
+          "topicId": "TNPSC-T096",
+          "topicName": "Unit V - Indian Economy & TN Admin | Political parties and welfare schemes for various sections of people"
+        },
+        {
+          "topicId": "TNPSC-T097",
+          "topicName": "Unit V - Indian Economy & TN Admin | Rationale behind the reservation policy"
+        },
+        {
+          "topicId": "TNPSC-T098",
+          "topicName": "Unit V - Indian Economy & TN Admin | Access to the social resources"
+        },
+        {
+          "topicId": "TNPSC-T099",
+          "topicName": "Unit V - Indian Economy & TN Admin | Economic trends in Tamil Nadu"
+        },
+        {
+          "topicId": "TNPSC-T100",
+          "topicName": "Unit V - Indian Economy & TN Admin | Role and impact of social welfare schemes in TN"
+        },
+        {
+          "topicId": "TNPSC-T101",
+          "topicName": "Unit V - Indian Economy & TN Admin | Social justice and social harmony"
+        },
+        {
+          "topicId": "TNPSC-T102",
+          "topicName": "Unit V - Indian Economy & TN Admin | Education and health systems in Tamil Nadu"
+        },
+        {
+          "topicId": "TNPSC-T103",
+          "topicName": "Unit V - Indian Economy & TN Admin | Geography of Tamil Nadu and its impact on economic growth"
+        },
+        {
+          "topicId": "TNPSC-T104",
+          "topicName": "Unit V - Indian Economy & TN Admin | Achievements of Tamil Nadu in various fields"
+        },
+        {
+          "topicId": "TNPSC-T105",
+          "topicName": "Unit V - Indian Economy & TN Admin | e-Governance in Tamil Nadu"
+        },
+        {
+          "topicId": "TNPSC-T106",
+          "topicName": "Unit V - Indian Economy & TN Admin | Public awareness and General administration"
+        },
+        {
+          "topicId": "TNPSC-T107",
+          "topicName": "Unit V - Indian Economy & TN Admin | Welfare oriented Government schemes and their utility"
+        },
+        {
+          "topicId": "TNPSC-T108",
+          "topicName": "Unit V - Indian Economy & TN Admin | Problems in public delivery systems"
+        },
+        {
+          "topicId": "TNPSC-T109",
+          "topicName": "Unit V - Indian Economy & TN Admin | Current socio-economic issues"
+        },
+        {
+          "topicId": "TNPSC-T110",
+          "topicName": "Unit VI - TN History & Culture | History of Tamil Society"
+        },
+        {
+          "topicId": "TNPSC-T111",
+          "topicName": "Unit VI - TN History & Culture | Related archaeological discoveries"
+        },
+        {
+          "topicId": "TNPSC-T112",
+          "topicName": "Unit VI - TN History & Culture | Tamil literature from Sangam age till contemporary times"
+        },
+        {
+          "topicId": "TNPSC-T113",
+          "topicName": "Unit VI - TN History & Culture | Thirukkural - Significance as a secular literature"
+        },
+        {
+          "topicId": "TNPSC-T114",
+          "topicName": "Unit VI - TN History & Culture | Thirukkural - Relevance to everyday life"
+        },
+        {
+          "topicId": "TNPSC-T115",
+          "topicName": "Unit VI - TN History & Culture | Thirukkural - Impact on humanity and universal values"
+        },
+        {
+          "topicId": "TNPSC-T116",
+          "topicName": "Unit VI - TN History & Culture | Thirukkural - Relevance to Socio-politico-economic affairs"
+        },
+        {
+          "topicId": "TNPSC-T117",
+          "topicName": "Unit VI - TN History & Culture | Philosophical content in Thirukkural"
+        },
+        {
+          "topicId": "TNPSC-T118",
+          "topicName": "Unit VI - TN History & Culture | Role of Tamil Nadu in freedom struggle"
+        },
+        {
+          "topicId": "TNPSC-T119",
+          "topicName": "Unit VI - TN History & Culture | Early agitations against British Rule"
+        },
+        {
+          "topicId": "TNPSC-T120",
+          "topicName": "Unit VI - TN History & Culture | Role of women in freedom struggle"
+        },
+        {
+          "topicId": "TNPSC-T121",
+          "topicName": "Unit VI - TN History & Culture | Evolution of 19th and 20th century socio-political movements in TN"
+        },
+        {
+          "topicId": "TNPSC-T122",
+          "topicName": "Unit VI - TN History & Culture | Justice Party"
+        },
+        {
+          "topicId": "TNPSC-T123",
+          "topicName": "Unit VI - TN History & Culture | Growth of Rationalism and Self Respect Movement"
+        },
+        {
+          "topicId": "TNPSC-T124",
+          "topicName": "Unit VI - TN History & Culture | Dravidian Movement"
+        },
+        {
+          "topicId": "TNPSC-T125",
+          "topicName": "Unit VI - TN History & Culture | Contributions of Thanthai Periyar and Periarignar Anna"
+        },
+        {
+          "topicId": "TNPSC-T126",
+          "topicName": "Unit I - Aptitude | Simplification"
+        },
+        {
+          "topicId": "TNPSC-T127",
+          "topicName": "Unit I - Aptitude | Percentage"
+        },
+        {
+          "topicId": "TNPSC-T128",
+          "topicName": "Unit I - Aptitude | Highest Common Factor (HCF)"
+        },
+        {
+          "topicId": "TNPSC-T129",
+          "topicName": "Unit I - Aptitude | Lowest Common Multiple (LCM)"
+        },
+        {
+          "topicId": "TNPSC-T130",
+          "topicName": "Unit I - Aptitude | Ratio and Proportion"
+        },
+        {
+          "topicId": "TNPSC-T131",
+          "topicName": "Unit I - Aptitude | Simple interest"
+        },
+        {
+          "topicId": "TNPSC-T132",
+          "topicName": "Unit I - Aptitude | Compound interest"
+        },
+        {
+          "topicId": "TNPSC-T133",
+          "topicName": "Unit I - Aptitude | Area"
+        },
+        {
+          "topicId": "TNPSC-T134",
+          "topicName": "Unit I - Aptitude | Volume"
+        },
+        {
+          "topicId": "TNPSC-T135",
+          "topicName": "Unit I - Aptitude | Time and Work"
+        },
+        {
+          "topicId": "TNPSC-T136",
+          "topicName": "Unit II - Reasoning | Logical reasoning"
+        },
+        {
+          "topicId": "TNPSC-T137",
+          "topicName": "Unit II - Reasoning | Puzzles"
+        },
+        {
+          "topicId": "TNPSC-T138",
+          "topicName": "Unit II - Reasoning | Dice"
+        },
+        {
+          "topicId": "TNPSC-T139",
+          "topicName": "Unit II - Reasoning | Visual reasoning"
+        },
+        {
+          "topicId": "TNPSC-T140",
+          "topicName": "Unit II - Reasoning | Alpha numeric reasoning"
+        },
+        {
+          "topicId": "TNPSC-T141",
+          "topicName": "Unit II - Reasoning | Number series"
+        }
+      ]
     },
     {
       "courseId": "SSC",
