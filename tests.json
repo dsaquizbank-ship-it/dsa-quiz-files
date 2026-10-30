@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-29T17:39:04.291Z",
+  "version": "2026-10-30T01:42:48.414Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -547,6 +547,17 @@
       "questionCount": 20,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TAP-1.html",
+      "releaseTimestamp": 1793779200000
+    },
+    {
+      "testId": "TAP-01",
+      "examId": "TNPSC-AP",
+      "name": "TAP-01 SIMPLIFICATION (Set-1)",
+      "durationMinutes": 20,
+      "order": 1,
+      "questionCount": 20,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TAP-01.html",
       "releaseTimestamp": 1793779200000
     }
   ]
