@@ -1,0 +1,45 @@
+{
+  "version": "2026-10-30T08:17:46.931Z",
+  "courses": [
+    {
+      "courseId": "TNPSC",
+      "courseName": "TNPSC Group II",
+      "topics": []
+    },
+    {
+      "courseId": "SSC",
+      "courseName": "SSC CGL",
+      "topics": []
+    },
+    {
+      "courseId": "BANK",
+      "courseName": "Bank PO",
+      "topics": []
+    },
+    {
+      "courseId": "RRB",
+      "courseName": "RRB NTPC",
+      "topics": []
+    },
+    {
+      "courseId": "PGTRB",
+      "courseName": "PG TRB",
+      "topics": []
+    },
+    {
+      "courseId": "UGTRB",
+      "courseName": "UG TRB",
+      "topics": []
+    },
+    {
+      "courseId": "TNTET",
+      "courseName": "TN TET",
+      "topics": []
+    },
+    {
+      "courseId": "SGT",
+      "courseName": "SGT",
+      "topics": []
+    }
+  ]
+}
