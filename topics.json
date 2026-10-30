@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-30T15:24:57.336Z",
+  "version": "2026-10-30T15:30:22.527Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -544,7 +544,876 @@
     {
       "courseId": "PGTRB-HIS",
       "courseName": "PGTRB HISTORY",
-      "topics": []
+      "topics": [
+        {
+          "topicId": "PGTRB-HIS-T001",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Sources of Indian History - Archaeological"
+        },
+        {
+          "topicId": "PGTRB-HIS-T002",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Sources of Indian History - Literary"
+        },
+        {
+          "topicId": "PGTRB-HIS-T003",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Sources of Indian History - Foreign Accounts"
+        },
+        {
+          "topicId": "PGTRB-HIS-T004",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Pre and Proto History"
+        },
+        {
+          "topicId": "PGTRB-HIS-T005",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Harappan Civilization"
+        },
+        {
+          "topicId": "PGTRB-HIS-T006",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Early Vedic Age"
+        },
+        {
+          "topicId": "PGTRB-HIS-T007",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Later Vedic Age"
+        },
+        {
+          "topicId": "PGTRB-HIS-T008",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Formation of State and Urbanization"
+        },
+        {
+          "topicId": "PGTRB-HIS-T009",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Mahajanapadas"
+        },
+        {
+          "topicId": "PGTRB-HIS-T010",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Jainism"
+        },
+        {
+          "topicId": "PGTRB-HIS-T011",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Buddhism"
+        },
+        {
+          "topicId": "PGTRB-HIS-T012",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Rise of Magadha"
+        },
+        {
+          "topicId": "PGTRB-HIS-T013",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Alexander's Invasion and its impact"
+        },
+        {
+          "topicId": "PGTRB-HIS-T014",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Mauryan Empire - Chandra Gupta Maurya"
+        },
+        {
+          "topicId": "PGTRB-HIS-T015",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Mauryan Empire - Bindusara"
+        },
+        {
+          "topicId": "PGTRB-HIS-T016",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Mauryan Empire - Ashoka"
+        },
+        {
+          "topicId": "PGTRB-HIS-T017",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Mauryan Administration"
+        },
+        {
+          "topicId": "PGTRB-HIS-T018",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Sungas"
+        },
+        {
+          "topicId": "PGTRB-HIS-T019",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Satavahanas"
+        },
+        {
+          "topicId": "PGTRB-HIS-T020",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Indo-Greeks"
+        },
+        {
+          "topicId": "PGTRB-HIS-T021",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Sakas"
+        },
+        {
+          "topicId": "PGTRB-HIS-T022",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Parthians"
+        },
+        {
+          "topicId": "PGTRB-HIS-T023",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Kushans - Kanishka"
+        },
+        {
+          "topicId": "PGTRB-HIS-T024",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Gandhara Art"
+        },
+        {
+          "topicId": "PGTRB-HIS-T025",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Age of Guptas - Chandra Gupta I"
+        },
+        {
+          "topicId": "PGTRB-HIS-T026",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Age of Guptas - Samudra Gupta"
+        },
+        {
+          "topicId": "PGTRB-HIS-T027",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Age of Guptas - Chandra Gupta II"
+        },
+        {
+          "topicId": "PGTRB-HIS-T028",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Gupta Administration, Art and Architecture, Literature, Education"
+        },
+        {
+          "topicId": "PGTRB-HIS-T029",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Nalanda, Vikramasila, Valabhi"
+        },
+        {
+          "topicId": "PGTRB-HIS-T030",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Invasion of Huns"
+        },
+        {
+          "topicId": "PGTRB-HIS-T031",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Vardhana Dynasty - Harsha Vardhana"
+        },
+        {
+          "topicId": "PGTRB-HIS-T032",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Hieun-Tsang's Account"
+        },
+        {
+          "topicId": "PGTRB-HIS-T033",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Chalukyas"
+        },
+        {
+          "topicId": "PGTRB-HIS-T034",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Three Crowned Kingdom"
+        },
+        {
+          "topicId": "PGTRB-HIS-T035",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Prathihara, Palas, Rashtrakutas"
+        },
+        {
+          "topicId": "PGTRB-HIS-T036",
+          "topicName": "Unit I - History of India upto 10th Century A.D. | Second Western Chalukyas"
+        },
+        {
+          "topicId": "PGTRB-HIS-T037",
+          "topicName": "Unit II - History of Medieval India upto 1565 A.D. | Arab Conquest of Sind"
+        },
+        {
+          "topicId": "PGTRB-HIS-T038",
+          "topicName": "Unit II - History of Medieval India upto 1565 A.D. | Mohammad-Bin-Qasim and Dahir"
+        },
+        {
+          "topicId": "PGTRB-HIS-T039",
+          "topicName": "Unit II - History of Medieval India upto 1565 A.D. | Impact of Arab Conquest"
+        },
+        {
+          "topicId": "PGTRB-HIS-T040",
+          "topicName": "Unit II - History of Medieval India upto 1565 A.D. | Turkish Invasion - Mohammad of Ghazni"
+        },
+        {
+          "topicId": "PGTRB-HIS-T041",
+          "topicName": "Unit II - History of Medieval India upto 1565 A.D. | Mohammad of Ghor and First/Second Battle of Tarain"
+        },
+        {
+          "topicId": "PGTRB-HIS-T042",
+          "topicName": "Unit II - History of Medieval India upto 1565 A.D. | Delhi Sultanate - Slave Dynasty"
+        },
+        {
+          "topicId": "PGTRB-HIS-T043",
+          "topicName": "Unit II - History of Medieval India upto 1565 A.D. | Qutub-ud-din Aibak"
+        },
+        {
+          "topicId": "PGTRB-HIS-T044",
+          "topicName": "Unit II - History of Medieval India upto 1565 A.D. | Iltutmish and Raziya Sultana"
+        },
+        {
+          "topicId": "PGTRB-HIS-T045",
+          "topicName": "Unit II - History of Medieval India upto 1565 A.D. | Balban and Mongol threat"
+        },
+        {
+          "topicId": "PGTRB-HIS-T046",
+          "topicName": "Unit II - History of Medieval India upto 1565 A.D. | Khilji Dynasty - Jalaluddin Khilji"
+        },
+        {
+          "topicId": "PGTRB-HIS-T047",
+          "topicName": "Unit II - History of Medieval India upto 1565 A.D. | Alauddin Khilji and Malik Kafur Invasion"
+        },
+        {
+          "topicId": "PGTRB-HIS-T048",
+          "topicName": "Unit II - History of Medieval India upto 1565 A.D. | Tughlaq Dynasty - Mohammad-Bin-Tughlaq"
+        },
+        {
+          "topicId": "PGTRB-HIS-T049",
+          "topicName": "Unit II - History of Medieval India upto 1565 A.D. | Feroz-Shah-Tughlaq and Invasion of Timur"
+        },
+        {
+          "topicId": "PGTRB-HIS-T050",
+          "topicName": "Unit II - History of Medieval India upto 1565 A.D. | The Sayyid Dynasty"
+        },
+        {
+          "topicId": "PGTRB-HIS-T051",
+          "topicName": "Unit II - History of Medieval India upto 1565 A.D. | The Lodi Dynasty - Ibrahim Lodi"
+        },
+        {
+          "topicId": "PGTRB-HIS-T052",
+          "topicName": "Unit II - History of Medieval India upto 1565 A.D. | Administrative System, Socio-Economic and Religious Conditions"
+        },
+        {
+          "topicId": "PGTRB-HIS-T053",
+          "topicName": "Unit II - History of Medieval India upto 1565 A.D. | Art and Architecture"
+        },
+        {
+          "topicId": "PGTRB-HIS-T054",
+          "topicName": "Unit II - History of Medieval India upto 1565 A.D. | Vijayanagar Empire - Sangama, Harihara and Bukka"
+        },
+        {
+          "topicId": "PGTRB-HIS-T055",
+          "topicName": "Unit II - History of Medieval India upto 1565 A.D. | Vijayanagar Empire - Saluva, Narashima Deva Raya"
+        },
+        {
+          "topicId": "PGTRB-HIS-T056",
+          "topicName": "Unit II - History of Medieval India upto 1565 A.D. | Vijayanagar Empire - Tuluva Dynasty, Krishna Devaraya"
+        },
+        {
+          "topicId": "PGTRB-HIS-T057",
+          "topicName": "Unit II - History of Medieval India upto 1565 A.D. | Aravidu, Thirumala and Battle of Talikota"
+        },
+        {
+          "topicId": "PGTRB-HIS-T058",
+          "topicName": "Unit II - History of Medieval India upto 1565 A.D. | The Bahmani kingdom"
+        },
+        {
+          "topicId": "PGTRB-HIS-T059",
+          "topicName": "Unit II - History of Medieval India upto 1565 A.D. | The Bhakti Movement"
+        },
+        {
+          "topicId": "PGTRB-HIS-T060",
+          "topicName": "Unit III - History of Mughal India and Rise of Marathas | India on the eve of Babur's Invasion"
+        },
+        {
+          "topicId": "PGTRB-HIS-T061",
+          "topicName": "Unit III - History of Mughal India and Rise of Marathas | The First Battle of Panipat"
+        },
+        {
+          "topicId": "PGTRB-HIS-T062",
+          "topicName": "Unit III - History of Mughal India and Rise of Marathas | Battle of Khanwa and Chanderi"
+        },
+        {
+          "topicId": "PGTRB-HIS-T063",
+          "topicName": "Unit III - History of Mughal India and Rise of Marathas | The Battle of Ghaghra and Tuzuk-i-Babri"
+        },
+        {
+          "topicId": "PGTRB-HIS-T064",
+          "topicName": "Unit III - History of Mughal India and Rise of Marathas | Humayun"
+        },
+        {
+          "topicId": "PGTRB-HIS-T065",
+          "topicName": "Unit III - History of Mughal India and Rise of Marathas | Sur Dynasty - Shershah Suri Administrative Reforms"
+        },
+        {
+          "topicId": "PGTRB-HIS-T066",
+          "topicName": "Unit III - History of Mughal India and Rise of Marathas | Akbar the Great - The Second Battle of Panipat"
+        },
+        {
+          "topicId": "PGTRB-HIS-T067",
+          "topicName": "Unit III - History of Mughal India and Rise of Marathas | Akbar - Relations with Rajputs, Military Conquest, Administration"
+        },
+        {
+          "topicId": "PGTRB-HIS-T068",
+          "topicName": "Unit III - History of Mughal India and Rise of Marathas | Akbar - Religious Policy, Abolition of Jiziya, Ibadat Khana, Din-i-Ilahi"
+        },
+        {
+          "topicId": "PGTRB-HIS-T069",
+          "topicName": "Unit III - History of Mughal India and Rise of Marathas | Jahangir and Influence of Nurjahan"
+        },
+        {
+          "topicId": "PGTRB-HIS-T070",
+          "topicName": "Unit III - History of Mughal India and Rise of Marathas | Shah Jahan and NWF Policy"
+        },
+        {
+          "topicId": "PGTRB-HIS-T071",
+          "topicName": "Unit III - History of Mughal India and Rise of Marathas | Aurangzeb - Military Exploits, Deccan and Religious Policy"
+        },
+        {
+          "topicId": "PGTRB-HIS-T072",
+          "topicName": "Unit III - History of Mughal India and Rise of Marathas | Socio-Economic condition under Mughals"
+        },
+        {
+          "topicId": "PGTRB-HIS-T073",
+          "topicName": "Unit III - History of Mughal India and Rise of Marathas | Art and Architecture under Mughals"
+        },
+        {
+          "topicId": "PGTRB-HIS-T074",
+          "topicName": "Unit III - History of Mughal India and Rise of Marathas | Decline and Disintegration of the Mughal Empire"
+        },
+        {
+          "topicId": "PGTRB-HIS-T075",
+          "topicName": "Unit III - History of Mughal India and Rise of Marathas | Rise of the Marathas - Early Victories of Shivaji"
+        },
+        {
+          "topicId": "PGTRB-HIS-T076",
+          "topicName": "Unit III - History of Mughal India and Rise of Marathas | Administration of Marathas"
+        },
+        {
+          "topicId": "PGTRB-HIS-T077",
+          "topicName": "Unit III - History of Mughal India and Rise of Marathas | The Peshwas - Balaji Viswanath and Baji Rao"
+        },
+        {
+          "topicId": "PGTRB-HIS-T078",
+          "topicName": "Unit IV - The Company Rule in India | Advent of the Europeans - The Portuguese"
+        },
+        {
+          "topicId": "PGTRB-HIS-T079",
+          "topicName": "Unit IV - The Company Rule in India | Vasco da Gama, Francisco de Almeida, Alphonso de Albuquerque"
+        },
+        {
+          "topicId": "PGTRB-HIS-T080",
+          "topicName": "Unit IV - The Company Rule in India | The Dutch and The Danes"
+        },
+        {
+          "topicId": "PGTRB-HIS-T081",
+          "topicName": "Unit IV - The Company Rule in India | The British and The French"
+        },
+        {
+          "topicId": "PGTRB-HIS-T082",
+          "topicName": "Unit IV - The Company Rule in India | Anglo-French Rivalry - Carnatic Wars, Dupleix"
+        },
+        {
+          "topicId": "PGTRB-HIS-T083",
+          "topicName": "Unit IV - The Company Rule in India | Robert Clive - Battle of Plassey"
+        },
+        {
+          "topicId": "PGTRB-HIS-T084",
+          "topicName": "Unit IV - The Company Rule in India | Battle of Buxar and Dual Government in Bengal"
+        },
+        {
+          "topicId": "PGTRB-HIS-T085",
+          "topicName": "Unit IV - The Company Rule in India | Warren Hastings - Administrative Reforms"
+        },
+        {
+          "topicId": "PGTRB-HIS-T086",
+          "topicName": "Unit IV - The Company Rule in India | Lord Cornwallis - Judicial Reforms and Permanent Land Revenue Settlement"
+        },
+        {
+          "topicId": "PGTRB-HIS-T087",
+          "topicName": "Unit IV - The Company Rule in India | Anglo-Mysore Wars - Hyder Ali and Tipu Sultan"
+        },
+        {
+          "topicId": "PGTRB-HIS-T088",
+          "topicName": "Unit IV - The Company Rule in India | Anglo-Maratha Wars"
+        },
+        {
+          "topicId": "PGTRB-HIS-T089",
+          "topicName": "Unit IV - The Company Rule in India | Lord Wellesley - Subsidiary Alliance"
+        },
+        {
+          "topicId": "PGTRB-HIS-T090",
+          "topicName": "Unit IV - The Company Rule in India | Hastings and Establishment of British Paramountcy"
+        },
+        {
+          "topicId": "PGTRB-HIS-T091",
+          "topicName": "Unit IV - The Company Rule in India | William Bentinck and his Reforms"
+        },
+        {
+          "topicId": "PGTRB-HIS-T092",
+          "topicName": "Unit IV - The Company Rule in India | Ranjith Singh and Anglo-Sikh Wars"
+        },
+        {
+          "topicId": "PGTRB-HIS-T093",
+          "topicName": "Unit IV - The Company Rule in India | Dalhousie - Doctrine of Lapse and his Reforms"
+        },
+        {
+          "topicId": "PGTRB-HIS-T094",
+          "topicName": "Unit IV - The Company Rule in India | Deindustrialization"
+        },
+        {
+          "topicId": "PGTRB-HIS-T095",
+          "topicName": "Unit IV - The Company Rule in India | Peasant and Tribal Revolts"
+        },
+        {
+          "topicId": "PGTRB-HIS-T096",
+          "topicName": "Unit V - Crown to Independence | The Great Revolt of 1857"
+        },
+        {
+          "topicId": "PGTRB-HIS-T097",
+          "topicName": "Unit V - Crown to Independence | Lord Canning, Lord Lytton, Lord Rippon"
+        },
+        {
+          "topicId": "PGTRB-HIS-T098",
+          "topicName": "Unit V - Crown to Independence | Socio-Religious Reform Movements in 19th Century India"
+        },
+        {
+          "topicId": "PGTRB-HIS-T099",
+          "topicName": "Unit V - Crown to Independence | Pre-Congress Associations"
+        },
+        {
+          "topicId": "PGTRB-HIS-T100",
+          "topicName": "Unit V - Crown to Independence | Formation of Indian National Congress"
+        },
+        {
+          "topicId": "PGTRB-HIS-T101",
+          "topicName": "Unit V - Crown to Independence | Moderates"
+        },
+        {
+          "topicId": "PGTRB-HIS-T102",
+          "topicName": "Unit V - Crown to Independence | Partition of Bengal and Muslim League"
+        },
+        {
+          "topicId": "PGTRB-HIS-T103",
+          "topicName": "Unit V - Crown to Independence | Swadeshi Movement and Surat Split"
+        },
+        {
+          "topicId": "PGTRB-HIS-T104",
+          "topicName": "Unit V - Crown to Independence | Home Rule Movement"
+        },
+        {
+          "topicId": "PGTRB-HIS-T105",
+          "topicName": "Unit V - Crown to Independence | Rowlatt Act and Jallianwala Bagh massacre"
+        },
+        {
+          "topicId": "PGTRB-HIS-T106",
+          "topicName": "Unit V - Crown to Independence | Gandhian Era - Non-Cooperation Movement and Chauri Chaura"
+        },
+        {
+          "topicId": "PGTRB-HIS-T107",
+          "topicName": "Unit V - Crown to Independence | Swaraj Party and Simon Commission"
+        },
+        {
+          "topicId": "PGTRB-HIS-T108",
+          "topicName": "Unit V - Crown to Independence | Revolutionary Movements"
+        },
+        {
+          "topicId": "PGTRB-HIS-T109",
+          "topicName": "Unit V - Crown to Independence | Dandi March, Gandhi-Irwin Pact, Round Table Conferences"
+        },
+        {
+          "topicId": "PGTRB-HIS-T110",
+          "topicName": "Unit V - Crown to Independence | Trade and Labour Unions"
+        },
+        {
+          "topicId": "PGTRB-HIS-T111",
+          "topicName": "Unit V - Crown to Independence | Civil Disobedience Movement"
+        },
+        {
+          "topicId": "PGTRB-HIS-T112",
+          "topicName": "Unit V - Crown to Independence | Cripps Mission and Quit India Movement"
+        },
+        {
+          "topicId": "PGTRB-HIS-T113",
+          "topicName": "Unit V - Crown to Independence | Mountbatten Plan"
+        },
+        {
+          "topicId": "PGTRB-HIS-T114",
+          "topicName": "Unit V - Crown to Independence | Government of India Act 1858 and Queen's Proclamation of 1858"
+        },
+        {
+          "topicId": "PGTRB-HIS-T115",
+          "topicName": "Unit V - Crown to Independence | Indian Council Act of 1861"
+        },
+        {
+          "topicId": "PGTRB-HIS-T116",
+          "topicName": "Unit V - Crown to Independence | Indian Council Act of 1892"
+        },
+        {
+          "topicId": "PGTRB-HIS-T117",
+          "topicName": "Unit V - Crown to Independence | Minto-Morley Reforms of 1909"
+        },
+        {
+          "topicId": "PGTRB-HIS-T118",
+          "topicName": "Unit V - Crown to Independence | Montague Chelmsford Reforms of 1919"
+        },
+        {
+          "topicId": "PGTRB-HIS-T119",
+          "topicName": "Unit V - Crown to Independence | Government of India Act, 1935"
+        },
+        {
+          "topicId": "PGTRB-HIS-T120",
+          "topicName": "Unit V - Crown to Independence | Indian Independence Act of 1947"
+        },
+        {
+          "topicId": "PGTRB-HIS-T121",
+          "topicName": "Unit VI - Post-Independent India | Integration of Indian States - Role of Sardar Vallabhbhai Patel"
+        },
+        {
+          "topicId": "PGTRB-HIS-T122",
+          "topicName": "Unit VI - Post-Independent India | Republic and Constitution of India - Salient Features"
+        },
+        {
+          "topicId": "PGTRB-HIS-T123",
+          "topicName": "Unit VI - Post-Independent India | Nehruvian Era - Economic Policy and Five Year Plans"
+        },
+        {
+          "topicId": "PGTRB-HIS-T124",
+          "topicName": "Unit VI - Post-Independent India | Social Welfare Programmes"
+        },
+        {
+          "topicId": "PGTRB-HIS-T125",
+          "topicName": "Unit VI - Post-Independent India | Foundation of Foreign Policy"
+        },
+        {
+          "topicId": "PGTRB-HIS-T126",
+          "topicName": "Unit VI - Post-Independent India | Indira Gandhi Regime - Domestic Policy, 20 Point Programme, Declaration of Emergency"
+        },
+        {
+          "topicId": "PGTRB-HIS-T127",
+          "topicName": "Unit VI - Post-Independent India | Janata Party"
+        },
+        {
+          "topicId": "PGTRB-HIS-T128",
+          "topicName": "Unit VI - Post-Independent India | Resurgence of Indira Gandhi"
+        },
+        {
+          "topicId": "PGTRB-HIS-T129",
+          "topicName": "Unit VI - Post-Independent India | Administrative Reforms"
+        },
+        {
+          "topicId": "PGTRB-HIS-T130",
+          "topicName": "Unit VI - Post-Independent India | Coalition Governments and Mandal Commission"
+        },
+        {
+          "topicId": "PGTRB-HIS-T131",
+          "topicName": "Unit VI - Post-Independent India | India's role in World Affairs - Economic, Diplomatic and Military"
+        },
+        {
+          "topicId": "PGTRB-HIS-T132",
+          "topicName": "Unit VI - Post-Independent India | Indo-China Border Dispute"
+        },
+        {
+          "topicId": "PGTRB-HIS-T133",
+          "topicName": "Unit VI - Post-Independent India | Indo-Pak Conflict"
+        },
+        {
+          "topicId": "PGTRB-HIS-T134",
+          "topicName": "Unit VI - Post-Independent India | India's Nuclear Capabilities"
+        },
+        {
+          "topicId": "PGTRB-HIS-T135",
+          "topicName": "Unit VI - Post-Independent India | India and Commonwealth"
+        },
+        {
+          "topicId": "PGTRB-HIS-T136",
+          "topicName": "Unit VI - Post-Independent India | India and NAM"
+        },
+        {
+          "topicId": "PGTRB-HIS-T137",
+          "topicName": "Unit VI - Post-Independent India | India and UNO"
+        },
+        {
+          "topicId": "PGTRB-HIS-T138",
+          "topicName": "Unit VI - Post-Independent India | SAARC, G-20, BRICS"
+        },
+        {
+          "topicId": "PGTRB-HIS-T139",
+          "topicName": "Unit VII - History of Tamil Nadu upto 13th Century | Geographical Features of Tamil Nadu"
+        },
+        {
+          "topicId": "PGTRB-HIS-T140",
+          "topicName": "Unit VII - History of Tamil Nadu upto 13th Century | Sources of the History of Tamil Nadu"
+        },
+        {
+          "topicId": "PGTRB-HIS-T141",
+          "topicName": "Unit VII - History of Tamil Nadu upto 13th Century | Pre-Historic Tamilagam"
+        },
+        {
+          "topicId": "PGTRB-HIS-T142",
+          "topicName": "Unit VII - History of Tamil Nadu upto 13th Century | Sangam Age - Three Ancient Kingdom"
+        },
+        {
+          "topicId": "PGTRB-HIS-T143",
+          "topicName": "Unit VII - History of Tamil Nadu upto 13th Century | Cheran Sengutuvan, Karikala Chola, Pandya Neduncheliyan"
+        },
+        {
+          "topicId": "PGTRB-HIS-T144",
+          "topicName": "Unit VII - History of Tamil Nadu upto 13th Century | Socio-Economic Condition and Five Fold Division"
+        },
+        {
+          "topicId": "PGTRB-HIS-T145",
+          "topicName": "Unit VII - History of Tamil Nadu upto 13th Century | Trade and Commerce"
+        },
+        {
+          "topicId": "PGTRB-HIS-T146",
+          "topicName": "Unit VII - History of Tamil Nadu upto 13th Century | Kalabharas"
+        },
+        {
+          "topicId": "PGTRB-HIS-T147",
+          "topicName": "Unit VII - History of Tamil Nadu upto 13th Century | Pallavas of Kanchi - Simhavarman, Mahendravarman"
+        },
+        {
+          "topicId": "PGTRB-HIS-T148",
+          "topicName": "Unit VII - History of Tamil Nadu upto 13th Century | Narasimhavarman, Rajasimha, Nandivarman II"
+        },
+        {
+          "topicId": "PGTRB-HIS-T149",
+          "topicName": "Unit VII - History of Tamil Nadu upto 13th Century | Pallava-Chalukya Conflict"
+        },
+        {
+          "topicId": "PGTRB-HIS-T150",
+          "topicName": "Unit VII - History of Tamil Nadu upto 13th Century | Art and Architecture of the Pallavas"
+        },
+        {
+          "topicId": "PGTRB-HIS-T151",
+          "topicName": "Unit VII - History of Tamil Nadu upto 13th Century | Imperial Cholas - Raja Raja I, Rajendra Chola I"
+        },
+        {
+          "topicId": "PGTRB-HIS-T152",
+          "topicName": "Unit VII - History of Tamil Nadu upto 13th Century | Kulothunga I"
+        },
+        {
+          "topicId": "PGTRB-HIS-T153",
+          "topicName": "Unit VII - History of Tamil Nadu upto 13th Century | Chola Administration, Economy, Kudavolai System"
+        },
+        {
+          "topicId": "PGTRB-HIS-T154",
+          "topicName": "Unit VII - History of Tamil Nadu upto 13th Century | Chola Maritime Activities and Art and Architecture"
+        },
+        {
+          "topicId": "PGTRB-HIS-T155",
+          "topicName": "Unit VII - History of Tamil Nadu upto 13th Century | Later Pandyas - Maravarman Sundara Pandya I & II"
+        },
+        {
+          "topicId": "PGTRB-HIS-T156",
+          "topicName": "Unit VII - History of Tamil Nadu upto 13th Century | Jatavarman Sundara Pandya and Kulasekara Pandya"
+        },
+        {
+          "topicId": "PGTRB-HIS-T157",
+          "topicName": "Unit VII - History of Tamil Nadu upto 13th Century | Accounts of Marco Polo"
+        },
+        {
+          "topicId": "PGTRB-HIS-T158",
+          "topicName": "Unit VII - History of Tamil Nadu upto 13th Century | Pandya Art and Architecture"
+        },
+        {
+          "topicId": "PGTRB-HIS-T159",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Malik Kafur's invasion of Tamil Region"
+        },
+        {
+          "topicId": "PGTRB-HIS-T160",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Sultanate of Madurai"
+        },
+        {
+          "topicId": "PGTRB-HIS-T161",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | The Vijayanagar rule in the Tamil Country"
+        },
+        {
+          "topicId": "PGTRB-HIS-T162",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Nayaks of Madurai"
+        },
+        {
+          "topicId": "PGTRB-HIS-T163",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Nayaks of Tanjore"
+        },
+        {
+          "topicId": "PGTRB-HIS-T164",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Nayaks of Gingee"
+        },
+        {
+          "topicId": "PGTRB-HIS-T165",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Sethupathis of Ramnad"
+        },
+        {
+          "topicId": "PGTRB-HIS-T166",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Tamil Nadu under Marathas"
+        },
+        {
+          "topicId": "PGTRB-HIS-T167",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Advent of the Europeans - British, French, Dutch"
+        },
+        {
+          "topicId": "PGTRB-HIS-T168",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Poligar Rebellion"
+        },
+        {
+          "topicId": "PGTRB-HIS-T169",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | South Indian Rebellion"
+        },
+        {
+          "topicId": "PGTRB-HIS-T170",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Vellore Mutiny"
+        },
+        {
+          "topicId": "PGTRB-HIS-T171",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Tamil Nadu under British Rule"
+        },
+        {
+          "topicId": "PGTRB-HIS-T172",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Tamil Nadu and Freedom Struggle - Early Nationalist"
+        },
+        {
+          "topicId": "PGTRB-HIS-T173",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Radical Nationalist"
+        },
+        {
+          "topicId": "PGTRB-HIS-T174",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Social Reform Movement"
+        },
+        {
+          "topicId": "PGTRB-HIS-T175",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Congress - Rajaji and Kamaraj"
+        },
+        {
+          "topicId": "PGTRB-HIS-T176",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Justice Party"
+        },
+        {
+          "topicId": "PGTRB-HIS-T177",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Periyar and his Self Respect Movement"
+        },
+        {
+          "topicId": "PGTRB-HIS-T178",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Anti-Hindi Agitation"
+        },
+        {
+          "topicId": "PGTRB-HIS-T179",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Dravidian Parties - Dravida Kazhagam, DMK, C.N. Annadurai, Kalaignar M. Karunanithi"
+        },
+        {
+          "topicId": "PGTRB-HIS-T180",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Emergence of ADMK - M.G. Ramachandran, J. Jayalalitha"
+        },
+        {
+          "topicId": "PGTRB-HIS-T181",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | MDMK and PMK"
+        },
+        {
+          "topicId": "PGTRB-HIS-T182",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Other Political Parties"
+        },
+        {
+          "topicId": "PGTRB-HIS-T183",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Education and Empowerment of Women"
+        },
+        {
+          "topicId": "PGTRB-HIS-T184",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Reservation Policy"
+        },
+        {
+          "topicId": "PGTRB-HIS-T185",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Agrarian Condition and Irrigation"
+        },
+        {
+          "topicId": "PGTRB-HIS-T186",
+          "topicName": "Unit VIII - Medieval to Contemporary Tamil Nadu | Industrialization and Information Technology"
+        },
+        {
+          "topicId": "PGTRB-HIS-T187",
+          "topicName": "Unit IX - Rise of Modern West | Geographical Discoveries"
+        },
+        {
+          "topicId": "PGTRB-HIS-T188",
+          "topicName": "Unit IX - Rise of Modern West | Renaissance and Reformation"
+        },
+        {
+          "topicId": "PGTRB-HIS-T189",
+          "topicName": "Unit IX - Rise of Modern West | Enlightened Despots"
+        },
+        {
+          "topicId": "PGTRB-HIS-T190",
+          "topicName": "Unit IX - Rise of Modern West | Age of Revolution"
+        },
+        {
+          "topicId": "PGTRB-HIS-T191",
+          "topicName": "Unit IX - Rise of Modern West | American War of Independence"
+        },
+        {
+          "topicId": "PGTRB-HIS-T192",
+          "topicName": "Unit IX - Rise of Modern West | Industrial Revolution"
+        },
+        {
+          "topicId": "PGTRB-HIS-T193",
+          "topicName": "Unit IX - Rise of Modern West | Agrarian Revolution"
+        },
+        {
+          "topicId": "PGTRB-HIS-T194",
+          "topicName": "Unit IX - Rise of Modern West | French Revolution"
+        },
+        {
+          "topicId": "PGTRB-HIS-T195",
+          "topicName": "Unit IX - Rise of Modern West | Rise of Napoleon Bonaparte"
+        },
+        {
+          "topicId": "PGTRB-HIS-T196",
+          "topicName": "Unit IX - Rise of Modern West | Napoleonic Wars"
+        },
+        {
+          "topicId": "PGTRB-HIS-T197",
+          "topicName": "Unit IX - Rise of Modern West | Congress of Vienna and Metternich"
+        },
+        {
+          "topicId": "PGTRB-HIS-T198",
+          "topicName": "Unit IX - Rise of Modern West | Concert of Europe and Holy Alliance"
+        },
+        {
+          "topicId": "PGTRB-HIS-T199",
+          "topicName": "Unit IX - Rise of Modern West | Greek War of Independence"
+        },
+        {
+          "topicId": "PGTRB-HIS-T200",
+          "topicName": "Unit IX - Rise of Modern West | The Revolution of 1830 and 1848 in France"
+        },
+        {
+          "topicId": "PGTRB-HIS-T201",
+          "topicName": "Unit X - History of Modern World | Unification of Italy - Mazzini, Young Italy, Garibaldi, Count Cavour"
+        },
+        {
+          "topicId": "PGTRB-HIS-T202",
+          "topicName": "Unit X - History of Modern World | Unification of Germany - Zollverein, Bismarck"
+        },
+        {
+          "topicId": "PGTRB-HIS-T203",
+          "topicName": "Unit X - History of Modern World | Napoleon III"
+        },
+        {
+          "topicId": "PGTRB-HIS-T204",
+          "topicName": "Unit X - History of Modern World | Crimean War"
+        },
+        {
+          "topicId": "PGTRB-HIS-T205",
+          "topicName": "Unit X - History of Modern World | Young Turk Revolution"
+        },
+        {
+          "topicId": "PGTRB-HIS-T206",
+          "topicName": "Unit X - History of Modern World | Balkan Wars"
+        },
+        {
+          "topicId": "PGTRB-HIS-T207",
+          "topicName": "Unit X - History of Modern World | Russian Revolution"
+        },
+        {
+          "topicId": "PGTRB-HIS-T208",
+          "topicName": "Unit X - History of Modern World | First World War"
+        },
+        {
+          "topicId": "PGTRB-HIS-T209",
+          "topicName": "Unit X - History of Modern World | League of Nations"
+        },
+        {
+          "topicId": "PGTRB-HIS-T210",
+          "topicName": "Unit X - History of Modern World | Rise of Dictatorships - Adolf Hitler, Benito Mussolini, Mustafa Kemal Pasha"
+        },
+        {
+          "topicId": "PGTRB-HIS-T211",
+          "topicName": "Unit X - History of Modern World | Second World War"
+        },
+        {
+          "topicId": "PGTRB-HIS-T212",
+          "topicName": "Unit X - History of Modern World | UNO"
+        },
+        {
+          "topicId": "PGTRB-HIS-T213",
+          "topicName": "Unit X - History of Modern World | Cold War"
+        },
+        {
+          "topicId": "PGTRB-HIS-T214",
+          "topicName": "Unit X - History of Modern World | Third World Countries and Non-Alignment"
+        },
+        {
+          "topicId": "PGTRB-HIS-T215",
+          "topicName": "Unit X - History of Modern World | UNO and Global Disputes"
+        },
+        {
+          "topicId": "PGTRB-HIS-T216",
+          "topicName": "Unit X - History of Modern World | Formation of European Union"
+        },
+        {
+          "topicId": "PGTRB-HIS-T217",
+          "topicName": "Unit X - History of Modern World | End of Cold War"
+        }
+      ]
     },
     {
       "courseId": "PGTRB-COM",
