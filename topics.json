@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-30T08:20:29.522Z",
+  "version": "2026-10-30T10:29:41.489Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -29,7 +29,512 @@
     {
       "courseId": "PGTRB",
       "courseName": "PGTRB ENGLISH",
-      "topics": []
+      "topics": [
+        {
+          "topicId": "PGTRB-T001",
+          "topicName": "Unit I | Geoffrey Chaucer - Prologue to the Canterbury Tales"
+        },
+        {
+          "topicId": "PGTRB-T002",
+          "topicName": "Unit I | Edmund Spenser - Prothalamion and Epithalamion"
+        },
+        {
+          "topicId": "PGTRB-T003",
+          "topicName": "Unit I | Sir Thomas Wyatt - Remembrance"
+        },
+        {
+          "topicId": "PGTRB-T004",
+          "topicName": "Unit I | Bacon - Essays (Of Truth, Of Friendship, Of Studies, Of Adversity, Of Revenge and Of Ambition)"
+        },
+        {
+          "topicId": "PGTRB-T005",
+          "topicName": "Unit I | Sir Philip Sydney - An Apologie for Poetrie"
+        },
+        {
+          "topicId": "PGTRB-T006",
+          "topicName": "Unit I | The Bible - The Book of Job"
+        },
+        {
+          "topicId": "PGTRB-T007",
+          "topicName": "Unit I | Christopher Marlowe - Dr. Faustus"
+        },
+        {
+          "topicId": "PGTRB-T008",
+          "topicName": "Unit I | Thomas Kyd - The Spanish Tragedy"
+        },
+        {
+          "topicId": "PGTRB-T009",
+          "topicName": "Unit I | Ben Jonson - Every Man in His Humour"
+        },
+        {
+          "topicId": "PGTRB-T010",
+          "topicName": "Unit II | John Milton - Paradise Lost, Book IX"
+        },
+        {
+          "topicId": "PGTRB-T011",
+          "topicName": "Unit II | Andrew Marvell - To His Coy Mistress"
+        },
+        {
+          "topicId": "PGTRB-T012",
+          "topicName": "Unit II | John Donne - The Canonization"
+        },
+        {
+          "topicId": "PGTRB-T013",
+          "topicName": "Unit II | Alexander Pope - The Rape of the Lock"
+        },
+        {
+          "topicId": "PGTRB-T014",
+          "topicName": "Unit II | John Dryden - Absalom and Achitophel"
+        },
+        {
+          "topicId": "PGTRB-T015",
+          "topicName": "Unit II | Thomas Gray - Elegy Written in a Country Churchyard"
+        },
+        {
+          "topicId": "PGTRB-T016",
+          "topicName": "Unit II | Samuel Johnson - Life of Milton"
+        },
+        {
+          "topicId": "PGTRB-T017",
+          "topicName": "Unit II | Jonathan Swift - Gulliver's Travels"
+        },
+        {
+          "topicId": "PGTRB-T018",
+          "topicName": "Unit II | John Bunyan - The Pilgrim's Progress"
+        },
+        {
+          "topicId": "PGTRB-T019",
+          "topicName": "Unit II | Daniel Defoe - Robinson Crusoe"
+        },
+        {
+          "topicId": "PGTRB-T020",
+          "topicName": "Unit II | John Dryden - All for Love"
+        },
+        {
+          "topicId": "PGTRB-T021",
+          "topicName": "Unit II | Richard B. Sheridan - The School for Scandal"
+        },
+        {
+          "topicId": "PGTRB-T022",
+          "topicName": "Unit II | William Congreve - The Way of the World"
+        },
+        {
+          "topicId": "PGTRB-T023",
+          "topicName": "Unit II | Oliver Goldsmith - She Stoops to Conquer"
+        },
+        {
+          "topicId": "PGTRB-T024",
+          "topicName": "Unit III | William Wordsworth - Immortality, Tintern Abbey, The Prelude Book-I"
+        },
+        {
+          "topicId": "PGTRB-T025",
+          "topicName": "Unit III | Samuel Coleridge - Ode to Dejection, Kubla Khan"
+        },
+        {
+          "topicId": "PGTRB-T026",
+          "topicName": "Unit III | John Keats - Ode to a Nightingale"
+        },
+        {
+          "topicId": "PGTRB-T027",
+          "topicName": "Unit III | Percy Bysshe Shelley - Ozymandias, Adonais"
+        },
+        {
+          "topicId": "PGTRB-T028",
+          "topicName": "Unit III | Charles Lamb - Essays of Elia"
+        },
+        {
+          "topicId": "PGTRB-T029",
+          "topicName": "Unit III | William Hazlitt - My First Acquaintance with Poets"
+        },
+        {
+          "topicId": "PGTRB-T030",
+          "topicName": "Unit III | William Wordsworth - Preface to Lyrical Ballads"
+        },
+        {
+          "topicId": "PGTRB-T031",
+          "topicName": "Unit III | Jane Austen - Sense and Sensibility"
+        },
+        {
+          "topicId": "PGTRB-T032",
+          "topicName": "Unit III | Emily Bronte - Wuthering Heights"
+        },
+        {
+          "topicId": "PGTRB-T033",
+          "topicName": "Unit III | Percy Bysshe Shelley - Prometheus Unbound"
+        },
+        {
+          "topicId": "PGTRB-T034",
+          "topicName": "Unit IV | Mathew Arnold - Dover Beach, The Scholar Gypsy"
+        },
+        {
+          "topicId": "PGTRB-T035",
+          "topicName": "Unit IV | Robert Browning - Andrea Del Sarto"
+        },
+        {
+          "topicId": "PGTRB-T036",
+          "topicName": "Unit IV | Alfred Lord Tennyson - Ulysses"
+        },
+        {
+          "topicId": "PGTRB-T037",
+          "topicName": "Unit IV | W.B. Yeats - Byzantium"
+        },
+        {
+          "topicId": "PGTRB-T038",
+          "topicName": "Unit IV | T.S. Eliot - The Waste Land"
+        },
+        {
+          "topicId": "PGTRB-T039",
+          "topicName": "Unit IV | G.M. Hopkins - God's Grandeur"
+        },
+        {
+          "topicId": "PGTRB-T040",
+          "topicName": "Unit IV | W.H. Auden - The Unknown Citizen"
+        },
+        {
+          "topicId": "PGTRB-T041",
+          "topicName": "Unit IV | Ted Hughes - The Thought Fox"
+        },
+        {
+          "topicId": "PGTRB-T042",
+          "topicName": "Unit IV | Thomas Carlyle - On Heroes, Hero-Worship and the Heroic in History"
+        },
+        {
+          "topicId": "PGTRB-T043",
+          "topicName": "Unit IV | Mathew Arnold - The Study of Poetry"
+        },
+        {
+          "topicId": "PGTRB-T044",
+          "topicName": "Unit IV | George Orwell - You and the Atom Bomb"
+        },
+        {
+          "topicId": "PGTRB-T045",
+          "topicName": "Unit IV | Charles Dickens - Hard Times"
+        },
+        {
+          "topicId": "PGTRB-T046",
+          "topicName": "Unit IV | George Eliot - The Mill on the Floss"
+        },
+        {
+          "topicId": "PGTRB-T047",
+          "topicName": "Unit IV | Thomas Hardy - Mayor of Casterbridge"
+        },
+        {
+          "topicId": "PGTRB-T048",
+          "topicName": "Unit IV | Virginia Woolf - Mrs. Dalloway"
+        },
+        {
+          "topicId": "PGTRB-T049",
+          "topicName": "Unit IV | John Osborne - Look Back in Anger"
+        },
+        {
+          "topicId": "PGTRB-T050",
+          "topicName": "Unit IV | Bertolt Brecht - Mother Courage and Her Children"
+        },
+        {
+          "topicId": "PGTRB-T051",
+          "topicName": "Unit IV | J.M. Synge - Riders to the Sea"
+        },
+        {
+          "topicId": "PGTRB-T052",
+          "topicName": "Unit IV | Caryl Churchill - Top Girls"
+        },
+        {
+          "topicId": "PGTRB-T053",
+          "topicName": "Unit V | William Shakespeare - Othello"
+        },
+        {
+          "topicId": "PGTRB-T054",
+          "topicName": "Unit V | William Shakespeare - King Lear"
+        },
+        {
+          "topicId": "PGTRB-T055",
+          "topicName": "Unit V | William Shakespeare - The Tempest"
+        },
+        {
+          "topicId": "PGTRB-T056",
+          "topicName": "Unit V | William Shakespeare - Measure for Measure"
+        },
+        {
+          "topicId": "PGTRB-T057",
+          "topicName": "Unit V | William Shakespeare - Sonnets (18, 29, 65, 104, 106, 116, 129, 130)"
+        },
+        {
+          "topicId": "PGTRB-T058",
+          "topicName": "Unit VI | Walt Whitman - Out of the Cradle Endlessly Rocking"
+        },
+        {
+          "topicId": "PGTRB-T059",
+          "topicName": "Unit VI | Anne Bradstreet - Prologue"
+        },
+        {
+          "topicId": "PGTRB-T060",
+          "topicName": "Unit VI | R.W. Emerson - Brahma"
+        },
+        {
+          "topicId": "PGTRB-T061",
+          "topicName": "Unit VI | Robert Frost - Birches, Mending Wall"
+        },
+        {
+          "topicId": "PGTRB-T062",
+          "topicName": "Unit VI | Paul Lawrence Dunbar - The Sparrow"
+        },
+        {
+          "topicId": "PGTRB-T063",
+          "topicName": "Unit VI | Maya Angelou - I Know Why the Caged Bird Sings"
+        },
+        {
+          "topicId": "PGTRB-T064",
+          "topicName": "Unit VI | E.E. Cummings - The Cambridge Ladies"
+        },
+        {
+          "topicId": "PGTRB-T065",
+          "topicName": "Unit VI | Charlotte Perkins Gilman - The Anti-Suffragists"
+        },
+        {
+          "topicId": "PGTRB-T066",
+          "topicName": "Unit VI | H.D. Thoreau - Where I Lived and What I Lived For"
+        },
+        {
+          "topicId": "PGTRB-T067",
+          "topicName": "Unit VI | R.W. Emerson - The American Scholar"
+        },
+        {
+          "topicId": "PGTRB-T068",
+          "topicName": "Unit VI | William Faulkner - Nobel Prize Acceptance Speech"
+        },
+        {
+          "topicId": "PGTRB-T069",
+          "topicName": "Unit VI | Toni Morrison - Beloved"
+        },
+        {
+          "topicId": "PGTRB-T070",
+          "topicName": "Unit VI | Jhumpa Lahiri - The Namesake"
+        },
+        {
+          "topicId": "PGTRB-T071",
+          "topicName": "Unit VI | Arthur Miller - The Death of a Salesman"
+        },
+        {
+          "topicId": "PGTRB-T072",
+          "topicName": "Unit VI | Eugene O' Neil - Emperor Jones"
+        },
+        {
+          "topicId": "PGTRB-T073",
+          "topicName": "Unit VI | Tennessee Williams - A Street Car Named Desire"
+        },
+        {
+          "topicId": "PGTRB-T074",
+          "topicName": "Unit VII (Indian) | Rabindranath Tagore - Gitanjali"
+        },
+        {
+          "topicId": "PGTRB-T075",
+          "topicName": "Unit VII (Indian) | Nissim Ezeikel - Goodbye Party to Miss Pushpa"
+        },
+        {
+          "topicId": "PGTRB-T076",
+          "topicName": "Unit VII (Indian) | Toru Dutt - Our Casuarina Tree"
+        },
+        {
+          "topicId": "PGTRB-T077",
+          "topicName": "Unit VII (Indian) | Kamala Das - An Introduction"
+        },
+        {
+          "topicId": "PGTRB-T078",
+          "topicName": "Unit VII (Indian) | Sujatha Bhatt - A Different History"
+        },
+        {
+          "topicId": "PGTRB-T079",
+          "topicName": "Unit VII (Indian) | Jawaharlal Nehru - An Autobiography"
+        },
+        {
+          "topicId": "PGTRB-T080",
+          "topicName": "Unit VII (Indian) | Dr. B.R. Ambedkar - Annihilation of Caste"
+        },
+        {
+          "topicId": "PGTRB-T081",
+          "topicName": "Unit VII (Indian) | Mulk Raj Anand - Coolie"
+        },
+        {
+          "topicId": "PGTRB-T082",
+          "topicName": "Unit VII (Indian) | Kamala Markandeya - A Handful of Rice"
+        },
+        {
+          "topicId": "PGTRB-T083",
+          "topicName": "Unit VII (Indian) | Arundathi Roy - The God of Small Things"
+        },
+        {
+          "topicId": "PGTRB-T084",
+          "topicName": "Unit VII (Indian) | Girish Karnad - Hayavadana"
+        },
+        {
+          "topicId": "PGTRB-T085",
+          "topicName": "Unit VII (Indian) | Vijay Tendulkar - Silence! The Court is in Session"
+        },
+        {
+          "topicId": "PGTRB-T086",
+          "topicName": "Unit VII (Indian) | Mahasweta Devi - Rudali"
+        },
+        {
+          "topicId": "PGTRB-T087",
+          "topicName": "Unit VII (Indian) | Mahesh Dattani - Dance like a Man"
+        },
+        {
+          "topicId": "PGTRB-T088",
+          "topicName": "Unit VII (Commonwealth) | Kath Walker - A Song of Hope"
+        },
+        {
+          "topicId": "PGTRB-T089",
+          "topicName": "Unit VII (Commonwealth) | Banjo Patterson - Waltzing Mathilda"
+        },
+        {
+          "topicId": "PGTRB-T090",
+          "topicName": "Unit VII (Commonwealth) | Wole Soyinka - The Telephone Conversation"
+        },
+        {
+          "topicId": "PGTRB-T091",
+          "topicName": "Unit VII (Commonwealth) | E.J. Pratt - The Dying Eagle"
+        },
+        {
+          "topicId": "PGTRB-T092",
+          "topicName": "Unit VII (Commonwealth) | Judith Wright - At Cooloolah"
+        },
+        {
+          "topicId": "PGTRB-T093",
+          "topicName": "Unit VII (Commonwealth) | Abioseh Nicol - The Meaning of Africa"
+        },
+        {
+          "topicId": "PGTRB-T094",
+          "topicName": "Unit VII (Commonwealth) | A.D. Hope - Australia"
+        },
+        {
+          "topicId": "PGTRB-T095",
+          "topicName": "Unit VII (Commonwealth) | Thomas King - Godzilla Vs Post-Colonial"
+        },
+        {
+          "topicId": "PGTRB-T096",
+          "topicName": "Unit VII (Commonwealth) | Chinua Achebe - Things Fall Apart"
+        },
+        {
+          "topicId": "PGTRB-T097",
+          "topicName": "Unit VII (Commonwealth) | Alan Paton - Cry, the Beloved Country"
+        },
+        {
+          "topicId": "PGTRB-T098",
+          "topicName": "Unit VII (Commonwealth) | Patrick White - Voss"
+        },
+        {
+          "topicId": "PGTRB-T099",
+          "topicName": "Unit VII (Commonwealth) | Wole Soyinka - The Lion and the Jewel"
+        },
+        {
+          "topicId": "PGTRB-T100",
+          "topicName": "Unit VII (Commonwealth) | George Ryga - The Ecstasy of Rita Joe"
+        },
+        {
+          "topicId": "PGTRB-T101",
+          "topicName": "Unit VII (Commonwealth) | Jane Harrison - Stolen"
+        },
+        {
+          "topicId": "PGTRB-T102",
+          "topicName": "Unit VIII | Aristotle - Poetics"
+        },
+        {
+          "topicId": "PGTRB-T103",
+          "topicName": "Unit VIII | Dryden - Essay of Dramatic Poesy"
+        },
+        {
+          "topicId": "PGTRB-T104",
+          "topicName": "Unit VIII | Coleridge - Biographia Literaria (Ch. XIV & XVII)"
+        },
+        {
+          "topicId": "PGTRB-T105",
+          "topicName": "Unit VIII | T. S. Eliot - Metaphysical Poets"
+        },
+        {
+          "topicId": "PGTRB-T106",
+          "topicName": "Unit VIII | I. A. Richards - Four Kinds of Meaning"
+        },
+        {
+          "topicId": "PGTRB-T107",
+          "topicName": "Unit VIII | William Empson - The Seven Types of Ambiguity"
+        },
+        {
+          "topicId": "PGTRB-T108",
+          "topicName": "Unit VIII | Northrop Frye - The Archetypes of Literature"
+        },
+        {
+          "topicId": "PGTRB-T109",
+          "topicName": "Unit VIII | Cleanth Brooks - Irony as a Principle of Structure"
+        },
+        {
+          "topicId": "PGTRB-T110",
+          "topicName": "Unit VIII | Allen Tate - Tension in Poetry"
+        },
+        {
+          "topicId": "PGTRB-T111",
+          "topicName": "Unit VIII | Elaine Showalter - Towards a Feminist Poetics"
+        },
+        {
+          "topicId": "PGTRB-T112",
+          "topicName": "Unit VIII | Simone de Beauvoir - The Second Sex"
+        },
+        {
+          "topicId": "PGTRB-T113",
+          "topicName": "Unit IX | History of English Language and its Growth (Indo-European Family)"
+        },
+        {
+          "topicId": "PGTRB-T114",
+          "topicName": "Unit IX | Growth of Vocabulary & Influence of The Bible, Shakespeare, Milton, Dr. Johnson"
+        },
+        {
+          "topicId": "PGTRB-T115",
+          "topicName": "Unit IX | Characteristics of Modern English, Spelling Reform and English Lexicon"
+        },
+        {
+          "topicId": "PGTRB-T116",
+          "topicName": "Unit IX | English Phonetics and Phonology (Vowels, Consonants, Diphthongs)"
+        },
+        {
+          "topicId": "PGTRB-T117",
+          "topicName": "Unit IX | Morphology, Word Formation, Semantics, Dialect & Idiolect"
+        },
+        {
+          "topicId": "PGTRB-T118",
+          "topicName": "Unit IX | Grammar - Traditional, Transformational Generative & Deep Structure"
+        },
+        {
+          "topicId": "PGTRB-T119",
+          "topicName": "Unit IX | ELT - History of ELT, Second Language Acquisition"
+        },
+        {
+          "topicId": "PGTRB-T120",
+          "topicName": "Unit IX | ELT - Designing Syllabus, Materials Production, Language Testing"
+        },
+        {
+          "topicId": "PGTRB-T121",
+          "topicName": "Unit X | English Language Skills - Phrases, Synonyms, Antonyms, Prefix and Suffix"
+        },
+        {
+          "topicId": "PGTRB-T122",
+          "topicName": "Unit X | English Language Skills - Tenses, Voice, Parts of Speech, Homophones"
+        },
+        {
+          "topicId": "PGTRB-T123",
+          "topicName": "Unit X | English Language Skills - Articles, Determiners, Sentence Patterns"
+        },
+        {
+          "topicId": "PGTRB-T124",
+          "topicName": "Unit X | English Language Skills - Compound Words, Figures of Speech"
+        },
+        {
+          "topicId": "PGTRB-T125",
+          "topicName": "Unit X | English Language Skills - Identifying and Correcting Errors"
+        },
+        {
+          "topicId": "PGTRB-T126",
+          "topicName": "Unit X | English Language Skills - British and American English"
+        }
+      ]
     },
     {
       "courseId": "PGTRB",
@@ -46,7 +551,7 @@
       "courseName": "PGTRB COMPUTER SCIENCE",
       "topics": []
     },
-     {
+    {
       "courseId": "PGTRB",
       "courseName": "PGTRB TAMIL",
       "topics": []
@@ -66,7 +571,7 @@
       "courseName": "UGTRB ZOOLOGY",
       "topics": []
     },
-     {
+    {
       "courseId": "UGTRB",
       "courseName": "UGTRB PHYSICS",
       "topics": []
