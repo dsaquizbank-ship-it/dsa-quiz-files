@@ -1,10 +1,23 @@
 {
-  "version": "2026-10-30T08:17:46.931Z",
+  "version": "2026-10-30T08:20:29.522Z",
   "courses": [
     {
       "courseId": "TNPSC",
       "courseName": "TNPSC Group II",
-      "topics": []
+      "topics": [
+        {
+          "topicId": "TNPSC-T001",
+          "topicName": "Indian Polity - Fundamental Rights"
+        },
+        {
+          "topicId": "TNPSC-T002",
+          "topicName": "Indian Polity - DPSP"
+        },
+        {
+          "topicId": "TNPSC-T003",
+          "topicName": "Modern India - Freedom Struggle"
+        }
+      ]
     },
     {
       "courseId": "SSC",
