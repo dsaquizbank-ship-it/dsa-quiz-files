@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>TAP-01</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]], displayMath: [["$$", "$$"], ["\\[", "\\]"]] },
+            options: { ignoreHtmlClass: "no-mathjax" }
+        };
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(145deg, #f0fdf4, #dcfce7); --card-bg: #ffffff; --text-primary: #14532d; --border-light: #bbf7d0; --accent: #10b981; --accent-dark: #059669; --timer-bg: #fef3c7; --timer-text: #b45309; --palette-btn: #f0fdf4; --shadow: 0 10px 25px -5px rgba(0,0,0,0.1); --correct-color: #dc2626; --modal-overlay: rgba(0,0,0,0.5); --rc-bg: #f8fafc; --rc-border: #3b82f6; --puzzle-bg: #fffbeb; --puzzle-border: #f59e0b; }
+        [data-theme="dark"] { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; background: linear-gradient(135deg, #059669, #10b981); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .language-toggle:hover { background: var(--accent); }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.5; }
+        .option-item { background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .correct-option { font-weight: bold; color: var(--correct-color); }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        mark { background-color: #fef08a; color: #000; padding: 0 4px; border-radius: 3px; }
+
+        /* --- NEW IMAGE CSS --- */
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+
+        @media print { 
+            body { background: white !important; color: black !important; padding: 0; margin: 0; font-family: "Segoe UI", "Noto Sans Tamil", "Latha", system-ui, sans-serif !important; } 
+            .quiz-wrapper { max-width: 100%; margin: 0; border-radius: 0; box-shadow: none; border: none; background: white !important; } 
+            .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn:not(.btn-pdf), .icon-btn { display: none !important; } 
+            #resultContainer { max-height: none !important; overflow: visible !important; padding-bottom: 0 !important; display: block !important; } 
+            .result-dashboard { background: #064e3b !important; color: white !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; break-inside: avoid; border-radius: 0; margin: 0 0 20px 0; padding: 20px; } 
+            .review-card { background: white !important; color: black !important; break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc; margin-bottom: 15px; box-shadow: none; overflow: visible !important; } 
+            .review-card .passage-box, .review-card .puzzle-box { background: #f8fafc !important; color: black !important; border-left: 4px solid #3b82f6 !important; padding: 10px !important; margin: 8px 0 !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; } 
+            .question-image, .review-question-img { display: block !important; max-width: 100% !important; max-height: 220px !important; width: auto !important; height: auto !important; margin: 8px 0 !important; page-break-inside: avoid !important; break-inside: avoid !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; transform: none !important; } 
+            .stats .stat-card { background: rgba(0,0,0,0.1) !important; color: black !important; print-color-adjust: exact; } 
+            .btn-pdf { display: none !important; } 
+            a, button { text-decoration: none; } 
+            @page { size: A4; margin: 1cm; } 
+        }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">25:00</div>
+            <div class="top-buttons">
+                <button id="darkModeToggleBtn" class="icon-btn" onclick="toggleTheme()">🌙 Dark</button>
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing">
+                <div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div>
+            </div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 Dark", lightMode: "☀️ Light" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 இருண்ட", lightMode: "☀️ ஒளி" }
+    };
+    
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const paletteTitle = document.getElementById("paletteTitle"); if (paletteTitle) paletteTitle.innerText = t.paletteTitle;
+        const quizCompleted = document.getElementById("quizCompletedLabel"); if (quizCompleted) quizCompleted.innerText = t.quizCompleted;
+        const correctLabel = document.getElementById("correctLabel"); if (correctLabel) correctLabel.innerText = t.correct;
+        const incorrectLabel = document.getElementById("incorrectLabel"); if (incorrectLabel) incorrectLabel.innerText = t.incorrect;
+        const notAttemptedLabel = document.getElementById("notAttemptedLabel"); if (notAttemptedLabel) notAttemptedLabel.innerText = t.notAttempted;
+        const accuracyLabel = document.getElementById("accuracyLabel"); if (accuracyLabel) accuracyLabel.innerText = t.accuracy;
+        const timeTakenLabel = document.getElementById("timeTakenLabel"); if (timeTakenLabel) timeTakenLabel.innerText = t.timeTaken;
+        const newAttemptBtn = document.getElementById("restartQuizBtn"); if (newAttemptBtn) newAttemptBtn.innerText = t.newAttempt;
+        const langBtn = document.getElementById("langToggleBtn"); if (langBtn) langBtn.innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && document.getElementById("navButtons")) updateNavButtons();
+    }
+    
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+
+    let dashboard = {
+        examTitle: "APTITUDE",
+        testNo: "TAP-01",
+        date: new Date().toLocaleDateString("en-GB"),
+        subject: "APTITUDE",
+        topic: "TAP-1 SIMPLIFICATION (Set-1)",
+        duration: "20",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "Simplify $\\frac{2t^{2} + 7t + 6}{2t^{2} + 9t + 9} \\div \\frac{t^{2} + 5t + 6}{3t^{2} + 18t + 27}$",
+    "ta": "எளிமைப்படுத்துக: $\\frac{2t^{2} + 7t + 6}{2t^{2} + 9t + 9} \\div \\frac{t^{2} + 5t + 6}{3t^{2} + 18t + 27}$",
+    "optionsEn": ["4", "2", "1", "3"],
+    "optionsTa": ["4", "2", "1", "3"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Simplify $\\frac{a^{3}}{a - b} + \\frac{b^{3}}{b - a}$",
+    "ta": "எளிமைப்படுத்துக: $\\frac{a^{3}}{a - b} + \\frac{b^{3}}{b - a}$",
+    "optionsEn": ["$a^{2} + ab + b^{2}$", "$a^{2} - ab + b^{2}$", "$a^{2} + b^{2}$", "$a^{2} - b^{2}$"],
+    "optionsTa": ["$a^{2} + ab + b^{2}$", "$a^{2} - ab + b^{2}$", "$a^{2} + b^{2}$", "$a^{2} - b^{2}$"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "If $4x + 5y = 83$ and $\\frac{3x}{2y} = \\frac{21}{22}$, then $y - x = ?$",
+    "ta": "$4x + 5y = 83$ மற்றும் $\\frac{3x}{2y} = \\frac{21}{22}$ எனில், $y - x = ?$",
+    "optionsEn": ["3", "6", "4", "7"],
+    "optionsTa": ["3", "6", "4", "7"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "The value of $999\\frac{995}{999} \\times 999$ is",
+    "ta": "$999\\frac{995}{999} \\times 999$ இன் மதிப்பு",
+    "optionsEn": ["990809", "998996", "998999", "999824"],
+    "optionsTa": ["990809", "998996", "998999", "999824"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "How many 1/8 are there in 37 ½?",
+    "ta": "37 ½ இல் எத்தனை 1/8 உள்ளன?",
+    "optionsEn": ["300", "200", "100", "400"],
+    "optionsTa": ["300", "200", "100", "400"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "45 x ? = 25% of 900",
+    "ta": "45 x ? = 900 இன் 25%",
+    "optionsEn": ["16.20", "4", "5", "500"],
+    "optionsTa": ["16.20", "4", "5", "500"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Simplify $\\frac{x^{3}}{x - 2} + \\frac{8}{2 - x}$",
+    "ta": "எளிமைப்படுத்துக: $\\frac{x^{3}}{x - 2} + \\frac{8}{2 - x}$",
+    "optionsEn": ["$x^{2} - 2x + 4$", "$x^{2} + 2x + 4$", "$x^{2} - 2x - 4$", "$x^{2} + 2x - 4$"],
+    "optionsTa": ["$x^{2} - 2x + 4$", "$x^{2} + 2x + 4$", "$x^{2} - 2x - 4$", "$x^{2} + 2x - 4$"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Simplify $\\frac{m}{m + 1} + \\frac{1}{m + 1} + \\frac{1}{m^{2} - 1}$",
+    "ta": "எளிமைப்படுத்துக: $\\frac{m}{m + 1} + \\frac{1}{m + 1} + \\frac{1}{m^{2} - 1}$",
+    "optionsEn": ["$m^{2}$", "$\\frac{1}{m^{2}}$", "$\\frac{m^{2}}{m^{2} - 1}$", "$\\frac{m^{2} - 1}{m^{2}}$"],
+    "optionsTa": ["$m^{2}$", "$\\frac{1}{m^{2}}$", "$\\frac{m^{2}}{m^{2} - 1}$", "$\\frac{m^{2} - 1}{m^{2}}$"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "If $3a + 4b = 22$, $8a - 5b = -4$, then the value of $(a + b)^{2} = ?$",
+    "ta": "$3a + 4b = 22$, $8a - 5b = -4$ எனில், $(a + b)^{2}$ இன் மதிப்பு = ?",
+    "optionsEn": ["36", "25", "49", "66"],
+    "optionsTa": ["36", "25", "49", "66"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "$4.59 \\times 1.8 \\div 3.6 + 5.4 \\text{ of } \\frac{1}{9} - \\frac{1}{5} = ?$",
+    "ta": "$4.59 \\times 1.8 \\div 3.6 + 5.4 \\text{ இன் } \\frac{1}{9} - \\frac{1}{5} = ?$",
+    "optionsEn": ["3.015", "2.705", "2.695", "1.809"],
+    "optionsTa": ["3.015", "2.705", "2.695", "1.809"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "$\\frac{x^{2} - 25}{x + 3} \\div \\frac{(x + 5)^{2}}{x^{2} - 9} = ?$",
+    "ta": "$\\frac{x^{2} - 25}{x + 3} \\div \\frac{(x + 5)^{2}}{x^{2} - 9} = ?$",
+    "optionsEn": ["$\\frac{(x - 5)(x + 3)}{x - 3}$", "$\\frac{(x - 5)(x - 3)}{x + 5}$", "$\\frac{(x + 5)(x - 3)}{x + 3}$", "$\\frac{(x + 5)(x + 3)}{x - 5}$"],
+    "optionsTa": ["$\\frac{(x - 5)(x + 3)}{x - 3}$", "$\\frac{(x - 5)(x - 3)}{x + 5}$", "$\\frac{(x + 5)(x - 3)}{x + 3}$", "$\\frac{(x + 5)(x + 3)}{x - 5}$"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Simplify: $\\frac{2}{7} - \\left\\{ \\left( \\frac{1}{4} \\div \\frac{2}{3} \\right) - \\frac{5}{6} \\right\\}$",
+    "ta": "எளிமைப்படுத்துக: $\\frac{2}{7} - \\left\\{ \\left( \\frac{1}{4} \\div \\frac{2}{3} \\right) - \\frac{5}{6} \\right\\}$",
+    "optionsEn": ["$\\frac{168}{125}$", "$\\frac{125}{160}$", "$\\frac{125}{168}$", "$\\frac{160}{125}$"],
+    "optionsTa": ["$\\frac{168}{125}$", "$\\frac{125}{160}$", "$\\frac{125}{168}$", "$\\frac{160}{125}$"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Find the value of $\\frac{\\sqrt[3]{729} - \\sqrt[3]{27}}{\\sqrt[3]{512} + \\sqrt[3]{343}}$",
+    "ta": "$\\frac{\\sqrt[3]{729} - \\sqrt[3]{27}}{\\sqrt[3]{512} + \\sqrt[3]{343}}$ இன் மதிப்பைக் காண்க",
+    "optionsEn": ["1/3", "5/3", "5/2", "2/5"],
+    "optionsTa": ["1/3", "5/3", "5/2", "2/5"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "If $x - \\frac{1}{x} = 4$, then $x^{3} - \\frac{1}{x^{3}}$ is",
+    "ta": "$x - \\frac{1}{x} = 4$ எனில், $x^{3} - \\frac{1}{x^{3}}$ என்பது",
+    "optionsEn": ["64", "72", "76", "70"],
+    "optionsTa": ["64", "72", "76", "70"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Simplify $2\\frac{2}{3} - 3\\frac{1}{6} + 6\\frac{3}{4}$",
+    "ta": "எளிமைப்படுத்துக: $2\\frac{2}{3} - 3\\frac{1}{6} + 6\\frac{3}{4}$",
+    "optionsEn": ["$6\\frac{1}{4}$", "$5\\frac{1}{3}$", "$4\\frac{1}{6}$", "$2\\frac{1}{3}$"],
+    "optionsTa": ["$6\\frac{1}{4}$", "$5\\frac{1}{3}$", "$4\\frac{1}{6}$", "$2\\frac{1}{3}$"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Simplify $\\sqrt{36a^{4}(b - c)^{16}} \\div 2a(b - c)^{2}$",
+    "ta": "எளிமைப்படுத்துக: $\\sqrt{36a^{4}(b - c)^{16}} \\div 2a(b - c)^{2}$",
+    "optionsEn": ["$18a^{3}(b - c)^{8}$", "$3a(b - c)^{4}$", "$3a(b - c)^{2}$", "$3a(b - c)^{6}$"],
+    "optionsTa": ["$18a^{3}(b - c)^{8}$", "$3a(b - c)^{4}$", "$3a(b - c)^{2}$", "$3a(b - c)^{6}$"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "If $ax^{2} - 28x + 49 = 0$ has equal roots, then the value of $a$ is?",
+    "ta": "$ax^{2} - 28x + 49 = 0$ சமமான மூலங்களைக் கொண்டிருந்தால், $a$ இன் மதிப்பு என்ன?",
+    "optionsEn": ["2", "3", "4", "5"],
+    "optionsTa": ["2", "3", "4", "5"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Find the value of $\\sqrt{75 + \\sqrt{33 + \\sqrt{4 + \\sqrt{25}}}}$",
+    "ta": "$\\sqrt{75 + \\sqrt{33 + \\sqrt{4 + \\sqrt{25}}}}$ இன் மதிப்பைக் காண்க",
+    "optionsEn": ["9", "6", "4", "11"],
+    "optionsTa": ["9", "6", "4", "11"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Simplify $\\frac{\\left( x^{4} - x^{2}y^{2} \\right)}{y^{4} - x^{2}y^{2}} \\div \\left( \\frac{x^{2}}{y^{2}} \\right)$",
+    "ta": "எளிமைப்படுத்துக: $\\frac{\\left( x^{4} - x^{2}y^{2} \\right)}{y^{4} - x^{2}y^{2}} \\div \\left( \\frac{x^{2}}{y^{2}} \\right)$",
+    "optionsEn": ["1", "0", "-1", "2"],
+    "optionsTa": ["1", "0", "-1", "2"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Simplify $\\frac{\\left( \\sqrt{900} + \\sqrt{144} \\right)}{\\sqrt{144}} - \\frac{\\left( \\sqrt{16} \\right)}{\\sqrt[3]{8}} + 2$",
+    "ta": "எளிமைப்படுத்துக: $\\frac{\\left( \\sqrt{900} + \\sqrt{144} \\right)}{\\sqrt{144}} - \\frac{\\left( \\sqrt{16} \\right)}{\\sqrt[3]{8}} + 2$",
+    "optionsEn": ["21/4", "21/6", "21/4", "21/8"],
+    "optionsTa": ["21/4", "21/6", "21/4", "21/8"],
+    "answer": 1
+  }
+];
+
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    
+    function getSafeImageUrl(url) {
+        if (!url) return "";
+        let cleanUrl = url.trim();
+        if (cleanUrl.includes("github.com") && cleanUrl.includes("/blob/")) {
+            cleanUrl = cleanUrl.replace("github.com", "raw.githubusercontent.com").replace("/blob/", "/").replace("?raw=true", "");
+        }
+        return cleanUrl;
+    }
+
+    function initImageZoom() {
+        if (typeof mediumZoom !== "undefined") {
+            mediumZoom(".img-zoom-wrapper img, .review-question-img", {
+                background: "rgba(0,0,0,0.9)",
+                margin: 20
+            });
+        }
+    }
+
+    function renderDashboard() {
+        const container = document.getElementById("dashboardContainer");
+        if(container) {
+            container.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div>
+                <div style="font-size:0.9rem;">(Since 2025)</div>
+                <div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div>
+                <div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div>
+                <div>📅 DATE: ${escapeHtml(dashboard.date)}</div>
+                <div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div>
+                <div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div>
+                <div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div>
+                <div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        }
+        let totalSpan = document.getElementById("totalQsSpan");
+        if(totalSpan) totalSpan.innerText = `/${dashboard.totalMarks}`;
+    }
+
+    function autoSaveState() {
+        if (!quizActive || isSubmitted) return;
+        try {
+            localStorage.setItem("tetEnglishAutoResume", JSON.stringify({
+                userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft,
+                startTimestamp: startTimestamp, isSubmitted: false, quizActive: true,
+                savedAt: Date.now(), language: currentLanguage
+            }));
+        } catch(e) {}
+    }
+
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        const modalHtml = `
+            <div id="resumeModal" class="modal-overlay">
+                <div class="modal-container">
+                    <h3>🔄 Unfinished Exam Found</h3>
+                    <p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p>
+                    <div class="modal-buttons">
+                        <button id="modalResumeBtn" class="btn">✅ Resume</button>
+                        <button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button>
+                    </div>
+                </div>
+            </div>`;
+        document.body.insertAdjacentHTML("beforeend", modalHtml);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if(timerInterval) clearInterval(timerInterval);
+        quizActive = false;
+    }
+    
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) {
+        userAnswers = injectedAnswers;
+    }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) {
+                passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else {
+                displayTxt = `<div class="passage-box">${txt}</div>`; 
+            }
+            extraClass = "question-text";
+        } else if (q.type === "puzzle") { 
+            displayTxt = `<div class="puzzle-box">${txt}</div>`; 
+            extraClass = "question-text"; 
+        }
+
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) {
+            q.imageUrls.forEach(u => urlsToLoad.push(u));
+        } else if (q.imageUrl && q.imageUrl.trim() !== "") {
+            urlsToLoad.push(q.imageUrl);
+        }
+
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `
+            <div class="img-zoom-wrapper">
+                <img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy">
+            </div>`;
+        });
+
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">${String.fromCharCode(65+i)}. ${opt}</div>`;
+        });
+
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+            </div>
+        `;
+        updateNavButtons(); updatePalette();
+        if(window.MathJax) MathJax.typesetPromise();
+        initImageZoom();
+    }
+
+    function selectOption(optIndex) {
+        if(isSubmitted) return;
+        if(userAnswers[currentIndex] === optIndex) return;
+        userAnswers[currentIndex] = optIndex;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if(currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+
+    function prevQuestion() { if(!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if(!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if(!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for(let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if(userAnswers[i] !== null) btn.classList.add("answered");
+            if(i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if(!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+
+    function startTimer() {
+        if(timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if(!quizActive || isSubmitted) return;
+            if(timeLeft <= 0) { clearInterval(timerInterval); if(!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if(timeLeft % 10 === 0) autoSaveState();
+                if(timeLeft===0) submitQuiz();
+            }
+        }, 1000);
+    }
+
+    function buildDetailedReview() {
+        let html = "";
+        for(let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let marker = "";
+                if(idx === corr) marker = " ✅ (Correct)";
+                if(u === idx && idx !== corr) marker = " ❌ (Your choice)";
+                else if(u === idx && idx === corr) marker = " ✅ (Correct)";
+                const styleClass = (idx === corr) ? "correct-option" : "";
+                const userWrongStyle = (u === idx && idx !== corr) ? "color:#ef4444;" : "";
+                optsHtml += `<div class="${styleClass}" style="${userWrongStyle}">${String.fromCharCode(65+idx)}. ${optsArray[idx]}${marker}</div>`;
+            });
+
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) {
+                q.imageUrls.forEach(u => urlsToLoad.push(u));
+            } else if (q.imageUrl && String(q.imageUrl).trim() !== "") {
+                urlsToLoad.push(q.imageUrl);
+            }
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+
+            const userAns = (u !== null && u !== undefined)
+                ? `${String.fromCharCode(65+u)}. ${optsArray[u]}`
+                : "Not answered";
+
+            html += `<div class="review-card" style="border-left-color:${isCorr?"#10b981":"#ef4444"}">
+                        <strong>Q${i+1}. ${txt}</strong>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div style="margin-top:8px;"><strong>Your answer:</strong> ${userAns}</div>
+                        <div><strong>Correct:</strong> ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if(window.MathJax && MathJax.typesetPromise) { try { MathJax.typesetPromise(); } catch(e) {} }
+        initImageZoom();
+
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+    }
+
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+
+        try {
+            if (window.MathJax && MathJax.typesetPromise) {
+                try { await MathJax.typesetPromise(); } catch(e) { console.log("MathJax await error", e); }
+            }
+
+            const imgs = Array.from(document.querySelectorAll("#reviewList img"));
+            await Promise.all(imgs.map(img => {
+                if (img.complete && img.naturalWidth > 0) return Promise.resolve();
+                return new Promise(resolve => {
+                    let done = false;
+                    const finish = () => { if (!done) { done = true; resolve(); } };
+                    img.addEventListener("load", finish, { once: true });
+                    img.addEventListener("error", finish, { once: true });
+                    setTimeout(finish, 5000);
+                });
+            }));
+
+            await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+            alert("Could not prepare PDF. Please try again.");
+        } finally {
+            setTimeout(() => { if (btn) { btn.disabled = false; btn.innerText = originalText; } }, 800);
+        }
+    }
+
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+
+    function submitQuiz() {
+        if(isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for(let i=0; i<QUESTIONS.length; i++) {
+            if(userAnswers[i] === null) na++;
+            else if(userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+
+        const negMark = dashboard.negativeMark || 0; 
+        const finalScore = correct - (incorrect * negMark);
+
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct,
+                    wrong: incorrect,
+                    skipped: na,
+                    total: QUESTIONS.length,
+                    score: finalScore,
+                    stayOnScreen: true,
+                    answers: userAnswers,
+                    questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        
+        document.getElementById("finalScore").innerText = finalScore; 
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+    }
+
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+
+    function toggleTheme() {
+        const curr = document.documentElement.getAttribute("data-theme");
+        const next = curr === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", next);
+        try { localStorage.setItem("themeGreen", next); } catch(e) {}
+        const darkBtn = document.getElementById("darkModeToggleBtn");
+        if(darkBtn) darkBtn.innerText = next === "dark" ? translations[currentLanguage].lightMode : translations[currentLanguage].darkMode;
+    }
+
+    renderDashboard();
+    let savedTheme = null; try { savedTheme = localStorage.getItem("themeGreen"); } catch(e) {}
+    if (savedTheme === "dark") document.documentElement.setAttribute("data-theme", "dark");
+    else document.documentElement.setAttribute("data-theme", "light");
+    updateUILanguage();
+    
+    checkForAutoResume();
+    
+    window.checkForReview = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get("review") === "true") {
+            let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+            if (savedAnswers) {
+                try {
+                    userAnswers = JSON.parse(savedAnswers);
+                    try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+                } catch(e) { console.log("Error parsing answers: " + e.message); }
+            }
+            
+            isSubmitted = true;
+            quizActive = false;
+            document.getElementById("startScreen").style.display = "none";
+            document.getElementById("quizContainer").style.display = "none";
+            document.getElementById("resultContainer").style.display = "block";
+            
+            let correct=0, incorrect=0, na=0;
+            for(let i=0; i<QUESTIONS.length; i++) {
+                if(userAnswers[i] === null || userAnswers[i] === undefined) na++;
+                else if(userAnswers[i] === QUESTIONS[i].answer) correct++;
+                else incorrect++;
+            }
+            const negMark = dashboard.negativeMark || 0;
+            const finalScore = correct - (incorrect * negMark);
+            const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+            
+            document.getElementById("finalScore").innerText = finalScore;
+            document.getElementById("correctCountStat").innerText = correct;
+            document.getElementById("incorrectCountStat").innerText = incorrect;
+            document.getElementById("notAttemptedStat").innerText = na;
+            document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+            document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+            const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+            document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+            buildDetailedReview();
+        }
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
