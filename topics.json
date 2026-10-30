@@ -36,12 +36,47 @@
     },
     {
       "courseId": "PGTRB",
-      "courseName": "PG TRB",
+      "courseName": "PGTRB ENGLISH",
+      "topics": []
+    },
+    {
+      "courseId": "PGTRB",
+      "courseName": "PGTRB MATHS",
+      "topics": []
+    },
+    {
+      "courseId": "PGTRB",
+      "courseName": "PGTRB HISTORY",
+      "topics": []
+    },
+    {
+      "courseId": "PGTRB",
+      "courseName": "PGTRB COMPUTER SCIENCE",
+      "topics": []
+    },
+     {
+      "courseId": "PGTRB",
+      "courseName": "PGTRB TAMIL",
       "topics": []
     },
     {
       "courseId": "UGTRB",
-      "courseName": "UG TRB",
+      "courseName": "UGTRB ENGLISH",
+      "topics": []
+    },
+    {
+      "courseId": "UGTRB",
+      "courseName": "UGTRB MATHS",
+      "topics": []
+    },
+    {
+      "courseId": "UGTRB",
+      "courseName": "UGTRB ZOOLOGY",
+      "topics": []
+    },
+     {
+      "courseId": "UGTRB",
+      "courseName": "UGTRB PHYSICS",
       "topics": []
     },
     {
