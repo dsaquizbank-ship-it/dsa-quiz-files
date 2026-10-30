@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-30T17:00:47.049Z",
+  "version": "2026-10-30T17:02:14.872Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -637,7 +637,140 @@
     {
       "courseId": "RRB",
       "courseName": "RRB",
-      "topics": []
+      "topics": [
+        {
+          "topicId": "RRB-T001",
+          "topicName": "Physics | Units, Dimensions & Formula"
+        },
+        {
+          "topicId": "RRB-T002",
+          "topicName": "Physics | Motion"
+        },
+        {
+          "topicId": "RRB-T003",
+          "topicName": "Physics | Forces"
+        },
+        {
+          "topicId": "RRB-T004",
+          "topicName": "Physics | Work, Energy & Power"
+        },
+        {
+          "topicId": "RRB-T005",
+          "topicName": "Physics | Gravity"
+        },
+        {
+          "topicId": "RRB-T006",
+          "topicName": "Physics | Wave & Optics"
+        },
+        {
+          "topicId": "RRB-T007",
+          "topicName": "Physics | Heat And Temperature"
+        },
+        {
+          "topicId": "RRB-T008",
+          "topicName": "Physics | Electricity & Magnetism"
+        },
+        {
+          "topicId": "RRB-T009",
+          "topicName": "Physics | Laws & Principles"
+        },
+        {
+          "topicId": "RRB-T010",
+          "topicName": "Physics | Measuring Instruments"
+        },
+        {
+          "topicId": "RRB-T011",
+          "topicName": "Chemistry | Basic Concepts Of Chemistry"
+        },
+        {
+          "topicId": "RRB-T012",
+          "topicName": "Chemistry | Atoms And Molecules"
+        },
+        {
+          "topicId": "RRB-T013",
+          "topicName": "Chemistry | Properties Of Elements & Compounds"
+        },
+        {
+          "topicId": "RRB-T014",
+          "topicName": "Chemistry | Periodic Table"
+        },
+        {
+          "topicId": "RRB-T015",
+          "topicName": "Chemistry | States Of Matter"
+        },
+        {
+          "topicId": "RRB-T016",
+          "topicName": "Chemistry | Chemical Bond"
+        },
+        {
+          "topicId": "RRB-T017",
+          "topicName": "Chemistry | Carbon & Its Compounds"
+        },
+        {
+          "topicId": "RRB-T018",
+          "topicName": "Chemistry | Acid, Base & Salts"
+        },
+        {
+          "topicId": "RRB-T019",
+          "topicName": "Chemistry | Solutions"
+        },
+        {
+          "topicId": "RRB-T020",
+          "topicName": "Chemistry | Gases & Its Laws"
+        },
+        {
+          "topicId": "RRB-T021",
+          "topicName": "Chemistry | Chemical Reaction"
+        },
+        {
+          "topicId": "RRB-T022",
+          "topicName": "Chemistry | Metals & Non-Metals"
+        },
+        {
+          "topicId": "RRB-T023",
+          "topicName": "Chemistry | Chemistry In Everyday Life"
+        },
+        {
+          "topicId": "RRB-T024",
+          "topicName": "Biology | Cell, Genetics & Evolution"
+        },
+        {
+          "topicId": "RRB-T025",
+          "topicName": "Biology | Tissue"
+        },
+        {
+          "topicId": "RRB-T026",
+          "topicName": "Biology | Biomolecules"
+        },
+        {
+          "topicId": "RRB-T027",
+          "topicName": "Biology | Zoology"
+        },
+        {
+          "topicId": "RRB-T028",
+          "topicName": "Biology | Botany"
+        },
+        {
+          "topicId": "RRB-T029",
+          "topicName": "Biology | Human Body"
+        },
+        {
+          "topicId": "RRB-T030",
+          "topicName": "Biology | Discoveries And Scientific Development"
+        },
+        {
+          "topicId": "RRB-T031",
+          "topicName": "Biology | Human Diseases"
+        },
+        {
+          "topicId": "RRB-T032",
+          "topicName": "Biology | Scientific Names"
+        },
+        {
+          "topicId": "RRB-T033",
+          "topicName": "Biology | Biology In Everyday Life"
+        }
+      ]
     },
     {
       "courseId": "PGTRB-ENG",
