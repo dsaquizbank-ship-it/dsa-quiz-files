@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-30T15:05:13.300Z",
+  "version": "2026-10-30T15:11:40.627Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -2319,7 +2319,752 @@
     {
       "courseId": "UGTRB-ZOO",
       "courseName": "UGTRB ZOOLOGY",
-      "topics": []
+      "topics": [
+        {
+          "topicId": "UGTRB-ZOO-T001",
+          "topicName": "Unit I - Invertebrata | Principles of taxonomy and Binomial nomenclature"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T002",
+          "topicName": "Unit I - Invertebrata | Rules of nomenclature"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T003",
+          "topicName": "Unit I - Invertebrata | Classification of Animal Kingdom (up to orders)"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T004",
+          "topicName": "Unit I - Invertebrata | Protozoa - Type study: Paramecium and Plasmodium"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T005",
+          "topicName": "Unit I - Invertebrata | Parasitic protozoans (Entamoeba, Trypanosoma, Leishmania)"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T006",
+          "topicName": "Unit I - Invertebrata | Porifera - Type study: Leucosolenia"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T007",
+          "topicName": "Unit I - Invertebrata | Sponges - Skeleton and canal system"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T008",
+          "topicName": "Unit I - Invertebrata | Coelenterata - Type study: Obelia and Aurelia"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T009",
+          "topicName": "Unit I - Invertebrata | Coral and coral reefs, Polymorphism, Economic importance"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T010",
+          "topicName": "Unit I - Invertebrata | Platyhelminthes - Type Study: Fasciola and Taenia"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T011",
+          "topicName": "Unit I - Invertebrata | Parasitic adaptations in Platyhelminthes"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T012",
+          "topicName": "Unit I - Invertebrata | Aschelminthes - Type Study: Ascaris"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T013",
+          "topicName": "Unit I - Invertebrata | Nematode parasites and diseases (Enterobius, Ancylostoma, Wuchereria)"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T014",
+          "topicName": "Unit I - Invertebrata | Annelida - Type study: Earthworm and Hirudinea"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T015",
+          "topicName": "Unit I - Invertebrata | Metamerism, Trochophore larva and its significance"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T016",
+          "topicName": "Unit I - Invertebrata | Vermiculture and Nephridia"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T017",
+          "topicName": "Unit I - Invertebrata | Arthropoda - Type study: Penaeus"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T018",
+          "topicName": "Unit I - Invertebrata | Affinities of Peripatus"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T019",
+          "topicName": "Unit I - Invertebrata | Crustacean larvae and their significance"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T020",
+          "topicName": "Unit I - Invertebrata | Mouth parts of insects, Economic importance, Social life"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T021",
+          "topicName": "Unit I - Invertebrata | Mollusca - Type study: Pila and Lamellidens"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T022",
+          "topicName": "Unit I - Invertebrata | Foot in Mollusca, Torsion in Gastropods"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T023",
+          "topicName": "Unit I - Invertebrata | Echinodermata - Type study: Asterias"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T024",
+          "topicName": "Unit I - Invertebrata | Echinoderm larvae and Water vascular system"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T025",
+          "topicName": "Unit II - Chordata | Origin of chordates and outline classification"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T026",
+          "topicName": "Unit II - Chordata | Prochordates - Hemichordata: Balanoglossus"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T027",
+          "topicName": "Unit II - Chordata | Prochordates - Urochordata: Ascidian"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T028",
+          "topicName": "Unit II - Chordata | Prochordates - Cephalochordata: Branchiostoma"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T029",
+          "topicName": "Unit II - Chordata | Agnatha - Type study: Petromyzon and Affinities of cyclostomata"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T030",
+          "topicName": "Unit II - Chordata | Pisces - Type study: Scoliodon and Mugil"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T031",
+          "topicName": "Unit II - Chordata | Affinities of Dipnoi, Scales and fins"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T032",
+          "topicName": "Unit II - Chordata | Accessory respiratory organs, Air bladder"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T033",
+          "topicName": "Unit II - Chordata | Migration and Parental care in fishes"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T034",
+          "topicName": "Unit II - Chordata | Amphibia - Type study: Rana hexadactyla"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T035",
+          "topicName": "Unit II - Chordata | Origin and adaptive features of Amphibia"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T036",
+          "topicName": "Unit II - Chordata | Neoteny in urodela and Parental care in Amphibia"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T037",
+          "topicName": "Unit II - Chordata | Reptilia - Type Study: Calotes versicolor"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T038",
+          "topicName": "Unit II - Chordata | Origin of reptiles"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T039",
+          "topicName": "Unit II - Chordata | Snakes of India - Poison apparatus and biting mechanism"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T040",
+          "topicName": "Unit II - Chordata | Aves - Type study: Columba livia"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T041",
+          "topicName": "Unit II - Chordata | Origin of birds, Ratite, Flight adaptation"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T042",
+          "topicName": "Unit II - Chordata | Migration and Palate in birds"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T043",
+          "topicName": "Unit II - Chordata | Mammalia - Type study: Rabbit"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T044",
+          "topicName": "Unit II - Chordata | Adaptive radiation in mammals"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T045",
+          "topicName": "Unit II - Chordata | Egg laying mammals, Marsupials, Aquatic and flying mammals"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T046",
+          "topicName": "Unit II - Chordata | Dentition in mammals"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T047",
+          "topicName": "Unit III - Cell and Molecular Biology | Microscopy (Compound, Phase contrast, Electron, Light, Dark field)"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T048",
+          "topicName": "Unit III - Cell and Molecular Biology | Cytological techniques (fixation, staining, centrifugation)"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T049",
+          "topicName": "Unit III - Cell and Molecular Biology | Cell theory and Prokaryotic/Eukaryotic cell"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T050",
+          "topicName": "Unit III - Cell and Molecular Biology | Plasma membrane (Lipid bilayer, Fluid mosaic, functions)"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T051",
+          "topicName": "Unit III - Cell and Molecular Biology | Cell organelles (ERC, Ribosomes, Golgi, Lysosomes, Centrioles)"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T052",
+          "topicName": "Unit III - Cell and Molecular Biology | Mitochondria and Nucleus"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T053",
+          "topicName": "Unit III - Cell and Molecular Biology | Chromosomes - structure and functions"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T054",
+          "topicName": "Unit III - Cell and Molecular Biology | Heterochromatin, Euchromatin, Giant chromosomes"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T055",
+          "topicName": "Unit III - Cell and Molecular Biology | Cell cycle, Mitosis and Meiosis"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T056",
+          "topicName": "Unit III - Cell and Molecular Biology | Cancer - types, causes, diagnosis, treatment"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T057",
+          "topicName": "Unit III - Cell and Molecular Biology | Gene responsible for aging and Stem cells"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T058",
+          "topicName": "Unit III - Cell and Molecular Biology | Nucleic acids - Molecular structure of DNA and RNA"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T059",
+          "topicName": "Unit III - Cell and Molecular Biology | DNA replication"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T060",
+          "topicName": "Unit III - Cell and Molecular Biology | Role of RNA and ribosome in protein synthesis"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T061",
+          "topicName": "Unit III - Cell and Molecular Biology | Regulation of Protein synthesis"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T062",
+          "topicName": "Unit IV - Genetics | Mendelian principles and Gene interactions"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T063",
+          "topicName": "Unit IV - Genetics | Multiple alleles (ABO blood group and Rh factor)"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T064",
+          "topicName": "Unit IV - Genetics | Multiple factors and Sex determination"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T065",
+          "topicName": "Unit IV - Genetics | Linkage and crossing over"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T066",
+          "topicName": "Unit IV - Genetics | Chromosomal aberrations (Allosomal and Autosomal)"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T067",
+          "topicName": "Unit IV - Genetics | Mendelian traits and Pedigree studies"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T068",
+          "topicName": "Unit IV - Genetics | Eugenics and Genetics and society"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T069",
+          "topicName": "Unit IV - Genetics | Chemical basis of hereditary"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T070",
+          "topicName": "Unit IV - Genetics | Gene mutation"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T071",
+          "topicName": "Unit IV - Genetics | Genetics of bacteria and Genetic code"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T072",
+          "topicName": "Unit IV - Genetics | Gene action and Regulation of gene expression"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T073",
+          "topicName": "Unit IV - Genetics | Insertion elements and transposons"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T074",
+          "topicName": "Unit IV - Genetics | Genetic cloning"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T075",
+          "topicName": "Unit V - Animal Physiology | Nutrition - Types and feeding mechanism"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T076",
+          "topicName": "Unit V - Animal Physiology | Digestive enzymes and their role"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T077",
+          "topicName": "Unit V - Animal Physiology | Respiration - Organs and Mechanism"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T078",
+          "topicName": "Unit V - Animal Physiology | Transport of gases, Chloride shifting"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T079",
+          "topicName": "Unit V - Animal Physiology | Haldane and Bohr's effect"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T080",
+          "topicName": "Unit V - Animal Physiology | Circulation - Structure of human heart and cardiac cycle"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T081",
+          "topicName": "Unit V - Animal Physiology | Pace maker, ECG and Blood pressure"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T082",
+          "topicName": "Unit V - Animal Physiology | Excretion - Kidney and Nephron"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T083",
+          "topicName": "Unit V - Animal Physiology | Mechanism of urine formation and hormonal control"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T084",
+          "topicName": "Unit V - Animal Physiology | Osmoregulation and Thermoregulation"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T085",
+          "topicName": "Unit V - Animal Physiology | Muscular system - Types and structure of skeletal muscle"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T086",
+          "topicName": "Unit V - Animal Physiology | Mechanism of muscle contraction"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T087",
+          "topicName": "Unit V - Animal Physiology | Nervous system - Structure and Types of neuron"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T088",
+          "topicName": "Unit V - Animal Physiology | Nerve impulse, Action potential"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T089",
+          "topicName": "Unit V - Animal Physiology | Synapse, Neuromuscular junction and Reflex action"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T090",
+          "topicName": "Unit V - Animal Physiology | Photoreceptor, Phonoreceptor, Chemoreceptors"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T091",
+          "topicName": "Unit V - Animal Physiology | Endocrine glands (Pituitary, Pineal, Thyroid, Parathyroid, Thymus, Adrenal, Pancreas)"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T092",
+          "topicName": "Unit V - Animal Physiology | Defects of hormones"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T093",
+          "topicName": "Unit V - Animal Physiology | Human reproductive hormones and Menstrual cycle"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T094",
+          "topicName": "Unit VI - Biochemistry and Biotechnology | Carbohydrates, proteins and fats (Structure)"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T095",
+          "topicName": "Unit VI - Biochemistry and Biotechnology | Metabolism of carbohydrates, proteins and lipids"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T096",
+          "topicName": "Unit VI - Biochemistry and Biotechnology | Glycolysis, Glycogenolysis, Gluconeogenesis, Glycogenesis"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T097",
+          "topicName": "Unit VI - Biochemistry and Biotechnology | Kreb's cycle and Oxidative phosphorylation"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T098",
+          "topicName": "Unit VI - Biochemistry and Biotechnology | Electron transport system"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T099",
+          "topicName": "Unit VI - Biochemistry and Biotechnology | Deamination, Transamination, Fate of keto acids"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T100",
+          "topicName": "Unit VI - Biochemistry and Biotechnology | Nitrogen metabolism and Beta oxidation of fatty acids"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T101",
+          "topicName": "Unit VI - Biochemistry and Biotechnology | BMI and BMR"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T102",
+          "topicName": "Unit VI - Biochemistry and Biotechnology | Scope and importance of Biotechnology"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T103",
+          "topicName": "Unit VI - Biochemistry and Biotechnology | DNA Recombinant Technology"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T104",
+          "topicName": "Unit VI - Biochemistry and Biotechnology | Application of genetic recombinant technology"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T105",
+          "topicName": "Unit VI - Biochemistry and Biotechnology | Genetic engineering - Restriction enzymes, ligase, polymerase, reverse transcriptase"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T106",
+          "topicName": "Unit VI - Biochemistry and Biotechnology | PCR, Gene cloning, Cloning vectors, Plasmids, cDNA library, Gene Bank"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T107",
+          "topicName": "Unit VI - Biochemistry and Biotechnology | Production of biotechnological products (SCP, Biofertilizers, Biofuel, Biopesticides)"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T108",
+          "topicName": "Unit VI - Biochemistry and Biotechnology | Solid and liquid waste management"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T109",
+          "topicName": "Unit VI - Biochemistry and Biotechnology | Enzyme Biotechnology - Sources and commercially important enzymes"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T110",
+          "topicName": "Unit VII - Developmental Biology | Origin of germ cells and Gametogenesis"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T111",
+          "topicName": "Unit VII - Developmental Biology | Spermatogenesis and Oogenesis"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T112",
+          "topicName": "Unit VII - Developmental Biology | Types of sperms, eggs and egg membranes"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T113",
+          "topicName": "Unit VII - Developmental Biology | Structure of sperm and ovum in mammals"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T114",
+          "topicName": "Unit VII - Developmental Biology | Fertilization - Acrosomal and Cortical reaction"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T115",
+          "topicName": "Unit VII - Developmental Biology | Cleavage - Types, patterns, and controlling factors"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T116",
+          "topicName": "Unit VII - Developmental Biology | Fate maps in frog and chick"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T117",
+          "topicName": "Unit VII - Developmental Biology | Blastulation and gastrulation (amphioxus, frog, chick)"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T118",
+          "topicName": "Unit VII - Developmental Biology | Organogenesis (brain, eye and ear)"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T119",
+          "topicName": "Unit VII - Developmental Biology | Extra-embryonic membranes and Placentation in mammals"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T120",
+          "topicName": "Unit VII - Developmental Biology | Mechanism of induction"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T121",
+          "topicName": "Unit VII - Developmental Biology | Human reproduction (Puberty, Menstrual cycle, Menopause, Pregnancy)"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T122",
+          "topicName": "Unit VII - Developmental Biology | Artificial insemination and Cryopreservation"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T123",
+          "topicName": "Unit VII - Developmental Biology | IVF, Embryo transfer, Test tube baby"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T124",
+          "topicName": "Unit VII - Developmental Biology | Amniocentesis, Super ovulation"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T125",
+          "topicName": "Unit VII - Developmental Biology | Artificial Reproductive Technology (ART) and ethics"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T126",
+          "topicName": "Unit VII - Developmental Biology | Stem cells"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T127",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Scope, Concept and Branches in Ecology"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T128",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Autecology, Synecology, Micro and macro environment"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T129",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Types of media and substratum"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T130",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Biosphere, Hydrosphere, Lithosphere, Stratosphere"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T131",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Biocoenosis, Biogeocoenosis"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T132",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Abiotic factors (Water, soil, light, temperature) and Biotic factors"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T133",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Animal relationships (Symbiosis, Commensalism, Mutualism, Predation, Parasitism)"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T134",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Biogeochemical cycles (Nitrogen, Carbon, Oxygen)"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T135",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Ecosystem - Pond ecosystem, Primary and secondary production"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T136",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Food chain, Food web, Trophic levels, Ecological pyramids"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T137",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Terrestrial Ecology - Biomes and Adaptations"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T138",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Freshwater, Marine and Estuarine Ecology"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T139",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Population Ecology and Community Ecology"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T140",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Pollution (air, water, land) and wild life management"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T141",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Renewable and non-renewable resources"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T142",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Evolution - Lamarckism and Neo Lamarckism"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T143",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Darwinian theory and Geological time Scale"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T144",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Fossil and Fossilization, Dating of fossil"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T145",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Mimicry and coloration"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T146",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Convergent, Divergent and parallel Evolution"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T147",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Coevolution, Isolating Mechanisms"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T148",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Species concept and speciation (Allopatric and sympatric)"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T149",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Genetic drift and Founder's principle"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T150",
+          "topicName": "Unit IX - Economic Entomology and Pest Control | Economic importance of honey bees, silkworm and lac insects"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T151",
+          "topicName": "Unit IX - Economic Entomology and Pest Control | Insect damage to plants, animals and man"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T152",
+          "topicName": "Unit IX - Economic Entomology and Pest Control | Insect pests of stored grains"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T153",
+          "topicName": "Unit IX - Economic Entomology and Pest Control | Insect vectors of plants, animals and man"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T154",
+          "topicName": "Unit IX - Economic Entomology and Pest Control | Pest control methods (Physical, mechanical, chemical)"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T155",
+          "topicName": "Unit IX - Economic Entomology and Pest Control | Classification of pesticides and their modes of action"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T156",
+          "topicName": "Unit IX - Economic Entomology and Pest Control | Plant protection appliances and insecticide formulations"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T157",
+          "topicName": "Unit IX - Economic Entomology and Pest Control | Pesticides and environmental pollution"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T158",
+          "topicName": "Unit IX - Economic Entomology and Pest Control | Integrated pest management"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T159",
+          "topicName": "Unit X - Economic Zoology | Poultry Farming - Important breeds and chick rearing"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T160",
+          "topicName": "Unit X - Economic Zoology | Role of egg in human nutrition, processing of egg and meat"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T161",
+          "topicName": "Unit X - Economic Zoology | Major diseases of chick"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T162",
+          "topicName": "Unit X - Economic Zoology | Dairy Farming - Important breeds, Nutritive value of milk and meat"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T163",
+          "topicName": "Unit X - Economic Zoology | Aquaculture - Important culturable fishes and shell fishes"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T164",
+          "topicName": "Unit X - Economic Zoology | Polyculture, integrated culture, live feed organisms"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T165",
+          "topicName": "Unit X - Economic Zoology | Nutritive value of fish meat and fishery by-products"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T166",
+          "topicName": "Unit X - Economic Zoology | Pearl and edible oyster culture"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T167",
+          "topicName": "Unit X - Economic Zoology | Biology of Pinctada fucata, Preparation of graft"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T168",
+          "topicName": "Unit X - Economic Zoology | Techniques of edible oyster culture and induced breeding"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T169",
+          "topicName": "Unit XI - Microbiology and Immunology | Classification of microbes, Structure and economic importance of bacteria"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T170",
+          "topicName": "Unit XI - Microbiology and Immunology | Viruses - Types (Herpes, TMV, Polyoma, Bacteriophages)"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T171",
+          "topicName": "Unit XI - Microbiology and Immunology | Sterilization (Physical and chemical methods)"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T172",
+          "topicName": "Unit XI - Microbiology and Immunology | Types of bacterial culture"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T173",
+          "topicName": "Unit XI - Microbiology and Immunology | Microorganisms of extreme environments (Thermophilic, Methanogenic, Halophilic)"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T174",
+          "topicName": "Unit XI - Microbiology and Immunology | Food borne infections and intoxications"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T175",
+          "topicName": "Unit XI - Microbiology and Immunology | Common bacterial, viral and fungal diseases of human"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T176",
+          "topicName": "Unit XI - Microbiology and Immunology | History of immunology"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T177",
+          "topicName": "Unit XI - Microbiology and Immunology | Blood transfusion"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T178",
+          "topicName": "Unit XI - Microbiology and Immunology | Rh factor, Compatibilities"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T179",
+          "topicName": "Unit XI - Microbiology and Immunology | Innate and acquired Immunity"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T180",
+          "topicName": "Unit XI - Microbiology and Immunology | Cells and organs involved in immune system"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T181",
+          "topicName": "Unit XI - Microbiology and Immunology | Antigens, haptens, adjuvants, vaccines, toxoids, antitoxins"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T182",
+          "topicName": "Unit XI - Microbiology and Immunology | Immunoglobulins - structure, types and properties"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T183",
+          "topicName": "Unit XI - Microbiology and Immunology | Theories of antibody production"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T184",
+          "topicName": "Unit XI - Microbiology and Immunology | Complement structure, properties and function"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T185",
+          "topicName": "Unit XI - Microbiology and Immunology | Antigen-antibody reaction - in vitro methods (Agglutination, Precipitation)"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T186",
+          "topicName": "Unit XI - Microbiology and Immunology | Immunofluorescence, ELISA, RIA, Western blot"
+        }
+      ]
     },
     {
       "courseId": "UGTRB-PHY",
