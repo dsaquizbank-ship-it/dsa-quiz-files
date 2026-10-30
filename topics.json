@@ -557,8 +557,8 @@
       "topics": []
     },
     {
-      "courseId": "UGTRB-ENG",
-      "courseName": "UGTRB ENGLISH",
+      "courseId": "UGTRB-MAT",
+      "courseName": "UGTRB MATHS",
       "topics": [
         {
           "topicId": "UGTRB-T105",
@@ -1803,17 +1803,17 @@
       ]
     },
     {
-      "courseId": "UGTRB",
-      "courseName": "UGTRB MATHS",
+      "courseId": "UGTRB-ENG",
+      "courseName": "UGTRB ENGLISH",
       "topics": []
     },
     {
-      "courseId": "UGTRB",
+      "courseId": "UGTRB-ZOO",
       "courseName": "UGTRB ZOOLOGY",
       "topics": []
     },
     {
-      "courseId": "UGTRB",
+      "courseId": "UGTRB-PHY",
       "courseName": "UGTRB PHYSICS",
       "topics": []
     },
