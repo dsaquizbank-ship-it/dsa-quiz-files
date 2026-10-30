@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-30T10:35:58.452Z",
+  "version": "2026-10-30T10:42:28.895Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -559,7 +559,424 @@
     {
       "courseId": "UGTRB",
       "courseName": "UGTRB ENGLISH",
-      "topics": []
+      "topics": [
+        {
+          "topicId": "UGTRB-T001",
+          "topicName": "Unit I (Ages) | The Age of Chaucer"
+        },
+        {
+          "topicId": "UGTRB-T002",
+          "topicName": "Unit I (Ages) | The Age of Shakespeare"
+        },
+        {
+          "topicId": "UGTRB-T003",
+          "topicName": "Unit I (Ages) | The Age of Milton"
+        },
+        {
+          "topicId": "UGTRB-T004",
+          "topicName": "Unit I (Ages) | The Age of Dryden"
+        },
+        {
+          "topicId": "UGTRB-T005",
+          "topicName": "Unit I (Ages) | The Age of Pope"
+        },
+        {
+          "topicId": "UGTRB-T006",
+          "topicName": "Unit I (Ages) | The Age of Johnson"
+        },
+        {
+          "topicId": "UGTRB-T007",
+          "topicName": "Unit I (Ages) | The Age of Wordsworth"
+        },
+        {
+          "topicId": "UGTRB-T008",
+          "topicName": "Unit I (Ages) | The Age of Tennyson"
+        },
+        {
+          "topicId": "UGTRB-T009",
+          "topicName": "Unit I (Ages) | The Age of Hardy"
+        },
+        {
+          "topicId": "UGTRB-T010",
+          "topicName": "Unit I (Ages) | The Present Age"
+        },
+        {
+          "topicId": "UGTRB-T011",
+          "topicName": "Unit I (References) | K.R. Ramachandran Nair - History of English Literature"
+        },
+        {
+          "topicId": "UGTRB-T012",
+          "topicName": "Unit I (References) | W.H. Hudson - History of English Literature"
+        },
+        {
+          "topicId": "UGTRB-T013",
+          "topicName": "Unit II (Prose) | Francis Bacon - Of Revenge, Of Studies"
+        },
+        {
+          "topicId": "UGTRB-T014",
+          "topicName": "Unit II (Prose) | Charles Lamb - Dream Children: A Reverie"
+        },
+        {
+          "topicId": "UGTRB-T015",
+          "topicName": "Unit II (Prose) | Joseph Addison - Sir Roger at the Theatre"
+        },
+        {
+          "topicId": "UGTRB-T016",
+          "topicName": "Unit II (Prose) | Richard Steele - The Spectator Club"
+        },
+        {
+          "topicId": "UGTRB-T017",
+          "topicName": "Unit II (Poetry) | Edmund Spenser - Prothalamion"
+        },
+        {
+          "topicId": "UGTRB-T018",
+          "topicName": "Unit II (Poetry) | William Shakespeare - Sonnet 18"
+        },
+        {
+          "topicId": "UGTRB-T019",
+          "topicName": "Unit II (Poetry) | John Milton - Paradise Lost (Book IX) lines (795 - 833)"
+        },
+        {
+          "topicId": "UGTRB-T020",
+          "topicName": "Unit II (Poetry) | William Blake - The Lamb"
+        },
+        {
+          "topicId": "UGTRB-T021",
+          "topicName": "Unit II (Poetry) | John Donne - The Bait"
+        },
+        {
+          "topicId": "UGTRB-T022",
+          "topicName": "Unit II (Poetry) | Sir Philip Sidney - Sonnet I (from Astrophil and Stella)"
+        },
+        {
+          "topicId": "UGTRB-T023",
+          "topicName": "Unit II (Poetry) | John Dryden - A Song for St. Cecilia's Day"
+        },
+        {
+          "topicId": "UGTRB-T024",
+          "topicName": "Unit II (Poetry) | Alexander Pope - Ode on Solitude"
+        },
+        {
+          "topicId": "UGTRB-T025",
+          "topicName": "Unit II (Drama) | Christopher Marlowe - Dr. Faustus"
+        },
+        {
+          "topicId": "UGTRB-T026",
+          "topicName": "Unit II (Drama) | George Bernard Shaw - Pygmalion"
+        },
+        {
+          "topicId": "UGTRB-T027",
+          "topicName": "Unit II (Drama) | Oscar Wilde - The Importance of Being Earnest"
+        },
+        {
+          "topicId": "UGTRB-T028",
+          "topicName": "Unit II (Fiction) | Oliver Goldsmith - The Vicar of Wakefield"
+        },
+        {
+          "topicId": "UGTRB-T029",
+          "topicName": "Unit II (Fiction) | Charles Dickens - David Copperfield"
+        },
+        {
+          "topicId": "UGTRB-T030",
+          "topicName": "Unit II (Fiction) | H.G. Wells - Time Machine"
+        },
+        {
+          "topicId": "UGTRB-T031",
+          "topicName": "Unit III (Intro) | Shakespearean Theatre, Audience"
+        },
+        {
+          "topicId": "UGTRB-T032",
+          "topicName": "Unit III (Intro) | Fools and Clowns - Texts: Quortos and Folios"
+        },
+        {
+          "topicId": "UGTRB-T033",
+          "topicName": "Unit III (Intro) | Shakespearean Women"
+        },
+        {
+          "topicId": "UGTRB-T034",
+          "topicName": "Unit III (Intro) | Shakespearean Comedies, Tragedies, Histories, Romances, Problem plays"
+        },
+        {
+          "topicId": "UGTRB-T035",
+          "topicName": "Unit III (Plays) | Macbeth"
+        },
+        {
+          "topicId": "UGTRB-T036",
+          "topicName": "Unit III (Plays) | Julius Caesar"
+        },
+        {
+          "topicId": "UGTRB-T037",
+          "topicName": "Unit III (Plays) | A Midsummer Night's Dream"
+        },
+        {
+          "topicId": "UGTRB-T038",
+          "topicName": "Unit III (Plays) | Richard II"
+        },
+        {
+          "topicId": "UGTRB-T039",
+          "topicName": "Unit IV (Poetry) | William Wordsworth - The Solitary Reaper"
+        },
+        {
+          "topicId": "UGTRB-T040",
+          "topicName": "Unit IV (Poetry) | S.T. Coleridge - Kubla Khan"
+        },
+        {
+          "topicId": "UGTRB-T041",
+          "topicName": "Unit IV (Poetry) | John Keats - Ode to a Nightingale"
+        },
+        {
+          "topicId": "UGTRB-T042",
+          "topicName": "Unit IV (Poetry) | P.B. Shelley - Ozymandias"
+        },
+        {
+          "topicId": "UGTRB-T043",
+          "topicName": "Unit IV (Poetry) | Robert Browning - My Last Duchess"
+        },
+        {
+          "topicId": "UGTRB-T044",
+          "topicName": "Unit IV (Poetry) | G.M. Hopkins - God's Grandeur"
+        },
+        {
+          "topicId": "UGTRB-T045",
+          "topicName": "Unit IV (Prose) | W. Hazlitt - My first Acquaintance with Poets"
+        },
+        {
+          "topicId": "UGTRB-T046",
+          "topicName": "Unit IV (Prose) | W.R. Inge - Spoon Feeding"
+        },
+        {
+          "topicId": "UGTRB-T047",
+          "topicName": "Unit IV (Prose) | John Ruskin - Of King's Treasuries"
+        },
+        {
+          "topicId": "UGTRB-T048",
+          "topicName": "Unit IV (Drama/Fiction) | Samuel Beckett - Waiting for Godot"
+        },
+        {
+          "topicId": "UGTRB-T049",
+          "topicName": "Unit IV (Drama/Fiction) | Aldous Huxley - Brave New World"
+        },
+        {
+          "topicId": "UGTRB-T050",
+          "topicName": "Unit V (Prose) | R.W. Emerson - Self-Reliance"
+        },
+        {
+          "topicId": "UGTRB-T051",
+          "topicName": "Unit V (Prose) | Martin Luther King - I have a Dream"
+        },
+        {
+          "topicId": "UGTRB-T052",
+          "topicName": "Unit V (Prose) | Abraham Lincoln - Gettysburg Address"
+        },
+        {
+          "topicId": "UGTRB-T053",
+          "topicName": "Unit V (Prose) | H.D. Thoreau - A Battle of Ants"
+        },
+        {
+          "topicId": "UGTRB-T054",
+          "topicName": "Unit V (Prose) | R.W. Emerson - The American Scholar"
+        },
+        {
+          "topicId": "UGTRB-T055",
+          "topicName": "Unit V (Poetry) | Robert Frost - West Running Brook"
+        },
+        {
+          "topicId": "UGTRB-T056",
+          "topicName": "Unit V (Poetry) | Walt Whitman - Out of the Cradle, Endlessly Rocking"
+        },
+        {
+          "topicId": "UGTRB-T057",
+          "topicName": "Unit V (Poetry) | Emily Dickinson - I felt a Funeral"
+        },
+        {
+          "topicId": "UGTRB-T058",
+          "topicName": "Unit V (Poetry) | H.W. Longfellow - Nature"
+        },
+        {
+          "topicId": "UGTRB-T059",
+          "topicName": "Unit V (Poetry) | Sylvia Plath - Lady Lazarus"
+        },
+        {
+          "topicId": "UGTRB-T060",
+          "topicName": "Unit V (Poetry) | Carl Sandburg - Happiness"
+        },
+        {
+          "topicId": "UGTRB-T061",
+          "topicName": "Unit V (Poetry) | R.W. Emerson - Brahma"
+        },
+        {
+          "topicId": "UGTRB-T062",
+          "topicName": "Unit V (Drama) | Arthur Miller - Death of a Salesman"
+        },
+        {
+          "topicId": "UGTRB-T063",
+          "topicName": "Unit V (Drama) | Tennessee Williams - The Glass Menagerie"
+        },
+        {
+          "topicId": "UGTRB-T064",
+          "topicName": "Unit V (Short Stories) | Edgar Allan Poe - The Cask of Amontillado"
+        },
+        {
+          "topicId": "UGTRB-T065",
+          "topicName": "Unit V (Short Stories) | O. Henry - Let Me Feel Your Pulse"
+        },
+        {
+          "topicId": "UGTRB-T066",
+          "topicName": "Unit V (Short Stories) | Hans Christian Andersen - The Little Match Girl"
+        },
+        {
+          "topicId": "UGTRB-T067",
+          "topicName": "Unit V (Short Stories) | T.S. Arthur - An Angel in Disguise"
+        },
+        {
+          "topicId": "UGTRB-T068",
+          "topicName": "Unit V (Fiction) | Nathaniel Hawthorne - The Scarlet Letter"
+        },
+        {
+          "topicId": "UGTRB-T069",
+          "topicName": "Unit V (Fiction) | Toni Morrison - Beloved"
+        },
+        {
+          "topicId": "UGTRB-T070",
+          "topicName": "Unit VI (Prose) | M.K. Gandhi - The Gospel of Non-Violence"
+        },
+        {
+          "topicId": "UGTRB-T071",
+          "topicName": "Unit VII (Poetry) | T.S. Eliot - Journey of the Magi"
+        },
+        {
+          "topicId": "UGTRB-T072",
+          "topicName": "Unit VII (Poetry) | Dylan Thomas - The Hunchback in the Park"
+        },
+        {
+          "topicId": "UGTRB-T073",
+          "topicName": "Unit VII (Drama) | G.B. Shaw - Candida"
+        },
+        {
+          "topicId": "UGTRB-T074",
+          "topicName": "Unit VII (Novel) | Virginia Woolf - Mrs. Dalloway"
+        },
+        {
+          "topicId": "UGTRB-T075",
+          "topicName": "Unit VII (Novel) | R.L. Stevenson - Treasure Island"
+        },
+        {
+          "topicId": "UGTRB-T076",
+          "topicName": "Unit VIII (Linguistics) | Definition of language, spoken and written language"
+        },
+        {
+          "topicId": "UGTRB-T077",
+          "topicName": "Unit VIII (Linguistics) | Diachronic & Synchronic approaches"
+        },
+        {
+          "topicId": "UGTRB-T078",
+          "topicName": "Unit VIII (Linguistics) | Linguistics - definition, nature and scope"
+        },
+        {
+          "topicId": "UGTRB-T079",
+          "topicName": "Unit VIII (Linguistics) | English Phonetics and Phonology - Speech Organs"
+        },
+        {
+          "topicId": "UGTRB-T080",
+          "topicName": "Unit VIII (Linguistics) | Sounds in English (Consonants, Vowels and Diphthongs)"
+        },
+        {
+          "topicId": "UGTRB-T081",
+          "topicName": "Unit VIII (Linguistics) | Syllabus, Stress and Intonation - Transcriptions"
+        },
+        {
+          "topicId": "UGTRB-T082",
+          "topicName": "Unit VIII (Linguistics) | Grammar - Descriptive, Prescriptive and Functional"
+        },
+        {
+          "topicId": "UGTRB-T083",
+          "topicName": "Unit VIII (Linguistics) | Syntax - Structural analysis (I.C. analysis), Deep and Surface Structure"
+        },
+        {
+          "topicId": "UGTRB-T084",
+          "topicName": "Unit VIII (Linguistics) | Morphology and Semantics - Word, Morphemes, Word meaning association"
+        },
+        {
+          "topicId": "UGTRB-T085",
+          "topicName": "Unit IX (Criticism) | Plato and Aristotle"
+        },
+        {
+          "topicId": "UGTRB-T086",
+          "topicName": "Unit IX (Criticism) | Horace, Quintilian, Longinus and Dante"
+        },
+        {
+          "topicId": "UGTRB-T087",
+          "topicName": "Unit IX (Criticism) | Mimetic Theory and Pragmatic Theories"
+        },
+        {
+          "topicId": "UGTRB-T088",
+          "topicName": "Unit IX (Criticism) | Sidney, Dryden, Dr. Johnson, Coleridge, Arnold, T.S. Eliot"
+        },
+        {
+          "topicId": "UGTRB-T089",
+          "topicName": "Unit IX (Criticism) | Five Approaches - Moralistic, Psychological, Archetypal, Sociological, Formalistic"
+        },
+        {
+          "topicId": "UGTRB-T090",
+          "topicName": "Unit IX (Criticism) | Recent Trends - Feminist, Marxist, New Historicism, Eco, Post Colonial Criticism"
+        },
+        {
+          "topicId": "UGTRB-T091",
+          "topicName": "Unit X (Prose) | Sojourner Truth - Ain't I a woman?"
+        },
+        {
+          "topicId": "UGTRB-T092",
+          "topicName": "Unit X (Prose) | Mary Wollstonecraft - A Vindication of the Rights of Woman"
+        },
+        {
+          "topicId": "UGTRB-T093",
+          "topicName": "Unit X (Poetry) | Judith Wright - Request to a Year"
+        },
+        {
+          "topicId": "UGTRB-T094",
+          "topicName": "Unit X (Poetry) | Sylvia Plath - Medusa"
+        },
+        {
+          "topicId": "UGTRB-T095",
+          "topicName": "Unit X (Poetry) | Kamala Das - The Old Playhouse"
+        },
+        {
+          "topicId": "UGTRB-T096",
+          "topicName": "Unit X (Poetry) | Supata Bhattacharya - Draupadi"
+        },
+        {
+          "topicId": "UGTRB-T097",
+          "topicName": "Unit X (Poetry) | Maya Angelou - Still I Rise"
+        },
+        {
+          "topicId": "UGTRB-T098",
+          "topicName": "Unit X (Poetry) | Glady Cardiff - Combing"
+        },
+        {
+          "topicId": "UGTRB-T099",
+          "topicName": "Unit X (Poetry) | Gwendolyn Brooks - A Sunset of the City"
+        },
+        {
+          "topicId": "UGTRB-T100",
+          "topicName": "Unit X (Drama) | Susan Glaspell - Trifles"
+        },
+        {
+          "topicId": "UGTRB-T101",
+          "topicName": "Unit X (Drama) | Caryl Churchill - Top Girls"
+        },
+        {
+          "topicId": "UGTRB-T102",
+          "topicName": "Unit X (Fiction) | Ruth Prawer Jhabvala - Heat and Dust"
+        },
+        {
+          "topicId": "UGTRB-T103",
+          "topicName": "Unit X (Short Stories) | Charlotte Perkins Gilman - The Yellow Wallpaper"
+        },
+        {
+          "topicId": "UGTRB-T104",
+          "topicName": "Unit X (Short Stories) | Ambai - Forest"
+        }
+      ]
     },
     {
       "courseId": "UGTRB",
