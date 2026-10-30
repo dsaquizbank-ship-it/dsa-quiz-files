@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-30T01:42:48.414Z",
+  "version": "2026-10-30T02:02:37.807Z",
   "categories": [
     {
       "id": "PGTRB",
@@ -24,7 +24,7 @@
     {
       "id": "BANK",
       "name": "BANK",
-      "order": 1
+      "order": 4
     },
     {
       "id": "SSC-RRB",
@@ -119,7 +119,7 @@
       "id": "BANK-CA",
       "name": "CURRENT AFFAIRS",
       "categoryId": "BANK",
-      "order": 20
+      "order": 24
     },
     {
       "id": "TET-PSY",
@@ -559,6 +559,17 @@
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TAP-01.html",
       "releaseTimestamp": 1793779200000
+    },
+    {
+      "testId": "BCA-56",
+      "examId": "BANK-CA",
+      "name": "BCA-56 OCTOBER 22- 28",
+      "durationMinutes": 10,
+      "order": 56,
+      "questionCount": 25,
+      "negativeMark": 0.25,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BCA-56.html",
+      "releaseTimestamp": 1793347200000
     }
   ]
 }
