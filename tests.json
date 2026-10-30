@@ -2,14 +2,19 @@
   "version": "2026-10-30T02:02:37.807Z",
   "categories": [
     {
-      "id": "PGTRB",
-      "name": "PGTRB",
-      "order": 4
+      "id": "BANK",
+      "name": "BANK",
+      "order": 1
     },
     {
-      "id": "UGTRB",
-      "name": "UGTRB",
-      "order": 5
+      "id": "SSC",
+      "name": "SSC",
+      "order": 2
+    },
+    {
+      "id": "RRB",
+      "name": "RRB",
+      "order": 3
     },
     {
       "id": "TNPSC",
@@ -17,29 +22,29 @@
       "order": 4
     },
     {
-      "id": "TNTET",
-      "name": "TNTET",
+      "id": "PGTRB",
+      "name": "PGTRB",
+      "order": 5
+    },
+    {
+      "id": "UGTRB",
+      "name": "UGTRB",
       "order": 6
     },
     {
-      "id": "BANK",
-      "name": "BANK",
-      "order": 4
+      "id": "TNTET",
+      "name": "TNTET",
+      "order": 7
     },
     {
-      "id": "SSC-RRB",
-      "name": "SSC-RRB",
-      "order": 2
+      "id": "SGT",
+      "name": "SGT",
+      "order": 8
     },
     {
       "id": "DEMO",
       "name": "DEMO",
       "order": 9
-    },
-    {
-      "id": "SGT",
-      "name": "SGT",
-      "order": 7
     }
   ],
   "exams": [
