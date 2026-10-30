@@ -537,22 +537,22 @@
       ]
     },
     {
-      "courseId": "PGTRB",
+      "courseId": "PGTRB-MAT",
       "courseName": "PGTRB MATHS",
       "topics": []
     },
     {
-      "courseId": "PGTRB",
+      "courseId": "PGTRB-HIS",
       "courseName": "PGTRB HISTORY",
       "topics": []
     },
     {
-      "courseId": "PGTRB",
+      "courseId": "PGTRB-COM",
       "courseName": "PGTRB COMPUTER SCIENCE",
       "topics": []
     },
     {
-      "courseId": "PGTRB",
+      "courseId": "PGTRB-TAM",
       "courseName": "PGTRB TAMIL",
       "topics": []
     },
