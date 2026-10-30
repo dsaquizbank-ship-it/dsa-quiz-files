@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-30T16:58:02.904Z",
+  "version": "2026-10-30T17:00:47.049Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -568,6 +568,54 @@
         {
           "topicId": "TNPSC-T141",
           "topicName": "Unit II - Reasoning | Number series"
+        },
+        {
+          "topicId": "TNPSC-T142",
+          "topicName": "Tamil Grammar | 6TH இலக்கணம்"
+        },
+        {
+          "topicId": "TNPSC-T143",
+          "topicName": "Tamil Grammar | 7TH இலக்கணம்"
+        },
+        {
+          "topicId": "TNPSC-T144",
+          "topicName": "Tamil Grammar | 8TH இலக்கணம்"
+        },
+        {
+          "topicId": "TNPSC-T145",
+          "topicName": "Tamil Grammar | 9TH இலக்கணம்"
+        },
+        {
+          "topicId": "TNPSC-T146",
+          "topicName": "Tamil Grammar | 10TH இலக்கணம்"
+        },
+        {
+          "topicId": "TNPSC-T147",
+          "topicName": "Tamil Literature | அலகு 1 - இலக்கணம்"
+        },
+        {
+          "topicId": "TNPSC-T148",
+          "topicName": "Tamil Literature | அலகு II – சொல்லகராதி"
+        },
+        {
+          "topicId": "TNPSC-T149",
+          "topicName": "Tamil Literature | அலகு III – எழுதும் திறன்"
+        },
+        {
+          "topicId": "TNPSC-T150",
+          "topicName": "Tamil Literature | அலகு IV – கலைச் சொற்கள்"
+        },
+        {
+          "topicId": "TNPSC-T151",
+          "topicName": "Tamil Literature | அலகு V – வாசித்தல் – புரிந்து கொள்ளும் திறன்"
+        },
+        {
+          "topicId": "TNPSC-T152",
+          "topicName": "Tamil Literature | அலகு VI – எளிய மொழி பெயர்ப்பு"
+        },
+        {
+          "topicId": "TNPSC-T153",
+          "topicName": "Tamil Literature | அலகு VII – இலக்கியம், தமிழ் அறிஞர்களும் தமிழ் தொண்டும்"
         }
       ]
     },
