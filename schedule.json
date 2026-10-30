@@ -1,16 +1,4 @@
 {
-  "version": "2026-10-30T18:13:31.569Z",
-  "entries": [
-    {
-      "id": "SCH-1793382968937-958",
-      "courseId": "PGTRB-COM",
-      "courseName": "PGTRB COMPUTER SCIENCE",
-      "subject": "Unit II - Database Management System",
-      "topicId": "PGTRB-COM-T068",
-      "topicName": "Codd Rules",
-      "date": "2026-10-31",
-      "testId": "PGCS",
-      "createdAt": "2026-10-30T17:56:08.937Z"
-    }
-  ]
+  "version": "2026-10-30T18:16:01.796Z",
+  "entries": []
 }
