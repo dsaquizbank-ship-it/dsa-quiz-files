@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-30T15:11:40.627Z",
+  "version": "2026-10-30T15:24:57.336Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -549,7 +549,1320 @@
     {
       "courseId": "PGTRB-COM",
       "courseName": "PGTRB COMPUTER SCIENCE",
-      "topics": []
+      "topics": [
+        {
+          "topicId": "PGTRB-COM-T001",
+          "topicName": "Unit I - Computer System Architecture | Introduction to Number Systems"
+        },
+        {
+          "topicId": "PGTRB-COM-T002",
+          "topicName": "Unit I - Computer System Architecture | Conversion from One Number System to another"
+        },
+        {
+          "topicId": "PGTRB-COM-T003",
+          "topicName": "Unit I - Computer System Architecture | Digital Codes - Weighted Binary Code"
+        },
+        {
+          "topicId": "PGTRB-COM-T004",
+          "topicName": "Unit I - Computer System Architecture | Digital Codes - Non-Weighted Binary Code"
+        },
+        {
+          "topicId": "PGTRB-COM-T005",
+          "topicName": "Unit I - Computer System Architecture | Digital Codes - Alphanumeric Code"
+        },
+        {
+          "topicId": "PGTRB-COM-T006",
+          "topicName": "Unit I - Computer System Architecture | Error Detection and Error Correction Codes"
+        },
+        {
+          "topicId": "PGTRB-COM-T007",
+          "topicName": "Unit I - Computer System Architecture | Introduction to Boolean Algebra"
+        },
+        {
+          "topicId": "PGTRB-COM-T008",
+          "topicName": "Unit I - Computer System Architecture | Boolean Logic and Boolean Operations"
+        },
+        {
+          "topicId": "PGTRB-COM-T009",
+          "topicName": "Unit I - Computer System Architecture | Operator Precedence in Boolean Algebra"
+        },
+        {
+          "topicId": "PGTRB-COM-T010",
+          "topicName": "Unit I - Computer System Architecture | Laws of Boolean Algebra"
+        },
+        {
+          "topicId": "PGTRB-COM-T011",
+          "topicName": "Unit I - Computer System Architecture | Representation of Boolean Function"
+        },
+        {
+          "topicId": "PGTRB-COM-T012",
+          "topicName": "Unit I - Computer System Architecture | Simplification methods in Boolean algebra"
+        },
+        {
+          "topicId": "PGTRB-COM-T013",
+          "topicName": "Unit I - Computer System Architecture | Digital Computers"
+        },
+        {
+          "topicId": "PGTRB-COM-T014",
+          "topicName": "Unit I - Computer System Architecture | Logic Gates"
+        },
+        {
+          "topicId": "PGTRB-COM-T015",
+          "topicName": "Unit I - Computer System Architecture | Map Simplifications"
+        },
+        {
+          "topicId": "PGTRB-COM-T016",
+          "topicName": "Unit I - Computer System Architecture | Combinational Circuits"
+        },
+        {
+          "topicId": "PGTRB-COM-T017",
+          "topicName": "Unit I - Computer System Architecture | Flip-Flops"
+        },
+        {
+          "topicId": "PGTRB-COM-T018",
+          "topicName": "Unit I - Computer System Architecture | Sequential Circuits"
+        },
+        {
+          "topicId": "PGTRB-COM-T019",
+          "topicName": "Unit I - Computer System Architecture | Integrated Circuits"
+        },
+        {
+          "topicId": "PGTRB-COM-T020",
+          "topicName": "Unit I - Computer System Architecture | Decoders"
+        },
+        {
+          "topicId": "PGTRB-COM-T021",
+          "topicName": "Unit I - Computer System Architecture | Multiplexers"
+        },
+        {
+          "topicId": "PGTRB-COM-T022",
+          "topicName": "Unit I - Computer System Architecture | Registers and Counters"
+        },
+        {
+          "topicId": "PGTRB-COM-T023",
+          "topicName": "Unit I - Computer System Architecture | Memory Unit"
+        },
+        {
+          "topicId": "PGTRB-COM-T024",
+          "topicName": "Unit I - Computer System Architecture | Stored Program Organization and Instruction Codes"
+        },
+        {
+          "topicId": "PGTRB-COM-T025",
+          "topicName": "Unit I - Computer System Architecture | Computer Registers"
+        },
+        {
+          "topicId": "PGTRB-COM-T026",
+          "topicName": "Unit I - Computer System Architecture | Computer Instructions"
+        },
+        {
+          "topicId": "PGTRB-COM-T027",
+          "topicName": "Unit I - Computer System Architecture | Timing and Control"
+        },
+        {
+          "topicId": "PGTRB-COM-T028",
+          "topicName": "Unit I - Computer System Architecture | Instruction Cycle"
+        },
+        {
+          "topicId": "PGTRB-COM-T029",
+          "topicName": "Unit I - Computer System Architecture | Memory-Reference Instructions"
+        },
+        {
+          "topicId": "PGTRB-COM-T030",
+          "topicName": "Unit I - Computer System Architecture | Input-Output"
+        },
+        {
+          "topicId": "PGTRB-COM-T031",
+          "topicName": "Unit I - Computer System Architecture | Interrupt"
+        },
+        {
+          "topicId": "PGTRB-COM-T032",
+          "topicName": "Unit I - Computer System Architecture | Machine Language"
+        },
+        {
+          "topicId": "PGTRB-COM-T033",
+          "topicName": "Unit I - Computer System Architecture | Assembly Language"
+        },
+        {
+          "topicId": "PGTRB-COM-T034",
+          "topicName": "Unit I - Computer System Architecture | Assembler"
+        },
+        {
+          "topicId": "PGTRB-COM-T035",
+          "topicName": "Unit I - Computer System Architecture | Program Loops"
+        },
+        {
+          "topicId": "PGTRB-COM-T036",
+          "topicName": "Unit I - Computer System Architecture | Subroutines"
+        },
+        {
+          "topicId": "PGTRB-COM-T037",
+          "topicName": "Unit I - Computer System Architecture | Input-Output Programming"
+        },
+        {
+          "topicId": "PGTRB-COM-T038",
+          "topicName": "Unit I - Computer System Architecture | General Register Organization"
+        },
+        {
+          "topicId": "PGTRB-COM-T039",
+          "topicName": "Unit I - Computer System Architecture | Stack Organization"
+        },
+        {
+          "topicId": "PGTRB-COM-T040",
+          "topicName": "Unit I - Computer System Architecture | Instruction Formats"
+        },
+        {
+          "topicId": "PGTRB-COM-T041",
+          "topicName": "Unit I - Computer System Architecture | Addressing Modes"
+        },
+        {
+          "topicId": "PGTRB-COM-T042",
+          "topicName": "Unit I - Computer System Architecture | RISC Computer"
+        },
+        {
+          "topicId": "PGTRB-COM-T043",
+          "topicName": "Unit I - Computer System Architecture | CISC Computer"
+        },
+        {
+          "topicId": "PGTRB-COM-T044",
+          "topicName": "Unit I - Computer System Architecture | Peripheral Devices"
+        },
+        {
+          "topicId": "PGTRB-COM-T045",
+          "topicName": "Unit I - Computer System Architecture | Input-Output Interface"
+        },
+        {
+          "topicId": "PGTRB-COM-T046",
+          "topicName": "Unit I - Computer System Architecture | Asynchronous Data Transfer"
+        },
+        {
+          "topicId": "PGTRB-COM-T047",
+          "topicName": "Unit I - Computer System Architecture | Modes of Transfer"
+        },
+        {
+          "topicId": "PGTRB-COM-T048",
+          "topicName": "Unit I - Computer System Architecture | Priority Interrupt"
+        },
+        {
+          "topicId": "PGTRB-COM-T049",
+          "topicName": "Unit I - Computer System Architecture | DMA (Direct Memory Access)"
+        },
+        {
+          "topicId": "PGTRB-COM-T050",
+          "topicName": "Unit I - Computer System Architecture | Serial Communication"
+        },
+        {
+          "topicId": "PGTRB-COM-T051",
+          "topicName": "Unit I - Computer System Architecture | Main Memory"
+        },
+        {
+          "topicId": "PGTRB-COM-T052",
+          "topicName": "Unit I - Computer System Architecture | Auxiliary Memory"
+        },
+        {
+          "topicId": "PGTRB-COM-T053",
+          "topicName": "Unit I - Computer System Architecture | Associative Memory"
+        },
+        {
+          "topicId": "PGTRB-COM-T054",
+          "topicName": "Unit I - Computer System Architecture | Cache Memory"
+        },
+        {
+          "topicId": "PGTRB-COM-T055",
+          "topicName": "Unit I - Computer System Architecture | Virtual Memory"
+        },
+        {
+          "topicId": "PGTRB-COM-T056",
+          "topicName": "Unit I - Computer System Architecture | Memory Management Hardware"
+        },
+        {
+          "topicId": "PGTRB-COM-T057",
+          "topicName": "Unit II - Database Management System | Data Models"
+        },
+        {
+          "topicId": "PGTRB-COM-T058",
+          "topicName": "Unit II - Database Management System | Schemas and Instances"
+        },
+        {
+          "topicId": "PGTRB-COM-T059",
+          "topicName": "Unit II - Database Management System | Three-Schema Architecture and Data Independence"
+        },
+        {
+          "topicId": "PGTRB-COM-T060",
+          "topicName": "Unit II - Database Management System | Database Languages and Interfaces"
+        },
+        {
+          "topicId": "PGTRB-COM-T061",
+          "topicName": "Unit II - Database Management System | Centralized and Client/Server Architectures for DBMS"
+        },
+        {
+          "topicId": "PGTRB-COM-T062",
+          "topicName": "Unit II - Database Management System | Entity Relationship Diagrams"
+        },
+        {
+          "topicId": "PGTRB-COM-T063",
+          "topicName": "Unit II - Database Management System | Relational Model"
+        },
+        {
+          "topicId": "PGTRB-COM-T064",
+          "topicName": "Unit II - Database Management System | Constraints"
+        },
+        {
+          "topicId": "PGTRB-COM-T065",
+          "topicName": "Unit II - Database Management System | Languages, Design and Programming"
+        },
+        {
+          "topicId": "PGTRB-COM-T066",
+          "topicName": "Unit II - Database Management System | Relational Database Schemas"
+        },
+        {
+          "topicId": "PGTRB-COM-T067",
+          "topicName": "Unit II - Database Management System | Relational Algebra and Relational Calculus"
+        },
+        {
+          "topicId": "PGTRB-COM-T068",
+          "topicName": "Unit II - Database Management System | Codd Rules"
+        },
+        {
+          "topicId": "PGTRB-COM-T069",
+          "topicName": "Unit II - Database Management System | Functional Dependencies and Normalization"
+        },
+        {
+          "topicId": "PGTRB-COM-T070",
+          "topicName": "Unit II - Database Management System | Algorithms for Query Processing and Optimization"
+        },
+        {
+          "topicId": "PGTRB-COM-T071",
+          "topicName": "Unit II - Database Management System | Transaction Processing"
+        },
+        {
+          "topicId": "PGTRB-COM-T072",
+          "topicName": "Unit II - Database Management System | Concurrency Control Techniques"
+        },
+        {
+          "topicId": "PGTRB-COM-T073",
+          "topicName": "Unit II - Database Management System | Database Recovery Techniques"
+        },
+        {
+          "topicId": "PGTRB-COM-T074",
+          "topicName": "Unit II - Database Management System | Object and Object-Relational Databases"
+        },
+        {
+          "topicId": "PGTRB-COM-T075",
+          "topicName": "Unit II - Database Management System | Database Security and Authorization"
+        },
+        {
+          "topicId": "PGTRB-COM-T076",
+          "topicName": "Unit II - Database Management System | Constraints and its types"
+        },
+        {
+          "topicId": "PGTRB-COM-T077",
+          "topicName": "Unit II - Database Management System | Integrity constraints"
+        },
+        {
+          "topicId": "PGTRB-COM-T078",
+          "topicName": "Unit II - Database Management System | Check constraints"
+        },
+        {
+          "topicId": "PGTRB-COM-T079",
+          "topicName": "Unit II - Database Management System | Referential constraints"
+        },
+        {
+          "topicId": "PGTRB-COM-T080",
+          "topicName": "Unit II - Database Management System | Introduction to views"
+        },
+        {
+          "topicId": "PGTRB-COM-T081",
+          "topicName": "Unit II - Database Management System | Updates on views"
+        },
+        {
+          "topicId": "PGTRB-COM-T082",
+          "topicName": "Unit II - Database Management System | Comparison between tables and views"
+        },
+        {
+          "topicId": "PGTRB-COM-T083",
+          "topicName": "Unit II - Database Management System | Transaction management"
+        },
+        {
+          "topicId": "PGTRB-COM-T084",
+          "topicName": "Unit II - Database Management System | ACID properties"
+        },
+        {
+          "topicId": "PGTRB-COM-T085",
+          "topicName": "Unit II - Database Management System | Serializability and concurrency control"
+        },
+        {
+          "topicId": "PGTRB-COM-T086",
+          "topicName": "Unit II - Database Management System | Lock based concurrency control (2PL, Deadlocks)"
+        },
+        {
+          "topicId": "PGTRB-COM-T087",
+          "topicName": "Unit II - Database Management System | Time stamping methods"
+        },
+        {
+          "topicId": "PGTRB-COM-T088",
+          "topicName": "Unit II - Database Management System | Optimistic methods"
+        },
+        {
+          "topicId": "PGTRB-COM-T089",
+          "topicName": "Unit II - Database Management System | Database recovery management"
+        },
+        {
+          "topicId": "PGTRB-COM-T090",
+          "topicName": "Unit III - System Software and Operating System | Machine, Assembly and High-Level Languages"
+        },
+        {
+          "topicId": "PGTRB-COM-T091",
+          "topicName": "Unit III - System Software and Operating System | Compilers and Interpreters"
+        },
+        {
+          "topicId": "PGTRB-COM-T092",
+          "topicName": "Unit III - System Software and Operating System | Loading, Linking and Relocation"
+        },
+        {
+          "topicId": "PGTRB-COM-T093",
+          "topicName": "Unit III - System Software and Operating System | Macros"
+        },
+        {
+          "topicId": "PGTRB-COM-T094",
+          "topicName": "Unit III - System Software and Operating System | Debuggers"
+        },
+        {
+          "topicId": "PGTRB-COM-T095",
+          "topicName": "Unit III - System Software and Operating System | Operating System Structure"
+        },
+        {
+          "topicId": "PGTRB-COM-T096",
+          "topicName": "Unit III - System Software and Operating System | Operations and Services"
+        },
+        {
+          "topicId": "PGTRB-COM-T097",
+          "topicName": "Unit III - System Software and Operating System | System Calls"
+        },
+        {
+          "topicId": "PGTRB-COM-T098",
+          "topicName": "Unit III - System Software and Operating System | Operating-System Design and Implementation"
+        },
+        {
+          "topicId": "PGTRB-COM-T099",
+          "topicName": "Unit III - System Software and Operating System | System Boot"
+        },
+        {
+          "topicId": "PGTRB-COM-T100",
+          "topicName": "Unit III - System Software and Operating System | Process Scheduling and Operations"
+        },
+        {
+          "topicId": "PGTRB-COM-T101",
+          "topicName": "Unit III - System Software and Operating System | Inter-process Communication"
+        },
+        {
+          "topicId": "PGTRB-COM-T102",
+          "topicName": "Unit III - System Software and Operating System | Communication in Client-Server Systems"
+        },
+        {
+          "topicId": "PGTRB-COM-T103",
+          "topicName": "Unit III - System Software and Operating System | Process Synchronization"
+        },
+        {
+          "topicId": "PGTRB-COM-T104",
+          "topicName": "Unit III - System Software and Operating System | Critical-Section Problem"
+        },
+        {
+          "topicId": "PGTRB-COM-T105",
+          "topicName": "Unit III - System Software and Operating System | Peterson's Solution"
+        },
+        {
+          "topicId": "PGTRB-COM-T106",
+          "topicName": "Unit III - System Software and Operating System | Semaphores"
+        },
+        {
+          "topicId": "PGTRB-COM-T107",
+          "topicName": "Unit III - System Software and Operating System | Synchronization"
+        },
+        {
+          "topicId": "PGTRB-COM-T108",
+          "topicName": "Unit III - System Software and Operating System | Multicore Programming"
+        },
+        {
+          "topicId": "PGTRB-COM-T109",
+          "topicName": "Unit III - System Software and Operating System | Multithreading Models"
+        },
+        {
+          "topicId": "PGTRB-COM-T110",
+          "topicName": "Unit III - System Software and Operating System | Thread Libraries"
+        },
+        {
+          "topicId": "PGTRB-COM-T111",
+          "topicName": "Unit III - System Software and Operating System | Implicit Threading"
+        },
+        {
+          "topicId": "PGTRB-COM-T112",
+          "topicName": "Unit III - System Software and Operating System | Threading Issues"
+        },
+        {
+          "topicId": "PGTRB-COM-T113",
+          "topicName": "Unit III - System Software and Operating System | Scheduling Criteria and Algorithms"
+        },
+        {
+          "topicId": "PGTRB-COM-T114",
+          "topicName": "Unit III - System Software and Operating System | Thread Scheduling"
+        },
+        {
+          "topicId": "PGTRB-COM-T115",
+          "topicName": "Unit III - System Software and Operating System | Multiple Processor Scheduling"
+        },
+        {
+          "topicId": "PGTRB-COM-T116",
+          "topicName": "Unit III - System Software and Operating System | Real-Time Scheduling"
+        },
+        {
+          "topicId": "PGTRB-COM-T117",
+          "topicName": "Unit III - System Software and Operating System | Deadlock Characterization"
+        },
+        {
+          "topicId": "PGTRB-COM-T118",
+          "topicName": "Unit III - System Software and Operating System | Methods for Handling Deadlocks"
+        },
+        {
+          "topicId": "PGTRB-COM-T119",
+          "topicName": "Unit III - System Software and Operating System | Deadlock Prevention, Avoidance and Detection"
+        },
+        {
+          "topicId": "PGTRB-COM-T120",
+          "topicName": "Unit III - System Software and Operating System | Recovery from Deadlock"
+        },
+        {
+          "topicId": "PGTRB-COM-T121",
+          "topicName": "Unit III - System Software and Operating System | Contiguous Memory Allocation"
+        },
+        {
+          "topicId": "PGTRB-COM-T122",
+          "topicName": "Unit III - System Software and Operating System | Swapping"
+        },
+        {
+          "topicId": "PGTRB-COM-T123",
+          "topicName": "Unit III - System Software and Operating System | Paging"
+        },
+        {
+          "topicId": "PGTRB-COM-T124",
+          "topicName": "Unit III - System Software and Operating System | Segmentation"
+        },
+        {
+          "topicId": "PGTRB-COM-T125",
+          "topicName": "Unit III - System Software and Operating System | Demand Paging"
+        },
+        {
+          "topicId": "PGTRB-COM-T126",
+          "topicName": "Unit III - System Software and Operating System | Page Replacement"
+        },
+        {
+          "topicId": "PGTRB-COM-T127",
+          "topicName": "Unit III - System Software and Operating System | Allocation of Frames"
+        },
+        {
+          "topicId": "PGTRB-COM-T128",
+          "topicName": "Unit III - System Software and Operating System | Thrashing"
+        },
+        {
+          "topicId": "PGTRB-COM-T129",
+          "topicName": "Unit III - System Software and Operating System | Memory-Mapped Files"
+        },
+        {
+          "topicId": "PGTRB-COM-T130",
+          "topicName": "Unit IV - Data Structures and Algorithms | Abstract data types"
+        },
+        {
+          "topicId": "PGTRB-COM-T131",
+          "topicName": "Unit IV - Data Structures and Algorithms | Arrays and their Applications"
+        },
+        {
+          "topicId": "PGTRB-COM-T132",
+          "topicName": "Unit IV - Data Structures and Algorithms | Sparse Matrix"
+        },
+        {
+          "topicId": "PGTRB-COM-T133",
+          "topicName": "Unit IV - Data Structures and Algorithms | Stacks"
+        },
+        {
+          "topicId": "PGTRB-COM-T134",
+          "topicName": "Unit IV - Data Structures and Algorithms | Queues"
+        },
+        {
+          "topicId": "PGTRB-COM-T135",
+          "topicName": "Unit IV - Data Structures and Algorithms | Priority Queues"
+        },
+        {
+          "topicId": "PGTRB-COM-T136",
+          "topicName": "Unit IV - Data Structures and Algorithms | Linked Lists"
+        },
+        {
+          "topicId": "PGTRB-COM-T137",
+          "topicName": "Unit IV - Data Structures and Algorithms | Trees, Forest, Binary Tree"
+        },
+        {
+          "topicId": "PGTRB-COM-T138",
+          "topicName": "Unit IV - Data Structures and Algorithms | Threaded Binary Tree"
+        },
+        {
+          "topicId": "PGTRB-COM-T139",
+          "topicName": "Unit IV - Data Structures and Algorithms | Binary Search Tree"
+        },
+        {
+          "topicId": "PGTRB-COM-T140",
+          "topicName": "Unit IV - Data Structures and Algorithms | AVL Tree"
+        },
+        {
+          "topicId": "PGTRB-COM-T141",
+          "topicName": "Unit IV - Data Structures and Algorithms | B Tree"
+        },
+        {
+          "topicId": "PGTRB-COM-T142",
+          "topicName": "Unit IV - Data Structures and Algorithms | B+ Tree"
+        },
+        {
+          "topicId": "PGTRB-COM-T143",
+          "topicName": "Unit IV - Data Structures and Algorithms | B* Tree"
+        },
+        {
+          "topicId": "PGTRB-COM-T144",
+          "topicName": "Unit IV - Data Structures and Algorithms | Graphs"
+        },
+        {
+          "topicId": "PGTRB-COM-T145",
+          "topicName": "Unit IV - Data Structures and Algorithms | Sorting and Searching Algorithms"
+        },
+        {
+          "topicId": "PGTRB-COM-T146",
+          "topicName": "Unit IV - Data Structures and Algorithms | Hashing"
+        },
+        {
+          "topicId": "PGTRB-COM-T147",
+          "topicName": "Unit IV - Data Structures and Algorithms | Time and Space Complexities"
+        },
+        {
+          "topicId": "PGTRB-COM-T148",
+          "topicName": "Unit IV - Data Structures and Algorithms | Asymptotic Notation"
+        },
+        {
+          "topicId": "PGTRB-COM-T149",
+          "topicName": "Unit IV - Data Structures and Algorithms | Recurrence Relations"
+        },
+        {
+          "topicId": "PGTRB-COM-T150",
+          "topicName": "Unit IV - Data Structures and Algorithms | Divide and Conquer"
+        },
+        {
+          "topicId": "PGTRB-COM-T151",
+          "topicName": "Unit IV - Data Structures and Algorithms | Dynamic Programming"
+        },
+        {
+          "topicId": "PGTRB-COM-T152",
+          "topicName": "Unit IV - Data Structures and Algorithms | Greedy Algorithms"
+        },
+        {
+          "topicId": "PGTRB-COM-T153",
+          "topicName": "Unit IV - Data Structures and Algorithms | Backtracking"
+        },
+        {
+          "topicId": "PGTRB-COM-T154",
+          "topicName": "Unit IV - Data Structures and Algorithms | Branch and Bound"
+        },
+        {
+          "topicId": "PGTRB-COM-T155",
+          "topicName": "Unit IV - Data Structures and Algorithms | Breadth-First Search (BFS)"
+        },
+        {
+          "topicId": "PGTRB-COM-T156",
+          "topicName": "Unit IV - Data Structures and Algorithms | Depth-First Search (DFS)"
+        },
+        {
+          "topicId": "PGTRB-COM-T157",
+          "topicName": "Unit IV - Data Structures and Algorithms | Shortest Paths"
+        },
+        {
+          "topicId": "PGTRB-COM-T158",
+          "topicName": "Unit IV - Data Structures and Algorithms | Maximum Flow"
+        },
+        {
+          "topicId": "PGTRB-COM-T159",
+          "topicName": "Unit IV - Data Structures and Algorithms | Minimum Spanning Trees"
+        },
+        {
+          "topicId": "PGTRB-COM-T160",
+          "topicName": "Unit IV - Data Structures and Algorithms | Parallel Algorithms for Sorting, Searching and Merging"
+        },
+        {
+          "topicId": "PGTRB-COM-T161",
+          "topicName": "Unit IV - Data Structures and Algorithms | Approximation Algorithms"
+        },
+        {
+          "topicId": "PGTRB-COM-T162",
+          "topicName": "Unit IV - Data Structures and Algorithms | Randomized Algorithms"
+        },
+        {
+          "topicId": "PGTRB-COM-T163",
+          "topicName": "Unit V - Data Communication and Computer Networks | Components of a Data Communication System"
+        },
+        {
+          "topicId": "PGTRB-COM-T164",
+          "topicName": "Unit V - Data Communication and Computer Networks | Simplex, Half Duplex and Duplex Modes"
+        },
+        {
+          "topicId": "PGTRB-COM-T165",
+          "topicName": "Unit V - Data Communication and Computer Networks | Analog and Digital Signals"
+        },
+        {
+          "topicId": "PGTRB-COM-T166",
+          "topicName": "Unit V - Data Communication and Computer Networks | Noiseless and Noisy Channels"
+        },
+        {
+          "topicId": "PGTRB-COM-T167",
+          "topicName": "Unit V - Data Communication and Computer Networks | Bandwidth, Throughput and Latency"
+        },
+        {
+          "topicId": "PGTRB-COM-T168",
+          "topicName": "Unit V - Data Communication and Computer Networks | Digital and Analog Transmission"
+        },
+        {
+          "topicId": "PGTRB-COM-T169",
+          "topicName": "Unit V - Data Communication and Computer Networks | Data Encoding and Modulation Techniques"
+        },
+        {
+          "topicId": "PGTRB-COM-T170",
+          "topicName": "Unit V - Data Communication and Computer Networks | Broadband and Baseband Transmission"
+        },
+        {
+          "topicId": "PGTRB-COM-T171",
+          "topicName": "Unit V - Data Communication and Computer Networks | Multiplexing"
+        },
+        {
+          "topicId": "PGTRB-COM-T172",
+          "topicName": "Unit V - Data Communication and Computer Networks | Transmission Media"
+        },
+        {
+          "topicId": "PGTRB-COM-T173",
+          "topicName": "Unit V - Data Communication and Computer Networks | Transmission Errors"
+        },
+        {
+          "topicId": "PGTRB-COM-T174",
+          "topicName": "Unit V - Data Communication and Computer Networks | Error Handling Mechanisms"
+        },
+        {
+          "topicId": "PGTRB-COM-T175",
+          "topicName": "Unit V - Data Communication and Computer Networks | Network Topologies"
+        },
+        {
+          "topicId": "PGTRB-COM-T176",
+          "topicName": "Unit V - Data Communication and Computer Networks | Local Area Networks (LAN)"
+        },
+        {
+          "topicId": "PGTRB-COM-T177",
+          "topicName": "Unit V - Data Communication and Computer Networks | Metropolitan Area Networks (MAN)"
+        },
+        {
+          "topicId": "PGTRB-COM-T178",
+          "topicName": "Unit V - Data Communication and Computer Networks | Wide Area Network (WAN)"
+        },
+        {
+          "topicId": "PGTRB-COM-T179",
+          "topicName": "Unit V - Data Communication and Computer Networks | Wireless Networks"
+        },
+        {
+          "topicId": "PGTRB-COM-T180",
+          "topicName": "Unit V - Data Communication and Computer Networks | Internet"
+        },
+        {
+          "topicId": "PGTRB-COM-T181",
+          "topicName": "Unit V - Data Communication and Computer Networks | Layered Architecture"
+        },
+        {
+          "topicId": "PGTRB-COM-T182",
+          "topicName": "Unit V - Data Communication and Computer Networks | OSI Reference Model and its Protocols"
+        },
+        {
+          "topicId": "PGTRB-COM-T183",
+          "topicName": "Unit V - Data Communication and Computer Networks | TCP/IP Protocol Suite"
+        },
+        {
+          "topicId": "PGTRB-COM-T184",
+          "topicName": "Unit V - Data Communication and Computer Networks | Physical, Logical, Port and Specific Addresses"
+        },
+        {
+          "topicId": "PGTRB-COM-T185",
+          "topicName": "Unit V - Data Communication and Computer Networks | Switching Techniques"
+        },
+        {
+          "topicId": "PGTRB-COM-T186",
+          "topicName": "Unit V - Data Communication and Computer Networks | Framing"
+        },
+        {
+          "topicId": "PGTRB-COM-T187",
+          "topicName": "Unit V - Data Communication and Computer Networks | Error Detection and Correction"
+        },
+        {
+          "topicId": "PGTRB-COM-T188",
+          "topicName": "Unit V - Data Communication and Computer Networks | Flow and Error Control"
+        },
+        {
+          "topicId": "PGTRB-COM-T189",
+          "topicName": "Unit V - Data Communication and Computer Networks | Sliding Window Protocol"
+        },
+        {
+          "topicId": "PGTRB-COM-T190",
+          "topicName": "Unit V - Data Communication and Computer Networks | HDLC"
+        },
+        {
+          "topicId": "PGTRB-COM-T191",
+          "topicName": "Unit V - Data Communication and Computer Networks | Multiple Access - CSMA/CD, CSMA/CA"
+        },
+        {
+          "topicId": "PGTRB-COM-T192",
+          "topicName": "Unit V - Data Communication and Computer Networks | Reservation, Polling, Token Passing"
+        },
+        {
+          "topicId": "PGTRB-COM-T193",
+          "topicName": "Unit V - Data Communication and Computer Networks | FDMA, CDMA, TDMA"
+        },
+        {
+          "topicId": "PGTRB-COM-T194",
+          "topicName": "Unit V - Data Communication and Computer Networks | Network Devices"
+        },
+        {
+          "topicId": "PGTRB-COM-T195",
+          "topicName": "Unit V - Data Communication and Computer Networks | Backbone Networks"
+        },
+        {
+          "topicId": "PGTRB-COM-T196",
+          "topicName": "Unit V - Data Communication and Computer Networks | Virtual LANs"
+        },
+        {
+          "topicId": "PGTRB-COM-T197",
+          "topicName": "Unit V - Data Communication and Computer Networks | Uniform Resource Locator (URL)"
+        },
+        {
+          "topicId": "PGTRB-COM-T198",
+          "topicName": "Unit V - Data Communication and Computer Networks | Domain Name Service (DNS)"
+        },
+        {
+          "topicId": "PGTRB-COM-T199",
+          "topicName": "Unit V - Data Communication and Computer Networks | Mapping Names to Addresses and Addresses to Names"
+        },
+        {
+          "topicId": "PGTRB-COM-T200",
+          "topicName": "Unit V - Data Communication and Computer Networks | Electronic Mail Architecture"
+        },
+        {
+          "topicId": "PGTRB-COM-T201",
+          "topicName": "Unit V - Data Communication and Computer Networks | SMTP, POP and IMAP"
+        },
+        {
+          "topicId": "PGTRB-COM-T202",
+          "topicName": "Unit V - Data Communication and Computer Networks | TELNET and FTP"
+        },
+        {
+          "topicId": "PGTRB-COM-T203",
+          "topicName": "Unit VI - Programming with C++ | Programming Language Concepts, Paradigms and Models"
+        },
+        {
+          "topicId": "PGTRB-COM-T204",
+          "topicName": "Unit VI - Programming with C++ | Programming Environments"
+        },
+        {
+          "topicId": "PGTRB-COM-T205",
+          "topicName": "Unit VI - Programming with C++ | Virtual Computers and Binding Times"
+        },
+        {
+          "topicId": "PGTRB-COM-T206",
+          "topicName": "Unit VI - Programming with C++ | Programming Language Syntax"
+        },
+        {
+          "topicId": "PGTRB-COM-T207",
+          "topicName": "Unit VI - Programming with C++ | Stages in Translation"
+        },
+        {
+          "topicId": "PGTRB-COM-T208",
+          "topicName": "Unit VI - Programming with C++ | Formal Transition Models"
+        },
+        {
+          "topicId": "PGTRB-COM-T209",
+          "topicName": "Unit VI - Programming with C++ | Properties of Types and Objects"
+        },
+        {
+          "topicId": "PGTRB-COM-T210",
+          "topicName": "Unit VI - Programming with C++ | Scalar and Composite Data Types"
+        },
+        {
+          "topicId": "PGTRB-COM-T211",
+          "topicName": "Unit VI - Programming with C++ | Class and Object"
+        },
+        {
+          "topicId": "PGTRB-COM-T212",
+          "topicName": "Unit VI - Programming with C++ | Encapsulation"
+        },
+        {
+          "topicId": "PGTRB-COM-T213",
+          "topicName": "Unit VI - Programming with C++ | Inheritance"
+        },
+        {
+          "topicId": "PGTRB-COM-T214",
+          "topicName": "Unit VI - Programming with C++ | Abstract Class"
+        },
+        {
+          "topicId": "PGTRB-COM-T215",
+          "topicName": "Unit VI - Programming with C++ | Polymorphism"
+        },
+        {
+          "topicId": "PGTRB-COM-T216",
+          "topicName": "Unit VI - Programming with C++ | Tokens, Identifiers, Variables and Constants"
+        },
+        {
+          "topicId": "PGTRB-COM-T217",
+          "topicName": "Unit VI - Programming with C++ | Data types and Operators"
+        },
+        {
+          "topicId": "PGTRB-COM-T218",
+          "topicName": "Unit VI - Programming with C++ | Control statements"
+        },
+        {
+          "topicId": "PGTRB-COM-T219",
+          "topicName": "Unit VI - Programming with C++ | User-defined Functions"
+        },
+        {
+          "topicId": "PGTRB-COM-T220",
+          "topicName": "Unit VI - Programming with C++ | Parameter Passing"
+        },
+        {
+          "topicId": "PGTRB-COM-T221",
+          "topicName": "Unit VI - Programming with C++ | Virtual Functions"
+        },
+        {
+          "topicId": "PGTRB-COM-T222",
+          "topicName": "Unit VI - Programming with C++ | Constructors and Destructors"
+        },
+        {
+          "topicId": "PGTRB-COM-T223",
+          "topicName": "Unit VI - Programming with C++ | Overloading"
+        },
+        {
+          "topicId": "PGTRB-COM-T224",
+          "topicName": "Unit VI - Programming with C++ | Templates"
+        },
+        {
+          "topicId": "PGTRB-COM-T225",
+          "topicName": "Unit VI - Programming with C++ | Streams and Files"
+        },
+        {
+          "topicId": "PGTRB-COM-T226",
+          "topicName": "Unit VI - Programming with C++ | Multi-file Programs"
+        },
+        {
+          "topicId": "PGTRB-COM-T227",
+          "topicName": "Unit VI - Programming with C++ | Exception and Event Handling"
+        },
+        {
+          "topicId": "PGTRB-COM-T228",
+          "topicName": "Unit VII - Python Programming | Python interpreter and interactive mode"
+        },
+        {
+          "topicId": "PGTRB-COM-T229",
+          "topicName": "Unit VII - Python Programming | Debugging"
+        },
+        {
+          "topicId": "PGTRB-COM-T230",
+          "topicName": "Unit VII - Python Programming | Values and types: int, float, Boolean, string and list"
+        },
+        {
+          "topicId": "PGTRB-COM-T231",
+          "topicName": "Unit VII - Python Programming | Variables, expressions, statements"
+        },
+        {
+          "topicId": "PGTRB-COM-T232",
+          "topicName": "Unit VII - Python Programming | Tuple assignment and Precedence of operators"
+        },
+        {
+          "topicId": "PGTRB-COM-T233",
+          "topicName": "Unit VII - Python Programming | Comments"
+        },
+        {
+          "topicId": "PGTRB-COM-T234",
+          "topicName": "Unit VII - Python Programming | Numpy"
+        },
+        {
+          "topicId": "PGTRB-COM-T235",
+          "topicName": "Unit VII - Python Programming | Pandas"
+        },
+        {
+          "topicId": "PGTRB-COM-T236",
+          "topicName": "Unit VII - Python Programming | Matplotlib"
+        },
+        {
+          "topicId": "PGTRB-COM-T237",
+          "topicName": "Unit VII - Python Programming | SciPy"
+        },
+        {
+          "topicId": "PGTRB-COM-T238",
+          "topicName": "Unit VII - Python Programming | Boolean values and operators"
+        },
+        {
+          "topicId": "PGTRB-COM-T239",
+          "topicName": "Unit VII - Python Programming | Conditional statements"
+        },
+        {
+          "topicId": "PGTRB-COM-T240",
+          "topicName": "Unit VII - Python Programming | Iteration: while, for, break, continue"
+        },
+        {
+          "topicId": "PGTRB-COM-T241",
+          "topicName": "Unit VII - Python Programming | Functions types, return values, parameters"
+        },
+        {
+          "topicId": "PGTRB-COM-T242",
+          "topicName": "Unit VII - Python Programming | Local and global scope, function composition"
+        },
+        {
+          "topicId": "PGTRB-COM-T243",
+          "topicName": "Unit VII - Python Programming | Recursion"
+        },
+        {
+          "topicId": "PGTRB-COM-T244",
+          "topicName": "Unit VII - Python Programming | String slices, immutability"
+        },
+        {
+          "topicId": "PGTRB-COM-T245",
+          "topicName": "Unit VII - Python Programming | String functions and methods, string module"
+        },
+        {
+          "topicId": "PGTRB-COM-T246",
+          "topicName": "Unit VII - Python Programming | Lists as arrays"
+        },
+        {
+          "topicId": "PGTRB-COM-T247",
+          "topicName": "Unit VII - Python Programming | List operations, slices, methods, loop"
+        },
+        {
+          "topicId": "PGTRB-COM-T248",
+          "topicName": "Unit VII - Python Programming | List mutability, aliasing, cloning"
+        },
+        {
+          "topicId": "PGTRB-COM-T249",
+          "topicName": "Unit VII - Python Programming | List parameters"
+        },
+        {
+          "topicId": "PGTRB-COM-T250",
+          "topicName": "Unit VII - Python Programming | Tuple assignment and tuple as return value"
+        },
+        {
+          "topicId": "PGTRB-COM-T251",
+          "topicName": "Unit VII - Python Programming | Dictionaries: operations and methods"
+        },
+        {
+          "topicId": "PGTRB-COM-T252",
+          "topicName": "Unit VII - Python Programming | Advanced list processing - Iterator and generator"
+        },
+        {
+          "topicId": "PGTRB-COM-T253",
+          "topicName": "Unit VIII - Web Development | HTML: Basic Tags"
+        },
+        {
+          "topicId": "PGTRB-COM-T254",
+          "topicName": "Unit VIII - Web Development | HTML: Formatting and fonts"
+        },
+        {
+          "topicId": "PGTRB-COM-T255",
+          "topicName": "Unit VIII - Web Development | HTML: Working with colour"
+        },
+        {
+          "topicId": "PGTRB-COM-T256",
+          "topicName": "Unit VIII - Web Development | HTML: Working with Tables"
+        },
+        {
+          "topicId": "PGTRB-COM-T257",
+          "topicName": "Unit VIII - Web Development | HTML: Working with Images"
+        },
+        {
+          "topicId": "PGTRB-COM-T258",
+          "topicName": "Unit VIII - Web Development | HTML: Working with Links"
+        },
+        {
+          "topicId": "PGTRB-COM-T259",
+          "topicName": "Unit VIII - Web Development | HTML: List and Tables"
+        },
+        {
+          "topicId": "PGTRB-COM-T260",
+          "topicName": "Unit VIII - Web Development | HTML: Frame and Frameset"
+        },
+        {
+          "topicId": "PGTRB-COM-T261",
+          "topicName": "Unit VIII - Web Development | HTML: Forms and Controls"
+        },
+        {
+          "topicId": "PGTRB-COM-T262",
+          "topicName": "Unit VIII - Web Development | CSS: Introduction to Cascading Style Sheet"
+        },
+        {
+          "topicId": "PGTRB-COM-T263",
+          "topicName": "Unit VIII - Web Development | CSS: Background images, colour and properties"
+        },
+        {
+          "topicId": "PGTRB-COM-T264",
+          "topicName": "Unit VIII - Web Development | CSS: Manipulating texts using fonts"
+        },
+        {
+          "topicId": "PGTRB-COM-T265",
+          "topicName": "Unit VIII - Web Development | CSS: Border and boxes margins, padding lists"
+        },
+        {
+          "topicId": "PGTRB-COM-T266",
+          "topicName": "Unit VIII - Web Development | CSS: Positioning using CSS"
+        },
+        {
+          "topicId": "PGTRB-COM-T267",
+          "topicName": "Unit VIII - Web Development | Types of Style Sheets"
+        },
+        {
+          "topicId": "PGTRB-COM-T268",
+          "topicName": "Unit VIII - Web Development | Class and ID selector"
+        },
+        {
+          "topicId": "PGTRB-COM-T269",
+          "topicName": "Unit VIII - Web Development | Inline Menu, DIV and CSS layout"
+        },
+        {
+          "topicId": "PGTRB-COM-T270",
+          "topicName": "Unit VIII - Web Development | JavaScript: Understanding Variables, Loops and Arrays"
+        },
+        {
+          "topicId": "PGTRB-COM-T271",
+          "topicName": "Unit VIII - Web Development | JavaScript: Functions"
+        },
+        {
+          "topicId": "PGTRB-COM-T272",
+          "topicName": "Unit VIII - Web Development | JavaScript: Working with alert, confirm and prompt boxes"
+        },
+        {
+          "topicId": "PGTRB-COM-T273",
+          "topicName": "Unit VIII - Web Development | JavaScript: Creating Rollover image"
+        },
+        {
+          "topicId": "PGTRB-COM-T274",
+          "topicName": "Unit VIII - Web Development | JavaScript: Working with Operators, Events"
+        },
+        {
+          "topicId": "PGTRB-COM-T275",
+          "topicName": "Unit IX - PHP and MySQL | Evaluation of PHP and Basic Syntax"
+        },
+        {
+          "topicId": "PGTRB-COM-T276",
+          "topicName": "Unit IX - PHP and MySQL | Defining variable and constant"
+        },
+        {
+          "topicId": "PGTRB-COM-T277",
+          "topicName": "Unit IX - PHP and MySQL | PHP Data type, Operator and Expression"
+        },
+        {
+          "topicId": "PGTRB-COM-T278",
+          "topicName": "Unit IX - PHP and MySQL | Making Decisions (Conditionals)"
+        },
+        {
+          "topicId": "PGTRB-COM-T279",
+          "topicName": "Unit IX - PHP and MySQL | Doing Repetitive task with looping"
+        },
+        {
+          "topicId": "PGTRB-COM-T280",
+          "topicName": "Unit IX - PHP and MySQL | Mixing Decisions and looping with HTML"
+        },
+        {
+          "topicId": "PGTRB-COM-T281",
+          "topicName": "Unit IX - PHP and MySQL | Defining a function"
+        },
+        {
+          "topicId": "PGTRB-COM-T282",
+          "topicName": "Unit IX - PHP and MySQL | Call by value and Call by reference"
+        },
+        {
+          "topicId": "PGTRB-COM-T283",
+          "topicName": "Unit IX - PHP and MySQL | Recursive function"
+        },
+        {
+          "topicId": "PGTRB-COM-T284",
+          "topicName": "Unit IX - PHP and MySQL | String Handling: Creating and accessing"
+        },
+        {
+          "topicId": "PGTRB-COM-T285",
+          "topicName": "Unit IX - PHP and MySQL | String Searching and Replacing String"
+        },
+        {
+          "topicId": "PGTRB-COM-T286",
+          "topicName": "Unit IX - PHP and MySQL | Formatting String, String Related Library functions"
+        },
+        {
+          "topicId": "PGTRB-COM-T287",
+          "topicName": "Unit IX - PHP and MySQL | Array: Anatomy of an Array"
+        },
+        {
+          "topicId": "PGTRB-COM-T288",
+          "topicName": "Unit IX - PHP and MySQL | Index based and Associative array"
+        },
+        {
+          "topicId": "PGTRB-COM-T289",
+          "topicName": "Unit IX - PHP and MySQL | Accessing array, Element Looping with Index based array"
+        },
+        {
+          "topicId": "PGTRB-COM-T290",
+          "topicName": "Unit IX - PHP and MySQL | Looping with associative array"
+        },
+        {
+          "topicId": "PGTRB-COM-T291",
+          "topicName": "Unit IX - PHP and MySQL | Working with file and Directories: Opening and closing a file"
+        },
+        {
+          "topicId": "PGTRB-COM-T292",
+          "topicName": "Unit IX - PHP and MySQL | Copying, renaming and deleting a file"
+        },
+        {
+          "topicId": "PGTRB-COM-T293",
+          "topicName": "Unit IX - PHP and MySQL | Working with directories, Creating and deleting folder"
+        },
+        {
+          "topicId": "PGTRB-COM-T294",
+          "topicName": "Unit IX - PHP and MySQL | File uploading and downloading"
+        },
+        {
+          "topicId": "PGTRB-COM-T295",
+          "topicName": "Unit IX - PHP and MySQL | MySQL database connection"
+        },
+        {
+          "topicId": "PGTRB-COM-T296",
+          "topicName": "Unit IX - PHP and MySQL | Creating a table with key constraints, dropping a table"
+        },
+        {
+          "topicId": "PGTRB-COM-T297",
+          "topicName": "Unit IX - PHP and MySQL | Adding, retrieving, updating data, deleting data"
+        },
+        {
+          "topicId": "PGTRB-COM-T298",
+          "topicName": "Unit IX - PHP and MySQL | Performing additional queries (Joins and subqueries)"
+        },
+        {
+          "topicId": "PGTRB-COM-T299",
+          "topicName": "Unit IX - PHP and MySQL | Connecting to MySQL, Accessing MySQL using PHP"
+        },
+        {
+          "topicId": "PGTRB-COM-T300",
+          "topicName": "Unit IX - PHP and MySQL | Querying MySQL database with PHP"
+        },
+        {
+          "topicId": "PGTRB-COM-T301",
+          "topicName": "Unit X - Cybersecurity | Introduction to Cyber Crime"
+        },
+        {
+          "topicId": "PGTRB-COM-T302",
+          "topicName": "Unit X - Cybersecurity | Malware type"
+        },
+        {
+          "topicId": "PGTRB-COM-T303",
+          "topicName": "Unit X - Cybersecurity | Kinds of Cyber Crime"
+        },
+        {
+          "topicId": "PGTRB-COM-T304",
+          "topicName": "Unit X - Cybersecurity | Authentication"
+        },
+        {
+          "topicId": "PGTRB-COM-T305",
+          "topicName": "Unit X - Cybersecurity | Encryption"
+        },
+        {
+          "topicId": "PGTRB-COM-T306",
+          "topicName": "Unit X - Cybersecurity | Digital Signatures"
+        },
+        {
+          "topicId": "PGTRB-COM-T307",
+          "topicName": "Unit X - Cybersecurity | Antivirus"
+        },
+        {
+          "topicId": "PGTRB-COM-T308",
+          "topicName": "Unit X - Cybersecurity | Firewall"
+        },
+        {
+          "topicId": "PGTRB-COM-T309",
+          "topicName": "Unit X - Cybersecurity | Steganography"
+        },
+        {
+          "topicId": "PGTRB-COM-T310",
+          "topicName": "Unit X - Cybersecurity | Guidelines for Secure Password"
+        },
+        {
+          "topicId": "PGTRB-COM-T311",
+          "topicName": "Unit X - Cybersecurity | Two Step verification"
+        },
+        {
+          "topicId": "PGTRB-COM-T312",
+          "topicName": "Unit X - Cybersecurity | Generating Secure password"
+        },
+        {
+          "topicId": "PGTRB-COM-T313",
+          "topicName": "Unit X - Cybersecurity | Using Password Manager"
+        },
+        {
+          "topicId": "PGTRB-COM-T314",
+          "topicName": "Unit X - Cybersecurity | Enabling Two-step verification"
+        },
+        {
+          "topicId": "PGTRB-COM-T315",
+          "topicName": "Unit X - Cybersecurity | Securing Computer using antivirus"
+        },
+        {
+          "topicId": "PGTRB-COM-T316",
+          "topicName": "Unit X - Cybersecurity | Symmetric cipher model"
+        },
+        {
+          "topicId": "PGTRB-COM-T317",
+          "topicName": "Unit X - Cybersecurity | Cryptographic system"
+        },
+        {
+          "topicId": "PGTRB-COM-T318",
+          "topicName": "Unit X - Cybersecurity | Substitution techniques"
+        },
+        {
+          "topicId": "PGTRB-COM-T319",
+          "topicName": "Unit X - Cybersecurity | Caesar cipher"
+        },
+        {
+          "topicId": "PGTRB-COM-T320",
+          "topicName": "Unit X - Cybersecurity | Mono alphabetic ciphers"
+        },
+        {
+          "topicId": "PGTRB-COM-T321",
+          "topicName": "Unit X - Cybersecurity | Hill ciphers"
+        },
+        {
+          "topicId": "PGTRB-COM-T322",
+          "topicName": "Unit X - Cybersecurity | Transposition techniques"
+        },
+        {
+          "topicId": "PGTRB-COM-T323",
+          "topicName": "Unit X - Cybersecurity | Data encryption standard"
+        },
+        {
+          "topicId": "PGTRB-COM-T324",
+          "topicName": "Unit X - Cybersecurity | The strength of DES"
+        },
+        {
+          "topicId": "PGTRB-COM-T325",
+          "topicName": "Unit X - Cybersecurity | Investigating DoS Attacks"
+        },
+        {
+          "topicId": "PGTRB-COM-T326",
+          "topicName": "Unit X - Cybersecurity | Types of DoS Attacks"
+        },
+        {
+          "topicId": "PGTRB-COM-T327",
+          "topicName": "Unit X - Cybersecurity | Classification of DoS Attacks"
+        },
+        {
+          "topicId": "PGTRB-COM-T328",
+          "topicName": "Unit X - Cybersecurity | Techniques to Detect DoS Attacks"
+        }
+      ]
     },
     {
       "courseId": "PGTRB-TAM",
