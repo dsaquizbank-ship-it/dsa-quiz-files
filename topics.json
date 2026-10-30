@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-30T15:01:02.189Z",
+  "version": "2026-10-30T15:05:13.300Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -2324,7 +2324,1004 @@
     {
       "courseId": "UGTRB-PHY",
       "courseName": "UGTRB PHYSICS",
-      "topics": []
+      "topics": [
+        {
+          "topicId": "UGTRB-PHY-T001",
+          "topicName": "Unit I - Mechanics | Newton's laws"
+        },
+        {
+          "topicId": "UGTRB-PHY-T002",
+          "topicName": "Unit I - Mechanics | Impulse and impact"
+        },
+        {
+          "topicId": "UGTRB-PHY-T003",
+          "topicName": "Unit I - Mechanics | Laws of impact"
+        },
+        {
+          "topicId": "UGTRB-PHY-T004",
+          "topicName": "Unit I - Mechanics | Direct impact between two smooth spheres"
+        },
+        {
+          "topicId": "UGTRB-PHY-T005",
+          "topicName": "Unit I - Mechanics | Oblique impact between two smooth spheres"
+        },
+        {
+          "topicId": "UGTRB-PHY-T006",
+          "topicName": "Unit I - Mechanics | Loss of K.E"
+        },
+        {
+          "topicId": "UGTRB-PHY-T007",
+          "topicName": "Unit I - Mechanics | Motion of two interacting bodies"
+        },
+        {
+          "topicId": "UGTRB-PHY-T008",
+          "topicName": "Unit I - Mechanics | Reduced mass"
+        },
+        {
+          "topicId": "UGTRB-PHY-T009",
+          "topicName": "Unit I - Mechanics | Centre of gravity"
+        },
+        {
+          "topicId": "UGTRB-PHY-T010",
+          "topicName": "Unit I - Mechanics | Centre of gravity of a solid hemisphere"
+        },
+        {
+          "topicId": "UGTRB-PHY-T011",
+          "topicName": "Unit I - Mechanics | Centre of gravity of a hollow hemisphere"
+        },
+        {
+          "topicId": "UGTRB-PHY-T012",
+          "topicName": "Unit I - Mechanics | Centre of gravity of a tetrahedron"
+        },
+        {
+          "topicId": "UGTRB-PHY-T013",
+          "topicName": "Unit I - Mechanics | Centre of gravity of a solid cone"
+        },
+        {
+          "topicId": "UGTRB-PHY-T014",
+          "topicName": "Unit I - Mechanics | Friction and types of friction"
+        },
+        {
+          "topicId": "UGTRB-PHY-T015",
+          "topicName": "Unit I - Mechanics | Angle of friction"
+        },
+        {
+          "topicId": "UGTRB-PHY-T016",
+          "topicName": "Unit I - Mechanics | Equilibrium of rigid bodies"
+        },
+        {
+          "topicId": "UGTRB-PHY-T017",
+          "topicName": "Unit I - Mechanics | Moment of inertia"
+        },
+        {
+          "topicId": "UGTRB-PHY-T018",
+          "topicName": "Unit I - Mechanics | Angular momentum and kinetic energy of a revolving body"
+        },
+        {
+          "topicId": "UGTRB-PHY-T019",
+          "topicName": "Unit I - Mechanics | Moment of inertia of sphere, shell and cylinder"
+        },
+        {
+          "topicId": "UGTRB-PHY-T020",
+          "topicName": "Unit I - Mechanics | Parallel and perpendicular axes theorem"
+        },
+        {
+          "topicId": "UGTRB-PHY-T021",
+          "topicName": "Unit I - Mechanics | Rolling"
+        },
+        {
+          "topicId": "UGTRB-PHY-T022",
+          "topicName": "Unit I - Mechanics | Kepler's laws of planetary motion"
+        },
+        {
+          "topicId": "UGTRB-PHY-T023",
+          "topicName": "Unit I - Mechanics | Newton's law of gravitation"
+        },
+        {
+          "topicId": "UGTRB-PHY-T024",
+          "topicName": "Unit I - Mechanics | Determination of G by Boy's method"
+        },
+        {
+          "topicId": "UGTRB-PHY-T025",
+          "topicName": "Unit I - Mechanics | Gravitational field and potential"
+        },
+        {
+          "topicId": "UGTRB-PHY-T026",
+          "topicName": "Unit I - Mechanics | Variation of acceleration due to gravity on height, depth and altitude"
+        },
+        {
+          "topicId": "UGTRB-PHY-T027",
+          "topicName": "Unit I - Mechanics | Orbital and escape velocities"
+        },
+        {
+          "topicId": "UGTRB-PHY-T028",
+          "topicName": "Unit I - Mechanics | Earth and geostationary satellites"
+        },
+        {
+          "topicId": "UGTRB-PHY-T029",
+          "topicName": "Unit I - Mechanics | Limitations of Newton's laws"
+        },
+        {
+          "topicId": "UGTRB-PHY-T030",
+          "topicName": "Unit II - Thermal Physics | Kinetic theory of gases - postulates"
+        },
+        {
+          "topicId": "UGTRB-PHY-T031",
+          "topicName": "Unit II - Thermal Physics | Mean free path"
+        },
+        {
+          "topicId": "UGTRB-PHY-T032",
+          "topicName": "Unit II - Thermal Physics | Ideal gas equation"
+        },
+        {
+          "topicId": "UGTRB-PHY-T033",
+          "topicName": "Unit II - Thermal Physics | Degrees of freedom"
+        },
+        {
+          "topicId": "UGTRB-PHY-T034",
+          "topicName": "Unit II - Thermal Physics | Boltzmann's law of equipartition of energy"
+        },
+        {
+          "topicId": "UGTRB-PHY-T035",
+          "topicName": "Unit II - Thermal Physics | Maxwell's law of distribution of molecular speed"
+        },
+        {
+          "topicId": "UGTRB-PHY-T036",
+          "topicName": "Unit II - Thermal Physics | Atomicity of gases"
+        },
+        {
+          "topicId": "UGTRB-PHY-T037",
+          "topicName": "Unit II - Thermal Physics | Specific heat capacity of gases"
+        },
+        {
+          "topicId": "UGTRB-PHY-T038",
+          "topicName": "Unit II - Thermal Physics | Ratio of Cp and Cv"
+        },
+        {
+          "topicId": "UGTRB-PHY-T039",
+          "topicName": "Unit II - Thermal Physics | Calculation for monoatomic and diatomic gases"
+        },
+        {
+          "topicId": "UGTRB-PHY-T040",
+          "topicName": "Unit II - Thermal Physics | Mayer's relation"
+        },
+        {
+          "topicId": "UGTRB-PHY-T041",
+          "topicName": "Unit II - Thermal Physics | Experimental determination of Cp and Cv"
+        },
+        {
+          "topicId": "UGTRB-PHY-T042",
+          "topicName": "Unit II - Thermal Physics | Joule-Kelvin effect - theory and experiment"
+        },
+        {
+          "topicId": "UGTRB-PHY-T043",
+          "topicName": "Unit II - Thermal Physics | Liquefaction of gases (hydrogen, oxygen, air, helium)"
+        },
+        {
+          "topicId": "UGTRB-PHY-T044",
+          "topicName": "Unit II - Thermal Physics | Thermal conductivity of solids"
+        },
+        {
+          "topicId": "UGTRB-PHY-T045",
+          "topicName": "Unit II - Thermal Physics | Forbes and Lee's disc method"
+        },
+        {
+          "topicId": "UGTRB-PHY-T046",
+          "topicName": "Unit II - Thermal Physics | Stefan's law"
+        },
+        {
+          "topicId": "UGTRB-PHY-T047",
+          "topicName": "Unit II - Thermal Physics | Determination of Stefan's constant"
+        },
+        {
+          "topicId": "UGTRB-PHY-T048",
+          "topicName": "Unit II - Thermal Physics | Solar constant and temperature of the Sun"
+        },
+        {
+          "topicId": "UGTRB-PHY-T049",
+          "topicName": "Unit II - Thermal Physics | First law of thermodynamics"
+        },
+        {
+          "topicId": "UGTRB-PHY-T050",
+          "topicName": "Unit II - Thermal Physics | Isothermal, adiabatic, isochoric, isobaric, cyclic processes"
+        },
+        {
+          "topicId": "UGTRB-PHY-T051",
+          "topicName": "Unit II - Thermal Physics | Carnot's engine and Carnot's cycle"
+        },
+        {
+          "topicId": "UGTRB-PHY-T052",
+          "topicName": "Unit II - Thermal Physics | Second law of thermodynamics"
+        },
+        {
+          "topicId": "UGTRB-PHY-T053",
+          "topicName": "Unit II - Thermal Physics | Carnot's theorem"
+        },
+        {
+          "topicId": "UGTRB-PHY-T054",
+          "topicName": "Unit II - Thermal Physics | Entropy"
+        },
+        {
+          "topicId": "UGTRB-PHY-T055",
+          "topicName": "Unit II - Thermal Physics | Reversible and irreversible process"
+        },
+        {
+          "topicId": "UGTRB-PHY-T056",
+          "topicName": "Unit II - Thermal Physics | Maxwell's thermodynamic relations and their applications"
+        },
+        {
+          "topicId": "UGTRB-PHY-T057",
+          "topicName": "Unit II - Thermal Physics | Third law of thermodynamics"
+        },
+        {
+          "topicId": "UGTRB-PHY-T058",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Moduli of elasticity"
+        },
+        {
+          "topicId": "UGTRB-PHY-T059",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Relations among three moduli of elasticity"
+        },
+        {
+          "topicId": "UGTRB-PHY-T060",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Bending moment"
+        },
+        {
+          "topicId": "UGTRB-PHY-T061",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Uniform and non-uniform bending"
+        },
+        {
+          "topicId": "UGTRB-PHY-T062",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Couple per unit twist"
+        },
+        {
+          "topicId": "UGTRB-PHY-T063",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Torsional oscillation"
+        },
+        {
+          "topicId": "UGTRB-PHY-T064",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Elastic constants and their determination"
+        },
+        {
+          "topicId": "UGTRB-PHY-T065",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Viscosity"
+        },
+        {
+          "topicId": "UGTRB-PHY-T066",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Determination of highly viscous liquid by Stokes' method"
+        },
+        {
+          "topicId": "UGTRB-PHY-T067",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Streamline and turbulent flow"
+        },
+        {
+          "topicId": "UGTRB-PHY-T068",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Reynold's number"
+        },
+        {
+          "topicId": "UGTRB-PHY-T069",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Poiseuille's flow"
+        },
+        {
+          "topicId": "UGTRB-PHY-T070",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Applications of viscosity"
+        },
+        {
+          "topicId": "UGTRB-PHY-T071",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Surface tension"
+        },
+        {
+          "topicId": "UGTRB-PHY-T072",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Capillary rise"
+        },
+        {
+          "topicId": "UGTRB-PHY-T073",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Method of drops"
+        },
+        {
+          "topicId": "UGTRB-PHY-T074",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Surface tension of mercury - Quicken's method"
+        },
+        {
+          "topicId": "UGTRB-PHY-T075",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Simple harmonic motion (SHM)"
+        },
+        {
+          "topicId": "UGTRB-PHY-T076",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Combination of two SHMs in straight line and right angles"
+        },
+        {
+          "topicId": "UGTRB-PHY-T077",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Lissajou's figures"
+        },
+        {
+          "topicId": "UGTRB-PHY-T078",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Free, damped, forced oscillations"
+        },
+        {
+          "topicId": "UGTRB-PHY-T079",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Laws of transverse vibrations"
+        },
+        {
+          "topicId": "UGTRB-PHY-T080",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Sonometer and Melde's string"
+        },
+        {
+          "topicId": "UGTRB-PHY-T081",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Resonance"
+        },
+        {
+          "topicId": "UGTRB-PHY-T082",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Intensity and loudness of sound"
+        },
+        {
+          "topicId": "UGTRB-PHY-T083",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Beats"
+        },
+        {
+          "topicId": "UGTRB-PHY-T084",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Doppler effect"
+        },
+        {
+          "topicId": "UGTRB-PHY-T085",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Velocity of sound in solids and gases"
+        },
+        {
+          "topicId": "UGTRB-PHY-T086",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Ultrasonic - production, properties and applications"
+        },
+        {
+          "topicId": "UGTRB-PHY-T087",
+          "topicName": "Unit III - Properties of Matter and Acoustics | Acoustics of auditoria"
+        },
+        {
+          "topicId": "UGTRB-PHY-T088",
+          "topicName": "Unit IV - Electricity and Magnetism | Coulomb's law, permittivity, relative permittivity"
+        },
+        {
+          "topicId": "UGTRB-PHY-T089",
+          "topicName": "Unit IV - Electricity and Magnetism | Electric field intensity due to point charge"
+        },
+        {
+          "topicId": "UGTRB-PHY-T090",
+          "topicName": "Unit IV - Electricity and Magnetism | Gauss' theorem and its applications"
+        },
+        {
+          "topicId": "UGTRB-PHY-T091",
+          "topicName": "Unit IV - Electricity and Magnetism | Electric potential and relation between potential and intensity"
+        },
+        {
+          "topicId": "UGTRB-PHY-T092",
+          "topicName": "Unit IV - Electricity and Magnetism | Electric dipole moment"
+        },
+        {
+          "topicId": "UGTRB-PHY-T093",
+          "topicName": "Unit IV - Electricity and Magnetism | Potential and intensity due to dipole"
+        },
+        {
+          "topicId": "UGTRB-PHY-T094",
+          "topicName": "Unit IV - Electricity and Magnetism | Capacitance"
+        },
+        {
+          "topicId": "UGTRB-PHY-T095",
+          "topicName": "Unit IV - Electricity and Magnetism | Capacity of parallel plates, spherical and cylindrical capacitors"
+        },
+        {
+          "topicId": "UGTRB-PHY-T096",
+          "topicName": "Unit IV - Electricity and Magnetism | Energy stored in a capacitor"
+        },
+        {
+          "topicId": "UGTRB-PHY-T097",
+          "topicName": "Unit IV - Electricity and Magnetism | Electrometers"
+        },
+        {
+          "topicId": "UGTRB-PHY-T098",
+          "topicName": "Unit IV - Electricity and Magnetism | Measurement of potential and dielectric constant"
+        },
+        {
+          "topicId": "UGTRB-PHY-T099",
+          "topicName": "Unit IV - Electricity and Magnetism | Ohm's law, resistivity and conductivity"
+        },
+        {
+          "topicId": "UGTRB-PHY-T100",
+          "topicName": "Unit IV - Electricity and Magnetism | Kirchhoff's laws for a loop and a junction"
+        },
+        {
+          "topicId": "UGTRB-PHY-T101",
+          "topicName": "Unit IV - Electricity and Magnetism | Internal resistance of a cell"
+        },
+        {
+          "topicId": "UGTRB-PHY-T102",
+          "topicName": "Unit IV - Electricity and Magnetism | Thermoelectricity - Peltier, Thomson coefficients"
+        },
+        {
+          "topicId": "UGTRB-PHY-T103",
+          "topicName": "Unit IV - Electricity and Magnetism | Biot-Savart's law"
+        },
+        {
+          "topicId": "UGTRB-PHY-T104",
+          "topicName": "Unit IV - Electricity and Magnetism | Ampere's law"
+        },
+        {
+          "topicId": "UGTRB-PHY-T105",
+          "topicName": "Unit IV - Electricity and Magnetism | Magnetic field around current carrying conductors"
+        },
+        {
+          "topicId": "UGTRB-PHY-T106",
+          "topicName": "Unit IV - Electricity and Magnetism | Magnetic force on charge and current elements"
+        },
+        {
+          "topicId": "UGTRB-PHY-T107",
+          "topicName": "Unit IV - Electricity and Magnetism | Force between two current carrying parallel conductors"
+        },
+        {
+          "topicId": "UGTRB-PHY-T108",
+          "topicName": "Unit IV - Electricity and Magnetism | Faraday's laws of electromagnetic induction"
+        },
+        {
+          "topicId": "UGTRB-PHY-T109",
+          "topicName": "Unit IV - Electricity and Magnetism | Self and mutual induction"
+        },
+        {
+          "topicId": "UGTRB-PHY-T110",
+          "topicName": "Unit IV - Electricity and Magnetism | Induction coil and its uses"
+        },
+        {
+          "topicId": "UGTRB-PHY-T111",
+          "topicName": "Unit IV - Electricity and Magnetism | Eddy currents"
+        },
+        {
+          "topicId": "UGTRB-PHY-T112",
+          "topicName": "Unit IV - Electricity and Magnetism | Transformers - energy losses, skin effect"
+        },
+        {
+          "topicId": "UGTRB-PHY-T113",
+          "topicName": "Unit IV - Electricity and Magnetism | Advantages of ac over dc"
+        },
+        {
+          "topicId": "UGTRB-PHY-T114",
+          "topicName": "Unit IV - Electricity and Magnetism | Dynamos and motors"
+        },
+        {
+          "topicId": "UGTRB-PHY-T115",
+          "topicName": "Unit IV - Electricity and Magnetism | Magnetic poles and magnetic moments"
+        },
+        {
+          "topicId": "UGTRB-PHY-T116",
+          "topicName": "Unit IV - Electricity and Magnetism | Susceptibility and permeability"
+        },
+        {
+          "topicId": "UGTRB-PHY-T117",
+          "topicName": "Unit IV - Electricity and Magnetism | Dia, para and ferro magnetism"
+        },
+        {
+          "topicId": "UGTRB-PHY-T118",
+          "topicName": "Unit IV - Electricity and Magnetism | Hysteresis - B-H curve, energy loss due to hysteresis"
+        },
+        {
+          "topicId": "UGTRB-PHY-T119",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Bohr's atom model"
+        },
+        {
+          "topicId": "UGTRB-PHY-T120",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Hydrogen atom spectra"
+        },
+        {
+          "topicId": "UGTRB-PHY-T121",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Spectra of hydrogen and hydrogen like atoms"
+        },
+        {
+          "topicId": "UGTRB-PHY-T122",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Rydberg's constant"
+        },
+        {
+          "topicId": "UGTRB-PHY-T123",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Special quantisation"
+        },
+        {
+          "topicId": "UGTRB-PHY-T124",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Sommerfeld model"
+        },
+        {
+          "topicId": "UGTRB-PHY-T125",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Quantum numbers"
+        },
+        {
+          "topicId": "UGTRB-PHY-T126",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Vector atom model"
+        },
+        {
+          "topicId": "UGTRB-PHY-T127",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Electronic structures"
+        },
+        {
+          "topicId": "UGTRB-PHY-T128",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Pauli's exclusion principle and electronic configuration"
+        },
+        {
+          "topicId": "UGTRB-PHY-T129",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Magnetic moment due to orbital motion and electron spin"
+        },
+        {
+          "topicId": "UGTRB-PHY-T130",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Bohr magnetron"
+        },
+        {
+          "topicId": "UGTRB-PHY-T131",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Stern and Gerlach experiment"
+        },
+        {
+          "topicId": "UGTRB-PHY-T132",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Fine structure of sodium D line"
+        },
+        {
+          "topicId": "UGTRB-PHY-T133",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Zeeman effect and anomalous Zeeman effect"
+        },
+        {
+          "topicId": "UGTRB-PHY-T134",
+          "topicName": "Unit V - Atomic and Nuclear Physics | General properties of nuclei and nuclear models"
+        },
+        {
+          "topicId": "UGTRB-PHY-T135",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Nuclear size, charge and mass determination"
+        },
+        {
+          "topicId": "UGTRB-PHY-T136",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Nuclear spin and magnetic dipole moment"
+        },
+        {
+          "topicId": "UGTRB-PHY-T137",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Mass defect, binding energy and packing fraction"
+        },
+        {
+          "topicId": "UGTRB-PHY-T138",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Nuclear forces and shell model"
+        },
+        {
+          "topicId": "UGTRB-PHY-T139",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Liquid drop model and fission, fusion"
+        },
+        {
+          "topicId": "UGTRB-PHY-T140",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Nuclear reactions and induced radioactivity"
+        },
+        {
+          "topicId": "UGTRB-PHY-T141",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Artificial transmutation"
+        },
+        {
+          "topicId": "UGTRB-PHY-T142",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Application of radio isotopes"
+        },
+        {
+          "topicId": "UGTRB-PHY-T143",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Discovery, production and detection of neutrons"
+        },
+        {
+          "topicId": "UGTRB-PHY-T144",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Cyclotron, synchrotron and betatron"
+        },
+        {
+          "topicId": "UGTRB-PHY-T145",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Radiation detectors - ionization chamber, G.M. counter"
+        },
+        {
+          "topicId": "UGTRB-PHY-T146",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Elementary particles - classification (pions, muons, k mesons, hyperons)"
+        },
+        {
+          "topicId": "UGTRB-PHY-T147",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Conservation laws"
+        },
+        {
+          "topicId": "UGTRB-PHY-T148",
+          "topicName": "Unit V - Atomic and Nuclear Physics | Cosmic rays"
+        },
+        {
+          "topicId": "UGTRB-PHY-T149",
+          "topicName": "Unit VI - Quantum Mechanics and Relativity | Wave nature of particles"
+        },
+        {
+          "topicId": "UGTRB-PHY-T150",
+          "topicName": "Unit VI - Quantum Mechanics and Relativity | deBroglie waves"
+        },
+        {
+          "topicId": "UGTRB-PHY-T151",
+          "topicName": "Unit VI - Quantum Mechanics and Relativity | Davison and Germer experiment"
+        },
+        {
+          "topicId": "UGTRB-PHY-T152",
+          "topicName": "Unit VI - Quantum Mechanics and Relativity | Waves and particle duality"
+        },
+        {
+          "topicId": "UGTRB-PHY-T153",
+          "topicName": "Unit VI - Quantum Mechanics and Relativity | Photoelectric effect and photo electric multiplier"
+        },
+        {
+          "topicId": "UGTRB-PHY-T154",
+          "topicName": "Unit VI - Quantum Mechanics and Relativity | Einstein's equation"
+        },
+        {
+          "topicId": "UGTRB-PHY-T155",
+          "topicName": "Unit VI - Quantum Mechanics and Relativity | Compton Effect and experimental verification"
+        },
+        {
+          "topicId": "UGTRB-PHY-T156",
+          "topicName": "Unit VI - Quantum Mechanics and Relativity | Wave nature of electron"
+        },
+        {
+          "topicId": "UGTRB-PHY-T157",
+          "topicName": "Unit VI - Quantum Mechanics and Relativity | Heisenberg's uncertainty principle (position/momentum, energy/time)"
+        },
+        {
+          "topicId": "UGTRB-PHY-T158",
+          "topicName": "Unit VI - Quantum Mechanics and Relativity | Schrodinger's wave equation"
+        },
+        {
+          "topicId": "UGTRB-PHY-T159",
+          "topicName": "Unit VI - Quantum Mechanics and Relativity | Probability amplitude, properties of wave function, normalization"
+        },
+        {
+          "topicId": "UGTRB-PHY-T160",
+          "topicName": "Unit VI - Quantum Mechanics and Relativity | Potential barriers and tunnelling across barriers"
+        },
+        {
+          "topicId": "UGTRB-PHY-T161",
+          "topicName": "Unit VI - Quantum Mechanics and Relativity | Particle in a box (one dimension only)"
+        },
+        {
+          "topicId": "UGTRB-PHY-T162",
+          "topicName": "Unit VI - Quantum Mechanics and Relativity | Postulates of Special theory of Relativity"
+        },
+        {
+          "topicId": "UGTRB-PHY-T163",
+          "topicName": "Unit VI - Quantum Mechanics and Relativity | Lorentz transformation of equations and its application"
+        },
+        {
+          "topicId": "UGTRB-PHY-T164",
+          "topicName": "Unit VI - Quantum Mechanics and Relativity | Length contraction, time dilation"
+        },
+        {
+          "topicId": "UGTRB-PHY-T165",
+          "topicName": "Unit VI - Quantum Mechanics and Relativity | Variation of mass with velocity"
+        },
+        {
+          "topicId": "UGTRB-PHY-T166",
+          "topicName": "Unit VI - Quantum Mechanics and Relativity | Mass energy equivalence (Physical Significance)"
+        },
+        {
+          "topicId": "UGTRB-PHY-T167",
+          "topicName": "Unit VII - Solid State Physics | Crystalline and amorphous solids"
+        },
+        {
+          "topicId": "UGTRB-PHY-T168",
+          "topicName": "Unit VII - Solid State Physics | Crystal lattice - structure of crystals"
+        },
+        {
+          "topicId": "UGTRB-PHY-T169",
+          "topicName": "Unit VII - Solid State Physics | Periodicity and plane in crystal"
+        },
+        {
+          "topicId": "UGTRB-PHY-T170",
+          "topicName": "Unit VII - Solid State Physics | Translational and rotational symmetry"
+        },
+        {
+          "topicId": "UGTRB-PHY-T171",
+          "topicName": "Unit VII - Solid State Physics | Crystallography - fundamental types of lattices in two and three dimensions"
+        },
+        {
+          "topicId": "UGTRB-PHY-T172",
+          "topicName": "Unit VII - Solid State Physics | Bravais lattice, lattice systems, unit cell"
+        },
+        {
+          "topicId": "UGTRB-PHY-T173",
+          "topicName": "Unit VII - Solid State Physics | Primitive lattice vectors"
+        },
+        {
+          "topicId": "UGTRB-PHY-T174",
+          "topicName": "Unit VII - Solid State Physics | Packing fraction - Miller indices"
+        },
+        {
+          "topicId": "UGTRB-PHY-T175",
+          "topicName": "Unit VII - Solid State Physics | Crystal planes and directions"
+        },
+        {
+          "topicId": "UGTRB-PHY-T176",
+          "topicName": "Unit VII - Solid State Physics | Reciprocal lattice vectors"
+        },
+        {
+          "topicId": "UGTRB-PHY-T177",
+          "topicName": "Unit VII - Solid State Physics | Bragg's law"
+        },
+        {
+          "topicId": "UGTRB-PHY-T178",
+          "topicName": "Unit VII - Solid State Physics | Crystal diffraction by x rays and x ray spectroscopy"
+        },
+        {
+          "topicId": "UGTRB-PHY-T179",
+          "topicName": "Unit VII - Solid State Physics | Characteristic x ray spectra and x ray absorption, fluorescence"
+        },
+        {
+          "topicId": "UGTRB-PHY-T180",
+          "topicName": "Unit VII - Solid State Physics | Mosley's law and uses of x rays"
+        },
+        {
+          "topicId": "UGTRB-PHY-T181",
+          "topicName": "Unit VII - Solid State Physics | Laue and Bragg equations"
+        },
+        {
+          "topicId": "UGTRB-PHY-T182",
+          "topicName": "Unit VII - Solid State Physics | Symmetry elements and symmetry groups"
+        },
+        {
+          "topicId": "UGTRB-PHY-T183",
+          "topicName": "Unit VII - Solid State Physics | Types of crystal - different types of chemical bonds (ionic, covalent, metallic, vanderWaals bond)"
+        },
+        {
+          "topicId": "UGTRB-PHY-T184",
+          "topicName": "Unit VIII - Optics and Spectroscopy | Defect of images - spherical aberration"
+        },
+        {
+          "topicId": "UGTRB-PHY-T185",
+          "topicName": "Unit VIII - Optics and Spectroscopy | Methods of minimizing spherical aberration"
+        },
+        {
+          "topicId": "UGTRB-PHY-T186",
+          "topicName": "Unit VIII - Optics and Spectroscopy | Chromatic aberration and their rectification"
+        },
+        {
+          "topicId": "UGTRB-PHY-T187",
+          "topicName": "Unit VIII - Optics and Spectroscopy | Deviation without dispersion and dispersion without deviation"
+        },
+        {
+          "topicId": "UGTRB-PHY-T188",
+          "topicName": "Unit VIII - Optics and Spectroscopy | Eyepiece"
+        },
+        {
+          "topicId": "UGTRB-PHY-T189",
+          "topicName": "Unit VIII - Optics and Spectroscopy | Interference - Young's double slit experiment"
+        },
+        {
+          "topicId": "UGTRB-PHY-T190",
+          "topicName": "Unit VIII - Optics and Spectroscopy | Colours of thin film"
+        },
+        {
+          "topicId": "UGTRB-PHY-T191",
+          "topicName": "Unit VIII - Optics and Spectroscopy | Newton's rings - air wedge"
+        },
+        {
+          "topicId": "UGTRB-PHY-T192",
+          "topicName": "Unit VIII - Optics and Spectroscopy | Diffraction - Fresnel and Fraunhofer types"
+        },
+        {
+          "topicId": "UGTRB-PHY-T193",
+          "topicName": "Unit VIII - Optics and Spectroscopy | Zone plate and diffraction grating"
+        },
+        {
+          "topicId": "UGTRB-PHY-T194",
+          "topicName": "Unit VIII - Optics and Spectroscopy | Prism - Huygens's explanation"
+        },
+        {
+          "topicId": "UGTRB-PHY-T195",
+          "topicName": "Unit VIII - Optics and Spectroscopy | Polarisation - double refraction"
+        },
+        {
+          "topicId": "UGTRB-PHY-T196",
+          "topicName": "Unit VIII - Optics and Spectroscopy | Nicol prism - quarter and half wave plates"
+        },
+        {
+          "topicId": "UGTRB-PHY-T197",
+          "topicName": "Unit VIII - Optics and Spectroscopy | Production and detection of plane, circular and elliptically polarised light"
+        },
+        {
+          "topicId": "UGTRB-PHY-T198",
+          "topicName": "Unit VIII - Optics and Spectroscopy | Optical activity and determination of specific rotatory power"
+        },
+        {
+          "topicId": "UGTRB-PHY-T199",
+          "topicName": "Unit VIII - Optics and Spectroscopy | Optic fibre - fiber optic sensors"
+        },
+        {
+          "topicId": "UGTRB-PHY-T200",
+          "topicName": "Unit VIII - Optics and Spectroscopy | Fibre optic communication systems and their advantages"
+        },
+        {
+          "topicId": "UGTRB-PHY-T201",
+          "topicName": "Unit VIII - Optics and Spectroscopy | Laser - stimulated emission, population inversion"
+        },
+        {
+          "topicId": "UGTRB-PHY-T202",
+          "topicName": "Unit VIII - Optics and Spectroscopy | Ruby and Helium-Neon laser and applications"
+        },
+        {
+          "topicId": "UGTRB-PHY-T203",
+          "topicName": "Unit VIII - Optics and Spectroscopy | UV and IR spectroscopy and applications"
+        },
+        {
+          "topicId": "UGTRB-PHY-T204",
+          "topicName": "Unit VIII - Optics and Spectroscopy | Raman effect - explanation and experimental arrangement"
+        },
+        {
+          "topicId": "UGTRB-PHY-T205",
+          "topicName": "Unit VIII - Optics and Spectroscopy | Applications of Raman effect"
+        },
+        {
+          "topicId": "UGTRB-PHY-T206",
+          "topicName": "Unit IX - Electrical Circuits and Electronics | AC circuits with R, L and C"
+        },
+        {
+          "topicId": "UGTRB-PHY-T207",
+          "topicName": "Unit IX - Electrical Circuits and Electronics | Complex impedance and phase diagram"
+        },
+        {
+          "topicId": "UGTRB-PHY-T208",
+          "topicName": "Unit IX - Electrical Circuits and Electronics | R-L and R-C circuits - series and parallel"
+        },
+        {
+          "topicId": "UGTRB-PHY-T209",
+          "topicName": "Unit IX - Electrical Circuits and Electronics | Resonant-LCR circuits"
+        },
+        {
+          "topicId": "UGTRB-PHY-T210",
+          "topicName": "Unit IX - Electrical Circuits and Electronics | Sharpness of resonance Q factor"
+        },
+        {
+          "topicId": "UGTRB-PHY-T211",
+          "topicName": "Unit IX - Electrical Circuits and Electronics | Power in A.C. circuit and choke coil"
+        },
+        {
+          "topicId": "UGTRB-PHY-T212",
+          "topicName": "Unit IX - Electrical Circuits and Electronics | Semiconductor - energy band theory of solids"
+        },
+        {
+          "topicId": "UGTRB-PHY-T213",
+          "topicName": "Unit IX - Electrical Circuits and Electronics | Insulators, conductors and semiconductors"
+        },
+        {
+          "topicId": "UGTRB-PHY-T214",
+          "topicName": "Unit IX - Electrical Circuits and Electronics | Intrinsic and extrinsic semiconductors"
+        },
+        {
+          "topicId": "UGTRB-PHY-T215",
+          "topicName": "Unit IX - Electrical Circuits and Electronics | Electrons and holes as charge carriers"
+        },
+        {
+          "topicId": "UGTRB-PHY-T216",
+          "topicName": "Unit IX - Electrical Circuits and Electronics | P type and N type semi-conductors"
+        },
+        {
+          "topicId": "UGTRB-PHY-T217",
+          "topicName": "Unit IX - Electrical Circuits and Electronics | Junction diodes and characteristics of diode"
+        },
+        {
+          "topicId": "UGTRB-PHY-T218",
+          "topicName": "Unit IX - Electrical Circuits and Electronics | Diode applications (Light Emitting Diodes, Photodiodes)"
+        },
+        {
+          "topicId": "UGTRB-PHY-T219",
+          "topicName": "Unit IX - Electrical Circuits and Electronics | Junction transistors - characteristics of transistors"
+        },
+        {
+          "topicId": "UGTRB-PHY-T220",
+          "topicName": "Unit IX - Electrical Circuits and Electronics | Rectifier, amplifier and oscillator circuits"
+        },
+        {
+          "topicId": "UGTRB-PHY-T221",
+          "topicName": "Unit IX - Electrical Circuits and Electronics | AM and FM transmission and reception with block diagrams"
+        },
+        {
+          "topicId": "UGTRB-PHY-T222",
+          "topicName": "Unit IX - Electrical Circuits and Electronics | Logic circuits - NOT, AND, OR, NAND, NOR and Ex-OR gates"
+        },
+        {
+          "topicId": "UGTRB-PHY-T223",
+          "topicName": "Unit IX - Electrical Circuits and Electronics | Truth tables and Boolean algebra"
+        },
+        {
+          "topicId": "UGTRB-PHY-T224",
+          "topicName": "Unit IX - Electrical Circuits and Electronics | deMorgan's theorems"
+        },
+        {
+          "topicId": "UGTRB-PHY-T225",
+          "topicName": "Unit IX - Electrical Circuits and Electronics | Karnaugh map simplification"
+        },
+        {
+          "topicId": "UGTRB-PHY-T226",
+          "topicName": "Unit IX - Electrical Circuits and Electronics | Op-amp IC - summing, difference, integrator and differentiator circuits using opamp"
+        },
+        {
+          "topicId": "UGTRB-PHY-T227",
+          "topicName": "Unit IX - Electrical Circuits and Electronics | Astable and monostable multivibrators"
+        },
+        {
+          "topicId": "UGTRB-PHY-T228",
+          "topicName": "Unit IX - Electrical Circuits and Electronics | Flip-flop circuits"
+        },
+        {
+          "topicId": "UGTRB-PHY-T229",
+          "topicName": "Unit X - Experimental Physics | Errors and approximations"
+        },
+        {
+          "topicId": "UGTRB-PHY-T230",
+          "topicName": "Unit X - Experimental Physics | Types of errors (absolute, relative, percentage)"
+        },
+        {
+          "topicId": "UGTRB-PHY-T231",
+          "topicName": "Unit X - Experimental Physics | Significant figures and advantages of average"
+        },
+        {
+          "topicId": "UGTRB-PHY-T232",
+          "topicName": "Unit X - Experimental Physics | Least count of instruments"
+        },
+        {
+          "topicId": "UGTRB-PHY-T233",
+          "topicName": "Unit X - Experimental Physics | Calibration techniques"
+        },
+        {
+          "topicId": "UGTRB-PHY-T234",
+          "topicName": "Unit X - Experimental Physics | Curve plotting"
+        },
+        {
+          "topicId": "UGTRB-PHY-T235",
+          "topicName": "Unit X - Experimental Physics | Least square refinement and dimensional analysis"
+        },
+        {
+          "topicId": "UGTRB-PHY-T236",
+          "topicName": "Unit X - Experimental Physics | Parallax method"
+        },
+        {
+          "topicId": "UGTRB-PHY-T237",
+          "topicName": "Unit X - Experimental Physics | Vernier calipers, screw gauge, travelling microscope"
+        },
+        {
+          "topicId": "UGTRB-PHY-T238",
+          "topicName": "Unit X - Experimental Physics | Optic lever and Heier's apparatus"
+        },
+        {
+          "topicId": "UGTRB-PHY-T239",
+          "topicName": "Unit X - Experimental Physics | Calorimeter and Barton's radiation correction"
+        },
+        {
+          "topicId": "UGTRB-PHY-T240",
+          "topicName": "Unit X - Experimental Physics | Focal length of concave lens by contact"
+        },
+        {
+          "topicId": "UGTRB-PHY-T241",
+          "topicName": "Unit X - Experimental Physics | Galvanometer - conversion of galvanometer into ammeter and voltmeter"
+        },
+        {
+          "topicId": "UGTRB-PHY-T242",
+          "topicName": "Unit X - Experimental Physics | Calibration of low range ammeter and voltmeter"
+        },
+        {
+          "topicId": "UGTRB-PHY-T243",
+          "topicName": "Unit X - Experimental Physics | Ballistic galvanometer"
+        },
+        {
+          "topicId": "UGTRB-PHY-T244",
+          "topicName": "Unit X - Experimental Physics | Figure of merit and Ohm meter"
+        },
+        {
+          "topicId": "UGTRB-PHY-T245",
+          "topicName": "Unit X - Experimental Physics | Multimeter"
+        },
+        {
+          "topicId": "UGTRB-PHY-T246",
+          "topicName": "Unit X - Experimental Physics | Tangent galvanometer and magnetometer"
+        },
+        {
+          "topicId": "UGTRB-PHY-T247",
+          "topicName": "Unit X - Experimental Physics | Meter bridge and potentiometer"
+        },
+        {
+          "topicId": "UGTRB-PHY-T248",
+          "topicName": "Unit X - Experimental Physics | LCR circuits"
+        },
+        {
+          "topicId": "UGTRB-PHY-T249",
+          "topicName": "Unit X - Experimental Physics | Registers and counters"
+        }
+      ]
     },
     {
       "courseId": "TNTET",
