@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-30T02:02:37.807Z",
+  "version": "2026-10-30T02:17:09.149Z",
   "categories": [
     {
       "id": "BANK",
@@ -575,6 +575,17 @@
       "negativeMark": 0.25,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BCA-56.html",
       "releaseTimestamp": 1793347200000
+    },
+    {
+      "testId": "TAP-02",
+      "examId": "TNPSC-AP",
+      "name": "TAP-02 PERCENTAGE (Set-1)",
+      "durationMinutes": 20,
+      "order": 2,
+      "questionCount": 20,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TAP-02.html",
+      "releaseTimestamp": 1793779200000
     }
   ]
 }
