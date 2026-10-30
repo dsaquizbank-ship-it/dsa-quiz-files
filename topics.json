@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-30T14:44:37.038Z",
+  "version": "2026-10-30T15:01:02.189Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -1805,7 +1805,516 @@
     {
       "courseId": "UGTRB-ENG",
       "courseName": "UGTRB ENGLISH",
-      "topics": []
+      "topics": [
+        {
+          "topicId": "UGTRB-ENG-T001",
+          "topicName": "Unit I - History of English Literature | The Age of Chaucer"
+        },
+        {
+          "topicId": "UGTRB-ENG-T002",
+          "topicName": "Unit I - History of English Literature | The Age of Shakespeare"
+        },
+        {
+          "topicId": "UGTRB-ENG-T003",
+          "topicName": "Unit I - History of English Literature | The Age of Milton"
+        },
+        {
+          "topicId": "UGTRB-ENG-T004",
+          "topicName": "Unit I - History of English Literature | The Age of Dryden"
+        },
+        {
+          "topicId": "UGTRB-ENG-T005",
+          "topicName": "Unit I - History of English Literature | The Age of Pope"
+        },
+        {
+          "topicId": "UGTRB-ENG-T006",
+          "topicName": "Unit I - History of English Literature | The Age of Johnson"
+        },
+        {
+          "topicId": "UGTRB-ENG-T007",
+          "topicName": "Unit I - History of English Literature | The Age of Wordsworth"
+        },
+        {
+          "topicId": "UGTRB-ENG-T008",
+          "topicName": "Unit I - History of English Literature | The Age of Tennyson"
+        },
+        {
+          "topicId": "UGTRB-ENG-T009",
+          "topicName": "Unit I - History of English Literature | The Age of Hardy"
+        },
+        {
+          "topicId": "UGTRB-ENG-T010",
+          "topicName": "Unit I - History of English Literature | The Present Age"
+        },
+        {
+          "topicId": "UGTRB-ENG-T011",
+          "topicName": "Unit II - British Literature-I | Francis Bacon - Of Revenge (Prose)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T012",
+          "topicName": "Unit II - British Literature-I | Francis Bacon - Of Studies (Prose)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T013",
+          "topicName": "Unit II - British Literature-I | Charles Lamb - Dream Children: A Reverie (Prose)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T014",
+          "topicName": "Unit II - British Literature-I | Joseph Addison - Sir Roger at the Theatre (Prose)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T015",
+          "topicName": "Unit II - British Literature-I | Richard Steele - The Spectator Club (Prose)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T016",
+          "topicName": "Unit II - British Literature-I | Edmund Spenser - Prothalamion (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T017",
+          "topicName": "Unit II - British Literature-I | William Shakespeare - Sonnet 18 (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T018",
+          "topicName": "Unit II - British Literature-I | John Milton - Paradise Lost (Book IX) lines 795-833 (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T019",
+          "topicName": "Unit II - British Literature-I | William Blake - The Lamb (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T020",
+          "topicName": "Unit II - British Literature-I | John Donne - The Bait (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T021",
+          "topicName": "Unit II - British Literature-I | Sir Philip Sidney - Sonnet I from Astrophil and Stella (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T022",
+          "topicName": "Unit II - British Literature-I | John Dryden - A Song for St. Cecilia's Day (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T023",
+          "topicName": "Unit II - British Literature-I | Alexander Pope - Ode on Solitude (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T024",
+          "topicName": "Unit II - British Literature-I | Christopher Marlowe - Dr. Faustus (Drama)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T025",
+          "topicName": "Unit II - British Literature-I | George Bernard Shaw - Pygmalion (Drama)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T026",
+          "topicName": "Unit II - British Literature-I | Oscar Wilde - The Importance of Being Earnest (Drama)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T027",
+          "topicName": "Unit II - British Literature-I | Oliver Goldsmith - The Vicar of Wakefield (Fiction)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T028",
+          "topicName": "Unit II - British Literature-I | Charles Dickens - David Copperfield (Fiction)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T029",
+          "topicName": "Unit II - British Literature-I | H.G. Wells - Time Machine (Fiction)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T030",
+          "topicName": "Unit III - Shakespeare | Introduction to Shakespearean Theatre and Audience"
+        },
+        {
+          "topicId": "UGTRB-ENG-T031",
+          "topicName": "Unit III - Shakespeare | Fools and Clowns - Texts: Quortos and Folios"
+        },
+        {
+          "topicId": "UGTRB-ENG-T032",
+          "topicName": "Unit III - Shakespeare | Shakespearean Women"
+        },
+        {
+          "topicId": "UGTRB-ENG-T033",
+          "topicName": "Unit III - Shakespeare | Shakespearean Comedies, Tragedies, Histories, Romances, Problem plays"
+        },
+        {
+          "topicId": "UGTRB-ENG-T034",
+          "topicName": "Unit III - Shakespeare | Macbeth (Drama)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T035",
+          "topicName": "Unit III - Shakespeare | Julius Caesar (Drama)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T036",
+          "topicName": "Unit III - Shakespeare | A Midsummer Night's Dream (Drama)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T037",
+          "topicName": "Unit III - Shakespeare | Richard II (Drama)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T038",
+          "topicName": "Unit IV - British Literature-II | William Wordsworth - The Solitary Reaper (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T039",
+          "topicName": "Unit IV - British Literature-II | S.T. Coleridge - Kubla Khan (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T040",
+          "topicName": "Unit IV - British Literature-II | John Keats - Ode to a Nightingale (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T041",
+          "topicName": "Unit IV - British Literature-II | P.B. Shelley - Ozymandias (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T042",
+          "topicName": "Unit IV - British Literature-II | Robert Browning - My Last Duchess (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T043",
+          "topicName": "Unit IV - British Literature-II | G.M. Hopkins - God's Grandeur (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T044",
+          "topicName": "Unit IV - British Literature-II | W. Hazlitt - My first Acquaintance with Poets (Prose)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T045",
+          "topicName": "Unit IV - British Literature-II | W.R. Inge - Spoon Feeding (Prose)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T046",
+          "topicName": "Unit IV - British Literature-II | John Ruskin - Of King's Treasuries (Prose)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T047",
+          "topicName": "Unit IV - British Literature-II | Samuel Beckett - Waiting for Godot (Drama)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T048",
+          "topicName": "Unit IV - British Literature-II | Aldous Huxley - Brave New World (Fiction)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T049",
+          "topicName": "Unit V - American Literature | R.W. Emerson - Self-Reliance (Prose)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T050",
+          "topicName": "Unit V - American Literature | Martin Luther King - I have a Dream (Prose)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T051",
+          "topicName": "Unit V - American Literature | Abraham Lincoln - Gettysburg Address (Prose)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T052",
+          "topicName": "Unit V - American Literature | H.D. Thoreau - A Battle of Ants (Prose)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T053",
+          "topicName": "Unit V - American Literature | R.W. Emerson - The American Scholar (Prose)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T054",
+          "topicName": "Unit V - American Literature | Robert Frost - West Running Brook (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T055",
+          "topicName": "Unit V - American Literature | Walt Whitman - Out of the Cradle, Endlessly Rocking (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T056",
+          "topicName": "Unit V - American Literature | Emily Dickinson - I felt a Funeral (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T057",
+          "topicName": "Unit V - American Literature | H.W. Longfellow - Nature (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T058",
+          "topicName": "Unit V - American Literature | Sylvia Plath - Lady Lazarus (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T059",
+          "topicName": "Unit V - American Literature | Carl Sandburg - Happiness (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T060",
+          "topicName": "Unit V - American Literature | R.W. Emerson - Brahma (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T061",
+          "topicName": "Unit V - American Literature | Arthur Miller - Death of a Salesman (Drama)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T062",
+          "topicName": "Unit V - American Literature | Tennessee Williams - The Glass Menagerie (Drama)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T063",
+          "topicName": "Unit V - American Literature | Edgar Allan Poe - The Cask of Amontillado (Short Story)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T064",
+          "topicName": "Unit V - American Literature | O. Henry - Let Me Feel Your Pulse (Short Story)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T065",
+          "topicName": "Unit V - American Literature | Hans Christian Andersen - The Little Match Girl (Short Story)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T066",
+          "topicName": "Unit V - American Literature | T.S. Arthur - An Angel in Disguise (Short Story)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T067",
+          "topicName": "Unit V - American Literature | Nathaniel Hawthorne - The Scarlet Letter (Fiction)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T068",
+          "topicName": "Unit V - American Literature | Toni Morrison - Beloved (Fiction)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T069",
+          "topicName": "Unit VI - Indian Writing in English | M.K. Gandhi - The Gospel of Non-Violence (Prose)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T070",
+          "topicName": "Unit VI - Indian Writing in English | S. Radhakrishnan - The World Community (Prose)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T071",
+          "topicName": "Unit VI - Indian Writing in English | A.P.J. Abdul Kalam - The Power of Prayer (Prose)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T072",
+          "topicName": "Unit VI - Indian Writing in English | Sir Aurobindo Ghosh - The Tiger and the Deer (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T073",
+          "topicName": "Unit VI - Indian Writing in English | Sarojini Naidu - Love and Death (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T074",
+          "topicName": "Unit VI - Indian Writing in English | Vikram Seth - Evening Wheat (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T075",
+          "topicName": "Unit VI - Indian Writing in English | Nissim Ezekiel - Good Bye Party (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T076",
+          "topicName": "Unit VI - Indian Writing in English | Kamala Das - An Introduction (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T077",
+          "topicName": "Unit VI - Indian Writing in English | A.K. Ramanujam - Of Mothers, Among other Things (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T078",
+          "topicName": "Unit VI - Indian Writing in English | Girish Karnad - Nagamandala (Drama)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T079",
+          "topicName": "Unit VI - Indian Writing in English | Mahesh Dattani - Dance Like a Man (Drama)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T080",
+          "topicName": "Unit VI - Indian Writing in English | Vijay Tendulkar - Silence! The court is in session (Drama)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T081",
+          "topicName": "Unit VI - Indian Writing in English | Mulk Raj Anand - Coolie (Fiction)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T082",
+          "topicName": "Unit VI - Indian Writing in English | R.K. Narayan - Swami and Friends (Fiction)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T083",
+          "topicName": "Unit VI - Indian Writing in English | Chetan Bhagat - The Three Mistakes of My Life (Fiction)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T084",
+          "topicName": "Unit VII - Twentieth Century Literature | Robert Wilson Lynd - The Pleasures of Ignorance (Prose)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T085",
+          "topicName": "Unit VII - Twentieth Century Literature | Bertrand Russell - Knowledge and Wisdom (Prose)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T086",
+          "topicName": "Unit VII - Twentieth Century Literature | E.M. Forster - Tolerance (Prose)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T087",
+          "topicName": "Unit VII - Twentieth Century Literature | R.L. Stevenson - An Apology for Idlers (Prose)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T088",
+          "topicName": "Unit VII - Twentieth Century Literature | E.V. Lucas - On Finding Things (Prose)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T089",
+          "topicName": "Unit VII - Twentieth Century Literature | T.S. Eliot - Journey of the Magi (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T090",
+          "topicName": "Unit VII - Twentieth Century Literature | Dylan Thomas - The Hunchback in the Park (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T091",
+          "topicName": "Unit VII - Twentieth Century Literature | G.B. Shaw - Candida (Drama)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T092",
+          "topicName": "Unit VII - Twentieth Century Literature | Virginia Woolf - Mrs. Dalloway (Novel)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T093",
+          "topicName": "Unit VII - Twentieth Century Literature | R.L. Stevenson - Treasure Island (Novel)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T094",
+          "topicName": "Unit VIII - Language and Linguistics | Definition of language, spoken and written language"
+        },
+        {
+          "topicId": "UGTRB-ENG-T095",
+          "topicName": "Unit VIII - Language and Linguistics | Diachronic & Synchronic approaches of language study"
+        },
+        {
+          "topicId": "UGTRB-ENG-T096",
+          "topicName": "Unit VIII - Language and Linguistics | Linguistics - definition, nature and scope"
+        },
+        {
+          "topicId": "UGTRB-ENG-T097",
+          "topicName": "Unit VIII - Language and Linguistics | English Phonetics and Phonology - Speech Organs"
+        },
+        {
+          "topicId": "UGTRB-ENG-T098",
+          "topicName": "Unit VIII - Language and Linguistics | Sounds in English (Consonants, Vowels and Diphthongs)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T099",
+          "topicName": "Unit VIII - Language and Linguistics | Syllabus, Stress and Intonation & Transcriptions"
+        },
+        {
+          "topicId": "UGTRB-ENG-T100",
+          "topicName": "Unit VIII - Language and Linguistics | Grammar - Definition & Approaches (Descriptive, Prescriptive, Functional)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T101",
+          "topicName": "Unit VIII - Language and Linguistics | Syntax - Structural analysis (I.C. analysis)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T102",
+          "topicName": "Unit VIII - Language and Linguistics | Syntax - Deep and Surface Structure"
+        },
+        {
+          "topicId": "UGTRB-ENG-T103",
+          "topicName": "Unit VIII - Language and Linguistics | Morphology and Semantics - Word, Morphemes, Word meaning association"
+        },
+        {
+          "topicId": "UGTRB-ENG-T104",
+          "topicName": "Unit IX - Literary Criticism and Theories | Contributions of Plato and Aristotle"
+        },
+        {
+          "topicId": "UGTRB-ENG-T105",
+          "topicName": "Unit IX - Literary Criticism and Theories | Contributions of Horace, Quintilian, Longinus and Dante"
+        },
+        {
+          "topicId": "UGTRB-ENG-T106",
+          "topicName": "Unit IX - Literary Criticism and Theories | Orientation of Critical Theories"
+        },
+        {
+          "topicId": "UGTRB-ENG-T107",
+          "topicName": "Unit IX - Literary Criticism and Theories | Mimetic Theory and Pragmatic Theories (Sidney to T.S. Eliot)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T108",
+          "topicName": "Unit IX - Literary Criticism and Theories | Five Approaches - Moralistic, Psychological, Archetypal, Sociological, Formalistic"
+        },
+        {
+          "topicId": "UGTRB-ENG-T109",
+          "topicName": "Unit IX - Literary Criticism and Theories | Recent Trends - Feminist Criticism"
+        },
+        {
+          "topicId": "UGTRB-ENG-T110",
+          "topicName": "Unit IX - Literary Criticism and Theories | Recent Trends - Marxist Criticism"
+        },
+        {
+          "topicId": "UGTRB-ENG-T111",
+          "topicName": "Unit IX - Literary Criticism and Theories | Recent Trends - New Historicism"
+        },
+        {
+          "topicId": "UGTRB-ENG-T112",
+          "topicName": "Unit IX - Literary Criticism and Theories | Recent Trends - Eco Criticism"
+        },
+        {
+          "topicId": "UGTRB-ENG-T113",
+          "topicName": "Unit IX - Literary Criticism and Theories | Recent Trends - Post Colonial Criticism"
+        },
+        {
+          "topicId": "UGTRB-ENG-T114",
+          "topicName": "Unit X - Women's Writing in English | Sojourner Truth - Ain't I a woman? (Prose)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T115",
+          "topicName": "Unit X - Women's Writing in English | Mary Wollstonecraft - A Vindication of the Rights of Woman (Prose)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T116",
+          "topicName": "Unit X - Women's Writing in English | Judith Wright - Request to a Year (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T117",
+          "topicName": "Unit X - Women's Writing in English | Sylvia Plath - Medusa (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T118",
+          "topicName": "Unit X - Women's Writing in English | Kamala Das - The Old Playhouse (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T119",
+          "topicName": "Unit X - Women's Writing in English | Supata Bhattacharya - Draupadi (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T120",
+          "topicName": "Unit X - Women's Writing in English | Maya Angelou - Still I Rise (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T121",
+          "topicName": "Unit X - Women's Writing in English | Glady Cardiff - Combing (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T122",
+          "topicName": "Unit X - Women's Writing in English | Gwendolyn Brooks - A Sunset of the City (Poetry)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T123",
+          "topicName": "Unit X - Women's Writing in English | Susan Glaspell - Trifles (Drama)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T124",
+          "topicName": "Unit X - Women's Writing in English | Caryl Churchill - Top Girls (Drama)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T125",
+          "topicName": "Unit X - Women's Writing in English | Ruth Prawer Jhabvala - Heat and Dust (Fiction)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T126",
+          "topicName": "Unit X - Women's Writing in English | Charlotte Perkins Gilman - The Yellow Wallpaper (Short Story)"
+        },
+        {
+          "topicId": "UGTRB-ENG-T127",
+          "topicName": "Unit X - Women's Writing in English | Ambai - Forest (Short Story)"
+        }
+      ]
     },
     {
       "courseId": "UGTRB-ZOO",
