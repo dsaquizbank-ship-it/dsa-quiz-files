@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-30T10:42:28.895Z",
+  "version": "2026-10-30T14:34:40.537Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -561,420 +561,1244 @@
       "courseName": "UGTRB ENGLISH",
       "topics": [
         {
-          "topicId": "UGTRB-T001",
-          "topicName": "Unit I (Ages) | The Age of Chaucer"
+          "topicId": "UGTRB-T105",
+          "topicName": "Unit I - Algebra and Trigonometry | Polynomial Equations"
         },
         {
-          "topicId": "UGTRB-T002",
-          "topicName": "Unit I (Ages) | The Age of Shakespeare"
+          "topicId": "UGTRB-T106",
+          "topicName": "Unit I - Algebra and Trigonometry | Imaginary and Irrational Roots"
         },
         {
-          "topicId": "UGTRB-T003",
-          "topicName": "Unit I (Ages) | The Age of Milton"
+          "topicId": "UGTRB-T107",
+          "topicName": "Unit I - Algebra and Trigonometry | Relation between Roots and Coefficients"
         },
         {
-          "topicId": "UGTRB-T004",
-          "topicName": "Unit I (Ages) | The Age of Dryden"
+          "topicId": "UGTRB-T108",
+          "topicName": "Unit I - Algebra and Trigonometry | Symmetric function of Roots in terms of coefficient"
         },
         {
-          "topicId": "UGTRB-T005",
-          "topicName": "Unit I (Ages) | The Age of Pope"
+          "topicId": "UGTRB-T109",
+          "topicName": "Unit I - Algebra and Trigonometry | Transformation of equation"
         },
         {
-          "topicId": "UGTRB-T006",
-          "topicName": "Unit I (Ages) | The Age of Johnson"
+          "topicId": "UGTRB-T110",
+          "topicName": "Unit I - Algebra and Trigonometry | Reciprocal equation"
         },
         {
-          "topicId": "UGTRB-T007",
-          "topicName": "Unit I (Ages) | The Age of Wordsworth"
+          "topicId": "UGTRB-T111",
+          "topicName": "Unit I - Algebra and Trigonometry | Increase or Decrease the roots of given equation"
         },
         {
-          "topicId": "UGTRB-T008",
-          "topicName": "Unit I (Ages) | The Age of Tennyson"
+          "topicId": "UGTRB-T112",
+          "topicName": "Unit I - Algebra and Trigonometry | Removal of terms"
         },
         {
-          "topicId": "UGTRB-T009",
-          "topicName": "Unit I (Ages) | The Age of Hardy"
+          "topicId": "UGTRB-T113",
+          "topicName": "Unit I - Algebra and Trigonometry | Descartes's rule of signs"
         },
         {
-          "topicId": "UGTRB-T010",
-          "topicName": "Unit I (Ages) | The Present Age"
+          "topicId": "UGTRB-T114",
+          "topicName": "Unit I - Algebra and Trigonometry | Approximate solution of roots of polynomial by Horner's Method"
         },
         {
-          "topicId": "UGTRB-T011",
-          "topicName": "Unit I (References) | K.R. Ramachandran Nair - History of English Literature"
+          "topicId": "UGTRB-T115",
+          "topicName": "Unit I - Algebra and Trigonometry | Cardan's method of solution of cubic polynomial"
         },
         {
-          "topicId": "UGTRB-T012",
-          "topicName": "Unit I (References) | W.H. Hudson - History of English Literature"
+          "topicId": "UGTRB-T116",
+          "topicName": "Unit I - Algebra and Trigonometry | Summation of series using Binomial"
         },
         {
-          "topicId": "UGTRB-T013",
-          "topicName": "Unit II (Prose) | Francis Bacon - Of Revenge, Of Studies"
+          "topicId": "UGTRB-T117",
+          "topicName": "Unit I - Algebra and Trigonometry | Exponential and Logarithmic series"
         },
         {
-          "topicId": "UGTRB-T014",
-          "topicName": "Unit II (Prose) | Charles Lamb - Dream Children: A Reverie"
+          "topicId": "UGTRB-T118",
+          "topicName": "Unit I - Algebra and Trigonometry | Symmetric and Skew symmetric Matrices"
         },
         {
-          "topicId": "UGTRB-T015",
-          "topicName": "Unit II (Prose) | Joseph Addison - Sir Roger at the Theatre"
+          "topicId": "UGTRB-T119",
+          "topicName": "Unit I - Algebra and Trigonometry | Hermitian and Skew Hermitian Matrices"
         },
         {
-          "topicId": "UGTRB-T016",
-          "topicName": "Unit II (Prose) | Richard Steele - The Spectator Club"
+          "topicId": "UGTRB-T120",
+          "topicName": "Unit I - Algebra and Trigonometry | Orthogonal and Unitary Matrices"
         },
         {
-          "topicId": "UGTRB-T017",
-          "topicName": "Unit II (Poetry) | Edmund Spenser - Prothalamion"
+          "topicId": "UGTRB-T121",
+          "topicName": "Unit I - Algebra and Trigonometry | Eigen Values and Eigen Vectors"
         },
         {
-          "topicId": "UGTRB-T018",
-          "topicName": "Unit II (Poetry) | William Shakespeare - Sonnet 18"
+          "topicId": "UGTRB-T122",
+          "topicName": "Unit I - Algebra and Trigonometry | Cayley-Hamilton Theorem"
         },
         {
-          "topicId": "UGTRB-T019",
-          "topicName": "Unit II (Poetry) | John Milton - Paradise Lost (Book IX) lines (795 - 833)"
+          "topicId": "UGTRB-T123",
+          "topicName": "Unit I - Algebra and Trigonometry | Similar Matrices"
         },
         {
-          "topicId": "UGTRB-T020",
-          "topicName": "Unit II (Poetry) | William Blake - The Lamb"
+          "topicId": "UGTRB-T124",
+          "topicName": "Unit I - Algebra and Trigonometry | Diagonalization of Matrices"
         },
         {
-          "topicId": "UGTRB-T021",
-          "topicName": "Unit II (Poetry) | John Donne - The Bait"
+          "topicId": "UGTRB-T125",
+          "topicName": "Unit I - Algebra and Trigonometry | Prime Number and Composite Number"
         },
         {
-          "topicId": "UGTRB-T022",
-          "topicName": "Unit II (Poetry) | Sir Philip Sidney - Sonnet I (from Astrophil and Stella)"
+          "topicId": "UGTRB-T126",
+          "topicName": "Unit I - Algebra and Trigonometry | Decomposition of a Composite Number as a Product of primes uniquely"
         },
         {
-          "topicId": "UGTRB-T023",
-          "topicName": "Unit II (Poetry) | John Dryden - A Song for St. Cecilia's Day"
+          "topicId": "UGTRB-T127",
+          "topicName": "Unit I - Algebra and Trigonometry | Divisor of a positive Integer"
         },
         {
-          "topicId": "UGTRB-T024",
-          "topicName": "Unit II (Poetry) | Alexander Pope - Ode on Solitude"
+          "topicId": "UGTRB-T128",
+          "topicName": "Unit I - Algebra and Trigonometry | Euler Function"
         },
         {
-          "topicId": "UGTRB-T025",
-          "topicName": "Unit II (Drama) | Christopher Marlowe - Dr. Faustus"
+          "topicId": "UGTRB-T129",
+          "topicName": "Unit I - Algebra and Trigonometry | Congruence Modulo n"
         },
         {
-          "topicId": "UGTRB-T026",
-          "topicName": "Unit II (Drama) | George Bernard Shaw - Pygmalion"
+          "topicId": "UGTRB-T130",
+          "topicName": "Unit I - Algebra and Trigonometry | Highest power of prime number p Contained in n!"
         },
         {
-          "topicId": "UGTRB-T027",
-          "topicName": "Unit II (Drama) | Oscar Wilde - The Importance of Being Earnest"
+          "topicId": "UGTRB-T131",
+          "topicName": "Unit I - Algebra and Trigonometry | Application of Maxima and Minima"
         },
         {
-          "topicId": "UGTRB-T028",
-          "topicName": "Unit II (Fiction) | Oliver Goldsmith - The Vicar of Wakefield"
+          "topicId": "UGTRB-T132",
+          "topicName": "Unit I - Algebra and Trigonometry | Prime and Composite numbers"
         },
         {
-          "topicId": "UGTRB-T029",
-          "topicName": "Unit II (Fiction) | Charles Dickens - David Copperfield"
+          "topicId": "UGTRB-T133",
+          "topicName": "Unit I - Algebra and Trigonometry | Euler's function Φ(N)"
         },
         {
-          "topicId": "UGTRB-T030",
-          "topicName": "Unit II (Fiction) | H.G. Wells - Time Machine"
+          "topicId": "UGTRB-T134",
+          "topicName": "Unit I - Algebra and Trigonometry | Congruences"
         },
         {
-          "topicId": "UGTRB-T031",
-          "topicName": "Unit III (Intro) | Shakespearean Theatre, Audience"
+          "topicId": "UGTRB-T135",
+          "topicName": "Unit I - Algebra and Trigonometry | Fermat's, Wilson's and Lagrange's theorems"
         },
         {
-          "topicId": "UGTRB-T032",
-          "topicName": "Unit III (Intro) | Fools and Clowns - Texts: Quortos and Folios"
+          "topicId": "UGTRB-T136",
+          "topicName": "Unit I - Algebra and Trigonometry | Expansions of Power of sinnX, cosnX, tannx"
         },
         {
-          "topicId": "UGTRB-T033",
-          "topicName": "Unit III (Intro) | Shakespearean Women"
+          "topicId": "UGTRB-T137",
+          "topicName": "Unit I - Algebra and Trigonometry | Summation by C + i S method"
         },
         {
-          "topicId": "UGTRB-T034",
-          "topicName": "Unit III (Intro) | Shakespearean Comedies, Tragedies, Histories, Romances, Problem plays"
+          "topicId": "UGTRB-T138",
+          "topicName": "Unit I - Algebra and Trigonometry | Telescopic Summation"
         },
         {
-          "topicId": "UGTRB-T035",
-          "topicName": "Unit III (Plays) | Macbeth"
+          "topicId": "UGTRB-T139",
+          "topicName": "Unit I - Algebra and Trigonometry | Expansion of sinx, cosx, tanx in terms of x"
         },
         {
-          "topicId": "UGTRB-T036",
-          "topicName": "Unit III (Plays) | Julius Caesar"
+          "topicId": "UGTRB-T140",
+          "topicName": "Unit I - Algebra and Trigonometry | Sum of Roots of Trigonometric Equation"
         },
         {
-          "topicId": "UGTRB-T037",
-          "topicName": "Unit III (Plays) | A Midsummer Night's Dream"
+          "topicId": "UGTRB-T141",
+          "topicName": "Unit I - Algebra and Trigonometry | Formation of Equation With Trigonometric Roots"
         },
         {
-          "topicId": "UGTRB-T038",
-          "topicName": "Unit III (Plays) | Richard II"
+          "topicId": "UGTRB-T142",
+          "topicName": "Unit I - Algebra and Trigonometry | Hyperbolic Functions"
         },
         {
-          "topicId": "UGTRB-T039",
-          "topicName": "Unit IV (Poetry) | William Wordsworth - The Solitary Reaper"
+          "topicId": "UGTRB-T143",
+          "topicName": "Unit I - Algebra and Trigonometry | Relation Between Circular and Hyperbolic Function"
         },
         {
-          "topicId": "UGTRB-T040",
-          "topicName": "Unit IV (Poetry) | S.T. Coleridge - Kubla Khan"
+          "topicId": "UGTRB-T144",
+          "topicName": "Unit I - Algebra and Trigonometry | Inverse Hyperbolic Function"
         },
         {
-          "topicId": "UGTRB-T041",
-          "topicName": "Unit IV (Poetry) | John Keats - Ode to a Nightingale"
+          "topicId": "UGTRB-T145",
+          "topicName": "Unit I - Algebra and Trigonometry | Logarithm of a complex number"
         },
         {
-          "topicId": "UGTRB-T042",
-          "topicName": "Unit IV (Poetry) | P.B. Shelley - Ozymandias"
+          "topicId": "UGTRB-T146",
+          "topicName": "Unit I - Algebra and Trigonometry | Principal Value and General Values"
         },
         {
-          "topicId": "UGTRB-T043",
-          "topicName": "Unit IV (Poetry) | Robert Browning - My Last Duchess"
+          "topicId": "UGTRB-T147",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | n\" derivatives"
         },
         {
-          "topicId": "UGTRB-T044",
-          "topicName": "Unit IV (Poetry) | G.M. Hopkins - God's Grandeur"
+          "topicId": "UGTRB-T148",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Trigonometric Transformations"
         },
         {
-          "topicId": "UGTRB-T045",
-          "topicName": "Unit IV (Prose) | W. Hazlitt - My first Acquaintance with Poets"
+          "topicId": "UGTRB-T149",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Leibnitz Theorem"
         },
         {
-          "topicId": "UGTRB-T046",
-          "topicName": "Unit IV (Prose) | W.R. Inge - Spoon Feeding"
+          "topicId": "UGTRB-T150",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Implicit functions"
         },
         {
-          "topicId": "UGTRB-T047",
-          "topicName": "Unit IV (Prose) | John Ruskin - Of King's Treasuries"
+          "topicId": "UGTRB-T151",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Partial Differentiation"
         },
         {
-          "topicId": "UGTRB-T048",
-          "topicName": "Unit IV (Drama/Fiction) | Samuel Beckett - Waiting for Godot"
+          "topicId": "UGTRB-T152",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Maxima / Minima of a function of two variables"
         },
         {
-          "topicId": "UGTRB-T049",
-          "topicName": "Unit IV (Drama/Fiction) | Aldous Huxley - Brave New World"
+          "topicId": "UGTRB-T153",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Lagrangian multiplier method"
         },
         {
-          "topicId": "UGTRB-T050",
-          "topicName": "Unit V (Prose) | R.W. Emerson - Self-Reliance"
+          "topicId": "UGTRB-T154",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Radius of curvature in Cartesian and Polar forms"
         },
         {
-          "topicId": "UGTRB-T051",
-          "topicName": "Unit V (Prose) | Martin Luther King - I have a Dream"
+          "topicId": "UGTRB-T155",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Angle between radius vector and tangent"
         },
         {
-          "topicId": "UGTRB-T052",
-          "topicName": "Unit V (Prose) | Abraham Lincoln - Gettysburg Address"
+          "topicId": "UGTRB-T156",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Slope of tangent of a polar curve"
         },
         {
-          "topicId": "UGTRB-T053",
-          "topicName": "Unit V (Prose) | H.D. Thoreau - A Battle of Ants"
+          "topicId": "UGTRB-T157",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | p- r equations"
         },
         {
-          "topicId": "UGTRB-T054",
-          "topicName": "Unit V (Prose) | R.W. Emerson - The American Scholar"
+          "topicId": "UGTRB-T158",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Center of Curvature"
         },
         {
-          "topicId": "UGTRB-T055",
-          "topicName": "Unit V (Poetry) | Robert Frost - West Running Brook"
+          "topicId": "UGTRB-T159",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Evolutes and Envelopes"
         },
         {
-          "topicId": "UGTRB-T056",
-          "topicName": "Unit V (Poetry) | Walt Whitman - Out of the Cradle, Endlessly Rocking"
+          "topicId": "UGTRB-T160",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Asymptotes of Algebraic curves"
         },
         {
-          "topicId": "UGTRB-T057",
-          "topicName": "Unit V (Poetry) | Emily Dickinson - I felt a Funeral"
+          "topicId": "UGTRB-T161",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Asymptotes by inspection"
         },
         {
-          "topicId": "UGTRB-T058",
-          "topicName": "Unit V (Poetry) | H.W. Longfellow - Nature"
+          "topicId": "UGTRB-T162",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Intersection of a curve with asymptotes"
         },
         {
-          "topicId": "UGTRB-T059",
-          "topicName": "Unit V (Poetry) | Sylvia Plath - Lady Lazarus"
+          "topicId": "UGTRB-T163",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Evaluation of Double and Triple integrals"
         },
         {
-          "topicId": "UGTRB-T060",
-          "topicName": "Unit V (Poetry) | Carl Sandburg - Happiness"
+          "topicId": "UGTRB-T164",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Applications of Multiple Integrals in finding volumes, surface areas of solids"
         },
         {
-          "topicId": "UGTRB-T061",
-          "topicName": "Unit V (Poetry) | R.W. Emerson - Brahma"
+          "topicId": "UGTRB-T165",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Areas of curved surfaces"
         },
         {
-          "topicId": "UGTRB-T062",
-          "topicName": "Unit V (Drama) | Arthur Miller - Death of a Salesman"
+          "topicId": "UGTRB-T166",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Jacobians"
         },
         {
-          "topicId": "UGTRB-T063",
-          "topicName": "Unit V (Drama) | Tennessee Williams - The Glass Menagerie"
+          "topicId": "UGTRB-T167",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Transformation of Integrals using Jacobians"
         },
         {
-          "topicId": "UGTRB-T064",
-          "topicName": "Unit V (Short Stories) | Edgar Allan Poe - The Cask of Amontillado"
+          "topicId": "UGTRB-T168",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Indefinite integrals"
         },
         {
-          "topicId": "UGTRB-T065",
-          "topicName": "Unit V (Short Stories) | O. Henry - Let Me Feel Your Pulse"
+          "topicId": "UGTRB-T169",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Beta and Gamma Functions and their properties"
         },
         {
-          "topicId": "UGTRB-T066",
-          "topicName": "Unit V (Short Stories) | Hans Christian Andersen - The Little Match Girl"
+          "topicId": "UGTRB-T170",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Evaluation of Integrals using Beta and Gamma Functions"
         },
         {
-          "topicId": "UGTRB-T067",
-          "topicName": "Unit V (Short Stories) | T.S. Arthur - An Angel in Disguise"
+          "topicId": "UGTRB-T171",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Pole and Polar"
         },
         {
-          "topicId": "UGTRB-T068",
-          "topicName": "Unit V (Fiction) | Nathaniel Hawthorne - The Scarlet Letter"
+          "topicId": "UGTRB-T172",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Conjugate points and Conjugate lines"
         },
         {
-          "topicId": "UGTRB-T069",
-          "topicName": "Unit V (Fiction) | Toni Morrison - Beloved"
+          "topicId": "UGTRB-T173",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Conjugate diameters"
         },
         {
-          "topicId": "UGTRB-T070",
-          "topicName": "Unit VI (Prose) | M.K. Gandhi - The Gospel of Non-Violence"
+          "topicId": "UGTRB-T174",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | Polar Coordinates"
         },
         {
-          "topicId": "UGTRB-T071",
-          "topicName": "Unit VII (Poetry) | T.S. Eliot - Journey of the Magi"
+          "topicId": "UGTRB-T175",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | General Polar Equation of a Straight line"
         },
         {
-          "topicId": "UGTRB-T072",
-          "topicName": "Unit VII (Poetry) | Dylan Thomas - The Hunchback in the Park"
+          "topicId": "UGTRB-T176",
+          "topicName": "Unit II - Differential Calculus, Integral Calculus and Analytical Geometry | General Polar Equation of a Conic"
         },
         {
-          "topicId": "UGTRB-T073",
-          "topicName": "Unit VII (Drama) | G.B. Shaw - Candida"
+          "topicId": "UGTRB-T177",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Ordinary Differential Equations"
         },
         {
-          "topicId": "UGTRB-T074",
-          "topicName": "Unit VII (Novel) | Virginia Woolf - Mrs. Dalloway"
+          "topicId": "UGTRB-T178",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Homogeneous Equations"
         },
         {
-          "topicId": "UGTRB-T075",
-          "topicName": "Unit VII (Novel) | R.L. Stevenson - Treasure Island"
+          "topicId": "UGTRB-T179",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Exact equations"
         },
         {
-          "topicId": "UGTRB-T076",
-          "topicName": "Unit VIII (Linguistics) | Definition of language, spoken and written language"
+          "topicId": "UGTRB-T180",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Integrating Factors"
         },
         {
-          "topicId": "UGTRB-T077",
-          "topicName": "Unit VIII (Linguistics) | Diachronic & Synchronic approaches"
+          "topicId": "UGTRB-T181",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Linear equations"
         },
         {
-          "topicId": "UGTRB-T078",
-          "topicName": "Unit VIII (Linguistics) | Linguistics - definition, nature and scope"
+          "topicId": "UGTRB-T182",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Reduction of order"
         },
         {
-          "topicId": "UGTRB-T079",
-          "topicName": "Unit VIII (Linguistics) | English Phonetics and Phonology - Speech Organs"
+          "topicId": "UGTRB-T183",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Second order Linear differential equations"
         },
         {
-          "topicId": "UGTRB-T080",
-          "topicName": "Unit VIII (Linguistics) | Sounds in English (Consonants, Vowels and Diphthongs)"
+          "topicId": "UGTRB-T184",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | General solution of homogeneous Equations"
         },
         {
-          "topicId": "UGTRB-T081",
-          "topicName": "Unit VIII (Linguistics) | Syllabus, Stress and Intonation - Transcriptions"
+          "topicId": "UGTRB-T185",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Homogeneous equation with constant coefficients"
         },
         {
-          "topicId": "UGTRB-T082",
-          "topicName": "Unit VIII (Linguistics) | Grammar - Descriptive, Prescriptive and Functional"
+          "topicId": "UGTRB-T186",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Method of undetermined coefficients"
         },
         {
-          "topicId": "UGTRB-T083",
-          "topicName": "Unit VIII (Linguistics) | Syntax - Structural analysis (I.C. analysis), Deep and Surface Structure"
+          "topicId": "UGTRB-T187",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Method of Variation of Parameters"
         },
         {
-          "topicId": "UGTRB-T084",
-          "topicName": "Unit VIII (Linguistics) | Morphology and Semantics - Word, Morphemes, Word meaning association"
+          "topicId": "UGTRB-T188",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | System of first order equations"
         },
         {
-          "topicId": "UGTRB-T085",
-          "topicName": "Unit IX (Criticism) | Plato and Aristotle"
+          "topicId": "UGTRB-T189",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Linear systems"
         },
         {
-          "topicId": "UGTRB-T086",
-          "topicName": "Unit IX (Criticism) | Horace, Quintilian, Longinus and Dante"
+          "topicId": "UGTRB-T190",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Homogeneous linear systems with constant coefficients"
         },
         {
-          "topicId": "UGTRB-T087",
-          "topicName": "Unit IX (Criticism) | Mimetic Theory and Pragmatic Theories"
+          "topicId": "UGTRB-T191",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Formation of Partial Differential Equations"
         },
         {
-          "topicId": "UGTRB-T088",
-          "topicName": "Unit IX (Criticism) | Sidney, Dryden, Dr. Johnson, Coleridge, Arnold, T.S. Eliot"
+          "topicId": "UGTRB-T192",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Complete integral"
         },
         {
-          "topicId": "UGTRB-T089",
-          "topicName": "Unit IX (Criticism) | Five Approaches - Moralistic, Psychological, Archetypal, Sociological, Formalistic"
+          "topicId": "UGTRB-T193",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Singular integral"
         },
         {
-          "topicId": "UGTRB-T090",
-          "topicName": "Unit IX (Criticism) | Recent Trends - Feminist, Marxist, New Historicism, Eco, Post Colonial Criticism"
+          "topicId": "UGTRB-T194",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | General integral"
         },
         {
-          "topicId": "UGTRB-T091",
-          "topicName": "Unit X (Prose) | Sojourner Truth - Ain't I a woman?"
+          "topicId": "UGTRB-T195",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Lagrange's equation Pp + Qq = R"
         },
         {
-          "topicId": "UGTRB-T092",
-          "topicName": "Unit X (Prose) | Mary Wollstonecraft - A Vindication of the Rights of Woman"
+          "topicId": "UGTRB-T196",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Charpit's method"
         },
         {
-          "topicId": "UGTRB-T093",
-          "topicName": "Unit X (Poetry) | Judith Wright - Request to a Year"
+          "topicId": "UGTRB-T197",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Special types of first order equations"
         },
         {
-          "topicId": "UGTRB-T094",
-          "topicName": "Unit X (Poetry) | Sylvia Plath - Medusa"
+          "topicId": "UGTRB-T198",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Laplace transform of elementary functions"
         },
         {
-          "topicId": "UGTRB-T095",
-          "topicName": "Unit X (Poetry) | Kamala Das - The Old Playhouse"
+          "topicId": "UGTRB-T199",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Laplace transforms of special functions"
         },
         {
-          "topicId": "UGTRB-T096",
-          "topicName": "Unit X (Poetry) | Supata Bhattacharya - Draupadi"
+          "topicId": "UGTRB-T200",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Unit step function"
         },
         {
-          "topicId": "UGTRB-T097",
-          "topicName": "Unit X (Poetry) | Maya Angelou - Still I Rise"
+          "topicId": "UGTRB-T201",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Dirac Delta function"
         },
         {
-          "topicId": "UGTRB-T098",
-          "topicName": "Unit X (Poetry) | Glady Cardiff - Combing"
+          "topicId": "UGTRB-T202",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Properties of Laplace Transformation"
         },
         {
-          "topicId": "UGTRB-T099",
-          "topicName": "Unit X (Poetry) | Gwendolyn Brooks - A Sunset of the City"
+          "topicId": "UGTRB-T203",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Laplace Transforms of derivatives and integrals"
         },
         {
-          "topicId": "UGTRB-T100",
-          "topicName": "Unit X (Drama) | Susan Glaspell - Trifles"
+          "topicId": "UGTRB-T204",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Evaluation of integrals using Laplace transform"
         },
         {
-          "topicId": "UGTRB-T101",
-          "topicName": "Unit X (Drama) | Caryl Churchill - Top Girls"
+          "topicId": "UGTRB-T205",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Initial value theorem"
         },
         {
-          "topicId": "UGTRB-T102",
-          "topicName": "Unit X (Fiction) | Ruth Prawer Jhabvala - Heat and Dust"
+          "topicId": "UGTRB-T206",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Final value theorem"
         },
         {
-          "topicId": "UGTRB-T103",
-          "topicName": "Unit X (Short Stories) | Charlotte Perkins Gilman - The Yellow Wallpaper"
+          "topicId": "UGTRB-T207",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Laplace transform of periodic functions"
         },
         {
-          "topicId": "UGTRB-T104",
-          "topicName": "Unit X (Short Stories) | Ambai - Forest"
+          "topicId": "UGTRB-T208",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Inverse Laplace transforms"
+        },
+        {
+          "topicId": "UGTRB-T209",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Convolution theorem"
+        },
+        {
+          "topicId": "UGTRB-T210",
+          "topicName": "Unit III - Differential Equations and Laplace Transformations | Application of Laplace transformations"
+        },
+        {
+          "topicId": "UGTRB-T211",
+          "topicName": "Unit IV - Vector Calculus and Fourier Series | Vector Differentiation"
+        },
+        {
+          "topicId": "UGTRB-T212",
+          "topicName": "Unit IV - Vector Calculus and Fourier Series | Velocity and Acceleration"
+        },
+        {
+          "topicId": "UGTRB-T213",
+          "topicName": "Unit IV - Vector Calculus and Fourier Series | Vector valued functions and Scalar potentials"
+        },
+        {
+          "topicId": "UGTRB-T214",
+          "topicName": "Unit IV - Vector Calculus and Fourier Series | Gradient, Divergence, Curl"
+        },
+        {
+          "topicId": "UGTRB-T215",
+          "topicName": "Unit IV - Vector Calculus and Fourier Series | Directional Derivative"
+        },
+        {
+          "topicId": "UGTRB-T216",
+          "topicName": "Unit IV - Vector Calculus and Fourier Series | Unit normal to a surface"
+        },
+        {
+          "topicId": "UGTRB-T217",
+          "topicName": "Unit IV - Vector Calculus and Fourier Series | Laplacian double operator"
+        },
+        {
+          "topicId": "UGTRB-T218",
+          "topicName": "Unit IV - Vector Calculus and Fourier Series | Harmonic functions"
+        },
+        {
+          "topicId": "UGTRB-T219",
+          "topicName": "Unit IV - Vector Calculus and Fourier Series | Vector Integration"
+        },
+        {
+          "topicId": "UGTRB-T220",
+          "topicName": "Unit IV - Vector Calculus and Fourier Series | Line Integral"
+        },
+        {
+          "topicId": "UGTRB-T221",
+          "topicName": "Unit IV - Vector Calculus and Fourier Series | Conservative force field"
+        },
+        {
+          "topicId": "UGTRB-T222",
+          "topicName": "Unit IV - Vector Calculus and Fourier Series | Work done by a force"
+        },
+        {
+          "topicId": "UGTRB-T223",
+          "topicName": "Unit IV - Vector Calculus and Fourier Series | Surface Integral"
+        },
+        {
+          "topicId": "UGTRB-T224",
+          "topicName": "Unit IV - Vector Calculus and Fourier Series | Volume integral"
+        },
+        {
+          "topicId": "UGTRB-T225",
+          "topicName": "Unit IV - Vector Calculus and Fourier Series | Theorems of Gauss, Stokes, and Green"
+        },
+        {
+          "topicId": "UGTRB-T226",
+          "topicName": "Unit IV - Vector Calculus and Fourier Series | Fourier Series - Expansions of Periodic functions"
+        },
+        {
+          "topicId": "UGTRB-T227",
+          "topicName": "Unit IV - Vector Calculus and Fourier Series | Half range series"
+        },
+        {
+          "topicId": "UGTRB-T228",
+          "topicName": "Unit IV - Vector Calculus and Fourier Series | Evaluation of Infinite Series"
+        },
+        {
+          "topicId": "UGTRB-T229",
+          "topicName": "Unit IV - Vector Calculus and Fourier Series | Fourier Transforms - Infinite Fourier Transform"
+        },
+        {
+          "topicId": "UGTRB-T230",
+          "topicName": "Unit IV - Vector Calculus and Fourier Series | Fourier Sine and Cosine transforms"
+        },
+        {
+          "topicId": "UGTRB-T231",
+          "topicName": "Unit IV - Vector Calculus and Fourier Series | Convolution Theorem and Parseval's identity"
+        },
+        {
+          "topicId": "UGTRB-T232",
+          "topicName": "Unit V - Algebraic Structures | Groups"
+        },
+        {
+          "topicId": "UGTRB-T233",
+          "topicName": "Unit V - Algebraic Structures | Subgroups"
+        },
+        {
+          "topicId": "UGTRB-T234",
+          "topicName": "Unit V - Algebraic Structures | Cyclic Groups and properties of cyclic groups"
+        },
+        {
+          "topicId": "UGTRB-T235",
+          "topicName": "Unit V - Algebraic Structures | Lagrange's Theorem"
+        },
+        {
+          "topicId": "UGTRB-T236",
+          "topicName": "Unit V - Algebraic Structures | Counting Principles"
+        },
+        {
+          "topicId": "UGTRB-T237",
+          "topicName": "Unit V - Algebraic Structures | Normal subgroups"
+        },
+        {
+          "topicId": "UGTRB-T238",
+          "topicName": "Unit V - Algebraic Structures | Quotient groups"
+        },
+        {
+          "topicId": "UGTRB-T239",
+          "topicName": "Unit V - Algebraic Structures | Homomorphism"
+        },
+        {
+          "topicId": "UGTRB-T240",
+          "topicName": "Unit V - Algebraic Structures | Automorphism"
+        },
+        {
+          "topicId": "UGTRB-T241",
+          "topicName": "Unit V - Algebraic Structures | Cayley's theorem"
+        },
+        {
+          "topicId": "UGTRB-T242",
+          "topicName": "Unit V - Algebraic Structures | Permutation groups"
+        },
+        {
+          "topicId": "UGTRB-T243",
+          "topicName": "Unit V - Algebraic Structures | Rings"
+        },
+        {
+          "topicId": "UGTRB-T244",
+          "topicName": "Unit V - Algebraic Structures | Some special classes of Rings"
+        },
+        {
+          "topicId": "UGTRB-T245",
+          "topicName": "Unit V - Algebraic Structures | Integral domain"
+        },
+        {
+          "topicId": "UGTRB-T246",
+          "topicName": "Unit V - Algebraic Structures | Homomorphism of rings"
+        },
+        {
+          "topicId": "UGTRB-T247",
+          "topicName": "Unit V - Algebraic Structures | Ideal and Quotient rings"
+        },
+        {
+          "topicId": "UGTRB-T248",
+          "topicName": "Unit V - Algebraic Structures | Prime ideal"
+        },
+        {
+          "topicId": "UGTRB-T249",
+          "topicName": "Unit V - Algebraic Structures | Maximal ideals"
+        },
+        {
+          "topicId": "UGTRB-T250",
+          "topicName": "Unit V - Algebraic Structures | The field and quotients of an integral domain"
+        },
+        {
+          "topicId": "UGTRB-T251",
+          "topicName": "Unit V - Algebraic Structures | Euclidean rings"
+        },
+        {
+          "topicId": "UGTRB-T252",
+          "topicName": "Unit V - Algebraic Structures | Algebra of Linear transformation"
+        },
+        {
+          "topicId": "UGTRB-T253",
+          "topicName": "Unit V - Algebraic Structures | Characteristic roots"
+        },
+        {
+          "topicId": "UGTRB-T254",
+          "topicName": "Unit V - Algebraic Structures | Matrices, Canonical forms, Triangular Forms"
+        },
+        {
+          "topicId": "UGTRB-T255",
+          "topicName": "Unit V - Algebraic Structures | Vector Space"
+        },
+        {
+          "topicId": "UGTRB-T256",
+          "topicName": "Unit V - Algebraic Structures | Linear dependence and Independence"
+        },
+        {
+          "topicId": "UGTRB-T257",
+          "topicName": "Unit V - Algebraic Structures | Sub spaces and Dual spaces"
+        },
+        {
+          "topicId": "UGTRB-T258",
+          "topicName": "Unit V - Algebraic Structures | Inner product spaces"
+        },
+        {
+          "topicId": "UGTRB-T259",
+          "topicName": "Unit VI - Real Analysis | Sets - Countable and Uncountable sets"
+        },
+        {
+          "topicId": "UGTRB-T260",
+          "topicName": "Unit VI - Real Analysis | Real Number system R"
+        },
+        {
+          "topicId": "UGTRB-T261",
+          "topicName": "Unit VI - Real Analysis | Functions - Real Valued functions"
+        },
+        {
+          "topicId": "UGTRB-T262",
+          "topicName": "Unit VI - Real Analysis | Equivalence and Countability"
+        },
+        {
+          "topicId": "UGTRB-T263",
+          "topicName": "Unit VI - Real Analysis | Infremum and Supremum of a subset of R"
+        },
+        {
+          "topicId": "UGTRB-T264",
+          "topicName": "Unit VI - Real Analysis | Bolzano - Weierstrass Theorem"
+        },
+        {
+          "topicId": "UGTRB-T265",
+          "topicName": "Unit VI - Real Analysis | Sequences of real numbers"
+        },
+        {
+          "topicId": "UGTRB-T266",
+          "topicName": "Unit VI - Real Analysis | Convergent and Divergent Sequences"
+        },
+        {
+          "topicId": "UGTRB-T267",
+          "topicName": "Unit VI - Real Analysis | Monotone Sequences"
+        },
+        {
+          "topicId": "UGTRB-T268",
+          "topicName": "Unit VI - Real Analysis | Cauchy Sequences"
+        },
+        {
+          "topicId": "UGTRB-T269",
+          "topicName": "Unit VI - Real Analysis | Limit Superior and Limit Inferior"
+        },
+        {
+          "topicId": "UGTRB-T270",
+          "topicName": "Unit VI - Real Analysis | Sub Sequences"
+        },
+        {
+          "topicId": "UGTRB-T271",
+          "topicName": "Unit VI - Real Analysis | Infinite series"
+        },
+        {
+          "topicId": "UGTRB-T272",
+          "topicName": "Unit VI - Real Analysis | Alternating Series"
+        },
+        {
+          "topicId": "UGTRB-T273",
+          "topicName": "Unit VI - Real Analysis | Conditional convergence"
+        },
+        {
+          "topicId": "UGTRB-T274",
+          "topicName": "Unit VI - Real Analysis | Absolute convergence"
+        },
+        {
+          "topicId": "UGTRB-T275",
+          "topicName": "Unit VI - Real Analysis | Tests of Absolute convergence"
+        },
+        {
+          "topicId": "UGTRB-T276",
+          "topicName": "Unit VI - Real Analysis | Continuity and Uniform Continuity"
+        },
+        {
+          "topicId": "UGTRB-T277",
+          "topicName": "Unit VI - Real Analysis | Limit of a function at a point"
+        },
+        {
+          "topicId": "UGTRB-T278",
+          "topicName": "Unit VI - Real Analysis | Continuity and Differentiability"
+        },
+        {
+          "topicId": "UGTRB-T279",
+          "topicName": "Unit VI - Real Analysis | Rolle's Theorem"
+        },
+        {
+          "topicId": "UGTRB-T280",
+          "topicName": "Unit VI - Real Analysis | Mean Value Theorems"
+        },
+        {
+          "topicId": "UGTRB-T281",
+          "topicName": "Unit VI - Real Analysis | Inverse function theorem"
+        },
+        {
+          "topicId": "UGTRB-T282",
+          "topicName": "Unit VI - Real Analysis | Taylor's Theorem with remainder forms"
+        },
+        {
+          "topicId": "UGTRB-T283",
+          "topicName": "Unit VI - Real Analysis | Power series expansion"
+        },
+        {
+          "topicId": "UGTRB-T284",
+          "topicName": "Unit VI - Real Analysis | Riemann Integrability"
+        },
+        {
+          "topicId": "UGTRB-T285",
+          "topicName": "Unit VI - Real Analysis | Sequences and Series of Functions"
+        },
+        {
+          "topicId": "UGTRB-T286",
+          "topicName": "Unit VI - Real Analysis | Metric spaces"
+        },
+        {
+          "topicId": "UGTRB-T287",
+          "topicName": "Unit VI - Real Analysis | Open sets and closed sets"
+        },
+        {
+          "topicId": "UGTRB-T288",
+          "topicName": "Unit VI - Real Analysis | Discontinuous functions"
+        },
+        {
+          "topicId": "UGTRB-T289",
+          "topicName": "Unit VII - Complex Analysis | Algebra of Complex Numbers"
+        },
+        {
+          "topicId": "UGTRB-T290",
+          "topicName": "Unit VII - Complex Analysis | Function of Complex Variable"
+        },
+        {
+          "topicId": "UGTRB-T291",
+          "topicName": "Unit VII - Complex Analysis | Mappings, Limits and Theorems on Limits"
+        },
+        {
+          "topicId": "UGTRB-T292",
+          "topicName": "Unit VII - Complex Analysis | Continuity and differentiability"
+        },
+        {
+          "topicId": "UGTRB-T293",
+          "topicName": "Unit VII - Complex Analysis | Cauchy-Riemann Equations"
+        },
+        {
+          "topicId": "UGTRB-T294",
+          "topicName": "Unit VII - Complex Analysis | Analytic Functions"
+        },
+        {
+          "topicId": "UGTRB-T295",
+          "topicName": "Unit VII - Complex Analysis | Harmonic Function"
+        },
+        {
+          "topicId": "UGTRB-T296",
+          "topicName": "Unit VII - Complex Analysis | Conformal mapping"
+        },
+        {
+          "topicId": "UGTRB-T297",
+          "topicName": "Unit VII - Complex Analysis | Mobius Transformations"
+        },
+        {
+          "topicId": "UGTRB-T298",
+          "topicName": "Unit VII - Complex Analysis | Elementary Transformation"
+        },
+        {
+          "topicId": "UGTRB-T299",
+          "topicName": "Unit VII - Complex Analysis | Bilinear Transformations and Cross ratio"
+        },
+        {
+          "topicId": "UGTRB-T300",
+          "topicName": "Unit VII - Complex Analysis | Fixed points of bilinear transformations"
+        },
+        {
+          "topicId": "UGTRB-T301",
+          "topicName": "Unit VII - Complex Analysis | Special Bilinear transformations"
+        },
+        {
+          "topicId": "UGTRB-T302",
+          "topicName": "Unit VII - Complex Analysis | Contours"
+        },
+        {
+          "topicId": "UGTRB-T303",
+          "topicName": "Unit VII - Complex Analysis | Contour Integrals"
+        },
+        {
+          "topicId": "UGTRB-T304",
+          "topicName": "Unit VII - Complex Analysis | Anti Derivatives"
+        },
+        {
+          "topicId": "UGTRB-T305",
+          "topicName": "Unit VII - Complex Analysis | Cauchy-Goursat Theorem"
+        },
+        {
+          "topicId": "UGTRB-T306",
+          "topicName": "Unit VII - Complex Analysis | Power Series"
+        },
+        {
+          "topicId": "UGTRB-T307",
+          "topicName": "Unit VII - Complex Analysis | Complex Integration"
+        },
+        {
+          "topicId": "UGTRB-T308",
+          "topicName": "Unit VII - Complex Analysis | Cauchy's theorem"
+        },
+        {
+          "topicId": "UGTRB-T309",
+          "topicName": "Unit VII - Complex Analysis | Morera's theorem"
+        },
+        {
+          "topicId": "UGTRB-T310",
+          "topicName": "Unit VII - Complex Analysis | Cauchy's Integral Formula"
+        },
+        {
+          "topicId": "UGTRB-T311",
+          "topicName": "Unit VII - Complex Analysis | Liouville's Theorem"
+        },
+        {
+          "topicId": "UGTRB-T312",
+          "topicName": "Unit VII - Complex Analysis | Maximum Modulus Principle"
+        },
+        {
+          "topicId": "UGTRB-T313",
+          "topicName": "Unit VII - Complex Analysis | Schwarz's Lemma"
+        },
+        {
+          "topicId": "UGTRB-T314",
+          "topicName": "Unit VII - Complex Analysis | Taylor's series"
+        },
+        {
+          "topicId": "UGTRB-T315",
+          "topicName": "Unit VII - Complex Analysis | Laurent's series"
+        },
+        {
+          "topicId": "UGTRB-T316",
+          "topicName": "Unit VII - Complex Analysis | Calculus of Residues"
+        },
+        {
+          "topicId": "UGTRB-T317",
+          "topicName": "Unit VII - Complex Analysis | Residue Theorem"
+        },
+        {
+          "topicId": "UGTRB-T318",
+          "topicName": "Unit VII - Complex Analysis | Evaluation of Definite integrals of Trigonometric functions"
+        },
+        {
+          "topicId": "UGTRB-T319",
+          "topicName": "Unit VII - Complex Analysis | Argument principle and Rouche's Theorem"
+        },
+        {
+          "topicId": "UGTRB-T320",
+          "topicName": "Unit VIII - Mechanics | Statics: Forces on a rigid body"
+        },
+        {
+          "topicId": "UGTRB-T321",
+          "topicName": "Unit VIII - Mechanics | Moment of a force"
+        },
+        {
+          "topicId": "UGTRB-T322",
+          "topicName": "Unit VIII - Mechanics | General motion of a rigid body"
+        },
+        {
+          "topicId": "UGTRB-T323",
+          "topicName": "Unit VIII - Mechanics | Equivalent system of forces"
+        },
+        {
+          "topicId": "UGTRB-T324",
+          "topicName": "Unit VIII - Mechanics | Parallel Forces"
+        },
+        {
+          "topicId": "UGTRB-T325",
+          "topicName": "Unit VIII - Mechanics | Forces along the sides of Triangle Couples"
+        },
+        {
+          "topicId": "UGTRB-T326",
+          "topicName": "Unit VIII - Mechanics | Resultant of several coplanar forces"
+        },
+        {
+          "topicId": "UGTRB-T327",
+          "topicName": "Unit VIII - Mechanics | Equation of line of action of the resultant"
+        },
+        {
+          "topicId": "UGTRB-T328",
+          "topicName": "Unit VIII - Mechanics | Equilibrium of rigid body under three Coplanar forces"
+        },
+        {
+          "topicId": "UGTRB-T329",
+          "topicName": "Unit VIII - Mechanics | Reduction of Coplanar forces into single force and couples"
+        },
+        {
+          "topicId": "UGTRB-T330",
+          "topicName": "Unit VIII - Mechanics | Laws of friction, angle of friction"
+        },
+        {
+          "topicId": "UGTRB-T331",
+          "topicName": "Unit VIII - Mechanics | Equilibrium of a body on a rough inclined plane"
+        },
+        {
+          "topicId": "UGTRB-T332",
+          "topicName": "Unit VIII - Mechanics | Equilibrium of a uniform Homogeneous string - Catenary"
+        },
+        {
+          "topicId": "UGTRB-T333",
+          "topicName": "Unit VIII - Mechanics | Suspension bridge"
+        },
+        {
+          "topicId": "UGTRB-T334",
+          "topicName": "Unit VIII - Mechanics | Centre of Gravity of uniform rigid bodies"
+        },
+        {
+          "topicId": "UGTRB-T335",
+          "topicName": "Unit VIII - Mechanics | Dynamics: Velocity and Acceleration"
+        },
+        {
+          "topicId": "UGTRB-T336",
+          "topicName": "Unit VIII - Mechanics | Coplanar motion"
+        },
+        {
+          "topicId": "UGTRB-T337",
+          "topicName": "Unit VIII - Mechanics | Rectilinear motion under constant forces"
+        },
+        {
+          "topicId": "UGTRB-T338",
+          "topicName": "Unit VIII - Mechanics | Acceleration and retardation thrust on a plane"
+        },
+        {
+          "topicId": "UGTRB-T339",
+          "topicName": "Unit VIII - Mechanics | Motion along a Vertical line under gravity"
+        },
+        {
+          "topicId": "UGTRB-T340",
+          "topicName": "Unit VIII - Mechanics | Motion along an inclined plane"
+        },
+        {
+          "topicId": "UGTRB-T341",
+          "topicName": "Unit VIII - Mechanics | Motion of connected particles"
+        },
+        {
+          "topicId": "UGTRB-T342",
+          "topicName": "Unit VIII - Mechanics | Newton's Laws of motion"
+        },
+        {
+          "topicId": "UGTRB-T343",
+          "topicName": "Unit VIII - Mechanics | Work, Energy and power"
+        },
+        {
+          "topicId": "UGTRB-T344",
+          "topicName": "Unit VIII - Mechanics | Conservative field of force"
+        },
+        {
+          "topicId": "UGTRB-T345",
+          "topicName": "Unit VIII - Mechanics | Rectilinear motion under varying force"
+        },
+        {
+          "topicId": "UGTRB-T346",
+          "topicName": "Unit VIII - Mechanics | Simple Harmonic Motion (S.H.M)"
+        },
+        {
+          "topicId": "UGTRB-T347",
+          "topicName": "Unit VIII - Mechanics | S.H.M along a horizontal line"
+        },
+        {
+          "topicId": "UGTRB-T348",
+          "topicName": "Unit VIII - Mechanics | S.H.M along a Vertical line"
+        },
+        {
+          "topicId": "UGTRB-T349",
+          "topicName": "Unit VIII - Mechanics | Motion under gravity in a resisting medium"
+        },
+        {
+          "topicId": "UGTRB-T350",
+          "topicName": "Unit VIII - Mechanics | Path of a projectile"
+        },
+        {
+          "topicId": "UGTRB-T351",
+          "topicName": "Unit VIII - Mechanics | Particle projected on an inclined plane"
+        },
+        {
+          "topicId": "UGTRB-T352",
+          "topicName": "Unit VIII - Mechanics | Analysis of forces acting on particles and rigid bodies on static equilibrium"
+        },
+        {
+          "topicId": "UGTRB-T353",
+          "topicName": "Unit VIII - Mechanics | Elastic Medium, Impulsive force"
+        },
+        {
+          "topicId": "UGTRB-T354",
+          "topicName": "Unit VIII - Mechanics | Impact of sphere"
+        },
+        {
+          "topicId": "UGTRB-T355",
+          "topicName": "Unit VIII - Mechanics | Impact of two smooth spheres"
+        },
+        {
+          "topicId": "UGTRB-T356",
+          "topicName": "Unit VIII - Mechanics | Impact of two spheres of two smooth sphere on a plane"
+        },
+        {
+          "topicId": "UGTRB-T357",
+          "topicName": "Unit VIII - Mechanics | Oblique impact of two smooth spheres"
+        },
+        {
+          "topicId": "UGTRB-T358",
+          "topicName": "Unit VIII - Mechanics | Circular motion"
+        },
+        {
+          "topicId": "UGTRB-T359",
+          "topicName": "Unit VIII - Mechanics | Conical Pendulum motion of a cyclist on circular path"
+        },
+        {
+          "topicId": "UGTRB-T360",
+          "topicName": "Unit VIII - Mechanics | Circular motion on a vertical plane"
+        },
+        {
+          "topicId": "UGTRB-T361",
+          "topicName": "Unit VIII - Mechanics | Relative rest in revolving cone"
+        },
+        {
+          "topicId": "UGTRB-T362",
+          "topicName": "Unit VIII - Mechanics | Simple pendulum"
+        },
+        {
+          "topicId": "UGTRB-T363",
+          "topicName": "Unit VIII - Mechanics | Central Orbits"
+        },
+        {
+          "topicId": "UGTRB-T364",
+          "topicName": "Unit VIII - Mechanics | Conic as Centered Orbit"
+        },
+        {
+          "topicId": "UGTRB-T365",
+          "topicName": "Unit VIII - Mechanics | Moment of Inertia"
+        },
+        {
+          "topicId": "UGTRB-T366",
+          "topicName": "Unit IX - Operations Research | Linear Programming - Formulation"
+        },
+        {
+          "topicId": "UGTRB-T367",
+          "topicName": "Unit IX - Operations Research | Graphical Solution"
+        },
+        {
+          "topicId": "UGTRB-T368",
+          "topicName": "Unit IX - Operations Research | Simplex Method"
+        },
+        {
+          "topicId": "UGTRB-T369",
+          "topicName": "Unit IX - Operations Research | Big - M method"
+        },
+        {
+          "topicId": "UGTRB-T370",
+          "topicName": "Unit IX - Operations Research | Two phase method"
+        },
+        {
+          "topicId": "UGTRB-T371",
+          "topicName": "Unit IX - Operations Research | Duality and Primal dual relation"
+        },
+        {
+          "topicId": "UGTRB-T372",
+          "topicName": "Unit IX - Operations Research | Dual simplex method"
+        },
+        {
+          "topicId": "UGTRB-T373",
+          "topicName": "Unit IX - Operations Research | Revised simplex method"
+        },
+        {
+          "topicId": "UGTRB-T374",
+          "topicName": "Unit IX - Operations Research | Sensitivity analysis"
+        },
+        {
+          "topicId": "UGTRB-T375",
+          "topicName": "Unit IX - Operations Research | Transportation Problem"
+        },
+        {
+          "topicId": "UGTRB-T376",
+          "topicName": "Unit IX - Operations Research | Assignment Problem"
+        },
+        {
+          "topicId": "UGTRB-T377",
+          "topicName": "Unit IX - Operations Research | Queuing Theory - Basic Concepts"
+        },
+        {
+          "topicId": "UGTRB-T378",
+          "topicName": "Unit IX - Operations Research | Steady State analysis of M/M/1 and M/M/Systems"
+        },
+        {
+          "topicId": "UGTRB-T379",
+          "topicName": "Unit IX - Operations Research | PERT and CPM - Project network diagram"
+        },
+        {
+          "topicId": "UGTRB-T380",
+          "topicName": "Unit IX - Operations Research | Critical path and PERT computations"
+        },
+        {
+          "topicId": "UGTRB-T381",
+          "topicName": "Unit IX - Operations Research | Inventory Models - EOQ Models"
+        },
+        {
+          "topicId": "UGTRB-T382",
+          "topicName": "Unit IX - Operations Research | Classical newspaper boy problem"
+        },
+        {
+          "topicId": "UGTRB-T383",
+          "topicName": "Unit IX - Operations Research | Purchase inventory model with one price brake"
+        },
+        {
+          "topicId": "UGTRB-T384",
+          "topicName": "Unit IX - Operations Research | Game theory - Two person Zero - Sum game with saddle point"
+        },
+        {
+          "topicId": "UGTRB-T385",
+          "topicName": "Unit IX - Operations Research | Game theory without saddle point"
+        },
+        {
+          "topicId": "UGTRB-T386",
+          "topicName": "Unit IX - Operations Research | Dominance - Solving 2xn or mx2 game by graphical method"
+        },
+        {
+          "topicId": "UGTRB-T387",
+          "topicName": "Unit IX - Operations Research | Integer programming - Branch and bound method"
+        },
+        {
+          "topicId": "UGTRB-T388",
+          "topicName": "Unit X - Statistics and Probability | Measures of central tendency"
+        },
+        {
+          "topicId": "UGTRB-T389",
+          "topicName": "Unit X - Statistics and Probability | Measures of Dispersion"
+        },
+        {
+          "topicId": "UGTRB-T390",
+          "topicName": "Unit X - Statistics and Probability | Moments"
+        },
+        {
+          "topicId": "UGTRB-T391",
+          "topicName": "Unit X - Statistics and Probability | Skewness and Kurtosis"
+        },
+        {
+          "topicId": "UGTRB-T392",
+          "topicName": "Unit X - Statistics and Probability | Correlation and Rank Correlation"
+        },
+        {
+          "topicId": "UGTRB-T393",
+          "topicName": "Unit X - Statistics and Probability | Regression - Regression line of x on y and y on x"
+        },
+        {
+          "topicId": "UGTRB-T394",
+          "topicName": "Unit X - Statistics and Probability | Index Numbers - Consumer Price Index numbers"
+        },
+        {
+          "topicId": "UGTRB-T395",
+          "topicName": "Unit X - Statistics and Probability | Conversion of chain base Index Number"
+        },
+        {
+          "topicId": "UGTRB-T396",
+          "topicName": "Unit X - Statistics and Probability | Curve Fitting - Principle of Least Squares"
+        },
+        {
+          "topicId": "UGTRB-T397",
+          "topicName": "Unit X - Statistics and Probability | Fitting a straight line, parabola and power curves"
+        },
+        {
+          "topicId": "UGTRB-T398",
+          "topicName": "Unit X - Statistics and Probability | Theory of Attributes - Consistency of Data"
+        },
+        {
+          "topicId": "UGTRB-T399",
+          "topicName": "Unit X - Statistics and Probability | Independence and Associate of data"
+        },
+        {
+          "topicId": "UGTRB-T400",
+          "topicName": "Unit X - Statistics and Probability | Theory of Probability - Sample Space and Axioms"
+        },
+        {
+          "topicId": "UGTRB-T401",
+          "topicName": "Unit X - Statistics and Probability | Probability function - Laws of Addition"
+        },
+        {
+          "topicId": "UGTRB-T402",
+          "topicName": "Unit X - Statistics and Probability | Conditional Probability - Law of multiplication"
+        },
+        {
+          "topicId": "UGTRB-T403",
+          "topicName": "Unit X - Statistics and Probability | Independent - Boole's Inequality"
+        },
+        {
+          "topicId": "UGTRB-T404",
+          "topicName": "Unit X - Statistics and Probability | Bayes' Theorem"
+        },
+        {
+          "topicId": "UGTRB-T405",
+          "topicName": "Unit X - Statistics and Probability | Random Variables and Distribution function"
+        },
+        {
+          "topicId": "UGTRB-T406",
+          "topicName": "Unit X - Statistics and Probability | Discrete and continuous random variables"
+        },
+        {
+          "topicId": "UGTRB-T407",
+          "topicName": "Unit X - Statistics and Probability | Probability density functions"
+        },
+        {
+          "topicId": "UGTRB-T408",
+          "topicName": "Unit X - Statistics and Probability | Mathematical Expectation"
+        },
+        {
+          "topicId": "UGTRB-T409",
+          "topicName": "Unit X - Statistics and Probability | Moment Generating Functions and Cumulates"
+        },
+        {
+          "topicId": "UGTRB-T410",
+          "topicName": "Unit X - Statistics and Probability | Characteristic functions"
+        },
+        {
+          "topicId": "UGTRB-T411",
+          "topicName": "Unit X - Statistics and Probability | Theoretical distributions - Binomial, Poisson, Normal"
+        },
+        {
+          "topicId": "UGTRB-T412",
+          "topicName": "Unit X - Statistics and Probability | Test of significance of sample and large samples"
+        },
+        {
+          "topicId": "UGTRB-T413",
+          "topicName": "Unit X - Statistics and Probability | Z- test, Student's t- test, F- test"
+        },
+        {
+          "topicId": "UGTRB-T414",
+          "topicName": "Unit X - Statistics and Probability | Chi square and contingency coefficient"
         }
       ]
     },
