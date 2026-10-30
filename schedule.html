@@ -23,662 +23,113 @@
         .topic { font-size: 15px; margin-top: 4px; color: #e2e8f0; }
         .test-no { display: inline-block; background: #10b981; color: white; padding: 3px 10px; border-radius: 4px; font-size: 12px; margin-top: 8px; font-weight: bold; }
         .empty-state { text-align: center; color: #A8C8E1; font-style: italic; padding: 20px; }
+        .refresh-btn { display: block; margin: 0 auto 16px; background: #0284c7; color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+        .loading { text-align: center; padding: 40px; color: #A8C8E1; }
     </style>
 </head>
 <body>
     <h2>📅 Mock Test Schedule</h2>
+    
+    <button class="refresh-btn" onclick="loadSchedule()">🔄 Refresh</button>
+    
     <div class="date-selector-wrapper" id="dateSelector"></div>
-    <div id="scheduleContainer"></div>
+    <div id="scheduleContainer"><div class="loading">Loading…</div></div>
+
     <script>
-const SCHEDULE = [
-  {
-    examId: "SPECIAL-TET-2026",
-    examName: "SPECIAL TET 2026",
-    dates: [
-      {
-        date: "02/11/2026",
-        weekday: "Monday",
-        entries: [
-          { subject: "TAMIL", topic: "6TH TERM 1 - 2", testNo: "SPT-1" }
-        ]
-      },
-      {
-        date: "03/11/2026",
-        weekday: "Tuesday",
-        entries: [
-          { subject: "MATHS", topic: "6TH TERM 1 -- LE: 1 - 6", testNo: "SPT-MA-2" },
-          { subject: "SS", topic: "6TH TERM 1 - HISTORY", testNo: "SPT-SS-2" }
-        ]
-      },
-      {
-        date: "04/11/2026",
-        weekday: "Wednesday",
-        entries: [
-          { subject: "ENGLISH", topic: "6TH TERM 1 - 2", testNo: "SPT-3" }
-        ]
-      },
-      {
-        date: "05/11/2026",
-        weekday: "Thursday",
-        entries: [
-          { subject: "SCI", topic: "6TH TERM 1 -- LE: 1- 6", testNo: "SPT-SCI-4" },
-          { subject: "SS", topic: "6TH TERM 1 -- GEO & CIVICS", testNo: "SPT-SS-4" }
-        ]
-      },
-      {
-        date: "06/11/2026",
-        weekday: "Friday",
-        entries: [
-          { subject: "PSY", topic: "UNIT 1", testNo: "SPT-5" }
-        ]
-      },
-      {
-        date: "09/11/2026",
-        weekday: "Monday",
-        entries: [
-          { subject: "TAMIL", topic: "6TH TERM 3 -7TH TERM 1", testNo: "SPT-6" }
-        ]
-      },
-      {
-        date: "10/11/2026",
-        weekday: "Tuesday",
-        entries: [
-          { subject: "MATHS", topic: "6TH TERM 2 -- LE: 1 -- 5", testNo: "SPT-MA-7" },
-          { subject: "SS", topic: "6TH TERM 2 - HISTORY", testNo: "SPT-SS-7" }
-        ]
-      },
-      {
-        date: "11/11/2026",
-        weekday: "Wednesday",
-        entries: [
-          { subject: "ENGLISH", topic: "6TH TERM 3 -7TH TERM 1", testNo: "SPT-8" }
-        ]
-      },
-      {
-        date: "12/11/2026",
-        weekday: "Thursday",
-        entries: [
-          { subject: "SCI", topic: "6TH TERM 2 -- LE: 1- 6", testNo: "SPT-SCI-9" },
-          { subject: "SS", topic: "6TH TERM 2 -- GEO, CIVICS & ECONOMICS", testNo: "SPT-SS-9" }
-        ]
-      },
-      {
-        date: "13/11/2026",
-        weekday: "Friday",
-        entries: [
-          { subject: "PSY", topic: "UNIT 2", testNo: "SPT-10" }
-        ]
-      },
-      {
-        date: "16/11/2026",
-        weekday: "Monday",
-        entries: [
-          { subject: "TAMIL", topic: "7TH TERM 2 -- 7TH TERM 3", testNo: "SPT-11" }
-        ]
-      },
-      {
-        date: "17/11/2026",
-        weekday: "Tuesday",
-        entries: [
-          { subject: "MATHS", topic: "6TH TERM 3 -- LE: 1 -- 5", testNo: "SPT-MA-12" },
-          { subject: "SS", topic: "6TH TERM 3 - HISTORY", testNo: "SPT-SS-12" }
-        ]
-      },
-      {
-        date: "18/11/2026",
-        weekday: "Wednesday",
-        entries: [
-          { subject: "ENGLISH", topic: "7TH TERM 2 -- 7TH TERM 3", testNo: "SPT-13" }
-        ]
-      },
-      {
-        date: "19/11/2026",
-        weekday: "Thursday",
-        entries: [
-          { subject: "SCI", topic: "6TH TERM 3 -- LE: 1- 5", testNo: "SPT-SCI-14" },
-          { subject: "SS", topic: "6TH TERM 3 -- GEO & CIVICS", testNo: "SPT-SS-14" }
-        ]
-      },
-      {
-        date: "20/11/2026",
-        weekday: "Friday",
-        entries: [
-          { subject: "PSY", topic: "UNIT 3", testNo: "SPT-15" }
-        ]
-      },
-      {
-        date: "23/11/2026",
-        weekday: "Monday",
-        entries: [
-          { subject: "TAMIL", topic: "8TH LE 1 - 3", testNo: "SPT-16" }
-        ]
-      },
-      {
-        date: "24/11/2026",
-        weekday: "Tuesday",
-        entries: [
-          { subject: "MATHS", topic: "7TH TERM 1 -- LE: 1 -- 6", testNo: "SPT-MA-17" },
-          { subject: "SS", topic: "7TH TERM 1 -- HISTORY & ECONOMICS", testNo: "SPT-SS-17" }
-        ]
-      },
-      {
-        date: "25/11/2026",
-        weekday: "Wednesday",
-        entries: [
-          { subject: "ENGLISH", topic: "8TH LE 1 - 3", testNo: "SPT-18" }
-        ]
-      },
-      {
-        date: "26/11/2026",
-        weekday: "Thursday",
-        entries: [
-          { subject: "SCI", topic: "7TH TERM 1 -- LE: 1- 6", testNo: "SPT-SCI-19" },
-          { subject: "SS", topic: "7TH TERM 1 -- GEO & CIVICS", testNo: "SPT-SS-19" }
-        ]
-      },
-      {
-        date: "27/11/2026",
-        weekday: "Friday",
-        entries: [
-          { subject: "PSY", topic: "UNIT 4", testNo: "SPT-20" }
-        ]
-      },
-      {
-        date: "30/11/2026",
-        weekday: "Monday",
-        entries: [
-          { subject: "TAMIL", topic: "8TH LE 4 - 6", testNo: "SPT-21" }
-        ]
-      },
-      {
-        date: "01/12/2026",
-        weekday: "Tuesday",
-        entries: [
-          { subject: "MATHS", topic: "7TH TERM 2 -- LE: 1 -- 5", testNo: "SPT-MA-22" },
-          { subject: "SS", topic: "7TH TERM 2 - HISTORY", testNo: "SPT-SS-22" }
-        ]
-      },
-      {
-        date: "02/12/2026",
-        weekday: "Wednesday",
-        entries: [
-          { subject: "ENGLISH", topic: "8TH LE 4 - 6", testNo: "SPT-23" }
-        ]
-      },
-      {
-        date: "03/12/2026",
-        weekday: "Thursday",
-        entries: [
-          { subject: "SCI", topic: "7TH TERM 2 -- LE: 1- 6", testNo: "SPT-SCI-24" },
-          { subject: "SS", topic: "7TH TERM 2 -- GEO & CIVICS", testNo: "SPT-SS-24" }
-        ]
-      },
-      {
-        date: "04/12/2026",
-        weekday: "Friday",
-        entries: [
-          { subject: "PSY", topic: "UNIT 5", testNo: "SPT-25" }
-        ]
-      },
-      {
-        date: "07/12/2026",
-        weekday: "Monday",
-        entries: [
-          { subject: "TAMIL", topic: "8TH LE 7 - 9", testNo: "SPT-26" }
-        ]
-      },
-      {
-        date: "08/12/2026",
-        weekday: "Tuesday",
-        entries: [
-          { subject: "MATHS", topic: "7TH TERM 3 -- LE: 1 -- 6", testNo: "SPT-MA-27" },
-          { subject: "SS", topic: "7TH TERM 3 -- HISTORY & ECONOMICS", testNo: "SPT-SS-27" }
-        ]
-      },
-      {
-        date: "09/12/2026",
-        weekday: "Wednesday",
-        entries: [
-          { subject: "ENGLISH", topic: "8TH LE 7 - 9", testNo: "SPT-28" }
-        ]
-      },
-      {
-        date: "10/12/2026",
-        weekday: "Thursday",
-        entries: [
-          { subject: "SCI", topic: "7TH TERM 3 -- LE: 1- 5", testNo: "SPT-SCI-29" },
-          { subject: "SS", topic: "7TH TERM 3 -- GEO & CIVICS", testNo: "SPT-SS-29" }
-        ]
-      },
-      {
-        date: "11/12/2026",
-        weekday: "Friday",
-        entries: [
-          { subject: "PSY", topic: "UNIT 6", testNo: "SPT-30" }
-        ]
-      },
-      {
-        date: "14/12/2026",
-        weekday: "Monday",
-        entries: [
-          { subject: "TAMIL", topic: "8TH இலக்கணம் FULL", testNo: "SPT-31" }
-        ]
-      },
-      {
-        date: "15/12/2026",
-        weekday: "Tuesday",
-        entries: [
-          { subject: "MATHS", topic: "8TH FULL", testNo: "SPT-MA-32" },
-          { subject: "SS", topic: "8TH -- HISTORY & ECONOMICS", testNo: "SPT-SS-32" }
-        ]
-      },
-      {
-        date: "16/12/2026",
-        weekday: "Wednesday",
-        entries: [
-          { subject: "ENGLISH", topic: "8TH GRAMMAR FULL", testNo: "SPT-33" }
-        ]
-      },
-      {
-        date: "17/12/2026",
-        weekday: "Thursday",
-        entries: [
-          { subject: "SCI", topic: "8TH LE: 1 - 22", testNo: "SPT-SCI-34" },
-          { subject: "SS", topic: "8TH -- GEO & CIVICS", testNo: "SPT-SS-34" }
-        ]
-      },
-      {
-        date: "18/12/2026",
-        weekday: "Friday",
-        entries: [
-          { subject: "PSY", topic: "UNIT 7 - 10", testNo: "SPT-35" }
-        ]
-      },
-      {
-        date: "19/12/2026",
-        weekday: "SATURDAY",
-        entries: [
-          { subject: "MOCK TEST", topic: "MOCK TEST", testNo: "MOCK" }
-        ]
-      }
-    ]
-  },
-  {
-    examName: "TNPSC GROUP IV",
-    dates: [
-      {
-        date: "02/11/2026",
-        weekday: "Monday",
-        entries: [
-          { subject: "HISTORY", topic: "Indus Valley Civilization (IH-1) - Guptas (IH-2)", testNo: "TARGET - 1" }
-        ]
-      },
-      {
-        date: "03/11/2026",
-        weekday: "Tuesday",
-        entries: [
-          { subject: "POLITY", topic: "Constitution of India (IP-1) - Preamble to the Constitution (IP-2) - Salient features of the Constitution (IP-3) - Union, State and Union Territory (IP-4)", testNo: "TARGET - 2" }
-        ]
-      },
-      {
-        date: "04/11/2026",
-        weekday: "Wednesday",
-        entries: [
-          { subject: "TNS", topic: "History of Tamil Society (TNS-1), related archaeological discoveries (TNS-2)", testNo: "TARGET - 3" }
-        ]
-      },
-      {
-        date: "05/11/2026",
-        weekday: "Thursday",
-        entries: [
-          { subject: "MATHS + CA", topic: "Simplification (TA-1) - Percentage (TA-2)", testNo: "TARGET - 4" }
-        ]
-      },
-      {
-        date: "06/11/2026",
-        weekday: "Friday",
-        entries: [
-          { subject: "TAMIL", topic: "அலகு I: இலக்கணம்", testNo: "TARGET - 5" }
-        ]
-      },
-      {
-        date: "09/11/2026",
-        weekday: "Monday",
-        entries: [
-          { subject: "HISTORY", topic: "Delhi Sultans (IH-3) - South Indian History (IH-8)", testNo: "TARGET - 6" }
-        ]
-      },
-      {
-        date: "10/11/2026",
-        weekday: "Tuesday",
-        entries: [
-          { subject: "POLITY", topic: "Citizenship (IP-5) - Fundamental Rights (IP-6) - Fundamental Duties (IP-7) - Directive Principles of State Policy (IP-8)", testNo: "TARGET - 7" }
-        ]
-      },
-      {
-        date: "11/11/2026",
-        weekday: "Wednesday",
-        entries: [
-          { subject: "TNS", topic: "Tamil Literature from Sangam age till contemporary times (TNS-3)", testNo: "TARGET - 8" }
-        ]
-      },
-      {
-        date: "12/11/2026",
-        weekday: "Thursday",
-        entries: [
-          { subject: "MATHS + CA", topic: "Highest Common Factor (HCF) - Lowest Common Multiple (LCM) (TA-3)", testNo: "TARGET - 9" }
-        ]
-      },
-      {
-        date: "13/11/2026",
-        weekday: "Friday",
-        entries: [
-          { subject: "TAMIL", topic: "அலகு II: சொல்லகராதி", testNo: "TARGET - 10" }
-        ]
-      },
-      {
-        date: "16/11/2026",
-        weekday: "Monday",
-        entries: [
-          { subject: "HISTORY", topic: "Mughals (IH-4) - Marathas (IH-5)", testNo: "TARGET - 11" }
-        ]
-      },
-      {
-        date: "17/11/2026",
-        weekday: "Tuesday",
-        entries: [
-          { subject: "POLITY", topic: "Union Executive (IP-9) - Union Legislature (IP-10) - State Executive (IP-11) - State Legislature (IP-12)", testNo: "TARGET - 12" }
-        ]
-      },
-      {
-        date: "18/11/2026",
-        weekday: "Wednesday",
-        entries: [
-          { subject: "TNS", topic: "Thirukkural - Significance as Secular Literature - Relevance to everyday life - Impact of Thirukkural on Humanity - Thirukkural and Universal Values - Relevance to Socio-politico-economic affairs - Philosophical content in Thirukkural (TNS-4)", testNo: "TARGET - 13" }
-        ]
-      },
-      {
-        date: "19/11/2026",
-        weekday: "Thursday",
-        entries: [
-          { subject: "MATHS + CA", topic: "Ratio and Proportion (TA-4)", testNo: "TARGET - 14" }
-        ]
-      },
-      {
-        date: "20/11/2026",
-        weekday: "Friday",
-        entries: [
-          { subject: "TAMIL", topic: "அலகு III: எழுதும் திறன்", testNo: "TARGET - 15" }
-        ]
-      },
-      {
-        date: "23/11/2026",
-        weekday: "Monday",
-        entries: [
-          { subject: "INM", topic: "National Renaissance (INM-1) - Early Uprising against British Rule (INM-2) - Indian National Congress (INM-3)", testNo: "TARGET - 16" }
-        ]
-      },
-      {
-        date: "24/11/2026",
-        weekday: "Tuesday",
-        entries: [
-          { subject: "POLITY", topic: "Local Governments - Panchayat Raj (IP-13) - Spirit of Federalism: Centre-State Relationships (IP-14)", testNo: "TARGET - 17" }
-        ]
-      },
-      {
-        date: "25/11/2026",
-        weekday: "Wednesday",
-        entries: [
-          { subject: "TNS", topic: "Role of Tamil Nadu in freedom struggle (TNS-5) - Role of women in freedom struggle (TNS-6)", testNo: "TARGET - 18" }
-        ]
-      },
-      {
-        date: "26/11/2026",
-        weekday: "Thursday",
-        entries: [
-          { subject: "MATHS + CA", topic: "Simple interest - Compound interest", testNo: "TARGET - 19" }
-        ]
-      },
-      {
-        date: "27/11/2026",
-        weekday: "Friday",
-        entries: [
-          { subject: "TAMIL", topic: "அலகு IV: கலைச் சொற்கள்", testNo: "TARGET - 20" }
-        ]
-      },
-      {
-        date: "30/11/2026",
-        weekday: "Monday",
-        entries: [
-          { subject: "INM", topic: "Emergence of Leaders - B.R.Ambedkar, Bhagat Singh, Bharathiar, V.O.Chidambaranar, Thanthai Periyar, Jawaharlal Nehru, Rabindranath Tagore, Kamarajar, Mahatma Gandhi, Maulana Abul Kalam Azad, Rajaji, Subhash Chandra Bose, Muthulaksmi Ammaiyar, Muvalur Ramamirtham, and other National Leaders", testNo: "TARGET - 21" }
-        ]
-      },
-      {
-        date: "01/12/2026",
-        weekday: "Tuesday",
-        entries: [
-          { subject: "POLITY", topic: "ELECTION - JUDICIARY IN INDIA - RULE OF LAW", testNo: "TARGET - 22" }
-        ]
-      },
-      {
-        date: "02/12/2026",
-        weekday: "Wednesday",
-        entries: [
-          { subject: "TNS", topic: "Early agitations against British Rule", testNo: "TARGET - 23" }
-        ]
-      },
-      {
-        date: "03/12/2026",
-        weekday: "Thursday",
-        entries: [
-          { subject: "MATHS + CA", topic: "TIME AND WORK", testNo: "TARGET - 24" }
-        ]
-      },
-      {
-        date: "04/12/2026",
-        weekday: "Friday",
-        entries: [
-          { subject: "TAMIL", topic: "அலகு V: வாசித்தல் - புரிந்து கொள்ளும் திறன்", testNo: "TARGET - 25" }
-        ]
-      },
-      {
-        date: "07/12/2026",
-        weekday: "Monday",
-        entries: [
-          { subject: "INM", topic: "Different modes of agitation of Tamil Nadu and movements", testNo: "TARGET - 26" }
-        ]
-      },
-      {
-        date: "08/12/2026",
-        weekday: "Tuesday",
-        entries: [
-          { subject: "POLITY", topic: "CORRUPTION IN PUBLIC LIFE - ANTI CORRUPTION MEASURES = LOKPAL AND LOKAYUKTA - RIGHT TO INFORMATION - EMPOWERMENT OF WOMEN - CONSUMER PROTECTION FORUMS - HUMAN RIGHTS CHARTER", testNo: "TARGET - 27" }
-        ]
-      },
-      {
-        date: "09/12/2026",
-        weekday: "Wednesday",
-        entries: [
-          { subject: "TNS", topic: "Various Social reformers, Social reform movements and Social transformation of Tamil Nadu", testNo: "TARGET - 28" }
-        ]
-      },
-      {
-        date: "10/12/2026",
-        weekday: "Thursday",
-        entries: [
-          { subject: "MATHS + CA", topic: "AREA", testNo: "TARGET - 29" }
-        ]
-      },
-      {
-        date: "11/12/2026",
-        weekday: "Friday",
-        entries: [
-          { subject: "TAMIL", topic: "அலகு VI: எளிய மொழி பெயர்ப்பு", testNo: "TARGET - 30" }
-        ]
-      },
-      {
-        date: "14/12/2026",
-        weekday: "Monday",
-        entries: [
-          { subject: "INM", topic: "Characteristics of Indian Culture, Unity in Diversity - Race, Language, Custom; India as a secular state", testNo: "TARGET - 31" }
-        ]
-      },
-      {
-        date: "15/12/2026",
-        weekday: "Tuesday",
-        entries: [
-          { subject: "POLITY", topic: "POLITICAL PARTIES AND POLITICAL SYSTEM IN TN AND IN INDIA", testNo: "TARGET - 32" }
-        ]
-      },
-      {
-        date: "16/12/2026",
-        weekday: "Wednesday",
-        entries: [
-          { subject: "TN-ADM", topic: "Education and Health systems in Tamil Nadu", testNo: "TARGET - 33" }
-        ]
-      },
-      {
-        date: "17/12/2026",
-        weekday: "Thursday",
-        entries: [
-          { subject: "MATHS + CA", topic: "VOLUME", testNo: "TARGET - 34" }
-        ]
-      },
-      {
-        date: "18/12/2026",
-        weekday: "Friday",
-        entries: [
-          { subject: "TAMIL", topic: "அலகு VII: இலக்கியம், தமிழ் அறிஞர்களும், தமிழ்த்தொண்டும்", testNo: "TARGET - 35" }
-        ]
-      },
-      {
-        date: "21/12/2026",
-        weekday: "Monday",
-        entries: [
-          { subject: "ECO", topic: "Nature of Indian economy - Five-year plan models - an assessment - Planning Commission and Niti Aayog; Sources of revenue - Reserve Bank of India - Finance Commission - Resource sharing between Union and State Governments - Goods and Services Tax", testNo: "TARGET - 36" }
-        ]
-      },
-      {
-        date: "22/12/2026",
-        weekday: "Tuesday",
-        entries: [
-          { subject: "GEO", topic: "Earth location - Physical features - Monsoon, rainfall, weather, and climate - Water resources - Rivers", testNo: "TARGET - 37" }
-        ]
-      },
-      {
-        date: "23/12/2026",
-        weekday: "Wednesday",
-        entries: [
-          { subject: "TN-ADM", topic: "Geography of Tamil Nadu and its impact on economic growth", testNo: "TARGET - 38" }
-        ]
-      },
-      {
-        date: "24/12/2026",
-        weekday: "Thursday",
-        entries: [
-          { subject: "MATHS + CA", topic: "Logical reasoning - Puzzles - Dice", testNo: "TARGET - 39" }
-        ]
-      },
-      {
-        date: "25/12/2026",
-        weekday: "Friday",
-        entries: [
-          { subject: "TAMIL", topic: "TAMIL FULL REVISION", testNo: "TARGET - 40" }
-        ]
-      },
-      {
-        date: "28/12/2026",
-        weekday: "Monday",
-        entries: [
-          { subject: "ECO", topic: "Economic trends - Employment generation, Land reforms and Agriculture - Application of Science and Technology in Agriculture; Industrial growth - Rural Welfare oriented programmes", testNo: "TARGET - 41" }
-        ]
-      },
-      {
-        date: "29/12/2026",
-        weekday: "Tuesday",
-        entries: [
-          { subject: "GEO", topic: "Soil, Minerals, and Natural resources - Forest and Wildlife - Agriculture pattern; Transport - Communication; Population density and distribution in Tamil Nadu and India; Calamities - Disaster management - Environment - Climate change; Geographical landmarks; Current affairs", testNo: "TARGET - 42" }
-        ]
-      },
-      {
-        date: "30/12/2026",
-        weekday: "Wednesday",
-        entries: [
-          { subject: "TN-ADM", topic: "Welfare schemes of Government; Current socio-economic issues; Current affairs", testNo: "TARGET - 43" }
-        ]
-      },
-      {
-        date: "31/12/2026",
-        weekday: "Thursday",
-        entries: [
-          { subject: "MATHS + CA", topic: "Visual reasoning - Alpha numeric reasoning - Number series", testNo: "TARGET - 44" }
-        ]
-      },
-      {
-        date: "01/01/2027",
-        weekday: "Friday",
-        entries: [
-          { subject: "ECO", topic: "Social problems - Population, Education, Health, Employment, Poverty; Social Justice and Social Harmony as the cornerstones of socioeconomic development", testNo: "TARGET - 45" }
-        ]
-      }
-    ]
-  }
-];
+        // This URL points to the file your Admin Panel creates
+        const SCHEDULE_JSON_URL = 'https://dsaquizbank-ship-it.github.io/dsa-quiz-files/schedule.json';
+
         const dateSelector = document.getElementById("dateSelector");
         const container = document.getElementById("scheduleContainer");
-        if (typeof SCHEDULE !== "undefined" && Array.isArray(SCHEDULE)) {
-            let allDates = [];
-            SCHEDULE.forEach(exam => {
-                exam.dates.forEach(d => {
-                    if (!allDates.find(x => x.date === d.date)) {
-                        allDates.push({ date: d.date, weekday: d.weekday });
-                    }
-                });
+        let ALL_ENTRIES = [];
+
+        async function loadSchedule() {
+            container.innerHTML = '<div class="loading">Loading…</div>';
+            try {
+                // Fetch the JSON, adding a timestamp so the browser doesn't cache it
+                const res = await fetch(SCHEDULE_JSON_URL + '?v=' + Date.now());
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                const data = await res.json();
+                ALL_ENTRIES = Array.isArray(data.entries) ? data.entries : [];
+                renderDateSelector();
+            } catch (e) {
+                container.innerHTML = '<div class="empty-state">⚠️ Could not load schedule.<br><small style="opacity:.7">' + e.message + '</small></div>';
+            }
+        }
+
+        function groupByDate(entries) {
+            const map = {};
+            entries.forEach(e => {
+                if (!map[e.date]) map[e.date] = [];
+                map[e.date].push(e);
             });
-            allDates.forEach((d, index) => {
-                const btn = document.createElement("button");
-                btn.className = "date-btn" + (index === 0 ? " active" : "");
-                let dateParts = d.date.split("/"); 
-                let shortDate = dateParts[0] + "/" + dateParts[1];
-                btn.innerHTML = `<span class="day">${shortDate}</span><span class="weekday">${d.weekday}</span>`;
+            // Sort dates chronologically
+            return Object.keys(map).sort().map(date => ({
+                date,
+                weekday: new Date(date + 'T00:00:00').toLocaleDateString('en-GB', { weekday: 'short' }),
+                entries: map[date]
+            }));
+        }
+
+        function renderDateSelector() {
+            const grouped = groupByDate(ALL_ENTRIES);
+            dateSelector.innerHTML = '';
+            if (grouped.length === 0) {
+                container.innerHTML = '<div class="empty-state">No exams scheduled yet.</div>';
+                return;
+            }
+            grouped.forEach((g, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'date-btn' + (index === 0 ? ' active' : '');
+                const parts = g.date.split('-'); // YYYY-MM-DD
+                const shortDate = parts[2] + '/' + parts[1];
+                btn.innerHTML = `<span class="day">${shortDate}</span><span class="weekday">${g.weekday}</span>`;
                 btn.onclick = () => {
-                    document.querySelectorAll(".date-btn").forEach(b => b.classList.remove("active"));
-                    btn.classList.add("active");
-                    renderScheduleForDate(d.date);
+                    document.querySelectorAll('.date-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    renderForDate(g);
                 };
                 dateSelector.appendChild(btn);
             });
-            function renderScheduleForDate(targetDate) {
-                container.innerHTML = "";
-                let hasExams = false;
-                SCHEDULE.forEach(exam => {
-                    const dateMatch = exam.dates.find(d => d.date === targetDate);
-                    if (dateMatch) {
-                        hasExams = true;
-                        const examDiv = document.createElement("div");
-                        examDiv.className = "card";
-                        let html = `<div class="exam-title">${exam.examName}</div>`;
-                        dateMatch.entries.forEach(e => {
-                            html += `<div class="test-item">
-                                <div class="subject">${e.subject}</div>
-                                <div class="topic">${e.topic}</div>
-                                <div class="test-no">Test ID: ${e.testNo}</div>
-                            </div>`;
-                        });
-                        examDiv.innerHTML = html;
-                        container.appendChild(examDiv);
-                    }
-                });
-                if (!hasExams) {
-                    container.innerHTML = `<div class="empty-state">No tests scheduled for this date.</div>`;
-                }
-            }
-            if (allDates.length > 0) {
-                renderScheduleForDate(allDates[0].date);
-            }
-        } else {
-            container.innerHTML = `<p style="text-align:center;color:#A8C8E1;">No schedule data found.</p>`;
+            renderForDate(grouped[0]);
         }
+
+        function renderForDate(group) {
+            container.innerHTML = '';
+            const byCourse = {};
+            
+            // Group by Course (e.g., TNPSC)
+            group.entries.forEach(e => {
+                if (!byCourse[e.courseId]) byCourse[e.courseId] = { courseName: e.courseName, items: [] };
+                byCourse[e.courseId].items.push(e);
+            });
+
+            Object.keys(byCourse).forEach(courseId => {
+                const course = byCourse[courseId];
+                const card = document.createElement('div');
+                card.className = 'card';
+                let html = `<div class="exam-title">${escapeHtml(course.courseName)}</div>`;
+                
+                course.items.forEach(e => {
+                    html += `<div class="test-item">
+                        <div class="subject">${escapeHtml(course.courseName)}</div>
+                        <div class="topic">${escapeHtml(e.topicName)}</div>
+                        ${e.testId ? `<div class="test-no">Test ID: ${escapeHtml(e.testId)}</div>` : ''}
+                    </div>`;
+                });
+                card.innerHTML = html;
+                container.appendChild(card);
+            });
+        }
+
+        function escapeHtml(s) {
+            return String(s || '').replace(/[&<>"']/g, m => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            }[m]));
+        }
+
+        // Load immediately when the page opens
+        loadSchedule();
     </script>
 </body>
 </html>
