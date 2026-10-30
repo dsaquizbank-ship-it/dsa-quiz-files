@@ -3,25 +3,17 @@
   "courses": [
     {
       "courseId": "TNPSC",
-      "courseName": "TNPSC Group II",
-      "topics": [
-        {
-          "topicId": "TNPSC-T001",
-          "topicName": "Indian Polity - Fundamental Rights"
-        },
-        {
-          "topicId": "TNPSC-T002",
-          "topicName": "Indian Polity - DPSP"
-        },
-        {
-          "topicId": "TNPSC-T003",
-          "topicName": "Modern India - Freedom Struggle"
-        }
-      ]
+      "courseName": "TNPSC",
+      "topics": []
     },
     {
       "courseId": "SSC",
-      "courseName": "SSC CGL",
+      "courseName": "SSC",
+      "topics": []
+    },
+    {
+      "courseId": "SSC",
+      "courseName": "SSC EVENING",
       "topics": []
     },
     {
