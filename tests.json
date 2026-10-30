@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-30T02:17:09.149Z",
+  "version": "2026-10-30T02:18:14.196Z",
   "categories": [
     {
       "id": "BANK",
@@ -557,7 +557,7 @@
     {
       "testId": "TAP-01",
       "examId": "TNPSC-AP",
-      "name": "TAP-01 SIMPLIFICATION (Set-1)",
+      "name": "TAP-1 SIMPLIFICATION (Set-1)",
       "durationMinutes": 20,
       "order": 1,
       "questionCount": 20,
