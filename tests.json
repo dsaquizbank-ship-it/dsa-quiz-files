@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-30T05:18:37.069Z",
+  "version": "2026-10-30T05:20:53.923Z",
   "categories": [
     {
       "id": "BANK",
@@ -563,7 +563,7 @@
       "questionCount": 20,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TAP-02.html",
-      "releaseTimestamp": 1793779200000
+      "releaseTimestamp": 1793865600000
     }
   ]
 }
