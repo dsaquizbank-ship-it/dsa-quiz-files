@@ -1,6 +1,17 @@
 {
-  "version": "2026-10-31T09:26:34.880Z",
+  "version": "2026-10-31T10:07:08.688Z",
   "entries": [
+    {
+      "id": "SCH-1793439924504-704",
+      "courseId": "UGTRB-MAT",
+      "courseName": "UGTRB MATHS",
+      "subject": "Unit VIII - Mechanics",
+      "topicId": "REV-1793439924504",
+      "topicName": "Revision: Impulsive force, Impact of sphere, Impact of two smooth spheres, Impact of two spheres of two smooth sphere on a plane, Oblique impact of two smooth spheres",
+      "date": "2026-11-02",
+      "testId": "UGM-94",
+      "createdAt": "2026-10-31T09:45:24.504Z"
+    },
     {
       "id": "SCH-1793438639376-26",
       "courseId": "PGTRB-COM",
@@ -90,6 +101,17 @@
       "createdAt": "2026-10-31T09:08:51.857Z"
     },
     {
+      "id": "SCH-1793439986088-217",
+      "courseId": "UGTRB-MAT",
+      "courseName": "UGTRB MATHS",
+      "subject": "Unit VIII - Mechanics",
+      "topicId": "REV-1793439986088",
+      "topicName": "Revision: Circular motion, Conical Pendulum motion of a cyclist on circular path, Circular motion on a vertical plane, Relative rest in revolving cone, Simple pendulum, Central Orbits, Conic as Centered Orbit, Moment of Inertia",
+      "date": "2026-11-04",
+      "testId": "UGM-95",
+      "createdAt": "2026-10-31T09:46:26.088Z"
+    },
+    {
       "id": "SCH-1793438658248-758",
       "courseId": "PGTRB-COM",
       "courseName": "PGTRB COMPUTER SCIENCE",
@@ -156,6 +178,17 @@
       "createdAt": "2026-10-31T09:11:14.752Z"
     },
     {
+      "id": "SCH-1793440592832-860",
+      "courseId": "UGTRB-MAT",
+      "courseName": "UGTRB MATHS",
+      "subject": "Unit IX - Operations Research",
+      "topicId": "REV-1793440592832",
+      "topicName": "Revision: Linear Programming - Formulation, Graphical Solution, Simplex Method, Big - M method, Two phase method, Duality and Primal dual relation, Dual simplex method, Revised simplex method, Sensitivity analysis, Transportation Problem, Assignment Problem",
+      "date": "2026-11-06",
+      "testId": "UGM-96",
+      "createdAt": "2026-10-31T09:56:32.832Z"
+    },
+    {
       "id": "SCH-1793438699880-576",
       "courseId": "PGTRB-COM",
       "courseName": "PGTRB COMPUTER SCIENCE",
@@ -189,6 +222,17 @@
       "createdAt": "2026-10-31T04:28:45.361Z"
     },
     {
+      "id": "SCH-1793440693839-87",
+      "courseId": "UGTRB-MAT",
+      "courseName": "UGTRB MATHS",
+      "subject": "Unit IX - Operations Research",
+      "topicId": "REV-1793440693839",
+      "topicName": "Revision: Queuing Theory - Basic Concepts, Steady State analysis of M/M/1 and M/M/Systems, PERT and CPM - Project network diagram, Critical path and PERT computations",
+      "date": "2026-11-09",
+      "testId": "UGM-97",
+      "createdAt": "2026-10-31T09:58:13.840Z"
+    },
+    {
       "id": "SCH-1793438717040-949",
       "courseId": "PGTRB-COM",
       "courseName": "PGTRB COMPUTER SCIENCE",
@@ -209,6 +253,17 @@
       "date": "2026-11-09",
       "testId": "PGE-52",
       "createdAt": "2026-10-31T04:29:10.209Z"
+    },
+    {
+      "id": "SCH-1793440727936-788",
+      "courseId": "UGTRB-MAT",
+      "courseName": "UGTRB MATHS",
+      "subject": "Unit IX - Operations Research",
+      "topicId": "REV-1793440727936",
+      "topicName": "Revision: Inventory Models - EOQ Models, Classical newspaper boy problem, Purchase inventory model with one price brake, Game theory - Two person Zero - Sum game with saddle point, Game theory without saddle point, Dominance - Solving 2xn or mx2 game by graphical method, Integer programming - Branch and bound method",
+      "date": "2026-11-11",
+      "testId": "UGM-98",
+      "createdAt": "2026-10-31T09:58:47.936Z"
     },
     {
       "id": "SCH-1793438761392-492",
