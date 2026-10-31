@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31T09:44:20.400Z",
+  "version": "2026-10-31T10:06:11.184Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -1344,7 +1344,312 @@
     {
       "courseId": "BANK",
       "courseName": "BANK",
-      "topics": []
+      "topics": [
+        {
+          "topicId": "BANK-T001",
+          "topicName": "Quantitative Aptitude | Simplification"
+        },
+        {
+          "topicId": "BANK-T002",
+          "topicName": "Quantitative Aptitude | Approximation"
+        },
+        {
+          "topicId": "BANK-T003",
+          "topicName": "Quantitative Aptitude | Percentages"
+        },
+        {
+          "topicId": "BANK-T004",
+          "topicName": "Quantitative Aptitude | Ratio And Proportion"
+        },
+        {
+          "topicId": "BANK-T005",
+          "topicName": "Quantitative Aptitude | Number Series"
+        },
+        {
+          "topicId": "BANK-T006",
+          "topicName": "Quantitative Aptitude | Quadratic Equation"
+        },
+        {
+          "topicId": "BANK-T007",
+          "topicName": "Quantitative Aptitude | Ages"
+        },
+        {
+          "topicId": "BANK-T008",
+          "topicName": "Quantitative Aptitude | Time & Work / Pipe & Cistern"
+        },
+        {
+          "topicId": "BANK-T009",
+          "topicName": "Quantitative Aptitude | Time, Speed and Distance"
+        },
+        {
+          "topicId": "BANK-T010",
+          "topicName": "Quantitative Aptitude | Boats & Streams"
+        },
+        {
+          "topicId": "BANK-T011",
+          "topicName": "Quantitative Aptitude | Profit and Loss"
+        },
+        {
+          "topicId": "BANK-T012",
+          "topicName": "Quantitative Aptitude | Partnership"
+        },
+        {
+          "topicId": "BANK-T013",
+          "topicName": "Quantitative Aptitude | Mensuration: Cylinder, Cone, Sphere and Cuboid"
+        },
+        {
+          "topicId": "BANK-T014",
+          "topicName": "Quantitative Aptitude | Mixtures and Allegations"
+        },
+        {
+          "topicId": "BANK-T015",
+          "topicName": "Quantitative Aptitude | Simple and Compound Interest"
+        },
+        {
+          "topicId": "BANK-T016",
+          "topicName": "Quantitative Aptitude | Averages"
+        },
+        {
+          "topicId": "BANK-T017",
+          "topicName": "Quantitative Aptitude | Data Interpretation"
+        },
+        {
+          "topicId": "BANK-T018",
+          "topicName": "Quantitative Aptitude | Caselet DI"
+        },
+        {
+          "topicId": "BANK-T019",
+          "topicName": "Quantitative Aptitude | Permutation and Combination"
+        },
+        {
+          "topicId": "BANK-T020",
+          "topicName": "Quantitative Aptitude | Probability"
+        },
+        {
+          "topicId": "BANK-T021",
+          "topicName": "Reasoning Ability | Coding Decoding"
+        },
+        {
+          "topicId": "BANK-T022",
+          "topicName": "Reasoning Ability | Directions"
+        },
+        {
+          "topicId": "BANK-T023",
+          "topicName": "Reasoning Ability | Order & Ranking"
+        },
+        {
+          "topicId": "BANK-T024",
+          "topicName": "Reasoning Ability | Alphanumeric Series"
+        },
+        {
+          "topicId": "BANK-T025",
+          "topicName": "Reasoning Ability | Inequality"
+        },
+        {
+          "topicId": "BANK-T026",
+          "topicName": "Reasoning Ability | Blood Relation"
+        },
+        {
+          "topicId": "BANK-T027",
+          "topicName": "Reasoning Ability | Puzzles"
+        },
+        {
+          "topicId": "BANK-T028",
+          "topicName": "Reasoning Ability | Seating Arrangements"
+        },
+        {
+          "topicId": "BANK-T029",
+          "topicName": "Reasoning Ability | Syllogism"
+        },
+        {
+          "topicId": "BANK-T030",
+          "topicName": "Reasoning Ability | Input/output"
+        },
+        {
+          "topicId": "BANK-T031",
+          "topicName": "Reasoning Ability | Assertion and Reason"
+        },
+        {
+          "topicId": "BANK-T032",
+          "topicName": "Reasoning Ability | Statement, Argument and Assumption"
+        },
+        {
+          "topicId": "BANK-T033",
+          "topicName": "English | Word Replacement"
+        },
+        {
+          "topicId": "BANK-T034",
+          "topicName": "English | Misspelt Word"
+        },
+        {
+          "topicId": "BANK-T035",
+          "topicName": "English | Word Swap"
+        },
+        {
+          "topicId": "BANK-T036",
+          "topicName": "English | Cloze Test (Fill in the blanks)"
+        },
+        {
+          "topicId": "BANK-T037",
+          "topicName": "English | Error Spotting"
+        },
+        {
+          "topicId": "BANK-T038",
+          "topicName": "English | Sentence Correction"
+        },
+        {
+          "topicId": "BANK-T039",
+          "topicName": "English | Sentence Rearrangement"
+        },
+        {
+          "topicId": "BANK-T040",
+          "topicName": "English | Reading Comprehension"
+        },
+        {
+          "topicId": "BANK-T041",
+          "topicName": "English | Para Jumble"
+        },
+        {
+          "topicId": "BANK-T042",
+          "topicName": "English | Column Based Questions"
+        },
+        {
+          "topicId": "BANK-T043",
+          "topicName": "Banking Awareness | Indian Banking System - 1 (History, Nationalisation, Merger)"
+        },
+        {
+          "topicId": "BANK-T044",
+          "topicName": "Banking Awareness | Indian Banking System - 2 (Functions, Deposits, Loans)"
+        },
+        {
+          "topicId": "BANK-T045",
+          "topicName": "Banking Awareness | Indian Banking System - 3 (Zero Balance, No Frills, BSBDA, KYC)"
+        },
+        {
+          "topicId": "BANK-T046",
+          "topicName": "Banking Awareness | Types of ATM, Types of Banking"
+        },
+        {
+          "topicId": "BANK-T047",
+          "topicName": "Banking Awareness | Reserve Bank of India - 1 (History, Functions, Subsidiaries)"
+        },
+        {
+          "topicId": "BANK-T048",
+          "topicName": "Banking Awareness | Reserve Bank of India - 2 (RBI Related Institutes)"
+        },
+        {
+          "topicId": "BANK-T049",
+          "topicName": "Banking Awareness | AIFI - All India Financial (NABARD, SIDBI, NHB, EXIM, NaBFID)"
+        },
+        {
+          "topicId": "BANK-T050",
+          "topicName": "Banking Awareness | Payments Bank and Small Finance Bank"
+        },
+        {
+          "topicId": "BANK-T051",
+          "topicName": "Banking Awareness | Types of Payments (AEPS, APBS, BHIM, NEFT, RTGS, IMPS, IFSC, MICR, MDR)"
+        },
+        {
+          "topicId": "BANK-T052",
+          "topicName": "Banking Awareness | NPCI (History, HQ, Subsidiaries, UPI, BBPS, NACH)"
+        },
+        {
+          "topicId": "BANK-T053",
+          "topicName": "Banking Awareness | NABARD and RRB (Regional Rural Bank)"
+        },
+        {
+          "topicId": "BANK-T054",
+          "topicName": "Banking Awareness | Monetary Policy (Bank Rate, Repo Rate, CRR, SLR, etc.)"
+        },
+        {
+          "topicId": "BANK-T055",
+          "topicName": "Banking Awareness | Money Market (Treasury Bills, Commercial Papers, CDs, Cash Management)"
+        },
+        {
+          "topicId": "BANK-T056",
+          "topicName": "Banking Awareness | Capital Market (BSE, NSE, IPO, FPO, ASBA, DEMAT)"
+        },
+        {
+          "topicId": "BANK-T057",
+          "topicName": "Banking Awareness | Foreign Trade (BoP, FDI, FII, NRE, NRO, NOSTRO, VOSTRO, FCNR)"
+        },
+        {
+          "topicId": "BANK-T058",
+          "topicName": "Banking Awareness | NPA (SMA, Types of NPA, Recovery Mechanism, SARFAESI, DRT)"
+        },
+        {
+          "topicId": "BANK-T059",
+          "topicName": "Banking Awareness | PSL (Priority Sector Lending - Definition, Sectors, Targets)"
+        },
+        {
+          "topicId": "BANK-T060",
+          "topicName": "Banking Awareness | Basel Norms"
+        },
+        {
+          "topicId": "BANK-T061",
+          "topicName": "Banking Awareness | Government Schemes"
+        },
+        {
+          "topicId": "BANK-T062",
+          "topicName": "Computer Awareness | History of computers"
+        },
+        {
+          "topicId": "BANK-T063",
+          "topicName": "Computer Awareness | Fundamentals of Computers"
+        },
+        {
+          "topicId": "BANK-T064",
+          "topicName": "Computer Awareness | Basics of Hardware and Software"
+        },
+        {
+          "topicId": "BANK-T065",
+          "topicName": "Computer Awareness | Computer Memory"
+        },
+        {
+          "topicId": "BANK-T066",
+          "topicName": "Computer Awareness | Input/Output Devices"
+        },
+        {
+          "topicId": "BANK-T067",
+          "topicName": "Computer Awareness | Computer Software"
+        },
+        {
+          "topicId": "BANK-T068",
+          "topicName": "Computer Awareness | Operating Systems"
+        },
+        {
+          "topicId": "BANK-T069",
+          "topicName": "Computer Awareness | Basic Computer Networking"
+        },
+        {
+          "topicId": "BANK-T070",
+          "topicName": "Computer Awareness | Number System and Logic Gates"
+        },
+        {
+          "topicId": "BANK-T071",
+          "topicName": "Computer Awareness | Basic Functionalities of MS-Office (Word, Excel, PowerPoint)"
+        },
+        {
+          "topicId": "BANK-T072",
+          "topicName": "Computer Awareness | Database Management System"
+        },
+        {
+          "topicId": "BANK-T073",
+          "topicName": "Computer Awareness | Computer Networks"
+        },
+        {
+          "topicId": "BANK-T074",
+          "topicName": "Computer Awareness | Internet"
+        },
+        {
+          "topicId": "BANK-T075",
+          "topicName": "Computer Awareness | Computer Security, Basics of Hacking, Security Tools and Viruses"
+        },
+        {
+          "topicId": "BANK-T076",
+          "topicName": "Computer Awareness | Computer Related Abbreviations and Shortcuts"
+        }
+      ]
     },
     {
       "courseId": "RRB",
@@ -6827,12 +7132,8 @@
           "topicName": "Unit VIII - Mechanics | Analysis of forces acting on particles and rigid bodies on static equilibrium"
         },
         {
-          "topicId": "UGTRB-MAT-T311",
-          "topicName": "Unit VIII - Mechanics | Elastic Medium"
-        },
-        {
-          "topicId": "UGTRB-MAT-T312",
-          "topicName": "Unit VIII - Mechanics | Impulsive force"
+          "topicId": "UGTRB-T353",
+          "topicName": "Unit VIII - Mechanics | Elastic Medium, Impulsive force"
         },
         {
           "topicId": "UGTRB-T354",
