@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31T12:07:59.841Z",
+  "version": "2026-10-31T12:09:10.672Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -11024,10 +11024,6 @@
         {
           "topicId": "SGT-T268",
           "topicName": "9th Social Science | Migration"
-        },
-        {
-          "topicId": "SGT-T269",
-          "topicName": "9th Computer Science | LibreOffice Impress"
         },
         {
           "topicId": "SGT-T270",
