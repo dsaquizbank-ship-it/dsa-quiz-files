@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31T13:47:50.711Z",
+  "version": "2026-10-31T14:33:41.782Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -1656,136 +1656,672 @@
       "courseName": "RRB",
       "topics": [
         {
-          "topicId": "RRB-T001",
-          "topicName": "Physics | Units, Dimensions & Formula"
+          "topicId": "RRB-T034",
+          "topicName": "General Science | Physics - Units, Dimensions & Formula"
         },
         {
-          "topicId": "RRB-T002",
-          "topicName": "Physics | Motion"
+          "topicId": "RRB-T035",
+          "topicName": "General Science | Physics - Motion"
         },
         {
-          "topicId": "RRB-T003",
-          "topicName": "Physics | Forces"
+          "topicId": "RRB-T036",
+          "topicName": "General Science | Physics - Forces"
         },
         {
-          "topicId": "RRB-T004",
-          "topicName": "Physics | Work, Energy & Power"
+          "topicId": "RRB-T037",
+          "topicName": "General Science | Physics - Work, Energy & Power"
         },
         {
-          "topicId": "RRB-T005",
-          "topicName": "Physics | Gravity"
+          "topicId": "RRB-T038",
+          "topicName": "General Science | Physics - Gravity"
         },
         {
-          "topicId": "RRB-T006",
-          "topicName": "Physics | Wave & Optics"
+          "topicId": "RRB-T039",
+          "topicName": "General Science | Physics - Wave & Optics"
         },
         {
-          "topicId": "RRB-T007",
-          "topicName": "Physics | Heat And Temperature"
+          "topicId": "RRB-T040",
+          "topicName": "General Science | Physics - Heat and Temperature"
         },
         {
-          "topicId": "RRB-T008",
-          "topicName": "Physics | Electricity & Magnetism"
+          "topicId": "RRB-T041",
+          "topicName": "General Science | Physics - Electricity & Magnetism"
         },
         {
-          "topicId": "RRB-T009",
-          "topicName": "Physics | Laws & Principles"
+          "topicId": "RRB-T042",
+          "topicName": "General Science | Physics - Laws & Principles"
         },
         {
-          "topicId": "RRB-T010",
-          "topicName": "Physics | Measuring Instruments"
+          "topicId": "RRB-T043",
+          "topicName": "General Science | Physics - Measuring Instruments"
         },
         {
-          "topicId": "RRB-T011",
-          "topicName": "Chemistry | Basic Concepts Of Chemistry"
+          "topicId": "RRB-T044",
+          "topicName": "General Science | Chemistry - Basic Concepts of Chemistry"
         },
         {
-          "topicId": "RRB-T012",
-          "topicName": "Chemistry | Atoms And Molecules"
+          "topicId": "RRB-T045",
+          "topicName": "General Science | Chemistry - Atoms and Molecules"
         },
         {
-          "topicId": "RRB-T013",
-          "topicName": "Chemistry | Properties Of Elements & Compounds"
+          "topicId": "RRB-T046",
+          "topicName": "General Science | Chemistry - Properties of Elements & Compounds"
         },
         {
-          "topicId": "RRB-T014",
-          "topicName": "Chemistry | Periodic Table"
+          "topicId": "RRB-T047",
+          "topicName": "General Science | Chemistry - Periodic Table"
         },
         {
-          "topicId": "RRB-T015",
-          "topicName": "Chemistry | States Of Matter"
+          "topicId": "RRB-T048",
+          "topicName": "General Science | Chemistry - States of Matter"
         },
         {
-          "topicId": "RRB-T016",
-          "topicName": "Chemistry | Chemical Bond"
+          "topicId": "RRB-T049",
+          "topicName": "General Science | Chemistry - Chemical Bond"
         },
         {
-          "topicId": "RRB-T017",
-          "topicName": "Chemistry | Carbon & Its Compounds"
+          "topicId": "RRB-T050",
+          "topicName": "General Science | Chemistry - Carbon & Its Compounds"
         },
         {
-          "topicId": "RRB-T018",
-          "topicName": "Chemistry | Acid, Base & Salts"
+          "topicId": "RRB-T051",
+          "topicName": "General Science | Chemistry - Acid, Base & Salts"
         },
         {
-          "topicId": "RRB-T019",
-          "topicName": "Chemistry | Solutions"
+          "topicId": "RRB-T052",
+          "topicName": "General Science | Chemistry - Solutions"
         },
         {
-          "topicId": "RRB-T020",
-          "topicName": "Chemistry | Gases & Its Laws"
+          "topicId": "RRB-T053",
+          "topicName": "General Science | Chemistry - Gases & Its Laws"
         },
         {
-          "topicId": "RRB-T021",
-          "topicName": "Chemistry | Chemical Reaction"
+          "topicId": "RRB-T054",
+          "topicName": "General Science | Chemistry - Chemical Reaction"
         },
         {
-          "topicId": "RRB-T022",
-          "topicName": "Chemistry | Metals & Non-Metals"
+          "topicId": "RRB-T055",
+          "topicName": "General Science | Chemistry - Metals & Non-Metals"
         },
         {
-          "topicId": "RRB-T023",
-          "topicName": "Chemistry | Chemistry In Everyday Life"
+          "topicId": "RRB-T056",
+          "topicName": "General Science | Chemistry - Chemistry in Everyday Life"
         },
         {
-          "topicId": "RRB-T024",
-          "topicName": "Biology | Cell, Genetics & Evolution"
+          "topicId": "RRB-T057",
+          "topicName": "General Science | Biology - Cell, Genetics & Evolution"
         },
         {
-          "topicId": "RRB-T025",
-          "topicName": "Biology | Tissue"
+          "topicId": "RRB-T058",
+          "topicName": "General Science | Biology - Tissue"
         },
         {
-          "topicId": "RRB-T026",
-          "topicName": "Biology | Biomolecules"
+          "topicId": "RRB-T059",
+          "topicName": "General Science | Biology - Biomolecules"
         },
         {
-          "topicId": "RRB-T027",
-          "topicName": "Biology | Zoology"
+          "topicId": "RRB-T060",
+          "topicName": "General Science | Biology - Zoology"
         },
         {
-          "topicId": "RRB-T028",
-          "topicName": "Biology | Botany"
+          "topicId": "RRB-T061",
+          "topicName": "General Science | Biology - Botany"
         },
         {
-          "topicId": "RRB-T029",
-          "topicName": "Biology | Human Body"
+          "topicId": "RRB-T062",
+          "topicName": "General Science | Biology - Human Body"
         },
         {
-          "topicId": "RRB-T030",
-          "topicName": "Biology | Discoveries And Scientific Development"
+          "topicId": "RRB-T063",
+          "topicName": "General Science | Biology - Discoveries And Scientific Development"
         },
         {
-          "topicId": "RRB-T031",
-          "topicName": "Biology | Human Diseases"
+          "topicId": "RRB-T064",
+          "topicName": "General Science | Biology - Human Diseases"
         },
         {
-          "topicId": "RRB-T032",
-          "topicName": "Biology | Scientific Names"
+          "topicId": "RRB-T065",
+          "topicName": "General Science | Biology - Scientific Names"
         },
         {
-          "topicId": "RRB-T033",
-          "topicName": "Biology | Biology In Everyday Life"
+          "topicId": "RRB-T066",
+          "topicName": "General Science | Biology - Biology In Everyday Life"
+        },
+        {
+          "topicId": "RRB-T067",
+          "topicName": "General Awareness | Ancient India - Sources of Ancient History"
+        },
+        {
+          "topicId": "RRB-T068",
+          "topicName": "General Awareness | Ancient India - Pre-Historic Age"
+        },
+        {
+          "topicId": "RRB-T069",
+          "topicName": "General Awareness | Ancient India - Indus Valley / Harappan Civilization"
+        },
+        {
+          "topicId": "RRB-T070",
+          "topicName": "General Awareness | Ancient India - Vedic Age (1500-600 BCE)"
+        },
+        {
+          "topicId": "RRB-T071",
+          "topicName": "General Awareness | Ancient India - Jainism"
+        },
+        {
+          "topicId": "RRB-T072",
+          "topicName": "General Awareness | Ancient India - Buddhism"
+        },
+        {
+          "topicId": "RRB-T073",
+          "topicName": "General Awareness | Ancient India - Mahajanapadas and Magadha Empire"
+        },
+        {
+          "topicId": "RRB-T074",
+          "topicName": "General Awareness | Ancient India - Mauryan Empire"
+        },
+        {
+          "topicId": "RRB-T075",
+          "topicName": "General Awareness | Ancient India - Post-Mauryan Empire"
+        },
+        {
+          "topicId": "RRB-T076",
+          "topicName": "General Awareness | Ancient India - Gupta Empire"
+        },
+        {
+          "topicId": "RRB-T077",
+          "topicName": "General Awareness | Ancient India - Post-Gupta Empire"
+        },
+        {
+          "topicId": "RRB-T078",
+          "topicName": "General Awareness | Ancient India - History of South India"
+        },
+        {
+          "topicId": "RRB-T079",
+          "topicName": "General Awareness | Ancient India - Early Medieval Period"
+        },
+        {
+          "topicId": "RRB-T080",
+          "topicName": "General Awareness | Medieval India - Arab and Turk Invasions in India"
+        },
+        {
+          "topicId": "RRB-T081",
+          "topicName": "General Awareness | Medieval India - Delhi Sultanate"
+        },
+        {
+          "topicId": "RRB-T082",
+          "topicName": "General Awareness | Medieval India - Vijayanagara Empire"
+        },
+        {
+          "topicId": "RRB-T083",
+          "topicName": "General Awareness | Medieval India - Bahmani Empire"
+        },
+        {
+          "topicId": "RRB-T084",
+          "topicName": "General Awareness | Medieval India - Bhakti and Sufi Movement"
+        },
+        {
+          "topicId": "RRB-T085",
+          "topicName": "General Awareness | Medieval India - Mughal Empire"
+        },
+        {
+          "topicId": "RRB-T086",
+          "topicName": "General Awareness | Medieval India - Provincial Dynasties"
+        },
+        {
+          "topicId": "RRB-T087",
+          "topicName": "General Awareness | Medieval India - Later Mughal Period"
+        },
+        {
+          "topicId": "RRB-T088",
+          "topicName": "General Awareness | Medieval India - Rise of Maratha Power"
+        },
+        {
+          "topicId": "RRB-T089",
+          "topicName": "General Awareness | Medieval India - Rise of the Sikhs"
+        },
+        {
+          "topicId": "RRB-T090",
+          "topicName": "General Awareness | Modern India - Arrival of European Companies"
+        },
+        {
+          "topicId": "RRB-T091",
+          "topicName": "General Awareness | Modern India - British Expansion in Indian Territories"
+        },
+        {
+          "topicId": "RRB-T092",
+          "topicName": "General Awareness | Modern India - The Revolt of 1857"
+        },
+        {
+          "topicId": "RRB-T093",
+          "topicName": "General Awareness | Modern India - Peasant Movements and Tribal Revolt"
+        },
+        {
+          "topicId": "RRB-T094",
+          "topicName": "General Awareness | Modern India - Socio-Religious Reform Movement"
+        },
+        {
+          "topicId": "RRB-T095",
+          "topicName": "General Awareness | Modern India - Development of Press and Education in India"
+        },
+        {
+          "topicId": "RRB-T096",
+          "topicName": "General Awareness | Modern India - Formation of Indian National Congress"
+        },
+        {
+          "topicId": "RRB-T097",
+          "topicName": "General Awareness | Modern India - Indian National Movement"
+        },
+        {
+          "topicId": "RRB-T098",
+          "topicName": "General Awareness | Modern India - Gandhian Era: First Phase"
+        },
+        {
+          "topicId": "RRB-T099",
+          "topicName": "General Awareness | Modern India - Phase of National Politics (1922-29)"
+        },
+        {
+          "topicId": "RRB-T100",
+          "topicName": "General Awareness | Modern India - Gandhian Era: Second Phase"
+        },
+        {
+          "topicId": "RRB-T101",
+          "topicName": "General Awareness | Modern India - Towards Independence"
+        },
+        {
+          "topicId": "RRB-T102",
+          "topicName": "General Awareness | Modern India - Governor, Governor-General and Viceroy"
+        },
+        {
+          "topicId": "RRB-T103",
+          "topicName": "General Awareness | Economy - Economics (Demand, Supply and Nature of Market)"
+        },
+        {
+          "topicId": "RRB-T104",
+          "topicName": "General Awareness | Economy - Economy: An introduction"
+        },
+        {
+          "topicId": "RRB-T105",
+          "topicName": "General Awareness | Economy - Economic Growth and Development"
+        },
+        {
+          "topicId": "RRB-T106",
+          "topicName": "General Awareness | Economy - National Income"
+        },
+        {
+          "topicId": "RRB-T107",
+          "topicName": "General Awareness | Economy - Economic Planning in India"
+        },
+        {
+          "topicId": "RRB-T108",
+          "topicName": "General Awareness | Economy - Poverty and Unemployement"
+        },
+        {
+          "topicId": "RRB-T109",
+          "topicName": "General Awareness | Economy - Money and Inflation"
+        },
+        {
+          "topicId": "RRB-T110",
+          "topicName": "General Awareness | Economy - Banking in India"
+        },
+        {
+          "topicId": "RRB-T111",
+          "topicName": "General Awareness | Economy - Money and Capital Markets (Financial Market)"
+        },
+        {
+          "topicId": "RRB-T112",
+          "topicName": "General Awareness | Economy - Fiscal Policy and Budget (Public Finance)"
+        },
+        {
+          "topicId": "RRB-T113",
+          "topicName": "General Awareness | Economy - Tax System"
+        },
+        {
+          "topicId": "RRB-T114",
+          "topicName": "General Awareness | Economy - Foreign Trade, Balance of Payments and Foreign Investment"
+        },
+        {
+          "topicId": "RRB-T115",
+          "topicName": "General Awareness | Economy - Indian Agriculture"
+        },
+        {
+          "topicId": "RRB-T116",
+          "topicName": "General Awareness | Economy - Indian Industries"
+        },
+        {
+          "topicId": "RRB-T117",
+          "topicName": "General Awareness | Economy - Other Major Schemes"
+        },
+        {
+          "topicId": "RRB-T118",
+          "topicName": "General Awareness | Economy - International Financial Institutions"
+        },
+        {
+          "topicId": "RRB-T119",
+          "topicName": "General Awareness | Economy - Census"
+        },
+        {
+          "topicId": "RRB-T120",
+          "topicName": "General Awareness | Economy - Major Committees"
+        },
+        {
+          "topicId": "RRB-T121",
+          "topicName": "General Awareness | Polity - Constitutional Development of India"
+        },
+        {
+          "topicId": "RRB-T122",
+          "topicName": "General Awareness | Polity - Making of Constitution"
+        },
+        {
+          "topicId": "RRB-T123",
+          "topicName": "General Awareness | Polity - Preamble"
+        },
+        {
+          "topicId": "RRB-T124",
+          "topicName": "General Awareness | Polity - Salient Features"
+        },
+        {
+          "topicId": "RRB-T125",
+          "topicName": "General Awareness | Polity - Sources"
+        },
+        {
+          "topicId": "RRB-T126",
+          "topicName": "General Awareness | Polity - Parts"
+        },
+        {
+          "topicId": "RRB-T127",
+          "topicName": "General Awareness | Polity - Articles"
+        },
+        {
+          "topicId": "RRB-T128",
+          "topicName": "General Awareness | Polity - Schedules"
+        },
+        {
+          "topicId": "RRB-T129",
+          "topicName": "General Awareness | Polity - Amendments"
+        },
+        {
+          "topicId": "RRB-T130",
+          "topicName": "General Awareness | Polity - Union and its Territories"
+        },
+        {
+          "topicId": "RRB-T131",
+          "topicName": "General Awareness | Polity - Citizenship"
+        },
+        {
+          "topicId": "RRB-T132",
+          "topicName": "General Awareness | Polity - Fundamental Rights"
+        },
+        {
+          "topicId": "RRB-T133",
+          "topicName": "General Awareness | Polity - DPSP"
+        },
+        {
+          "topicId": "RRB-T134",
+          "topicName": "General Awareness | Polity - Fundamental Duties"
+        },
+        {
+          "topicId": "RRB-T135",
+          "topicName": "General Awareness | Polity - President of India"
+        },
+        {
+          "topicId": "RRB-T136",
+          "topicName": "General Awareness | Polity - PM and Union CoM"
+        },
+        {
+          "topicId": "RRB-T137",
+          "topicName": "General Awareness | Polity - Parliament of India"
+        },
+        {
+          "topicId": "RRB-T138",
+          "topicName": "General Awareness | Polity - State Executive"
+        },
+        {
+          "topicId": "RRB-T139",
+          "topicName": "General Awareness | Polity - State Legislature"
+        },
+        {
+          "topicId": "RRB-T140",
+          "topicName": "General Awareness | Polity - Supreme Court"
+        },
+        {
+          "topicId": "RRB-T141",
+          "topicName": "General Awareness | Polity - High Courts and Subordinate Courts"
+        },
+        {
+          "topicId": "RRB-T142",
+          "topicName": "General Awareness | Polity - Centre-State Relations"
+        },
+        {
+          "topicId": "RRB-T143",
+          "topicName": "General Awareness | Polity - Emergency Provisions"
+        },
+        {
+          "topicId": "RRB-T144",
+          "topicName": "General Awareness | Polity - Local Self-Government"
+        },
+        {
+          "topicId": "RRB-T145",
+          "topicName": "General Awareness | Polity - Official Language"
+        },
+        {
+          "topicId": "RRB-T146",
+          "topicName": "General Awareness | Polity - Constitutional and Non-Constitutional Bodies"
+        },
+        {
+          "topicId": "RRB-T147",
+          "topicName": "General Awareness | World Geography - An Introduction"
+        },
+        {
+          "topicId": "RRB-T148",
+          "topicName": "General Awareness | World Geography - Universe"
+        },
+        {
+          "topicId": "RRB-T149",
+          "topicName": "General Awareness | World Geography - Solar System"
+        },
+        {
+          "topicId": "RRB-T150",
+          "topicName": "General Awareness | World Geography - Rotation and Revolution"
+        },
+        {
+          "topicId": "RRB-T151",
+          "topicName": "General Awareness | World Geography - Latitude and Longitude and Standard Time"
+        },
+        {
+          "topicId": "RRB-T152",
+          "topicName": "General Awareness | World Geography - Origin and Evolution of the Earth"
+        },
+        {
+          "topicId": "RRB-T153",
+          "topicName": "General Awareness | World Geography - Internal Structure of the Earth"
+        },
+        {
+          "topicId": "RRB-T154",
+          "topicName": "General Awareness | World Geography - Rocks"
+        },
+        {
+          "topicId": "RRB-T155",
+          "topicName": "General Awareness | World Geography - Earthquakes, Tsunamis and Volcanoes"
+        },
+        {
+          "topicId": "RRB-T156",
+          "topicName": "General Awareness | World Geography - Geomorphic Processes"
+        },
+        {
+          "topicId": "RRB-T157",
+          "topicName": "General Awareness | World Geography - Landforms/Relief Features"
+        },
+        {
+          "topicId": "RRB-T158",
+          "topicName": "General Awareness | World Geography - Mountains and Plateaus"
+        },
+        {
+          "topicId": "RRB-T159",
+          "topicName": "General Awareness | World Geography - Plains, Islands and Deserts"
+        },
+        {
+          "topicId": "RRB-T160",
+          "topicName": "General Awareness | World Geography - Rivers, Lakes and Waterfalls"
+        },
+        {
+          "topicId": "RRB-T161",
+          "topicName": "General Awareness | World Geography - Atmosphere"
+        },
+        {
+          "topicId": "RRB-T162",
+          "topicName": "General Awareness | World Geography - Air Pressure and Winds"
+        },
+        {
+          "topicId": "RRB-T163",
+          "topicName": "General Awareness | World Geography - Humidity, Precipitation and Clouds"
+        },
+        {
+          "topicId": "RRB-T164",
+          "topicName": "General Awareness | World Geography - Air Mass, Cyclone and Anti-cyclone"
+        },
+        {
+          "topicId": "RRB-T165",
+          "topicName": "General Awareness | World Geography - Major Climatic Regions of the World"
+        },
+        {
+          "topicId": "RRB-T166",
+          "topicName": "General Awareness | World Geography - Hydrosphere"
+        },
+        {
+          "topicId": "RRB-T167",
+          "topicName": "General Awareness | World Geography - Ocean Currents and Waves"
+        },
+        {
+          "topicId": "RRB-T168",
+          "topicName": "General Awareness | World Geography - Soils and Natural Vegetation of the World"
+        },
+        {
+          "topicId": "RRB-T169",
+          "topicName": "General Awareness | World Geography - Agriculture and Animal Husbandry"
+        },
+        {
+          "topicId": "RRB-T170",
+          "topicName": "General Awareness | World Geography - Minerals and Energy Resources"
+        },
+        {
+          "topicId": "RRB-T171",
+          "topicName": "General Awareness | World Geography - Major Industries of the World"
+        },
+        {
+          "topicId": "RRB-T172",
+          "topicName": "General Awareness | World Geography - Transport"
+        },
+        {
+          "topicId": "RRB-T173",
+          "topicName": "General Awareness | World Geography - Population and Urbanization"
+        },
+        {
+          "topicId": "RRB-T174",
+          "topicName": "General Awareness | World Geography - Human Races, Tribes and Languages"
+        },
+        {
+          "topicId": "RRB-T175",
+          "topicName": "General Awareness | World Geography - Continents of the World"
+        },
+        {
+          "topicId": "RRB-T176",
+          "topicName": "General Awareness | Indian Geography - General Introduction"
+        },
+        {
+          "topicId": "RRB-T177",
+          "topicName": "General Awareness | Indian Geography - Geological Structure of India"
+        },
+        {
+          "topicId": "RRB-T178",
+          "topicName": "General Awareness | Indian Geography - Physical Divisions of India"
+        },
+        {
+          "topicId": "RRB-T179",
+          "topicName": "General Awareness | Indian Geography - Rivers of India"
+        },
+        {
+          "topicId": "RRB-T180",
+          "topicName": "General Awareness | Indian Geography - Lakes and Waterfalls of India"
+        },
+        {
+          "topicId": "RRB-T181",
+          "topicName": "General Awareness | Indian Geography - Multipurpose Project"
+        },
+        {
+          "topicId": "RRB-T182",
+          "topicName": "General Awareness | Indian Geography - Climate"
+        },
+        {
+          "topicId": "RRB-T183",
+          "topicName": "General Awareness | Indian Geography - Soils"
+        },
+        {
+          "topicId": "RRB-T184",
+          "topicName": "General Awareness | Indian Geography - Natural Vegetation"
+        },
+        {
+          "topicId": "RRB-T185",
+          "topicName": "General Awareness | Indian Geography - Agriculture and Animal Husbandry"
+        },
+        {
+          "topicId": "RRB-T186",
+          "topicName": "General Awareness | Indian Geography - Mineral Resources"
+        },
+        {
+          "topicId": "RRB-T187",
+          "topicName": "General Awareness | Indian Geography - Energy Resources"
+        },
+        {
+          "topicId": "RRB-T188",
+          "topicName": "General Awareness | Indian Geography - Industries"
+        },
+        {
+          "topicId": "RRB-T189",
+          "topicName": "General Awareness | Indian Geography - Transport and Communication"
+        },
+        {
+          "topicId": "RRB-T190",
+          "topicName": "General Awareness | Indian Geography - Population and Urbanization"
+        },
+        {
+          "topicId": "RRB-T191",
+          "topicName": "General Awareness | Indian Geography - Races and Tribes of India"
+        },
+        {
+          "topicId": "RRB-T192",
+          "topicName": "General Awareness | Indian Geography - States and Union Territories of India"
+        },
+        {
+          "topicId": "RRB-T193",
+          "topicName": "General Awareness | Environment and Ecology - Environment"
+        },
+        {
+          "topicId": "RRB-T194",
+          "topicName": "General Awareness | Environment and Ecology - Ecosystem"
+        },
+        {
+          "topicId": "RRB-T195",
+          "topicName": "General Awareness | Environment and Ecology - Biodiversity"
+        },
+        {
+          "topicId": "RRB-T196",
+          "topicName": "General Awareness | Environment and Ecology - Wildlife Conservation"
+        },
+        {
+          "topicId": "RRB-T197",
+          "topicName": "General Awareness | Environment and Ecology - Climate Change"
+        },
+        {
+          "topicId": "RRB-T198",
+          "topicName": "General Awareness | Environment and Ecology - Environmental Pollution"
+        },
+        {
+          "topicId": "RRB-T199",
+          "topicName": "General Awareness | Environment and Ecology - Sustainable Development"
+        },
+        {
+          "topicId": "RRB-T200",
+          "topicName": "General Awareness | Environment and Ecology - Disaster and Disaster Management"
         }
       ]
     },
@@ -9666,11 +10202,6 @@
           "topicName": "Unit X - Experimental Physics | Registers and counters"
         }
       ]
-    },
-    {
-      "courseId": "SPLTET",
-      "courseName": "SPECIAL TET",
-      "topics": []
     },
     {
       "courseId": "TNTET",
