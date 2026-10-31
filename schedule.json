@@ -1,6 +1,28 @@
 {
-  "version": "2026-10-31T04:43:59.073Z",
+  "version": "2026-10-31T09:12:39.089Z",
   "entries": [
+    {
+      "id": "SCH-1793437270345-22",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit III - History, Culture & INM",
+      "topicId": "TNPSC-T041",
+      "topicName": "Indus Valley Civilization",
+      "date": "2026-11-02",
+      "testId": "TIH-1",
+      "createdAt": "2026-10-31T09:01:10.345Z"
+    },
+    {
+      "id": "SCH-1793437620929-693",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit III - History, Culture & INM",
+      "topicId": "TNPSC-T154",
+      "topicName": "Guptas",
+      "date": "2026-11-02",
+      "testId": "TIH-2",
+      "createdAt": "2026-10-31T09:07:00.929Z"
+    },
     {
       "id": "SCH-1793420817650-967",
       "courseId": "PGTRB-ENG",
@@ -13,6 +35,72 @@
       "createdAt": "2026-10-31T04:26:57.650Z"
     },
     {
+      "id": "SCH-1793437670593-866",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit IV - Indian Polity",
+      "topicId": "TNPSC-T061",
+      "topicName": "Constitution of India",
+      "date": "2026-11-03",
+      "testId": "TIP-1",
+      "createdAt": "2026-10-31T09:07:50.593Z"
+    },
+    {
+      "id": "SCH-1793437689232-752",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit IV - Indian Polity",
+      "topicId": "TNPSC-T062",
+      "topicName": "Preamble to the Constitution",
+      "date": "2026-11-03",
+      "testId": "TIP-2",
+      "createdAt": "2026-10-31T09:08:09.233Z"
+    },
+    {
+      "id": "SCH-1793437714440-436",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit IV - Indian Polity",
+      "topicId": "TNPSC-T063",
+      "topicName": "Salient features of the Constitution",
+      "date": "2026-11-03",
+      "testId": "TIP-3",
+      "createdAt": "2026-10-31T09:08:34.441Z"
+    },
+    {
+      "id": "SCH-1793437731857-421",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit IV - Indian Polity",
+      "topicId": "TNPSC-T064",
+      "topicName": "Union, State and Union Territory",
+      "date": "2026-11-03",
+      "testId": "TIP-4",
+      "createdAt": "2026-10-31T09:08:51.857Z"
+    },
+    {
+      "id": "SCH-1793437810488-749",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit VI - TN History & Culture",
+      "topicId": "TNPSC-T110",
+      "topicName": "History of Tamil Society",
+      "date": "2026-11-04",
+      "testId": "TNS-1",
+      "createdAt": "2026-10-31T09:10:10.488Z"
+    },
+    {
+      "id": "SCH-1793437824041-98",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit VI - TN History & Culture",
+      "topicId": "TNPSC-T111",
+      "topicName": "Related archaeological discoveries",
+      "date": "2026-11-04",
+      "testId": "TNS-2",
+      "createdAt": "2026-10-31T09:10:24.041Z"
+    },
+    {
       "id": "SCH-1793420889865-259",
       "courseId": "PGTRB-ENG",
       "courseName": "PGTRB ENGLISH",
@@ -22,6 +110,39 @@
       "date": "2026-11-04",
       "testId": "PGE-50",
       "createdAt": "2026-10-31T04:28:09.865Z"
+    },
+    {
+      "id": "SCH-1793437855392-904",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit I - Aptitude",
+      "topicId": "TNPSC-T126",
+      "topicName": "Simplification",
+      "date": "2026-11-05",
+      "testId": "TAP-1",
+      "createdAt": "2026-10-31T09:10:55.392Z"
+    },
+    {
+      "id": "SCH-1793437874752-988",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit I - Aptitude",
+      "topicId": "TNPSC-T127",
+      "topicName": "Percentage",
+      "date": "2026-11-05",
+      "testId": "TAP-2",
+      "createdAt": "2026-10-31T09:11:14.752Z"
+    },
+    {
+      "id": "SCH-1793437955280-441",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Tamil Literature",
+      "topicId": "TNPSC-T147",
+      "topicName": "அலகு 1 - இலக்கணம்",
+      "date": "2026-11-06",
+      "testId": "TTA-1",
+      "createdAt": "2026-10-31T09:12:35.280Z"
     },
     {
       "id": "SCH-1793420925361-278",
