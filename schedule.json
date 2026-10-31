@@ -1,6 +1,39 @@
 {
-  "version": "2026-10-31T12:29:18.352Z",
+  "version": "2026-10-31T13:19:24.447Z",
   "entries": [
+    {
+      "id": "SCH-1793450344392-620",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Tamil",
+      "topicId": "REV-1793450344392",
+      "topicName": "Revision: 8th Lesson 7 – நாடு, சமூகம் - பாருக்குளே நல்ல நாடு, 8th Lesson 8 – அறம், தத்துவம், சிந்தனை - அறத்தால் வருவதே இன்பம்",
+      "date": "2026-11-02",
+      "testId": "NTE-TAM-53",
+      "createdAt": "2026-10-31T12:39:04.392Z"
+    },
+    {
+      "id": "SCH-1793450422112-854",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Maths",
+      "topicId": "REV-1793450422112",
+      "topicName": "Revision: 7th Term 1 - Direct and Inverse Proportion",
+      "date": "2026-11-02",
+      "testId": "NTE-MS-53",
+      "createdAt": "2026-10-31T12:40:22.112Z"
+    },
+    {
+      "id": "SCH-1793450452104-707",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Social Science",
+      "topicId": "REV-1793450452104",
+      "topicName": "Revision: 8th Standard - Civics: Road Safety Rules and Regulations",
+      "date": "2026-11-02",
+      "testId": "NTE-SS-53",
+      "createdAt": "2026-10-31T12:40:52.104Z"
+    },
     {
       "id": "SCH-1793447468074-8",
       "courseId": "PGTRB-MAT",
@@ -134,6 +167,39 @@
       "createdAt": "2026-10-31T09:08:51.857Z"
     },
     {
+      "id": "SCH-1793450510104-839",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "English",
+      "topicId": "REV-1793450510104",
+      "topicName": "Revision: 8th – UNIT 5: Prose - Being Safe, Poem - Fire Work Night, Supplementary - When Instinct Works, 8th – UNIT 6: Prose – Friendship, Poem - Lessons in Life, Supplementary - Homeless Man and his Friends, 8th – UNIT 7: Prose - Cyber Safety, Poem - My Computer Needs A Break, Supplementary - The Mystery of the Cyber Friend, 8th – UNIT 8: Play - Jack and the Beanstalk",
+      "date": "2026-11-04",
+      "testId": "NTE-ENG-54",
+      "createdAt": "2026-10-31T12:41:50.104Z"
+    },
+    {
+      "id": "SCH-1793450559968-759",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Science",
+      "topicId": "REV-1793450559968",
+      "topicName": "Revision: 7th Term 3 - Light",
+      "date": "2026-11-04",
+      "testId": "NTE-SC-54",
+      "createdAt": "2026-10-31T12:42:39.968Z"
+    },
+    {
+      "id": "SCH-1793450601024-121",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Social Science",
+      "topicId": "REV-1793450601024",
+      "topicName": "Revision: 8th Standard - Geography: Rocks and Soils, 8th Standard - Geography: Weather and Climate, 8th Standard - Geography: Hydrologic Cycle, 8th Standard - Geography: Migration and Urbanisation, 8th Standard - Geography: Hazards, 8th Standard - Geography: Industries, 8th Standard - Geography: Exploring Continents: Africa, Australia and Antarctica, 8th Standard - Geography: Map Reading",
+      "date": "2026-11-04",
+      "testId": "NTE-SS-54",
+      "createdAt": "2026-10-31T12:43:21.024Z"
+    },
+    {
       "id": "SCH-1793447486889-686",
       "courseId": "PGTRB-MAT",
       "courseName": "PGTRB MATHS",
@@ -233,6 +299,17 @@
       "createdAt": "2026-10-31T09:11:14.752Z"
     },
     {
+      "id": "SCH-1793450651552-203",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Child Development and Pedagogy",
+      "topicId": "REV-1793450651552",
+      "topicName": "Revision: Unit VI - Personality",
+      "date": "2026-11-06",
+      "testId": "NTE-PY-55",
+      "createdAt": "2026-10-31T12:44:11.552Z"
+    },
+    {
       "id": "SCH-1793447507073-294",
       "courseId": "PGTRB-MAT",
       "courseName": "PGTRB MATHS",
@@ -299,6 +376,39 @@
       "createdAt": "2026-10-31T04:28:45.361Z"
     },
     {
+      "id": "SCH-1793452099151-681",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Tamil",
+      "topicId": "REV-1793452099151",
+      "topicName": "Revision: 6th Term 1 – மொழி",
+      "date": "2026-11-09",
+      "testId": "NTE-TAM-56",
+      "createdAt": "2026-10-31T13:08:19.151Z"
+    },
+    {
+      "id": "SCH-1793452223391-511",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Maths",
+      "topicId": "REV-1793452223391",
+      "topicName": "Revision: 7th Term 1 - Geometry",
+      "date": "2026-11-09",
+      "testId": "NTE-MS-56",
+      "createdAt": "2026-10-31T13:10:23.391Z"
+    },
+    {
+      "id": "SCH-1793452357911-99",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Social Science",
+      "topicId": "REV-1793452357911",
+      "topicName": "Revision: 6th Term 1 - Civics: Understanding Diversity",
+      "date": "2026-11-09",
+      "testId": "NTE-SS-56",
+      "createdAt": "2026-10-31T13:12:37.911Z"
+    },
+    {
       "id": "SCH-1793447944649-923",
       "courseId": "UGTRB-ENG",
       "courseName": "UGTRB ENGLISH",
@@ -341,6 +451,39 @@
       "date": "2026-11-09",
       "testId": "PGE-52",
       "createdAt": "2026-10-31T04:29:10.209Z"
+    },
+    {
+      "id": "SCH-1793452389663-484",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Social Science",
+      "topicId": "REV-1793452389663",
+      "topicName": "Revision: 6th Term 1 - Civics: Achieving Equality",
+      "date": "2026-11-11",
+      "testId": "NTE-SS-57",
+      "createdAt": "2026-10-31T13:13:09.663Z"
+    },
+    {
+      "id": "SCH-1793452527287-194",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "English",
+      "topicId": "REV-1793452527287",
+      "topicName": "Revision: 6th Term 1 – UNIT 1: Prose: Sea Turtles, Poem: The Crocodile, Supplementary: The Friendship",
+      "date": "2026-11-11",
+      "testId": "NTE-ENG-57",
+      "createdAt": "2026-10-31T13:15:27.287Z"
+    },
+    {
+      "id": "SCH-1793452612727-660",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Science",
+      "topicId": "REV-1793452612727",
+      "topicName": "Revision: 7th Term 3 - Universe and Space",
+      "date": "2026-11-11",
+      "testId": "NTE-SC-57",
+      "createdAt": "2026-10-31T13:16:52.727Z"
     },
     {
       "id": "SCH-1793447995345-102",
@@ -387,6 +530,17 @@
       "createdAt": "2026-10-31T04:29:31.441Z"
     },
     {
+      "id": "SCH-1793452697176-434",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Child Development and Pedagogy",
+      "topicId": "REV-1793452697176",
+      "topicName": "Revision: Unit I - Growth and Development",
+      "date": "2026-11-13",
+      "testId": "NTE-PSY-58",
+      "createdAt": "2026-10-31T13:18:17.176Z"
+    },
+    {
       "id": "SCH-1793448071129-399",
       "courseId": "UGTRB-ENG",
       "courseName": "UGTRB ENGLISH",
@@ -418,6 +572,39 @@
       "date": "2026-11-13",
       "testId": "PGE-54",
       "createdAt": "2026-10-31T04:30:24.897Z"
+    },
+    {
+      "id": "SCH-1793452143399-745",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Tamil",
+      "topicId": "REV-1793452143399",
+      "topicName": "Revision: 6th Term 1 – இயற்கை",
+      "date": "2026-11-16",
+      "testId": "NTE-TAM-59",
+      "createdAt": "2026-10-31T13:09:03.399Z"
+    },
+    {
+      "id": "SCH-1793452280087-674",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Maths",
+      "topicId": "REV-1793452280087",
+      "topicName": "Revision: 7th Term 1 - Information Processing",
+      "date": "2026-11-16",
+      "testId": "NTE-MS-59",
+      "createdAt": "2026-10-31T13:11:20.087Z"
+    },
+    {
+      "id": "SCH-1793452415103-170",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Social Science",
+      "topicId": "REV-1793452415103",
+      "topicName": "Revision: 6th Term 2 - Civics: National Symbols",
+      "date": "2026-11-16",
+      "testId": "NTE-SS-59",
+      "createdAt": "2026-10-31T13:13:35.103Z"
     },
     {
       "id": "SCH-1793449545232-404",
@@ -453,6 +640,39 @@
       "createdAt": "2026-10-31T04:34:38.953Z"
     },
     {
+      "id": "SCH-1793452434015-661",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Social Science",
+      "topicId": "REV-1793452434015",
+      "topicName": "Revision: 6th Term 2 - Civics: The Constitution of India",
+      "date": "2026-11-18",
+      "testId": "NTE-SS-60",
+      "createdAt": "2026-10-31T13:13:54.015Z"
+    },
+    {
+      "id": "SCH-1793452547575-323",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "English",
+      "topicId": "REV-1793452547575",
+      "topicName": "Revision: 6th Term 1 – UNIT 2: Prose: When the Trees Walked, Poem: Trees, Supplementary: The Apple Tree and the Farmer",
+      "date": "2026-11-18",
+      "testId": "NTE-ENG-60",
+      "createdAt": "2026-10-31T13:15:47.575Z"
+    },
+    {
+      "id": "SCH-1793452644615-103",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Science",
+      "topicId": "REV-1793452644615",
+      "topicName": "Revision: 8th Standard - Measurements",
+      "date": "2026-11-18",
+      "testId": "NTE-SC-60",
+      "createdAt": "2026-10-31T13:17:24.615Z"
+    },
+    {
       "id": "SCH-1793449576896-163",
       "courseId": "UGTRB-ENG",
       "courseName": "UGTRB ENGLISH",
@@ -484,6 +704,17 @@
       "date": "2026-11-18",
       "testId": "PGE-56",
       "createdAt": "2026-10-31T04:35:22.281Z"
+    },
+    {
+      "id": "SCH-1793452727063-451",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Child Development and Pedagogy",
+      "topicId": "REV-1793452727063",
+      "topicName": "Revision: Unit II - Theories of Child Development",
+      "date": "2026-11-20",
+      "testId": "NTE-PSY-61",
+      "createdAt": "2026-10-31T13:18:47.063Z"
     },
     {
       "id": "SCH-1793449599848-397",
@@ -519,6 +750,39 @@
       "createdAt": "2026-10-31T04:35:50.225Z"
     },
     {
+      "id": "SCH-1793452162895-24",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Tamil",
+      "topicId": "REV-1793452162895",
+      "topicName": "Revision: 6th Term 1 – கல்வி",
+      "date": "2026-11-23",
+      "testId": "NTE-TAM-62",
+      "createdAt": "2026-10-31T13:09:22.895Z"
+    },
+    {
+      "id": "SCH-1793452300343-439",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Maths",
+      "topicId": "REV-1793452300343",
+      "topicName": "Revision: 7th Term 2 - Number System",
+      "date": "2026-11-23",
+      "testId": "NTE-MS-62",
+      "createdAt": "2026-10-31T13:11:40.343Z"
+    },
+    {
+      "id": "SCH-1793452458463-346",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Social Science",
+      "topicId": "REV-1793452458463",
+      "topicName": "Revision: 6th Term 3 - Civics: Democracy",
+      "date": "2026-11-23",
+      "testId": "NTE-SS-62",
+      "createdAt": "2026-10-31T13:14:18.463Z"
+    },
+    {
       "id": "SCH-1793449623904-336",
       "courseId": "UGTRB-ENG",
       "courseName": "UGTRB ENGLISH",
@@ -550,6 +814,39 @@
       "date": "2026-11-23",
       "testId": "PGE-58",
       "createdAt": "2026-10-31T04:38:26.153Z"
+    },
+    {
+      "id": "SCH-1793452478879-186",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Social Science",
+      "topicId": "REV-1793452478879",
+      "topicName": "Revision: 6th Term 3 - Civics: Local Bodies - Rural and Urban",
+      "date": "2026-11-25",
+      "testId": "NTE-SS-63",
+      "createdAt": "2026-10-31T13:14:38.879Z"
+    },
+    {
+      "id": "SCH-1793452572071-195",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "English",
+      "topicId": "REV-1793452572071",
+      "topicName": "Revision: 6th Term 1 – UNIT 3: Prose: A Visitor from Distant Lands, Poem: I Dream of Spices, Supplementary: Stone Soup",
+      "date": "2026-11-25",
+      "testId": "NTE-ENG-63",
+      "createdAt": "2026-10-31T13:16:12.071Z"
+    },
+    {
+      "id": "SCH-1793452665191-859",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Science",
+      "topicId": "REV-1793452665191",
+      "topicName": "Revision: 8th Standard - Force And Pressure",
+      "date": "2026-11-25",
+      "testId": "NTE-SC-63",
+      "createdAt": "2026-10-31T13:17:45.191Z"
     },
     {
       "id": "SCH-1793449642312-105",
@@ -585,6 +882,17 @@
       "createdAt": "2026-10-31T04:42:45.457Z"
     },
     {
+      "id": "SCH-1793452752855-753",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Child Development and Pedagogy",
+      "topicId": "REV-1793452752855",
+      "topicName": "Revision: Unit III - Attention, Perception and Memory",
+      "date": "2026-11-27",
+      "testId": "NTE-PSY-64",
+      "createdAt": "2026-10-31T13:19:12.855Z"
+    },
+    {
       "id": "SCH-1793449732048-750",
       "courseId": "UGTRB-ENG",
       "courseName": "UGTRB ENGLISH",
@@ -616,6 +924,39 @@
       "date": "2026-11-27",
       "testId": "PGE-60",
       "createdAt": "2026-10-31T04:43:21.913Z"
+    },
+    {
+      "id": "SCH-1793452185167-84",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Tamil",
+      "topicId": "REV-1793452185167",
+      "topicName": "Revision: 6th Term 2 – நாகரிகம், பண்பாடு",
+      "date": "2026-11-30",
+      "testId": "NTE-TAM-65",
+      "createdAt": "2026-10-31T13:09:45.167Z"
+    },
+    {
+      "id": "SCH-1793452319983-512",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Maths",
+      "topicId": "REV-1793452319983",
+      "topicName": "Revision: 7th Term 2 - Measurements",
+      "date": "2026-11-30",
+      "testId": "NTE-MS-65",
+      "createdAt": "2026-10-31T13:11:59.983Z"
+    },
+    {
+      "id": "SCH-1793452496199-616",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Social Science",
+      "topicId": "REV-1793452496199",
+      "topicName": "Revision: 6th Term 3 - Civics: Road Safety",
+      "date": "2026-11-30",
+      "testId": "NTE-SS-65",
+      "createdAt": "2026-10-31T13:14:56.199Z"
     },
     {
       "id": "SCH-1793449754176-425",
