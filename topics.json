@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31T04:40:55.258Z",
+  "version": "2026-10-31T05:07:54.873Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -622,7 +622,140 @@
     {
       "courseId": "SSC",
       "courseName": "SSC",
-      "topics": []
+      "topics": [
+        {
+          "topicId": "SSC-T001",
+          "topicName": "General Science | Physics | Units, Dimensions & Formula"
+        },
+        {
+          "topicId": "SSC-T002",
+          "topicName": "General Science | Physics | Motion"
+        },
+        {
+          "topicId": "SSC-T003",
+          "topicName": "General Science | Physics | Forces"
+        },
+        {
+          "topicId": "SSC-T004",
+          "topicName": "General Science | Physics | Work, Energy & Power"
+        },
+        {
+          "topicId": "SSC-T005",
+          "topicName": "General Science | Physics | Gravity"
+        },
+        {
+          "topicId": "SSC-T006",
+          "topicName": "General Science | Physics | Wave & Optics"
+        },
+        {
+          "topicId": "SSC-T007",
+          "topicName": "General Science | Physics | Heat and Temperature"
+        },
+        {
+          "topicId": "SSC-T008",
+          "topicName": "General Science | Physics | Electricity & Magnetism"
+        },
+        {
+          "topicId": "SSC-T009",
+          "topicName": "General Science | Physics | Laws & Principles"
+        },
+        {
+          "topicId": "SSC-T010",
+          "topicName": "General Science | Physics | Measuring Instruments"
+        },
+        {
+          "topicId": "SSC-T011",
+          "topicName": "General Science | Chemistry | Basic Concepts of Chemistry"
+        },
+        {
+          "topicId": "SSC-T012",
+          "topicName": "General Science | Chemistry | Atoms and Molecules"
+        },
+        {
+          "topicId": "SSC-T013",
+          "topicName": "General Science | Chemistry | Properties of Elements & Compounds"
+        },
+        {
+          "topicId": "SSC-T014",
+          "topicName": "General Science | Chemistry | Periodic Table"
+        },
+        {
+          "topicId": "SSC-T015",
+          "topicName": "General Science | Chemistry | States of Matter"
+        },
+        {
+          "topicId": "SSC-T016",
+          "topicName": "General Science | Chemistry | Chemical Bond"
+        },
+        {
+          "topicId": "SSC-T017",
+          "topicName": "General Science | Chemistry | Carbon & Its Compounds"
+        },
+        {
+          "topicId": "SSC-T018",
+          "topicName": "General Science | Chemistry | Acid, Base & Salts"
+        },
+        {
+          "topicId": "SSC-T019",
+          "topicName": "General Science | Chemistry | Solutions"
+        },
+        {
+          "topicId": "SSC-T020",
+          "topicName": "General Science | Chemistry | Gases & Its Laws"
+        },
+        {
+          "topicId": "SSC-T021",
+          "topicName": "General Science | Chemistry | Chemical Reaction"
+        },
+        {
+          "topicId": "SSC-T022",
+          "topicName": "General Science | Chemistry | Metals & Non-Metals"
+        },
+        {
+          "topicId": "SSC-T023",
+          "topicName": "General Science | Chemistry | Chemistry in Everyday Life"
+        },
+        {
+          "topicId": "SSC-T024",
+          "topicName": "General Science | Biology | Cell, Genetics & Evolution"
+        },
+        {
+          "topicId": "SSC-T025",
+          "topicName": "General Science | Biology |Tissue"
+        },
+        {
+          "topicId": "SSC-T026",
+          "topicName": "General Science | Biology |Biomolecules"
+        },
+        {
+          "topicId": "SSC-T027",
+          "topicName": "General Science | Biology |Zoology"
+        },
+        {
+          "topicId": "SSC-T028",
+          "topicName": "General Science | Biology |Botany"
+        },
+        {
+          "topicId": "SSC-T029",
+          "topicName": "General Science | Biology |Human Body"
+        },
+        {
+          "topicId": "SSC-T030",
+          "topicName": "General Science | Biology |Discoveries And Scientific Development"
+        },
+        {
+          "topicId": "SSC-T031",
+          "topicName": "General Science | Biology |Human Diseases"
+        },
+        {
+          "topicId": "SSC-T032",
+          "topicName": "General Science | Biology |Scientific Names"
+        },
+        {
+          "topicId": "SSC-T033",
+          "topicName": "General Science | Biology |Biology In Everyday Life"
+        }
+      ]
     },
     {
       "courseId": "SSC",
