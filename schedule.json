@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31T10:08:56.559Z",
+  "version": "2026-10-31T10:10:43.176Z",
   "entries": [
     {
       "id": "SCH-1793438639376-26",
@@ -88,17 +88,6 @@
       "date": "2026-11-03",
       "testId": "TIP-4",
       "createdAt": "2026-10-31T09:08:51.857Z"
-    },
-    {
-      "id": "SCH-1793439986088-217",
-      "courseId": "UGTRB-MAT",
-      "courseName": "UGTRB MATHS",
-      "subject": "Unit VIII - Mechanics",
-      "topicId": "REV-1793439986088",
-      "topicName": "Revision: Circular motion, Conical Pendulum motion of a cyclist on circular path, Circular motion on a vertical plane, Relative rest in revolving cone, Simple pendulum, Central Orbits, Conic as Centered Orbit, Moment of Inertia",
-      "date": "2026-11-04",
-      "testId": "UGM-95",
-      "createdAt": "2026-10-31T09:46:26.088Z"
     },
     {
       "id": "SCH-1793438658248-758",
