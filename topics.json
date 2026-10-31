@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31T07:44:35.118Z",
+  "version": "2026-10-31T07:48:46.837Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -8680,6 +8680,558 @@
         {
           "topicId": "TNTET-T099",
           "topicName": "Maths | 8th Standard - Information Processing"
+        },
+        {
+          "topicId": "TNTET-T100",
+          "topicName": "Science | 6th Term 1 - Measurements"
+        },
+        {
+          "topicId": "TNTET-T101",
+          "topicName": "Science | 6th Term 1 - Force And Motion"
+        },
+        {
+          "topicId": "TNTET-T102",
+          "topicName": "Science | 6th Term 1 - Matter Around Us"
+        },
+        {
+          "topicId": "TNTET-T103",
+          "topicName": "Science | 6th Term 1 - The World Of Plants"
+        },
+        {
+          "topicId": "TNTET-T104",
+          "topicName": "Science | 6th Term 1 - The World Of Animals"
+        },
+        {
+          "topicId": "TNTET-T105",
+          "topicName": "Science | 6th Term 1 - Health And Hygiene"
+        },
+        {
+          "topicId": "TNTET-T106",
+          "topicName": "Science | 6th Term 1 - Computer - An Introduction"
+        },
+        {
+          "topicId": "TNTET-T107",
+          "topicName": "Social Science | 6th Term 1 - History: What Is History?"
+        },
+        {
+          "topicId": "TNTET-T108",
+          "topicName": "Social Science | 6th Term 1 - History: Human Evolution"
+        },
+        {
+          "topicId": "TNTET-T109",
+          "topicName": "Social Science | 6th Term 1 - History: Indus Civilization"
+        },
+        {
+          "topicId": "TNTET-T110",
+          "topicName": "Social Science | 6th Term 1 - History: Ancient Cities of Tamilagam"
+        },
+        {
+          "topicId": "TNTET-T111",
+          "topicName": "Social Science | 6th Term 1 - Geography: The Universe and Solar System"
+        },
+        {
+          "topicId": "TNTET-T112",
+          "topicName": "Social Science | 6th Term 1 - Geography: Land And Oceans"
+        },
+        {
+          "topicId": "TNTET-T113",
+          "topicName": "Social Science | 6th Term 1 - Civics: Understanding Diversity"
+        },
+        {
+          "topicId": "TNTET-T114",
+          "topicName": "Social Science | 6th Term 1 - Civics: Achieving Equality"
+        },
+        {
+          "topicId": "TNTET-T115",
+          "topicName": "Science | 6th Term 2 - Heat"
+        },
+        {
+          "topicId": "TNTET-T116",
+          "topicName": "Science | 6th Term 2 - Electricity"
+        },
+        {
+          "topicId": "TNTET-T117",
+          "topicName": "Science | 6th Term 2 - Changes around us"
+        },
+        {
+          "topicId": "TNTET-T118",
+          "topicName": "Science | 6th Term 2 - Air"
+        },
+        {
+          "topicId": "TNTET-T119",
+          "topicName": "Science | 6th Term 2 - The Cell"
+        },
+        {
+          "topicId": "TNTET-T120",
+          "topicName": "Science | 6th Term 2 - Human Organ Systems"
+        },
+        {
+          "topicId": "TNTET-T121",
+          "topicName": "Science | 6th Term 2 - Parts of Computer"
+        },
+        {
+          "topicId": "TNTET-T122",
+          "topicName": "Social Science | 6th Term 2 - History: Vedic Culture in North India and Megalithic Culture in South India"
+        },
+        {
+          "topicId": "TNTET-T123",
+          "topicName": "Social Science | 6th Term 2 - History: Great Thinkers and New Faiths"
+        },
+        {
+          "topicId": "TNTET-T124",
+          "topicName": "Social Science | 6th Term 2 - History: From Chiefdoms to Empires"
+        },
+        {
+          "topicId": "TNTET-T125",
+          "topicName": "Social Science | 6th Term 2 - Geography: Resources"
+        },
+        {
+          "topicId": "TNTET-T126",
+          "topicName": "Social Science | 6th Term 2 - Civics: National Symbols"
+        },
+        {
+          "topicId": "TNTET-T127",
+          "topicName": "Social Science | 6th Term 2 - Civics: The Constitution of India"
+        },
+        {
+          "topicId": "TNTET-T128",
+          "topicName": "Social Science | 6th Term 2 - Economics: Economics-An Introduction"
+        },
+        {
+          "topicId": "TNTET-T129",
+          "topicName": "Science | 6th Term 3 - Magnetism"
+        },
+        {
+          "topicId": "TNTET-T130",
+          "topicName": "Science | 6th Term 3 - Water"
+        },
+        {
+          "topicId": "TNTET-T131",
+          "topicName": "Science | 6th Term 3 - Chemistry in Everyday Life"
+        },
+        {
+          "topicId": "TNTET-T132",
+          "topicName": "Science | 6th Term 3 - Our Environment"
+        },
+        {
+          "topicId": "TNTET-T133",
+          "topicName": "Science | 6th Term 3 - Plants in Daily Life"
+        },
+        {
+          "topicId": "TNTET-T134",
+          "topicName": "Science | 6th Term 3 - Hardware and Software"
+        },
+        {
+          "topicId": "TNTET-T135",
+          "topicName": "Social Science | 6th Term 3 - History: Society and Culture in Ancient Tamizhagam: The Sangam Age"
+        },
+        {
+          "topicId": "TNTET-T136",
+          "topicName": "Social Science | 6th Term 3 - History: The Post-Mauryan India"
+        },
+        {
+          "topicId": "TNTET-T137",
+          "topicName": "Social Science | 6th Term 3 - History: The Age of Empires: Guptas and Vardhanas"
+        },
+        {
+          "topicId": "TNTET-T138",
+          "topicName": "Social Science | 6th Term 3 - History: South Indian Kingdoms"
+        },
+        {
+          "topicId": "TNTET-T139",
+          "topicName": "Social Science | 6th Term 3 - Geography: Asia and Europe"
+        },
+        {
+          "topicId": "TNTET-T140",
+          "topicName": "Social Science | 6th Term 3 - Geography: Globe"
+        },
+        {
+          "topicId": "TNTET-T141",
+          "topicName": "Social Science | 6th Term 3 - Geography: Understanding Disaster"
+        },
+        {
+          "topicId": "TNTET-T142",
+          "topicName": "Social Science | 6th Term 3 - Civics: Democracy"
+        },
+        {
+          "topicId": "TNTET-T143",
+          "topicName": "Social Science | 6th Term 3 - Civics: Local Bodies - Rural and Urban"
+        },
+        {
+          "topicId": "TNTET-T144",
+          "topicName": "Social Science | 6th Term 3 - Civics: Road Safety"
+        },
+        {
+          "topicId": "TNTET-T145",
+          "topicName": "Science | 7th Term 1 - Measurements"
+        },
+        {
+          "topicId": "TNTET-T146",
+          "topicName": "Science | 7th Term 1 - Force And Motion"
+        },
+        {
+          "topicId": "TNTET-T147",
+          "topicName": "Science | 7th Term 1 - Matter Around Us"
+        },
+        {
+          "topicId": "TNTET-T148",
+          "topicName": "Science | 7th Term 1 - Atomic Structure"
+        },
+        {
+          "topicId": "TNTET-T149",
+          "topicName": "Science | 7th Term 1 - Reproduction and Modification in plants"
+        },
+        {
+          "topicId": "TNTET-T150",
+          "topicName": "Science | 7th Term 1 - Health And Hygiene"
+        },
+        {
+          "topicId": "TNTET-T151",
+          "topicName": "Science | 7th Term 1 - Computer -Visual Communication"
+        },
+        {
+          "topicId": "TNTET-T152",
+          "topicName": "Social Science | 7th Term 1 - History: Sources of Medieval India"
+        },
+        {
+          "topicId": "TNTET-T153",
+          "topicName": "Social Science | 7th Term 1 - History: Emergence of New Kingdoms in North India"
+        },
+        {
+          "topicId": "TNTET-T154",
+          "topicName": "Social Science | 7th Term 1 - History: Emergence of New Kingdoms in South India: Later Cholas and Pandyas"
+        },
+        {
+          "topicId": "TNTET-T155",
+          "topicName": "Social Science | 7th Term 1 - History: The Delhi Sultanate"
+        },
+        {
+          "topicId": "TNTET-T156",
+          "topicName": "Social Science | 7th Term 1 - Geography: Interior of the Earth"
+        },
+        {
+          "topicId": "TNTET-T157",
+          "topicName": "Social Science | 7th Term 1 - Geography: Landforms"
+        },
+        {
+          "topicId": "TNTET-T158",
+          "topicName": "Social Science | 7th Term 1 - Geography: Population and Settlement"
+        },
+        {
+          "topicId": "TNTET-T159",
+          "topicName": "Social Science | 7th Term 1 - Civics: Equality"
+        },
+        {
+          "topicId": "TNTET-T160",
+          "topicName": "Social Science | 7th Term 1 - Civics: Political Parties"
+        },
+        {
+          "topicId": "TNTET-T161",
+          "topicName": "Social Science | 7th Term 1 - Economics: Production"
+        },
+        {
+          "topicId": "TNTET-T162",
+          "topicName": "Science | 7th Term 2 - Heat and Temperature"
+        },
+        {
+          "topicId": "TNTET-T163",
+          "topicName": "Science | 7th Term 2 - Electricity"
+        },
+        {
+          "topicId": "TNTET-T164",
+          "topicName": "Science | 7th Term 2 - Changes around us"
+        },
+        {
+          "topicId": "TNTET-T165",
+          "topicName": "Science | 7th Term 2 - Cell Biology"
+        },
+        {
+          "topicId": "TNTET-T166",
+          "topicName": "Science | 7th Term 2 - Basis of Classification"
+        },
+        {
+          "topicId": "TNTET-T167",
+          "topicName": "Science | 7th Term 2 - Digital Painting"
+        },
+        {
+          "topicId": "TNTET-T168",
+          "topicName": "Social Science | 7th Term 2 - History: Vijayanagar and Bahmani Kingdoms"
+        },
+        {
+          "topicId": "TNTET-T169",
+          "topicName": "Social Science | 7th Term 2 - History: The Mughal Empire"
+        },
+        {
+          "topicId": "TNTET-T170",
+          "topicName": "Social Science | 7th Term 2 - History: Rise of Marathas and Peshwas"
+        },
+        {
+          "topicId": "TNTET-T171",
+          "topicName": "Social Science | 7th Term 2 - Geography: Resources"
+        },
+        {
+          "topicId": "TNTET-T172",
+          "topicName": "Social Science | 7th Term 2 - Geography: Tourism"
+        },
+        {
+          "topicId": "TNTET-T173",
+          "topicName": "Social Science | 7th Term 2 - Civics: State Government"
+        },
+        {
+          "topicId": "TNTET-T174",
+          "topicName": "Social Science | 7th Term 2 - Civics: Media and Democracy"
+        },
+        {
+          "topicId": "TNTET-T175",
+          "topicName": "Science | 7th Term 3 - Light"
+        },
+        {
+          "topicId": "TNTET-T176",
+          "topicName": "Science | 7th Term 3 - Universe and Space"
+        },
+        {
+          "topicId": "TNTET-T177",
+          "topicName": "Science | 7th Term 3 - Polymer Chemistry"
+        },
+        {
+          "topicId": "TNTET-T178",
+          "topicName": "Science | 7th Term 3 - Chemistry in Daily Life"
+        },
+        {
+          "topicId": "TNTET-T179",
+          "topicName": "Science | 7th Term 3 - Animals in Daily Life"
+        },
+        {
+          "topicId": "TNTET-T180",
+          "topicName": "Science | 7th Term 3 - Visual Communication"
+        },
+        {
+          "topicId": "TNTET-T181",
+          "topicName": "Social Science | 7th Term 3 - History: New Religious Ideas and Movements"
+        },
+        {
+          "topicId": "TNTET-T182",
+          "topicName": "Social Science | 7th Term 3 - History: Art and Architecture of Tamil Nadu"
+        },
+        {
+          "topicId": "TNTET-T183",
+          "topicName": "Social Science | 7th Term 3 - History: Jainism, Buddhism and Ajivika Philosophy in Tamil Nadu"
+        },
+        {
+          "topicId": "TNTET-T184",
+          "topicName": "Social Science | 7th Term 3 - Geography: Exploring Continents - North America and South America"
+        },
+        {
+          "topicId": "TNTET-T185",
+          "topicName": "Social Science | 7th Term 3 - Geography: Map Reading"
+        },
+        {
+          "topicId": "TNTET-T186",
+          "topicName": "Social Science | 7th Term 3 - Geography: Natural Hazards - Understanding of Disaster Management in Practice"
+        },
+        {
+          "topicId": "TNTET-T187",
+          "topicName": "Social Science | 7th Term 3 - Civics: Women Empowerment"
+        },
+        {
+          "topicId": "TNTET-T188",
+          "topicName": "Social Science | 7th Term 3 - Civics: Market and Consumer Protection"
+        },
+        {
+          "topicId": "TNTET-T189",
+          "topicName": "Social Science | 7th Term 3 - Civics: Road Safety"
+        },
+        {
+          "topicId": "TNTET-T190",
+          "topicName": "Social Science | 7th Term 3 - Economics: Tax and its importance"
+        },
+        {
+          "topicId": "TNTET-T191",
+          "topicName": "Science | 8th Standard - Measurements"
+        },
+        {
+          "topicId": "TNTET-T192",
+          "topicName": "Science | 8th Standard - Force And Pressure"
+        },
+        {
+          "topicId": "TNTET-T193",
+          "topicName": "Science | 8th Standard - Light"
+        },
+        {
+          "topicId": "TNTET-T194",
+          "topicName": "Science | 8th Standard - Heat"
+        },
+        {
+          "topicId": "TNTET-T195",
+          "topicName": "Science | 8th Standard - Electricity"
+        },
+        {
+          "topicId": "TNTET-T196",
+          "topicName": "Science | 8th Standard - Sound"
+        },
+        {
+          "topicId": "TNTET-T197",
+          "topicName": "Science | 8th Standard - Magnetism"
+        },
+        {
+          "topicId": "TNTET-T198",
+          "topicName": "Science | 8th Standard - Universe and Space Science"
+        },
+        {
+          "topicId": "TNTET-T199",
+          "topicName": "Science | 8th Standard - Matter Around Us"
+        },
+        {
+          "topicId": "TNTET-T200",
+          "topicName": "Science | 8th Standard - Changes around Us"
+        },
+        {
+          "topicId": "TNTET-T201",
+          "topicName": "Science | 8th Standard - Air"
+        },
+        {
+          "topicId": "TNTET-T202",
+          "topicName": "Science | 8th Standard - Atomic Structure"
+        },
+        {
+          "topicId": "TNTET-T203",
+          "topicName": "Science | 8th Standard - Water"
+        },
+        {
+          "topicId": "TNTET-T204",
+          "topicName": "Science | 8th Standard - Acid and Bases"
+        },
+        {
+          "topicId": "TNTET-T205",
+          "topicName": "Science | 8th Standard - Chemistry in Everyday Life"
+        },
+        {
+          "topicId": "TNTET-T206",
+          "topicName": "Science | 8th Standard - Microorganisms"
+        },
+        {
+          "topicId": "TNTET-T207",
+          "topicName": "Science | 8th Standard - Plant Kingdom"
+        },
+        {
+          "topicId": "TNTET-T208",
+          "topicName": "Science | 8th Standard - Organisation of Life"
+        },
+        {
+          "topicId": "TNTET-T209",
+          "topicName": "Science | 8th Standard - Movements in Animals"
+        },
+        {
+          "topicId": "TNTET-T210",
+          "topicName": "Science | 8th Standard - Reaching the Age of Adolescence"
+        },
+        {
+          "topicId": "TNTET-T211",
+          "topicName": "Science | 8th Standard - Crop Production and Management"
+        },
+        {
+          "topicId": "TNTET-T212",
+          "topicName": "Science | 8th Standard - Conservation of Plants and Animals"
+        },
+        {
+          "topicId": "TNTET-T213",
+          "topicName": "Social Science | 8th Standard - History: Advent of the Europeans"
+        },
+        {
+          "topicId": "TNTET-T214",
+          "topicName": "Social Science | 8th Standard - History: From Trade to Territory"
+        },
+        {
+          "topicId": "TNTET-T215",
+          "topicName": "Social Science | 8th Standard - History: Rural Life and Society"
+        },
+        {
+          "topicId": "TNTET-T216",
+          "topicName": "Social Science | 8th Standard - History: People's Revolt"
+        },
+        {
+          "topicId": "TNTET-T217",
+          "topicName": "Social Science | 8th Standard - History: Educational Development in India"
+        },
+        {
+          "topicId": "TNTET-T218",
+          "topicName": "Social Science | 8th Standard - History: Development of Industries in India"
+        },
+        {
+          "topicId": "TNTET-T219",
+          "topicName": "Social Science | 8th Standard - History: Urban changes during the British period"
+        },
+        {
+          "topicId": "TNTET-T220",
+          "topicName": "Social Science | 8th Standard - History: Status of Women in India through the ages"
+        },
+        {
+          "topicId": "TNTET-T221",
+          "topicName": "Social Science | 8th Standard - Geography: Rocks and Soils"
+        },
+        {
+          "topicId": "TNTET-T222",
+          "topicName": "Social Science | 8th Standard - Geography: Weather and Climate"
+        },
+        {
+          "topicId": "TNTET-T223",
+          "topicName": "Social Science | 8th Standard - Geography: Hydrologic Cycle"
+        },
+        {
+          "topicId": "TNTET-T224",
+          "topicName": "Social Science | 8th Standard - Geography: Migration and Urbanisation"
+        },
+        {
+          "topicId": "TNTET-T225",
+          "topicName": "Social Science | 8th Standard - Geography: Hazards"
+        },
+        {
+          "topicId": "TNTET-T226",
+          "topicName": "Social Science | 8th Standard - Geography: Industries"
+        },
+        {
+          "topicId": "TNTET-T227",
+          "topicName": "Social Science | 8th Standard - Geography: Exploring Continents: Africa, Australia and Antarctica"
+        },
+        {
+          "topicId": "TNTET-T228",
+          "topicName": "Social Science | 8th Standard - Geography: Map Reading"
+        },
+        {
+          "topicId": "TNTET-T229",
+          "topicName": "Social Science | 8th Standard - Civics: How the State Government Works"
+        },
+        {
+          "topicId": "TNTET-T230",
+          "topicName": "Social Science | 8th Standard - Civics: Citizens and Citizenship"
+        },
+        {
+          "topicId": "TNTET-T231",
+          "topicName": "Social Science | 8th Standard - Civics: Understanding Secularism"
+        },
+        {
+          "topicId": "TNTET-T232",
+          "topicName": "Social Science | 8th Standard - Civics: Human Rights and UNO"
+        },
+        {
+          "topicId": "TNTET-T233",
+          "topicName": "Social Science | 8th Standard - Civics: Road Safety Rules and Regulations"
+        },
+        {
+          "topicId": "TNTET-T234",
+          "topicName": "Social Science | 8th Standard - Civics: Defence & Foreign Policy"
+        },
+        {
+          "topicId": "TNTET-T235",
+          "topicName": "Social Science | 8th Standard - Civics: The Judiciary"
+        },
+        {
+          "topicId": "TNTET-T236",
+          "topicName": "Social Science | 8th Standard - Economics: Money, Savings and Investments"
+        },
+        {
+          "topicId": "TNTET-T237",
+          "topicName": "Social Science | 8th Standard - Economics: Public and Private Sectors"
         }
       ]
     },
