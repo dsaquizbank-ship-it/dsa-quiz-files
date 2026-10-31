@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31T06:34:01.383Z",
+  "version": "2026-10-31T07:09:05.663Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -8286,288 +8286,144 @@
       "courseName": "TNTET",
       "topics": [
         {
-          "topicId": "TNTET-PSY-T001",
-          "topicName": "Unit I - Growth and Development | Meaning, concepts and principles of growth and development"
+          "topicId": "TNTET-T072",
+          "topicName": "Child Development and Pedagogy | Unit I - Growth and Development"
         },
         {
-          "topicId": "TNTET-PSY-T002",
-          "topicName": "Unit I - Growth and Development | Difference between growth and development"
+          "topicId": "TNTET-T073",
+          "topicName": "Child Development and Pedagogy | Unit II - Theories of Child Development"
         },
         {
-          "topicId": "TNTET-PSY-T003",
-          "topicName": "Unit I - Growth and Development | Impact of nature and nurture on child development"
+          "topicId": "TNTET-T074",
+          "topicName": "Child Development and Pedagogy | Unit III - Attention, Perception and Memory"
         },
         {
-          "topicId": "TNTET-PSY-T004",
-          "topicName": "Unit I - Growth and Development | Stages of development: infancy, early childhood and adolescence"
+          "topicId": "TNTET-T075",
+          "topicName": "Child Development and Pedagogy | Unit IV - Motivation and Learning"
         },
         {
-          "topicId": "TNTET-PSY-T005",
-          "topicName": "Unit I - Growth and Development | Dimensions of development: physical, cognitive, moral, emotional and social"
+          "topicId": "TNTET-T076",
+          "topicName": "Child Development and Pedagogy | Unit V - Intelligence and Creativity"
         },
         {
-          "topicId": "TNTET-PSY-T006",
-          "topicName": "Unit II - Theories of Child Development | Psycho-social stages (Erikson)"
+          "topicId": "TNTET-T077",
+          "topicName": "Child Development and Pedagogy | Unit VI - Personality"
         },
         {
-          "topicId": "TNTET-PSY-T007",
-          "topicName": "Unit II - Theories of Child Development | Cognitive development (Piaget)"
+          "topicId": "TNTET-T078",
+          "topicName": "Child Development and Pedagogy | Unit VII - Socializing Agencies of Child Development"
         },
         {
-          "topicId": "TNTET-PSY-T008",
-          "topicName": "Unit II - Theories of Child Development | Moral development (Kohlberg)"
+          "topicId": "TNTET-T079",
+          "topicName": "Child Development and Pedagogy | Unit VIII - Pedagogical Concerns (Part I)"
         },
         {
-          "topicId": "TNTET-PSY-T009",
-          "topicName": "Unit II - Theories of Child Development | Socio-cultural approach to cognitive development (Vygotsky)"
+          "topicId": "TNTET-T080",
+          "topicName": "Child Development and Pedagogy | Unit IX - Pedagogical Concerns (Part II)"
         },
         {
-          "topicId": "TNTET-PSY-T010",
-          "topicName": "Unit II - Theories of Child Development | Ecological systems theory (Bronfenbrenner)"
+          "topicId": "TNTET-T081",
+          "topicName": "Child Development and Pedagogy | Unit X - Pedagogical Concerns (Part III)"
         },
         {
-          "topicId": "TNTET-PSY-T011",
-          "topicName": "Unit III - Attention, Perception and Memory | Attention: Meaning, nature and determinants"
+          "topicId": "TNTET-T082",
+          "topicName": "Tamil | 6th Term 1 – மொழி"
         },
         {
-          "topicId": "TNTET-PSY-T012",
-          "topicName": "Unit III - Attention, Perception and Memory | Sensation and perception"
+          "topicId": "TNTET-T083",
+          "topicName": "Tamil | 6th Term 1 – இயற்கை"
         },
         {
-          "topicId": "TNTET-PSY-T013",
-          "topicName": "Unit III - Attention, Perception and Memory | Laws of perception"
+          "topicId": "TNTET-T084",
+          "topicName": "Tamil | 6th Term 1 – கல்வி"
         },
         {
-          "topicId": "TNTET-PSY-T014",
-          "topicName": "Unit III - Attention, Perception and Memory | Errors in perception: Illusion and hallucination"
+          "topicId": "TNTET-T085",
+          "topicName": "Tamil | 6th Term 2 – நாகரிகம், பண்பாடு"
         },
         {
-          "topicId": "TNTET-PSY-T015",
-          "topicName": "Unit III - Attention, Perception and Memory | Memory: Meaning and types of memory"
+          "topicId": "TNTET-T086",
+          "topicName": "Tamil | 6th Term 2 – தொழில், வணிகம்"
         },
         {
-          "topicId": "TNTET-PSY-T016",
-          "topicName": "Unit III - Attention, Perception and Memory | Strategies for improving memory"
+          "topicId": "TNTET-T087",
+          "topicName": "Tamil | 6th Term 3 – நாடு, சமூகம், அரசு, நிர்வாகம்"
         },
         {
-          "topicId": "TNTET-PSY-T017",
-          "topicName": "Unit III - Attention, Perception and Memory | Forgetting"
+          "topicId": "TNTET-T088",
+          "topicName": "Tamil | 6th Term 3 – அறம், தத்துவம், சிந்தனை"
         },
         {
-          "topicId": "TNTET-PSY-T018",
-          "topicName": "Unit IV - Motivation and Learning | Motivation: Meaning and definitions"
+          "topicId": "TNTET-T089",
+          "topicName": "Tamil | 6th Term 3 – மனிதம், ஆளுமை"
         },
         {
-          "topicId": "TNTET-PSY-T019",
-          "topicName": "Unit IV - Motivation and Learning | Maslow's theory of motivation and its educational implications"
+          "topicId": "TNTET-T090",
+          "topicName": "Tamil | 7th Term 1 – வாழி - அழகுத் தமிழ்"
         },
         {
-          "topicId": "TNTET-PSY-T020",
-          "topicName": "Unit IV - Motivation and Learning | Level of aspiration"
+          "topicId": "TNTET-T091",
+          "topicName": "Tamil | 7th Term 1 – இயற்கை - அணிறில் காடு"
         },
         {
-          "topicId": "TNTET-PSY-T021",
-          "topicName": "Unit IV - Motivation and Learning | Learning: Theories of learning and its educational implications"
+          "topicId": "TNTET-T092",
+          "topicName": "Tamil | 7th Term 1 – நாடு, சமூகம் - நாடு அழகு நாடு"
         },
         {
-          "topicId": "TNTET-PSY-T022",
-          "topicName": "Unit IV - Motivation and Learning | Cognitive Theory: Jean Piaget"
+          "topicId": "TNTET-T093",
+          "topicName": "Tamil | 7th Term 2 – கல்வி: ஒதுவது ஒழியேல்"
         },
         {
-          "topicId": "TNTET-PSY-T023",
-          "topicName": "Unit IV - Motivation and Learning | Behaviourist Theory: Pavlov's Classical Conditioning"
+          "topicId": "TNTET-T094",
+          "topicName": "Tamil | 7th Term 2 – கலை, அழகியல்: கலைவண்ணம்"
         },
         {
-          "topicId": "TNTET-PSY-T024",
-          "topicName": "Unit IV - Motivation and Learning | Behaviourist Theory: Skinner's Operant Conditioning"
+          "topicId": "TNTET-T095",
+          "topicName": "Tamil | 7th Term 3 – நாகரிகம், பண்பாடு, தொழில், வணிகம் - நபத்து நாகரிகம்"
         },
         {
-          "topicId": "TNTET-PSY-T025",
-          "topicName": "Unit IV - Motivation and Learning | Behaviourist Theory: Thorndike connectionism"
+          "topicId": "TNTET-T096",
+          "topicName": "Tamil | 7th Term 3 – அறம், தத்துவம், சிந்தனை - ஒப்பார ஒழுகு"
         },
         {
-          "topicId": "TNTET-PSY-T026",
-          "topicName": "Unit IV - Motivation and Learning | Constructivist theory: John Dewey"
+          "topicId": "TNTET-T097",
+          "topicName": "Tamil | 7th Term 3 – மனிதம், ஆளுமை - மனுடம் வெல்லும்"
         },
         {
-          "topicId": "TNTET-PSY-T027",
-          "topicName": "Unit IV - Motivation and Learning | Humanistic Theory: Carl Rogers"
+          "topicId": "TNTET-T098",
+          "topicName": "Tamil | 8th Lesson 1 – மொழி - தமிழ் இன்பம்"
         },
         {
-          "topicId": "TNTET-PSY-T028",
-          "topicName": "Unit V - Intelligence and Creativity | Intelligence: Meaning definitions and types"
+          "topicId": "TNTET-T099",
+          "topicName": "Tamil | 8th Lesson 2 – இயற்கை - ஈடில்லா இயற்கை"
         },
         {
-          "topicId": "TNTET-PSY-T029",
-          "topicName": "Unit V - Intelligence and Creativity | Two factor theory of Intelligence"
+          "topicId": "TNTET-T100",
+          "topicName": "Tamil | 8th Lesson 3 – அறிவியல், தொழில்நுட்பம் - உடலை ஓம்புமின்"
         },
         {
-          "topicId": "TNTET-PSY-T030",
-          "topicName": "Unit V - Intelligence and Creativity | Thurston's Group factor theory"
+          "topicId": "TNTET-T101",
+          "topicName": "Tamil | 8th Lesson 4 – கல்வி - கல்வி கரையில"
         },
         {
-          "topicId": "TNTET-PSY-T031",
-          "topicName": "Unit V - Intelligence and Creativity | Thorndike's Multi-factor theory"
+          "topicId": "TNTET-T102",
+          "topicName": "Tamil | 8th Lesson 5 – கலை, அழகியல், பண்பாடு - குழலினிது யாழினிது"
         },
         {
-          "topicId": "TNTET-PSY-T032",
-          "topicName": "Unit V - Intelligence and Creativity | Guilford's Structure of Intellect"
+          "topicId": "TNTET-T103",
+          "topicName": "Tamil | 8th Lesson 6 – நகரம், தொழில், வணிகம் - வையம்பகழ் வணிகம்"
         },
         {
-          "topicId": "TNTET-PSY-T033",
-          "topicName": "Unit V - Intelligence and Creativity | Gardener's Multiple Intelligence"
+          "topicId": "TNTET-T104",
+          "topicName": "Tamil | 8th Lesson 7 – நாடு, சமூகம் - பாருக்குளே நல்ல நாடு"
         },
         {
-          "topicId": "TNTET-PSY-T034",
-          "topicName": "Unit V - Intelligence and Creativity | Intelligence Quotient (IQ) and Assessment of Intelligence"
+          "topicId": "TNTET-T105",
+          "topicName": "Tamil | 8th Lesson 8 – அறம், தத்துவம், சிந்தனை - அறத்தால் வருவதே இன்பம்"
         },
         {
-          "topicId": "TNTET-PSY-T035",
-          "topicName": "Unit V - Intelligence and Creativity | Creativity: Concept, factors and process"
-        },
-        {
-          "topicId": "TNTET-PSY-T036",
-          "topicName": "Unit V - Intelligence and Creativity | Strategies for fostering creativity"
-        },
-        {
-          "topicId": "TNTET-PSY-T037",
-          "topicName": "Unit VI - Personality | Personality: Meaning, definitions, and determinants"
-        },
-        {
-          "topicId": "TNTET-PSY-T038",
-          "topicName": "Unit VI - Personality | Type theory of Personality"
-        },
-        {
-          "topicId": "TNTET-PSY-T039",
-          "topicName": "Unit VI - Personality | Trait theory of Personality"
-        },
-        {
-          "topicId": "TNTET-PSY-T040",
-          "topicName": "Unit VI - Personality | Psychoanalytic theory of Personality"
-        },
-        {
-          "topicId": "TNTET-PSY-T041",
-          "topicName": "Unit VI - Personality | Assessment of personality: Projective and non-projective techniques"
-        },
-        {
-          "topicId": "TNTET-PSY-T042",
-          "topicName": "Unit VI - Personality | Adjustment mechanisms"
-        },
-        {
-          "topicId": "TNTET-PSY-T043",
-          "topicName": "Unit VII - Socializing Agencies of Child Development | Agencies of Socialization: Family, School, Peer and Community"
-        },
-        {
-          "topicId": "TNTET-PSY-T044",
-          "topicName": "Unit VII - Socializing Agencies of Child Development | Role of play to children's physical, social, emotional and cognitive development"
-        },
-        {
-          "topicId": "TNTET-PSY-T045",
-          "topicName": "Unit VII - Socializing Agencies of Child Development | Impact of media on childhood experiences and development"
-        },
-        {
-          "topicId": "TNTET-PSY-T046",
-          "topicName": "Unit VIII - Pedagogical Concerns (Part I) | Teaching and its relationship with learning and learner"
-        },
-        {
-          "topicId": "TNTET-PSY-T047",
-          "topicName": "Unit VIII - Pedagogical Concerns (Part I) | Children With Special Needs (CWSN)"
-        },
-        {
-          "topicId": "TNTET-PSY-T048",
-          "topicName": "Unit VIII - Pedagogical Concerns (Part I) | Inclusive Education"
-        },
-        {
-          "topicId": "TNTET-PSY-T049",
-          "topicName": "Unit VIII - Pedagogical Concerns (Part I) | Understanding of pedagogic methods: Enquiry based learning"
-        },
-        {
-          "topicId": "TNTET-PSY-T050",
-          "topicName": "Unit VIII - Pedagogical Concerns (Part I) | Understanding of pedagogic methods: Project based learning"
-        },
-        {
-          "topicId": "TNTET-PSY-T051",
-          "topicName": "Unit VIII - Pedagogical Concerns (Part I) | Understanding of pedagogic methods: Activity based learning"
-        },
-        {
-          "topicId": "TNTET-PSY-T052",
-          "topicName": "Unit VIII - Pedagogical Concerns (Part I) | Understanding of pedagogic methods: Co-operative and collaborative learning"
-        },
-        {
-          "topicId": "TNTET-PSY-T053",
-          "topicName": "Unit VIII - Pedagogical Concerns (Part I) | Understanding of pedagogic methods: Individual and Group learning"
-        },
-        {
-          "topicId": "TNTET-PSY-T054",
-          "topicName": "Unit VIII - Pedagogical Concerns (Part I) | Paradigms of organizing Learning: Teacher centric, Subject centric, Learner centric"
-        },
-        {
-          "topicId": "TNTET-PSY-T055",
-          "topicName": "Unit VIII - Pedagogical Concerns (Part I) | Theory of instruction: Bruner"
-        },
-        {
-          "topicId": "TNTET-PSY-T056",
-          "topicName": "Unit VIII - Pedagogical Concerns (Part I) | Phases of Teaching: Pre active, Interactive and Post active"
-        },
-        {
-          "topicId": "TNTET-PSY-T057",
-          "topicName": "Unit VIII - Pedagogical Concerns (Part I) | 21st Century teaching skills"
-        },
-        {
-          "topicId": "TNTET-PSY-T058",
-          "topicName": "Unit IX - Pedagogical Concerns (Part II) | Learning resources: Self, Home, School, Community, Technology"
-        },
-        {
-          "topicId": "TNTET-PSY-T059",
-          "topicName": "Unit IX - Pedagogical Concerns (Part II) | Classroom Management: Role of student, teacher and leadership style"
-        },
-        {
-          "topicId": "TNTET-PSY-T060",
-          "topicName": "Unit IX - Pedagogical Concerns (Part II) | Managing behavior problems: Guidance & Counselling"
-        },
-        {
-          "topicId": "TNTET-PSY-T061",
-          "topicName": "Unit IX - Pedagogical Concerns (Part II) | Punishment and its legal implications"
-        },
-        {
-          "topicId": "TNTET-PSY-T062",
-          "topicName": "Unit IX - Pedagogical Concerns (Part II) | Distinction between Assessment for Learning & Assessment of Learning"
-        },
-        {
-          "topicId": "TNTET-PSY-T063",
-          "topicName": "Unit IX - Pedagogical Concerns (Part II) | The Concept of ICT Tools: Computer, Internet, Text Documents, Spreadsheets, Presentations"
-        },
-        {
-          "topicId": "TNTET-PSY-T064",
-          "topicName": "Unit X - Pedagogical Concerns (Part III) | Integrating with ICT and teaching"
-        },
-        {
-          "topicId": "TNTET-PSY-T065",
-          "topicName": "Unit X - Pedagogical Concerns (Part III) | Integrating ICT in Assessment"
-        },
-        {
-          "topicId": "TNTET-PSY-T066",
-          "topicName": "Unit X - Pedagogical Concerns (Part III) | Preparation of multimedia lessons in subjects and planning"
-        },
-        {
-          "topicId": "TNTET-PSY-T067",
-          "topicName": "Unit X - Pedagogical Concerns (Part III) | Online learning courses for teachers professional development"
-        },
-        {
-          "topicId": "TNTET-PSY-T068",
-          "topicName": "Unit X - Pedagogical Concerns (Part III) | Open education resources: ICT platforms and MOOC"
-        },
-        {
-          "topicId": "TNTET-PSY-T069",
-          "topicName": "Unit X - Pedagogical Concerns (Part III) | Continuous Comprehensive Evaluation (CCE): Perspective & Practice"
-        },
-        {
-          "topicId": "TNTET-PSY-T070",
-          "topicName": "Unit X - Pedagogical Concerns (Part III) | Understanding teaching & learning in the context of NCF 2005"
-        },
-        {
-          "topicId": "TNTET-PSY-T071",
-          "topicName": "Unit X - Pedagogical Concerns (Part III) | Understanding teaching & learning in the context of RTE Act 2009"
+          "topicId": "TNTET-T106",
+          "topicName": "Tamil | 8th Lesson 9 – மனிதம், ஆளுமை - குன்றை நிமிர்ந்துநில்"
         }
       ]
     },
