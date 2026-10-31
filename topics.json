@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31T07:48:46.837Z",
+  "version": "2026-10-31T09:06:12.281Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -170,16 +170,48 @@
           "topicName": "Unit III - History, Culture & INM | Indus Valley Civilization"
         },
         {
-          "topicId": "TNPSC-T042",
-          "topicName": "Unit III - History, Culture & INM | Guptas, Delhi Sultans, Mughals, and Marathas"
+          "topicId": "TNPSC-T154",
+          "topicName": "Unit III - History, Culture & INM | Guptas"
+        },
+        {
+          "topicId": "TNPSC-T155",
+          "topicName": "Unit III - History, Culture & INM | Delhi Sultans"
+        },
+        {
+          "topicId": "TNPSC-T156",
+          "topicName": "Unit III - History, Culture & INM | Mughals"
+        },
+        {
+          "topicId": "TNPSC-T157",
+          "topicName": "Unit III - History, Culture & INM | Marathas"
+        },
+        {
+          "topicId": "TNPSC-T158",
+          "topicName": "Unit III - History, Culture & INM | Peshwa"
         },
         {
           "topicId": "TNPSC-T043",
           "topicName": "Unit III - History, Culture & INM | Age of Vijayanagaram and Bahmani Kingdoms"
         },
         {
-          "topicId": "TNPSC-T044",
-          "topicName": "Unit III - History, Culture & INM | South Indian History"
+          "topicId": "TNPSC-T159",
+          "topicName": "Unit III - History, Culture & INM | Bahmani Kingdoms"
+        },
+        {
+          "topicId": "TNPSC-T160",
+          "topicName": "Unit III - History, Culture & INM | South Indian History (Chera)"
+        },
+        {
+          "topicId": "TNPSC-T161",
+          "topicName": "Unit III - History, Culture & INM | South Indian History (Chola)"
+        },
+        {
+          "topicId": "TNPSC-T162",
+          "topicName": "Unit III - History, Culture & INM | South Indian History (Pandya)"
+        },
+        {
+          "topicId": "TNPSC-T163",
+          "topicName": "Unit III - History, Culture & INM | South Indian History (Pallava)"
         },
         {
           "topicId": "TNPSC-T045",
@@ -210,8 +242,12 @@
           "topicName": "Unit III - History, Culture & INM | Emergence of leaders - Maulana Abul Kalam Azad, Thanthai Periyar, Rajaji, Subash Chandra Bose, Rabindranath Tagore"
         },
         {
-          "topicId": "TNPSC-T052",
-          "topicName": "Unit III - History, Culture & INM | Different modes of agitation: Growth of Satyagraha and Militant Movements"
+          "topicId": "TNPSC-T164",
+          "topicName": "Unit III - History, Culture & INM | Different modes of agitation: Growth of Satyagraha"
+        },
+        {
+          "topicId": "TNPSC-T165",
+          "topicName": "Unit III - History, Culture & INM | Different modes of agitation: Militant Movements"
         },
         {
           "topicId": "TNPSC-T053",
@@ -266,16 +302,32 @@
           "topicName": "Unit IV - Indian Polity | Citizenship"
         },
         {
-          "topicId": "TNPSC-T066",
-          "topicName": "Unit IV - Indian Polity | Fundamental Rights, Fundamental Duties, Directive Principles of State Policy"
+          "topicId": "TNPSC-T166",
+          "topicName": "Unit IV - Indian Polity | Fundamental Rights"
         },
         {
-          "topicId": "TNPSC-T067",
-          "topicName": "Unit IV - Indian Polity | Union Executive, Union Legislature"
+          "topicId": "TNPSC-T167",
+          "topicName": "Unit IV - Indian Polity | Fundamental Duties"
         },
         {
-          "topicId": "TNPSC-T068",
-          "topicName": "Unit IV - Indian Polity | State Executive, State Legislature"
+          "topicId": "TNPSC-T168",
+          "topicName": "Unit IV - Indian Polity | Directive Principles of State Policy"
+        },
+        {
+          "topicId": "TNPSC-T169",
+          "topicName": "Unit IV - Indian Polity | Union Executive"
+        },
+        {
+          "topicId": "TNPSC-T170",
+          "topicName": "Unit IV - Indian Polity | Union Legislature"
+        },
+        {
+          "topicId": "TNPSC-T171",
+          "topicName": "Unit IV - Indian Polity | State Executive"
+        },
+        {
+          "topicId": "TNPSC-T172",
+          "topicName": "Unit IV - Indian Polity | State Legislature"
         },
         {
           "topicId": "TNPSC-T069",
@@ -298,12 +350,8 @@
           "topicName": "Unit IV - Indian Polity | Rule of Law"
         },
         {
-          "topicId": "TNPSC-T074",
-          "topicName": "Unit IV - Indian Polity | Corruption in public life, Anti-corruption measures"
-        },
-        {
-          "topicId": "TNPSC-T075",
-          "topicName": "Unit IV - Indian Polity | Lokpal and Lok Ayukta"
+          "topicId": "TNPSC-T173",
+          "topicName": "Unit IV - Indian Polity | Corruption in public life, Anti-corruption measures, Lokpal and Lok Ayukta"
         },
         {
           "topicId": "TNPSC-T076",
