@@ -1,6 +1,17 @@
 {
-  "version": "2026-10-31T13:38:31.839Z",
+  "version": "2026-10-31T13:43:32.791Z",
   "entries": [
+    {
+      "id": "SCH-1793454053967-488",
+      "courseId": "UGTRB-PHY",
+      "courseName": "UGTRB PHYSICS",
+      "subject": "Unit X - Experimental Physics",
+      "topicId": "REV-1793454053967",
+      "topicName": "Revision: Errors and approximations, Types of errors (absolute, relative, percentage), Significant figures and advantages of average, Least count of instruments, Calibration techniques, Curve plotting, Least square refinement and dimensional analysis, Parallax method",
+      "date": "2026-11-02",
+      "testId": "UGP-71",
+      "createdAt": "2026-10-31T13:40:53.967Z"
+    },
     {
       "id": "SCH-1793453359479-225",
       "courseId": "UGTRB-ZOO",
@@ -178,6 +189,17 @@
       "createdAt": "2026-10-31T09:08:51.857Z"
     },
     {
+      "id": "SCH-1793454100511-780",
+      "courseId": "UGTRB-PHY",
+      "courseName": "UGTRB PHYSICS",
+      "subject": "Unit X - Experimental Physics",
+      "topicId": "REV-1793454100511",
+      "topicName": "Revision: Vernier calipers, screw gauge, travelling microscope, Optic lever and Heier's apparatus",
+      "date": "2026-11-04",
+      "testId": "UGP-72",
+      "createdAt": "2026-10-31T13:41:40.511Z"
+    },
+    {
       "id": "SCH-1793453475743-939",
       "courseId": "UGTRB-ZOO",
       "courseName": "UGTRB ZOOLOGY",
@@ -321,6 +343,17 @@
       "createdAt": "2026-10-31T09:11:14.752Z"
     },
     {
+      "id": "SCH-1793454144567-836",
+      "courseId": "UGTRB-PHY",
+      "courseName": "UGTRB PHYSICS",
+      "subject": "Unit X - Experimental Physics",
+      "topicId": "REV-1793454144567",
+      "topicName": "Revision: Calorimeter and Barton's radiation correction, Focal length of concave lens by contact, Galvanometer - conversion of galvanometer into ammeter and voltmeter, Calibration of low range ammeter and voltmeter, Ballistic galvanometer, Figure of merit and Ohm meter",
+      "date": "2026-11-06",
+      "testId": "UGP-73",
+      "createdAt": "2026-10-31T13:42:24.567Z"
+    },
+    {
       "id": "SCH-1793453499391-645",
       "courseId": "UGTRB-ZOO",
       "courseName": "UGTRB ZOOLOGY",
@@ -407,6 +440,17 @@
       "date": "2026-11-06",
       "testId": "PGE-51",
       "createdAt": "2026-10-31T04:28:45.361Z"
+    },
+    {
+      "id": "SCH-1793454175191-654",
+      "courseId": "UGTRB-PHY",
+      "courseName": "UGTRB PHYSICS",
+      "subject": "Unit X - Experimental Physics",
+      "topicId": "REV-1793454175191",
+      "topicName": "Revision: Figure of merit and Ohm meter, Multimeter, Tangent galvanometer and magnetometer, Meter bridge and potentiometer, LCR circuits, Registers and counters",
+      "date": "2026-11-09",
+      "testId": "UGP-74",
+      "createdAt": "2026-10-31T13:42:55.191Z"
     },
     {
       "id": "SCH-1793453522511-314",
