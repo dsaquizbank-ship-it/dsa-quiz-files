@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31T11:30:45.545Z",
+  "version": "2026-10-31T12:07:59.841Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -10606,656 +10606,828 @@
       "courseName": "SGT",
       "topics": [
         {
-          "topicId": "SGT-T001",
-          "topicName": "Tamil - Prose | திராவிட மொழிக்குடும்பம்"
+          "topicId": "SGT-T164",
+          "topicName": "9th Tamil | அமுதூட்டிய அன்னை"
         },
         {
-          "topicId": "SGT-T002",
-          "topicName": "Tamil - Prose | நீரின்றி அமையாது உலகு"
+          "topicId": "SGT-T165",
+          "topicName": "9th Tamil | மலைத்தலைவன்"
         },
         {
-          "topicId": "SGT-T003",
-          "topicName": "Tamil - Prose | ஏறு தழுவுதல்"
+          "topicId": "SGT-T166",
+          "topicName": "9th Tamil | காற்றின் குரல்"
         },
         {
-          "topicId": "SGT-T004",
-          "topicName": "Tamil - Prose | கல்வியில் சிறந்த பெண்கள்"
+          "topicId": "SGT-T167",
+          "topicName": "9th Tamil | இயற்கை வளம் காத்திடுவோம்"
         },
         {
-          "topicId": "SGT-T005",
-          "topicName": "Tamil - Prose | சிற்பக்கலை"
+          "topicId": "SGT-T168",
+          "topicName": "9th Tamil | முல்லைப் பாட்டு"
         },
         {
-          "topicId": "SGT-T006",
-          "topicName": "Tamil - Prose | இந்திய தேசிய இராணுவத்தில் தமிழர் பங்கு"
+          "topicId": "SGT-T169",
+          "topicName": "9th Tamil | உலகம் முழுதும் வாழ்க"
         },
         {
-          "topicId": "SGT-T007",
-          "topicName": "Tamil - Prose | பெரியபுராணச் சிந்தனைகள்"
+          "topicId": "SGT-T170",
+          "topicName": "9th Tamil | தமிழ்ச் சொல் வளம்"
         },
         {
-          "topicId": "SGT-T008",
-          "topicName": "Tamil - Poetry | தமிழோவியம்"
+          "topicId": "SGT-T171",
+          "topicName": "9th Tamil | இன்பத் தமிழ்"
         },
         {
-          "topicId": "SGT-T009",
-          "topicName": "Tamil - Poetry | தமிழ்விடு தூது"
+          "topicId": "SGT-T172",
+          "topicName": "9th Tamil | தமிழ் மொழியின் சிறப்பு"
         },
         {
-          "topicId": "SGT-T010",
-          "topicName": "Tamil - Poetry | பெரியபுராணம்"
+          "topicId": "SGT-T173",
+          "topicName": "9th Tamil | கல்வியே கருவி"
         },
         {
-          "topicId": "SGT-T011",
-          "topicName": "Tamil - Poetry | புறநானூறு"
+          "topicId": "SGT-T174",
+          "topicName": "9th Tamil | கல்வி"
         },
         {
-          "topicId": "SGT-T012",
-          "topicName": "Tamil - Poetry | மணிமேகலை"
+          "topicId": "SGT-T175",
+          "topicName": "9th Tamil | விடுதலை வேட்கை"
         },
         {
-          "topicId": "SGT-T013",
-          "topicName": "Tamil - Poetry | குடும்ப விளக்கு"
+          "topicId": "SGT-T176",
+          "topicName": "9th Tamil | வீரத் தமிழர்"
         },
         {
-          "topicId": "SGT-T014",
-          "topicName": "Tamil - Poetry | இராவண காவியம்"
+          "topicId": "SGT-T177",
+          "topicName": "9th Tamil | வீரம்"
         },
         {
-          "topicId": "SGT-T015",
-          "topicName": "Tamil - Poetry | சீவக சிந்தாமணி"
+          "topicId": "SGT-T178",
+          "topicName": "9th Tamil | நாட்டுப்பற்று"
         },
         {
-          "topicId": "SGT-T016",
-          "topicName": "Tamil - Poetry | ஓ, என் சமகாலத் தோழர்களே!"
+          "topicId": "SGT-T179",
+          "topicName": "9th Tamil | பண்பாட்டு முத்து"
         },
         {
-          "topicId": "SGT-T017",
-          "topicName": "Tamil - Poetry | யாதொரு காவியம்"
+          "topicId": "SGT-T180",
+          "topicName": "9th Tamil | பண்பு"
         },
         {
-          "topicId": "SGT-T018",
-          "topicName": "Tamil - Supplementary | தண்ணீர்"
+          "topicId": "SGT-T181",
+          "topicName": "9th Tamil | பண்பாட்டுச் சிறப்பு"
         },
         {
-          "topicId": "SGT-T019",
-          "topicName": "Tamil - Supplementary | வீட்டிற்கோர் புத்தகசாலை"
+          "topicId": "SGT-T182",
+          "topicName": "9th Tamil | அறிவியல் வளர்ச்சி"
         },
         {
-          "topicId": "SGT-T020",
-          "topicName": "Tamil - Supplementary | செய்தி"
+          "topicId": "SGT-T183",
+          "topicName": "9th Tamil | அறிவியல்"
         },
         {
-          "topicId": "SGT-T021",
-          "topicName": "Tamil - Supplementary | மகனுக்கு எழுதிய கடிதம்"
+          "topicId": "SGT-T184",
+          "topicName": "9th Tamil | அறிவியல் கதை"
         },
         {
-          "topicId": "SGT-T022",
-          "topicName": "Tamil - Grammar | எழுத்து – அளபெடை"
+          "topicId": "SGT-T185",
+          "topicName": "9th English | Learning the Game"
         },
         {
-          "topicId": "SGT-T023",
-          "topicName": "Tamil - Grammar | பகுபத உறுப்பிலக்கணம்"
+          "topicId": "SGT-T186",
+          "topicName": "9th English | I Can't Climb Trees Anymore"
         },
         {
-          "topicId": "SGT-T024",
-          "topicName": "Tamil - Grammar | தொழில் இலக்கணம், ஆகுபெயர்"
+          "topicId": "SGT-T187",
+          "topicName": "9th English | Seventeen Oranges"
         },
         {
-          "topicId": "SGT-T025",
-          "topicName": "Tamil - Grammar | துணைவினைகள்"
+          "topicId": "SGT-T188",
+          "topicName": "9th English | Water – The Elixir of Life"
         },
         {
-          "topicId": "SGT-T026",
-          "topicName": "Tamil - Grammar | வல்லினம் மிகும் இடங்கள்"
+          "topicId": "SGT-T189",
+          "topicName": "9th English | From Zero to Infinity"
         },
         {
-          "topicId": "SGT-T027",
-          "topicName": "Tamil - Grammar | வல்லினம் மிகா இடங்கள்"
+          "topicId": "SGT-T190",
+          "topicName": "9th English | A Birthday Letter"
         },
         {
-          "topicId": "SGT-T028",
-          "topicName": "Tamil - Grammar | யாப்பிலக்கணம்"
+          "topicId": "SGT-T191",
+          "topicName": "9th English | Stopping by Woods on a Snowy Evening"
         },
         {
-          "topicId": "SGT-T029",
-          "topicName": "Tamil - Life Skills | திருக்குறள்"
+          "topicId": "SGT-T192",
+          "topicName": "9th English | A Poison Tree"
         },
         {
-          "topicId": "SGT-T030",
-          "topicName": "English - Prose | Learning the Game"
+          "topicId": "SGT-T193",
+          "topicName": "9th English | On Killing a Tree"
         },
         {
-          "topicId": "SGT-T031",
-          "topicName": "English - Prose | I Can't Climb Trees Anymore"
+          "topicId": "SGT-T194",
+          "topicName": "9th English | The Spider and the Fly"
         },
         {
-          "topicId": "SGT-T032",
-          "topicName": "English - Prose | Seventeen Oranges"
+          "topicId": "SGT-T195",
+          "topicName": "9th English | The River"
         },
         {
-          "topicId": "SGT-T033",
-          "topicName": "English - Prose | Water – The Elixir of Life"
+          "topicId": "SGT-T196",
+          "topicName": "9th English | The Comet"
         },
         {
-          "topicId": "SGT-T034",
-          "topicName": "English - Prose | From Zero to Infinity"
+          "topicId": "SGT-T197",
+          "topicName": "9th English | The Stick-together Families"
         },
         {
-          "topicId": "SGT-T035",
-          "topicName": "English - Prose | A Birthday Letter"
+          "topicId": "SGT-T198",
+          "topicName": "9th English | Old Man River"
         },
         {
-          "topicId": "SGT-T036",
-          "topicName": "English - Poems | Stopping by Woods on a Snowy Evening"
+          "topicId": "SGT-T199",
+          "topicName": "9th English | The Envious Neighbour"
         },
         {
-          "topicId": "SGT-T037",
-          "topicName": "English - Poems | A Poison Tree"
+          "topicId": "SGT-T200",
+          "topicName": "9th English | The Fun They Had"
         },
         {
-          "topicId": "SGT-T038",
-          "topicName": "English - Poems | On Killing a Tree"
+          "topicId": "SGT-T201",
+          "topicName": "9th English | Earthquake"
         },
         {
-          "topicId": "SGT-T039",
-          "topicName": "English - Poems | The Spider and the Fly"
+          "topicId": "SGT-T202",
+          "topicName": "9th English | The Cat and the Painkiller"
         },
         {
-          "topicId": "SGT-T040",
-          "topicName": "English - Poems | The River"
+          "topicId": "SGT-T203",
+          "topicName": "9th English | Little Cyclone: The Story of a Grizzly Cub"
         },
         {
-          "topicId": "SGT-T041",
-          "topicName": "English - Poems | The Comet"
+          "topicId": "SGT-T204",
+          "topicName": "9th English | Mother's Voice"
         },
         {
-          "topicId": "SGT-T042",
-          "topicName": "English - Poems | The Stick-together Families"
+          "topicId": "SGT-T205",
+          "topicName": "9th English | The Christmas Truce"
         },
         {
-          "topicId": "SGT-T043",
-          "topicName": "English - Drama | Old Man River"
+          "topicId": "SGT-T206",
+          "topicName": "9th Maths | Set Language"
         },
         {
-          "topicId": "SGT-T044",
-          "topicName": "English - Supplementary | The Envious Neighbour"
+          "topicId": "SGT-T207",
+          "topicName": "9th Maths | Real Numbers"
         },
         {
-          "topicId": "SGT-T045",
-          "topicName": "English - Supplementary | The Fun They Had"
+          "topicId": "SGT-T208",
+          "topicName": "9th Maths | Algebra"
         },
         {
-          "topicId": "SGT-T046",
-          "topicName": "English - Supplementary | Earthquake"
+          "topicId": "SGT-T209",
+          "topicName": "9th Maths | Geometry"
         },
         {
-          "topicId": "SGT-T047",
-          "topicName": "English - Supplementary | The Cat and the Painkiller"
+          "topicId": "SGT-T210",
+          "topicName": "9th Maths | Coordinate Geometry"
         },
         {
-          "topicId": "SGT-T048",
-          "topicName": "English - Supplementary | Little Cyclone: The Story of a Grizzly Cub"
+          "topicId": "SGT-T211",
+          "topicName": "9th Maths | Trigonometry"
         },
         {
-          "topicId": "SGT-T049",
-          "topicName": "English - Supplementary | Mother's Voice"
+          "topicId": "SGT-T212",
+          "topicName": "9th Maths | Mensuration"
         },
         {
-          "topicId": "SGT-T050",
-          "topicName": "English - Supplementary | The Christmas Truce"
+          "topicId": "SGT-T213",
+          "topicName": "9th Maths | Statistics"
         },
         {
-          "topicId": "SGT-T051",
-          "topicName": "Maths - Set Language | Introduction"
+          "topicId": "SGT-T214",
+          "topicName": "9th Maths | Probability"
         },
         {
-          "topicId": "SGT-T052",
-          "topicName": "Maths - Set Language | Set"
+          "topicId": "SGT-T215",
+          "topicName": "9th Science | Measurement"
         },
         {
-          "topicId": "SGT-T053",
-          "topicName": "Maths - Set Language | Representation of a Set"
+          "topicId": "SGT-T216",
+          "topicName": "9th Science | Motion"
         },
         {
-          "topicId": "SGT-T054",
-          "topicName": "Maths - Set Language | Types of Sets"
+          "topicId": "SGT-T217",
+          "topicName": "9th Science | Fluids"
         },
         {
-          "topicId": "SGT-T055",
-          "topicName": "Maths - Set Language | Set Operations"
+          "topicId": "SGT-T218",
+          "topicName": "9th Science | Electric Charge and Electric Current"
         },
         {
-          "topicId": "SGT-T056",
-          "topicName": "Maths - Set Language | Properties of Set Operations"
+          "topicId": "SGT-T219",
+          "topicName": "9th Science | Magnetism and Electromagnetism"
         },
         {
-          "topicId": "SGT-T057",
-          "topicName": "Maths - Set Language | De Morgan's Laws"
+          "topicId": "SGT-T220",
+          "topicName": "9th Science | Light"
         },
         {
-          "topicId": "SGT-T058",
-          "topicName": "Maths - Set Language | Application on Cardinality of Sets"
+          "topicId": "SGT-T221",
+          "topicName": "9th Science | Heat"
         },
         {
-          "topicId": "SGT-T059",
-          "topicName": "Maths - Real Numbers | Introduction"
+          "topicId": "SGT-T222",
+          "topicName": "9th Science | Sound"
         },
         {
-          "topicId": "SGT-T060",
-          "topicName": "Maths - Real Numbers | Rational Numbers"
+          "topicId": "SGT-T223",
+          "topicName": "9th Science | Universe"
         },
         {
-          "topicId": "SGT-T061",
-          "topicName": "Maths - Real Numbers | Irrational Numbers"
+          "topicId": "SGT-T224",
+          "topicName": "9th Science | Matter Around Us"
         },
         {
-          "topicId": "SGT-T062",
-          "topicName": "Maths - Real Numbers | Real Numbers"
+          "topicId": "SGT-T225",
+          "topicName": "9th Science | Atomic Structure"
         },
         {
-          "topicId": "SGT-T063",
-          "topicName": "Maths - Real Numbers | Radical Notation"
+          "topicId": "SGT-T226",
+          "topicName": "9th Science | Periodic Classification of Elements"
         },
         {
-          "topicId": "SGT-T064",
-          "topicName": "Maths - Real Numbers | Surds"
+          "topicId": "SGT-T227",
+          "topicName": "9th Science | Chemical Bonding"
         },
         {
-          "topicId": "SGT-T065",
-          "topicName": "Maths - Real Numbers | Rationalisation of Surds"
+          "topicId": "SGT-T228",
+          "topicName": "9th Science | Acids, Bases and Salts"
         },
         {
-          "topicId": "SGT-T066",
-          "topicName": "Maths - Real Numbers | Scientific Notation"
+          "topicId": "SGT-T229",
+          "topicName": "9th Science | Carbon and its Compounds"
         },
         {
-          "topicId": "SGT-T067",
-          "topicName": "Maths - Algebra | Introduction"
+          "topicId": "SGT-T230",
+          "topicName": "9th Science | Applied Chemistry"
         },
         {
-          "topicId": "SGT-T068",
-          "topicName": "Maths - Algebra | Polynomials"
+          "topicId": "SGT-T231",
+          "topicName": "9th Science | Organisation of Tissues"
         },
         {
-          "topicId": "SGT-T069",
-          "topicName": "Maths - Algebra | Remainder Theorem"
+          "topicId": "SGT-T232",
+          "topicName": "9th Science | Plant Physiology"
         },
         {
-          "topicId": "SGT-T070",
-          "topicName": "Maths - Algebra | Algebraic Identities"
+          "topicId": "SGT-T233",
+          "topicName": "9th Science | Environmental Science"
         },
         {
-          "topicId": "SGT-T071",
-          "topicName": "Maths - Algebra | Factorisation"
+          "topicId": "SGT-T234",
+          "topicName": "9th Science | Animal Kingdom"
         },
         {
-          "topicId": "SGT-T072",
-          "topicName": "Maths - Algebra | Division of Polynomials"
+          "topicId": "SGT-T235",
+          "topicName": "9th Science | Organ Systems in Animals"
         },
         {
-          "topicId": "SGT-T073",
-          "topicName": "Maths - Algebra | Greatest Common Divisor (GCD)"
+          "topicId": "SGT-T236",
+          "topicName": "9th Science | Nutrition and Health"
         },
         {
-          "topicId": "SGT-T074",
-          "topicName": "Maths - Algebra | Linear Equation in Two Variables"
+          "topicId": "SGT-T237",
+          "topicName": "9th Science | World of Microbes"
         },
         {
-          "topicId": "SGT-T075",
-          "topicName": "Maths - Geometry | Introduction"
+          "topicId": "SGT-T238",
+          "topicName": "9th Science | Economic Biology"
         },
         {
-          "topicId": "SGT-T076",
-          "topicName": "Maths - Geometry | Types of Angles"
+          "topicId": "SGT-T239",
+          "topicName": "9th Social Science | Evolution of Humans and Society - Prehistoric Period"
         },
         {
-          "topicId": "SGT-T077",
-          "topicName": "Maths - Geometry | Quadrilaterals"
+          "topicId": "SGT-T240",
+          "topicName": "9th Social Science | Ancient Civilisations"
         },
         {
-          "topicId": "SGT-T078",
-          "topicName": "Maths - Geometry | Parts of a Circle"
+          "topicId": "SGT-T241",
+          "topicName": "9th Social Science | Early Tamil Society and Culture"
         },
         {
-          "topicId": "SGT-T079",
-          "topicName": "Maths - Geometry | Properties of Chords of a Circle"
+          "topicId": "SGT-T242",
+          "topicName": "9th Social Science | Intellectual Awakening and Socio-Political Changes"
         },
         {
-          "topicId": "SGT-T080",
-          "topicName": "Maths - Geometry | Cyclic Quadrilaterals"
+          "topicId": "SGT-T243",
+          "topicName": "9th Social Science | The Classical World"
         },
         {
-          "topicId": "SGT-T081",
-          "topicName": "Maths - Geometry | Practical Geometry"
+          "topicId": "SGT-T244",
+          "topicName": "9th Social Science | The Middle Ages"
         },
         {
-          "topicId": "SGT-T082",
-          "topicName": "Maths - Coordinate Geometry | Mapping the Plane"
+          "topicId": "SGT-T245",
+          "topicName": "9th Social Science | State and Society in Medieval India"
         },
         {
-          "topicId": "SGT-T083",
-          "topicName": "Maths - Coordinate Geometry | Devising a Coordinate System"
+          "topicId": "SGT-T246",
+          "topicName": "9th Social Science | The Beginning of the Modern Age"
         },
         {
-          "topicId": "SGT-T084",
-          "topicName": "Maths - Coordinate Geometry | Distance between any Two Points"
+          "topicId": "SGT-T247",
+          "topicName": "9th Social Science | The Age of Revolutions"
         },
         {
-          "topicId": "SGT-T085",
-          "topicName": "Maths - Coordinate Geometry | The Mid-point of a Line Segment"
+          "topicId": "SGT-T248",
+          "topicName": "9th Social Science | Industrial Revolution"
         },
         {
-          "topicId": "SGT-T086",
-          "topicName": "Maths - Coordinate Geometry | Points of Trisection of a Line Segment"
+          "topicId": "SGT-T249",
+          "topicName": "9th Social Science | Colonialism in Asia and Africa"
         },
         {
-          "topicId": "SGT-T087",
-          "topicName": "Maths - Coordinate Geometry | Section Formula"
+          "topicId": "SGT-T250",
+          "topicName": "9th Social Science | Lithosphere – I Endogenetic Processes"
         },
         {
-          "topicId": "SGT-T088",
-          "topicName": "Maths - Coordinate Geometry | The Coordinates of the Centroid"
+          "topicId": "SGT-T251",
+          "topicName": "9th Social Science | Lithosphere – II Exogenetic Processes"
         },
         {
-          "topicId": "SGT-T089",
-          "topicName": "Maths - Trigonometry | Introduction"
+          "topicId": "SGT-T252",
+          "topicName": "9th Social Science | Atmosphere"
         },
         {
-          "topicId": "SGT-T090",
-          "topicName": "Maths - Trigonometry | Trigonometric Ratios of Some Special Angles"
+          "topicId": "SGT-T253",
+          "topicName": "9th Social Science | Hydrosphere"
         },
         {
-          "topicId": "SGT-T091",
-          "topicName": "Maths - Trigonometry | Trigonometric Ratios for Complementary Angles"
+          "topicId": "SGT-T254",
+          "topicName": "9th Social Science | Biosphere"
         },
         {
-          "topicId": "SGT-T092",
-          "topicName": "Maths - Trigonometry | Method of using Trigonometric Table"
+          "topicId": "SGT-T255",
+          "topicName": "9th Social Science | Man and Environment"
         },
         {
-          "topicId": "SGT-T093",
-          "topicName": "Maths - Mensuration | Introduction"
+          "topicId": "SGT-T256",
+          "topicName": "9th Social Science | Mapping Skills"
         },
         {
-          "topicId": "SGT-T094",
-          "topicName": "Maths - Mensuration | Heron's Formula"
+          "topicId": "SGT-T257",
+          "topicName": "9th Social Science | Disaster Management: Responding to Disasters"
         },
         {
-          "topicId": "SGT-T095",
-          "topicName": "Maths - Mensuration | Application of Heron's Formula in Finding Areas of Quadrilaterals"
+          "topicId": "SGT-T258",
+          "topicName": "9th Social Science | Forms of Government and Democracy"
         },
         {
-          "topicId": "SGT-T096",
-          "topicName": "Maths - Mensuration | Surface Area of Cuboid and Cube"
+          "topicId": "SGT-T259",
+          "topicName": "9th Social Science | Election, Political Parties and Pressure Groups"
         },
         {
-          "topicId": "SGT-T097",
-          "topicName": "Maths - Mensuration | Volume of Cuboid and Cube"
+          "topicId": "SGT-T260",
+          "topicName": "9th Social Science | Human Rights"
         },
         {
-          "topicId": "SGT-T098",
-          "topicName": "Maths - Statistics | Introduction"
+          "topicId": "SGT-T261",
+          "topicName": "9th Social Science | Forms of Government"
         },
         {
-          "topicId": "SGT-T099",
-          "topicName": "Maths - Statistics | Collection of Data"
+          "topicId": "SGT-T262",
+          "topicName": "9th Social Science | Local Self Government"
         },
         {
-          "topicId": "SGT-T100",
-          "topicName": "Maths - Statistics | Measures of Central Tendency"
+          "topicId": "SGT-T263",
+          "topicName": "9th Social Science | Road Safety"
         },
         {
-          "topicId": "SGT-T101",
-          "topicName": "Maths - Statistics | Arithmetic Mean"
+          "topicId": "SGT-T264",
+          "topicName": "9th Social Science | Understanding Development: Perspectives, Measurement and Sustainability"
         },
         {
-          "topicId": "SGT-T102",
-          "topicName": "Maths - Statistics | Median"
+          "topicId": "SGT-T265",
+          "topicName": "9th Social Science | Employment in India and Tamil Nadu"
         },
         {
-          "topicId": "SGT-T103",
-          "topicName": "Maths - Statistics | Mode"
+          "topicId": "SGT-T266",
+          "topicName": "9th Social Science | Money and Credit"
         },
         {
-          "topicId": "SGT-T104",
-          "topicName": "Maths - Probability | Introduction"
+          "topicId": "SGT-T267",
+          "topicName": "9th Social Science | Agriculture in Tamil Nadu"
         },
         {
-          "topicId": "SGT-T105",
-          "topicName": "Maths - Probability | Basic Ideas"
+          "topicId": "SGT-T268",
+          "topicName": "9th Social Science | Migration"
         },
         {
-          "topicId": "SGT-T106",
-          "topicName": "Maths - Probability | Classical Approach"
+          "topicId": "SGT-T269",
+          "topicName": "9th Computer Science | LibreOffice Impress"
         },
         {
-          "topicId": "SGT-T107",
-          "topicName": "Maths - Probability | Empirical Approach"
+          "topicId": "SGT-T270",
+          "topicName": "10th Tamil | அமுதூட்டிய அன்னை"
         },
         {
-          "topicId": "SGT-T108",
-          "topicName": "Maths - Probability | Types of Events"
+          "topicId": "SGT-T271",
+          "topicName": "10th Tamil | மலைத்தலைவன்"
         },
         {
-          "topicId": "SGT-T109",
-          "topicName": "Science - Physics | Measurement"
+          "topicId": "SGT-T272",
+          "topicName": "10th Tamil | காற்றின் குரல்"
         },
         {
-          "topicId": "SGT-T110",
-          "topicName": "Science - Physics | Motion"
+          "topicId": "SGT-T273",
+          "topicName": "10th Tamil | இயற்கை வளம் காத்திடுவோம்"
         },
         {
-          "topicId": "SGT-T111",
-          "topicName": "Science - Physics | Fluids"
+          "topicId": "SGT-T274",
+          "topicName": "10th Tamil | முல்லைப் பாட்டு"
         },
         {
-          "topicId": "SGT-T112",
-          "topicName": "Science - Physics | Electric Charge and Electric Current"
+          "topicId": "SGT-T275",
+          "topicName": "10th Tamil | உலகம் முழுதும் வாழ்க"
         },
         {
-          "topicId": "SGT-T113",
-          "topicName": "Science - Physics | Magnetism and Electromagnetism"
+          "topicId": "SGT-T276",
+          "topicName": "10th Tamil | தமிழ்ச் சொல் வளம்"
         },
         {
-          "topicId": "SGT-T114",
-          "topicName": "Science - Physics | Light"
+          "topicId": "SGT-T277",
+          "topicName": "10th Tamil | இன்பத் தமிழ்"
         },
         {
-          "topicId": "SGT-T115",
-          "topicName": "Science - Physics | Heat"
+          "topicId": "SGT-T278",
+          "topicName": "10th Tamil | தமிழ் மொழியின் சிறப்பு"
         },
         {
-          "topicId": "SGT-T116",
-          "topicName": "Science - Physics | Sound"
+          "topicId": "SGT-T279",
+          "topicName": "10th Tamil | கல்வியே கருவி"
         },
         {
-          "topicId": "SGT-T117",
-          "topicName": "Science - Physics | Universe"
+          "topicId": "SGT-T280",
+          "topicName": "10th Tamil | கல்வி"
         },
         {
-          "topicId": "SGT-T118",
-          "topicName": "Science - Chemistry | Matter Around Us"
+          "topicId": "SGT-T281",
+          "topicName": "10th Tamil | விடுதலை வேட்கை"
         },
         {
-          "topicId": "SGT-T119",
-          "topicName": "Science - Chemistry | Atomic Structure"
+          "topicId": "SGT-T282",
+          "topicName": "10th Tamil | வீரத் தமிழர்"
         },
         {
-          "topicId": "SGT-T120",
-          "topicName": "Science - Chemistry | Periodic Classification of Elements"
+          "topicId": "SGT-T283",
+          "topicName": "10th Tamil | வீரம்"
         },
         {
-          "topicId": "SGT-T121",
-          "topicName": "Science - Chemistry | Chemical Bonding"
+          "topicId": "SGT-T284",
+          "topicName": "10th Tamil | நாட்டுப்பற்று"
         },
         {
-          "topicId": "SGT-T122",
-          "topicName": "Science - Chemistry | Acids, Bases and Salts"
+          "topicId": "SGT-T285",
+          "topicName": "10th Tamil | பண்பாட்டு முத்து"
         },
         {
-          "topicId": "SGT-T123",
-          "topicName": "Science - Chemistry | Carbon and its Compounds"
+          "topicId": "SGT-T286",
+          "topicName": "10th Tamil | பண்பு"
         },
         {
-          "topicId": "SGT-T124",
-          "topicName": "Science - Chemistry | Applied Chemistry"
+          "topicId": "SGT-T287",
+          "topicName": "10th Tamil | பண்பாட்டுச் சிறப்பு"
         },
         {
-          "topicId": "SGT-T125",
-          "topicName": "Science - Botany | Organisation of Tissues"
+          "topicId": "SGT-T288",
+          "topicName": "10th Tamil | அறிவியல் வளர்ச்சி"
         },
         {
-          "topicId": "SGT-T126",
-          "topicName": "Science - Botany | Plant Physiology"
+          "topicId": "SGT-T289",
+          "topicName": "10th Tamil | அறிவியல்"
         },
         {
-          "topicId": "SGT-T127",
-          "topicName": "Science - Botany | Environmental Science"
+          "topicId": "SGT-T290",
+          "topicName": "10th Tamil | அறிவியல் கதை"
         },
         {
-          "topicId": "SGT-T128",
-          "topicName": "Science - Zoology | Animal Kingdom"
+          "topicId": "SGT-T291",
+          "topicName": "10th English | His First Flight"
         },
         {
-          "topicId": "SGT-T129",
-          "topicName": "Science - Zoology | Organ Systems in Animals"
+          "topicId": "SGT-T292",
+          "topicName": "10th English | Life"
         },
         {
-          "topicId": "SGT-T130",
-          "topicName": "Science - Zoology | Nutrition and Health"
+          "topicId": "SGT-T293",
+          "topicName": "10th English | The Tempest"
         },
         {
-          "topicId": "SGT-T131",
-          "topicName": "Science - Zoology | World of Microbes"
+          "topicId": "SGT-T294",
+          "topicName": "10th English | The Night the Ghost Got In"
         },
         {
-          "topicId": "SGT-T132",
-          "topicName": "Science - Zoology | Economic Biology"
+          "topicId": "SGT-T295",
+          "topicName": "10th English | The Grumble Family"
         },
         {
-          "topicId": "SGT-T133",
-          "topicName": "Computer Science | LibreOffice Impress"
+          "topicId": "SGT-T296",
+          "topicName": "10th English | Zigzag"
         },
         {
-          "topicId": "SGT-T134",
-          "topicName": "Social - History | Evolution of Humans and Society - Prehistoric Period"
+          "topicId": "SGT-T297",
+          "topicName": "10th English | Empowered Women Navigating the World"
         },
         {
-          "topicId": "SGT-T135",
-          "topicName": "Social - History | Ancient Civilisations"
+          "topicId": "SGT-T298",
+          "topicName": "10th English | I Am Every Woman"
         },
         {
-          "topicId": "SGT-T136",
-          "topicName": "Social - History | Early Tamil Society and Culture"
+          "topicId": "SGT-T299",
+          "topicName": "10th English | The Story of Mulan"
         },
         {
-          "topicId": "SGT-T137",
-          "topicName": "Social - History | Intellectual Awakening and Socio-Political Changes"
+          "topicId": "SGT-T300",
+          "topicName": "10th English | The Attic"
         },
         {
-          "topicId": "SGT-T138",
-          "topicName": "Social - History | The Classical World"
+          "topicId": "SGT-T301",
+          "topicName": "10th English | The Ant and the Cricket"
         },
         {
-          "topicId": "SGT-T139",
-          "topicName": "Social - History | The Middle Ages"
+          "topicId": "SGT-T302",
+          "topicName": "10th English | The Aged Mother"
         },
         {
-          "topicId": "SGT-T140",
-          "topicName": "Social - History | State and Society in Medieval India"
+          "topicId": "SGT-T303",
+          "topicName": "10th English | Tech Bloomers"
         },
         {
-          "topicId": "SGT-T141",
-          "topicName": "Social - History | The Beginning of the Modern Age"
+          "topicId": "SGT-T304",
+          "topicName": "10th English | The Secret of the Machines"
         },
         {
-          "topicId": "SGT-T142",
-          "topicName": "Social - History | The Age of Revolutions"
+          "topicId": "SGT-T305",
+          "topicName": "10th English | A Day in 2889 of an American Journalist"
         },
         {
-          "topicId": "SGT-T143",
-          "topicName": "Social - History | Industrial Revolution"
+          "topicId": "SGT-T306",
+          "topicName": "10th English | The Last Lesson"
         },
         {
-          "topicId": "SGT-T144",
-          "topicName": "Social - History | Colonialism in Asia and Africa"
+          "topicId": "SGT-T307",
+          "topicName": "10th English | No Men Are Foreign"
         },
         {
-          "topicId": "SGT-T145",
-          "topicName": "Social - Geography | Lithosphere – I Endogenetic Processes"
+          "topicId": "SGT-T308",
+          "topicName": "10th English | The Little Hero of Holland"
         },
         {
-          "topicId": "SGT-T146",
-          "topicName": "Social - Geography | Lithosphere – II Exogenetic Processes"
+          "topicId": "SGT-T309",
+          "topicName": "10th English | The Dying Detective"
         },
         {
-          "topicId": "SGT-T147",
-          "topicName": "Social - Geography | Atmosphere"
+          "topicId": "SGT-T310",
+          "topicName": "10th English | The House on Elm Street"
         },
         {
-          "topicId": "SGT-T148",
-          "topicName": "Social - Geography | Hydrosphere"
+          "topicId": "SGT-T311",
+          "topicName": "10th English | A Dilemma"
         },
         {
-          "topicId": "SGT-T149",
-          "topicName": "Social - Geography | Biosphere"
+          "topicId": "SGT-T312",
+          "topicName": "10th Mathematics | Relations and Functions"
         },
         {
-          "topicId": "SGT-T150",
-          "topicName": "Social - Geography | Man and Environment"
+          "topicId": "SGT-T313",
+          "topicName": "10th Mathematics | Numbers and Sequences"
         },
         {
-          "topicId": "SGT-T151",
-          "topicName": "Social - Geography | Mapping Skills"
+          "topicId": "SGT-T314",
+          "topicName": "10th Mathematics | Algebra"
         },
         {
-          "topicId": "SGT-T152",
-          "topicName": "Social - Geography | Disaster Management: Responding to Disasters"
+          "topicId": "SGT-T315",
+          "topicName": "10th Mathematics | Geometry"
         },
         {
-          "topicId": "SGT-T153",
-          "topicName": "Social - Civics | Forms of Government and Democracy"
+          "topicId": "SGT-T316",
+          "topicName": "10th Mathematics | Coordinate Geometry"
         },
         {
-          "topicId": "SGT-T154",
-          "topicName": "Social - Civics | Election, Political Parties and Pressure Groups"
+          "topicId": "SGT-T317",
+          "topicName": "10th Mathematics | Trigonometry"
         },
         {
-          "topicId": "SGT-T155",
-          "topicName": "Social - Civics | Human Rights"
+          "topicId": "SGT-T318",
+          "topicName": "10th Mathematics | Mensuration"
         },
         {
-          "topicId": "SGT-T156",
-          "topicName": "Social - Civics | Forms of Government"
+          "topicId": "SGT-T319",
+          "topicName": "10th Mathematics | Statistics and Probability"
         },
         {
-          "topicId": "SGT-T157",
-          "topicName": "Social - Civics | Local Self Government"
+          "topicId": "SGT-T320",
+          "topicName": "10th Science | Laws of Motion"
         },
         {
-          "topicId": "SGT-T158",
-          "topicName": "Social - Civics | Road Safety"
+          "topicId": "SGT-T321",
+          "topicName": "10th Science | Optics"
         },
         {
-          "topicId": "SGT-T159",
-          "topicName": "Social - Economics | Understanding Development: Perspectives, Measurement and Sustainability"
+          "topicId": "SGT-T322",
+          "topicName": "10th Science | Thermal Physics"
         },
         {
-          "topicId": "SGT-T160",
-          "topicName": "Social - Economics | Employment in India and Tamil Nadu"
+          "topicId": "SGT-T323",
+          "topicName": "10th Science | Electricity"
         },
         {
-          "topicId": "SGT-T161",
-          "topicName": "Social - Economics | Money and Credit"
+          "topicId": "SGT-T324",
+          "topicName": "10th Science | Acoustics"
         },
         {
-          "topicId": "SGT-T162",
-          "topicName": "Social - Economics | Agriculture in Tamil Nadu"
+          "topicId": "SGT-T325",
+          "topicName": "10th Science | Nuclear Physics"
         },
         {
-          "topicId": "SGT-T163",
-          "topicName": "Social - Economics | Migration"
+          "topicId": "SGT-T326",
+          "topicName": "10th Science | Atoms and Molecules"
+        },
+        {
+          "topicId": "SGT-T327",
+          "topicName": "10th Science | Periodic Classification of Elements"
+        },
+        {
+          "topicId": "SGT-T328",
+          "topicName": "10th Science | Solutions"
+        },
+        {
+          "topicId": "SGT-T329",
+          "topicName": "10th Science | Types of Chemical Reactions"
+        },
+        {
+          "topicId": "SGT-T330",
+          "topicName": "10th Science | Carbon and Its Compounds"
+        },
+        {
+          "topicId": "SGT-T331",
+          "topicName": "10th Science | Plant Anatomy and Plant Physiology"
+        },
+        {
+          "topicId": "SGT-T332",
+          "topicName": "10th Science | Structural Organisation of Animals"
+        },
+        {
+          "topicId": "SGT-T333",
+          "topicName": "10th Science | Transportation in Plants and Circulation in Animals"
+        },
+        {
+          "topicId": "SGT-T334",
+          "topicName": "10th Science | Nervous System"
+        },
+        {
+          "topicId": "SGT-T335",
+          "topicName": "10th Science | Plant and Animal Hormones"
+        },
+        {
+          "topicId": "SGT-T336",
+          "topicName": "10th Science | Reproduction in Plants and Animals"
+        },
+        {
+          "topicId": "SGT-T337",
+          "topicName": "10th Science | Genetics"
+        },
+        {
+          "topicId": "SGT-T338",
+          "topicName": "10th Science | Origin and Evolution of Life"
+        },
+        {
+          "topicId": "SGT-T339",
+          "topicName": "10th Science | Breeding and Biotechnology"
+        },
+        {
+          "topicId": "SGT-T340",
+          "topicName": "10th Science | Health and Diseases"
+        },
+        {
+          "topicId": "SGT-T341",
+          "topicName": "10th Science | Environmental Management"
+        },
+        {
+          "topicId": "SGT-T342",
+          "topicName": "10th Science | Visual Communication"
+        },
+        {
+          "topicId": "SGT-T343",
+          "topicName": "10th Social Science | Outbreak of World War I and Its Aftermath"
+        },
+        {
+          "topicId": "SGT-T344",
+          "topicName": "10th Social Science | The World Between Two World Wars"
+        },
+        {
+          "topicId": "SGT-T345",
+          "topicName": "10th Social Science | World War II"
+        },
+        {
+          "topicId": "SGT-T346",
+          "topicName": "10th Social Science | The World After World War II"
+        },
+        {
+          "topicId": "SGT-T347",
+          "topicName": "10th Social Science | Social and Religious Reform Movements in the 19th Century"
+        },
+        {
+          "topicId": "SGT-T348",
+          "topicName": "10th Social Science | Early Revolts Against British Rule in Tamil Nadu"
+        },
+        {
+          "topicId": "SGT-T349",
+          "topicName": "10th Social Science | Anti-Colonial Movements and the Birth of Nationalism"
+        },
+        {
+          "topicId": "SGT-T350",
+          "topicName": "10th Social Science | Nationalism: Gandhian Phase"
+        },
+        {
+          "topicId": "SGT-T351",
+          "topicName": "10th Social Science | Freedom Struggle in Tamil Nadu"
+        },
+        {
+          "topicId": "SGT-T352",
+          "topicName": "10th Social Science | Social Transformation in Tamil Nadu"
+        },
+        {
+          "topicId": "SGT-T353",
+          "topicName": "10th Social Science | India – Location, Relief and Drainage"
+        },
+        {
+          "topicId": "SGT-T354",
+          "topicName": "10th Social Science | Climate and Natural Vegetation of India"
+        },
+        {
+          "topicId": "SGT-T355",
+          "topicName": "10th Social Science | India – Agriculture"
+        },
+        {
+          "topicId": "SGT-T356",
+          "topicName": "10th Social Science | India – Resources and Industries"
+        },
+        {
+          "topicId": "SGT-T357",
+          "topicName": "10th Social Science | India – Population, Transport, Communication and Trade"
+        },
+        {
+          "topicId": "SGT-T358",
+          "topicName": "10th Social Science | Physical Geography of Tamil Nadu"
+        },
+        {
+          "topicId": "SGT-T359",
+          "topicName": "10th Social Science | Human Geography of Tamil Nadu"
+        },
+        {
+          "topicId": "SGT-T360",
+          "topicName": "10th Social Science | Indian Constitution"
+        },
+        {
+          "topicId": "SGT-T361",
+          "topicName": "10th Social Science | Central Government"
+        },
+        {
+          "topicId": "SGT-T362",
+          "topicName": "10th Social Science | State Government"
+        },
+        {
+          "topicId": "SGT-T363",
+          "topicName": "10th Social Science | India’s Foreign Policy"
+        },
+        {
+          "topicId": "SGT-T364",
+          "topicName": "10th Social Science | India’s International Relations"
+        },
+        {
+          "topicId": "SGT-T365",
+          "topicName": "10th Social Science | Gross Domestic Product and Its Growth: An Introduction"
+        },
+        {
+          "topicId": "SGT-T366",
+          "topicName": "10th Social Science | Globalisation and Trade"
+        },
+        {
+          "topicId": "SGT-T367",
+          "topicName": "10th Social Science | Food Security and Nutrition"
+        },
+        {
+          "topicId": "SGT-T368",
+          "topicName": "10th Social Science | Government and Taxes"
+        },
+        {
+          "topicId": "SGT-T369",
+          "topicName": "10th Social Science | Industrial Clusters in Tamil Nadu"
         }
       ]
     },
