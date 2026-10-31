@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31T10:14:34.759Z",
+  "version": "2026-10-31T10:30:34.047Z",
   "entries": [
     {
       "id": "SCH-1793441560599-495",
@@ -178,6 +178,17 @@
       "createdAt": "2026-10-31T09:11:14.752Z"
     },
     {
+      "id": "SCH-1793441877887-140",
+      "courseId": "UGTRB-MAT",
+      "courseName": "UGTRB MATHS",
+      "subject": "Unit IX - Operations Research",
+      "topicId": "REV-1793441877887",
+      "topicName": "Revision: Duality and Primal dual relation, Dual simplex method, Revised simplex method, Sensitivity analysis, Transportation Problem, Assignment Problem",
+      "date": "2026-11-06",
+      "testId": "UGM-96",
+      "createdAt": "2026-10-31T10:17:57.887Z"
+    },
+    {
       "id": "SCH-1793438699880-576",
       "courseId": "PGTRB-COM",
       "courseName": "PGTRB COMPUTER SCIENCE",
@@ -211,6 +222,17 @@
       "createdAt": "2026-10-31T04:28:45.361Z"
     },
     {
+      "id": "SCH-1793442068671-569",
+      "courseId": "UGTRB-MAT",
+      "courseName": "UGTRB MATHS",
+      "subject": "Unit IX - Operations Research",
+      "topicId": "REV-1793442068671",
+      "topicName": "Revision: Queuing Theory - Basic Concepts, Steady State analysis of M/M/1 and M/M/Systems",
+      "date": "2026-11-09",
+      "testId": "UGM-97",
+      "createdAt": "2026-10-31T10:21:08.671Z"
+    },
+    {
       "id": "SCH-1793438717040-949",
       "courseId": "PGTRB-COM",
       "courseName": "PGTRB COMPUTER SCIENCE",
@@ -233,15 +255,15 @@
       "createdAt": "2026-10-31T04:29:10.209Z"
     },
     {
-      "id": "SCH-1793440727936-788",
+      "id": "SCH-1793442137903-86",
       "courseId": "UGTRB-MAT",
       "courseName": "UGTRB MATHS",
       "subject": "Unit IX - Operations Research",
-      "topicId": "REV-1793440727936",
-      "topicName": "Revision: Inventory Models - EOQ Models, Classical newspaper boy problem, Purchase inventory model with one price brake, Game theory - Two person Zero - Sum game with saddle point, Game theory without saddle point, Dominance - Solving 2xn or mx2 game by graphical method, Integer programming - Branch and bound method",
+      "topicId": "REV-1793442137903",
+      "topicName": "Revision: PERT and CPM - Project network diagram, Critical path and PERT computations",
       "date": "2026-11-11",
       "testId": "UGM-98",
-      "createdAt": "2026-10-31T09:58:47.936Z"
+      "createdAt": "2026-10-31T10:22:17.903Z"
     },
     {
       "id": "SCH-1793438761392-492",
@@ -266,6 +288,17 @@
       "createdAt": "2026-10-31T04:29:31.441Z"
     },
     {
+      "id": "SCH-1793442175047-317",
+      "courseId": "UGTRB-MAT",
+      "courseName": "UGTRB MATHS",
+      "subject": "Unit IX - Operations Research",
+      "topicId": "REV-1793442175047",
+      "topicName": "Revision: Inventory Models - EOQ Models, Classical newspaper boy problem",
+      "date": "2026-11-13",
+      "testId": "UGM-99",
+      "createdAt": "2026-10-31T10:22:55.047Z"
+    },
+    {
       "id": "SCH-1793421024897-968",
       "courseId": "PGTRB-ENG",
       "courseName": "PGTRB ENGLISH",
@@ -275,6 +308,17 @@
       "date": "2026-11-13",
       "testId": "PGE-54",
       "createdAt": "2026-10-31T04:30:24.897Z"
+    },
+    {
+      "id": "SCH-1793442257263-775",
+      "courseId": "UGTRB-MAT",
+      "courseName": "UGTRB MATHS",
+      "subject": "Unit IX - Operations Research",
+      "topicId": "REV-1793442257263",
+      "topicName": "Revision: Purchase inventory model with one price brake, Game theory - Two person Zero - Sum game with saddle point, Game theory without saddle point, Dominance - Solving 2xn or mx2 game by graphical method, Integer programming - Branch and bound method",
+      "date": "2026-11-16",
+      "testId": "UGM-100",
+      "createdAt": "2026-10-31T10:24:17.263Z"
     },
     {
       "id": "SCH-1793421278953-244",
@@ -288,6 +332,17 @@
       "createdAt": "2026-10-31T04:34:38.953Z"
     },
     {
+      "id": "SCH-1793442310743-339",
+      "courseId": "UGTRB-MAT",
+      "courseName": "UGTRB MATHS",
+      "subject": "Unit IX - Operations Research",
+      "topicId": "REV-1793442310743",
+      "topicName": "Revision: Linear Programming - Formulation, Graphical Solution, Simplex Method, Big - M method, Two phase method, Duality and Primal dual relation, Dual simplex method, Revised simplex method, Sensitivity analysis, Transportation Problem, Assignment Problem",
+      "date": "2026-11-18",
+      "testId": "UGM-101",
+      "createdAt": "2026-10-31T10:25:10.743Z"
+    },
+    {
       "id": "SCH-1793421322281-0",
       "courseId": "PGTRB-ENG",
       "courseName": "PGTRB ENGLISH",
@@ -297,6 +352,17 @@
       "date": "2026-11-18",
       "testId": "PGE-56",
       "createdAt": "2026-10-31T04:35:22.281Z"
+    },
+    {
+      "id": "SCH-1793442345879-53",
+      "courseId": "UGTRB-MAT",
+      "courseName": "UGTRB MATHS",
+      "subject": "Unit IX - Operations Research",
+      "topicId": "REV-1793442345879",
+      "topicName": "Revision: Queuing Theory - Basic Concepts, Steady State analysis of M/M/1 and M/M/Systems, PERT and CPM - Project network diagram, Critical path and PERT computations",
+      "date": "2026-11-20",
+      "testId": "UGM-102",
+      "createdAt": "2026-10-31T10:25:45.879Z"
     },
     {
       "id": "SCH-1793421350225-76",
@@ -310,6 +376,17 @@
       "createdAt": "2026-10-31T04:35:50.225Z"
     },
     {
+      "id": "SCH-1793442384439-351",
+      "courseId": "UGTRB-MAT",
+      "courseName": "UGTRB MATHS",
+      "subject": "Unit IX - Operations Research",
+      "topicId": "REV-1793442384439",
+      "topicName": "Revision: Purchase inventory model with one price brake, Game theory - Two person Zero - Sum game with saddle point, Game theory without saddle point, Dominance - Solving 2xn or mx2 game by graphical method, Integer programming - Branch and bound method",
+      "date": "2026-11-23",
+      "testId": "UGM-103",
+      "createdAt": "2026-10-31T10:26:24.439Z"
+    },
+    {
       "id": "SCH-1793421506153-265",
       "courseId": "PGTRB-ENG",
       "courseName": "PGTRB ENGLISH",
@@ -319,6 +396,17 @@
       "date": "2026-11-23",
       "testId": "PGE-58",
       "createdAt": "2026-10-31T04:38:26.153Z"
+    },
+    {
+      "id": "SCH-1793442539623-235",
+      "courseId": "UGTRB-MAT",
+      "courseName": "UGTRB MATHS",
+      "subject": "Unit X - Statistics and Probability",
+      "topicId": "REV-1793442539623",
+      "topicName": "Revision: Theory of Probability - Sample Space and Axioms",
+      "date": "2026-11-25",
+      "testId": "UGM-104",
+      "createdAt": "2026-10-31T10:28:59.623Z"
     },
     {
       "id": "SCH-1793421765457-349",
@@ -332,6 +420,17 @@
       "createdAt": "2026-10-31T04:42:45.457Z"
     },
     {
+      "id": "SCH-1793442590287-28",
+      "courseId": "UGTRB-MAT",
+      "courseName": "UGTRB MATHS",
+      "subject": "Unit X - Statistics and Probability",
+      "topicId": "REV-1793442590287",
+      "topicName": "Revision: Independent - Boole's Inequality",
+      "date": "2026-11-27",
+      "testId": "UGM-105",
+      "createdAt": "2026-10-31T10:29:50.287Z"
+    },
+    {
       "id": "SCH-1793421801913-562",
       "courseId": "PGTRB-ENG",
       "courseName": "PGTRB ENGLISH",
@@ -341,6 +440,17 @@
       "date": "2026-11-27",
       "testId": "PGE-60",
       "createdAt": "2026-10-31T04:43:21.913Z"
+    },
+    {
+      "id": "SCH-1793442628071-622",
+      "courseId": "UGTRB-MAT",
+      "courseName": "UGTRB MATHS",
+      "subject": "Unit X - Statistics and Probability",
+      "topicId": "REV-1793442628071",
+      "topicName": "Revision: Bayes' Theorem",
+      "date": "2026-11-30",
+      "testId": "UGM-106",
+      "createdAt": "2026-10-31T10:30:28.071Z"
     },
     {
       "id": "SCH-1793421836393-813",
