@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31T04:37:47.089Z",
+  "version": "2026-10-31T04:40:55.258Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -785,16 +785,40 @@
           "topicName": "Unit I | Geoffrey Chaucer - The Book of the Duchess Chapter only"
         },
         {
-          "topicId": "PGTRB-T002",
-          "topicName": "Unit I | Edmund Spenser - Prothalamion and Epithalamion"
+          "topicId": "PGTRB-ENG-T129",
+          "topicName": "Unit I | Edmund Spenser - Prothalamion"
+        },
+        {
+          "topicId": "PGTRB-ENG-T130",
+          "topicName": "Unit I | Edmund Spenser - Epithalamion"
         },
         {
           "topicId": "PGTRB-T003",
           "topicName": "Unit I | Sir Thomas Wyatt - Remembrance"
         },
         {
-          "topicId": "PGTRB-T004",
-          "topicName": "Unit I | Bacon - Essays (Of Truth, Of Friendship, Of Studies, Of Adversity, Of Revenge and Of Ambition)"
+          "topicId": "PGTRB-ENG-T131",
+          "topicName": "Unit I | Bacon - Essays (Of Truth)"
+        },
+        {
+          "topicId": "PGTRB-ENG-T132",
+          "topicName": "Unit I | Bacon - Essays (Of Friendship)"
+        },
+        {
+          "topicId": "PGTRB-ENG-T133",
+          "topicName": "Unit I | Bacon - Essays (Of Studies)"
+        },
+        {
+          "topicId": "PGTRB-ENG-T134",
+          "topicName": "Unit I | Bacon - Essays (Of Adversity)"
+        },
+        {
+          "topicId": "PGTRB-ENG-T135",
+          "topicName": "Unit I | Bacon - Essays (Of Revenge)"
+        },
+        {
+          "topicId": "PGTRB-ENG-T136",
+          "topicName": "Unit I | Bacon - Essays (Of Ambition)"
         },
         {
           "topicId": "PGTRB-T005",
