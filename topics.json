@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31T09:23:09.360Z",
+  "version": "2026-10-31T09:24:38.139Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -2029,7 +2029,1112 @@
     {
       "courseId": "PGTRB-MAT",
       "courseName": "PGTRB MATHS",
-      "topics": []
+      "topics": [
+        {
+          "topicId": "PGTRB-MAT-T001",
+          "topicName": "Unit I - Algebra | Groups"
+        },
+        {
+          "topicId": "PGTRB-MAT-T002",
+          "topicName": "Unit I - Algebra | Cyclic Groups"
+        },
+        {
+          "topicId": "PGTRB-MAT-T003",
+          "topicName": "Unit I - Algebra | Permutation Groups"
+        },
+        {
+          "topicId": "PGTRB-MAT-T004",
+          "topicName": "Unit I - Algebra | Lagrange's theorem"
+        },
+        {
+          "topicId": "PGTRB-MAT-T005",
+          "topicName": "Unit I - Algebra | Normal subgroups"
+        },
+        {
+          "topicId": "PGTRB-MAT-T006",
+          "topicName": "Unit I - Algebra | Homomorphism"
+        },
+        {
+          "topicId": "PGTRB-MAT-T007",
+          "topicName": "Unit I - Algebra | Cayley's theorem"
+        },
+        {
+          "topicId": "PGTRB-MAT-T008",
+          "topicName": "Unit I - Algebra | Cauchy's theorem"
+        },
+        {
+          "topicId": "PGTRB-MAT-T009",
+          "topicName": "Unit I - Algebra | Sylow's theorems"
+        },
+        {
+          "topicId": "PGTRB-MAT-T010",
+          "topicName": "Unit I - Algebra | Finite Abelian Groups"
+        },
+        {
+          "topicId": "PGTRB-MAT-T011",
+          "topicName": "Unit I - Algebra | Rings"
+        },
+        {
+          "topicId": "PGTRB-MAT-T012",
+          "topicName": "Unit I - Algebra | Integral Domain"
+        },
+        {
+          "topicId": "PGTRB-MAT-T013",
+          "topicName": "Unit I - Algebra | Field"
+        },
+        {
+          "topicId": "PGTRB-MAT-T014",
+          "topicName": "Unit I - Algebra | Ring Homomorphism"
+        },
+        {
+          "topicId": "PGTRB-MAT-T015",
+          "topicName": "Unit I - Algebra | Ideals"
+        },
+        {
+          "topicId": "PGTRB-MAT-T016",
+          "topicName": "Unit I - Algebra | Quotient Rings"
+        },
+        {
+          "topicId": "PGTRB-MAT-T017",
+          "topicName": "Unit I - Algebra | Field of Quotients of Integral domains"
+        },
+        {
+          "topicId": "PGTRB-MAT-T018",
+          "topicName": "Unit I - Algebra | Euclidean Rings"
+        },
+        {
+          "topicId": "PGTRB-MAT-T019",
+          "topicName": "Unit I - Algebra | Polynomial Rings"
+        },
+        {
+          "topicId": "PGTRB-MAT-T020",
+          "topicName": "Unit I - Algebra | Unique factorization domain"
+        },
+        {
+          "topicId": "PGTRB-MAT-T021",
+          "topicName": "Unit I - Algebra | Extension fields"
+        },
+        {
+          "topicId": "PGTRB-MAT-T022",
+          "topicName": "Unit I - Algebra | Elements of Galois theory"
+        },
+        {
+          "topicId": "PGTRB-MAT-T023",
+          "topicName": "Unit I - Algebra | Finite fields"
+        },
+        {
+          "topicId": "PGTRB-MAT-T024",
+          "topicName": "Unit I - Algebra | Vector Spaces"
+        },
+        {
+          "topicId": "PGTRB-MAT-T025",
+          "topicName": "Unit I - Algebra | Linear independence of Bases"
+        },
+        {
+          "topicId": "PGTRB-MAT-T026",
+          "topicName": "Unit I - Algebra | Dual spaces"
+        },
+        {
+          "topicId": "PGTRB-MAT-T027",
+          "topicName": "Unit I - Algebra | Inner product spaces"
+        },
+        {
+          "topicId": "PGTRB-MAT-T028",
+          "topicName": "Unit I - Algebra | Linear transformations"
+        },
+        {
+          "topicId": "PGTRB-MAT-T029",
+          "topicName": "Unit I - Algebra | Rank"
+        },
+        {
+          "topicId": "PGTRB-MAT-T030",
+          "topicName": "Unit I - Algebra | Characteristic roots"
+        },
+        {
+          "topicId": "PGTRB-MAT-T031",
+          "topicName": "Unit I - Algebra | Matrices"
+        },
+        {
+          "topicId": "PGTRB-MAT-T032",
+          "topicName": "Unit I - Algebra | Canonical forms"
+        },
+        {
+          "topicId": "PGTRB-MAT-T033",
+          "topicName": "Unit I - Algebra | Diagonal forms"
+        },
+        {
+          "topicId": "PGTRB-MAT-T034",
+          "topicName": "Unit I - Algebra | Triangular forms"
+        },
+        {
+          "topicId": "PGTRB-MAT-T035",
+          "topicName": "Unit I - Algebra | Nilpotent transformations"
+        },
+        {
+          "topicId": "PGTRB-MAT-T036",
+          "topicName": "Unit I - Algebra | Jordan form"
+        },
+        {
+          "topicId": "PGTRB-MAT-T037",
+          "topicName": "Unit I - Algebra | Quadratic forms and Classification"
+        },
+        {
+          "topicId": "PGTRB-MAT-T038",
+          "topicName": "Unit I - Algebra | Hermitian transformations"
+        },
+        {
+          "topicId": "PGTRB-MAT-T039",
+          "topicName": "Unit I - Algebra | Unitary transformations"
+        },
+        {
+          "topicId": "PGTRB-MAT-T040",
+          "topicName": "Unit I - Algebra | Normal transformations"
+        },
+        {
+          "topicId": "PGTRB-MAT-T041",
+          "topicName": "Unit II - Real Analysis | Elementary set theory"
+        },
+        {
+          "topicId": "PGTRB-MAT-T042",
+          "topicName": "Unit II - Real Analysis | Finite, countable and uncountable sets"
+        },
+        {
+          "topicId": "PGTRB-MAT-T043",
+          "topicName": "Unit II - Real Analysis | Real number system as a complete ordered field"
+        },
+        {
+          "topicId": "PGTRB-MAT-T044",
+          "topicName": "Unit II - Real Analysis | Archimedean Property"
+        },
+        {
+          "topicId": "PGTRB-MAT-T045",
+          "topicName": "Unit II - Real Analysis | Supremum"
+        },
+        {
+          "topicId": "PGTRB-MAT-T046",
+          "topicName": "Unit II - Real Analysis | Infimum"
+        },
+        {
+          "topicId": "PGTRB-MAT-T047",
+          "topicName": "Unit II - Real Analysis | Sequences and Series"
+        },
+        {
+          "topicId": "PGTRB-MAT-T048",
+          "topicName": "Unit II - Real Analysis | Convergence"
+        },
+        {
+          "topicId": "PGTRB-MAT-T049",
+          "topicName": "Unit II - Real Analysis | Limit supremum"
+        },
+        {
+          "topicId": "PGTRB-MAT-T050",
+          "topicName": "Unit II - Real Analysis | Limit infimum"
+        },
+        {
+          "topicId": "PGTRB-MAT-T051",
+          "topicName": "Unit II - Real Analysis | The Bolzano - Weierstrass theorem"
+        },
+        {
+          "topicId": "PGTRB-MAT-T052",
+          "topicName": "Unit II - Real Analysis | The Heine - Borel Covering theorem"
+        },
+        {
+          "topicId": "PGTRB-MAT-T053",
+          "topicName": "Unit II - Real Analysis | Continuity"
+        },
+        {
+          "topicId": "PGTRB-MAT-T054",
+          "topicName": "Unit II - Real Analysis | Uniform Continuity"
+        },
+        {
+          "topicId": "PGTRB-MAT-T055",
+          "topicName": "Unit II - Real Analysis | Differentiability"
+        },
+        {
+          "topicId": "PGTRB-MAT-T056",
+          "topicName": "Unit II - Real Analysis | The Mean Value theorem for derivatives"
+        },
+        {
+          "topicId": "PGTRB-MAT-T057",
+          "topicName": "Unit II - Real Analysis | Sequences and Series of functions"
+        },
+        {
+          "topicId": "PGTRB-MAT-T058",
+          "topicName": "Unit II - Real Analysis | Uniform convergence"
+        },
+        {
+          "topicId": "PGTRB-MAT-T059",
+          "topicName": "Unit II - Real Analysis | Riemann - Stieltjes integral: Definition and existence"
+        },
+        {
+          "topicId": "PGTRB-MAT-T060",
+          "topicName": "Unit II - Real Analysis | Properties of the Riemann - Stieltjes integral"
+        },
+        {
+          "topicId": "PGTRB-MAT-T061",
+          "topicName": "Unit II - Real Analysis | Integral and Differentiation"
+        },
+        {
+          "topicId": "PGTRB-MAT-T062",
+          "topicName": "Unit II - Real Analysis | Integration of vector valued functions"
+        },
+        {
+          "topicId": "PGTRB-MAT-T063",
+          "topicName": "Unit II - Real Analysis | Uniform convergence and Continuity"
+        },
+        {
+          "topicId": "PGTRB-MAT-T064",
+          "topicName": "Unit II - Real Analysis | Uniform convergence and Integration"
+        },
+        {
+          "topicId": "PGTRB-MAT-T065",
+          "topicName": "Unit II - Real Analysis | Uniform convergence and Differentiation"
+        },
+        {
+          "topicId": "PGTRB-MAT-T066",
+          "topicName": "Unit II - Real Analysis | Power series"
+        },
+        {
+          "topicId": "PGTRB-MAT-T067",
+          "topicName": "Unit II - Real Analysis | Fourier series"
+        },
+        {
+          "topicId": "PGTRB-MAT-T068",
+          "topicName": "Unit II - Real Analysis | Functions of several variables"
+        },
+        {
+          "topicId": "PGTRB-MAT-T069",
+          "topicName": "Unit II - Real Analysis | Directional derivative"
+        },
+        {
+          "topicId": "PGTRB-MAT-T070",
+          "topicName": "Unit II - Real Analysis | Partial derivative"
+        },
+        {
+          "topicId": "PGTRB-MAT-T071",
+          "topicName": "Unit II - Real Analysis | Derivative as a linear transformation"
+        },
+        {
+          "topicId": "PGTRB-MAT-T072",
+          "topicName": "Unit II - Real Analysis | The Inverse function theorem"
+        },
+        {
+          "topicId": "PGTRB-MAT-T073",
+          "topicName": "Unit II - Real Analysis | The Implicit function theorem"
+        },
+        {
+          "topicId": "PGTRB-MAT-T074",
+          "topicName": "Unit III - Topology | Topological spaces"
+        },
+        {
+          "topicId": "PGTRB-MAT-T075",
+          "topicName": "Unit III - Topology | Basis"
+        },
+        {
+          "topicId": "PGTRB-MAT-T076",
+          "topicName": "Unit III - Topology | The order Topology"
+        },
+        {
+          "topicId": "PGTRB-MAT-T077",
+          "topicName": "Unit III - Topology | The product Topology"
+        },
+        {
+          "topicId": "PGTRB-MAT-T078",
+          "topicName": "Unit III - Topology | The subspace Topology"
+        },
+        {
+          "topicId": "PGTRB-MAT-T079",
+          "topicName": "Unit III - Topology | Closed sets and limit points"
+        },
+        {
+          "topicId": "PGTRB-MAT-T080",
+          "topicName": "Unit III - Topology | Continuous functions"
+        },
+        {
+          "topicId": "PGTRB-MAT-T081",
+          "topicName": "Unit III - Topology | The box and product Topologies"
+        },
+        {
+          "topicId": "PGTRB-MAT-T082",
+          "topicName": "Unit III - Topology | The matrix Topology"
+        },
+        {
+          "topicId": "PGTRB-MAT-T083",
+          "topicName": "Unit III - Topology | Connected spaces"
+        },
+        {
+          "topicId": "PGTRB-MAT-T084",
+          "topicName": "Unit III - Topology | Connected subspaces of the real line"
+        },
+        {
+          "topicId": "PGTRB-MAT-T085",
+          "topicName": "Unit III - Topology | Components and local connectedness"
+        },
+        {
+          "topicId": "PGTRB-MAT-T086",
+          "topicName": "Unit III - Topology | Compact spaces"
+        },
+        {
+          "topicId": "PGTRB-MAT-T087",
+          "topicName": "Unit III - Topology | Compact subspaces of the real line"
+        },
+        {
+          "topicId": "PGTRB-MAT-T088",
+          "topicName": "Unit III - Topology | Limit point compactness"
+        },
+        {
+          "topicId": "PGTRB-MAT-T089",
+          "topicName": "Unit III - Topology | Local compactness"
+        },
+        {
+          "topicId": "PGTRB-MAT-T090",
+          "topicName": "Unit III - Topology | Countability Axioms"
+        },
+        {
+          "topicId": "PGTRB-MAT-T091",
+          "topicName": "Unit III - Topology | Separation Axioms"
+        },
+        {
+          "topicId": "PGTRB-MAT-T092",
+          "topicName": "Unit III - Topology | Normal spaces"
+        },
+        {
+          "topicId": "PGTRB-MAT-T093",
+          "topicName": "Unit III - Topology | The Urysohn Lemma"
+        },
+        {
+          "topicId": "PGTRB-MAT-T094",
+          "topicName": "Unit III - Topology | The Urysohn metrization theorem"
+        },
+        {
+          "topicId": "PGTRB-MAT-T095",
+          "topicName": "Unit III - Topology | The Tietze extension theorem"
+        },
+        {
+          "topicId": "PGTRB-MAT-T096",
+          "topicName": "Unit IV - Complex Analysis | Limits and continuity"
+        },
+        {
+          "topicId": "PGTRB-MAT-T097",
+          "topicName": "Unit IV - Complex Analysis | Analytic functions"
+        },
+        {
+          "topicId": "PGTRB-MAT-T098",
+          "topicName": "Unit IV - Complex Analysis | Polynomials and rational functions"
+        },
+        {
+          "topicId": "PGTRB-MAT-T099",
+          "topicName": "Unit IV - Complex Analysis | Elementary theory of power series"
+        },
+        {
+          "topicId": "PGTRB-MAT-T100",
+          "topicName": "Unit IV - Complex Analysis | Maclaurin's series"
+        },
+        {
+          "topicId": "PGTRB-MAT-T101",
+          "topicName": "Unit IV - Complex Analysis | Uniform convergence"
+        },
+        {
+          "topicId": "PGTRB-MAT-T102",
+          "topicName": "Unit IV - Complex Analysis | Power series and Abel's limit theorem"
+        },
+        {
+          "topicId": "PGTRB-MAT-T103",
+          "topicName": "Unit IV - Complex Analysis | Analytic functions as mapping"
+        },
+        {
+          "topicId": "PGTRB-MAT-T104",
+          "topicName": "Unit IV - Complex Analysis | Conformality arcs and Closed curves"
+        },
+        {
+          "topicId": "PGTRB-MAT-T105",
+          "topicName": "Unit IV - Complex Analysis | Analytical functions in regions"
+        },
+        {
+          "topicId": "PGTRB-MAT-T106",
+          "topicName": "Unit IV - Complex Analysis | Conformal mapping"
+        },
+        {
+          "topicId": "PGTRB-MAT-T107",
+          "topicName": "Unit IV - Complex Analysis | Linear transformations"
+        },
+        {
+          "topicId": "PGTRB-MAT-T108",
+          "topicName": "Unit IV - Complex Analysis | The linear group"
+        },
+        {
+          "topicId": "PGTRB-MAT-T109",
+          "topicName": "Unit IV - Complex Analysis | The cross ratio and symmetry"
+        },
+        {
+          "topicId": "PGTRB-MAT-T110",
+          "topicName": "Unit IV - Complex Analysis | Complex integration - Fundamental theorems"
+        },
+        {
+          "topicId": "PGTRB-MAT-T111",
+          "topicName": "Unit IV - Complex Analysis | Line integrals"
+        },
+        {
+          "topicId": "PGTRB-MAT-T112",
+          "topicName": "Unit IV - Complex Analysis | Rectifiable arcs"
+        },
+        {
+          "topicId": "PGTRB-MAT-T113",
+          "topicName": "Unit IV - Complex Analysis | Line integrals as functions of arcs"
+        },
+        {
+          "topicId": "PGTRB-MAT-T114",
+          "topicName": "Unit IV - Complex Analysis | Cauchy's theorem for a rectangle"
+        },
+        {
+          "topicId": "PGTRB-MAT-T115",
+          "topicName": "Unit IV - Complex Analysis | Cauchy's theorem in a Circular disc"
+        },
+        {
+          "topicId": "PGTRB-MAT-T116",
+          "topicName": "Unit IV - Complex Analysis | Cauchy's integral formula"
+        },
+        {
+          "topicId": "PGTRB-MAT-T117",
+          "topicName": "Unit IV - Complex Analysis | The index of a point with respect to a closed curve"
+        },
+        {
+          "topicId": "PGTRB-MAT-T118",
+          "topicName": "Unit IV - Complex Analysis | The integral formula"
+        },
+        {
+          "topicId": "PGTRB-MAT-T119",
+          "topicName": "Unit IV - Complex Analysis | Higher derivatives"
+        },
+        {
+          "topicId": "PGTRB-MAT-T120",
+          "topicName": "Unit IV - Complex Analysis | Local properties of Analytic functions"
+        },
+        {
+          "topicId": "PGTRB-MAT-T121",
+          "topicName": "Unit IV - Complex Analysis | Removable singularities"
+        },
+        {
+          "topicId": "PGTRB-MAT-T122",
+          "topicName": "Unit IV - Complex Analysis | Taylor's theorem"
+        },
+        {
+          "topicId": "PGTRB-MAT-T123",
+          "topicName": "Unit IV - Complex Analysis | Zeros and Poles"
+        },
+        {
+          "topicId": "PGTRB-MAT-T124",
+          "topicName": "Unit IV - Complex Analysis | The local mapping"
+        },
+        {
+          "topicId": "PGTRB-MAT-T125",
+          "topicName": "Unit IV - Complex Analysis | The maximum modulus Principle"
+        },
+        {
+          "topicId": "PGTRB-MAT-T126",
+          "topicName": "Unit V - Functional Analysis | Banach Spaces - Definition and examples"
+        },
+        {
+          "topicId": "PGTRB-MAT-T127",
+          "topicName": "Unit V - Functional Analysis | Holder's inequality"
+        },
+        {
+          "topicId": "PGTRB-MAT-T128",
+          "topicName": "Unit V - Functional Analysis | Minkowski's inequality"
+        },
+        {
+          "topicId": "PGTRB-MAT-T129",
+          "topicName": "Unit V - Functional Analysis | Continuous linear transformations"
+        },
+        {
+          "topicId": "PGTRB-MAT-T130",
+          "topicName": "Unit V - Functional Analysis | The Hahn - Banach theorem"
+        },
+        {
+          "topicId": "PGTRB-MAT-T131",
+          "topicName": "Unit V - Functional Analysis | Natural imbedding of X in X**"
+        },
+        {
+          "topicId": "PGTRB-MAT-T132",
+          "topicName": "Unit V - Functional Analysis | The Open mapping theorem"
+        },
+        {
+          "topicId": "PGTRB-MAT-T133",
+          "topicName": "Unit V - Functional Analysis | The Closed graph theorem"
+        },
+        {
+          "topicId": "PGTRB-MAT-T134",
+          "topicName": "Unit V - Functional Analysis | Properties of conjugate of an operator"
+        },
+        {
+          "topicId": "PGTRB-MAT-T135",
+          "topicName": "Unit V - Functional Analysis | Hilbert spaces"
+        },
+        {
+          "topicId": "PGTRB-MAT-T136",
+          "topicName": "Unit V - Functional Analysis | Orthonormal bases"
+        },
+        {
+          "topicId": "PGTRB-MAT-T137",
+          "topicName": "Unit V - Functional Analysis | Conjugate space H*"
+        },
+        {
+          "topicId": "PGTRB-MAT-T138",
+          "topicName": "Unit V - Functional Analysis | Adjoint of an operator"
+        },
+        {
+          "topicId": "PGTRB-MAT-T139",
+          "topicName": "Unit V - Functional Analysis | Projections"
+        },
+        {
+          "topicId": "PGTRB-MAT-T140",
+          "topicName": "Unit V - Functional Analysis | Matrices and Basic operations"
+        },
+        {
+          "topicId": "PGTRB-MAT-T141",
+          "topicName": "Unit V - Functional Analysis | Determinant of a matrix"
+        },
+        {
+          "topicId": "PGTRB-MAT-T142",
+          "topicName": "Unit V - Functional Analysis | Determinant and Spectrum of an operator"
+        },
+        {
+          "topicId": "PGTRB-MAT-T143",
+          "topicName": "Unit V - Functional Analysis | Spectral theorem for operators on a finite dimensional Hilbert space"
+        },
+        {
+          "topicId": "PGTRB-MAT-T144",
+          "topicName": "Unit V - Functional Analysis | Regular and Singular elements in a Banach Algebra"
+        },
+        {
+          "topicId": "PGTRB-MAT-T145",
+          "topicName": "Unit V - Functional Analysis | Topological divisor of zero"
+        },
+        {
+          "topicId": "PGTRB-MAT-T146",
+          "topicName": "Unit V - Functional Analysis | Spectrum of an element in a Banach algebra"
+        },
+        {
+          "topicId": "PGTRB-MAT-T147",
+          "topicName": "Unit V - Functional Analysis | The formula for the spectral radius"
+        },
+        {
+          "topicId": "PGTRB-MAT-T148",
+          "topicName": "Unit V - Functional Analysis | Radical and semi - simplicity"
+        },
+        {
+          "topicId": "PGTRB-MAT-T149",
+          "topicName": "Unit VI - Differential Geometry | Curves in spaces"
+        },
+        {
+          "topicId": "PGTRB-MAT-T150",
+          "topicName": "Unit VI - Differential Geometry | Serret - Frenet formulae"
+        },
+        {
+          "topicId": "PGTRB-MAT-T151",
+          "topicName": "Unit VI - Differential Geometry | Locus of centers of curvature"
+        },
+        {
+          "topicId": "PGTRB-MAT-T152",
+          "topicName": "Unit VI - Differential Geometry | Spherical curvature"
+        },
+        {
+          "topicId": "PGTRB-MAT-T153",
+          "topicName": "Unit VI - Differential Geometry | Intrinsic equations"
+        },
+        {
+          "topicId": "PGTRB-MAT-T154",
+          "topicName": "Unit VI - Differential Geometry | Helices"
+        },
+        {
+          "topicId": "PGTRB-MAT-T155",
+          "topicName": "Unit VI - Differential Geometry | Spherical Indicatrix Surfaces"
+        },
+        {
+          "topicId": "PGTRB-MAT-T156",
+          "topicName": "Unit VI - Differential Geometry | Curves on a surface"
+        },
+        {
+          "topicId": "PGTRB-MAT-T157",
+          "topicName": "Unit VI - Differential Geometry | Surface of revolution"
+        },
+        {
+          "topicId": "PGTRB-MAT-T158",
+          "topicName": "Unit VI - Differential Geometry | Helicoids"
+        },
+        {
+          "topicId": "PGTRB-MAT-T159",
+          "topicName": "Unit VI - Differential Geometry | Gaussian curvature"
+        },
+        {
+          "topicId": "PGTRB-MAT-T160",
+          "topicName": "Unit VI - Differential Geometry | First fundamental form"
+        },
+        {
+          "topicId": "PGTRB-MAT-T161",
+          "topicName": "Unit VI - Differential Geometry | Second fundamental form"
+        },
+        {
+          "topicId": "PGTRB-MAT-T162",
+          "topicName": "Unit VI - Differential Geometry | Isometry"
+        },
+        {
+          "topicId": "PGTRB-MAT-T163",
+          "topicName": "Unit VI - Differential Geometry | Meusnier's theorem"
+        },
+        {
+          "topicId": "PGTRB-MAT-T164",
+          "topicName": "Unit VI - Differential Geometry | Euler's theorem"
+        },
+        {
+          "topicId": "PGTRB-MAT-T165",
+          "topicName": "Unit VI - Differential Geometry | Lines of curvature"
+        },
+        {
+          "topicId": "PGTRB-MAT-T166",
+          "topicName": "Unit VI - Differential Geometry | Dupin's Indicatrix"
+        },
+        {
+          "topicId": "PGTRB-MAT-T167",
+          "topicName": "Unit VI - Differential Geometry | Asymptotic lines"
+        },
+        {
+          "topicId": "PGTRB-MAT-T168",
+          "topicName": "Unit VI - Differential Geometry | Edge of regression"
+        },
+        {
+          "topicId": "PGTRB-MAT-T169",
+          "topicName": "Unit VI - Differential Geometry | Developable surfaces associated to a curve"
+        },
+        {
+          "topicId": "PGTRB-MAT-T170",
+          "topicName": "Unit VI - Differential Geometry | Geodesics"
+        },
+        {
+          "topicId": "PGTRB-MAT-T171",
+          "topicName": "Unit VI - Differential Geometry | Conjugate points on Geodesics"
+        },
+        {
+          "topicId": "PGTRB-MAT-T172",
+          "topicName": "Unit VII - Differential Equations | Linear differential equation with constant coefficients"
+        },
+        {
+          "topicId": "PGTRB-MAT-T173",
+          "topicName": "Unit VII - Differential Equations | Linear differential equation with variable coefficients"
+        },
+        {
+          "topicId": "PGTRB-MAT-T174",
+          "topicName": "Unit VII - Differential Equations | Linear dependence and independence"
+        },
+        {
+          "topicId": "PGTRB-MAT-T175",
+          "topicName": "Unit VII - Differential Equations | Wronskian"
+        },
+        {
+          "topicId": "PGTRB-MAT-T176",
+          "topicName": "Unit VII - Differential Equations | Non homogeneous equations of order two and n"
+        },
+        {
+          "topicId": "PGTRB-MAT-T177",
+          "topicName": "Unit VII - Differential Equations | Initial value problems for nth order equations"
+        },
+        {
+          "topicId": "PGTRB-MAT-T178",
+          "topicName": "Unit VII - Differential Equations | Second order equations with ordinary point"
+        },
+        {
+          "topicId": "PGTRB-MAT-T179",
+          "topicName": "Unit VII - Differential Equations | Second order equations with regular singular points"
+        },
+        {
+          "topicId": "PGTRB-MAT-T180",
+          "topicName": "Unit VII - Differential Equations | Legendre Equations"
+        },
+        {
+          "topicId": "PGTRB-MAT-T181",
+          "topicName": "Unit VII - Differential Equations | Bessel's equation"
+        },
+        {
+          "topicId": "PGTRB-MAT-T182",
+          "topicName": "Unit VII - Differential Equations | Hermite's equation and their properties"
+        },
+        {
+          "topicId": "PGTRB-MAT-T183",
+          "topicName": "Unit VII - Differential Equations | Existence and Uniqueness of solutions to first order equations"
+        },
+        {
+          "topicId": "PGTRB-MAT-T184",
+          "topicName": "Unit VII - Differential Equations | Exact equation"
+        },
+        {
+          "topicId": "PGTRB-MAT-T185",
+          "topicName": "Unit VII - Differential Equations | Lipschitz condition"
+        },
+        {
+          "topicId": "PGTRB-MAT-T186",
+          "topicName": "Unit VII - Differential Equations | Non local existence of Solution"
+        },
+        {
+          "topicId": "PGTRB-MAT-T187",
+          "topicName": "Unit VII - Differential Equations | Approximation to Uniqueness of solutions"
+        },
+        {
+          "topicId": "PGTRB-MAT-T188",
+          "topicName": "Unit VII - Differential Equations | Lagrange method for solving first order PDEs"
+        },
+        {
+          "topicId": "PGTRB-MAT-T189",
+          "topicName": "Unit VII - Differential Equations | Charpit method for solving first order PDEs"
+        },
+        {
+          "topicId": "PGTRB-MAT-T190",
+          "topicName": "Unit VII - Differential Equations | Classification of Second order partial differential equations"
+        },
+        {
+          "topicId": "PGTRB-MAT-T191",
+          "topicName": "Unit VII - Differential Equations | General solution of higher order PDEs with constant co-efficients"
+        },
+        {
+          "topicId": "PGTRB-MAT-T192",
+          "topicName": "Unit VII - Differential Equations | Method of separation of variables for Laplace equation"
+        },
+        {
+          "topicId": "PGTRB-MAT-T193",
+          "topicName": "Unit VII - Differential Equations | Method of separation of variables for Heat equation"
+        },
+        {
+          "topicId": "PGTRB-MAT-T194",
+          "topicName": "Unit VII - Differential Equations | Method of separation of variables for Wave equations"
+        },
+        {
+          "topicId": "PGTRB-MAT-T195",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Generalised Co-ordinates"
+        },
+        {
+          "topicId": "PGTRB-MAT-T196",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Lagrange's equations"
+        },
+        {
+          "topicId": "PGTRB-MAT-T197",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Hamilton's Canonical equations"
+        },
+        {
+          "topicId": "PGTRB-MAT-T198",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Hamilton's principle"
+        },
+        {
+          "topicId": "PGTRB-MAT-T199",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Principle of least action"
+        },
+        {
+          "topicId": "PGTRB-MAT-T200",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Canonical transformations"
+        },
+        {
+          "topicId": "PGTRB-MAT-T201",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Differential forms"
+        },
+        {
+          "topicId": "PGTRB-MAT-T202",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Generating functions"
+        },
+        {
+          "topicId": "PGTRB-MAT-T203",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Lagrange brackets"
+        },
+        {
+          "topicId": "PGTRB-MAT-T204",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Poisson brackets"
+        },
+        {
+          "topicId": "PGTRB-MAT-T205",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Numerical solutions of algebraic equations"
+        },
+        {
+          "topicId": "PGTRB-MAT-T206",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Numerical solutions of transcendental equations"
+        },
+        {
+          "topicId": "PGTRB-MAT-T207",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Method of iteration"
+        },
+        {
+          "topicId": "PGTRB-MAT-T208",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Newton Raphson method and Rate of convergence"
+        },
+        {
+          "topicId": "PGTRB-MAT-T209",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Gauss elimination method"
+        },
+        {
+          "topicId": "PGTRB-MAT-T210",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Gauss - Seidel methods"
+        },
+        {
+          "topicId": "PGTRB-MAT-T211",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Finite differences"
+        },
+        {
+          "topicId": "PGTRB-MAT-T212",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Lagrange Interpolation"
+        },
+        {
+          "topicId": "PGTRB-MAT-T213",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Hermite Interpolation"
+        },
+        {
+          "topicId": "PGTRB-MAT-T214",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Spline Interpolation"
+        },
+        {
+          "topicId": "PGTRB-MAT-T215",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Numerical differentiation"
+        },
+        {
+          "topicId": "PGTRB-MAT-T216",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Numerical integration"
+        },
+        {
+          "topicId": "PGTRB-MAT-T217",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Picard method"
+        },
+        {
+          "topicId": "PGTRB-MAT-T218",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Euler method"
+        },
+        {
+          "topicId": "PGTRB-MAT-T219",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Modified Euler method"
+        },
+        {
+          "topicId": "PGTRB-MAT-T220",
+          "topicName": "Unit VIII - Classical Mechanics and Numerical Analysis | Runge - Kutta methods"
+        },
+        {
+          "topicId": "PGTRB-MAT-T221",
+          "topicName": "Unit IX - Operations Research | Linear programming problem"
+        },
+        {
+          "topicId": "PGTRB-MAT-T222",
+          "topicName": "Unit IX - Operations Research | Simplex Methods"
+        },
+        {
+          "topicId": "PGTRB-MAT-T223",
+          "topicName": "Unit IX - Operations Research | Duality"
+        },
+        {
+          "topicId": "PGTRB-MAT-T224",
+          "topicName": "Unit IX - Operations Research | Dual Simplex Method"
+        },
+        {
+          "topicId": "PGTRB-MAT-T225",
+          "topicName": "Unit IX - Operations Research | Revised Simplex Method"
+        },
+        {
+          "topicId": "PGTRB-MAT-T226",
+          "topicName": "Unit IX - Operations Research | Integer Programming Problem"
+        },
+        {
+          "topicId": "PGTRB-MAT-T227",
+          "topicName": "Unit IX - Operations Research | Dynamic Programming"
+        },
+        {
+          "topicId": "PGTRB-MAT-T228",
+          "topicName": "Unit IX - Operations Research | Non linear programming"
+        },
+        {
+          "topicId": "PGTRB-MAT-T229",
+          "topicName": "Unit IX - Operations Research | Network Analysis"
+        },
+        {
+          "topicId": "PGTRB-MAT-T230",
+          "topicName": "Unit IX - Operations Research | Directed Network"
+        },
+        {
+          "topicId": "PGTRB-MAT-T231",
+          "topicName": "Unit IX - Operations Research | Max Flow Min Cut theorem"
+        },
+        {
+          "topicId": "PGTRB-MAT-T232",
+          "topicName": "Unit IX - Operations Research | Queuing theory"
+        },
+        {
+          "topicId": "PGTRB-MAT-T233",
+          "topicName": "Unit IX - Operations Research | Steady State solutions of M/M/1"
+        },
+        {
+          "topicId": "PGTRB-MAT-T234",
+          "topicName": "Unit IX - Operations Research | M/M/1 with limited waiting space"
+        },
+        {
+          "topicId": "PGTRB-MAT-T235",
+          "topicName": "Unit IX - Operations Research | M/M/C"
+        },
+        {
+          "topicId": "PGTRB-MAT-T236",
+          "topicName": "Unit IX - Operations Research | M/M/C with limited waiting space"
+        },
+        {
+          "topicId": "PGTRB-MAT-T237",
+          "topicName": "Unit IX - Operations Research | M/G/1 models"
+        },
+        {
+          "topicId": "PGTRB-MAT-T238",
+          "topicName": "Unit IX - Operations Research | Inventory models"
+        },
+        {
+          "topicId": "PGTRB-MAT-T239",
+          "topicName": "Unit IX - Operations Research | Deterministic models with shortages"
+        },
+        {
+          "topicId": "PGTRB-MAT-T240",
+          "topicName": "Unit IX - Operations Research | Deterministic models without shortages"
+        },
+        {
+          "topicId": "PGTRB-MAT-T241",
+          "topicName": "Unit IX - Operations Research | Single Price break models"
+        },
+        {
+          "topicId": "PGTRB-MAT-T242",
+          "topicName": "Unit X - Probability Theory | Sample space"
+        },
+        {
+          "topicId": "PGTRB-MAT-T243",
+          "topicName": "Unit X - Probability Theory | Discrete Probability"
+        },
+        {
+          "topicId": "PGTRB-MAT-T244",
+          "topicName": "Unit X - Probability Theory | Independent events"
+        },
+        {
+          "topicId": "PGTRB-MAT-T245",
+          "topicName": "Unit X - Probability Theory | Baye's theorem"
+        },
+        {
+          "topicId": "PGTRB-MAT-T246",
+          "topicName": "Unit X - Probability Theory | Random variables"
+        },
+        {
+          "topicId": "PGTRB-MAT-T247",
+          "topicName": "Unit X - Probability Theory | Distribution functions (Univariate and Multivariate)"
+        },
+        {
+          "topicId": "PGTRB-MAT-T248",
+          "topicName": "Unit X - Probability Theory | Expectation and Moments"
+        },
+        {
+          "topicId": "PGTRB-MAT-T249",
+          "topicName": "Unit X - Probability Theory | Moment Generating function"
+        },
+        {
+          "topicId": "PGTRB-MAT-T250",
+          "topicName": "Unit X - Probability Theory | Characteristic functions"
+        },
+        {
+          "topicId": "PGTRB-MAT-T251",
+          "topicName": "Unit X - Probability Theory | Cumulants"
+        },
+        {
+          "topicId": "PGTRB-MAT-T252",
+          "topicName": "Unit X - Probability Theory | Independent Random variables"
+        },
+        {
+          "topicId": "PGTRB-MAT-T253",
+          "topicName": "Unit X - Probability Theory | Marginal distributions"
+        },
+        {
+          "topicId": "PGTRB-MAT-T254",
+          "topicName": "Unit X - Probability Theory | Conditional distributions"
+        },
+        {
+          "topicId": "PGTRB-MAT-T255",
+          "topicName": "Unit X - Probability Theory | Tchebyshev inequality"
+        },
+        {
+          "topicId": "PGTRB-MAT-T256",
+          "topicName": "Unit X - Probability Theory | Markov inequality"
+        },
+        {
+          "topicId": "PGTRB-MAT-T257",
+          "topicName": "Unit X - Probability Theory | Jensen inequality"
+        },
+        {
+          "topicId": "PGTRB-MAT-T258",
+          "topicName": "Unit X - Probability Theory | Modes of convergence"
+        },
+        {
+          "topicId": "PGTRB-MAT-T259",
+          "topicName": "Unit X - Probability Theory | Weak laws of large numbers"
+        },
+        {
+          "topicId": "PGTRB-MAT-T260",
+          "topicName": "Unit X - Probability Theory | Strong laws of large numbers"
+        },
+        {
+          "topicId": "PGTRB-MAT-T261",
+          "topicName": "Unit X - Probability Theory | Central limit theorem (i.i.d case)"
+        },
+        {
+          "topicId": "PGTRB-MAT-T262",
+          "topicName": "Unit X - Probability Theory | Binomial distribution"
+        },
+        {
+          "topicId": "PGTRB-MAT-T263",
+          "topicName": "Unit X - Probability Theory | Poisson distribution"
+        },
+        {
+          "topicId": "PGTRB-MAT-T264",
+          "topicName": "Unit X - Probability Theory | Uniform distribution"
+        },
+        {
+          "topicId": "PGTRB-MAT-T265",
+          "topicName": "Unit X - Probability Theory | Normal distribution"
+        },
+        {
+          "topicId": "PGTRB-MAT-T266",
+          "topicName": "Unit X - Probability Theory | Exponential distribution"
+        },
+        {
+          "topicId": "PGTRB-MAT-T267",
+          "topicName": "Unit X - Probability Theory | Gamma distribution"
+        },
+        {
+          "topicId": "PGTRB-MAT-T268",
+          "topicName": "Unit X - Probability Theory | Beta distribution"
+        },
+        {
+          "topicId": "PGTRB-MAT-T269",
+          "topicName": "Unit X - Probability Theory | Cauchy distribution"
+        },
+        {
+          "topicId": "PGTRB-MAT-T270",
+          "topicName": "Unit X - Probability Theory | Standard Errors"
+        },
+        {
+          "topicId": "PGTRB-MAT-T271",
+          "topicName": "Unit X - Probability Theory | Sampling distributions of t"
+        },
+        {
+          "topicId": "PGTRB-MAT-T272",
+          "topicName": "Unit X - Probability Theory | Sampling distributions of F"
+        },
+        {
+          "topicId": "PGTRB-MAT-T273",
+          "topicName": "Unit X - Probability Theory | Sampling distributions of Chi square"
+        },
+        {
+          "topicId": "PGTRB-MAT-T274",
+          "topicName": "Unit X - Probability Theory | ANOVA"
+        },
+        {
+          "topicId": "PGTRB-MAT-T275",
+          "topicName": "Unit X - Probability Theory | Large sample tests for mean"
+        },
+        {
+          "topicId": "PGTRB-MAT-T276",
+          "topicName": "Unit X - Probability Theory | Large sample tests for proportions"
+        }
+      ]
     },
     {
       "courseId": "PGTRB-HIS",
