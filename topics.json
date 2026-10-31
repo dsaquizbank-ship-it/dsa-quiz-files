@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31T05:07:54.873Z",
+  "version": "2026-10-31T05:59:58.415Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -754,6 +754,542 @@
         {
           "topicId": "SSC-T033",
           "topicName": "General Science | Biology |Biology In Everyday Life"
+        },
+        {
+          "topicId": "SSC-T034",
+          "topicName": "General Awareness | Ancient India | Sources of Ancient History"
+        },
+        {
+          "topicId": "SSC-T035",
+          "topicName": "General Awareness | Ancient India | Pre-Historic Age"
+        },
+        {
+          "topicId": "SSC-T036",
+          "topicName": "General Awareness | Ancient India | Indus Valley / Harappan Civilization"
+        },
+        {
+          "topicId": "SSC-T037",
+          "topicName": "General Awareness | Ancient India | Vedic Age (1500-600 BCE)"
+        },
+        {
+          "topicId": "SSC-T038",
+          "topicName": "General Awareness | Ancient India | Jainism"
+        },
+        {
+          "topicId": "SSC-T039",
+          "topicName": "General Awareness | Ancient India | Buddhism"
+        },
+        {
+          "topicId": "SSC-T040",
+          "topicName": "General Awareness | Ancient India | Mahajanapadas and Magadha Empire"
+        },
+        {
+          "topicId": "SSC-T041",
+          "topicName": "General Awareness | Ancient India | Mauryan Empire"
+        },
+        {
+          "topicId": "SSC-T042",
+          "topicName": "General Awareness | Ancient India | Post-Mauryan Empire"
+        },
+        {
+          "topicId": "SSC-T043",
+          "topicName": "General Awareness | Ancient India | Gupta Empire"
+        },
+        {
+          "topicId": "SSC-T044",
+          "topicName": "General Awareness | Ancient India | Post-Gupta Empire"
+        },
+        {
+          "topicId": "SSC-T045",
+          "topicName": "General Awareness | Ancient India | History of South India"
+        },
+        {
+          "topicId": "SSC-T046",
+          "topicName": "General Awareness | Ancient India | Early Medieval Period"
+        },
+        {
+          "topicId": "SSC-T047",
+          "topicName": "General Awareness | Medieval India | Arab and Turk Invasions in India"
+        },
+        {
+          "topicId": "SSC-T048",
+          "topicName": "General Awareness | Medieval India | Delhi Sultanate"
+        },
+        {
+          "topicId": "SSC-T049",
+          "topicName": "General Awareness | Medieval India | Vijayanagara Empire"
+        },
+        {
+          "topicId": "SSC-T050",
+          "topicName": "General Awareness | Medieval India | Bahmani Empire"
+        },
+        {
+          "topicId": "SSC-T051",
+          "topicName": "General Awareness | Medieval India | Bhakti and Sufi Movement"
+        },
+        {
+          "topicId": "SSC-T052",
+          "topicName": "General Awareness | Medieval India | Mughal Empire"
+        },
+        {
+          "topicId": "SSC-T053",
+          "topicName": "General Awareness | Medieval India | Provincial Dynasties"
+        },
+        {
+          "topicId": "SSC-T054",
+          "topicName": "General Awareness | Medieval India | Later Mughal Period"
+        },
+        {
+          "topicId": "SSC-T055",
+          "topicName": "General Awareness | Medieval India | Rise of Maratha Power"
+        },
+        {
+          "topicId": "SSC-T056",
+          "topicName": "General Awareness | Medieval India | Rise of the Sikhs"
+        },
+        {
+          "topicId": "SSC-T057",
+          "topicName": "General Awareness | Modern India | Arrival of European Companies"
+        },
+        {
+          "topicId": "SSC-T058",
+          "topicName": "General Awareness | Medieval India | British Expansion in Indian Territories"
+        },
+        {
+          "topicId": "SSC-T059",
+          "topicName": "General Awareness | Medieval India | The Revolt of 1857"
+        },
+        {
+          "topicId": "SSC-T060",
+          "topicName": "General Awareness | Medieval India | Peasant Movements and Tribal Revolt"
+        },
+        {
+          "topicId": "SSC-T061",
+          "topicName": "General Awareness | Medieval India | Socio-Religious Reform Movement"
+        },
+        {
+          "topicId": "SSC-T062",
+          "topicName": "General Awareness | Medieval India | Development of Press and Education in India"
+        },
+        {
+          "topicId": "SSC-T063",
+          "topicName": "General Awareness | Medieval India | Formation of Indian National Congress"
+        },
+        {
+          "topicId": "SSC-T064",
+          "topicName": "General Awareness | Medieval India | Indian National Movement"
+        },
+        {
+          "topicId": "SSC-T065",
+          "topicName": "General Awareness | Medieval India | Gandhian Era: First Phase"
+        },
+        {
+          "topicId": "SSC-T066",
+          "topicName": "General Awareness | Medieval India | Phase of National Politics (1922-29)"
+        },
+        {
+          "topicId": "SSC-T067",
+          "topicName": "General Awareness | Medieval India | Gandhian Era: Second Phase"
+        },
+        {
+          "topicId": "SSC-T068",
+          "topicName": "General Awareness | Medieval India | Towards Independence"
+        },
+        {
+          "topicId": "SSC-T069",
+          "topicName": "General Awareness | Medieval India | Governor, Governor-General and Viceroy"
+        },
+        {
+          "topicId": "SSC-T070",
+          "topicName": "General Awareness | Economy | Economics (Demand, Supply and Nature of Market)"
+        },
+        {
+          "topicId": "SSC-T071",
+          "topicName": "General Awareness | Economy | Economy: An introduction"
+        },
+        {
+          "topicId": "SSC-T072",
+          "topicName": "General Awareness | Economy | Economic Growth and Development"
+        },
+        {
+          "topicId": "SSC-T073",
+          "topicName": "General Awareness | Economy | National Income"
+        },
+        {
+          "topicId": "SSC-T074",
+          "topicName": "General Awareness | Economy | Economic Planning in India"
+        },
+        {
+          "topicId": "SSC-T075",
+          "topicName": "General Awareness | Economy | Poverty and Unemployement"
+        },
+        {
+          "topicId": "SSC-T076",
+          "topicName": "General Awareness | Economy | Money and Inflation"
+        },
+        {
+          "topicId": "SSC-T077",
+          "topicName": "General Awareness | Economy | Banking in India"
+        },
+        {
+          "topicId": "SSC-T078",
+          "topicName": "General Awareness | Economy | Money and Capital Markets (Financial Market)"
+        },
+        {
+          "topicId": "SSC-T079",
+          "topicName": "General Awareness | Economy | Fiscal Policy and Budget (Public Finance)"
+        },
+        {
+          "topicId": "SSC-T080",
+          "topicName": "General Awareness | Economy | Tax System"
+        },
+        {
+          "topicId": "SSC-T081",
+          "topicName": "General Awareness | Economy | Foreign Trade, Balance of Payments and Foreign Investment"
+        },
+        {
+          "topicId": "SSC-T082",
+          "topicName": "General Awareness | Economy | Indian Agriculture"
+        },
+        {
+          "topicId": "SSC-T083",
+          "topicName": "General Awareness | Economy | Indian Industries"
+        },
+        {
+          "topicId": "SSC-T084",
+          "topicName": "General Awareness | Economy | Other Major Schemes"
+        },
+        {
+          "topicId": "SSC-T085",
+          "topicName": "General Awareness | Economy | International Financial Institutions"
+        },
+        {
+          "topicId": "SSC-T086",
+          "topicName": "General Awareness | Economy | Census"
+        },
+        {
+          "topicId": "SSC-T087",
+          "topicName": "General Awareness | Economy | Major Committees"
+        },
+        {
+          "topicId": "SSC-T088",
+          "topicName": "General Awareness | Polity | Constitutional Development of India"
+        },
+        {
+          "topicId": "SSC-T089",
+          "topicName": "General Awareness | Polity | Making of Constitution"
+        },
+        {
+          "topicId": "SSC-T090",
+          "topicName": "General Awareness | Polity | Preamble"
+        },
+        {
+          "topicId": "SSC-T091",
+          "topicName": "General Awareness | Polity | Salient Features"
+        },
+        {
+          "topicId": "SSC-T092",
+          "topicName": "General Awareness | Polity | Sources"
+        },
+        {
+          "topicId": "SSC-T093",
+          "topicName": "General Awareness | Polity | Parts"
+        },
+        {
+          "topicId": "SSC-T094",
+          "topicName": "General Awareness | Polity | Articles"
+        },
+        {
+          "topicId": "SSC-T095",
+          "topicName": "General Awareness | Polity | Schedules"
+        },
+        {
+          "topicId": "SSC-T096",
+          "topicName": "General Awareness | Polity | Amendments"
+        },
+        {
+          "topicId": "SSC-T097",
+          "topicName": "General Awareness | Polity | Union and its Territories"
+        },
+        {
+          "topicId": "SSC-T098",
+          "topicName": "General Awareness | Polity | Citizenship"
+        },
+        {
+          "topicId": "SSC-T099",
+          "topicName": "General Awareness | Polity | Fundamental Rights"
+        },
+        {
+          "topicId": "SSC-T100",
+          "topicName": "General Awareness | Polity | DPSP"
+        },
+        {
+          "topicId": "SSC-T101",
+          "topicName": "General Awareness | Polity | Fundamental Duties"
+        },
+        {
+          "topicId": "SSC-T102",
+          "topicName": "General Awareness | Polity | President of India"
+        },
+        {
+          "topicId": "SSC-T103",
+          "topicName": "General Awareness | Polity | PM and Union CoM"
+        },
+        {
+          "topicId": "SSC-T104",
+          "topicName": "General Awareness | Polity | Parliament of India"
+        },
+        {
+          "topicId": "SSC-T105",
+          "topicName": "General Awareness | Polity | State Executive"
+        },
+        {
+          "topicId": "SSC-T106",
+          "topicName": "General Awareness | Polity | State Legislature"
+        },
+        {
+          "topicId": "SSC-T107",
+          "topicName": "General Awareness | Polity | Supreme Court"
+        },
+        {
+          "topicId": "SSC-T108",
+          "topicName": "General Awareness | Polity | High Courts and Subordinate Courts"
+        },
+        {
+          "topicId": "SSC-T109",
+          "topicName": "General Awareness | Polity | Centre-State Relations"
+        },
+        {
+          "topicId": "SSC-T110",
+          "topicName": "General Awareness | Polity | Emergency Provisions"
+        },
+        {
+          "topicId": "SSC-T111",
+          "topicName": "General Awareness | Polity | Local Self-Government"
+        },
+        {
+          "topicId": "SSC-T112",
+          "topicName": "General Awareness | Polity | Official Language"
+        },
+        {
+          "topicId": "SSC-T113",
+          "topicName": "General Awareness | Polity | Constitutional and Non-Constitutional Bodies"
+        },
+        {
+          "topicId": "SSC-T114",
+          "topicName": "General Awareness | World Geography | An Introduction"
+        },
+        {
+          "topicId": "SSC-T115",
+          "topicName": "General Awareness | World Geography | Universe"
+        },
+        {
+          "topicId": "SSC-T116",
+          "topicName": "General Awareness | World Geography | Solar System"
+        },
+        {
+          "topicId": "SSC-T117",
+          "topicName": "General Awareness | World Geography | Rotation and Revolution"
+        },
+        {
+          "topicId": "SSC-T118",
+          "topicName": "General Awareness | World Geography | Latitude and Longitude and Standard Time"
+        },
+        {
+          "topicId": "SSC-T119",
+          "topicName": "General Awareness | World Geography | Origin and Evolution of the Earth"
+        },
+        {
+          "topicId": "SSC-T120",
+          "topicName": "General Awareness | World Geography | Internal Structure of the Earth"
+        },
+        {
+          "topicId": "SSC-T121",
+          "topicName": "General Awareness | World Geography | Rocks"
+        },
+        {
+          "topicId": "SSC-T122",
+          "topicName": "General Awareness | World Geography | Earthquakes, Tsunamis and Volcanoes"
+        },
+        {
+          "topicId": "SSC-T123",
+          "topicName": "General Awareness | World Geography | Geomorphic Processes"
+        },
+        {
+          "topicId": "SSC-T124",
+          "topicName": "General Awareness | World Geography | Landforms/Relief Features"
+        },
+        {
+          "topicId": "SSC-T125",
+          "topicName": "General Awareness | World Geography | Mountains and Plateaus"
+        },
+        {
+          "topicId": "SSC-T126",
+          "topicName": "General Awareness | World Geography | Plains, Islands and Deserts"
+        },
+        {
+          "topicId": "SSC-T127",
+          "topicName": "General Awareness | World Geography | Rivers, Lakes and Waterfalls"
+        },
+        {
+          "topicId": "SSC-T128",
+          "topicName": "General Awareness | World Geography | Atmosphere"
+        },
+        {
+          "topicId": "SSC-T129",
+          "topicName": "General Awareness | World Geography | Air Pressure and Winds"
+        },
+        {
+          "topicId": "SSC-T130",
+          "topicName": "General Awareness | World Geography | Humidity, Precipitation and Clouds"
+        },
+        {
+          "topicId": "SSC-T131",
+          "topicName": "General Awareness | World Geography | Air Mass, Cyclone and Anti-cyclone"
+        },
+        {
+          "topicId": "SSC-T132",
+          "topicName": "General Awareness | World Geography | Major Climatic Regions of the World"
+        },
+        {
+          "topicId": "SSC-T133",
+          "topicName": "General Awareness | World Geography | Hydrosphere"
+        },
+        {
+          "topicId": "SSC-T134",
+          "topicName": "General Awareness | World Geography | Ocean Currents and Waves"
+        },
+        {
+          "topicId": "SSC-T135",
+          "topicName": "General Awareness | World Geography | Soils and Natural Vegetation of the World"
+        },
+        {
+          "topicId": "SSC-T136",
+          "topicName": "General Awareness | World Geography | Agriculture and Animal Husbandry"
+        },
+        {
+          "topicId": "SSC-T137",
+          "topicName": "General Awareness | World Geography | Minerals and Energy Resources"
+        },
+        {
+          "topicId": "SSC-T138",
+          "topicName": "General Awareness | World Geography | Major Industries of the World"
+        },
+        {
+          "topicId": "SSC-T139",
+          "topicName": "General Awareness | World Geography | Transport"
+        },
+        {
+          "topicId": "SSC-T140",
+          "topicName": "General Awareness | World Geography | Population and Urbanization"
+        },
+        {
+          "topicId": "SSC-T141",
+          "topicName": "General Awareness | World Geography | Human Races, Tribes and Languages"
+        },
+        {
+          "topicId": "SSC-T142",
+          "topicName": "General Awareness | World Geography | Continents of the World"
+        },
+        {
+          "topicId": "SSC-T143",
+          "topicName": "General Awareness | Indian Geography | General Introduction"
+        },
+        {
+          "topicId": "SSC-T144",
+          "topicName": "General Awareness | Indian Geography | Geological Structure of India"
+        },
+        {
+          "topicId": "SSC-T145",
+          "topicName": "General Awareness | Indian Geography | Physical Divisions of India"
+        },
+        {
+          "topicId": "SSC-T146",
+          "topicName": "General Awareness | Indian Geography | Rivers of India"
+        },
+        {
+          "topicId": "SSC-T147",
+          "topicName": "General Awareness | Indian Geography | Lakes and Waterfalls of India"
+        },
+        {
+          "topicId": "SSC-T148",
+          "topicName": "General Awareness | Indian Geography | Multipurpose Project"
+        },
+        {
+          "topicId": "SSC-T149",
+          "topicName": "General Awareness | Indian Geography | Climate"
+        },
+        {
+          "topicId": "SSC-T150",
+          "topicName": "General Awareness | Indian Geography | Soils"
+        },
+        {
+          "topicId": "SSC-T151",
+          "topicName": "General Awareness | Indian Geography | Natural Vegetation"
+        },
+        {
+          "topicId": "SSC-T152",
+          "topicName": "General Awareness | Indian Geography | Agriculture and Animal Husbandry"
+        },
+        {
+          "topicId": "SSC-T153",
+          "topicName": "General Awareness | Indian Geography | Mineral Resources"
+        },
+        {
+          "topicId": "SSC-T154",
+          "topicName": "General Awareness | Indian Geography | Energy Resources"
+        },
+        {
+          "topicId": "SSC-T155",
+          "topicName": "General Awareness | Indian Geography | Industries"
+        },
+        {
+          "topicId": "SSC-T156",
+          "topicName": "General Awareness | Indian Geography | Transport and Communication"
+        },
+        {
+          "topicId": "SSC-T157",
+          "topicName": "General Awareness | Indian Geography | Population and Urbanization"
+        },
+        {
+          "topicId": "SSC-T158",
+          "topicName": "General Awareness | Indian Geography | Races and Tribes of India"
+        },
+        {
+          "topicId": "SSC-T159",
+          "topicName": "General Awareness | Indian Geography | States and Union Territories of India"
+        },
+        {
+          "topicId": "SSC-T160",
+          "topicName": "General Awareness | Environment and Ecology | Environment"
+        },
+        {
+          "topicId": "SSC-T161",
+          "topicName": "General Awareness | Environment and Ecology | Ecosystem"
+        },
+        {
+          "topicId": "SSC-T162",
+          "topicName": "General Awareness | Environment and Ecology | Biodiversity"
+        },
+        {
+          "topicId": "SSC-T163",
+          "topicName": "General Awareness | Environment and Ecology | Wildlife Conservation"
+        },
+        {
+          "topicId": "SSC-T164",
+          "topicName": "General Awareness | Environment and Ecology | Climate Change"
+        },
+        {
+          "topicId": "SSC-T165",
+          "topicName": "General Awareness | Environment and Ecology | Environmental Pollution"
+        },
+        {
+          "topicId": "SSC-T166",
+          "topicName": "General Awareness | Environment and Ecology | Sustainable Development"
+        },
+        {
+          "topicId": "SSC-T167",
+          "topicName": "General Awareness | Environment and Ecology | Disaster and Disaster Management"
         }
       ]
     },
