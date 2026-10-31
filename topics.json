@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31T09:06:12.281Z",
+  "version": "2026-10-31T09:23:09.360Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -4110,116 +4110,24 @@
           "topicName": "Unit IX - PHP and MySQL | Querying MySQL database with PHP"
         },
         {
-          "topicId": "PGTRB-COM-T301",
-          "topicName": "Unit X - Cybersecurity | Introduction to Cyber Crime"
+          "topicId": "PGTRB-COM-T329",
+          "topicName": "Unit X - Cybersecurity | Introduction to Cyber Crime, Malware type, Kinds of Cyber Crime"
         },
         {
-          "topicId": "PGTRB-COM-T302",
-          "topicName": "Unit X - Cybersecurity | Malware type"
+          "topicId": "PGTRB-COM-T330",
+          "topicName": "Unit X - Cybersecurity | Cyber Security Techniques: Authentication, Encryption, Digital Signatures, Antivirus, Firewall, Steganography"
         },
         {
-          "topicId": "PGTRB-COM-T303",
-          "topicName": "Unit X - Cybersecurity | Kinds of Cyber Crime"
+          "topicId": "PGTRB-COM-T331",
+          "topicName": "Unit X - Cybersecurity | Password Management: Guidelines for Secure Password, Two Step verification, Generating Secure password, Using Password Manager, Enabling Two-step verification, Securing Computer using antivirus"
         },
         {
-          "topicId": "PGTRB-COM-T304",
-          "topicName": "Unit X - Cybersecurity | Authentication"
+          "topicId": "PGTRB-COM-T332",
+          "topicName": "Unit X - Cybersecurity | Cryptography: Symmetric cipher model, Cryptographic system, Substitution techniques, Caesar cipher, Mono alphabetic ciphers, Hill ciphers, Transposition techniques, Data encryption standard, The strength of DES"
         },
         {
-          "topicId": "PGTRB-COM-T305",
-          "topicName": "Unit X - Cybersecurity | Encryption"
-        },
-        {
-          "topicId": "PGTRB-COM-T306",
-          "topicName": "Unit X - Cybersecurity | Digital Signatures"
-        },
-        {
-          "topicId": "PGTRB-COM-T307",
-          "topicName": "Unit X - Cybersecurity | Antivirus"
-        },
-        {
-          "topicId": "PGTRB-COM-T308",
-          "topicName": "Unit X - Cybersecurity | Firewall"
-        },
-        {
-          "topicId": "PGTRB-COM-T309",
-          "topicName": "Unit X - Cybersecurity | Steganography"
-        },
-        {
-          "topicId": "PGTRB-COM-T310",
-          "topicName": "Unit X - Cybersecurity | Guidelines for Secure Password"
-        },
-        {
-          "topicId": "PGTRB-COM-T311",
-          "topicName": "Unit X - Cybersecurity | Two Step verification"
-        },
-        {
-          "topicId": "PGTRB-COM-T312",
-          "topicName": "Unit X - Cybersecurity | Generating Secure password"
-        },
-        {
-          "topicId": "PGTRB-COM-T313",
-          "topicName": "Unit X - Cybersecurity | Using Password Manager"
-        },
-        {
-          "topicId": "PGTRB-COM-T314",
-          "topicName": "Unit X - Cybersecurity | Enabling Two-step verification"
-        },
-        {
-          "topicId": "PGTRB-COM-T315",
-          "topicName": "Unit X - Cybersecurity | Securing Computer using antivirus"
-        },
-        {
-          "topicId": "PGTRB-COM-T316",
-          "topicName": "Unit X - Cybersecurity | Symmetric cipher model"
-        },
-        {
-          "topicId": "PGTRB-COM-T317",
-          "topicName": "Unit X - Cybersecurity | Cryptographic system"
-        },
-        {
-          "topicId": "PGTRB-COM-T318",
-          "topicName": "Unit X - Cybersecurity | Substitution techniques"
-        },
-        {
-          "topicId": "PGTRB-COM-T319",
-          "topicName": "Unit X - Cybersecurity | Caesar cipher"
-        },
-        {
-          "topicId": "PGTRB-COM-T320",
-          "topicName": "Unit X - Cybersecurity | Mono alphabetic ciphers"
-        },
-        {
-          "topicId": "PGTRB-COM-T321",
-          "topicName": "Unit X - Cybersecurity | Hill ciphers"
-        },
-        {
-          "topicId": "PGTRB-COM-T322",
-          "topicName": "Unit X - Cybersecurity | Transposition techniques"
-        },
-        {
-          "topicId": "PGTRB-COM-T323",
-          "topicName": "Unit X - Cybersecurity | Data encryption standard"
-        },
-        {
-          "topicId": "PGTRB-COM-T324",
-          "topicName": "Unit X - Cybersecurity | The strength of DES"
-        },
-        {
-          "topicId": "PGTRB-COM-T325",
-          "topicName": "Unit X - Cybersecurity | Investigating DoS Attacks"
-        },
-        {
-          "topicId": "PGTRB-COM-T326",
-          "topicName": "Unit X - Cybersecurity | Types of DoS Attacks"
-        },
-        {
-          "topicId": "PGTRB-COM-T327",
-          "topicName": "Unit X - Cybersecurity | Classification of DoS Attacks"
-        },
-        {
-          "topicId": "PGTRB-COM-T328",
-          "topicName": "Unit X - Cybersecurity | Techniques to Detect DoS Attacks"
+          "topicId": "PGTRB-COM-T333",
+          "topicName": "Unit X - Cybersecurity | Attacks: Investigating DoS Attacks, Types of DoS Attacks, Classification of DoS Attacks, Techniques to Detect DoS Attacks"
         }
       ]
     },
