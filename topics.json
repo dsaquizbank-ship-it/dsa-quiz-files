@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31T10:06:11.184Z",
+  "version": "2026-10-31T11:30:45.545Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -10604,7 +10604,660 @@
     {
       "courseId": "SGT",
       "courseName": "SGT",
-      "topics": []
+      "topics": [
+        {
+          "topicId": "SGT-T001",
+          "topicName": "Tamil - Prose | திராவிட மொழிக்குடும்பம்"
+        },
+        {
+          "topicId": "SGT-T002",
+          "topicName": "Tamil - Prose | நீரின்றி அமையாது உலகு"
+        },
+        {
+          "topicId": "SGT-T003",
+          "topicName": "Tamil - Prose | ஏறு தழுவுதல்"
+        },
+        {
+          "topicId": "SGT-T004",
+          "topicName": "Tamil - Prose | கல்வியில் சிறந்த பெண்கள்"
+        },
+        {
+          "topicId": "SGT-T005",
+          "topicName": "Tamil - Prose | சிற்பக்கலை"
+        },
+        {
+          "topicId": "SGT-T006",
+          "topicName": "Tamil - Prose | இந்திய தேசிய இராணுவத்தில் தமிழர் பங்கு"
+        },
+        {
+          "topicId": "SGT-T007",
+          "topicName": "Tamil - Prose | பெரியபுராணச் சிந்தனைகள்"
+        },
+        {
+          "topicId": "SGT-T008",
+          "topicName": "Tamil - Poetry | தமிழோவியம்"
+        },
+        {
+          "topicId": "SGT-T009",
+          "topicName": "Tamil - Poetry | தமிழ்விடு தூது"
+        },
+        {
+          "topicId": "SGT-T010",
+          "topicName": "Tamil - Poetry | பெரியபுராணம்"
+        },
+        {
+          "topicId": "SGT-T011",
+          "topicName": "Tamil - Poetry | புறநானூறு"
+        },
+        {
+          "topicId": "SGT-T012",
+          "topicName": "Tamil - Poetry | மணிமேகலை"
+        },
+        {
+          "topicId": "SGT-T013",
+          "topicName": "Tamil - Poetry | குடும்ப விளக்கு"
+        },
+        {
+          "topicId": "SGT-T014",
+          "topicName": "Tamil - Poetry | இராவண காவியம்"
+        },
+        {
+          "topicId": "SGT-T015",
+          "topicName": "Tamil - Poetry | சீவக சிந்தாமணி"
+        },
+        {
+          "topicId": "SGT-T016",
+          "topicName": "Tamil - Poetry | ஓ, என் சமகாலத் தோழர்களே!"
+        },
+        {
+          "topicId": "SGT-T017",
+          "topicName": "Tamil - Poetry | யாதொரு காவியம்"
+        },
+        {
+          "topicId": "SGT-T018",
+          "topicName": "Tamil - Supplementary | தண்ணீர்"
+        },
+        {
+          "topicId": "SGT-T019",
+          "topicName": "Tamil - Supplementary | வீட்டிற்கோர் புத்தகசாலை"
+        },
+        {
+          "topicId": "SGT-T020",
+          "topicName": "Tamil - Supplementary | செய்தி"
+        },
+        {
+          "topicId": "SGT-T021",
+          "topicName": "Tamil - Supplementary | மகனுக்கு எழுதிய கடிதம்"
+        },
+        {
+          "topicId": "SGT-T022",
+          "topicName": "Tamil - Grammar | எழுத்து – அளபெடை"
+        },
+        {
+          "topicId": "SGT-T023",
+          "topicName": "Tamil - Grammar | பகுபத உறுப்பிலக்கணம்"
+        },
+        {
+          "topicId": "SGT-T024",
+          "topicName": "Tamil - Grammar | தொழில் இலக்கணம், ஆகுபெயர்"
+        },
+        {
+          "topicId": "SGT-T025",
+          "topicName": "Tamil - Grammar | துணைவினைகள்"
+        },
+        {
+          "topicId": "SGT-T026",
+          "topicName": "Tamil - Grammar | வல்லினம் மிகும் இடங்கள்"
+        },
+        {
+          "topicId": "SGT-T027",
+          "topicName": "Tamil - Grammar | வல்லினம் மிகா இடங்கள்"
+        },
+        {
+          "topicId": "SGT-T028",
+          "topicName": "Tamil - Grammar | யாப்பிலக்கணம்"
+        },
+        {
+          "topicId": "SGT-T029",
+          "topicName": "Tamil - Life Skills | திருக்குறள்"
+        },
+        {
+          "topicId": "SGT-T030",
+          "topicName": "English - Prose | Learning the Game"
+        },
+        {
+          "topicId": "SGT-T031",
+          "topicName": "English - Prose | I Can't Climb Trees Anymore"
+        },
+        {
+          "topicId": "SGT-T032",
+          "topicName": "English - Prose | Seventeen Oranges"
+        },
+        {
+          "topicId": "SGT-T033",
+          "topicName": "English - Prose | Water – The Elixir of Life"
+        },
+        {
+          "topicId": "SGT-T034",
+          "topicName": "English - Prose | From Zero to Infinity"
+        },
+        {
+          "topicId": "SGT-T035",
+          "topicName": "English - Prose | A Birthday Letter"
+        },
+        {
+          "topicId": "SGT-T036",
+          "topicName": "English - Poems | Stopping by Woods on a Snowy Evening"
+        },
+        {
+          "topicId": "SGT-T037",
+          "topicName": "English - Poems | A Poison Tree"
+        },
+        {
+          "topicId": "SGT-T038",
+          "topicName": "English - Poems | On Killing a Tree"
+        },
+        {
+          "topicId": "SGT-T039",
+          "topicName": "English - Poems | The Spider and the Fly"
+        },
+        {
+          "topicId": "SGT-T040",
+          "topicName": "English - Poems | The River"
+        },
+        {
+          "topicId": "SGT-T041",
+          "topicName": "English - Poems | The Comet"
+        },
+        {
+          "topicId": "SGT-T042",
+          "topicName": "English - Poems | The Stick-together Families"
+        },
+        {
+          "topicId": "SGT-T043",
+          "topicName": "English - Drama | Old Man River"
+        },
+        {
+          "topicId": "SGT-T044",
+          "topicName": "English - Supplementary | The Envious Neighbour"
+        },
+        {
+          "topicId": "SGT-T045",
+          "topicName": "English - Supplementary | The Fun They Had"
+        },
+        {
+          "topicId": "SGT-T046",
+          "topicName": "English - Supplementary | Earthquake"
+        },
+        {
+          "topicId": "SGT-T047",
+          "topicName": "English - Supplementary | The Cat and the Painkiller"
+        },
+        {
+          "topicId": "SGT-T048",
+          "topicName": "English - Supplementary | Little Cyclone: The Story of a Grizzly Cub"
+        },
+        {
+          "topicId": "SGT-T049",
+          "topicName": "English - Supplementary | Mother's Voice"
+        },
+        {
+          "topicId": "SGT-T050",
+          "topicName": "English - Supplementary | The Christmas Truce"
+        },
+        {
+          "topicId": "SGT-T051",
+          "topicName": "Maths - Set Language | Introduction"
+        },
+        {
+          "topicId": "SGT-T052",
+          "topicName": "Maths - Set Language | Set"
+        },
+        {
+          "topicId": "SGT-T053",
+          "topicName": "Maths - Set Language | Representation of a Set"
+        },
+        {
+          "topicId": "SGT-T054",
+          "topicName": "Maths - Set Language | Types of Sets"
+        },
+        {
+          "topicId": "SGT-T055",
+          "topicName": "Maths - Set Language | Set Operations"
+        },
+        {
+          "topicId": "SGT-T056",
+          "topicName": "Maths - Set Language | Properties of Set Operations"
+        },
+        {
+          "topicId": "SGT-T057",
+          "topicName": "Maths - Set Language | De Morgan's Laws"
+        },
+        {
+          "topicId": "SGT-T058",
+          "topicName": "Maths - Set Language | Application on Cardinality of Sets"
+        },
+        {
+          "topicId": "SGT-T059",
+          "topicName": "Maths - Real Numbers | Introduction"
+        },
+        {
+          "topicId": "SGT-T060",
+          "topicName": "Maths - Real Numbers | Rational Numbers"
+        },
+        {
+          "topicId": "SGT-T061",
+          "topicName": "Maths - Real Numbers | Irrational Numbers"
+        },
+        {
+          "topicId": "SGT-T062",
+          "topicName": "Maths - Real Numbers | Real Numbers"
+        },
+        {
+          "topicId": "SGT-T063",
+          "topicName": "Maths - Real Numbers | Radical Notation"
+        },
+        {
+          "topicId": "SGT-T064",
+          "topicName": "Maths - Real Numbers | Surds"
+        },
+        {
+          "topicId": "SGT-T065",
+          "topicName": "Maths - Real Numbers | Rationalisation of Surds"
+        },
+        {
+          "topicId": "SGT-T066",
+          "topicName": "Maths - Real Numbers | Scientific Notation"
+        },
+        {
+          "topicId": "SGT-T067",
+          "topicName": "Maths - Algebra | Introduction"
+        },
+        {
+          "topicId": "SGT-T068",
+          "topicName": "Maths - Algebra | Polynomials"
+        },
+        {
+          "topicId": "SGT-T069",
+          "topicName": "Maths - Algebra | Remainder Theorem"
+        },
+        {
+          "topicId": "SGT-T070",
+          "topicName": "Maths - Algebra | Algebraic Identities"
+        },
+        {
+          "topicId": "SGT-T071",
+          "topicName": "Maths - Algebra | Factorisation"
+        },
+        {
+          "topicId": "SGT-T072",
+          "topicName": "Maths - Algebra | Division of Polynomials"
+        },
+        {
+          "topicId": "SGT-T073",
+          "topicName": "Maths - Algebra | Greatest Common Divisor (GCD)"
+        },
+        {
+          "topicId": "SGT-T074",
+          "topicName": "Maths - Algebra | Linear Equation in Two Variables"
+        },
+        {
+          "topicId": "SGT-T075",
+          "topicName": "Maths - Geometry | Introduction"
+        },
+        {
+          "topicId": "SGT-T076",
+          "topicName": "Maths - Geometry | Types of Angles"
+        },
+        {
+          "topicId": "SGT-T077",
+          "topicName": "Maths - Geometry | Quadrilaterals"
+        },
+        {
+          "topicId": "SGT-T078",
+          "topicName": "Maths - Geometry | Parts of a Circle"
+        },
+        {
+          "topicId": "SGT-T079",
+          "topicName": "Maths - Geometry | Properties of Chords of a Circle"
+        },
+        {
+          "topicId": "SGT-T080",
+          "topicName": "Maths - Geometry | Cyclic Quadrilaterals"
+        },
+        {
+          "topicId": "SGT-T081",
+          "topicName": "Maths - Geometry | Practical Geometry"
+        },
+        {
+          "topicId": "SGT-T082",
+          "topicName": "Maths - Coordinate Geometry | Mapping the Plane"
+        },
+        {
+          "topicId": "SGT-T083",
+          "topicName": "Maths - Coordinate Geometry | Devising a Coordinate System"
+        },
+        {
+          "topicId": "SGT-T084",
+          "topicName": "Maths - Coordinate Geometry | Distance between any Two Points"
+        },
+        {
+          "topicId": "SGT-T085",
+          "topicName": "Maths - Coordinate Geometry | The Mid-point of a Line Segment"
+        },
+        {
+          "topicId": "SGT-T086",
+          "topicName": "Maths - Coordinate Geometry | Points of Trisection of a Line Segment"
+        },
+        {
+          "topicId": "SGT-T087",
+          "topicName": "Maths - Coordinate Geometry | Section Formula"
+        },
+        {
+          "topicId": "SGT-T088",
+          "topicName": "Maths - Coordinate Geometry | The Coordinates of the Centroid"
+        },
+        {
+          "topicId": "SGT-T089",
+          "topicName": "Maths - Trigonometry | Introduction"
+        },
+        {
+          "topicId": "SGT-T090",
+          "topicName": "Maths - Trigonometry | Trigonometric Ratios of Some Special Angles"
+        },
+        {
+          "topicId": "SGT-T091",
+          "topicName": "Maths - Trigonometry | Trigonometric Ratios for Complementary Angles"
+        },
+        {
+          "topicId": "SGT-T092",
+          "topicName": "Maths - Trigonometry | Method of using Trigonometric Table"
+        },
+        {
+          "topicId": "SGT-T093",
+          "topicName": "Maths - Mensuration | Introduction"
+        },
+        {
+          "topicId": "SGT-T094",
+          "topicName": "Maths - Mensuration | Heron's Formula"
+        },
+        {
+          "topicId": "SGT-T095",
+          "topicName": "Maths - Mensuration | Application of Heron's Formula in Finding Areas of Quadrilaterals"
+        },
+        {
+          "topicId": "SGT-T096",
+          "topicName": "Maths - Mensuration | Surface Area of Cuboid and Cube"
+        },
+        {
+          "topicId": "SGT-T097",
+          "topicName": "Maths - Mensuration | Volume of Cuboid and Cube"
+        },
+        {
+          "topicId": "SGT-T098",
+          "topicName": "Maths - Statistics | Introduction"
+        },
+        {
+          "topicId": "SGT-T099",
+          "topicName": "Maths - Statistics | Collection of Data"
+        },
+        {
+          "topicId": "SGT-T100",
+          "topicName": "Maths - Statistics | Measures of Central Tendency"
+        },
+        {
+          "topicId": "SGT-T101",
+          "topicName": "Maths - Statistics | Arithmetic Mean"
+        },
+        {
+          "topicId": "SGT-T102",
+          "topicName": "Maths - Statistics | Median"
+        },
+        {
+          "topicId": "SGT-T103",
+          "topicName": "Maths - Statistics | Mode"
+        },
+        {
+          "topicId": "SGT-T104",
+          "topicName": "Maths - Probability | Introduction"
+        },
+        {
+          "topicId": "SGT-T105",
+          "topicName": "Maths - Probability | Basic Ideas"
+        },
+        {
+          "topicId": "SGT-T106",
+          "topicName": "Maths - Probability | Classical Approach"
+        },
+        {
+          "topicId": "SGT-T107",
+          "topicName": "Maths - Probability | Empirical Approach"
+        },
+        {
+          "topicId": "SGT-T108",
+          "topicName": "Maths - Probability | Types of Events"
+        },
+        {
+          "topicId": "SGT-T109",
+          "topicName": "Science - Physics | Measurement"
+        },
+        {
+          "topicId": "SGT-T110",
+          "topicName": "Science - Physics | Motion"
+        },
+        {
+          "topicId": "SGT-T111",
+          "topicName": "Science - Physics | Fluids"
+        },
+        {
+          "topicId": "SGT-T112",
+          "topicName": "Science - Physics | Electric Charge and Electric Current"
+        },
+        {
+          "topicId": "SGT-T113",
+          "topicName": "Science - Physics | Magnetism and Electromagnetism"
+        },
+        {
+          "topicId": "SGT-T114",
+          "topicName": "Science - Physics | Light"
+        },
+        {
+          "topicId": "SGT-T115",
+          "topicName": "Science - Physics | Heat"
+        },
+        {
+          "topicId": "SGT-T116",
+          "topicName": "Science - Physics | Sound"
+        },
+        {
+          "topicId": "SGT-T117",
+          "topicName": "Science - Physics | Universe"
+        },
+        {
+          "topicId": "SGT-T118",
+          "topicName": "Science - Chemistry | Matter Around Us"
+        },
+        {
+          "topicId": "SGT-T119",
+          "topicName": "Science - Chemistry | Atomic Structure"
+        },
+        {
+          "topicId": "SGT-T120",
+          "topicName": "Science - Chemistry | Periodic Classification of Elements"
+        },
+        {
+          "topicId": "SGT-T121",
+          "topicName": "Science - Chemistry | Chemical Bonding"
+        },
+        {
+          "topicId": "SGT-T122",
+          "topicName": "Science - Chemistry | Acids, Bases and Salts"
+        },
+        {
+          "topicId": "SGT-T123",
+          "topicName": "Science - Chemistry | Carbon and its Compounds"
+        },
+        {
+          "topicId": "SGT-T124",
+          "topicName": "Science - Chemistry | Applied Chemistry"
+        },
+        {
+          "topicId": "SGT-T125",
+          "topicName": "Science - Botany | Organisation of Tissues"
+        },
+        {
+          "topicId": "SGT-T126",
+          "topicName": "Science - Botany | Plant Physiology"
+        },
+        {
+          "topicId": "SGT-T127",
+          "topicName": "Science - Botany | Environmental Science"
+        },
+        {
+          "topicId": "SGT-T128",
+          "topicName": "Science - Zoology | Animal Kingdom"
+        },
+        {
+          "topicId": "SGT-T129",
+          "topicName": "Science - Zoology | Organ Systems in Animals"
+        },
+        {
+          "topicId": "SGT-T130",
+          "topicName": "Science - Zoology | Nutrition and Health"
+        },
+        {
+          "topicId": "SGT-T131",
+          "topicName": "Science - Zoology | World of Microbes"
+        },
+        {
+          "topicId": "SGT-T132",
+          "topicName": "Science - Zoology | Economic Biology"
+        },
+        {
+          "topicId": "SGT-T133",
+          "topicName": "Computer Science | LibreOffice Impress"
+        },
+        {
+          "topicId": "SGT-T134",
+          "topicName": "Social - History | Evolution of Humans and Society - Prehistoric Period"
+        },
+        {
+          "topicId": "SGT-T135",
+          "topicName": "Social - History | Ancient Civilisations"
+        },
+        {
+          "topicId": "SGT-T136",
+          "topicName": "Social - History | Early Tamil Society and Culture"
+        },
+        {
+          "topicId": "SGT-T137",
+          "topicName": "Social - History | Intellectual Awakening and Socio-Political Changes"
+        },
+        {
+          "topicId": "SGT-T138",
+          "topicName": "Social - History | The Classical World"
+        },
+        {
+          "topicId": "SGT-T139",
+          "topicName": "Social - History | The Middle Ages"
+        },
+        {
+          "topicId": "SGT-T140",
+          "topicName": "Social - History | State and Society in Medieval India"
+        },
+        {
+          "topicId": "SGT-T141",
+          "topicName": "Social - History | The Beginning of the Modern Age"
+        },
+        {
+          "topicId": "SGT-T142",
+          "topicName": "Social - History | The Age of Revolutions"
+        },
+        {
+          "topicId": "SGT-T143",
+          "topicName": "Social - History | Industrial Revolution"
+        },
+        {
+          "topicId": "SGT-T144",
+          "topicName": "Social - History | Colonialism in Asia and Africa"
+        },
+        {
+          "topicId": "SGT-T145",
+          "topicName": "Social - Geography | Lithosphere – I Endogenetic Processes"
+        },
+        {
+          "topicId": "SGT-T146",
+          "topicName": "Social - Geography | Lithosphere – II Exogenetic Processes"
+        },
+        {
+          "topicId": "SGT-T147",
+          "topicName": "Social - Geography | Atmosphere"
+        },
+        {
+          "topicId": "SGT-T148",
+          "topicName": "Social - Geography | Hydrosphere"
+        },
+        {
+          "topicId": "SGT-T149",
+          "topicName": "Social - Geography | Biosphere"
+        },
+        {
+          "topicId": "SGT-T150",
+          "topicName": "Social - Geography | Man and Environment"
+        },
+        {
+          "topicId": "SGT-T151",
+          "topicName": "Social - Geography | Mapping Skills"
+        },
+        {
+          "topicId": "SGT-T152",
+          "topicName": "Social - Geography | Disaster Management: Responding to Disasters"
+        },
+        {
+          "topicId": "SGT-T153",
+          "topicName": "Social - Civics | Forms of Government and Democracy"
+        },
+        {
+          "topicId": "SGT-T154",
+          "topicName": "Social - Civics | Election, Political Parties and Pressure Groups"
+        },
+        {
+          "topicId": "SGT-T155",
+          "topicName": "Social - Civics | Human Rights"
+        },
+        {
+          "topicId": "SGT-T156",
+          "topicName": "Social - Civics | Forms of Government"
+        },
+        {
+          "topicId": "SGT-T157",
+          "topicName": "Social - Civics | Local Self Government"
+        },
+        {
+          "topicId": "SGT-T158",
+          "topicName": "Social - Civics | Road Safety"
+        },
+        {
+          "topicId": "SGT-T159",
+          "topicName": "Social - Economics | Understanding Development: Perspectives, Measurement and Sustainability"
+        },
+        {
+          "topicId": "SGT-T160",
+          "topicName": "Social - Economics | Employment in India and Tamil Nadu"
+        },
+        {
+          "topicId": "SGT-T161",
+          "topicName": "Social - Economics | Money and Credit"
+        },
+        {
+          "topicId": "SGT-T162",
+          "topicName": "Social - Economics | Agriculture in Tamil Nadu"
+        },
+        {
+          "topicId": "SGT-T163",
+          "topicName": "Social - Economics | Migration"
+        }
+      ]
     },
     {
       "courseId": "SCHOOL",
