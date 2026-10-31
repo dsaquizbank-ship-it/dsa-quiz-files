@@ -1,6 +1,39 @@
 {
-  "version": "2026-10-31T13:43:32.791Z",
+  "version": "2026-10-31T14:32:18.374Z",
   "entries": [
+    {
+      "id": "SCH-1793454593751-433",
+      "courseId": "SGT",
+      "courseName": "SGT",
+      "subject": "Science",
+      "topicId": "REV-1793454593751",
+      "topicName": "Revision: 9th - Measurement, 9th - Motion",
+      "date": "2026-11-02",
+      "testId": "SGT-35",
+      "createdAt": "2026-10-31T13:49:53.751Z"
+    },
+    {
+      "id": "SCH-1793455114142-323",
+      "courseId": "SSC",
+      "courseName": "SSC",
+      "subject": "General Science",
+      "topicId": "REV-1793455114142",
+      "topicName": "Revision: Physics - Units, Dimensions & Formula",
+      "date": "2026-11-02",
+      "testId": "SGS-1",
+      "createdAt": "2026-10-31T13:58:34.143Z"
+    },
+    {
+      "id": "SCH-1793456441790-45",
+      "courseId": "SSC",
+      "courseName": "SSC",
+      "subject": "General Awareness",
+      "topicId": "REV-1793456441790",
+      "topicName": "Revision: Ancient India - Indus Valley / Harappan Civilization",
+      "date": "2026-11-02",
+      "testId": "SGA-1",
+      "createdAt": "2026-10-31T14:20:41.790Z"
+    },
     {
       "id": "SCH-1793454053967-488",
       "courseId": "UGTRB-PHY",
@@ -189,6 +222,39 @@
       "createdAt": "2026-10-31T09:08:51.857Z"
     },
     {
+      "id": "SCH-1793454652727-480",
+      "courseId": "SGT",
+      "courseName": "SGT",
+      "subject": "Social Science",
+      "topicId": "REV-1793454652727",
+      "topicName": "Revision: 9th - Industrial Revolution, 9th - Colonialism in Asia and Africa",
+      "date": "2026-11-04",
+      "testId": "SGT-36",
+      "createdAt": "2026-10-31T13:50:52.727Z"
+    },
+    {
+      "id": "SCH-1793456792070-893",
+      "courseId": "SSC",
+      "courseName": "SSC",
+      "subject": "General Science",
+      "topicId": "REV-1793456792070",
+      "topicName": "Revision: Chemistry - Basic Concepts of Chemistry",
+      "date": "2026-11-04",
+      "testId": "SGS-2",
+      "createdAt": "2026-10-31T14:26:32.070Z"
+    },
+    {
+      "id": "SCH-1793457023286-972",
+      "courseId": "SSC",
+      "courseName": "SSC",
+      "subject": "General Awareness",
+      "topicId": "REV-1793457023286",
+      "topicName": "Revision: Polity - Constitutional Development of India, Polity - Making of Constitution",
+      "date": "2026-11-04",
+      "testId": "SGA-2",
+      "createdAt": "2026-10-31T14:30:23.286Z"
+    },
+    {
       "id": "SCH-1793454100511-780",
       "courseId": "UGTRB-PHY",
       "courseName": "UGTRB PHYSICS",
@@ -343,6 +409,17 @@
       "createdAt": "2026-10-31T09:11:14.752Z"
     },
     {
+      "id": "SCH-1793456903510-246",
+      "courseId": "SSC",
+      "courseName": "SSC",
+      "subject": "General Science",
+      "topicId": "REV-1793456903510",
+      "topicName": "Revision: Biology - Cell, Genetics & Evolution",
+      "date": "2026-11-06",
+      "testId": "SGS-3",
+      "createdAt": "2026-10-31T14:28:23.510Z"
+    },
+    {
       "id": "SCH-1793454144567-836",
       "courseId": "UGTRB-PHY",
       "courseName": "UGTRB PHYSICS",
@@ -440,6 +517,28 @@
       "date": "2026-11-06",
       "testId": "PGE-51",
       "createdAt": "2026-10-31T04:28:45.361Z"
+    },
+    {
+      "id": "SCH-1793456346622-676",
+      "courseId": "SSC",
+      "courseName": "SSC",
+      "subject": "General Science",
+      "topicId": "REV-1793456346622",
+      "topicName": "Revision: Physics - Motion",
+      "date": "2026-11-09",
+      "testId": "SGS-4",
+      "createdAt": "2026-10-31T14:19:06.622Z"
+    },
+    {
+      "id": "SCH-1793456634438-710",
+      "courseId": "SSC",
+      "courseName": "SSC",
+      "subject": "General Awareness",
+      "topicId": "REV-1793456634438",
+      "topicName": "Revision: Ancient India - Gupta Empire",
+      "date": "2026-11-09",
+      "testId": "SGA-4",
+      "createdAt": "2026-10-31T14:23:54.438Z"
     },
     {
       "id": "SCH-1793454175191-654",
@@ -541,6 +640,28 @@
       "createdAt": "2026-10-31T04:29:10.209Z"
     },
     {
+      "id": "SCH-1793456813942-440",
+      "courseId": "SSC",
+      "courseName": "SSC",
+      "subject": "General Science",
+      "topicId": "REV-1793456813942",
+      "topicName": "Revision: Chemistry - Atoms and Molecules",
+      "date": "2026-11-11",
+      "testId": "SGS-5",
+      "createdAt": "2026-10-31T14:26:53.942Z"
+    },
+    {
+      "id": "SCH-1793457049606-422",
+      "courseId": "SSC",
+      "courseName": "SSC",
+      "subject": "General Awareness",
+      "topicId": "REV-1793457049606",
+      "topicName": "Revision: Polity - Preamble",
+      "date": "2026-11-11",
+      "testId": "SGA-5",
+      "createdAt": "2026-10-31T14:30:49.606Z"
+    },
+    {
       "id": "SCH-1793453575759-795",
       "courseId": "UGTRB-ZOO",
       "courseName": "UGTRB ZOOLOGY",
@@ -629,6 +750,17 @@
       "createdAt": "2026-10-31T04:29:31.441Z"
     },
     {
+      "id": "SCH-1793456921886-973",
+      "courseId": "SSC",
+      "courseName": "SSC",
+      "subject": "General Science",
+      "topicId": "REV-1793456921886",
+      "topicName": "Revision: Biology - Tissue",
+      "date": "2026-11-13",
+      "testId": "SGS-6",
+      "createdAt": "2026-10-31T14:28:41.886Z"
+    },
+    {
       "id": "SCH-1793453616911-231",
       "courseId": "UGTRB-ZOO",
       "courseName": "UGTRB ZOOLOGY",
@@ -682,6 +814,28 @@
       "date": "2026-11-13",
       "testId": "PGE-54",
       "createdAt": "2026-10-31T04:30:24.897Z"
+    },
+    {
+      "id": "SCH-1793456365702-72",
+      "courseId": "SSC",
+      "courseName": "SSC",
+      "subject": "General Science",
+      "topicId": "REV-1793456365702",
+      "topicName": "Revision: Physics - Forces",
+      "date": "2026-11-16",
+      "testId": "SGS-7",
+      "createdAt": "2026-10-31T14:19:25.702Z"
+    },
+    {
+      "id": "SCH-1793456681902-526",
+      "courseId": "SSC",
+      "courseName": "SSC",
+      "subject": "General Awareness",
+      "topicId": "REV-1793456681902",
+      "topicName": "Revision: Medieval India - Delhi Sultanate",
+      "date": "2026-11-16",
+      "testId": "SGA-7",
+      "createdAt": "2026-10-31T14:24:41.902Z"
     },
     {
       "id": "SCH-1793453645607-884",
@@ -761,6 +915,28 @@
       "createdAt": "2026-10-31T04:34:38.953Z"
     },
     {
+      "id": "SCH-1793456839166-725",
+      "courseId": "SSC",
+      "courseName": "SSC",
+      "subject": "General Science",
+      "topicId": "REV-1793456839166",
+      "topicName": "Revision: Chemistry - Properties of Elements & Compounds",
+      "date": "2026-11-18",
+      "testId": "SGS-8",
+      "createdAt": "2026-10-31T14:27:19.166Z"
+    },
+    {
+      "id": "SCH-1793457072758-714",
+      "courseId": "SSC",
+      "courseName": "SSC",
+      "subject": "General Awareness",
+      "topicId": "REV-1793457072758",
+      "topicName": "Revision: Polity - Salient Features",
+      "date": "2026-11-18",
+      "testId": "SGA-8",
+      "createdAt": "2026-10-31T14:31:12.758Z"
+    },
+    {
       "id": "SCH-1793453686239-194",
       "courseId": "UGTRB-ZOO",
       "courseName": "UGTRB ZOOLOGY",
@@ -838,6 +1014,17 @@
       "createdAt": "2026-10-31T04:35:22.281Z"
     },
     {
+      "id": "SCH-1793456941749-194",
+      "courseId": "SSC",
+      "courseName": "SSC",
+      "subject": "General Science",
+      "topicId": "REV-1793456941749",
+      "topicName": "Revision: Biology - Biomolecules",
+      "date": "2026-11-20",
+      "testId": "SGS-9",
+      "createdAt": "2026-10-31T14:29:01.749Z"
+    },
+    {
       "id": "SCH-1793453722639-402",
       "courseId": "UGTRB-ZOO",
       "courseName": "UGTRB ZOOLOGY",
@@ -891,6 +1078,28 @@
       "date": "2026-11-20",
       "testId": "PGE-57",
       "createdAt": "2026-10-31T04:35:50.225Z"
+    },
+    {
+      "id": "SCH-1793456389470-454",
+      "courseId": "SSC",
+      "courseName": "SSC",
+      "subject": "General Science",
+      "topicId": "REV-1793456389470",
+      "topicName": "Revision: Physics - Work, Energy & Power",
+      "date": "2026-11-23",
+      "testId": "SGS-10",
+      "createdAt": "2026-10-31T14:19:49.470Z"
+    },
+    {
+      "id": "SCH-1793456710606-881",
+      "courseId": "SSC",
+      "courseName": "SSC",
+      "subject": "General Awareness",
+      "topicId": "REV-1793456710606",
+      "topicName": "Revision: Medieval India - Mughal Empire",
+      "date": "2026-11-23",
+      "testId": "SGA-10",
+      "createdAt": "2026-10-31T14:25:10.606Z"
     },
     {
       "id": "SCH-1793453770575-76",
@@ -970,6 +1179,28 @@
       "createdAt": "2026-10-31T04:38:26.153Z"
     },
     {
+      "id": "SCH-1793456872110-956",
+      "courseId": "SSC",
+      "courseName": "SSC",
+      "subject": "General Science",
+      "topicId": "REV-1793456872110",
+      "topicName": "Revision: Chemistry - Periodic Table",
+      "date": "2026-11-25",
+      "testId": "SGS-11",
+      "createdAt": "2026-10-31T14:27:52.110Z"
+    },
+    {
+      "id": "SCH-1793457116438-999",
+      "courseId": "SSC",
+      "courseName": "SSC",
+      "subject": "General Awareness",
+      "topicId": "REV-1793457116438",
+      "topicName": "Revision: Polity - Sources",
+      "date": "2026-11-25",
+      "testId": "SGA-11",
+      "createdAt": "2026-10-31T14:31:56.438Z"
+    },
+    {
       "id": "SCH-1793453816903-83",
       "courseId": "UGTRB-ZOO",
       "courseName": "UGTRB ZOOLOGY",
@@ -1047,6 +1278,17 @@
       "createdAt": "2026-10-31T04:42:45.457Z"
     },
     {
+      "id": "SCH-1793456964326-294",
+      "courseId": "SSC",
+      "courseName": "SSC",
+      "subject": "General Science",
+      "topicId": "REV-1793456964326",
+      "topicName": "Revision: Biology - Human Body",
+      "date": "2026-11-27",
+      "testId": "SGS-12",
+      "createdAt": "2026-10-31T14:29:24.326Z"
+    },
+    {
       "id": "SCH-1793453852207-284",
       "courseId": "UGTRB-ZOO",
       "courseName": "UGTRB ZOOLOGY",
@@ -1100,6 +1342,28 @@
       "date": "2026-11-27",
       "testId": "PGE-60",
       "createdAt": "2026-10-31T04:43:21.913Z"
+    },
+    {
+      "id": "SCH-1793456407478-661",
+      "courseId": "SSC",
+      "courseName": "SSC",
+      "subject": "General Science",
+      "topicId": "REV-1793456407478",
+      "topicName": "Revision: Physics - Gravity",
+      "date": "2026-11-30",
+      "testId": "SGS-13",
+      "createdAt": "2026-10-31T14:20:07.478Z"
+    },
+    {
+      "id": "SCH-1793456729342-992",
+      "courseId": "SSC",
+      "courseName": "SSC",
+      "subject": "General Awareness",
+      "topicId": "REV-1793456729342",
+      "topicName": "Revision: Medieval India - Rise of Maratha Power",
+      "date": "2026-11-30",
+      "testId": "SGA-13",
+      "createdAt": "2026-10-31T14:25:29.342Z"
     },
     {
       "id": "SCH-1793453894423-837",
