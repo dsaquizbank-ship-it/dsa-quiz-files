@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31T09:24:38.139Z",
+  "version": "2026-10-31T09:44:20.400Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -6827,8 +6827,12 @@
           "topicName": "Unit VIII - Mechanics | Analysis of forces acting on particles and rigid bodies on static equilibrium"
         },
         {
-          "topicId": "UGTRB-T353",
-          "topicName": "Unit VIII - Mechanics | Elastic Medium, Impulsive force"
+          "topicId": "UGTRB-MAT-T311",
+          "topicName": "Unit VIII - Mechanics | Elastic Medium"
+        },
+        {
+          "topicId": "UGTRB-MAT-T312",
+          "topicName": "Unit VIII - Mechanics | Impulsive force"
         },
         {
           "topicId": "UGTRB-T354",
