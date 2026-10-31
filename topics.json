@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31T07:31:43.837Z",
+  "version": "2026-10-31T07:44:35.118Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -8520,6 +8520,166 @@
         {
           "topicId": "TNTET-T059",
           "topicName": "English | 8th – UNIT 8: Play - Jack and the Beanstalk"
+        },
+        {
+          "topicId": "TNTET-T060",
+          "topicName": "Maths | 6th Term 1 - Numbers"
+        },
+        {
+          "topicId": "TNTET-T061",
+          "topicName": "Maths | 6th Term 1 - Introduction To Algebra"
+        },
+        {
+          "topicId": "TNTET-T062",
+          "topicName": "Maths | 6th Term 1 - Ratio And Proportion"
+        },
+        {
+          "topicId": "TNTET-T063",
+          "topicName": "Maths | 6th Term 1 - Geometry"
+        },
+        {
+          "topicId": "TNTET-T064",
+          "topicName": "Maths | 6th Term 1 - Statistics"
+        },
+        {
+          "topicId": "TNTET-T065",
+          "topicName": "Maths | 6th Term 1 - Information Processing"
+        },
+        {
+          "topicId": "TNTET-T066",
+          "topicName": "Maths | 6th Term 2 - Numbers"
+        },
+        {
+          "topicId": "TNTET-T067",
+          "topicName": "Maths | 6th Term 2 - Measurements"
+        },
+        {
+          "topicId": "TNTET-T068",
+          "topicName": "Maths | 6th Term 2 - Bill, Profit and Loss"
+        },
+        {
+          "topicId": "TNTET-T069",
+          "topicName": "Maths | 6th Term 2 - Geometry"
+        },
+        {
+          "topicId": "TNTET-T070",
+          "topicName": "Maths | 6th Term 2 - Information Processing"
+        },
+        {
+          "topicId": "TNTET-T071",
+          "topicName": "Maths | 6th Term 3 - Fractions"
+        },
+        {
+          "topicId": "TNTET-T072",
+          "topicName": "Maths | 6th Term 3 - Integers"
+        },
+        {
+          "topicId": "TNTET-T073",
+          "topicName": "Maths | 6th Term 3 - Perimeter and Area"
+        },
+        {
+          "topicId": "TNTET-T074",
+          "topicName": "Maths | 6th Term 3 - Symmetry"
+        },
+        {
+          "topicId": "TNTET-T075",
+          "topicName": "Maths | 6th Term 3 - Information Processing"
+        },
+        {
+          "topicId": "TNTET-T076",
+          "topicName": "Maths | 7th Term 1 - Number System"
+        },
+        {
+          "topicId": "TNTET-T077",
+          "topicName": "Maths | 7th Term 1 - Measurements"
+        },
+        {
+          "topicId": "TNTET-T078",
+          "topicName": "Maths | 7th Term 1 - Algebra"
+        },
+        {
+          "topicId": "TNTET-T079",
+          "topicName": "Maths | 7th Term 1 - Direct and Inverse Proportion"
+        },
+        {
+          "topicId": "TNTET-T080",
+          "topicName": "Maths | 7th Term 1 - Geometry"
+        },
+        {
+          "topicId": "TNTET-T081",
+          "topicName": "Maths | 7th Term 1 - Information Processing"
+        },
+        {
+          "topicId": "TNTET-T082",
+          "topicName": "Maths | 7th Term 2 - Number System"
+        },
+        {
+          "topicId": "TNTET-T083",
+          "topicName": "Maths | 7th Term 2 - Measurements"
+        },
+        {
+          "topicId": "TNTET-T084",
+          "topicName": "Maths | 7th Term 2 - Algebra"
+        },
+        {
+          "topicId": "TNTET-T085",
+          "topicName": "Maths | 7th Term 2 - Geometry"
+        },
+        {
+          "topicId": "TNTET-T086",
+          "topicName": "Maths | 7th Term 2 - Information Processing"
+        },
+        {
+          "topicId": "TNTET-T087",
+          "topicName": "Maths | 7th Term 3 - Number System"
+        },
+        {
+          "topicId": "TNTET-T088",
+          "topicName": "Maths | 7th Term 3 - Percentage and Simple Interest"
+        },
+        {
+          "topicId": "TNTET-T089",
+          "topicName": "Maths | 7th Term 3 - Algebra"
+        },
+        {
+          "topicId": "TNTET-T090",
+          "topicName": "Maths | 7th Term 3 - Geometry"
+        },
+        {
+          "topicId": "TNTET-T091",
+          "topicName": "Maths | 7th Term 3 - Statistics"
+        },
+        {
+          "topicId": "TNTET-T092",
+          "topicName": "Maths | 7th Term 3 - Information Processing"
+        },
+        {
+          "topicId": "TNTET-T093",
+          "topicName": "Maths | 8th Standard - Numbers"
+        },
+        {
+          "topicId": "TNTET-T094",
+          "topicName": "Maths | 8th Standard - Measurements"
+        },
+        {
+          "topicId": "TNTET-T095",
+          "topicName": "Maths | 8th Standard - Algebra"
+        },
+        {
+          "topicId": "TNTET-T096",
+          "topicName": "Maths | 8th Standard - Life Mathematics"
+        },
+        {
+          "topicId": "TNTET-T097",
+          "topicName": "Maths | 8th Standard - Geometry"
+        },
+        {
+          "topicId": "TNTET-T098",
+          "topicName": "Maths | 8th Standard - Statistics"
+        },
+        {
+          "topicId": "TNTET-T099",
+          "topicName": "Maths | 8th Standard - Information Processing"
         }
       ]
     },
