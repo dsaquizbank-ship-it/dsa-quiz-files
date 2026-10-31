@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31T06:32:55.999Z",
+  "version": "2026-10-31T06:34:01.383Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -1292,11 +1292,6 @@
           "topicName": "General Awareness | Environment and Ecology - Disaster and Disaster Management"
         }
       ]
-    },
-    {
-      "courseId": "SSC",
-      "courseName": "SSC EVENING",
-      "topics": []
     },
     {
       "courseId": "BANK",
