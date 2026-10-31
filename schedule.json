@@ -1,17 +1,6 @@
 {
-  "version": "2026-10-31T10:07:08.688Z",
+  "version": "2026-10-31T10:08:56.559Z",
   "entries": [
-    {
-      "id": "SCH-1793439924504-704",
-      "courseId": "UGTRB-MAT",
-      "courseName": "UGTRB MATHS",
-      "subject": "Unit VIII - Mechanics",
-      "topicId": "REV-1793439924504",
-      "topicName": "Revision: Impulsive force, Impact of sphere, Impact of two smooth spheres, Impact of two spheres of two smooth sphere on a plane, Oblique impact of two smooth spheres",
-      "date": "2026-11-02",
-      "testId": "UGM-94",
-      "createdAt": "2026-10-31T09:45:24.504Z"
-    },
     {
       "id": "SCH-1793438639376-26",
       "courseId": "PGTRB-COM",
