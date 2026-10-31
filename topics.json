@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31T07:09:05.663Z",
+  "version": "2026-10-31T07:31:43.837Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -8424,6 +8424,102 @@
         {
           "topicId": "TNTET-T106",
           "topicName": "Tamil | 8th Lesson 9 – மனிதம், ஆளுமை - குன்றை நிமிர்ந்துநில்"
+        },
+        {
+          "topicId": "TNTET-T036",
+          "topicName": "English | 6th Term 1 – UNIT 1: Prose: Sea Turtles, Poem: The Crocodile, Supplementary: The Friendship"
+        },
+        {
+          "topicId": "TNTET-T037",
+          "topicName": "English | 6th Term 1 – UNIT 2: Prose: When the Trees Walked, Poem: Trees, Supplementary: The Apple Tree and the Farmer"
+        },
+        {
+          "topicId": "TNTET-T038",
+          "topicName": "English | 6th Term 1 – UNIT 3: Prose: A Visitor from Distant Lands, Poem: I Dream of Spices, Supplementary: Stone Soup"
+        },
+        {
+          "topicId": "TNTET-T039",
+          "topicName": "English | 6th Term 2 – UNIT 1: Prose: Sports Stars, Poem: Team Work, Supplementary: Think to Win"
+        },
+        {
+          "topicId": "TNTET-T040",
+          "topicName": "English | 6th Term 2 – UNIT 2: Prose: Trip to Ooty, Poem: From a Railway Carriage, Supplementary: Gulliver's Travel"
+        },
+        {
+          "topicId": "TNTET-T041",
+          "topicName": "English | 6th Term 3 – UNIT 1: Prose: Who Owns the Water?, Poem: Indian Seasons, Supplementary: A Childhood in Malabar: A Memoir"
+        },
+        {
+          "topicId": "TNTET-T042",
+          "topicName": "English | 6th Term 3 – UNIT 2: Prose: That Sunday Morning, Poem: A Tragic Story, Supplementary: Brought to Book"
+        },
+        {
+          "topicId": "TNTET-T043",
+          "topicName": "English | 6th Term 3 – UNIT 3: Play: The Jungle Book"
+        },
+        {
+          "topicId": "TNTET-T044",
+          "topicName": "English | 7th Term 1 – UNIT 1: Prose: Eidgah, Poem: The Computer Swallowed Grandma, Supplementary: On Monday Morning"
+        },
+        {
+          "topicId": "TNTET-T045",
+          "topicName": "English | 7th Term 1 – UNIT 2: Prose: The Wind on Haunted Hill 109, Poem: The Listeners 126 July, Supplementary: The Red-Headed League"
+        },
+        {
+          "topicId": "TNTET-T046",
+          "topicName": "English | 7th Term 1 – UNIT 3: Prose: A Prayer to the Teacher, Poem: Your Space, Supplementary Taking the Bully by the Horns"
+        },
+        {
+          "topicId": "TNTET-T047",
+          "topicName": "English | 7th Term 2 – UNIT 1: Prose: Adventures of Don Quixote, Poem: The Age of Chivalry, Supplementary: Alice in Wonderland"
+        },
+        {
+          "topicId": "TNTET-T048",
+          "topicName": "English | 7th Term 2 – UNIT 2: Prose: The Last Stone Carver, Poem: Wandering Singers, Supplementary: Naya – The Home of Chitrakaars"
+        },
+        {
+          "topicId": "TNTET-T049",
+          "topicName": "English | 7th Term 3 – UNIT 1: Prose: Journey by Train, Poem: Sea Fever, Supplementary: Sindbad – My First Voyage"
+        },
+        {
+          "topicId": "TNTET-T050",
+          "topicName": "English | 7th Term 3 – UNIT 2: Prose: A Story of Self Sacrifice and Bravery, Poem: Courage, Supplementary: Man Overboard"
+        },
+        {
+          "topicId": "TNTET-T051",
+          "topicName": "English | 7th Term 3 – UNIT 3: Play: Jane Eyre"
+        },
+        {
+          "topicId": "TNTET-T052",
+          "topicName": "English | 8th – UNIT 1: Prose: The Nose-Jewel, Poem: Special Hero, Supplementary: The Woman on Platform 8"
+        },
+        {
+          "topicId": "TNTET-T053",
+          "topicName": "English | 8th – UNIT 2: Prose: Hobby Turns into A Successful Career, Poem: My Hobby: Reading, Supplementary: Jim Corbett, A Hunter Turned Naturalist"
+        },
+        {
+          "topicId": "TNTET-T054",
+          "topicName": "English | 8th – UNIT 3: Prose - Sir Isaac Newton -The Ingenious Scientist, Poem - Making Life Worth While, Supplementary - The Three Questions"
+        },
+        {
+          "topicId": "TNTET-T055",
+          "topicName": "English | 8th – UNIT 4: Prose - My Reminiscence, Poem - A Thing of Beauty, Supplementary - Crossing the River"
+        },
+        {
+          "topicId": "TNTET-T056",
+          "topicName": "English | 8th – UNIT 5: Prose - Being Safe, Poem - Fire Work Night, Supplementary - When Instinct Works"
+        },
+        {
+          "topicId": "TNTET-T057",
+          "topicName": "English | 8th – UNIT 6: Prose – Friendship, Poem - Lessons in Life, Supplementary - Homeless Man and his Friends"
+        },
+        {
+          "topicId": "TNTET-T058",
+          "topicName": "English | 8th – UNIT 7: Prose - Cyber Safety, Poem - My Computer Needs A Break, Supplementary - The Mystery of the Cyber Friend"
+        },
+        {
+          "topicId": "TNTET-T059",
+          "topicName": "English | 8th – UNIT 8: Play - Jack and the Beanstalk"
         }
       ]
     },
