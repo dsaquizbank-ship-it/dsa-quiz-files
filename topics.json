@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31T12:24:54.633Z",
+  "version": "2026-10-31T13:27:43.767Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -10625,6 +10625,914 @@
       "courseId": "SGT",
       "courseName": "SGT",
       "topics": [
+        {
+          "topicId": "SGT-T164",
+          "topicName": "Tamil | 6th Term 1 – மொழி"
+        },
+        {
+          "topicId": "SGT-T165",
+          "topicName": "Tamil | 6th Term 1 – இயற்கை"
+        },
+        {
+          "topicId": "SGT-T166",
+          "topicName": "Tamil | 6th Term 1 – கல்வி"
+        },
+        {
+          "topicId": "SGT-T167",
+          "topicName": "Tamil | 6th Term 2 – நாகரிகம், பண்பாடு"
+        },
+        {
+          "topicId": "SGT-T168",
+          "topicName": "Tamil | 6th Term 2 – தொழில், வணிகம்"
+        },
+        {
+          "topicId": "SGT-T169",
+          "topicName": "Tamil | 6th Term 3 – நாடு, சமூகம், அரசு, நிர்வாகம்"
+        },
+        {
+          "topicId": "SGT-T170",
+          "topicName": "Tamil | 6th Term 3 – அறம், தத்துவம், சிந்தனை"
+        },
+        {
+          "topicId": "SGT-T171",
+          "topicName": "Tamil | 6th Term 3 – மனிதம், ஆளுமை"
+        },
+        {
+          "topicId": "SGT-T172",
+          "topicName": "Tamil | 7th Term 1 – வாழி - அழகுத் தமிழ்"
+        },
+        {
+          "topicId": "SGT-T173",
+          "topicName": "Tamil | 7th Term 1 – இயற்கை - அணிறில் காடு"
+        },
+        {
+          "topicId": "SGT-T174",
+          "topicName": "Tamil | 7th Term 1 – நாடு, சமூகம் - நாடு அழகு நாடு"
+        },
+        {
+          "topicId": "SGT-T175",
+          "topicName": "Tamil | 7th Term 2 – கல்வி: ஒதுவது ஒழியேல்"
+        },
+        {
+          "topicId": "SGT-T176",
+          "topicName": "Tamil | 7th Term 2 – கலை, அழகியல்: கலைவண்ணம்"
+        },
+        {
+          "topicId": "SGT-T177",
+          "topicName": "Tamil | 7th Term 3 – நாகரிகம், பண்பாடு, தொழில், வணிகம் - நபத்து நாகரிகம்"
+        },
+        {
+          "topicId": "SGT-T178",
+          "topicName": "Tamil | 7th Term 3 – அறம், தத்துவம், சிந்தனை - ஒப்பார ஒழுகு"
+        },
+        {
+          "topicId": "SGT-T179",
+          "topicName": "Tamil | 7th Term 3 – மனிதம், ஆளுமை - மனுடம் வெல்லும்"
+        },
+        {
+          "topicId": "SGT-T180",
+          "topicName": "Tamil | 8th Lesson 1 – மொழி - தமிழ் இன்பம்"
+        },
+        {
+          "topicId": "SGT-T181",
+          "topicName": "Tamil | 8th Lesson 2 – இயற்கை - ஈடில்லா இயற்கை"
+        },
+        {
+          "topicId": "SGT-T182",
+          "topicName": "Tamil | 8th Lesson 3 – அறிவியல், தொழில்நுட்பம் - உடலை ஓம்புமின்"
+        },
+        {
+          "topicId": "SGT-T183",
+          "topicName": "Tamil | 8th Lesson 4 – கல்வி - கல்வி கரையில"
+        },
+        {
+          "topicId": "SGT-T184",
+          "topicName": "Tamil | 8th Lesson 5 – கலை, அழகியல், பண்பாடு - குழலினிது யாழினிது"
+        },
+        {
+          "topicId": "SGT-T185",
+          "topicName": "Tamil | 8th Lesson 6 – நகரம், தொழில், வணிகம் - வையம்பகழ் வணிகம்"
+        },
+        {
+          "topicId": "SGT-T186",
+          "topicName": "Tamil | 8th Lesson 7 – நாடு, சமூகம் - பாருக்குளே நல்ல நாடு"
+        },
+        {
+          "topicId": "SGT-T187",
+          "topicName": "Tamil | 8th Lesson 8 – அறம், தத்துவம், சிந்தனை - அறத்தால் வருவதே இன்பம்"
+        },
+        {
+          "topicId": "SGT-T188",
+          "topicName": "Tamil | 8th Lesson 9 – மனிதம், ஆளுமை - குன்றை நிமிர்ந்துநில்"
+        },
+        {
+          "topicId": "SGT-T189",
+          "topicName": "English | 6th Term 1 – UNIT 1: Prose: Sea Turtles, Poem: The Crocodile, Supplementary: The Friendship"
+        },
+        {
+          "topicId": "SGT-T190",
+          "topicName": "English | 6th Term 1 – UNIT 2: Prose: When the Trees Walked, Poem: Trees, Supplementary: The Apple Tree and the Farmer"
+        },
+        {
+          "topicId": "SGT-T191",
+          "topicName": "English | 6th Term 1 – UNIT 3: Prose: A Visitor from Distant Lands, Poem: I Dream of Spices, Supplementary: Stone Soup"
+        },
+        {
+          "topicId": "SGT-T192",
+          "topicName": "English | 6th Term 2 – UNIT 1: Prose: Sports Stars, Poem: Team Work, Supplementary: Think to Win"
+        },
+        {
+          "topicId": "SGT-T193",
+          "topicName": "English | 6th Term 2 – UNIT 2: Prose: Trip to Ooty, Poem: From a Railway Carriage, Supplementary: Gulliver's Travel"
+        },
+        {
+          "topicId": "SGT-T194",
+          "topicName": "English | 6th Term 3 – UNIT 1: Prose: Who Owns the Water?, Poem: Indian Seasons, Supplementary: A Childhood in Malabar: A Memoir"
+        },
+        {
+          "topicId": "SGT-T195",
+          "topicName": "English | 6th Term 3 – UNIT 2: Prose: That Sunday Morning, Poem: A Tragic Story, Supplementary: Brought to Book"
+        },
+        {
+          "topicId": "SGT-T196",
+          "topicName": "English | 6th Term 3 – UNIT 3: Play: The Jungle Book"
+        },
+        {
+          "topicId": "SGT-T197",
+          "topicName": "English | 7th Term 1 – UNIT 1: Prose: Eidgah, Poem: The Computer Swallowed Grandma, Supplementary: On Monday Morning"
+        },
+        {
+          "topicId": "SGT-T198",
+          "topicName": "English | 7th Term 1 – UNIT 2: Prose: The Wind on Haunted Hill 109, Poem: The Listeners 126 July, Supplementary: The Red-Headed League"
+        },
+        {
+          "topicId": "SGT-T199",
+          "topicName": "English | 7th Term 1 – UNIT 3: Prose: A Prayer to the Teacher, Poem: Your Space, Supplementary Taking the Bully by the Horns"
+        },
+        {
+          "topicId": "SGT-T200",
+          "topicName": "English | 7th Term 2 – UNIT 1: Prose: Adventures of Don Quixote, Poem: The Age of Chivalry, Supplementary: Alice in Wonderland"
+        },
+        {
+          "topicId": "SGT-T201",
+          "topicName": "English | 7th Term 2 – UNIT 2: Prose: The Last Stone Carver, Poem: Wandering Singers, Supplementary: Naya – The Home of Chitrakaars"
+        },
+        {
+          "topicId": "SGT-T202",
+          "topicName": "English | 7th Term 3 – UNIT 1: Prose: Journey by Train, Poem: Sea Fever, Supplementary: Sindbad – My First Voyage"
+        },
+        {
+          "topicId": "SGT-T203",
+          "topicName": "English | 7th Term 3 – UNIT 2: Prose: A Story of Self Sacrifice and Bravery, Poem: Courage, Supplementary: Man Overboard"
+        },
+        {
+          "topicId": "SGT-T204",
+          "topicName": "English | 7th Term 3 – UNIT 3: Play: Jane Eyre"
+        },
+        {
+          "topicId": "SGT-T205",
+          "topicName": "English | 8th – UNIT 1: Prose: The Nose-Jewel, Poem: Special Hero, Supplementary: The Woman on Platform 8"
+        },
+        {
+          "topicId": "SGT-T206",
+          "topicName": "English | 8th – UNIT 2: Prose: Hobby Turns into A Successful Career, Poem: My Hobby: Reading, Supplementary: Jim Corbett, A Hunter Turned Naturalist"
+        },
+        {
+          "topicId": "SGT-T207",
+          "topicName": "English | 8th – UNIT 3: Prose - Sir Isaac Newton -The Ingenious Scientist, Poem - Making Life Worth While, Supplementary - The Three Questions"
+        },
+        {
+          "topicId": "SGT-T208",
+          "topicName": "English | 8th – UNIT 4: Prose - My Reminiscence, Poem - A Thing of Beauty, Supplementary - Crossing the River"
+        },
+        {
+          "topicId": "SGT-T209",
+          "topicName": "English | 8th – UNIT 5: Prose - Being Safe, Poem - Fire Work Night, Supplementary - When Instinct Works"
+        },
+        {
+          "topicId": "SGT-T210",
+          "topicName": "English | 8th – UNIT 6: Prose – Friendship, Poem - Lessons in Life, Supplementary - Homeless Man and his Friends"
+        },
+        {
+          "topicId": "SGT-T211",
+          "topicName": "English | 8th – UNIT 7: Prose - Cyber Safety, Poem - My Computer Needs A Break, Supplementary - The Mystery of the Cyber Friend"
+        },
+        {
+          "topicId": "SGT-T212",
+          "topicName": "English | 8th – UNIT 8: Play - Jack and the Beanstalk"
+        },
+        {
+          "topicId": "SGT-T213",
+          "topicName": "Maths | 6th Term 1 - Numbers"
+        },
+        {
+          "topicId": "SGT-T214",
+          "topicName": "Maths | 6th Term 1 - Introduction To Algebra"
+        },
+        {
+          "topicId": "SGT-T215",
+          "topicName": "Maths | 6th Term 1 - Ratio And Proportion"
+        },
+        {
+          "topicId": "SGT-T216",
+          "topicName": "Maths | 6th Term 1 - Geometry"
+        },
+        {
+          "topicId": "SGT-T217",
+          "topicName": "Maths | 6th Term 1 - Statistics"
+        },
+        {
+          "topicId": "SGT-T218",
+          "topicName": "Maths | 6th Term 1 - Information Processing"
+        },
+        {
+          "topicId": "SGT-T219",
+          "topicName": "Maths | 6th Term 2 - Numbers"
+        },
+        {
+          "topicId": "SGT-T220",
+          "topicName": "Maths | 6th Term 2 - Measurements"
+        },
+        {
+          "topicId": "SGT-T221",
+          "topicName": "Maths | 6th Term 2 - Bill, Profit and Loss"
+        },
+        {
+          "topicId": "SGT-T222",
+          "topicName": "Maths | 6th Term 2 - Geometry"
+        },
+        {
+          "topicId": "SGT-T223",
+          "topicName": "Maths | 6th Term 2 - Information Processing"
+        },
+        {
+          "topicId": "SGT-T224",
+          "topicName": "Maths | 6th Term 3 - Fractions"
+        },
+        {
+          "topicId": "SGT-T225",
+          "topicName": "Maths | 6th Term 3 - Integers"
+        },
+        {
+          "topicId": "SGT-T226",
+          "topicName": "Maths | 6th Term 3 - Perimeter and Area"
+        },
+        {
+          "topicId": "SGT-T227",
+          "topicName": "Maths | 6th Term 3 - Symmetry"
+        },
+        {
+          "topicId": "SGT-T228",
+          "topicName": "Maths | 6th Term 3 - Information Processing"
+        },
+        {
+          "topicId": "SGT-T229",
+          "topicName": "Maths | 7th Term 1 - Number System"
+        },
+        {
+          "topicId": "SGT-T230",
+          "topicName": "Maths | 7th Term 1 - Measurements"
+        },
+        {
+          "topicId": "SGT-T231",
+          "topicName": "Maths | 7th Term 1 - Algebra"
+        },
+        {
+          "topicId": "SGT-T232",
+          "topicName": "Maths | 7th Term 1 - Direct and Inverse Proportion"
+        },
+        {
+          "topicId": "SGT-T233",
+          "topicName": "Maths | 7th Term 1 - Geometry"
+        },
+        {
+          "topicId": "SGT-T234",
+          "topicName": "Maths | 7th Term 1 - Information Processing"
+        },
+        {
+          "topicId": "SGT-T235",
+          "topicName": "Maths | 7th Term 2 - Number System"
+        },
+        {
+          "topicId": "SGT-T236",
+          "topicName": "Maths | 7th Term 2 - Measurements"
+        },
+        {
+          "topicId": "SGT-T237",
+          "topicName": "Maths | 7th Term 2 - Algebra"
+        },
+        {
+          "topicId": "SGT-T238",
+          "topicName": "Maths | 7th Term 2 - Geometry"
+        },
+        {
+          "topicId": "SGT-T239",
+          "topicName": "Maths | 7th Term 2 - Information Processing"
+        },
+        {
+          "topicId": "SGT-T240",
+          "topicName": "Maths | 7th Term 3 - Number System"
+        },
+        {
+          "topicId": "SGT-T241",
+          "topicName": "Maths | 7th Term 3 - Percentage and Simple Interest"
+        },
+        {
+          "topicId": "SGT-T242",
+          "topicName": "Maths | 7th Term 3 - Algebra"
+        },
+        {
+          "topicId": "SGT-T243",
+          "topicName": "Maths | 7th Term 3 - Geometry"
+        },
+        {
+          "topicId": "SGT-T244",
+          "topicName": "Maths | 7th Term 3 - Statistics"
+        },
+        {
+          "topicId": "SGT-T245",
+          "topicName": "Maths | 7th Term 3 - Information Processing"
+        },
+        {
+          "topicId": "SGT-T246",
+          "topicName": "Maths | 8th Standard - Numbers"
+        },
+        {
+          "topicId": "SGT-T247",
+          "topicName": "Maths | 8th Standard - Measurements"
+        },
+        {
+          "topicId": "SGT-T248",
+          "topicName": "Maths | 8th Standard - Algebra"
+        },
+        {
+          "topicId": "SGT-T249",
+          "topicName": "Maths | 8th Standard - Life Mathematics"
+        },
+        {
+          "topicId": "SGT-T250",
+          "topicName": "Maths | 8th Standard - Geometry"
+        },
+        {
+          "topicId": "SGT-T251",
+          "topicName": "Maths | 8th Standard - Statistics"
+        },
+        {
+          "topicId": "SGT-T252",
+          "topicName": "Maths | 8th Standard - Information Processing"
+        },
+        {
+          "topicId": "SGT-T253",
+          "topicName": "Science | 6th Term 1 - Measurements"
+        },
+        {
+          "topicId": "SGT-T254",
+          "topicName": "Science | 6th Term 1 - Force And Motion"
+        },
+        {
+          "topicId": "SGT-T255",
+          "topicName": "Science | 6th Term 1 - Matter Around Us"
+        },
+        {
+          "topicId": "SGT-T256",
+          "topicName": "Science | 6th Term 1 - The World Of Plants"
+        },
+        {
+          "topicId": "SGT-T257",
+          "topicName": "Science | 6th Term 1 - The World Of Animals"
+        },
+        {
+          "topicId": "SGT-T258",
+          "topicName": "Science | 6th Term 1 - Health And Hygiene"
+        },
+        {
+          "topicId": "SGT-T259",
+          "topicName": "Science | 6th Term 1 - Computer - An Introduction"
+        },
+        {
+          "topicId": "SGT-T260",
+          "topicName": "Social Science | 6th Term 1 - History: What Is History?"
+        },
+        {
+          "topicId": "SGT-T261",
+          "topicName": "Social Science | 6th Term 1 - History: Human Evolution"
+        },
+        {
+          "topicId": "SGT-T262",
+          "topicName": "Social Science | 6th Term 1 - History: Indus Civilization"
+        },
+        {
+          "topicId": "SGT-T263",
+          "topicName": "Social Science | 6th Term 1 - History: Ancient Cities of Tamilagam"
+        },
+        {
+          "topicId": "SGT-T264",
+          "topicName": "Social Science | 6th Term 1 - Geography: The Universe and Solar System"
+        },
+        {
+          "topicId": "SGT-T265",
+          "topicName": "Social Science | 6th Term 1 - Geography: Land And Oceans"
+        },
+        {
+          "topicId": "SGT-T266",
+          "topicName": "Social Science | 6th Term 1 - Civics: Understanding Diversity"
+        },
+        {
+          "topicId": "SGT-T267",
+          "topicName": "Social Science | 6th Term 1 - Civics: Achieving Equality"
+        },
+        {
+          "topicId": "SGT-T268",
+          "topicName": "Science | 6th Term 2 - Heat"
+        },
+        {
+          "topicId": "SGT-T269",
+          "topicName": "Science | 6th Term 2 - Electricity"
+        },
+        {
+          "topicId": "SGT-T270",
+          "topicName": "Science | 6th Term 2 - Changes around us"
+        },
+        {
+          "topicId": "SGT-T271",
+          "topicName": "Science | 6th Term 2 - Air"
+        },
+        {
+          "topicId": "SGT-T272",
+          "topicName": "Science | 6th Term 2 - The Cell"
+        },
+        {
+          "topicId": "SGT-T273",
+          "topicName": "Science | 6th Term 2 - Human Organ Systems"
+        },
+        {
+          "topicId": "SGT-T274",
+          "topicName": "Science | 6th Term 2 - Parts of Computer"
+        },
+        {
+          "topicId": "SGT-T275",
+          "topicName": "Social Science | 6th Term 2 - History: Vedic Culture in North India and Megalithic Culture in South India"
+        },
+        {
+          "topicId": "SGT-T276",
+          "topicName": "Social Science | 6th Term 2 - History: Great Thinkers and New Faiths"
+        },
+        {
+          "topicId": "SGT-T277",
+          "topicName": "Social Science | 6th Term 2 - History: From Chiefdoms to Empires"
+        },
+        {
+          "topicId": "SGT-T278",
+          "topicName": "Social Science | 6th Term 2 - Geography: Resources"
+        },
+        {
+          "topicId": "SGT-T279",
+          "topicName": "Social Science | 6th Term 2 - Civics: National Symbols"
+        },
+        {
+          "topicId": "SGT-T280",
+          "topicName": "Social Science | 6th Term 2 - Civics: The Constitution of India"
+        },
+        {
+          "topicId": "SGT-T281",
+          "topicName": "Social Science | 6th Term 2 - Economics: Economics-An Introduction"
+        },
+        {
+          "topicId": "SGT-T282",
+          "topicName": "Science | 6th Term 3 - Magnetism"
+        },
+        {
+          "topicId": "SGT-T283",
+          "topicName": "Science | 6th Term 3 - Water"
+        },
+        {
+          "topicId": "SGT-T284",
+          "topicName": "Science | 6th Term 3 - Chemistry in Everyday Life"
+        },
+        {
+          "topicId": "SGT-T285",
+          "topicName": "Science | 6th Term 3 - Our Environment"
+        },
+        {
+          "topicId": "SGT-T286",
+          "topicName": "Science | 6th Term 3 - Plants in Daily Life"
+        },
+        {
+          "topicId": "SGT-T287",
+          "topicName": "Science | 6th Term 3 - Hardware and Software"
+        },
+        {
+          "topicId": "SGT-T288",
+          "topicName": "Social Science | 6th Term 3 - History: Society and Culture in Ancient Tamizhagam: The Sangam Age"
+        },
+        {
+          "topicId": "SGT-T289",
+          "topicName": "Social Science | 6th Term 3 - History: The Post-Mauryan India"
+        },
+        {
+          "topicId": "SGT-T290",
+          "topicName": "Social Science | 6th Term 3 - History: The Age of Empires: Guptas and Vardhanas"
+        },
+        {
+          "topicId": "SGT-T291",
+          "topicName": "Social Science | 6th Term 3 - History: South Indian Kingdoms"
+        },
+        {
+          "topicId": "SGT-T292",
+          "topicName": "Social Science | 6th Term 3 - Geography: Asia and Europe"
+        },
+        {
+          "topicId": "SGT-T293",
+          "topicName": "Social Science | 6th Term 3 - Geography: Globe"
+        },
+        {
+          "topicId": "SGT-T294",
+          "topicName": "Social Science | 6th Term 3 - Geography: Understanding Disaster"
+        },
+        {
+          "topicId": "SGT-T295",
+          "topicName": "Social Science | 6th Term 3 - Civics: Democracy"
+        },
+        {
+          "topicId": "SGT-T296",
+          "topicName": "Social Science | 6th Term 3 - Civics: Local Bodies - Rural and Urban"
+        },
+        {
+          "topicId": "SGT-T297",
+          "topicName": "Social Science | 6th Term 3 - Civics: Road Safety"
+        },
+        {
+          "topicId": "SGT-T298",
+          "topicName": "Science | 7th Term 1 - Measurements"
+        },
+        {
+          "topicId": "SGT-T299",
+          "topicName": "Science | 7th Term 1 - Force And Motion"
+        },
+        {
+          "topicId": "SGT-T300",
+          "topicName": "Science | 7th Term 1 - Matter Around Us"
+        },
+        {
+          "topicId": "SGT-T301",
+          "topicName": "Science | 7th Term 1 - Atomic Structure"
+        },
+        {
+          "topicId": "SGT-T302",
+          "topicName": "Science | 7th Term 1 - Reproduction and Modification in plants"
+        },
+        {
+          "topicId": "SGT-T303",
+          "topicName": "Science | 7th Term 1 - Health And Hygiene"
+        },
+        {
+          "topicId": "SGT-T304",
+          "topicName": "Science | 7th Term 1 - Computer -Visual Communication"
+        },
+        {
+          "topicId": "SGT-T305",
+          "topicName": "Social Science | 7th Term 1 - History: Sources of Medieval India"
+        },
+        {
+          "topicId": "SGT-T306",
+          "topicName": "Social Science | 7th Term 1 - History: Emergence of New Kingdoms in North India"
+        },
+        {
+          "topicId": "SGT-T307",
+          "topicName": "Social Science | 7th Term 1 - History: Emergence of New Kingdoms in South India: Later Cholas and Pandyas"
+        },
+        {
+          "topicId": "SGT-T308",
+          "topicName": "Social Science | 7th Term 1 - History: The Delhi Sultanate"
+        },
+        {
+          "topicId": "SGT-T309",
+          "topicName": "Social Science | 7th Term 1 - Geography: Interior of the Earth"
+        },
+        {
+          "topicId": "SGT-T310",
+          "topicName": "Social Science | 7th Term 1 - Geography: Landforms"
+        },
+        {
+          "topicId": "SGT-T311",
+          "topicName": "Social Science | 7th Term 1 - Geography: Population and Settlement"
+        },
+        {
+          "topicId": "SGT-T312",
+          "topicName": "Social Science | 7th Term 1 - Civics: Equality"
+        },
+        {
+          "topicId": "SGT-T313",
+          "topicName": "Social Science | 7th Term 1 - Civics: Political Parties"
+        },
+        {
+          "topicId": "SGT-T314",
+          "topicName": "Social Science | 7th Term 1 - Economics: Production"
+        },
+        {
+          "topicId": "SGT-T315",
+          "topicName": "Science | 7th Term 2 - Heat and Temperature"
+        },
+        {
+          "topicId": "SGT-T316",
+          "topicName": "Science | 7th Term 2 - Electricity"
+        },
+        {
+          "topicId": "SGT-T317",
+          "topicName": "Science | 7th Term 2 - Changes around us"
+        },
+        {
+          "topicId": "SGT-T318",
+          "topicName": "Science | 7th Term 2 - Cell Biology"
+        },
+        {
+          "topicId": "SGT-T319",
+          "topicName": "Science | 7th Term 2 - Basis of Classification"
+        },
+        {
+          "topicId": "SGT-T320",
+          "topicName": "Science | 7th Term 2 - Digital Painting"
+        },
+        {
+          "topicId": "SGT-T321",
+          "topicName": "Social Science | 7th Term 2 - History: Vijayanagar and Bahmani Kingdoms"
+        },
+        {
+          "topicId": "SGT-T322",
+          "topicName": "Social Science | 7th Term 2 - History: The Mughal Empire"
+        },
+        {
+          "topicId": "SGT-T323",
+          "topicName": "Social Science | 7th Term 2 - History: Rise of Marathas and Peshwas"
+        },
+        {
+          "topicId": "SGT-T324",
+          "topicName": "Social Science | 7th Term 2 - Geography: Resources"
+        },
+        {
+          "topicId": "SGT-T325",
+          "topicName": "Social Science | 7th Term 2 - Geography: Tourism"
+        },
+        {
+          "topicId": "SGT-T326",
+          "topicName": "Social Science | 7th Term 2 - Civics: State Government"
+        },
+        {
+          "topicId": "SGT-T327",
+          "topicName": "Social Science | 7th Term 2 - Civics: Media and Democracy"
+        },
+        {
+          "topicId": "SGT-T328",
+          "topicName": "Science | 7th Term 3 - Light"
+        },
+        {
+          "topicId": "SGT-T329",
+          "topicName": "Science | 7th Term 3 - Universe and Space"
+        },
+        {
+          "topicId": "SGT-T330",
+          "topicName": "Science | 7th Term 3 - Polymer Chemistry"
+        },
+        {
+          "topicId": "SGT-T331",
+          "topicName": "Science | 7th Term 3 - Chemistry in Daily Life"
+        },
+        {
+          "topicId": "SGT-T332",
+          "topicName": "Science | 7th Term 3 - Animals in Daily Life"
+        },
+        {
+          "topicId": "SGT-T333",
+          "topicName": "Science | 7th Term 3 - Visual Communication"
+        },
+        {
+          "topicId": "SGT-T334",
+          "topicName": "Social Science | 7th Term 3 - History: New Religious Ideas and Movements"
+        },
+        {
+          "topicId": "SGT-T335",
+          "topicName": "Social Science | 7th Term 3 - History: Art and Architecture of Tamil Nadu"
+        },
+        {
+          "topicId": "SGT-T336",
+          "topicName": "Social Science | 7th Term 3 - History: Jainism, Buddhism and Ajivika Philosophy in Tamil Nadu"
+        },
+        {
+          "topicId": "SGT-T337",
+          "topicName": "Social Science | 7th Term 3 - Geography: Exploring Continents - North America and South America"
+        },
+        {
+          "topicId": "SGT-T338",
+          "topicName": "Social Science | 7th Term 3 - Geography: Map Reading"
+        },
+        {
+          "topicId": "SGT-T339",
+          "topicName": "Social Science | 7th Term 3 - Geography: Natural Hazards - Understanding of Disaster Management in Practice"
+        },
+        {
+          "topicId": "SGT-T340",
+          "topicName": "Social Science | 7th Term 3 - Civics: Women Empowerment"
+        },
+        {
+          "topicId": "SGT-T341",
+          "topicName": "Social Science | 7th Term 3 - Civics: Market and Consumer Protection"
+        },
+        {
+          "topicId": "SGT-T342",
+          "topicName": "Social Science | 7th Term 3 - Civics: Road Safety"
+        },
+        {
+          "topicId": "SGT-T343",
+          "topicName": "Social Science | 7th Term 3 - Economics: Tax and its importance"
+        },
+        {
+          "topicId": "SGT-T344",
+          "topicName": "Science | 8th Standard - Measurements"
+        },
+        {
+          "topicId": "SGT-T345",
+          "topicName": "Science | 8th Standard - Force And Pressure"
+        },
+        {
+          "topicId": "SGT-T346",
+          "topicName": "Science | 8th Standard - Light"
+        },
+        {
+          "topicId": "SGT-T347",
+          "topicName": "Science | 8th Standard - Heat"
+        },
+        {
+          "topicId": "SGT-T348",
+          "topicName": "Science | 8th Standard - Electricity"
+        },
+        {
+          "topicId": "SGT-T349",
+          "topicName": "Science | 8th Standard - Sound"
+        },
+        {
+          "topicId": "SGT-T350",
+          "topicName": "Science | 8th Standard - Magnetism"
+        },
+        {
+          "topicId": "SGT-T351",
+          "topicName": "Science | 8th Standard - Universe and Space Science"
+        },
+        {
+          "topicId": "SGT-T352",
+          "topicName": "Science | 8th Standard - Matter Around Us"
+        },
+        {
+          "topicId": "SGT-T353",
+          "topicName": "Science | 8th Standard - Changes around Us"
+        },
+        {
+          "topicId": "SGT-T354",
+          "topicName": "Science | 8th Standard - Air"
+        },
+        {
+          "topicId": "SGT-T355",
+          "topicName": "Science | 8th Standard - Atomic Structure"
+        },
+        {
+          "topicId": "SGT-T356",
+          "topicName": "Science | 8th Standard - Water"
+        },
+        {
+          "topicId": "SGT-T357",
+          "topicName": "Science | 8th Standard - Acid and Bases"
+        },
+        {
+          "topicId": "SGT-T358",
+          "topicName": "Science | 8th Standard - Chemistry in Everyday Life"
+        },
+        {
+          "topicId": "SGT-T359",
+          "topicName": "Science | 8th Standard - Microorganisms"
+        },
+        {
+          "topicId": "SGT-T360",
+          "topicName": "Science | 8th Standard - Plant Kingdom"
+        },
+        {
+          "topicId": "SGT-T361",
+          "topicName": "Science | 8th Standard - Organisation of Life"
+        },
+        {
+          "topicId": "SGT-T362",
+          "topicName": "Science | 8th Standard - Movements in Animals"
+        },
+        {
+          "topicId": "SGT-T363",
+          "topicName": "Science | 8th Standard - Reaching the Age of Adolescence"
+        },
+        {
+          "topicId": "SGT-T364",
+          "topicName": "Science | 8th Standard - Crop Production and Management"
+        },
+        {
+          "topicId": "SGT-T365",
+          "topicName": "Science | 8th Standard - Conservation of Plants and Animals"
+        },
+        {
+          "topicId": "SGT-T366",
+          "topicName": "Social Science | 8th Standard - History: Advent of the Europeans"
+        },
+        {
+          "topicId": "SGT-T367",
+          "topicName": "Social Science | 8th Standard - History: From Trade to Territory"
+        },
+        {
+          "topicId": "SGT-T368",
+          "topicName": "Social Science | 8th Standard - History: Rural Life and Society"
+        },
+        {
+          "topicId": "SGT-T369",
+          "topicName": "Social Science | 8th Standard - History: People's Revolt"
+        },
+        {
+          "topicId": "SGT-T370",
+          "topicName": "Social Science | 8th Standard - History: Educational Development in India"
+        },
+        {
+          "topicId": "SGT-T371",
+          "topicName": "Social Science | 8th Standard - History: Development of Industries in India"
+        },
+        {
+          "topicId": "SGT-T372",
+          "topicName": "Social Science | 8th Standard - History: Urban changes during the British period"
+        },
+        {
+          "topicId": "SGT-T373",
+          "topicName": "Social Science | 8th Standard - History: Status of Women in India through the ages"
+        },
+        {
+          "topicId": "SGT-T374",
+          "topicName": "Social Science | 8th Standard - Geography: Rocks and Soils"
+        },
+        {
+          "topicId": "SGT-T375",
+          "topicName": "Social Science | 8th Standard - Geography: Weather and Climate"
+        },
+        {
+          "topicId": "SGT-T376",
+          "topicName": "Social Science | 8th Standard - Geography: Hydrologic Cycle"
+        },
+        {
+          "topicId": "SGT-T377",
+          "topicName": "Social Science | 8th Standard - Geography: Migration and Urbanisation"
+        },
+        {
+          "topicId": "SGT-T378",
+          "topicName": "Social Science | 8th Standard - Geography: Hazards"
+        },
+        {
+          "topicId": "SGT-T379",
+          "topicName": "Social Science | 8th Standard - Geography: Industries"
+        },
+        {
+          "topicId": "SGT-T380",
+          "topicName": "Social Science | 8th Standard - Geography: Exploring Continents: Africa, Australia and Antarctica"
+        },
+        {
+          "topicId": "SGT-T381",
+          "topicName": "Social Science | 8th Standard - Geography: Map Reading"
+        },
+        {
+          "topicId": "SGT-T382",
+          "topicName": "Social Science | 8th Standard - Civics: How the State Government Works"
+        },
+        {
+          "topicId": "SGT-T383",
+          "topicName": "Social Science | 8th Standard - Civics: Citizens and Citizenship"
+        },
+        {
+          "topicId": "SGT-T384",
+          "topicName": "Social Science | 8th Standard - Civics: Understanding Secularism"
+        },
+        {
+          "topicId": "SGT-T385",
+          "topicName": "Social Science | 8th Standard - Civics: Human Rights and UNO"
+        },
+        {
+          "topicId": "SGT-T386",
+          "topicName": "Social Science | 8th Standard - Civics: Road Safety Rules and Regulations"
+        },
+        {
+          "topicId": "SGT-T387",
+          "topicName": "Social Science | 8th Standard - Civics: Defence & Foreign Policy"
+        },
+        {
+          "topicId": "SGT-T388",
+          "topicName": "Social Science | 8th Standard - Civics: The Judiciary"
+        },
+        {
+          "topicId": "SGT-T389",
+          "topicName": "Social Science | 8th Standard - Economics: Money, Savings and Investments"
+        },
+        {
+          "topicId": "SGT-T390",
+          "topicName": "Social Science | 8th Standard - Economics: Public and Private Sectors"
+        },
         {
           "topicId": "SGT-T001",
           "topicName": "Tamil - Prose | திராவிட மொழிக்குடும்பம்"
