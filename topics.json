@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31T04:33:14.474Z",
+  "version": "2026-10-31T04:37:47.089Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -779,6 +779,10 @@
         {
           "topicId": "PGTRB-T001",
           "topicName": "Unit I | Geoffrey Chaucer - Prologue to the Canterbury Tales"
+        },
+        {
+          "topicId": "PGTRB-ENG-T128",
+          "topicName": "Unit I | Geoffrey Chaucer - The Book of the Duchess Chapter only"
         },
         {
           "topicId": "PGTRB-T002",
