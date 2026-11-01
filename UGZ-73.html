@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>UGZ-73</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]], displayMath: [["$$", "$$"], ["\\[", "\\]"]] },
+            options: { ignoreHtmlClass: "no-mathjax" }
+        };
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(145deg, #f0fdf4, #dcfce7); --card-bg: #ffffff; --text-primary: #14532d; --border-light: #bbf7d0; --accent: #10b981; --accent-dark: #059669; --timer-bg: #fef3c7; --timer-text: #b45309; --palette-btn: #f0fdf4; --shadow: 0 10px 25px -5px rgba(0,0,0,0.1); --correct-color: #dc2626; --modal-overlay: rgba(0,0,0,0.5); --rc-bg: #f8fafc; --rc-border: #3b82f6; --puzzle-bg: #fffbeb; --puzzle-border: #f59e0b; }
+        [data-theme="dark"] { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; background: linear-gradient(135deg, #059669, #10b981); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.5; }
+        .option-item { background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .correct-option { font-weight: bold; color: var(--correct-color); }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        mark { background-color: #fef08a; color: #000; padding: 0 4px; border-radius: 3px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { body { background: white !important; color: black !important; } .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn:not(.btn-pdf), .icon-btn { display: none !important; } .review-card { break-inside: avoid; } }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">25:00</div>
+            <div class="top-buttons">
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 Dark", lightMode: "☀️ Light" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 இருண்ட", lightMode: "☀️ ஒளி" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "UGTRB ZOOLOGY",
+        testNo: "UGZ-73",
+        date: "02/11/2026",
+        subject: "UGTRB ZOOLOGY",
+        topic: "AMNIOCENTESIS TO STEM CELL",
+        duration: "30",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "Alpha fetoprotein is detected by analyzing the:",
+    "ta": "ஆல்பா ஃபீட்டோபுரோட்டீன் பின்வருவனவற்றை பகுப்பாய்வு செய்வதன் மூலம் கண்டறியப்படுகிறது:",
+    "optionsEn": ["Foetal cells", "Cultured cell mass", "Supernatant fluid", "Amnion membrane"],
+    "optionsTa": ["பிறந்த குழந்தை செல்கள்", "வளர்க்கப்பட்ட செல் நிறை", "மேல்தெளிவு திரவம்", "பனிக்குடப் படலம்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Analyzing alpha fetoprotein in the supernatant fluid can explain:",
+    "ta": "மேல்தெளிவு திரவத்தில் ஆல்பா ஃபீட்டோபுரோட்டீனை பகுப்பாய்வு செய்வது பின்வருவனவற்றை விளக்க முடியும்:",
+    "optionsEn": ["Congenital anomalies", "Metabolic enzyme synthesis", "Banding patterns", "Cell culture duration"],
+    "optionsTa": ["பிறவி குறைபாடுகள்", "வளர்சிதை மாற்ற நொதி தொகுப்பு", "பேண்டிங் வடிவங்கள்", "செல் வளர்ப்பு காலம்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the statement: \"The chromosomes are detected by banding analysis for chromosomal abnormalities.\" Which entity is subjected to this?<br><br>The entity examined through banding analysis is derived from:",
+    "ta": "கூற்றைக் கவனியுங்கள்: \"குரோமோசோமால் அசாதாரணங்களுக்காக பேண்டிங் பகுப்பாய்வு மூலம் குரோமோசோம்கள் கண்டறியப்படுகின்றன.\" இது எதற்கு உட்படுத்தப்படுகிறது?<br><br>பேண்டிங் பகுப்பாய்வு மூலம் ஆராயப்படும் பொருள் இதிலிருந்து பெறப்படுகிறது:",
+    "optionsEn": ["Direct supernatant fluid", "Cultured cells", "Uncultured whole fluid", "Plazma membrane wash"],
+    "optionsTa": ["நேரடி மேல்தெளிவு திரவம்", "வளர்க்கப்பட்ட செல்கள்", "வளர்க்கப்படாத முழு திரவம்", "பிளாஸ்மா சவ்வு கழுவுதல்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "By the 3rd month, amniocentesis can help find out:",
+    "ta": "3வது மாதத்தில், பனிக்குட ஆய்வு (அம்னியோசென்டசிஸ்) பின்வருவனவற்றைக் கண்டறிய உதவும்:",
+    "optionsEn": ["The blood group of the embryo", "The sex of the developing embryo", "The exact birth weight", "The heartbeat frequency"],
+    "optionsTa": ["கருவின் இரத்த வகை", "வளர்ந்து வரும் கருவின் பாலினம்", "சரியான பிறப்பு எடை", "இதயத் துடிப்பு அதிர்வெண்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Stem cells are broadly divided into:",
+    "ta": "தண்டு செல்கள் பரவலாக பிரிக்கப்படுகின்றன:",
+    "optionsEn": ["Two types", "Three type", "Four types", "Five types"],
+    "optionsTa": ["இரண்டு வகைகள்", "மூன்று வகைகள்", "நான்கு வகைகள்", "ஐந்து வகைகள்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Endoderm-derived cells give rise to the lining of the:",
+    "ta": "எண்டோடெர்ம் (உட்புற அடுக்கு) செல்களிலிருந்து தோன்றுவது:",
+    "optionsEn": ["Brain ventricles and spinal cord", "Gastrointestinal tract and respiratory tract", "Urogenital system exclusively", "Adrenal cortex and lymphatic tissue"],
+    "optionsTa": ["மூளை வென்ட்ரிக்கிள்கள் மற்றும் முதுகுத் தண்டு", "இரைப்பை குடல் மற்றும் சுவாச பாதை", "சிறுநீர்ப்பிறப்பு அமைப்பு மட்டும்", "அட்ரீனல் புறணி மற்றும் நிணநீர் திசு"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Cells taken from the mesoderm give rise to:",
+    "ta": "மீசோடெர்ம் (இடை அடுக்கு) செல்களிலிருந்து தோன்றுவது:",
+    "optionsEn": ["Skin and nerves", "Bone marrow, blood cells, and cardiac muscles", "Thymus, thyroid, and larynx", "Pituitary gland and adrenal medulla"],
+    "optionsTa": ["தோல் மற்றும் நரம்புகள்", "எலும்பு மஜ்ஜை, இரத்த செல்கள் மற்றும் இதய தசைகள்", "தைமஸ், தைராய்டு மற்றும் குரல்வளை", "பிட்யூட்டரி சுரப்பி மற்றும் அட்ரீனல் மெடுல்லா"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "In the process of embryonic stem cell culture, what are the cells poured into after being taken out?",
+    "ta": "கரு தண்டு செல் வளர்ப்பு செயல்பாட்டில், செல்கள் வெளியே எடுக்கப்பட்ட பிறகு எதில் ஊற்றப்படுகின்றன?",
+    "optionsEn": ["A plastic tube containing a nutrient broth", "A glass slide containing saline", "A test tube containing alcohol", "A UV-irradiated dish"],
+    "optionsTa": ["ஊட்டச்சத்து குழம்பு கொண்ட பிளாஸ்டிக் குழாய்", "உப்பு கரைசல் கொண்ட கண்ணாடி ஸ்லைடு", "ஆல்கஹால் கொண்ட சோதனைக் குழாய்", "UV கதிர்வீச்சு செய்யப்பட்ட டிஷ்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "What is used to coat the inner surface of the culture disc to form a feeder layer?",
+    "ta": "ஊட்ட அடுக்கை (feeder layer) உருவாக்க வளர்ப்பு வட்டின் உள் மேற்பரப்பை பூச எது பயன்படுத்தப்படுகிறது?",
+    "optionsEn": ["UV irradiated mouse embryonic skin cells", "Human bone marrow cells", "Fresh blastocyst cells", "Red blood cells"],
+    "optionsTa": ["UV கதிர்வீச்சு செய்யப்பட்ட எலி கரு தோல் செல்கள்", "மனித எலும்பு மஜ்ஜை செல்கள்", "புதிய பிளாஸ்டோசிஸ்ட் செல்கள்", "சிவப்பு இரத்த அணுக்கள்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is NOT listed as a method to generate specific types of differentiated cells?",
+    "ta": "பின்வருவனவற்றுள் எது குறிப்பிட்ட வகை வேறுபடுத்தப்பட்ட செல்களை உருவாக்கும் முறையாக பட்டியலிடப்படவில்லை?",
+    "optionsEn": ["Changing the chemical composition of medium", "Altering the surface of culture dish", "Modification of ESCs via gene cloning", "Exposing the cells to direct sunlight"],
+    "optionsTa": ["ஊடகத்தின் வேதியியல் கலவையை மாற்றுதல்", "வளர்ப்பு டிஷின் மேற்பரப்பை மாற்றுதல்", "மரபணு குளோனிங் மூலம் ESCகளை மாற்றியமைத்தல்", "செல்களை நேரடி சூரிய ஒளிக்கு வெளிப்படுத்துதல்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "What is the initial step in the protocol for differentiating ESCs into insulin-secreting pancreatic cells?",
+    "ta": "ESCகளை இன்சுலின் சுரக்கும் கணைய செல்களாக வேறுபடுத்துவதற்கான நடைமுறையில் முதல் படி என்ன?",
+    "optionsEn": ["Leaving ESCs in the nutrient medium for a week to form clumps called embryoid bodies", "Adding active mouse skin cells directly", "Freezing the culture dish at -20°C", "Irradiating the cells with UV light"],
+    "optionsTa": ["கரு உடல்கள் (embryoid bodies) எனப்படும் திரட்சிகளை உருவாக்க ஒரு வாரத்திற்கு ESCகளை ஊட்டச்சத்து ஊடகத்தில் விடுதல்", "செயலில் உள்ள எலி தோல் செல்களை நேரடியாகச் சேர்த்தல்", "வளர்ப்பு டிஷை -20°C இல் உறைய வைத்தல்", "செல்களுக்கு UV ஒளி கதிர்வீச்சு செய்தல்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "What is released by the feeder layer cells to help the growth of embryonic stem cells?",
+    "ta": "கரு தண்டு செல்களின் வளர்ச்சிக்கு உதவ ஊட்ட அடுக்கு செல்களால் எது வெளியிடப்படுகிறது?",
+    "optionsEn": ["Certain metabolites necessary for growth", "Toxic enzymes to kill competing cells", "Ultraviolet radiation rays", "Solid calcium deposits"],
+    "optionsTa": ["வளர்ச்சிக்குத் தேவையான சில வளர்சிதை மாற்றங்கள்", "போட்டி செல்களைக் கொல்ல நச்சு நொதிகள்", "புற ஊதா கதிர்வீச்சு கதிர்கள்", "திட கால்சியம் படிவுகள்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "How is a desired gene inserted into the embryonic stem cell (ESC) during the gene transfer method?",
+    "ta": "மரபணு பரிமாற்ற முறையின் போது விரும்பிய மரபணு கரு தண்டு செல்லில் (ESC) எவ்வாறு செருகப்படுகிறது?",
+    "optionsEn": ["By transfection", "By microneedle extraction", "By ultraviolet irradiation", "By freezing and thawing"],
+    "optionsTa": ["டிரான்ஸ்ஃபெக்ஷன் மூலம்", "மைக்ரோநீடில் பிரித்தெடுத்தல் மூலம்", "புற ஊதா கதிர்வீச்சு மூலம்", "உறையவைத்து உருக்குதல் மூலம்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Under what conditions are transfected ESCs grown for one week during the gene transfer method?",
+    "ta": "மரபணு பரிமாற்ற முறையின் போது ஒரு வாரத்திற்கு டிரான்ஸ்ஃபெக்ட் செய்யப்பட்ட ESCகள் எந்த நிலைகளில் வளர்க்கப்படுகின்றன?",
+    "optionsEn": ["In the same nutrient broth for one week at $37.5^{\\circ}C$", "In pure liquid nitrogen for one week at $-196^{\\circ}C$", "In a feeder layer of mouse skin at $30^{\\circ}C$", "In an N2 medium containing nicotinamide at $37^{\\circ}C$"],
+    "optionsTa": ["$37.5^{\\circ}C$ இல் ஒரு வாரத்திற்கு அதே ஊட்டச்சத்து குழம்பில்", "$-196^{\\circ}C$ இல் ஒரு வாரத்திற்கு தூய திரவ நைட்ரஜனில்", "$30^{\\circ}C$ இல் எலி தோலின் ஊட்ட அடுக்கில்", "$37^{\\circ}C$ இல் நிகோடினமைடு கொண்ட N2 ஊடகத்தில்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "What specific type of medium and supplement is associated with growing nestin-positive clumps before final pancreatic cluster selection?",
+    "ta": "இறுதி கணைய க்ளஸ்டர் தேர்வுக்கு முன் நெஸ்டின்-பாசிட்டிவ் திரட்சிகளை வளர்ப்பதுடன் எந்த குறிப்பிட்ட வகை ஊடகம் மற்றும் துணைப்பொருள் தொடர்புடையது?",
+    "optionsEn": ["$N_{2}$ medium, B27 media supplements, and nicotinamide", "Insulin, transferrin, and fibronectin", "Nutrient broth with mouse skin cells", "Pure liquid nitrogen medium"],
+    "optionsTa": ["$N_{2}$ ஊடகம், B27 ஊடக துணைப்பொருட்கள் மற்றும் நிகோடினமைடு", "இன்சுலின், டிரான்ஸ்ஃபெரின் மற்றும் ஃபைப்ரோநெக்டின்", "எலி தோல் செல்கள் கொண்ட ஊட்டச்சத்து குழம்பு", "தூய திரவ நைட்ரஜன் ஊடகம்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "At what temperature is the storage flask kept in an incubator when taken out of the nitrogen container for use?",
+    "ta": "பயன்படுத்துவதற்காக நைட்ரஜன் கொள்கலனில் இருந்து வெளியே எடுக்கப்பட்டபோது சேமிப்பு குடுவை இன்குபேட்டரில் எந்த வெப்பநிலையில் வைக்கப்படுகிறது?",
+    "optionsEn": ["37°C", "27°C", "37.5°C", "5°C"],
+    "optionsTa": ["37°C", "27°C", "37.5°C", "5°C"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "How is DMSO removed from the thawed cell suspension before it is used as a starter culture?",
+    "ta": "தொடக்க வளர்ப்பாகப் பயன்படுத்தப்படுவதற்கு முன் உருக்கப்பட்ட செல் தொங்கலில் இருந்து DMSO எவ்வாறு அகற்றப்படுகிறது?",
+    "optionsEn": ["The cell suspension is diluted with enough nutrient medium and centrifuged", "It is treated with trypsin and heated to 80°C", "It is filtered through a paper sieve and dried in sunlight", "It is frozen back to -196°C instantly"],
+    "optionsTa": ["செல் தொங்கல் போதுமான ஊட்டச்சத்து ஊடகத்துடன் நீர்த்தப்பட்டு மையவிலக்கு செய்யப்படுகிறது", "இது ட்ரிப்சினுடன் சிகிச்சையளிக்கப்பட்டு 80°C க்கு சூடாக்கப்படுகிறது", "இது ஒரு காகித சல்லடை வழியாக வடிகட்டப்பட்டு சூரிய ஒளியில் உலர்த்தப்படுகிறது", "இது உடனடியாக -196°C க்கு மீண்டும் உறைய வைக்கப்படுகிறது"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "What specific information must be maintained in the laboratory record for each preserved stem cell line?",
+    "ta": "ஒவ்வொரு பாதுகாக்கப்பட்ட தண்டு செல் வரிக்கும் ஆய்வக பதிவில் என்ன குறிப்பிட்ட தகவல் பராமரிக்கப்பட வேண்டும்?",
+    "optionsEn": ["The morphological, cytological and other information of stem cells", "Only the commercial market price of the cell lines", "The names of technicians who performed the thawing process", "Daily electricity consumption of liquid nitrogen freezers"],
+    "optionsTa": ["தண்டு செல்களின் உருவவியல், செல்லியல் மற்றும் பிற தகவல்கள்", "செல் வரிகளின் வணிக சந்தை விலை மட்டும்", "உருக்கும் செயல்முறையைச் செய்த தொழில்நுட்ப வல்லுநர்களின் பெயர்கள்", "திரவ நைட்ரஜன் உறைவிப்பான்களின் தினசரி மின் நுகர்வு"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Where are the undifferentiated cells present that constitute human embryonic stem cells?",
+    "ta": "மனித கரு தண்டு செல்களை உருவாக்கும் வேறுபடுத்தப்படாத செல்கள் எங்கே உள்ளன?",
+    "optionsEn": ["In the inner cell mass of human blastocyst embryo", "In the bone marrow of fully developed human adults", "In the feeder layer of mouse embryonic skin cells", "In the outer protective coating of unfertilized human eggs"],
+    "optionsTa": ["மனித பிளாஸ்டோசிஸ்ட் கருவின் உள் செல் நிறையில்", "முழுமையாக வளர்ந்த மனித பெரியவர்களின் எலும்பு மஜ்ஜையில்", "எலி கரு தோல் செல்களின் ஊட்ட அடுக்கில்", "கருவுறாத மனித முட்டைகளின் வெளிப்புற பாதுகாப்பு பூச்சில்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "What type of tests are performed to detect the fundamental properties of stem cells for laboratory record maintenance?",
+    "ta": "ஆய்வக பதிவு பராமரிப்பிற்காக தண்டு செல்களின் அடிப்படை பண்புகளைக் கண்டறிய எந்த வகையான சோதனைகள் செய்யப்படுகின்றன?",
+    "optionsEn": ["Several tests to get morphological, cytological and other information", "Simple temperature checks using standard clinical thermometers", "Mechanical pressure tests using steel microneedles", "Chemical combustion tests using strong laboratory acids"],
+    "optionsTa": ["உருவவியல், செல்லியல் மற்றும் பிற தகவல்களைப் பெற பல சோதனைகள்", "நிலையான மருத்துவ வெப்பமானிகளைப் பயன்படுத்தி எளிய வெப்பநிலை சோதனைகள்", "எஃகு மைக்ரோநீடில்களைப் பயன்படுத்தி இயந்திர அழுத்த சோதனைகள்", "வலுவான ஆய்வக அமிலங்களைப் பயன்படுத்தி வேதியியல் எரிப்பு சோதனைகள்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "In which animal was the research to develop cell types from embryonic stem cells to cure Parkinson's disease first successfully conducted?",
+    "ta": "பார்கின்சன் நோயைக் குணப்படுத்த கரு தண்டு செல்களிலிருந்து செல் வகைகளை உருவாக்கும் ஆராய்ச்சி முதன்முதலில் எந்த விலங்கில் வெற்றிகரமாக நடத்தப்பட்டது?",
+    "optionsEn": ["Mouse", "Rabbit", "Frog", "Monkey"],
+    "optionsTa": ["எலி", "முயல்", "தவளை", "குரங்கு"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "What specific gene was introduced into mouse embryonic stem cells during the procedure to differentiate them into dopamine-producing cells?",
+    "ta": "டோபமைன் உற்பத்தி செய்யும் செல்களாக வேறுபடுத்தும் நடைமுறையின் போது எலி கரு தண்டு செல்களில் எந்த குறிப்பிட்ட மரபணு அறிமுகப்படுத்தப்பட்டது?",
+    "optionsEn": ["Nurr1 gene", "Oct-4 gene", "Trypsin gene", "Insulin receptor gene"],
+    "optionsTa": ["Nurr1 மரபணு", "Oct-4 மரபணு", "ட்ரிப்சின் மரபணு", "இன்சுலின் ஏற்பி மரபணு"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Research on stem cells to treat conditions like Parkinson's and diabetes is progressing in what manner?",
+    "ta": "பார்கின்சன் மற்றும் நீரிழிவு போன்ற நிலைகளுக்கு சிகிச்சையளிக்கும் தண்டு செல்கள் பற்றிய ஆராய்ச்சி எந்த வகையில் முன்னேறி வருகிறது?",
+    "optionsEn": ["Progressing every year towards success", "Slowing down due to lack of technical laboratory support", "Completely halted due to ethical animal restrictions", "Restricted strictly to plant developmental biology studies"],
+    "optionsTa": ["ஒவ்வொரு ஆண்டும் வெற்றியை நோக்கி முன்னேறி வருகிறது", "தொழில்நுட்ப ஆய்வக ஆதரவு இல்லாததால் மந்தமாகி வருகிறது", "நெறிமுறை விலங்கு கட்டுப்பாடுகள் காரணமாக முற்றிலும் நிறுத்தப்பட்டுள்ளது", "தாவர வளர்ச்சி உயிரியல் ஆய்வுகளுக்கு மட்டுமே கட்டுப்படுத்தப்பட்டுள்ளது"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Generally, which type of stem cells are used to repair heart muscles, blood vessels, and smooth muscles?",
+    "ta": "பொதுவாக, இதய தசைகள், இரத்த நாளங்கள் மற்றும் மென்மையான தசைகளை பழுதுபார்க்க எந்த வகை தண்டு செல்கள் பயன்படுத்தப்படுகின்றன?",
+    "optionsEn": ["Adult stem cells", "Human embryonic stem cells", "Feeder layer mouse skin cells", "Blastocyst inner mass cells"],
+    "optionsTa": ["வயது வந்தோர் தண்டு செல்கள்", "மனித கரு தண்டு செல்கள்", "ஊட்ட அடுக்கு எலி தோல் செல்கள்", "பிளாஸ்டோசிஸ்ட் உள் நிறை செல்கள்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "From where are stem cells generally isolated when repairing heart muscles and blood vessels?",
+    "ta": "இதய தசைகள் மற்றும் இரத்த நாளங்களை பழுதுபார்க்கும் போது தண்டு செல்கள் பொதுவாக எங்கிருந்து தனிமைப்படுத்தப்படுகின்றன?",
+    "optionsEn": ["Bone marrow using proper surface markers", "Liquid nitrogen freezing containers at -196°C", "Stomach muscle layers via laparoscopic devices", "UV-irradiated mouse embryonic skin discs"],
+    "optionsTa": ["சரியான மேற்பரப்பு குறிப்பான்களைப் பயன்படுத்தி எலும்பு மஜ்ஜையில் இருந்து", "-196°C இல் திரவ நைட்ரஜன் உறைவிப்பான் கொள்கலன்கள்", "லேபரோஸ்கோபிக் சாதனங்கள் மூலம் வயிற்று தசை அடுக்குகள்", "UV கதிர்வீச்சு செய்யப்பட்ட எலி கரு தோல் டிஸ்க்குகள்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "What progress has been made regarding human heart muscle and blood vessel repair using stem cells?",
+    "ta": "தண்டு செல்களைப் பயன்படுத்தி மனித இதய தசை மற்றும் இரத்த நாள பழுதுபார்ப்பு தொடர்பாக என்ன முன்னேற்றம் ஏற்பட்டுள்ளது?",
+    "optionsEn": ["Works are under the way to develop this technology for humans based on animal successes", "Human heart repair has already been completely perfected in all local hospitals", "Research on heart repair has been permanently abandoned due to failure", "Only mechanical artificial hearts are currently permitted for human use"],
+    "optionsTa": ["விலங்கு வெற்றிகளின் அடிப்படையில் மனிதர்களுக்கான இந்த தொழில்நுட்பத்தை உருவாக்கும் பணிகள் நடைபெற்று வருகின்றன", "அனைத்து உள்ளூர் மருத்துவமனைகளிலும் மனித இதய பழுதுபார்ப்பு ஏற்கனவே முழுமையாக மெருகூட்டப்பட்டுள்ளது", "தோல்வி காரணமாக இதய பழுதுபார்ப்பு பற்றிய ஆராய்ச்சி நிரந்தரமாக கைவிடப்பட்டுள்ளது", "தற்போது இயந்திர செயற்கை இதயங்கள் மட்டுமே மனித பயன்பாட்டிற்கு அனுமதிக்கப்படுகின்றன"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "For what primary medical intervention are embryonic stem cells used regarding severe diseases?",
+    "ta": "கடுமையான நோய்கள் தொடர்பாக கரு தண்டு செல்கள் எந்த முதன்மை மருத்துவ தலையீட்டிற்குப் பயன்படுத்தப்படுகின்றன?",
+    "optionsEn": ["In transplantation of cells in patients to regenerate cells or tissues for the treatment of certain severe diseases", "To coat the inner surface of culture dishes with UV-irradiated mouse skin cells", "To eliminate intracellular freezable waters during low-temperature cryopreservation", "To manufacture industrial plastic tubes containing specialized nutrient broths"],
+    "optionsTa": ["சில கடுமையான நோய்களுக்கான சிகிச்சைக்காக செல்கள் அல்லது திசுக்களை மீண்டும் உருவாக்க நோயாளிகளுக்கு செல்களை மாற்றுவதில்", "UV கதிர்வீச்சு செய்யப்பட்ட எலி தோல் செல்களால் வளர்ப்பு டிஷ்களின் உள் மேற்பரப்பை பூசுவதற்கு", "குறைந்த வெப்பநிலை உறைவிப்பின் போது செல்லுலார் உறையக்கூடிய நீரை அகற்றுவதற்கு", "சிறப்பு ஊட்டச்சத்து குழம்புகள் கொண்ட தொழில்துறை பிளாஸ்டிக் குழாய்களை தயாரிப்பதற்கு"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which specific severe diseases are explicitly listed as examples treated using embryonic stem cells?",
+    "ta": "கரு தண்டு செல்களைப் பயன்படுத்தி சிகிச்சையளிக்கப்படும் எடுத்துக்காட்டுகளாக எந்த குறிப்பிட்ட கடுமையான நோய்கள் வெளிப்படையாக பட்டியலிடப்பட்டுள்ளன?",
+    "optionsEn": ["Parkinson's disease, diabetes, etc.", "Malaria, cholera, and typhoid fever", "Common cold, influenza, and seasonal allergies", "Duchenne's muscular dystrophy and osteoarthritis exclusively"],
+    "optionsTa": ["பார்கின்சன் நோய், நீரிழிவு போன்றவை", "மலேரியா, காலரா மற்றும் குடல்வால்க் காய்ச்சல்", "சளி, இன்ஃபுளூயன்ஸா மற்றும் பருவகால ஒவ்வாமைகள்", "டச்சென் தசைச் சிதைவு மற்றும் எலும்பு மூட்டு அழற்சி மட்டும்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "What happens when fertilized eggs do not all move through the tubes into the uterus during fertility treatments?",
+    "ta": "கருவுறுதல் சிகிச்சையின் போது கருவுற்ற முட்டைகள் அனைத்தும் குழாய்கள் வழியாக கருப்பைக்குள் செல்லாதபோது என்ன நடக்கிறது?",
+    "optionsEn": ["They can cause ectopic pregnancy", "They automatically dissolve harmlessly", "They create a single normal pregnancy", "They transform into corpus luteum cells"],
+    "optionsTa": ["அவை கருப்பையிற்கு வெளியேயான கர்ப்பத்தை (ectopic pregnancy) ஏற்படுத்தலாம்", "அவை பாதிப்பில்லாமல் தானாகவே கரைந்துவிடும்", "அவை ஒரு சாதாரண கர்ப்பத்தை உருவாக்குகின்றன", "அவை கார்பஸ் லூட்டியம் செல்களாக மாறுகின்றன"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which statement about embryos in ART is correct?",
+    "ta": "ART இல் உள்ள கருக்கள் பற்றிய எந்தக் கூற்று சரியானது?",
+    "optionsEn": ["Embryos are formed inside the woman's body in all ART procedures", "Embryos are formed outside and then put back into the woman's body", "Embryos are never transferred back", "Embryos are formed only in surrogates"],
+    "optionsTa": ["அனைத்து ART நடைமுறைகளிலும் கருக்கள் பெண்ணின் உடலுக்குள் உருவாகின்றன", "கருக்கள் வெளியே உருவாக்கப்பட்டு பின்னர் பெண்ணின் உடலுக்குள் மீண்டும் வைக்கப்படுகின்றன", "கருக்கள் ஒருபோதும் மீண்டும் மாற்றப்படுவதில்லை", "கருக்கள் வாடகைத் தாய்களில் மட்டுமே உருவாகின்றன"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "ICSI is done for:",
+    "ta": "ICSI இதற்காக செய்யப்படுகிறது:",
+    "optionsEn": ["Women with ovulation problems only", "Semen abnormalities and couples who have failed fertilization", "Preventing multiple pregnancy", "Genetic testing of embryos"],
+    "optionsTa": ["கருத்தரிக்கும் பிரச்சனை உள்ள பெண்களுக்கு மட்டும்", "விந்து அசாதாரணங்கள் மற்றும் கருவுறுதல் தோல்வியடைந்த தம்பதிகளுக்கு", "பல கர்ப்பங்களைத் தடுப்பதற்கு", "கருக்களின் மரபணு சோதனைக்கு"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "In GIFT, where are the eggs and sperm placed?",
+    "ta": "GIFT இல், முட்டைகள் மற்றும் விந்தணுக்கள் எங்கே வைக்கப்படுகின்றன?",
+    "optionsEn": ["In the uterus", "In the fallopian tube", "In a lab dish", "In the ovary"],
+    "optionsTa": ["கருப்பையில்", "ஃபலோபியன் குழாயில்", "ஆய்வக டிஷில்", "கருப்பையகத்தில்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which statement about GIFT and ZIFT in the past is correct?",
+    "ta": "கடந்த காலத்தில் GIFT மற்றும் ZIFT பற்றிய எந்தக் கூற்று சரியானது?",
+    "optionsEn": ["Both had lower pregnancy rates than IVF", "Both had higher pregnancy rates than IVF", "GIFT had a higher rate but ZIFT had a lower rate", "Neither was ever used"],
+    "optionsTa": ["இரண்டும் IVF ஐ விட குறைவான கர்ப்ப விகிதங்களைக் கொண்டிருந்தன", "இரண்டும் IVF ஐ விட அதிக கர்ப்ப விகிதங்களைக் கொண்டிருந்தன", "GIFT அதிக விகிதத்தையும் ZIFT குறைந்த விகிதத்தையும் கொண்டிருந்தன", "இரண்டும் ஒருபோதும் பயன்படுத்தப்படவில்லை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "What is superovulation, and why is it used in ART?",
+    "ta": "சூப்பரோவுலேஷன் என்றால் என்ன, அது ஏன் ART இல் பயன்படுத்தப்படுகிறது?",
+    "optionsEn": ["Natural release of one egg per cycle, used to avoid medication", "Drug-induced production of multiple eggs, which are retrieved for use in ART such as IVF", "Prevention of ovulation, used to control timing", "Release of eggs after menopause, used for research"],
+    "optionsTa": ["ஒரு சுழற்சிக்கு ஒரு முட்டையின் இயற்கையான வெளியீடு, மருந்துகளைத் தவிர்க்கப் பயன்படுகிறது", "பல முட்டைகளின் மருந்து தூண்டப்பட்ட உற்பத்தி, அவை IVF போன்ற ART இல் பயன்படுத்த மீட்டெடுக்கப்படுகின்றன", "அண்டவிடுப்பைத் தடுத்தல், நேரத்தைக் கட்டுப்படுத்தப் பயன்படுகிறது", "மாதவிடாய்க்குப் பிறகு முட்டைகள் வெளியிடப்படுதல், ஆராய்ச்சிக்குப் பயன்படுகிறது"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "What is the most common complication of ART, and what is the most direct way to prevent or minimize it?",
+    "ta": "ART இன் மிகவும் பொதுவான சிக்கல் என்ன, அதைத் தடுக்க அல்லது குறைக்க மிக நேரடியான வழி எது?",
+    "optionsEn": ["Ectopic pregnancy; prevented by using donor eggs", "Multiple pregnancy; prevented or minimized by limiting the number of embryos transferred", "Ovarian cancer; prevented by avoiding superovulation", "Miscarriage; prevented by using a gestational carrier"],
+    "optionsTa": ["கர்ப்பப்பை வெளிப்புற கர்ப்பம்; நன்கொடையாளர் முட்டைகளைப் பயன்படுத்துவதன் மூலம் தடுக்கப்படுகிறது", "பல கர்ப்பங்கள்; மாற்றப்படும் கருக்களின் எண்ணிக்கையைக் கட்டுப்படுத்துவதன் மூலம் தடுக்கப்படுகிறது அல்லது குறைக்கப்படுகிறது", "கருப்பை புற்றுநோய்; சூப்பரோவுலேஷனைத் தவிர்ப்பதன் மூலம் தடுக்கப்படுகிறது", "கருக்கலைவு; கருப்பை வாடகைதாரரைப் பயன்படுத்துவதன் மூலம் தடுக்கப்படுகிறது"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which statement best integrates the key facts about ART from the text?",
+    "ta": "உரையிலிருந்து ART பற்றிய முக்கிய உண்மைகளை எந்தக் கூற்று சிறப்பாக ஒருங்கிணைக்கிறது?",
+    "optionsEn": ["ART is a single procedure (IVF) that always uses donor gametes and guarantees pregnancy", "ART includes procedures like IVF, ICSI, GIFT, ZIFT, and TET; it treats infertility, may use donor gametes or carriers, and its most common complication is multiple pregnancy", "ART is only for women with irregular periods and never involves laboratory handling", "ART replaces ovulation tracking and is always the first line of treatment"],
+    "optionsTa": ["ART என்பது எப்போதும் நன்கொடையாளர் இனப்பெருக்க செல்களைப் பயன்படுத்தும் மற்றும் கர்ப்பத்திற்கு உத்தரவாதம் அளிக்கும் ஒற்றை நடைமுறை (IVF) ஆகும்", "ART இல் IVF, ICSI, GIFT, ZIFT மற்றும் TET போன்ற நடைமுறைகள் அடங்கும்; இது மலட்டுத்தன்மைக்கு சிகிச்சையளிக்கிறது, நன்கொடையாளர் இனப்பெருக்க செல்கள் அல்லது வாடகைதாரர்களைப் பயன்படுத்தலாம், மேலும் அதன் மிகவும் பொதுவான சிக்கல் பல கர்ப்பங்கள் ஆகும்", "ART என்பது ஒழுங்கற்ற மாதவிடாய் உள்ள பெண்களுக்கு மட்டுமே, மேலும் இதில் ஆய்வக கையாளுதல் ஒருபோதும் அடங்காது", "ART அண்டவிடுப்பு கண்காணிப்பை மாற்றுகிறது மற்றும் எப்போதும் முதல் வரிசை சிகிச்சையாகும்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is the correct order of events in natural conception according to the text?",
+    "ta": "உரையின் படி, இயற்கையான கருத்தரித்தலில் நிகழ்வுகளின் சரியான வரிசை பின்வருவனவற்றுள் எது?",
+    "optionsEn": ["Ovulation → fertile window → LH surge → intercourse", "LH surge → ovulation → egg survives 24 hours → fertilization", "Intercourse → LH surge → fertile window → ovulation", "Fertile window → egg release → LH surge → sperm production"],
+    "optionsTa": ["அண்டவிடுப்பு → கருவுறுதல் காலம் → LH எழுச்சி → உடலுறவு", "LH எழுச்சி → அண்டவிடுப்பு → முட்டை 24 மணி நேரம் உயிர்வாழும் → கருத்தரித்தல்", "உடலுறவு → LH எழுச்சி → கருவுறுதல் காலம் → அண்டவிடுப்பு", "கருவுறுதல் காலம் → முட்டை வெளியீடு → LH எழுச்சி → விந்து உற்பத்தி"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which methods does the text mention for predicting and detecting ovulation?",
+    "ta": "அண்டவிடுப்பைக் கணிப்பதற்கும் கண்டறிவதற்கும் உரை எந்த முறைகளைக் குறிப்பிடுகிறது?",
+    "optionsEn": ["Ultrasound scans combined with blood and urine tests", "CT scans and X-rays", "MRI and biopsy", "Physical examination alone"],
+    "optionsTa": ["இரத்தம் மற்றும் சிறுநீர் பரிசோதனைகளுடன் இணைந்த அல்ட்ராசவுண்ட் ஸ்கேன்கள்", "CT ஸ்கேன்கள் மற்றும் எக்ஸ்-கதிர்கள்", "MRI மற்றும் பயாப்ஸி", "உடல் பரிசோதனை மட்டும்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "What is the relationship between the LH surge and ovulation?",
+    "ta": "LH எழுச்சிக்கும் அண்டவிடுப்பிற்கும் இடையேயான தொடர்பு என்ன?",
+    "optionsEn": ["LH surge occurs 24 hours after ovulation", "LH surge normally occurs 24 hours before ovulation", "LH surge occurs simultaneously with menstruation", "LH surge prevents ovulation"],
+    "optionsTa": ["அண்டவிடுப்பிற்கு 24 மணி நேரத்திற்குப் பிறகு LH எழுச்சி ஏற்படுகிறது", "பொதுவாக அண்டவிடுப்பிற்கு 24 மணி நேரத்திற்கு முன்பு LH எழுச்சி ஏற்படுகிறது", "மாதவிடாயுடன் ஒரே நேரத்தில் LH எழுச்சி ஏற்படுகிறது", "LH எழுச்சி அண்டவிடுப்பைத் தடுக்கிறது"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Why does the text recommend intercourse every 2–3 days throughout the fertile window instead of only on the ovulation day?",
+    "ta": "அண்டவிடுப்பு நாளில் மட்டும் அல்லாமல், கருவுறுதல் காலம் முழுவதும் ஒவ்வொரு 2-3 நாட்களுக்கும் ஒருமுறை உடலுறவு கொள்ள உரை ஏன் பரிந்துரைக்கிறது?",
+    "optionsEn": ["Because the egg survives for 2–3 days", "Because sperm can survive 2–3 days in the fallopian tube, so they are ready when ovulation occurs", "Because ovulation happens every 2–3 days", "Because frequent intercourse improves egg quality"],
+    "optionsTa": ["முட்டை 2-3 நாட்கள் உயிர்வாழ்வதால்", "விந்தணுக்கள் ஃபலோபியன் குழாயில் 2-3 நாட்கள் உயிர்வாழ முடியும், எனவே அண்டவிடுப்பு ஏற்படும் போது அவை தயாராக இருக்கும்", "ஒவ்வொரு 2-3 நாட்களுக்கும் அண்டவிடுப்பு நிகழ்வதால்", "அடிக்கடி உடலுறவு கொள்வது முட்டையின் தரத்தை மேம்படுத்துவதால்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Preimplantation Genetic Diagnosis (PGD) combined with ART is ethically controversial mainly because it can be used for:",
+    "ta": "ART உடன் இணைந்த கருவுறுதலுக்கு முந்தைய மரபணு கண்டறிதல் (PGD) நெறிமுறை ரீதியாக சர்ச்சைக்குரியது, ஏனெனில் இது இதற்குப் பயன்படுத்தப்படலாம்:",
+    "optionsEn": ["Treating infertility", "Sex selection and \"designer babies\" rather than only preventing genetic diseases", "Increasing sperm count", "Preventing ovulation"],
+    "optionsTa": ["மலட்டுத்தன்மைக்கு சிகிச்சையளித்தல்", "மரபணு நோய்களைத் தடுப்பதற்கு மட்டுமல்லாமல், பாலினத் தேர்வு மற்றும் \"வடிவமைப்பாளர் குழந்தைகளுக்கு\"", "விந்து எண்ணிக்கையை அதிகரித்தல்", "அண்டவிடுப்பைத் தடுத்தல்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "What is the ethical status of the human embryo in ART debates?",
+    "ta": "ART விவாதங்களில் மனித கருவின் நெறிமுறை நிலை என்ன?",
+    "optionsEn": ["It is universally considered a full legal person from conception", "It has no moral status at all", "Its moral status is debated — ranging from \"full person\" to \"potential life with some moral respect\"", "It is considered property in all legal systems"],
+    "optionsTa": ["கருத்தரித்தல் முதல் இது உலகளவில் ஒரு முழு சட்டப்பூர்வ நபராகக் கருதப்படுகிறது", "இதற்கு எந்த தார்மீக அந்தஸ்தும் இல்லை", "இதன் தார்மீக அந்தஸ்து விவாதிக்கப்படுகிறது - \"முழு நபர்\" முதல் \"சிறிதளவு தார்மீக மரியாதையுடன் கூடிய சாத்தியமான வாழ்க்கை\" வரை", "அனைத்து சட்ட அமைப்புகளிலும் இது சொத்தாகக் கருதப்படுகிறது"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is an ethical concern related to multiple pregnancy in ART?",
+    "ta": "ART இல் பல கர்ப்பங்கள் தொடர்பான நெறிமுறை கவலை பின்வருவனவற்றுள் எது?",
+    "optionsEn": ["It increases the cost of laboratory equipment", "It poses higher health risks to both mother and fetuses", "It reduces the need for informed consent", "It eliminates the need for superovulation"],
+    "optionsTa": ["இது ஆய்வக உபகரணங்களின் விலையை அதிகரிக்கிறது", "இது தாய் மற்றும் கருக்கள் இருவருக்கும் அதிக உடல்நல அபாயங்களை ஏற்படுத்துகிறது", "இது தகவலறிந்த ஒப்புதலின் தேவையைக் குறைக்கிறது", "இது சூப்பரோவுலேஷன் தேவையை நீக்குகிறது"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "What is superovulation, and why is it used in ART?",
+    "ta": "சூப்பரோவுலேஷன் என்றால் என்ன, அது ஏன் ART இல் பயன்படுத்தப்படுகிறது?",
+    "optionsEn": ["Natural release of one egg per cycle to avoid medication", "Drug-induced production of multiple eggs, retrieved before ovulation for use in ART such as IVF", "Prevention of ovulation to control timing", "Release of eggs after menopause for research"],
+    "optionsTa": ["மருந்துகளைத் தவிர்க்க ஒரு சுழற்சிக்கு ஒரு முட்டையின் இயற்கையான வெளியீடு", "பல முட்டைகளின் மருந்து தூண்டப்பட்ட உற்பத்தி, IVF போன்ற ART இல் பயன்படுத்த அண்டவிடுப்பிற்கு முன் மீட்டெடுக்கப்படுகிறது", "நேரத்தைக் கட்டுப்படுத்த அண்டவிடுப்பைத் தடுத்தல்", "ஆராய்ச்சிக்காக மாதவிடாய்க்குப் பிறகு முட்டைகள் வெளியிடப்படுதல்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "A chimera in embryology is:",
+    "ta": "கருவியலில் ஒரு கைமேரா (chimera) என்பது:",
+    "optionsEn": ["An organism with cells from two different embryos", "A cloned organism", "A frozen embryo", "An unfertilized egg"],
+    "optionsTa": ["இரண்டு வெவ்வேறு கருக்களின் செல்களைக் கொண்ட ஒரு உயிரினம்", "குளோன் செய்யப்பட்ட உயிரினம்", "உறைய வைக்கப்பட்ட கரு", "கருவுறாத முட்டை"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Somatic cell nuclear transfer (SCNT) is the technique used in:",
+    "ta": "சோமாடிக் செல் அணுக்கரு பரிமாற்றம் (SCNT) எதில் பயன்படுத்தப்படும் நுட்பமாகும்:",
+    "optionsEn": ["IVF", "Reproductive cloning (e.g., Dolly the sheep)", "GIFT", "Ovulation tracking"],
+    "optionsTa": ["IVF", "இனப்பெருக்க குளோனிங் (எ.கா. டோலி செம்மறி ஆடு)", "GIFT", "அண்டவிடுப்பு கண்காணிப்பு"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is an application of embryo manipulation in livestock?",
+    "ta": "கால்நடைகளில் கரு கையாளுதலின் பயன்பாடு பின்வருவனவற்றுள் எது?",
+    "optionsEn": ["Multiple ovulation and embryo transfer", "Human IVF only", "Ovulation tracking", "Menopause management"],
+    "optionsTa": ["பல அண்டவிடுப்பு மற்றும் கரு பரிமாற்றம் (MOET)", "மனித IVF மட்டும்", "அண்டவிடுப்பு கண்காணிப்பு", "மாதவிடாய் நிர்வாகம்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "In MOET (Multiple Ovulation and Embryo Transfer), embryos are typically collected at which stage?",
+    "ta": "MOET இல் (பல அண்டவிடுப்பு மற்றும் கரு பரிமாற்றம்), கருக்கள் பொதுவாக எந்த நிலையில் சேகரிக்கப்படுகின்றன?",
+    "optionsEn": ["Zygote stage only", "Morula or blastocyst stage", "After implantation", "After birth"],
+    "optionsTa": ["சிகோட் நிலை மட்டும்", "மொருலா அல்லது பிளாஸ்டோசிஸ்ட் நிலை", "கர்ப்பப்பை பதியப்பட்ட பிறகு", "பிறந்த பிறகு"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "\"Embryo rescue\" is a technique used in:",
+    "ta": "\"எம்ப்ரியோ ரெஸ்க்யூ\" (கரு மீட்பு) என்பது இதில் பயன்படுத்தப்படும் ஒரு நுட்பமாகும்:",
+    "optionsEn": ["Animal cloning", "Plant breeding to rescue hybrid embryos from incompatible crosses", "Human IVF only", "Sperm freezing"],
+    "optionsTa": ["விலங்கு குளோனிங்", "பொருந்தாத குறுக்குகளிலிருந்து கலப்பின கருக்களை மீட்க தாவர இனப்பெருக்கம்", "மனித IVF மட்டும்", "விந்து உறைய வைத்தல்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which technique is used to determine the sex of an embryo before transfer in livestock?",
+    "ta": "கால்நடைகளில் பரிமாற்றத்திற்கு முன் கருவின் பாலினத்தை தீர்மானிக்க எந்த நுட்பம் பயன்படுத்தப்படுகிறது?",
+    "optionsEn": ["PCR amplification of sex-specific genes", "Ultrasound only", "Simple visual inspection", "Blood test of the mother"],
+    "optionsTa": ["பாலினம் சார்ந்த மரபணுக்களின் PCR பெருக்கம்", "அல்ட்ராசவுண்ட் மட்டும்", "எளிய காட்சி ஆய்வு", "தாயின் இரத்த பரிசோதனை"],
+    "answer": 0
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false;
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">${String.fromCharCode(65+i)}. ${opt}</div>`;
+        });
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+            </div>
+        `;
+        updateNavButtons(); updatePalette();
+        if (window.MathJax) MathJax.typesetPromise();
+        initImageZoom();
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) return;
+        userAnswers[currentIndex] = optIndex;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let marker = "";
+                if (idx === corr) marker = " ✅ (Correct)";
+                if (u === idx && idx !== corr) marker = " ❌ (Your choice)";
+                else if (u === idx && idx === corr) marker = " ✅ (Correct)";
+                const styleClass = (idx === corr) ? "correct-option" : "";
+                const userWrongStyle = (u === idx && idx !== corr) ? "color:#ef4444;" : "";
+                optsHtml += `<div class="${styleClass}" style="${userWrongStyle}">${String.fromCharCode(65+idx)}. ${optsArray[idx]}${marker}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" style="border-left-color:${isCorr?"#10b981":"#ef4444"}">
+                        <strong>Q${i+1}. ${txt}</strong>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div style="margin-top:8px;"><strong>Your answer:</strong> ${userAns}</div>
+                        <div><strong>Correct:</strong> ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { try { MathJax.typesetPromise(); } catch(e) {} }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            const imgs = Array.from(document.querySelectorAll("#reviewList img"));
+            await Promise.all(imgs.map(img => {
+                if (img.complete && img.naturalWidth > 0) return Promise.resolve();
+                return new Promise(resolve => {
+                    let done = false;
+                    const finish = () => { if (!done) { done = true; resolve(); } };
+                    img.addEventListener("load", finish, { once: true });
+                    img.addEventListener("error", finish, { once: true });
+                    setTimeout(finish, 5000);
+                });
+            }));
+            await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) window.AndroidBridge.printPage();
+            else window.print();
+        } catch (e) {
+            console.error("PDF export failed:", e);
+            alert("Could not prepare PDF. Please try again.");
+        } finally {
+            setTimeout(() => { if (btn) { btn.disabled = false; btn.innerText = originalText; } }, 800);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.checkForReview = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get("review") === "true") {
+            let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+            if (savedAnswers) {
+                try {
+                    userAnswers = JSON.parse(savedAnswers);
+                    try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+                } catch(e) { console.log("Error parsing answers: " + e.message); }
+            }
+            isSubmitted = true; quizActive = false;
+            document.getElementById("startScreen").style.display = "none";
+            document.getElementById("quizContainer").style.display = "none";
+            document.getElementById("resultContainer").style.display = "block";
+            let correct=0, incorrect=0, na=0;
+            for (let i=0; i<QUESTIONS.length; i++) {
+                if (userAnswers[i] === null || userAnswers[i] === undefined) na++;
+                else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+                else incorrect++;
+            }
+            const negMark = dashboard.negativeMark || 0;
+            const finalScore = correct - (incorrect * negMark);
+            const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+            document.getElementById("finalScore").innerText = finalScore;
+            document.getElementById("correctCountStat").innerText = correct;
+            document.getElementById("incorrectCountStat").innerText = incorrect;
+            document.getElementById("notAttemptedStat").innerText = na;
+            document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+            document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+            const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+            document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+            buildDetailedReview();
+        }
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
