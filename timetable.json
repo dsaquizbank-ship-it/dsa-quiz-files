@@ -1,9 +1,15 @@
 {
-  "version": "2026-11-01T05:41:57.312Z",
+  "version": "2026-11-01T05:43:15.508Z",
   "timetable": [
     {
       "day": "Monday",
       "classes": [
+        {
+          "time": "12:00 PM - 03:00 PM",
+          "subject": "Unit III: Percy Bysshe Shelley - Ozymandias, Adonais",
+          "batch": "PGTRB ENGLISH",
+          "room": "3"
+        },
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Unit III - Topology: Components and local connectedness",
