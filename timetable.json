@@ -1,18 +1,24 @@
 {
-  "version": "2026-11-01T10:33:05.988Z",
+  "version": "2026-11-01T15:20:57.551Z",
   "timetable": [
     {
       "day": "Monday",
       "classes": [
         {
           "time": "10:00 AM - 11:30 AM",
-          "subject": "REVISION: PHYSICS",
-          "batch": "TNTET",
+          "subject": "Tamil Literature: அலகு 1 - இலக்கணம்",
+          "batch": "TNPSC",
+          "room": ""
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "Unit III - History, Culture & INM: Different modes of agitation: Growth of Satyagraha",
+          "batch": "TNPSC",
           "room": ""
         },
         {
           "time": "10:00 AM - 11:30 AM",
-          "subject": "REVISION: SOCIAL SCIENCE",
+          "subject": "REVISION: PHYSICS",
           "batch": "TNTET",
           "room": ""
         }
