@@ -1,14 +1,14 @@
 {
-  "version": "2026-11-01T05:53:20.403Z",
+  "version": "2026-11-01T06:17:25.998Z",
   "timetable": [
     {
       "day": "Monday",
       "classes": [
         {
-          "time": "01:00 PM - 02:30 PM",
-          "subject": "Unit III - Differential Equations and Laplace Transformations: Integrating Factors",
-          "batch": "UGTRB MATHS",
-          "room": "1"
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "English: Cloze Test (Fill in the blanks)",
+          "batch": "BANK",
+          "room": "85"
         },
         {
           "time": "12:00 PM - 03:00 PM",
@@ -32,7 +32,7 @@
           "subject": "Reasoning Ability: Puzzles",
           "batch": "BANK",
           "room": "1"
-        } 
+        }
       ]
     },
     {
