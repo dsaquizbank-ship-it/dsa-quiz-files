@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-01T10:30:24.724Z",
+  "version": "2026-11-01T10:31:56.564Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -11510,6 +11510,10 @@
         {
           "topicId": "TNTET-T238",
           "topicName": "REVISION | PHYSICS"
+        },
+        {
+          "topicId": "TNTET-T239",
+          "topicName": "REVISION | SOCIAL SCIENCE"
         }
       ]
     },
