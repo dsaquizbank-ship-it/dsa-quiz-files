@@ -1,19 +1,19 @@
 {
-  "version": "2026-11-01T15:24:49.218Z",
+  "version": "2026-11-01T15:27:30.688Z",
   "timetable": [
     {
       "day": "Monday",
       "classes": [
         {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Science: 9th - Universe",
-          "batch": "SGT",
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "Unit V - Crown to Independence: Dandi March, Gandhi-Irwin Pact, Round Table Conferences",
+          "batch": "PGTRB HISTORY",
           "room": ""
         },
         {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "General Awareness",
-          "batch": "SSC",
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Science: 9th - Universe",
+          "batch": "SGT",
           "room": ""
         },
         {
