@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-01T05:43:15.508Z",
+  "version": "2026-11-01T05:50:56.389Z",
   "timetable": [
     {
       "day": "Monday",
@@ -15,6 +15,28 @@
           "subject": "Unit III - Topology: Components and local connectedness",
           "batch": "PGTRB MATHS",
           "room": "2"
+        }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "classes": [
+        {
+          "time": "10:30 AM - 01:00 PM",
+          "subject": "Reasoning Ability: Puzzles",
+          "batch": "BANK",
+          "room": "1"
+        }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "classes": [
+        {
+          "time": "01:00 PM - 02:30 PM",
+          "subject": "Unit III - Differential Equations and Laplace Transformations: Integrating Factors",
+          "batch": "UGTRB MATHS",
+          "room": "1"
         }
       ]
     }
