@@ -1,9 +1,33 @@
 {
-  "version": "2026-11-01T15:20:57.551Z",
+  "version": "2026-11-01T15:24:49.218Z",
   "timetable": [
     {
       "day": "Monday",
       "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Science: 9th - Universe",
+          "batch": "SGT",
+          "room": ""
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "General Awareness",
+          "batch": "SSC",
+          "room": ""
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "General Awareness",
+          "batch": "SSC",
+          "room": ""
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "General Awareness",
+          "batch": "SSC",
+          "room": ""
+        },
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Tamil Literature: அலகு 1 - இலக்கணம்",
