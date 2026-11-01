@@ -42,14 +42,14 @@
       "order": 8
     },
     {
-      "id": "DEMO",
-      "name": "DEMO",
-      "order": 9
-    },
-    {
       "id": "SPLTET",
       "name": "SPECIAL TET",
       "order": 9
+    },
+    {
+      "id": "DEMO",
+      "name": "DEMO",
+      "order": 10
     }
   ],
   "exams": [
