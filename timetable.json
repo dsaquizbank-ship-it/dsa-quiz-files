@@ -1,4 +1,22 @@
 {
-  "version": "2026-11-01T10:24:03.476Z",
-  "timetable": []
+  "version": "2026-11-01T10:33:05.988Z",
+  "timetable": [
+    {
+      "day": "Monday",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "REVISION: PHYSICS",
+          "batch": "TNTET",
+          "room": ""
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "REVISION: SOCIAL SCIENCE",
+          "batch": "TNTET",
+          "room": ""
+        }
+      ]
+    }
+  ]
 }
