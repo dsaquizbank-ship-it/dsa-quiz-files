@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-01T10:15:21.156Z",
+  "version": "2026-11-01T10:20:38.479Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -1831,6 +1831,182 @@
       "courseId": "RRB",
       "courseName": "RRB",
       "topics": [
+        {
+          "topicId": "RRB-T168",
+          "topicName": "Quantitative Aptitude | Simplification"
+        },
+        {
+          "topicId": "RRB-T169",
+          "topicName": "Quantitative Aptitude | Approximation"
+        },
+        {
+          "topicId": "RRB-T170",
+          "topicName": "Quantitative Aptitude | Percentages"
+        },
+        {
+          "topicId": "RRB-T171",
+          "topicName": "Quantitative Aptitude | Ratio And Proportion"
+        },
+        {
+          "topicId": "RRB-T172",
+          "topicName": "Quantitative Aptitude | Number Series"
+        },
+        {
+          "topicId": "RRB-T173",
+          "topicName": "Quantitative Aptitude | Quadratic Equation"
+        },
+        {
+          "topicId": "RRB-T174",
+          "topicName": "Quantitative Aptitude | Ages"
+        },
+        {
+          "topicId": "RRB-T175",
+          "topicName": "Quantitative Aptitude | Time & Work / Pipe & Cistern"
+        },
+        {
+          "topicId": "RRB-T176",
+          "topicName": "Quantitative Aptitude | Time, Speed and Distance"
+        },
+        {
+          "topicId": "RRB-T177",
+          "topicName": "Quantitative Aptitude | Boats & Streams"
+        },
+        {
+          "topicId": "RRB-T178",
+          "topicName": "Quantitative Aptitude | Profit and Loss"
+        },
+        {
+          "topicId": "RRB-T179",
+          "topicName": "Quantitative Aptitude | Partnership"
+        },
+        {
+          "topicId": "RRB-T180",
+          "topicName": "Quantitative Aptitude | Mensuration: Cylinder, Cone, Sphere and Cuboid"
+        },
+        {
+          "topicId": "RRB-T181",
+          "topicName": "Quantitative Aptitude | Mixtures and Allegations"
+        },
+        {
+          "topicId": "RRB-T182",
+          "topicName": "Quantitative Aptitude | Simple and Compound Interest"
+        },
+        {
+          "topicId": "RRB-T183",
+          "topicName": "Quantitative Aptitude | Averages"
+        },
+        {
+          "topicId": "RRB-T184",
+          "topicName": "Quantitative Aptitude | Data Interpretation"
+        },
+        {
+          "topicId": "RRB-T185",
+          "topicName": "Quantitative Aptitude | Caselet DI"
+        },
+        {
+          "topicId": "RRB-T186",
+          "topicName": "Quantitative Aptitude | Permutation and Combination"
+        },
+        {
+          "topicId": "RRB-T187",
+          "topicName": "Quantitative Aptitude | Probability"
+        },
+        {
+          "topicId": "RRB-T188",
+          "topicName": "Quantitative Aptitude | Algebra"
+        },
+        {
+          "topicId": "RRB-T189",
+          "topicName": "Quantitative Aptitude | Trigonometry"
+        },
+        {
+          "topicId": "RRB-T190",
+          "topicName": "Quantitative Aptitude | Geometry"
+        },
+        {
+          "topicId": "RRB-T191",
+          "topicName": "Quantitative Aptitude | Heights and Distances"
+        },
+        {
+          "topicId": "RRB-T192",
+          "topicName": "Reasoning Ability | Coding Decoding"
+        },
+        {
+          "topicId": "RRB-T193",
+          "topicName": "Reasoning Ability | Directions"
+        },
+        {
+          "topicId": "RRB-T194",
+          "topicName": "Reasoning Ability | Order & Ranking"
+        },
+        {
+          "topicId": "RRB-T195",
+          "topicName": "Reasoning Ability | Alphanumeric Series"
+        },
+        {
+          "topicId": "RRB-T196",
+          "topicName": "Reasoning Ability | Inequality"
+        },
+        {
+          "topicId": "RRB-T197",
+          "topicName": "Reasoning Ability | Blood Relation"
+        },
+        {
+          "topicId": "RRB-T198",
+          "topicName": "Reasoning Ability | Puzzles"
+        },
+        {
+          "topicId": "RRB-T199",
+          "topicName": "Reasoning Ability | Seating Arrangements"
+        },
+        {
+          "topicId": "RRB-T200",
+          "topicName": "Reasoning Ability | Syllogism"
+        },
+        {
+          "topicId": "RRB-T201",
+          "topicName": "Reasoning Ability | Input/output"
+        },
+        {
+          "topicId": "RRB-T202",
+          "topicName": "Reasoning Ability | Assertion and Reason"
+        },
+        {
+          "topicId": "RRB-T203",
+          "topicName": "Reasoning Ability | Statement, Argument and Assumption"
+        },
+        {
+          "topicId": "RRB-T204",
+          "topicName": "English | Word Replacement"
+        },
+        {
+          "topicId": "RRB-T205",
+          "topicName": "English | Misspelt Word"
+        },
+        {
+          "topicId": "RRB-T206",
+          "topicName": "English | Word Swap"
+        },
+        {
+          "topicId": "RRB-T207",
+          "topicName": "English | Cloze Test (Fill in the blanks)"
+        },
+        {
+          "topicId": "RRB-T208",
+          "topicName": "English | Error Spotting"
+        },
+        {
+          "topicId": "RRB-T209",
+          "topicName": "English | Sentence Correction"
+        },
+        {
+          "topicId": "RRB-T210",
+          "topicName": "English | Sentence Rearrangement"
+        },
+        {
+          "topicId": "RRB-T211",
+          "topicName": "English | Reading Comprehension"
+        },
         {
           "topicId": "RRB-T034",
           "topicName": "General Science | Physics - Units, Dimensions & Formula"
