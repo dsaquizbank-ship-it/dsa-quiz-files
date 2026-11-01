@@ -1,15 +1,9 @@
 {
-  "version": "1.0",
+  "version": "2026-11-01T05:06:48.381Z",
   "timetable": [
     {
       "day": "Monday",
       "classes": [
-        {
-          "time": "09:00 AM - 10:30 AM",
-          "subject": "Indian Polity",
-          "batch": "TNPSC Group II",
-          "room": "Hall A"
-        },
         {
           "time": "11:00 AM - 12:30 PM",
           "subject": "Modern History",
