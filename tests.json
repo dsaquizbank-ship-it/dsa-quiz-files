@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-01T18:05:23.917Z",
+  "version": "2026-11-01T18:27:22.780Z",
   "categories": [
     {
       "id": "BANK",
@@ -172,6 +172,12 @@
       "name": "UGTRB ZOOLOGY",
       "categoryId": "UGTRB",
       "order": 4
+    },
+    {
+      "id": "RRB-GA",
+      "name": "GENERAL AWARENESS",
+      "categoryId": "RRB",
+      "order": 5
     }
   ],
   "tests": [
@@ -607,6 +613,19 @@
       "questionCount": 50,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGZ-73.html",
+      "releaseTimestamp": 1793606400000,
+      "language": "both"
+    },
+    {
+      "testId": "RGA-1",
+      "examId": "RRB-GA",
+      "name": "INDUS VALLEY CIVILIZATION RGA-1",
+      "topic": "INDUS VALLEY CIVILIZATION",
+      "durationMinutes": 10,
+      "order": 1,
+      "questionCount": 20,
+      "negativeMark": 0.33,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGA-1.html",
       "releaseTimestamp": 1793606400000,
       "language": "both"
     }
