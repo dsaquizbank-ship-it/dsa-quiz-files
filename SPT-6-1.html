@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>SPT-6-1</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]], displayMath: [["$$", "$$"], ["\\[", "\\]"]] },
+            options: { ignoreHtmlClass: "no-mathjax" }
+        };
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(145deg, #f0fdf4, #dcfce7); --card-bg: #ffffff; --text-primary: #14532d; --border-light: #bbf7d0; --accent: #10b981; --accent-dark: #059669; --timer-bg: #fef3c7; --timer-text: #b45309; --palette-btn: #f0fdf4; --shadow: 0 10px 25px -5px rgba(0,0,0,0.1); --correct-color: #dc2626; --modal-overlay: rgba(0,0,0,0.5); --rc-bg: #f8fafc; --rc-border: #3b82f6; --puzzle-bg: #fffbeb; --puzzle-border: #f59e0b; }
+        [data-theme="dark"] { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; background: linear-gradient(135deg, #059669, #10b981); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.5; }
+        .option-item { background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .correct-option { font-weight: bold; color: var(--correct-color); }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        mark { background-color: #fef08a; color: #000; padding: 0 4px; border-radius: 3px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { body { background: white !important; color: black !important; } .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn:not(.btn-pdf), .icon-btn { display: none !important; } .review-card { break-inside: avoid; } }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">25:00</div>
+            <div class="top-buttons">
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="display: none;">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "ta";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 Dark", lightMode: "☀️ Light" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 இருண்ட", lightMode: "☀️ ஒளி" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "6TH",
+        testNo: "SPT-6-1",
+        date: "02/11/2026",
+        subject: "6TH",
+        topic: "TAMIL TERM 1 - 2",
+        duration: "30",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "'தமிழுக்கும் அமுதென்று பேர்!' - இப்பாடலில் பயின்று வந்துள்ள தொடை நயம் யாது?",
+    "ta": "'தமிழுக்கும் அமுதென்று பேர்!' - இப்பாடலில் பயின்று வந்துள்ள தொடை நயம் யாது?",
+    "optionsEn": ["மோனை", "எதுகை", "இயைபு", "முரண்"],
+    "optionsTa": ["மோனை", "எதுகை", "இயைபு", "முரண்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "\"தாய்பிள்ளை உறவம்மா உனக்கும் எனக்கும்!\" என்று பாடிய கவிஞர் யார்?",
+    "ta": "\"தாய்பிள்ளை உறவம்மா உனக்கும் எனக்கும்!\" என்று பாடிய கவிஞர் யார்?",
+    "optionsEn": ["பாரதியார்", "பாரதிதாசன்", "காசி ஆனந்தன்", "அறிவுமதி"],
+    "optionsTa": ["பாரதியார்", "பாரதிதாசன்", "காசி ஆனந்தன்", "அறிவுமதி"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "'தமிழ்' என்னும் சொல் முதன்முதலில் ஆளப்படும் இலக்கியம் மற்றும் அதன் மேற்கோள் எது?",
+    "ta": "'தமிழ்' என்னும் சொல் முதன்முதலில் ஆளப்படும் இலக்கியம் மற்றும் அதன் மேற்கோள் எது?",
+    "optionsEn": ["சிலப்பதிகாரம் - \"இமிழ்கடல் வேலியைத் தமிழ்நாடு ஆக்கிய...\"", "தொல்காப்பியம் - \"தமிழென் கிளவியும் அதனோ ரற்றே\"", "அப்பர் தேவாரம் - \"தமிழன் கண்டாய்...\"", "நன்னூல் - \"தமிழ்மொழி போல் இனிதாவது...\""],
+    "optionsTa": ["சிலப்பதிகாரம் - \"இமிழ்கடல் வேலியைத் தமிழ்நாடு ஆக்கிய...\"", "தொல்காப்பியம் - \"தமிழென் கிளவியும் அதனோ ரற்றே\"", "அப்பர் தேவாரம் - \"தமிழன் கண்டாய்...\"", "நன்னூல் - \"தமிழ்மொழி போல் இனிதாவது...\""],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "'தமிழ்நாடு' என்னும் சொல் முதன்முதலில் சிலப்பதிகாரத்தில் எந்தக் காண்டத்தில் இடம்பெற்றுள்ளது?",
+    "ta": "'தமிழ்நாடு' என்னும் சொல் முதன்முதலில் சிலப்பதிகாரத்தில் எந்தக் காண்டத்தில் இடம்பெற்றுள்ளது?",
+    "optionsEn": ["புகார்க் காண்டம்", "மதுரைக் காண்டம்", "வஞ்சிக் காண்டம்", "வஞ்சினக் காண்டம்"],
+    "optionsTa": ["புகார்க் காண்டம்", "மதுரைக் காண்டம்", "வஞ்சிக் காண்டம்", "வஞ்சினக் காண்டம்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "கீழ்க்காண்பனவற்றுள் 'இடஞ்சுழி எழுத்து' எது?",
+    "ta": "கீழ்க்காண்பனவற்றுள் 'இடஞ்சுழி எழுத்து' எது?",
+    "optionsEn": ["ண", "ஞ", "ழ", "ஔ"],
+    "optionsTa": ["ண", "ஞ", "ழ", "ஔ"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "'மா' என்னும் சொல்லிற்குப் பொருந்தாத பொருள் எது?",
+    "ta": "'மா' என்னும் சொல்லிற்குப் பொருந்தாத பொருள் எது?",
+    "optionsEn": ["விலங்கு", "திருமகள்", "சிறிய", "வயல்"],
+    "optionsTa": ["விலங்கு", "திருமகள்", "சிறிய", "வயல்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "மனித இனப் பரிணாம வளர்ச்சியின் சிறப்புகளுள் மிக முக்கியமானது எது?",
+    "ta": "மனித இனப் பரிணாம வளர்ச்சியின் சிறப்புகளுள் மிக முக்கியமானது எது?",
+    "optionsEn": ["கருவிகள் செய்தல்", "நெருப்பைக் கண்டுபிடித்தல்", "மொழி", "சக்கரம்"],
+    "optionsTa": ["கருவிகள் செய்தல்", "நெருப்பைக் கண்டுபிடித்தல்", "மொழி", "சக்கரம்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "\"என்று பிறந்தவள் என்று உணராத இயல்பினளாம் எங்கள் தாய்!\" - இக்கூற்று யாருடையது?",
+    "ta": "\"என்று பிறந்தவள் என்று உணராத இயல்பினளாம் எங்கள் தாய்!\" - இக்கூற்று யாருடையது?",
+    "optionsEn": ["பாரதிதாசன்", "பாரதியார்", "தொல்காப்பியர்", "கம்பர்"],
+    "optionsTa": ["பாரதிதாசன்", "பாரதியார்", "தொல்காப்பியர்", "கம்பர்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "'கமுகு' (பாக்கு மரம்) தாவரத்தின் இலைப்பெயர் தமிழில் எவ்வாறு அழைக்கப்படுகிறது?",
+    "ta": "'கமுகு' (பாக்கு மரம்) தாவரத்தின் இலைப்பெயர் தமிழில் எவ்வாறு அழைக்கப்படுகிறது?",
+    "optionsEn": ["ஓலை", "தோகை", "மடல்", "கூந்தல்"],
+    "optionsTa": ["ஓலை", "தோகை", "மடல்", "கூந்தல்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "எண்ணத்தை வெளிப்படுத்தும் தமிழ் எது?",
+    "ta": "எண்ணத்தை வெளிப்படுத்தும் தமிழ் எது?",
+    "optionsEn": ["இசைத்தமிழ்", "நாடகத்தமிழ்", "இயல்தமிழ்", "அறிவியல் தமிழ்"],
+    "optionsTa": ["இசைத்தமிழ்", "நாடகத்தமிழ்", "இயல்தமிழ்", "அறிவியல் தமிழ்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "உணர்வில் கலந்து வாழ்வின் நிறைகுறைகளைச் சுட்டிக்காட்டும் தமிழ் வடிவம் எது?",
+    "ta": "உணர்வில் கலந்து வாழ்வின் நிறைகுறைகளைச் சுட்டிக்காட்டும் தமிழ் வடிவம் எது?",
+    "optionsEn": ["கவிதைத்தமிழ்", "நாடகத்தமிழ்", "இசைத்தமிழ்", "கணினித்தமிழ்"],
+    "optionsTa": ["கவிதைத்தமிழ்", "நாடகத்தமிழ்", "இசைத்தமிழ்", "கணினித்தமிழ்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "'செயலி' மற்றும் 'தொடுதிரை' ஆகியவற்றின் சரியான ஆங்கிலக் கலைச்சொற்கள் முறையே யாவை?",
+    "ta": "'செயலி' மற்றும் 'தொடுதிரை' ஆகியவற்றின் சரியான ஆங்கிலக் கலைச்சொற்கள் முறையே யாவை?",
+    "optionsEn": ["Internet, Touch screen", "App, Touch screen", "WhatsApp, Facebook", "Search engine, App"],
+    "optionsTa": ["Internet, Touch screen", "App, Touch screen", "WhatsApp, Facebook", "Search engine, App"],
+    "answer": 1
+  },
+  {
+    "type": "assertion",
+    "en": "கூற்று 1: உயிர்மெய் எழுத்தின் வரிவடிவம் மெய்யெழுத்தை ஒத்திருக்கும்.<br><br>கூற்று 2: உயிர்மெய் எழுத்தின் ஒலிப்பு அளவு உயிரெழுத்தை ஒத்திருக்கும்.<br><br>தெரிவுகள்:",
+    "ta": "கூற்று 1: உயிர்மெய் எழுத்தின் வரிவடிவம் மெய்யெழுத்தை ஒத்திருக்கும்.<br><br>கூற்று 2: உயிர்மெய் எழுத்தின் ஒலிப்பு அளவு உயிரெழுத்தை ஒத்திருக்கும்.<br><br>தெரிவுகள்:",
+    "optionsEn": ["கூற்று 1 மட்டும் சரி", "கூற்று 2 மட்டும் சரி", "கூற்று 1, 2 இரண்டுமே சரி", "கூற்று 1, 2 இரண்டுமே தவறு"],
+    "optionsTa": ["கூற்று 1 மட்டும் சரி", "கூற்று 2 மட்டும் சரி", "கூற்று 1, 2 இரண்டுமே சரி", "கூற்று 1, 2 இரண்டுமே தவறு"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "'மாத்திரை' இலக்கண விதிகளின்படி, பின்வரும் சொற்களுள் 3.5 (மூன்றரை) மாத்திரை அளவு கொண்ட சொல் எது?",
+    "ta": "'மாத்திரை' இலக்கண விதிகளின்படி, பின்வரும் சொற்களுள் 3.5 (மூன்றரை) மாத்திரை அளவு கொண்ட சொல் எது?",
+    "optionsEn": ["அம்மா", "தம்பி", "அஃது", "கல்வி"],
+    "optionsTa": ["அம்மா", "தம்பி", "அஃது", "கல்வி"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "பூவின் நிலைகளில் 'மலர்ந்த நிலை'யைக் குறிக்கும் சொல் எது?",
+    "ta": "பூவின் நிலைகளில் 'மலர்ந்த நிலை'யைக் குறிக்கும் சொல் எது?",
+    "optionsEn": ["முகை", "அலர்", "வீ", "செம்மல்"],
+    "optionsTa": ["முகை", "அலர்", "வீ", "செம்மல்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "\"உலகம் பார்க்க உனது பெயரை, நிலவுத் தாளில் எழுதவேண்டும்!\" - என்ற பிறந்தநாள் வாழ்த்துப் பாடலை எழுதியவர் யார்?",
+    "ta": "\"உலகம் பார்க்க உனது பெயரை, நிலவுத் தாளில் எழுதவேண்டும்!\" - என்ற பிறந்தநாள் வாழ்த்துப் பாடலை எழுதியவர் யார்?",
+    "optionsEn": ["பாரதியார்", "காசி ஆனந்தன்", "அறிவுமதி", "பெருஞ்சித்திரனார்"],
+    "optionsTa": ["பாரதியார்", "காசி ஆனந்தன்", "அறிவுமதி", "பெருஞ்சித்திரனார்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "கீழ்க்காண்பனவற்றுள் 'மாத்திரை' என்பதன் சரியான விளக்கம் யாது?",
+    "ta": "கீழ்க்காண்பனவற்றுள் 'மாத்திரை' என்பதன் சரியான விளக்கம் யாது?",
+    "optionsEn": ["எழுத்துகளின் வடிவம்", "எழுத்துகளை ஒலிக்கும் கால அளவு", "சொற்களின் எண்ணிக்கை", "செய்யுளின் ஓசை"],
+    "optionsTa": ["எழுத்துகளின் வடிவம்", "எழுத்துகளை ஒலிக்கும் கால அளவு", "சொற்களின் எண்ணிக்கை", "செய்யுளின் ஓசை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "குறில் எழுத்தை ஒலிக்கும் கால அளவு (மாத்திரை) என்ன?",
+    "ta": "குறில் எழுத்தை ஒலிக்கும் கால அளவு (மாத்திரை) என்ன?",
+    "optionsEn": ["அரை மாத்திரை", "ஒரு மாத்திரை", "இரண்டு மாத்திரை", "மூன்று மாத்திரை"],
+    "optionsTa": ["அரை மாத்திரை", "ஒரு மாத்திரை", "இரண்டு மாத்திரை", "மூன்று மாத்திரை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "மெய் எழுத்துகள் ஒலிக்கும் கால அளவு (மாத்திரை) யாது?",
+    "ta": "மெய் எழுத்துகள் ஒலிக்கும் கால அளவு (மாத்திரை) யாது?",
+    "optionsEn": ["ஒரு மாத்திரை", "இரண்டு மாத்திரை", "அரை மாத்திரை", "கால் மாத்திரை"],
+    "optionsTa": ["ஒரு மாத்திரை", "இரண்டு மாத்திரை", "அரை மாத்திரை", "கால் மாத்திரை"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "'மெல்லினம்' மெய் எழுத்துகள் எதனை இடமாகக் கொண்டு பிறக்கின்றன?",
+    "ta": "'மெல்லினம்' மெய் எழுத்துகள் எதனை இடமாகக் கொண்டு பிறக்கின்றன?",
+    "optionsEn": ["மார்பு", "மூக்கு", "கழுத்து", "தலை"],
+    "optionsTa": ["மார்பு", "மூக்கு", "கழுத்து", "தலை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "'உயிர்மெய் நெடில்' எழுத்தின் மாத்திரை அளவு என்ன?",
+    "ta": "'உயிர்மெய் நெடில்' எழுத்தின் மாத்திரை அளவு என்ன?",
+    "optionsEn": ["ஒரு மாத்திரை", "இரண்டு மாத்திரை", "மூன்று மாத்திரை", "அரை மாத்திரை"],
+    "optionsTa": ["ஒரு மாத்திரை", "இரண்டு மாத்திரை", "மூன்று மாத்திரை", "அரை மாத்திரை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "'கபிலர்' என்னும் சொல்லின் மொத்த மாத்திரை அளவு எவ்வளவு?",
+    "ta": "'கபிலர்' என்னும் சொல்லின் மொத்த மாத்திரை அளவு எவ்வளவு?",
+    "optionsEn": ["3", "3.5", "4", "4.5"],
+    "optionsTa": ["3", "3.5", "4", "4.5"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "'ஆற்றல்' என்னும் சொல்லின் மாத்திரை அளவைக் கணக்கிடுக:",
+    "ta": "'ஆற்றல்' என்னும் சொல்லின் மாத்திரை அளவைக் கணக்கிடுக:",
+    "optionsEn": ["3", "3.5", "4", "2.5"],
+    "optionsTa": ["3", "3.5", "4", "2.5"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "உயிர் எழுத்துகளில் உள்ள 'நெடில்' எழுத்துகளின் எண்ணிக்கை யாது?",
+    "ta": "உயிர் எழுத்துகளில் உள்ள 'நெடில்' எழுத்துகளின் எண்ணிக்கை யாது?",
+    "optionsEn": ["ஐந்து", "ஏழு", "ஒன்பது", "பன்னிரண்டு"],
+    "optionsTa": ["ஐந்து", "ஏழு", "ஒன்பது", "பன்னிரண்டு"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "தமிழ் எழுத்துகளில் தனித்து இயங்கும் 'தனிநிலை' என்று அழைக்கப்படும் எழுத்து எது?",
+    "ta": "தமிழ் எழுத்துகளில் தனித்து இயங்கும் 'தனிநிலை' என்று அழைக்கப்படும் எழுத்து எது?",
+    "optionsEn": ["உயிர் எழுத்து", "மெய் எழுத்து", "ஆயுத எழுத்து", "உயிர்மெய் எழுத்து"],
+    "optionsTa": ["உயிர் எழுத்து", "மெய் எழுத்து", "ஆயுத எழுத்து", "உயிர்மெய் எழுத்து"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "'மக்கள் கவிஞர்' என்னும் சிறப்புப் பெயரால் அழைக்கப்படுபவர் யார்?",
+    "ta": "'மக்கள் கவிஞர்' என்னும் சிறப்புப் பெயரால் அழைக்கப்படுபவர் யார்?",
+    "optionsEn": ["பாரதிதாசன்", "பட்டுக்கோட்டை கல்யாணசுந்தரம்", "கவிமணி", "நாமக்கல் கவிஞர்"],
+    "optionsTa": ["பாரதிதாசன்", "பட்டுக்கோட்டை கல்யாணசுந்தரம்", "கவிமணி", "நாமக்கல் கவிஞர்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "காமராசரை 'கல்விக்கண் திறந்தவர்' என மனமாரப் பாராட்டியவர் யார்?",
+    "ta": "காமராசரை 'கல்விக்கண் திறந்தவர்' என மனமாரப் பாராட்டியவர் யார்?",
+    "optionsEn": ["தந்தை பெரியார்", "அண்ணா", "காந்தியடிகள்", "நேரு"],
+    "optionsTa": ["தந்தை பெரியார்", "அண்ணா", "காந்தியடிகள்", "நேரு"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "இந்திய நூலக அறிவியலின் தந்தை (Father of Indian library science) என்று அழைக்கப்படுபவர் யார்?",
+    "ta": "இந்திய நூலக அறிவியலின் தந்தை (Father of Indian library science) என்று அழைக்கப்படுபவர் யார்?",
+    "optionsEn": ["அண்ணா", "முனைவர் இரா. அரங்கநாதன்", "காமராசர்", "நரசிம்மவர்மன்"],
+    "optionsTa": ["அண்ணா", "முனைவர் இரா. அரங்கநாதன்", "காமராசர்", "நரசிம்மவர்மன்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "அண்ணா நூற்றாண்டு நூலகத்தின் தரைத்தளத்தில் யாருக்கான தனிப்பிரிவு உள்ளது?",
+    "ta": "அண்ணா நூற்றாண்டு நூலகத்தின் தரைத்தளத்தில் யாருக்கான தனிப்பிரிவு உள்ளது?",
+    "optionsEn": ["குழந்தைகள்", "பார்வைத் திறன் குறைபாடு உடையோர்", "போட்டித் தேர்வர்கள்", "பழைமையான ஓலைச்சுவடிகள்"],
+    "optionsTa": ["குழந்தைகள்", "பார்வைத் திறன் குறைபாடு உடையோர்", "போட்டித் தேர்வர்கள்", "பழைமையான ஓலைச்சுவடிகள்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "தமிழ் எழுத்துகளில் எந்த எழுத்துக்கு மட்டுமே இன எழுத்து இல்லை?",
+    "ta": "தமிழ் எழுத்துகளில் எந்த எழுத்துக்கு மட்டுமே இன எழுத்து இல்லை?",
+    "optionsEn": ["உயிர் எழுத்து", "மெய் எழுத்து", "ஆய்த எழுத்து", "நெடில் எழுத்து"],
+    "optionsTa": ["உயிர் எழுத்து", "மெய் எழுத்து", "ஆய்த எழுத்து", "நெடில் எழுத்து"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "'தால்' என்ற சொல்லின் பொருள் என்ன?",
+    "ta": "'தால்' என்ற சொல்லின் பொருள் என்ன?",
+    "optionsEn": ["கால்", "கை", "நாக்கு", "செவி"],
+    "optionsTa": ["கால்", "கை", "நாக்கு", "செவி"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "அறுவடைத் திருநாள் ஆந்திரம், கர்நாடகம் ஆகிய மாநிலங்களில் எந்தப் பெயரில் கொண்டாடப்படுகிறது?",
+    "ta": "அறுவடைத் திருநாள் ஆந்திரம், கர்நாடகம் ஆகிய மாநிலங்களில் எந்தப் பெயரில் கொண்டாடப்படுகிறது?",
+    "optionsEn": ["லோரி", "உத்தராயன்", "மகரசங்கராந்தி", "போகி"],
+    "optionsTa": ["லோரி", "உத்தராயன்", "மகரசங்கராந்தி", "போகி"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "உச்சரிப்பில் சிறிதளவு மட்டுமே வேறுபாடு உள்ள ஒலிகளை எவ்வாறு அழைக்கிறோம்?",
+    "ta": "உச்சரிப்பில் சிறிதளவு மட்டுமே வேறுபாடு உள்ள ஒலிகளை எவ்வாறு அழைக்கிறோம்?",
+    "optionsEn": ["சுட்டெழுத்துகள்", "மயங்கொலிகள்", "வினா எழுத்துகள்", "இன எழுத்துகள்"],
+    "optionsTa": ["சுட்டெழுத்துகள்", "மயங்கொலிகள்", "வினா எழுத்துகள்", "இன எழுத்துகள்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "\"மோப்பக் குழையும் அனிச்சம்\" - இக்குறளின்படி நம் முகம் மாறினாலே யாருடைய உள்ளம் வாடிவிடும்?",
+    "ta": "\"மோப்பக் குழையும் அனிச்சம்\" - இக்குறளின்படி நம் முகம் மாறினாலே யாருடைய உள்ளம் வாடிவிடும்?",
+    "optionsEn": ["பகைவர்", "நண்பர்", "விருந்தினர்", "உறவினர்"],
+    "optionsTa": ["பகைவர்", "நண்பர்", "விருந்தினர்", "உறவினர்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "\"நெறிமாறி வாழக் கூடாது\" - இதில் 'நெறி' என்பதன் பொருள் என்ன?",
+    "ta": "\"நெறிமாறி வாழக் கூடாது\" - இதில் 'நெறி' என்பதன் பொருள் என்ன?",
+    "optionsEn": ["கொள்கை", "குணம்", "வழி", "கடமை"],
+    "optionsTa": ["கொள்கை", "குணம்", "வழி", "கடமை"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "காமராசர் முதலமைச்சராகப் பொறுப்பேற்ற காலத்தில், ஏறத்தாழ எத்தனை தொடக்கப் பள்ளிகள் மூடப்பட்டிருந்தன?",
+    "ta": "காமராசர் முதலமைச்சராகப் பொறுப்பேற்ற காலத்தில், ஏறத்தாழ எத்தனை தொடக்கப் பள்ளிகள் மூடப்பட்டிருந்தன?",
+    "optionsEn": ["3000", "5000", "6000", "10000"],
+    "optionsTa": ["3000", "5000", "6000", "10000"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "மெல்லின எழுத்துகளுக்கு (ங, ஞ, ண, ந, ம, ன) இனமாக வரும் எழுத்துகள் எவை?",
+    "ta": "மெல்லின எழுத்துகளுக்கு (ங, ஞ, ண, ந, ம, ன) இனமாக வரும் எழுத்துகள் எவை?",
+    "optionsEn": ["இடையின எழுத்துகள்", "வல்லின எழுத்துகள்", "ஆய்த எழுத்துகள்", "உயிர் எழுத்துகள்"],
+    "optionsTa": ["இடையின எழுத்துகள்", "வல்லின எழுத்துகள்", "ஆய்த எழுத்துகள்", "உயிர் எழுத்துகள்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "தமிழ் எழுத்துகளில் எந்த இரு எழுத்துகளும் இணை எழுத்துகளாக வராமல் தனித்து நிற்கும்?",
+    "ta": "தமிழ் எழுத்துகளில் எந்த இரு எழுத்துகளும் இணை எழுத்துகளாக வராமல் தனித்து நிற்கும்?",
+    "optionsEn": ["இ, ஈ", "உ, ஊ", "ஐ, ஒள", "எந்த உயிர் எழுத்தும் இல்லை"],
+    "optionsTa": ["இ, ஈ", "உ, ஊ", "ஐ, ஒள", "எந்த உயிர் எழுத்தும் இல்லை"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "மார்கழி மாதத்தின் இறுதி நாளில் கொண்டாடப்படும் விழா எது?",
+    "ta": "மார்கழி மாதத்தின் இறுதி நாளில் கொண்டாடப்படும் விழா எது?",
+    "optionsEn": ["பொங்கல்", "போகி", "தீபாவளி", "ஆடிப்பெருக்கு"],
+    "optionsTa": ["பொங்கல்", "போகி", "தீபாவளி", "ஆடிப்பெருக்கு"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "தமிழ் மொழியில் உள்ள மயங்கொலி எழுத்துகள் மொத்தம் எத்தனை?",
+    "ta": "தமிழ் மொழியில் உள்ள மயங்கொலி எழுத்துகள் மொத்தம் எத்தனை?",
+    "optionsEn": ["6", "8", "10", "12"],
+    "optionsTa": ["6", "8", "10", "12"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "திராவிட நாட்டின் வானம்பாடி என்று பாராட்டப்பட்டவர் யார்?",
+    "ta": "திராவிட நாட்டின் வானம்பாடி என்று பாராட்டப்பட்டவர் யார்?",
+    "optionsEn": ["பாரதியார்", "பாரதிதாசன்", "முடியரசன்", "வாணிதாசன்"],
+    "optionsTa": ["பாரதியார்", "பாரதிதாசன்", "முடியரசன்", "வாணிதாசன்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "அருகில் உள்ளவற்றைக் சுட்டிக்காட்டப் பயன்படும் சுட்டெழுத்து எது?",
+    "ta": "அருகில் உள்ளவற்றைக் சுட்டிக்காட்டப் பயன்படும் சுட்டெழுத்து எது?",
+    "optionsEn": ["அ", "இ", "உ", "எ"],
+    "optionsTa": ["அ", "இ", "உ", "எ"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "\"மன்னர்க்குத் தன்தேச மல்லாற் சிறப்பில்லை கற்றோர்க்குச் சென்றவிட மெல்லாம் சிறப்பு\" - இப்பாடல் வரிகள் இடம்பெற்றுள்ள நூல் எது?",
+    "ta": "\"மன்னர்க்குத் தன்தேச மல்லாற் சிறப்பில்லை கற்றோர்க்குச் சென்றவிட மெல்லாம் சிறப்பு\" - இப்பாடல் வரிகள் இடம்பெற்றுள்ள நூல் எது?",
+    "optionsEn": ["ஆசாரக்கோவை", "நல்வழி", "மூதுரை", "கொன்றை வேந்தன்"],
+    "optionsTa": ["ஆசாரக்கோவை", "நல்வழி", "மூதுரை", "கொன்றை வேந்தன்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "குறில் எழுத்து இல்லாத ஐ, ஒள ஆகிய எழுத்துகளுக்கு இணையான நெடில் (இணை) எழுத்துகள் எவை?",
+    "ta": "குறில் எழுத்து இல்லாத ஐ, ஒள ஆகிய எழுத்துகளுக்கு இணையான நெடில் (இணை) எழுத்துகள் எவை?",
+    "optionsEn": ["அ, உ", "இ, உ", "எ, ஒ", "ஆ, ஊ"],
+    "optionsTa": ["அ, உ", "இ, உ", "எ, ஒ", "ஆ, ஊ"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "பிறருக்கு உதவி செய்வதே உண்மையான ஒழுக்கம் எனக் கூறும் நூல் எது?",
+    "ta": "பிறருக்கு உதவி செய்வதே உண்மையான ஒழுக்கம் எனக் கூறும் நூல் எது?",
+    "optionsEn": ["நன்னூல்", "ஆசாரக்கோவை", "திருக்குறள்", "ஆத்திசூடி"],
+    "optionsTa": ["நன்னூல்", "ஆசாரக்கோவை", "திருக்குறள்", "ஆத்திசூடி"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "முத்தேன் என்பதில் பொருந்தாத தேன் வகை எது?",
+    "ta": "முத்தேன் என்பதில் பொருந்தாத தேன் வகை எது?",
+    "optionsEn": ["கொம்புத்தேன்", "மலைத்தேன்", "கொசுத்தேன்", "வயல்தேன்"],
+    "optionsTa": ["கொம்புத்தேன்", "மலைத்தேன்", "கொசுத்தேன்", "வயல்தேன்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "திருவள்ளுவர் நாள் எப்பொழுது கொண்டாடப்படுகிறது?",
+    "ta": "திருவள்ளுவர் நாள் எப்பொழுது கொண்டாடப்படுகிறது?",
+    "optionsEn": ["தை முதல் நாள்", "தை இரண்டாம் நாள்", "சித்திரை முதல் நாள்", "கார்த்திகை பௌர்ணமி"],
+    "optionsTa": ["தை முதல் நாள்", "தை இரண்டாம் நாள்", "சித்திரை முதல் நாள்", "கார்த்திகை பௌர்ணமி"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "ஆகாய கங்கை பாறையிலிருந்து கீழே இறங்கி வருவது போலச் செதுக்கப்பட்டுள்ள சிற்பம் எது?",
+    "ta": "ஆகாய கங்கை பாறையிலிருந்து கீழே இறங்கி வருவது போலச் செதுக்கப்பட்டுள்ள சிற்பம் எது?",
+    "optionsEn": ["அர்ச்சுனன் தபசு", "பஞ்சபாண்டவர் இரதம்", "வராக குகை", "கடற்கரைக் கோயில்"],
+    "optionsTa": ["அர்ச்சுனன் தபசு", "பஞ்சபாண்டவர் இரதம்", "வராக குகை", "கடற்கரைக் கோயில்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "காவியப்பாவை, வீரகாவியம், பூங்கொடி ஆகிய நூல்களை இயற்றியவர் யார்?",
+    "ta": "காவியப்பாவை, வீரகாவியம், பூங்கொடி ஆகிய நூல்களை இயற்றியவர் யார்?",
+    "optionsEn": ["பாரதிதாசன்", "முடியரசன்", "வாணிதாசன்", "சுரதா"],
+    "optionsTa": ["பாரதிதாசன்", "முடியரசன்", "வாணிதாசன்", "சுரதா"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "வாய்மொழி இலக்கியங்களுள் பொருந்தாதது எது?",
+    "ta": "வாய்மொழி இலக்கியங்களுள் பொருந்தாதது எது?",
+    "optionsEn": ["நாட்டுப்புறப் பாடல்கள்", "தாலாட்டுப் பாடல்கள்", "காப்பியப் பாடல்கள்", "ஏற்றப்பாட்டுகள்"],
+    "optionsTa": ["நாட்டுப்புறப் பாடல்கள்", "தாலாட்டுப் பாடல்கள்", "காப்பியப் பாடல்கள்", "ஏற்றப்பாட்டுகள்"],
+    "answer": 2
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false;
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">${String.fromCharCode(65+i)}. ${opt}</div>`;
+        });
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+            </div>
+        `;
+        updateNavButtons(); updatePalette();
+        if (window.MathJax) MathJax.typesetPromise();
+        initImageZoom();
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) return;
+        userAnswers[currentIndex] = optIndex;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let marker = "";
+                if (idx === corr) marker = " ✅ (Correct)";
+                if (u === idx && idx !== corr) marker = " ❌ (Your choice)";
+                else if (u === idx && idx === corr) marker = " ✅ (Correct)";
+                const styleClass = (idx === corr) ? "correct-option" : "";
+                const userWrongStyle = (u === idx && idx !== corr) ? "color:#ef4444;" : "";
+                optsHtml += `<div class="${styleClass}" style="${userWrongStyle}">${String.fromCharCode(65+idx)}. ${optsArray[idx]}${marker}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" style="border-left-color:${isCorr?"#10b981":"#ef4444"}">
+                        <strong>Q${i+1}. ${txt}</strong>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div style="margin-top:8px;"><strong>Your answer:</strong> ${userAns}</div>
+                        <div><strong>Correct:</strong> ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { try { MathJax.typesetPromise(); } catch(e) {} }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            const imgs = Array.from(document.querySelectorAll("#reviewList img"));
+            await Promise.all(imgs.map(img => {
+                if (img.complete && img.naturalWidth > 0) return Promise.resolve();
+                return new Promise(resolve => {
+                    let done = false;
+                    const finish = () => { if (!done) { done = true; resolve(); } };
+                    img.addEventListener("load", finish, { once: true });
+                    img.addEventListener("error", finish, { once: true });
+                    setTimeout(finish, 5000);
+                });
+            }));
+            await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) window.AndroidBridge.printPage();
+            else window.print();
+        } catch (e) {
+            console.error("PDF export failed:", e);
+            alert("Could not prepare PDF. Please try again.");
+        } finally {
+            setTimeout(() => { if (btn) { btn.disabled = false; btn.innerText = originalText; } }, 800);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.checkForReview = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get("review") === "true") {
+            let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+            if (savedAnswers) {
+                try {
+                    userAnswers = JSON.parse(savedAnswers);
+                    try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+                } catch(e) { console.log("Error parsing answers: " + e.message); }
+            }
+            isSubmitted = true; quizActive = false;
+            document.getElementById("startScreen").style.display = "none";
+            document.getElementById("quizContainer").style.display = "none";
+            document.getElementById("resultContainer").style.display = "block";
+            let correct=0, incorrect=0, na=0;
+            for (let i=0; i<QUESTIONS.length; i++) {
+                if (userAnswers[i] === null || userAnswers[i] === undefined) na++;
+                else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+                else incorrect++;
+            }
+            const negMark = dashboard.negativeMark || 0;
+            const finalScore = correct - (incorrect * negMark);
+            const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+            document.getElementById("finalScore").innerText = finalScore;
+            document.getElementById("correctCountStat").innerText = correct;
+            document.getElementById("incorrectCountStat").innerText = incorrect;
+            document.getElementById("notAttemptedStat").innerText = na;
+            document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+            document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+            const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+            document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+            buildDetailedReview();
+        }
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
