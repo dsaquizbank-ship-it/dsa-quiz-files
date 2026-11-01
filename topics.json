@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-01T10:20:38.479Z",
+  "version": "2026-11-01T10:28:29.660Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -11506,6 +11506,10 @@
         {
           "topicId": "TNTET-T237",
           "topicName": "Social Science | 8th Standard - Economics: Public and Private Sectors"
+        },
+        {
+          "topicId": "TNTET-T238",
+          "topicName": "REVISION"
         }
       ]
     },
