@@ -1,17 +1,6 @@
 {
-  "version": "2026-11-01T05:06:48.381Z",
+  "version": "2026-11-01T05:07:18.755Z",
   "timetable": [
-    {
-      "day": "Monday",
-      "classes": [
-        {
-          "time": "11:00 AM - 12:30 PM",
-          "subject": "Modern History",
-          "batch": "UG TRB",
-          "room": "Hall B"
-        }
-      ]
-    },
     {
       "day": "Tuesday",
       "classes": [
