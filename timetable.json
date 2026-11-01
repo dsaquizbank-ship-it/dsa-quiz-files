@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-01T16:10:51.400Z",
+  "version": "2026-11-01T16:24:43.948Z",
   "timetable": [
     {
       "day": "Monday",
@@ -39,6 +39,17 @@
           "subject": "REVISION: PHYSICS",
           "batch": "TNTET",
           "faculty": ""
+        }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability: Puzzles, Seating Arrangements, Syllogism, Input/output",
+          "batch": "BANK",
+          "faculty": "Abin"
         }
       ]
     }
