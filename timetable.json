@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-01T15:27:30.688Z",
+  "version": "2026-11-01T15:28:46.046Z",
   "timetable": [
     {
       "day": "Monday",
@@ -14,12 +14,6 @@
           "time": "10:00 AM - 11:30 AM",
           "subject": "Science: 9th - Universe",
           "batch": "SGT",
-          "room": ""
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "General Awareness",
-          "batch": "SSC",
           "room": ""
         },
         {
