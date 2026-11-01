@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-01T17:57:46.043Z",
+  "version": "2026-11-01T18:05:23.917Z",
   "categories": [
     {
       "id": "BANK",
@@ -166,6 +166,12 @@
       "name": "6TH",
       "categoryId": "SPLTET",
       "order": 1
+    },
+    {
+      "id": "UG-ZOO",
+      "name": "UGTRB ZOOLOGY",
+      "categoryId": "UGTRB",
+      "order": 4
     }
   ],
   "tests": [
@@ -590,6 +596,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-6-1.html",
       "releaseTimestamp": 1793606400000,
       "language": "ta"
+    },
+    {
+      "testId": "UGZ-73",
+      "examId": "UG-ZOO",
+      "name": "AMNIOCENTESIS TO STEM CELL UGZ-73",
+      "topic": "AMNIOCENTESIS TO STEM CELL",
+      "durationMinutes": 30,
+      "order": 73,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGZ-73.html",
+      "releaseTimestamp": 1793606400000,
+      "language": "both"
     }
   ]
 }
