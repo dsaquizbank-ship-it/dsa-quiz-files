@@ -1,4 +1,16 @@
 {
-  "version": "2026-11-01T05:07:18.755Z",
-  "timetable": []
+  "version": "2026-11-01T05:41:57.312Z",
+  "timetable": [
+    {
+      "day": "Monday",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Unit III - Topology: Components and local connectedness",
+          "batch": "PGTRB MATHS",
+          "room": "2"
+        }
+      ]
+    }
+  ]
 }
