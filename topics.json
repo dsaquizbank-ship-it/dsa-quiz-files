@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31T14:33:41.782Z",
+  "version": "2026-11-01T10:15:21.156Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -671,6 +671,182 @@
       "courseId": "SSC",
       "courseName": "SSC",
       "topics": [
+        {
+          "topicId": "SSC-T168",
+          "topicName": "Quantitative Aptitude | Simplification"
+        },
+        {
+          "topicId": "SSC-T169",
+          "topicName": "Quantitative Aptitude | Approximation"
+        },
+        {
+          "topicId": "SSC-T170",
+          "topicName": "Quantitative Aptitude | Percentages"
+        },
+        {
+          "topicId": "SSC-T171",
+          "topicName": "Quantitative Aptitude | Ratio And Proportion"
+        },
+        {
+          "topicId": "SSC-T172",
+          "topicName": "Quantitative Aptitude | Number Series"
+        },
+        {
+          "topicId": "SSC-T173",
+          "topicName": "Quantitative Aptitude | Quadratic Equation"
+        },
+        {
+          "topicId": "SSC-T174",
+          "topicName": "Quantitative Aptitude | Ages"
+        },
+        {
+          "topicId": "SSC-T175",
+          "topicName": "Quantitative Aptitude | Time & Work / Pipe & Cistern"
+        },
+        {
+          "topicId": "SSC-T176",
+          "topicName": "Quantitative Aptitude | Time, Speed and Distance"
+        },
+        {
+          "topicId": "SSC-T177",
+          "topicName": "Quantitative Aptitude | Boats & Streams"
+        },
+        {
+          "topicId": "SSC-T178",
+          "topicName": "Quantitative Aptitude | Profit and Loss"
+        },
+        {
+          "topicId": "SSC-T179",
+          "topicName": "Quantitative Aptitude | Partnership"
+        },
+        {
+          "topicId": "SSC-T180",
+          "topicName": "Quantitative Aptitude | Mensuration: Cylinder, Cone, Sphere and Cuboid"
+        },
+        {
+          "topicId": "SSC-T181",
+          "topicName": "Quantitative Aptitude | Mixtures and Allegations"
+        },
+        {
+          "topicId": "SSC-T182",
+          "topicName": "Quantitative Aptitude | Simple and Compound Interest"
+        },
+        {
+          "topicId": "SSC-T183",
+          "topicName": "Quantitative Aptitude | Averages"
+        },
+        {
+          "topicId": "SSC-T184",
+          "topicName": "Quantitative Aptitude | Data Interpretation"
+        },
+        {
+          "topicId": "SSC-T185",
+          "topicName": "Quantitative Aptitude | Caselet DI"
+        },
+        {
+          "topicId": "SSC-T186",
+          "topicName": "Quantitative Aptitude | Permutation and Combination"
+        },
+        {
+          "topicId": "SSC-T187",
+          "topicName": "Quantitative Aptitude | Probability"
+        },
+        {
+          "topicId": "SSC-T188",
+          "topicName": "Quantitative Aptitude | Algebra"
+        },
+        {
+          "topicId": "SSC-T189",
+          "topicName": "Quantitative Aptitude | Trigonometry"
+        },
+        {
+          "topicId": "SSC-T190",
+          "topicName": "Quantitative Aptitude | Geometry"
+        },
+        {
+          "topicId": "SSC-T191",
+          "topicName": "Quantitative Aptitude | Heights and Distances"
+        },
+        {
+          "topicId": "SSC-T192",
+          "topicName": "Reasoning Ability | Coding Decoding"
+        },
+        {
+          "topicId": "SSC-T193",
+          "topicName": "Reasoning Ability | Directions"
+        },
+        {
+          "topicId": "SSC-T194",
+          "topicName": "Reasoning Ability | Order & Ranking"
+        },
+        {
+          "topicId": "SSC-T195",
+          "topicName": "Reasoning Ability | Alphanumeric Series"
+        },
+        {
+          "topicId": "SSC-T196",
+          "topicName": "Reasoning Ability | Inequality"
+        },
+        {
+          "topicId": "SSC-T197",
+          "topicName": "Reasoning Ability | Blood Relation"
+        },
+        {
+          "topicId": "SSC-T198",
+          "topicName": "Reasoning Ability | Puzzles"
+        },
+        {
+          "topicId": "SSC-T199",
+          "topicName": "Reasoning Ability | Seating Arrangements"
+        },
+        {
+          "topicId": "SSC-T200",
+          "topicName": "Reasoning Ability | Syllogism"
+        },
+        {
+          "topicId": "SSC-T201",
+          "topicName": "Reasoning Ability | Input/output"
+        },
+        {
+          "topicId": "SSC-T202",
+          "topicName": "Reasoning Ability | Assertion and Reason"
+        },
+        {
+          "topicId": "SSC-T203",
+          "topicName": "Reasoning Ability | Statement, Argument and Assumption"
+        },
+        {
+          "topicId": "SSC-T204",
+          "topicName": "English | Word Replacement"
+        },
+        {
+          "topicId": "SSC-T205",
+          "topicName": "English | Misspelt Word"
+        },
+        {
+          "topicId": "SSC-T206",
+          "topicName": "English | Word Swap"
+        },
+        {
+          "topicId": "SSC-T207",
+          "topicName": "English | Cloze Test (Fill in the blanks)"
+        },
+        {
+          "topicId": "SSC-T208",
+          "topicName": "English | Error Spotting"
+        },
+        {
+          "topicId": "SSC-T209",
+          "topicName": "English | Sentence Correction"
+        },
+        {
+          "topicId": "SSC-T210",
+          "topicName": "English | Sentence Rearrangement"
+        },
+        {
+          "topicId": "SSC-T211",
+          "topicName": "English | Reading Comprehension"
+        },
         {
           "topicId": "SSC-T168",
           "topicName": "General Science | Physics - Units, Dimensions & Formula"
