@@ -1,0 +1,33 @@
+{
+  "version": "1.0",
+  "timetable": [
+    {
+      "day": "Monday",
+      "classes": [
+        {
+          "time": "09:00 AM - 10:30 AM",
+          "subject": "Indian Polity",
+          "batch": "TNPSC Group II",
+          "room": "Hall A"
+        },
+        {
+          "time": "11:00 AM - 12:30 PM",
+          "subject": "Modern History",
+          "batch": "UG TRB",
+          "room": "Hall B"
+        }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "classes": [
+        {
+          "time": "09:00 AM - 10:30 AM",
+          "subject": "Geography",
+          "batch": "TNPSC Group II",
+          "room": "Hall A"
+        }
+      ]
+    }
+  ]
+}
