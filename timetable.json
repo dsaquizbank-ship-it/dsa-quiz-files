@@ -1,40 +1,46 @@
 {
-  "version": "2026-11-01T15:29:54.488Z",
+  "version": "2026-11-01T16:10:51.400Z",
   "timetable": [
     {
       "day": "Monday",
       "classes": [
         {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude: Approximation, Percentages",
+          "batch": "BANK",
+          "faculty": "Abin"
+        },
+        {
           "time": "11:30 AM - 01:00 PM",
           "subject": "Unit V - Crown to Independence: Dandi March, Gandhi-Irwin Pact, Round Table Conferences",
           "batch": "PGTRB HISTORY",
-          "room": ""
+          "faculty": ""
         },
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Science: 9th - Universe",
           "batch": "SGT",
-          "room": ""
+          "faculty": ""
         },
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Tamil Literature: அலகு 1 - இலக்கணம்",
           "batch": "TNPSC",
-          "room": ""
+          "faculty": ""
         },
         {
           "time": "11:30 AM - 01:00 PM",
           "subject": "Unit III - History, Culture & INM: Different modes of agitation: Growth of Satyagraha",
           "batch": "TNPSC",
-          "room": ""
+          "faculty": ""
         },
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "REVISION: PHYSICS",
           "batch": "TNTET",
-          "room": ""
+          "faculty": ""
         }
       ]
     }
   ]
-} 
+}
