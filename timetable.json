@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-01T06:17:25.998Z",
+  "version": "2026-11-01T07:04:19.159Z",
   "timetable": [
     {
       "day": "Monday",
@@ -43,6 +43,17 @@
           "subject": "Unit III - Differential Equations and Laplace Transformations: Integrating Factors",
           "batch": "UGTRB MATHS",
           "room": "1"
+        }
+      ]
+    },
+    {
+      "day": "Saturday",
+      "classes": [
+        {
+          "time": "01:30 PM - 04:00 PM",
+          "subject": "Unit VII - Solid State Physics: Characteristic x ray spectra and x ray absorption, fluorescence",
+          "batch": "UGTRB PHYSICS",
+          "room": "5"
         }
       ]
     }
