@@ -1,4 +1,67 @@
 {
-  "version": "2026-11-01T07:04:19.159Z",
-  "timetable": []
+  "version": "2026-11-01T10:16:13.692Z",
+  "timetable": [
+    {
+      "day": "Monday",
+      "classes": [
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "Unit III - History, Culture & INM: Different modes of agitation: Militant Movements",
+          "batch": "TNPSC",
+          "room": "MAIN HALL"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Tamil Literature: அலகு 1 - இலக்கணம்",
+          "batch": "TNPSC",
+          "room": "CLASSROOM 1"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "English: Cloze Test (Fill in the blanks)",
+          "batch": "BANK",
+          "room": "85"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Unit III - Topology: Components and local connectedness",
+          "batch": "PGTRB MATHS",
+          "room": "2"
+        }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "classes": [
+        {
+          "time": "10:30 AM - 01:00 PM",
+          "subject": "Reasoning Ability: Puzzles",
+          "batch": "BANK",
+          "room": "1"
+        }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "classes": [
+        {
+          "time": "01:00 PM - 02:30 PM",
+          "subject": "Unit III - Differential Equations and Laplace Transformations: Integrating Factors",
+          "batch": "UGTRB MATHS",
+          "room": "1"
+        }
+      ]
+    },
+    {
+      "day": "Saturday",
+      "classes": [
+        {
+          "time": "01:30 PM - 04:00 PM",
+          "subject": "Unit VII - Solid State Physics: Characteristic x ray spectra and x ray absorption, fluorescence",
+          "batch": "UGTRB PHYSICS",
+          "room": "5"
+        }
+      ]
+    }
+  ]
 }
