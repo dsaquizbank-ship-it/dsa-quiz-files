@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-02T10:43:19.542Z",
+  "version": "2026-11-02T10:45:38.887Z",
   "categories": [
     {
       "id": "BANK",
@@ -527,12 +527,14 @@
       "testId": "TIH-02",
       "examId": "TNPSC-IH",
       "name": "TIH-02 GUPTAS (Set-1)",
+      "topic": "SIMPLIFICATION (Set-1)",
       "durationMinutes": 10,
       "order": 1,
       "questionCount": 20,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIH-02.html",
-      "releaseTimestamp": 1793606400000
+      "releaseTimestamp": 1793606400000,
+      "language": "both"
     },
     {
       "testId": "TIP-01",
