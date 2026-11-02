@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-02T07:44:50.575Z",
+  "version": "2026-11-02T07:50:31.085Z",
   "categories": [
     {
       "id": "BANK",
@@ -220,6 +220,12 @@
       "name": "CURRENT AFFAIRS",
       "categoryId": "TNPSC",
       "order": 3
+    },
+    {
+      "id": "SGT-9",
+      "name": "9TH",
+      "categoryId": "SGT",
+      "order": 4
     }
   ],
   "tests": [
@@ -811,6 +817,19 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-MS-53.html",
+      "releaseTimestamp": 1793606400000,
+      "language": "both"
+    },
+    {
+      "testId": "SGT-9-35",
+      "examId": "SGT-9",
+      "name": "PHYSICS-MEASUREMENT SGT-9-35",
+      "topic": "PHYSICS MEASUREMENT",
+      "durationMinutes": 15,
+      "order": 35,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGT-9-35.html",
       "releaseTimestamp": 1793606400000,
       "language": "both"
     }
