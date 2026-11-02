@@ -30,7 +30,9 @@
         .question-container { padding: 0; }
         .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
         .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
-        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.5; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; overflow-x: auto; overflow-y: hidden; white-space: nowrap; padding-bottom: 12px; -webkit-overflow-scrolling: touch; max-width: 100%; }
+        .question-text::-webkit-scrollbar { display: none; }
+        .question-text { -ms-overflow-style: none; scrollbar-width: none; }
         .option-item { background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; }
         .option-item:hover { background: var(--border-light); transform: scale(0.99); }
         .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
@@ -51,21 +53,20 @@
         .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
         .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
         .stat-number { font-size: 1.6rem; font-weight: 800; }
-        .review-card { background: #1E1E1E; border-radius: 12px; padding: 16px; margin-bottom: 16px; border: 1px solid #333; color: #E0E0E0; box-shadow: none; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
         .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
         .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
         .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
         .review-card .question-text { overflow-x: auto !important; white-space: normal !important; }
-        .review-card strong { color: #FFFFFF; font-size: 16px; }
-        .review-card .option-item { background-color: #242424; border: 1px solid #333; color: #B0B0B0; border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
-        .review-card .option-item.correct { background-color: #1b3d22; border: 1px solid #28a745; color: #68d391; font-weight: 600; }
-        .review-card .option-item.wrong { background-color: #3d1b1b; border: 1px solid #dc3545; color: #f87171; }
+        .review-card strong { color: var(--text-primary); font-size: 16px; }
+        .review-card .option-item { background-color: var(--rc-bg); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: rgba(40, 167, 69, 0.1); border: 1px solid #28a745; color: #28a745; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; color: #dc3545; }
         .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
         .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
         .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
-        .review-card .your-answer { font-size: 13px; color: #9ca3af; margin-top: 12px; margin-bottom: 4px; }
-        .review-card .correct-answer { font-size: 13px; color: #9ca3af; margin-bottom: 12px; }
-        .correct-option { font-weight: bold; color: var(--correct-color); }
+        .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
         .btn-pdf { background: #ef4444; }
         .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
         .start-panel > * { width: 100%; }
