@@ -30,7 +30,9 @@
         .question-container { padding: 0; }
         .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
         .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
-        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.5; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.5; overflow-x: auto; padding-bottom: 6px; word-wrap: break-word; }
+        .question-text::-webkit-scrollbar { height: 6px; }
+        .question-text::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
         .option-item { background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; }
         .option-item:hover { background: var(--border-light); transform: scale(0.99); }
         .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
@@ -150,7 +152,7 @@
     let dashboard = {
         examTitle: "QUANTITATIVE APTITUDE",
         testNo: "BQA-01",
-        date: "02/11/2026",
+        date: new Date().toLocaleDateString("en-GB"),
         subject: "QUANTITATIVE APTITUDE",
         topic: "SIMPLIFICATION (Set-1)",
         duration: "25",
