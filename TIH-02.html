@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
@@ -27,11 +27,12 @@
         .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
         .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
         .language-toggle { background: var(--accent-dark); color: white; border: none; }
-        .language-toggle:hover { background: var(--accent); }
         .question-container { padding: 0; }
         .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
         .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
-        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.5; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.5; overflow-x: auto; padding-bottom: 6px; word-wrap: break-word; }
+        .question-text::-webkit-scrollbar { height: 6px; }
+        .question-text::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
         .option-item { background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; }
         .option-item:hover { background: var(--border-light); transform: scale(0.99); }
         .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
@@ -65,28 +66,12 @@
         .modal-buttons { display: flex; gap: 12px; justify-content: center; }
         .modal-buttons .btn { min-width: 100px; }
         mark { background-color: #fef08a; color: #000; padding: 0 4px; border-radius: 3px; }
-
-        /* --- NEW IMAGE CSS --- */
         .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
         .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
         .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
         .medium-zoom-overlay { z-index: 9999 !important; }
         .medium-zoom-image--opened { z-index: 10000 !important; }
-
-        @media print { 
-            body { background: white !important; color: black !important; padding: 0; margin: 0; font-family: "Segoe UI", "Noto Sans Tamil", "Latha", system-ui, sans-serif !important; } 
-            .quiz-wrapper { max-width: 100%; margin: 0; border-radius: 0; box-shadow: none; border: none; background: white !important; } 
-            .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn:not(.btn-pdf), .icon-btn { display: none !important; } 
-            #resultContainer { max-height: none !important; overflow: visible !important; padding-bottom: 0 !important; display: block !important; } 
-            .result-dashboard { background: #064e3b !important; color: white !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; break-inside: avoid; border-radius: 0; margin: 0 0 20px 0; padding: 20px; } 
-            .review-card { background: white !important; color: black !important; break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc; margin-bottom: 15px; box-shadow: none; overflow: visible !important; } 
-            .review-card .passage-box, .review-card .puzzle-box { background: #f8fafc !important; color: black !important; border-left: 4px solid #3b82f6 !important; padding: 10px !important; margin: 8px 0 !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; } 
-            .question-image, .review-question-img { display: block !important; max-width: 100% !important; max-height: 220px !important; width: auto !important; height: auto !important; margin: 8px 0 !important; page-break-inside: avoid !important; break-inside: avoid !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; transform: none !important; } 
-            .stats .stat-card { background: rgba(0,0,0,0.1) !important; color: black !important; print-color-adjust: exact; } 
-            .btn-pdf { display: none !important; } 
-            a, button { text-decoration: none; } 
-            @page { size: A4; margin: 1cm; } 
-        }
+        @media print { body { background: white !important; color: black !important; } .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn:not(.btn-pdf), .icon-btn { display: none !important; } .review-card { break-inside: avoid; } }
         @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
     </style>
 </head>
@@ -101,7 +86,6 @@
             <div class="candidate-badge" id="quizCandidateName">Candidate</div>
             <div class="timer-box" id="timerDisplay">25:00</div>
             <div class="top-buttons">
-                <button id="darkModeToggleBtn" class="icon-btn" onclick="toggleTheme()">🌙 Dark</button>
                 <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
             </div>
         </div>
@@ -117,9 +101,7 @@
             <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
             <div id="resultCandidateName"></div>
             <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
-            <div class="score-ring" id="scoreRing">
-                <div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div>
-            </div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
             <div class="stats">
                 <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
                 <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
@@ -146,21 +128,20 @@
         en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 Dark", lightMode: "☀️ Light" },
         ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 இருண்ட", lightMode: "☀️ ஒளி" }
     };
-    
     function updateUILanguage() {
         const t = translations[currentLanguage];
-        const paletteTitle = document.getElementById("paletteTitle"); if (paletteTitle) paletteTitle.innerText = t.paletteTitle;
-        const quizCompleted = document.getElementById("quizCompletedLabel"); if (quizCompleted) quizCompleted.innerText = t.quizCompleted;
-        const correctLabel = document.getElementById("correctLabel"); if (correctLabel) correctLabel.innerText = t.correct;
-        const incorrectLabel = document.getElementById("incorrectLabel"); if (incorrectLabel) incorrectLabel.innerText = t.incorrect;
-        const notAttemptedLabel = document.getElementById("notAttemptedLabel"); if (notAttemptedLabel) notAttemptedLabel.innerText = t.notAttempted;
-        const accuracyLabel = document.getElementById("accuracyLabel"); if (accuracyLabel) accuracyLabel.innerText = t.accuracy;
-        const timeTakenLabel = document.getElementById("timeTakenLabel"); if (timeTakenLabel) timeTakenLabel.innerText = t.timeTaken;
-        const newAttemptBtn = document.getElementById("restartQuizBtn"); if (newAttemptBtn) newAttemptBtn.innerText = t.newAttempt;
-        const langBtn = document.getElementById("langToggleBtn"); if (langBtn) langBtn.innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
-        if (quizActive && !isSubmitted && document.getElementById("navButtons")) updateNavButtons();
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
     }
-    
     function toggleLanguage() {
         currentLanguage = currentLanguage === "en" ? "ta" : "en";
         updateUILanguage();
@@ -168,315 +149,196 @@
         if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
         renderDashboard();
     }
-
     let dashboard = {
         examTitle: "HISTORY",
         testNo: "TIH-02",
         date: new Date().toLocaleDateString("en-GB"),
         subject: "HISTORY",
-        topic: "TIH-02 GUPTAS (Set-1)",
+        topic: "SIMPLIFICATION (Set-1)",
         duration: "10",
         totalMarks: "0",
         negativeMark: 0,
     };
-
 let QUESTIONS = [
   {
-    type: "mcq",
-    en: "During which rule of dynasty did the first self-immolation of widow take place in India?",
-    ta: "இந்தியாவில் உடன்கட்டை ஏறுதல் (சதி) பற்றிய முதல் கல்வெட்டுச் சான்று எந்த வம்ச ஆட்சிக் காலத்தில் கிடைக்கிறது?",
-    optionsEn: ["Chalukyas", "Cholas", "Guptas", "Mauryas", "Answer not known"],
-    optionsTa: ["சாளுக்கியர்கள்", "சோழர்கள்", "குப்தர்கள்", "மௌரியர்கள்", "விடை தெரியவில்லை"],
-    answer: 2
+    "type": "mcq",
+    "en": "During which rule of dynasty did the first self-immolation of widow take place in India?",
+    "ta": "இந்தியாவில் விதவைகளின் முதல் சுய தீக்குளிப்பு (சதி) எந்த வம்சத்தின் ஆட்சிக் காலத்தில் நிகழ்ந்தது?",
+    "optionsEn": ["Chalukyas", "Cholas", "Guptas", "Mauryas", "Answer not known"],
+    "optionsTa": ["சாளுக்கியர்கள்", "சோழர்கள்", "குப்தர்கள்", "மௌரியர்கள்", "பதில் தெரியவில்லை"],
+    "answer": 2
   },
   {
-    type: "mcq",
-    en: "Match List I with List II and choose your answer from the codes given below:<br><br>" +
-         "<table>" +
-         "<tr><td><b>List I (Person)</b></td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><b>List II (Titles)</b></td></tr>" +
-         "<tr><td>(a) Arya Bhatta</td><td></td><td>1. Newton of India</td></tr>" +
-         "<tr><td>(b) Skanda Gupta</td><td></td><td>2. Hero of Asia and Europe</td></tr>" +
-         "<tr><td>(c) Chandra Gupta II</td><td></td><td>3. Destroyer of the Sakas</td></tr>" +
-         "<tr><td>(d) Kalidasa</td><td></td><td>4. Shakespeare of India</td></tr>" +
-         "</table>",
-    ta: "பட்டியல் I ஐ பட்டியல் II உடன் பொருத்தி, கீழே கொடுக்கப்பட்டுள்ள குறியீடுகளிலிருந்து சரியான விடையைத் தேர்ந்தெடுக்கவும்:<br><br>" +
-         "<table>" +
-         "<tr><td><b>பட்டியல் I (நபர்)</b></td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><b>பட்டியல் II (பட்டங்கள்)</b></td></tr>" +
-         "<tr><td>(a) ஆர்யபட்டா</td><td></td><td>1. இந்தியாவின் நியூட்டன்</td></tr>" +
-         "<tr><td>(b) ஸ்கந்த குப்தர்</td><td></td><td>2. ஆசியா மற்றும் ஐரோப்பாவின் ஹீரோ</td></tr>" +
-         "<tr><td>(c) இரண்டாம் சந்திர குப்தர்</td><td></td><td>3. சகர்களை அழித்தவர்</td></tr>" +
-         "<tr><td>(d) காளிதாசர்</td><td></td><td>4. இந்தியாவின் ஷேக்ஸ்பியர்</td></tr>" +
-         "</table>",
-    optionsEn: ["1 2 3 4", "3 4 1 2", "4 3 2 1", "1 3 2 4", "Answer not known"],
-    optionsTa: ["1 2 3 4", "3 4 1 2", "4 3 2 1", "1 3 2 4", "விடை தெரியவில்லை"],
-    answer: 0
+    "type": "match",
+    "en": "Match List I with List II and choose your answer from the codes given below:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List I (Person)</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>List II (Titles)</b></td></tr><tr><td style='padding:6px 0;'>(a) Arya Bhatta</td><td></td><td style='padding:6px 0;'>1. Newton of India</td></tr><tr><td style='padding:6px 0;'>(b) Skanda Gupta</td><td></td><td style='padding:6px 0;'>2. Hero of Asia and Europe</td></tr><tr><td style='padding:6px 0;'>(c) Chandra Gupta II</td><td></td><td style='padding:6px 0;'>3. Destroyer of the Sakas</td></tr><tr><td style='padding:6px 0;'>(d) Kalidasa</td><td></td><td style='padding:6px 0;'>4. Shakespeare of India</td></tr></table>",
+    "ta": "பட்டியல் I உடன் பட்டியல் II ஐப் பொருத்தி கீழே கொடுக்கப்பட்டுள்ள குறியீடுகளிலிருந்து உங்கள் பதிலைத் தேர்ந்தெடுக்கவும்:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் I (நபர்)</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் II (பட்டங்கள்)</b></td></tr><tr><td style='padding:6px 0;'>(a) ஆர்யபட்டா</td><td></td><td style='padding:6px 0;'>1. இந்தியாவின் நியூட்டன்</td></tr><tr><td style='padding:6px 0;'>(b) ஸ்கந்தகுப்தர்</td><td></td><td style='padding:6px 0;'>2. ஆசியா மற்றும் ஐரோப்பாவின் வீரர்</td></tr><tr><td style='padding:6px 0;'>(c) சந்திரகுப்தர் II</td><td></td><td style='padding:6px 0;'>3. சகர்களை அழித்தவர்</td></tr><tr><td style='padding:6px 0;'>(d) காளிதாசர்</td><td></td><td style='padding:6px 0;'>4. இந்தியாவின் ஷேக்ஸ்பியர்</td></tr></table>",
+    "optionsEn": ["A-1, B-2, C-3, D-4", "A-3, B-4, C-1, D-2", "A-4, B-3, C-2, D-1", "A-1, B-3, C-2, D-4", "Answer not known"],
+    "optionsTa": ["A-1, B-2, C-3, D-4", "A-3, B-4, C-1, D-2", "A-4, B-3, C-2, D-1", "A-1, B-3, C-2, D-4", "பதில் தெரியவில்லை"],
+    "answer": 0
   },
   {
-    type: "mcq",
-    en: "Which one of the following was an important port of the eastern coast during the Gupta period?",
-    ta: "குப்தர்களின் காலத்தில் கிழக்குக் கடற்கரையில் அமைந்திருந்த முக்கியமான துறைமுகம் எது?",
-    optionsEn: ["Broach", "Japara", "Kalyan", "Tamralipti", "Answer not known"],
-    optionsTa: ["ப்ரோச்", "ஜபரா", "கல்யாண்", "தாம்ராலிப்தி", "விடை தெரியவில்லை"],
-    answer: 3
+    "type": "mcq",
+    "en": "Which one of the following was an important port of the eastern coast during the Gupta period?",
+    "ta": "குப்தர் காலத்தில் கிழக்குக் கடற்கரையின் முக்கிய துறைமுகமாக இருந்தது பின்வருவனவற்றுள் எது?",
+    "optionsEn": ["Broach", "Japara", "Kalyan", "Tamralipti", "Answer not known"],
+    "optionsTa": ["பரூச்", "ஜபாரா", "கல்யாண்", "தாம்ரலிப்தி", "பதில் தெரியவில்லை"],
+    "answer": 3
   },
   {
-    type: "mcq",
-    en: "The travel accounts of Chinese explorer Faxian mentioned about the following city as ancient metropolis",
-    ta: "சீனப் பயணி ஃபாகியான் தன் பயணக் குறிப்புகளில் எந்த நகரத்தை ஒரு பழங்கால பெருநகரம் என்று குறிப்பிட்டுள்ளார்?",
-    optionsEn: ["Vaisali", "Pataliputra", "Sanchi", "Taxila", "Answer not known"],
-    optionsTa: ["வைஷnலி", "பாடலிபுத்திரம்", "சாஞ்சி", "தட்சசீலம்", "விடை தெரியவில்லை"],
-    answer: 1
+    "type": "mcq",
+    "en": "The travel accounts of Chinese explorer Faxian mentioned about the following city as ancient metropolis",
+    "ta": "சீனப் பயணி ஃபாக்ஸியனின் பயணக் குறிப்புகள் பின்வரும் எந்த நகரத்தை பண்டைய பெருநகரம் என்று குறிப்பிடுகின்றன?",
+    "optionsEn": ["Vaisali", "Pataliputra", "Sanchi", "Taxila", "Answer not known"],
+    "optionsTa": ["வைசாலி", "பாடலிபுத்திரம்", "சாஞ்சி", "தட்சசீலம்", "பதில் தெரியவில்லை"],
+    "answer": 0
   },
   {
-    type: "mcq",
-    en: "Which one of the statements is incorrect regarding the Guptas?",
-    ta: "குப்தர்களைப் பற்றி பின்வரும் கூற்றுகளில் எது தவறானது?",
-    optionsEn: [
-      "Coins depict the figures of Chandragupta and Kumara devi",
-      "Harisena was one of the important officers of Chandragupta",
-      "Samudragupta inscription found in Ashoka Pillar at Allahabad",
-      "Inscription from Iran reveals the information of Samudragupta",
-      "Answer not known"
-    ],
-    optionsTa: [
-      "நாணயங்கள் சந்திரகுப்தர் மற்றும் குமாரதேவியின் உருவங்களைச் சித்தரிக்கின்றன",
-      "ஹரிசேனர் சந்திரகுப்தரின் முக்கியமான அதிகாரிகளில் ஒருவர்",
-      "சமுத்திரகுப்தரின் கல்வெட்டு அலகாபாத்தில் உள்ள அசோகத் தூணில் காணப்படுகிறது",
-      "ஈரானில் உள்ள கல்வெட்டு சமுத்திரகுப்தரைப் பற்றிய தகவல்களை வெளிப்படுத்துகிறது",
-      "விடை தெரியவில்லை"
-    ],
-    answer: 3
+    "type": "mcq",
+    "en": "Which one of the statements is incorrect regarding the Guptas?",
+    "ta": "குப்தர்கள் தொடர்பாக பின்வரும் கூற்றுகளில் எது தவறானது?",
+    "optionsEn": ["Coins depict the figures of Chandragupta and Kumara devi", "Harisena was one of the important officers of Chandragupta", "Samudragupta inscription found in Ashoka Pillar at Allahabad", "Inscription from Iran reveals the information of Samudragupta", "Answer not known"],
+    "optionsTa": ["நாணயங்களில் சந்திரகுப்தர் மற்றும் குமாரதேவியின் உருவங்கள் பொறிக்கப்பட்டுள்ளன", "ஹரிசேனர் சந்திரகுப்தரின் முக்கிய அதிகாரிகளில் ஒருவர்", "அலகாபாத்தில் உள்ள அசோகர் தூணில் சமுத்திரகுப்தரின் கல்வெட்டு காணப்படுகிறது", "ஈரானிலிருந்து கிடைத்த கல்வெட்டு சமுத்திரகுப்தர் பற்றிய தகவல்களை வெளிப்படுத்துகிறது", "பதில் தெரியவில்லை"],
+    "answer": 1
   },
   {
-    type: "mcq",
-    en: "The most outstanding Buddhist writer in Sanskrit was",
-    ta: "சமஸ்கிருதத்தில் மிகச் சிறந்த பௌத்த எழுத்தாளர் யார்?",
-    optionsEn: ["Kalidasa", "Asvaghosa", "Bharavi", "Kumaradasa", "Answer not known"],
-    optionsTa: ["காளிதாசர்", "அசுவகோஷர்", "பாரவி", "குமாரதாசர்", "விடை தெரியவில்லை"],
-    answer: 1
+    "type": "mcq",
+    "en": "The most outstanding Buddhist writer in Sanskrit was",
+    "ta": "சமஸ்கிருதத்தில் மிகச் சிறந்த பௌத்த எழுத்தாளர் யார்?",
+    "optionsEn": ["Kalidasa", "Asvaghosa", "Bharavi", "Kumaradasa", "Answer not known"],
+    "optionsTa": ["காளிதாசர்", "அஸ்வகோஷர்", "பாரவி", "குமாரதாசர்", "பதில் தெரியவில்லை"],
+    "answer": 1
   },
   {
-    type: "mcq",
-    en: "Who got the title Vikramaditya?",
-    ta: "விக்ரமாதித்யா என்ற பட்டம் பெற்றவர் யார்?",
-    optionsEn: ["Chandra Gupta – II", "Skandha Gupta", "Kumara Gupta", "Samudra Gupta", "Answer not known"],
-    optionsTa: ["இரண்டாம் சந்திர குப்தர்", "ஸ்கந்த குப்தர்", "குமார குப்தர்", "சமுத்திர குப்தர்", "விடை தெரியவில்லை"],
-    answer: 0
+    "type": "mcq",
+    "en": "Who got the title Vikramaditya?",
+    "ta": "விக்ரமாதித்யா என்ற பட்டத்தைப் பெற்றவர் யார்?",
+    "optionsEn": ["Chandra Gupta -- II", "Skandha Gupta", "Kumara Gupta", "Samudra Gupta", "Answer not known"],
+    "optionsTa": ["சந்திரகுப்தர் -- II", "ஸ்கந்தகுப்தர்", "குமாரகுப்தர்", "சமுத்திரகுப்தர்", "பதில் தெரியவில்லை"],
+    "answer": 0
   },
   {
-    type: "mcq",
-    en: "Who was the first Gupta ruler to issue silver coins?",
-    ta: "வெள்ளி நாணயங்களை வெளியிட்ட முதல் குப்த அரசர் யார்?",
-    optionsEn: ["Srigupta", "Chandragupta – II", "Samudragupta", "Chandragupta – I", "Answer not known"],
-    optionsTa: ["ஸ்ரீகுப்தர்", "இரண்டாம் சந்திரகுப்தர்", "சமுத்திரகுப்தர்", "முதலாம் சந்திரகுப்தர்", "விடை தெரியவில்லை"],
-    answer: 3
+    "type": "mcq",
+    "en": "Who was the first Gupta ruler to issue silver coins?",
+    "ta": "வெள்ளி நாணயங்களை வெளியிட்ட முதல் குப்த ஆட்சியாளர் யார்?",
+    "optionsEn": ["Srigupta", "Chandragupta -- II", "Samudragupta", "Chandragupta -- I", "Answer not known"],
+    "optionsTa": ["ஸ்ரீகுப்தர்", "சந்திரகுப்தர் -- II", "சமுத்திரகுப்தர்", "சந்திரகுப்தர் -- I", "பதில் தெரியவில்லை"],
+    "answer": 1
   },
   {
-    type: "mcq",
-    en: "Which one of the following is correctly matched?",
-    ta: "பின்வருவனவற்றுள் சரியாகப் பொருத்தப்பட்டுள்ளது எது?",
-    optionsEn: [
-      "Arthasastra – Megasthanes",
-      "Indica – Kautilya",
-      "Harshacharita – Bana",
-      "Rathavali – Chandra Gupta Maurya",
-      "Answer not known"
-    ],
-    optionsTa: [
-      "அர்த்தசாஸ்திரம் – மெகஸ்தனிஸ்",
-      "இண்டிகா – கௌடில்யர்",
-      "ஹர்ஷசரிதம் – பணர்",
-      "ரத்னாவளி – சந்திரகுப்த மௌரியர்",
-      "விடை தெரியவில்லை"
-    ],
-    answer: 2
+    "type": "mcq",
+    "en": "Which one of the following is correctly matched?",
+    "ta": "பின்வருவனவற்றுள் எது சரியாகப் பொருந்துகிறது?",
+    "optionsEn": ["Arthasastra -- Megasthanes", "Indica -- Kautilya", "Harshacharita -- Bana", "Rathavali -- Chandra Gupta Maurya", "Answer not known"],
+    "optionsTa": ["அர்த்தசாஸ்திரம் -- மெகஸ்தனிஸ்", "இண்டிகா -- கௌடில்யர்", "ஹர்ஷசரிதம் -- பாணர்", "ரத்னாவளி -- சந்திரகுப்த மௌரியர்", "பதில் தெரியவில்லை"],
+    "answer": 2
   },
   {
-    type: "mcq",
-    en: "Which one of the following is not correctly matched?",
-    ta: "பின்வருவனவற்றுள் சரியாகப் பொருத்தப்படாதது எது?",
-    optionsEn: [
-      "Ayurveda – Medicine",
-      "Dhanurveda – Astronomy",
-      "Gandharvaveda – Music",
-      "Shilapaveda – Architecture",
-      "Answer not known"
-    ],
-    optionsTa: [
-      "ஆயுர்வேதம் – மருத்துவம்",
-      "தனுர்வேதம் – வானியல்",
-      "காந்தர்வவேதம் – இசை",
-      "சிற்பவேதம் – கட்டடக் கலை",
-      "விடை தெரியவில்லை"
-    ],
-    answer: 1
+    "type": "mcq",
+    "en": "Which one of the following is not correctly matched?",
+    "ta": "பின்வருவனவற்றுள் எது சரியாகப் பொருந்தவில்லை?",
+    "optionsEn": ["Ayurveda -- Medicine", "Dhanurveda -- Astronomy", "Gandharvaveda -- Music", "Shilapaveda -- Architecture", "Answer not known"],
+    "optionsTa": ["ஆயுர்வேதம் -- மருத்துவம்", "தனுர்வேதம் -- வானியல்", "கந்தர்வவேதம் -- இசை", "சில்பவேதம் -- கட்டிடக்கலை", "பதில் தெரியவில்லை"],
+    "answer": 1
   },
   {
-    type: "mcq",
-    en: "\"The Gupta period is in the annals of classical India almost what the Periclean age is in the History of Greece.\" Who said the above statement?",
-    ta: "\"கிரீஸ் வரலாற்றில் பெரிக்லீஸின் காலம் எத்தகையதோ, அதே போன்றது செவ்வியல் இந்திய வரலாற்றில் குப்தர்களின் காலம்.\" மேற்கண்ட கூறியவர் யார்?",
-    optionsEn: ["Dr. V.A. Smith", "Dr. Keith", "Dr. Altekar", "Barnett", "Answer not known"],
-    optionsTa: ["டாக்டர் வி.ஏ. ஸ்மித்", "டாக்டர் கீத்", "டாக்டர் அல்டேகர்", "பார்னெட்", "விடை தெரியவில்லை"],
-    answer: 3
+    "type": "mcq",
+    "en": "\"The Gupta period is in the annals of classical India almost what the Periclean age is in the History of Greece.\" Who said the above statement?",
+    "ta": "\"செந்நெறி இந்தியாவின் வரலாற்றில் குப்தர் காலம் என்பது கிரேக்க வரலாற்றில் பெரிக்கிள்ஸ் காலம் எதுவோ அதுவாகும்.\" மேற்கூறிய கூற்றைக் கூறியவர் யார்?",
+    "optionsEn": ["Dr. V.A. Smith", "Dr. Keith", "Dr. Altekar", "Barnett", "Answer not known"],
+    "optionsTa": ["டாக்டர் வி.ஏ. ஸ்மித்", "டாக்டர் கீத்", "டாக்டர் ஆல்டேக்கர்", "பார்னெட்", "பதில் தெரியவில்லை"],
+    "answer": 3
   },
   {
-    type: "mcq",
-    en: "The Gupta Era was founded by",
-    ta: "குப்த சகாப்தத்தைத் தொடங்கியவர் யார்?",
-    optionsEn: ["Chandra Gupta-I", "Samudra Gupta", "Skanda Gupta", "Chandra Gupta II", "Answer not known"],
-    optionsTa: ["முதலாம் சந்திர குப்தர்", "சமுத்திர குப்தர்", "ஸ்கந்த குப்தர்", "இரண்டாம் சந்திர குப்தர்", "விடை தெரியவில்லை"],
-    answer: 0
+    "type": "mcq",
+    "en": "The Gupta Era was founded by",
+    "ta": "குப்தர் சகாப்தத்தை நிறுவியவர் யார்?",
+    "optionsEn": ["Chandra Gupta-I", "Samudra Gupta", "Skanda Gupta", "Chandra Gupta II", "Answer not known"],
+    "optionsTa": ["சந்திரகுப்தர்-I", "சமுத்திரகுப்தர்", "ஸ்கந்தகுப்தர்", "சந்திரகுப்தர் II", "பதில் தெரியவில்லை"],
+    "answer": 0
   },
   {
-    type: "mcq",
-    en: "Which one of the following ports handled the North Indian trade during the Gupta period?",
-    ta: "குப்தர்களின் காலத்தில் வட இந்திய வணிகத்தைக் கையாண்ட துறைமுகம் எது?",
-    optionsEn: ["Cambay", "Broach", "Tamralipti", "Kalyan", "Answer not known"],
-    optionsTa: ["காம்பே", "ப்ரோச்", "தாம்ராலிப்தி", "கல்யாண்", "விடை தெரியவில்லை"],
-    answer: 1
+    "type": "mcq",
+    "en": "Which one of the following ports handled the North Indian trade during the Gupta period?",
+    "ta": "குப்தர் காலத்தில் வட இந்திய வர்த்தகத்தைக் கையாண்ட துறைமுகம் பின்வருவனவற்றுள் எது?",
+    "optionsEn": ["Cambay", "Broach", "Tamralipti", "Kalyan", "Answer not known"],
+    "optionsTa": ["காம்பே", "பரூச்", "தாம்ரலிப்தி", "கல்யாண்", "பதில் தெரியவில்லை"],
+    "answer": 2
   },
   {
-    type: "mcq",
-    en: "Which of the following Buddhist work is songs of the sisters?",
-    ta: "பின்வரும் பௌத்த நூல்களில் 'தோழிகளின் பாடல்கள்' (Songs of the Sisters) என்று அழைக்கப்படுவது எது?",
-    optionsEn: ["Dastisikkhapadda", "Patimokka", "Vinayapitaka", "Therigatha", "Answer not known"],
-    optionsTa: ["தாஸ்திசிக்தபத்தா", "பதிமோக்கா", "வினயபிடகம்", "தேரிகாதை", "விடை தெரியவில்லை"],
-    answer: 3
+    "type": "mcq",
+    "en": "Which of the following Buddhist work is songs of the sisters?",
+    "ta": "பின்வரும் பௌத்த படைப்புகளில் எது 'சகோதரிகளின் பாடல்கள்' ஆகும்?",
+    "optionsEn": ["Dastisikkhapadda", "Patimokka", "Vinayapitaka", "Therigatha", "Answer not known"],
+    "optionsTa": ["தஸ்திசிக்காபத", "பாதிமொக்கா", "வினயபிடகம்", "தேரிகாதை", "பதில் தெரியவில்லை"],
+    "answer": 3
   },
   {
-    type: "mcq",
-    en: "Match List-I with List-II.<br><br>" +
-         "<table>" +
-         "<tr><td><b>List-I</b></td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><b>List-II</b></td></tr>" +
-         "<tr><td>a) Ibn Battutah</td><td></td><td>1. Persia traveller</td></tr>" +
-         "<tr><td>b) Abdul Razzak</td><td></td><td>2. Morocco traveller</td></tr>" +
-         "<tr><td>c) Nikitin</td><td></td><td>3. Portuguese traveller</td></tr>" +
-         "<tr><td>d) Nuniz</td><td></td><td>4. Russia traveller</td></tr>" +
-         "</table>",
-    ta: "பட்டியல்-I ஐ பட்டியல்-II உடன் பொருத்துக:<br><br>" +
-         "<table>" +
-         "<tr><td><b>பட்டியல்-I</b></td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><b>பட்டியல்-II</b></td></tr>" +
-         "<tr><td>a) இப்னு பதூதா</td><td></td><td>1. பாரசீகப் பயணி</td></tr>" +
-         "<tr><td>b) அப்துல் ரசாக்</td><td></td><td>2. மொராக்கோ பயணி</td></tr>" +
-         "<tr><td>c) நிகிடின்</td><td></td><td>3. போர்த்துக்கீசியப் பயணி</td></tr>" +
-         "<tr><td>d) நூனிஸ்</td><td></td><td>4. ரஷ்யப் பயணி</td></tr>" +
-         "</table>",
-    optionsEn: ["2 1 4 3", "1 2 3 4", "4 3 2 1", "3 2 1 4", "Answer not known"],
-    optionsTa: ["2 1 4 3", "1 2 3 4", "4 3 2 1", "3 2 1 4", "விடை தெரியவில்லை"],
-    answer: 0
+    "type": "match",
+    "en": "Match List-I with List-II.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List-I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>List-II</b></td></tr><tr><td style='padding:6px 0;'>a) Ibn Battutah</td><td></td><td style='padding:6px 0;'>1. Persia traveller</td></tr><tr><td style='padding:6px 0;'>b) Abdul Razzak</td><td></td><td style='padding:6px 0;'>2. Morocco traveller</td></tr><tr><td style='padding:6px 0;'>c) Nikitin</td><td></td><td style='padding:6px 0;'>3. Portuguese traveller</td></tr><tr><td style='padding:6px 0;'>d) Nuniz</td><td></td><td style='padding:6px 0;'>4. Russia traveller</td></tr></table>",
+    "ta": "பட்டியல்-I உடன் பட்டியல்-II ஐப் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல்-I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>பட்டியல்-II</b></td></tr><tr><td style='padding:6px 0;'>a) இப்னு பதூதா</td><td></td><td style='padding:6px 0;'>1. பெர்சிய பயணி</td></tr><tr><td style='padding:6px 0;'>b) அப்துல் ரசாக்</td><td></td><td style='padding:6px 0;'>2. மொராக்கோ பயணி</td></tr><tr><td style='padding:6px 0;'>c) நிகிடின்</td><td></td><td style='padding:6px 0;'>3. போர்த்துகீசிய பயணி</td></tr><tr><td style='padding:6px 0;'>d) நுனிஸ்</td><td></td><td style='padding:6px 0;'>4. ரஷ்ய பயணி</td></tr></table>",
+    "optionsEn": ["A-2, B-1, C-4, D-3", "A-1, B-2, C-3, D-4", "A-4, B-3, C-2, D-1", "A-3, B-2, C-1, D-4", "Answer not known"],
+    "optionsTa": ["A-2, B-1, C-4, D-3", "A-1, B-2, C-3, D-4", "A-4, B-3, C-2, D-1", "A-3, B-2, C-1, D-4", "பதில் தெரியவில்லை"],
+    "answer": 0
   },
   {
-    type: "mcq",
-    en: "Name the Chinese scholar, who stayed a couple of years in India to study and copy Buddhist scriptures.",
-    ta: "பௌத்த நூல்களைப் படிக்கவும் நகல் எடுக்கவும் இந்தியாவில் சில ஆண்டுகள் தங்கியிருந்த சீன அறிஞர் யார்?",
-    optionsEn: ["Husan Tsang", "Hieu Tsang", "Xuanzang", "Kamat Potpourri", "Answer not known"],
-    optionsTa: ["ஹியூசாங்", "ஹியூ சியாங்", "சுவான்சாங்", "காமத் பாட்பூரி", "விடை தெரியவில்லை"],
-    answer: 2
+    "type": "mcq",
+    "en": "Name the Chinese scholar, who stayed a couple of years in India to study and copy Buddhist scriptures.",
+    "ta": "பௌத்த மத வேதங்களைப் படிக்கவும் நகலெடுக்கவும் சில ஆண்டுகள் இந்தியாவில் தங்கியிருந்த சீன அறிஞரின் பெயரைக் கூறுங்கள்.",
+    "optionsEn": ["Husan Tsang", "Hieu Tsang", "Xuanzang", "Kamat Potpourri", "Answer not known"],
+    "optionsTa": ["ஹுசான் சாங்", "ஹியூ சாங்", "சுவான்சாங்", "காமத் பொட்பொரி", "பதில் தெரியவில்லை"],
+    "answer": 2
   },
   {
-    type: "mcq",
-    en: "The Buddhist scholar Vasubandhu was patronized by whom?",
-    ta: "பௌத்த அறிஞர் வசுபந்துவை ஆதரித்தவர் யார்?",
-    optionsEn: ["Samudragupta", "Skandagupta", "Chandragupta I", "Kumaragupta", "Answer not known"],
-    optionsTa: ["சமுத்திரகுப்தர்", "ஸ்கந்தகுப்தர்", "முதலாம் சந்திரகுப்தர்", "குமாரகுப்தர்", "விடை தெரியவில்லை"],
-    answer: 3
+    "type": "mcq",
+    "en": "The Buddhist scholar Vasubandhu was patronized by whom?",
+    "ta": "பௌத்த அறிஞர் வசுபந்துவை ஆதரித்தவர் யார்?",
+    "optionsEn": ["Samudragupta", "Skandagupta", "Chandragupta I", "Kumaragupta", "Answer not known"],
+    "optionsTa": ["சமுத்திரகுப்தர்", "ஸ்கந்தகுப்தர்", "சந்திரகுப்தர் I", "குமாரகுப்தர்", "பதில் தெரியவில்லை"],
+    "answer": 0
   },
   {
-    type: "mcq",
-    en: "In which year was the first Buddhist council held?",
-    ta: "முதல் பௌத்த மாநாடு எந்த ஆண்டு கூட்டப்பட்டது?",
-    optionsEn: ["483 B.C", "387 B.C", "236 B.C", "136 B.C", "Answer not known"],
-    optionsTa: ["கி.மு. 483", "கி.மு. 387", "கி.மு. 236", "கி.மு. 136", "விடை தெரியவில்லை"],
-    answer: 0
+    "type": "mcq",
+    "en": "In which year was the first Buddhist council held?",
+    "ta": "முதல் பௌத்த மாநாடு எந்த ஆண்டு நடைபெற்றது?",
+    "optionsEn": ["483 B.C", "387 B.C", "236 B.C", "136 B.C", "Answer not known"],
+    "optionsTa": ["கி.மு. 483", "கி.மு. 387", "கி.மு. 236", "கி.மு. 136", "பதில் தெரியவில்லை"],
+    "answer": 0
   },
   {
-    type: "mcq",
-    en: "Who wrote the play 'Ratnavali'?",
-    ta: "'ரத்னாவளி' நாடகத்தை எழுதியவர் யார்?",
-    optionsEn: ["Prem chand", "Kalidas", "Harsha", "Tulsidas", "Answer not known"],
-    optionsTa: ["பிரேம்சந்த்", "காளிதாசர்", "ஹர்ஷர்", "துளசிதாசர்", "விடை தெரியவில்லை"],
-    answer: 2
+    "type": "mcq",
+    "en": "Who wrote the play 'Ratnavali'?",
+    "ta": "'ரத்னாவளி' என்ற நாடகத்தை எழுதியவர் யார்?",
+    "optionsEn": ["Prem chand", "Kalidas", "Harsha", "Tulsidas", "Answer not known"],
+    "optionsTa": ["பிரேம் சந்த்", "காளிதாசர்", "ஹர்ஷர்", "துளசிதாசர்", "பதில் தெரியவில்லை"],
+    "answer": 2
   },
   {
-    type: "mcq",
-    en: "'Devadhana' means",
-    ta: "'தேவதானம்' என்றால் என்ன?",
-    optionsEn: ["Land grants to the Brahmans", "Land grants to the temples", "Land grants to the officers", "Land grants to the ministers", "Answer not known"],
-    optionsTa: ["பிராமணர்களுக்கு வழங்கப்பட்ட நிலக் கொடைகள்", "கோவில்களுக்கு வழங்கப்பட்ட நிலக் கொடைகள்", "அதிகாரிகளுக்கு வழங்கப்பட்ட நிலக் கொடைகள்", "அமைச்சர்களுக்கு வழங்கப்பட்ட நிலக் கொடைகள்", "விடை தெரியவில்லை"],
-    answer: 1
+    "type": "mcq",
+    "en": "'Devadhana' means",
+    "ta": "'தேவதானம்' என்றால் என்ன?",
+    "optionsEn": ["Land grants to the Brahmans", "Land grants to the temples", "Land grants to the officers", "Land grants to the ministers", "Answer not known"],
+    "optionsTa": ["பிராமணர்களுக்கு நில மானியங்கள்", "கோயில்களுக்கு நில மானியங்கள்", "அதிகாரிகளுக்கு நில மானியங்கள்", "அமைச்சர்களுக்கு நில மானியங்கள்", "பதில் தெரியவில்லை"],
+    "answer": 1
   }
 ];
-
     dashboard.totalMarks = QUESTIONS.length.toString();
     const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
-    
     function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
-    
-    function getSafeImageUrl(url) {
-        if (!url) return "";
-        let cleanUrl = url.trim();
-        if (cleanUrl.includes("github.com") && cleanUrl.includes("/blob/")) {
-            cleanUrl = cleanUrl.replace("github.com", "raw.githubusercontent.com").replace("/blob/", "/").replace("?raw=true", "");
-        }
-        return cleanUrl;
-    }
-
-    function initImageZoom() {
-        if (typeof mediumZoom !== "undefined") {
-            mediumZoom(".img-zoom-wrapper img, .review-question-img", {
-                background: "rgba(0,0,0,0.9)",
-                margin: 20
-            });
-        }
-    }
-
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
     function renderDashboard() {
-        const container = document.getElementById("dashboardContainer");
-        if(container) {
-            container.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div>
-                <div style="font-size:0.9rem;">(Since 2025)</div>
-                <div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div>
-                <div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div>
-                <div>📅 DATE: ${escapeHtml(dashboard.date)}</div>
-                <div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div>
-                <div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div>
-                <div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div>
-                <div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
-        }
-        let totalSpan = document.getElementById("totalQsSpan");
-        if(totalSpan) totalSpan.innerText = `/${dashboard.totalMarks}`;
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
     }
-
-    function autoSaveState() {
-        if (!quizActive || isSubmitted) return;
-        try {
-            localStorage.setItem("tetEnglishAutoResume", JSON.stringify({
-                userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft,
-                startTimestamp: startTimestamp, isSubmitted: false, quizActive: true,
-                savedAt: Date.now(), language: currentLanguage
-            }));
-        } catch(e) {}
-    }
-
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
     function showResumePopup(savedState) {
         const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
         const remaining = QUESTIONS.length - answeredCount;
-        const modalHtml = `
-            <div id="resumeModal" class="modal-overlay">
-                <div class="modal-container">
-                    <h3>🔄 Unfinished Exam Found</h3>
-                    <p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p>
-                    <div class="modal-buttons">
-                        <button id="modalResumeBtn" class="btn">✅ Resume</button>
-                        <button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button>
-                    </div>
-                </div>
-            </div>`;
-        document.body.insertAdjacentHTML("beforeend", modalHtml);
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
         document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
         document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
     }
-
     function checkForAutoResume() {
         let saved = null;
         try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
@@ -493,7 +355,6 @@ let QUESTIONS = [
         }
         return false;
     }
-
     function autoResumeExam(state) {
         userAnswers = state.userAnswers;
         currentIndex = state.currentIndex;
@@ -509,16 +370,14 @@ let QUESTIONS = [
         document.getElementById("quizContainer").style.display = "block";
         document.getElementById("resultContainer").style.display = "none";
     }
-
     function clearAllAndRestart() {
         try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
         document.getElementById("resultContainer").style.display = "none";
         document.getElementById("startScreen").style.display = "flex";
         document.getElementById("quizContainer").style.display = "none";
-        if(timerInterval) clearInterval(timerInterval);
+        if (timerInterval) clearInterval(timerInterval);
         quizActive = false;
     }
-    
     function openNativeLeaderboard() {
         if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
             window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
@@ -526,21 +385,16 @@ let QUESTIONS = [
             alert("Leaderboard is only available inside the Android App.");
         }
     }
-
     let userAnswers = new Array(QUESTIONS.length).fill(null);
-    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) {
-        userAnswers = injectedAnswers;
-    }
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
     let currentIndex = 0;
     let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
     let timerInterval = null;
     let quizActive = false;
     let startTimestamp = null;
     let isSubmitted = false;
-
     function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
     function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
-
     function renderQuestion() {
         if (QUESTIONS.length === 0) {
             document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
@@ -550,42 +404,29 @@ let QUESTIONS = [
         const txt = getCurrentQuestionText(q);
         const optsArray = getCurrentOptions(q);
         const sel = userAnswers[currentIndex];
-        
         let displayTxt = txt;
         let extraClass = "question-text";
         let passageHtml = "";
-        if (q.type === "rc" && q.passageEn) {
-            passageHtml = `<div class="passage-box">${q.passageEn}</div>`;
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
             extraClass = "question-text";
-        } else if (q.type === "rc") {
-            displayTxt = `<div class="passage-box">${txt}</div>`; 
-            extraClass = "question-text";
-        } else if (q.type === "puzzle") { 
-            displayTxt = `<div class="puzzle-box">${txt}</div>`; 
-            extraClass = "question-text"; 
         }
-
         let imageHtml = "";
         const urlsToLoad = [];
-        if (q.imageUrls && Array.isArray(q.imageUrls)) {
-            q.imageUrls.forEach(u => urlsToLoad.push(u));
-        } else if (q.imageUrl && q.imageUrl.trim() !== "") {
-            urlsToLoad.push(q.imageUrl);
-        }
-
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
         urlsToLoad.forEach(url => {
             let safeUrl = getSafeImageUrl(url);
-            imageHtml += `
-            <div class="img-zoom-wrapper">
-                <img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy">
-            </div>`;
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
         });
-
         let optsHtml = "";
         optsArray.forEach((opt, i) => {
             optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">${String.fromCharCode(65+i)}. ${opt}</div>`;
         });
-
         document.getElementById("questionArea").innerHTML = `
             ${passageHtml}
             <div style="padding: 0 16px 20px 16px;">
@@ -595,103 +436,86 @@ let QUESTIONS = [
             </div>
         `;
         updateNavButtons(); updatePalette();
-        if(window.MathJax) MathJax.typesetPromise();
+        if (window.MathJax) MathJax.typesetPromise();
         initImageZoom();
     }
-
     function selectOption(optIndex) {
-        if(isSubmitted) return;
-        if(userAnswers[currentIndex] === optIndex) return;
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) return;
         userAnswers[currentIndex] = optIndex;
         renderQuestion(); updatePalette(); autoSaveState();
     }
-
     function updateNavButtons() {
         if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
         const t = translations[currentLanguage];
         let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
-        if(currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
         else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
         document.getElementById("navButtons").innerHTML = html;
     }
-
-    function prevQuestion() { if(!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
-    function nextQuestion() { if(!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
-
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
     function updatePalette() {
         const ps = document.getElementById("paletteScroll");
-        if(!ps) return;
+        if (!ps) return;
         ps.innerHTML = "";
         if (QUESTIONS.length === 0) return;
-        for(let i=0; i<QUESTIONS.length; i++) {
+        for (let i=0; i<QUESTIONS.length; i++) {
             const btn = document.createElement("button");
             btn.innerText = i+1; btn.classList.add("q-palette");
-            if(userAnswers[i] !== null) btn.classList.add("answered");
-            if(i === currentIndex) btn.classList.add("current");
-            btn.onclick = (function(idx) { return function() { if(!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
             ps.appendChild(btn);
         }
     }
-
     function startTimer() {
-        if(timerInterval) clearInterval(timerInterval);
+        if (timerInterval) clearInterval(timerInterval);
         timerInterval = setInterval(() => {
-            if(!quizActive || isSubmitted) return;
-            if(timeLeft <= 0) { clearInterval(timerInterval); if(!isSubmitted) submitQuiz(); }
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
             else {
                 timeLeft--;
                 const m = Math.floor(timeLeft/60), s = timeLeft%60;
                 document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
-                if(timeLeft % 10 === 0) autoSaveState();
-                if(timeLeft===0) submitQuiz();
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
             }
         }, 1000);
     }
-
     function buildDetailedReview() {
         let html = "";
-        for(let i=0; i<QUESTIONS.length; i++) {
+        for (let i=0; i<QUESTIONS.length; i++) {
             const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
             const isCorr = (u !== null && u !== undefined && u === corr);
             const txt = getCurrentQuestionText(q) || "";
             const optsArray = getCurrentOptions(q) || [];
-
             let optsHtml = "";
             optsArray.forEach((_, idx) => {
                 let marker = "";
-                if(idx === corr) marker = " ✅ (Correct)";
-                if(u === idx && idx !== corr) marker = " ❌ (Your choice)";
-                else if(u === idx && idx === corr) marker = " ✅ (Correct)";
+                if (idx === corr) marker = " ✅ (Correct)";
+                if (u === idx && idx !== corr) marker = " ❌ (Your choice)";
+                else if (u === idx && idx === corr) marker = " ✅ (Correct)";
                 const styleClass = (idx === corr) ? "correct-option" : "";
                 const userWrongStyle = (u === idx && idx !== corr) ? "color:#ef4444;" : "";
                 optsHtml += `<div class="${styleClass}" style="${userWrongStyle}">${String.fromCharCode(65+idx)}. ${optsArray[idx]}${marker}</div>`;
             });
-
             let passageHtml = "";
-            if (q.type === "rc" && q.passageEn && currentLanguage === "en") {
-                passageHtml = `<div class="passage-box">${q.passageEn}</div>`;
-            } else if (q.type === "rc" && q.passageTa && currentLanguage === "ta") {
-                passageHtml = `<div class="passage-box">${q.passageTa}</div>`;
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
             } else if (q.type === "puzzle") {
                 passageHtml = `<div class="puzzle-box">${txt}</div>`;
             }
-
             let imgHtml = "";
             const urlsToLoad = [];
-            if (q.imageUrls && Array.isArray(q.imageUrls)) {
-                q.imageUrls.forEach(u => urlsToLoad.push(u));
-            } else if (q.imageUrl && String(q.imageUrl).trim() !== "") {
-                urlsToLoad.push(q.imageUrl);
-            }
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
             urlsToLoad.forEach(url => {
                 let safeUrl = getSafeImageUrl(url);
                 imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
             });
-
-            const userAns = (u !== null && u !== undefined)
-                ? `${String.fromCharCode(65+u)}. ${optsArray[u]}`
-                : "Not answered";
-
+            const userAns = (u !== null && u !== undefined) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
             html += `<div class="review-card" style="border-left-color:${isCorr?"#10b981":"#ef4444"}">
                         <strong>Q${i+1}. ${txt}</strong>
                         ${passageHtml}
@@ -701,23 +525,17 @@ let QUESTIONS = [
                     </div>`;
         }
         document.getElementById("reviewList").innerHTML = html;
-        if(window.MathJax && MathJax.typesetPromise) { try { MathJax.typesetPromise(); } catch(e) {} }
+        if (window.MathJax && MathJax.typesetPromise) { try { MathJax.typesetPromise(); } catch(e) {} }
         initImageZoom();
-
         document.querySelectorAll("#reviewList img").forEach(img => {
             if (!img.complete) { const pre = new Image(); pre.src = img.src; }
         });
     }
-
     async function downloadPdfWithAssets(btn) {
         const originalText = btn ? btn.innerText : "📄 Download PDF";
         if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
-
         try {
-            if (window.MathJax && MathJax.typesetPromise) {
-                try { await MathJax.typesetPromise(); } catch(e) { console.log("MathJax await error", e); }
-            }
-
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
             const imgs = Array.from(document.querySelectorAll("#reviewList img"));
             await Promise.all(imgs.map(img => {
                 if (img.complete && img.naturalWidth > 0) return Promise.resolve();
@@ -729,14 +547,9 @@ let QUESTIONS = [
                     setTimeout(finish, 5000);
                 });
             }));
-
             await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
-
-            if (window.AndroidBridge && window.AndroidBridge.printPage) {
-                window.AndroidBridge.printPage();
-            } else {
-                window.print();
-            }
+            if (window.AndroidBridge && window.AndroidBridge.printPage) window.AndroidBridge.printPage();
+            else window.print();
         } catch (e) {
             console.error("PDF export failed:", e);
             alert("Could not prepare PDF. Please try again.");
@@ -744,7 +557,6 @@ let QUESTIONS = [
             setTimeout(() => { if (btn) { btn.disabled = false; btn.innerText = originalText; } }, 800);
         }
     }
-
     async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
         if (!GOOGLE_SHEET_URL) return;
         const studentName = window.actualStudentName || "Student";
@@ -768,61 +580,47 @@ let QUESTIONS = [
             });
         } catch(err) { console.error("Sheet Error:", err); }
     }
-
     function submitQuiz() {
-        if(isSubmitted) return;
+        if (isSubmitted) return;
         isSubmitted = true; quizActive = false; clearInterval(timerInterval);
         try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
         let correct=0, incorrect=0, na=0;
-        for(let i=0; i<QUESTIONS.length; i++) {
-            if(userAnswers[i] === null) na++;
-            else if(userAnswers[i] === QUESTIONS[i].answer) correct++;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
             else incorrect++;
         }
-
-        const negMark = dashboard.negativeMark || 0; 
+        const negMark = dashboard.negativeMark || 0;
         const finalScore = correct - (incorrect * negMark);
-
         try {
             if (window.AndroidBridge && window.AndroidBridge.submitScore) {
                 window.AndroidBridge.submitScore(JSON.stringify({
                     testId: dashboard.testNo || "",
                     testName: dashboard.examTitle + " - " + dashboard.testNo,
-                    correct: correct,
-                    wrong: incorrect,
-                    skipped: na,
-                    total: QUESTIONS.length,
-                    score: finalScore,
-                    stayOnScreen: true,
-                    answers: userAnswers,
-                    questions: QUESTIONS
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
                 }));
             }
         } catch (e) { console.log("Bridge error", e); }
-
         const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
         const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
         const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
-        
-        document.getElementById("finalScore").innerText = finalScore; 
+        document.getElementById("finalScore").innerText = finalScore;
         document.getElementById("correctCountStat").innerText = correct;
         document.getElementById("incorrectCountStat").innerText = incorrect;
         document.getElementById("notAttemptedStat").innerText = na;
         document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
         document.getElementById("timeTakenSpan").innerHTML = timeStr;
         document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
-        
         const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
         document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
-        
         buildDetailedReview();
         sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
-        
         document.getElementById("startScreen").style.display = "none";
         document.getElementById("quizContainer").style.display = "none";
         document.getElementById("resultContainer").style.display = "block";
     }
-
     function startNewExam() {
         try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
         userAnswers = new Array(QUESTIONS.length).fill(null);
@@ -830,7 +628,6 @@ let QUESTIONS = [
         timeLeft = (parseInt(dashboard.duration) || 15) * 60;
         startTimestamp = Date.now();
         quizActive = true; isSubmitted = false;
-        
         let candidateName = window.actualStudentName;
         if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
             candidateName = prompt("Please enter your name to start the exam:", "");
@@ -838,31 +635,16 @@ let QUESTIONS = [
             window.actualStudentName = candidateName;
         }
         document.getElementById("quizCandidateName").innerText = candidateName;
-        
         renderQuestion(); startTimer();
         document.getElementById("startScreen").style.display = "none";
         document.getElementById("quizContainer").style.display = "block";
         document.getElementById("resultContainer").style.display = "none";
         autoSaveState();
     }
-
-    function toggleTheme() {
-        const curr = document.documentElement.getAttribute("data-theme");
-        const next = curr === "dark" ? "light" : "dark";
-        document.documentElement.setAttribute("data-theme", next);
-        try { localStorage.setItem("themeGreen", next); } catch(e) {}
-        const darkBtn = document.getElementById("darkModeToggleBtn");
-        if(darkBtn) darkBtn.innerText = next === "dark" ? translations[currentLanguage].lightMode : translations[currentLanguage].darkMode;
-    }
-
     renderDashboard();
-    let savedTheme = null; try { savedTheme = localStorage.getItem("themeGreen"); } catch(e) {}
-    if (savedTheme === "dark") document.documentElement.setAttribute("data-theme", "dark");
-    else document.documentElement.setAttribute("data-theme", "light");
+    document.documentElement.setAttribute("data-theme", "dark");
     updateUILanguage();
-    
     checkForAutoResume();
-    
     window.checkForReview = function() {
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get("review") === "true") {
@@ -873,23 +655,19 @@ let QUESTIONS = [
                     try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
                 } catch(e) { console.log("Error parsing answers: " + e.message); }
             }
-            
-            isSubmitted = true;
-            quizActive = false;
+            isSubmitted = true; quizActive = false;
             document.getElementById("startScreen").style.display = "none";
             document.getElementById("quizContainer").style.display = "none";
             document.getElementById("resultContainer").style.display = "block";
-            
             let correct=0, incorrect=0, na=0;
-            for(let i=0; i<QUESTIONS.length; i++) {
-                if(userAnswers[i] === null || userAnswers[i] === undefined) na++;
-                else if(userAnswers[i] === QUESTIONS[i].answer) correct++;
+            for (let i=0; i<QUESTIONS.length; i++) {
+                if (userAnswers[i] === null || userAnswers[i] === undefined) na++;
+                else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
                 else incorrect++;
             }
             const negMark = dashboard.negativeMark || 0;
             const finalScore = correct - (incorrect * negMark);
             const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
-            
             document.getElementById("finalScore").innerText = finalScore;
             document.getElementById("correctCountStat").innerText = correct;
             document.getElementById("incorrectCountStat").innerText = incorrect;
