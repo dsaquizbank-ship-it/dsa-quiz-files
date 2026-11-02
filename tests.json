@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-02T04:36:27.058Z",
+  "version": "2026-11-02T07:21:29.960Z",
   "categories": [
     {
       "id": "BANK",
@@ -214,6 +214,12 @@
       "name": "GENERAL SCIENCE",
       "categoryId": "RRB",
       "order": 4
+    },
+    {
+      "id": "TNPSC-CA",
+      "name": "CURRENT AFFAIRS",
+      "categoryId": "TNPSC",
+      "order": 3
     }
   ],
   "tests": [
@@ -781,6 +787,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-TA-53.html",
       "releaseTimestamp": 1793606400000,
       "language": "ta"
+    },
+    {
+      "testId": "TCA-1",
+      "examId": "TNPSC-CA",
+      "name": "SEPTEMBER TCA-1",
+      "topic": "SEPTEMBER",
+      "durationMinutes": 20,
+      "order": 1,
+      "questionCount": 30,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TCA-1.html",
+      "releaseTimestamp": 1793865600000,
+      "language": "both"
     }
   ]
 }
