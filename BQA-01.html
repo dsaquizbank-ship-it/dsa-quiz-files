@@ -14,8 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        :root { --bg-gradient: linear-gradient(145deg, #f0fdf4, #dcfce7); --card-bg: #ffffff; --text-primary: #14532d; --border-light: #bbf7d0; --accent: #10b981; --accent-dark: #059669; --timer-bg: #fef3c7; --timer-text: #b45309; --palette-btn: #f0fdf4; --shadow: 0 10px 25px -5px rgba(0,0,0,0.1); --correct-color: #dc2626; --modal-overlay: rgba(0,0,0,0.5); --rc-bg: #f8fafc; --rc-border: #3b82f6; --puzzle-bg: #fffbeb; --puzzle-border: #f59e0b; }
-        [data-theme="dark"] { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        :root { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
         body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
         @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
         .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; background: linear-gradient(135deg, #059669, #10b981); -webkit-background-clip: text; background-clip: text; color: transparent; }
@@ -136,8 +135,8 @@
 <script>
     let currentLanguage = "en";
     const translations = {
-        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 Dark", lightMode: "☀️ Light" },
-        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 இருண்ட", lightMode: "☀️ ஒளி" }
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
     };
     function updateUILanguage() {
         const t = translations[currentLanguage];
@@ -691,18 +690,8 @@ let QUESTIONS = [
         document.getElementById("resultContainer").style.display = "none";
         autoSaveState();
     }
-    function toggleTheme() {
-        const curr = document.documentElement.getAttribute("data-theme");
-        const next = curr === "dark" ? "light" : "dark";
-        document.documentElement.setAttribute("data-theme", next);
-        try { localStorage.setItem("themeGreen", next); } catch(e) {}
-        const darkBtn = document.getElementById("darkModeToggleBtn");
-        if (darkBtn) darkBtn.innerText = next === "dark" ? translations[currentLanguage].lightMode : translations[currentLanguage].darkMode;
-    }
     renderDashboard();
-    let savedTheme = null; try { savedTheme = localStorage.getItem("themeGreen"); } catch(e) {}
-    if (savedTheme === "dark") document.documentElement.setAttribute("data-theme", "dark");
-    else document.documentElement.setAttribute("data-theme", "light");
+    document.documentElement.setAttribute("data-theme", "dark");
     updateUILanguage();
     checkForAutoResume();
     window.checkForReview = function() {
