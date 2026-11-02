@@ -644,38 +644,40 @@ let QUESTIONS = [
     updateUILanguage();
     checkForAutoResume();
     window.checkForReview = function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get("review") === "true") {
-            let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
-            if (savedAnswers) {
-                try {
-                    userAnswers = JSON.parse(savedAnswers);
-                    try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
-                } catch(e) { console.log("Error parsing answers: " + e.message); }
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
             }
-            isSubmitted = true; quizActive = false;
-            document.getElementById("startScreen").style.display = "none";
-            document.getElementById("quizContainer").style.display = "none";
-            document.getElementById("resultContainer").style.display = "block";
-            let correct=0, incorrect=0, na=0;
-            for (let i=0; i<QUESTIONS.length; i++) {
-                if (userAnswers[i] === null || userAnswers[i] === undefined) na++;
-                else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
-                else incorrect++;
-            }
-            const negMark = dashboard.negativeMark || 0;
-            const finalScore = correct - (incorrect * negMark);
-            const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
-            document.getElementById("finalScore").innerText = finalScore;
-            document.getElementById("correctCountStat").innerText = correct;
-            document.getElementById("incorrectCountStat").innerText = incorrect;
-            document.getElementById("notAttemptedStat").innerText = na;
-            document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
-            document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
-            const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
-            document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
-            buildDetailedReview();
         }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
     };
     window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
 </script>
