@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-02T07:50:31.085Z",
+  "version": "2026-11-02T08:17:06.642Z",
   "categories": [
     {
       "id": "BANK",
@@ -226,6 +226,12 @@
       "name": "9TH",
       "categoryId": "SGT",
       "order": 4
+    },
+    {
+      "id": "PG-HIS",
+      "name": "PGTRB HISTORY",
+      "categoryId": "PGTRB",
+      "order": 3
     }
   ],
   "tests": [
@@ -832,6 +838,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGT-9-35.html",
       "releaseTimestamp": 1793606400000,
       "language": "both"
+    },
+    {
+      "testId": "PGH-44",
+      "examId": "PG-HIS",
+      "name": "Rowlatt Act and Jallianwala Bagh massacre, Gandhian Era – Non-Cooperation Movement and Chauri Chaura, Swaraj Party and Simon Commission, Revolutionary Movements PGH-44",
+      "topic": "Rowlatt Act and Jallianwala Bagh massacre, Gandhian Era – Non-Cooperation Movement and Chauri Chaura, Swaraj Party and Simon Commission, Revolutionary Movements",
+      "durationMinutes": 15,
+      "order": 44,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGH-44.html",
+      "releaseTimestamp": 1793606400000,
+      "language": "en"
     }
   ]
 }
