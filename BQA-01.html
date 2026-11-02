@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
     <title>BQA-01</title>
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
-    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
     <script>
         window.MathJax = {
             tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]], displayMath: [["$$", "$$"], ["\\[", "\\]"]] },
             options: { ignoreHtmlClass: "no-mathjax" }
         };
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         :root { --bg-gradient: linear-gradient(145deg, #f0fdf4, #dcfce7); --card-bg: #ffffff; --text-primary: #14532d; --border-light: #bbf7d0; --accent: #10b981; --accent-dark: #059669; --timer-bg: #fef3c7; --timer-text: #b45309; --palette-btn: #f0fdf4; --shadow: 0 10px 25px -5px rgba(0,0,0,0.1); --correct-color: #dc2626; --modal-overlay: rgba(0,0,0,0.5); --rc-bg: #f8fafc; --rc-border: #3b82f6; --puzzle-bg: #fffbeb; --puzzle-border: #f59e0b; }
@@ -63,13 +63,12 @@
         .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
         .modal-buttons { display: flex; gap: 12px; justify-content: center; }
         .modal-buttons .btn { min-width: 100px; }
-        mark { background-color: #fef08a; color: #000; padding: 0 4px; border-radius: 3px; }
         .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
         .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
         .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
         .medium-zoom-overlay { z-index: 9999 !important; }
         .medium-zoom-image--opened { z-index: 10000 !important; }
-        @media print { body { background: white !important; color: black !important; } .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn:not(.btn-pdf), .icon-btn { display: none !important; } .review-card { break-inside: avoid; } }
+        @media print { html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } #startScreen, #quizContainer { display: none !important; } #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn:not(.btn-pdf), .icon-btn { display: none !important; } .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; } @page { size: A4; margin: 1.5cm; } }
         @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
     </style>
 </head>
@@ -474,7 +473,7 @@ let QUESTIONS = [
             </div>
         `;
         updateNavButtons(); updatePalette();
-        if (window.MathJax) MathJax.typesetPromise();
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
         initImageZoom();
     }
     function selectOption(optIndex) {
@@ -563,7 +562,7 @@ let QUESTIONS = [
                     </div>`;
         }
         document.getElementById("reviewList").innerHTML = html;
-        if (window.MathJax && MathJax.typesetPromise) { try { MathJax.typesetPromise(); } catch(e) {} }
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
         initImageZoom();
         document.querySelectorAll("#reviewList img").forEach(img => {
             if (!img.complete) { const pre = new Image(); pre.src = img.src; }
@@ -679,8 +678,18 @@ let QUESTIONS = [
         document.getElementById("resultContainer").style.display = "none";
         autoSaveState();
     }
+    function toggleTheme() {
+        const curr = document.documentElement.getAttribute("data-theme");
+        const next = curr === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", next);
+        try { localStorage.setItem("themeGreen", next); } catch(e) {}
+        const darkBtn = document.getElementById("darkModeToggleBtn");
+        if (darkBtn) darkBtn.innerText = next === "dark" ? translations[currentLanguage].lightMode : translations[currentLanguage].darkMode;
+    }
     renderDashboard();
-    document.documentElement.setAttribute("data-theme", "dark");
+    let savedTheme = null; try { savedTheme = localStorage.getItem("themeGreen"); } catch(e) {}
+    if (savedTheme === "dark") document.documentElement.setAttribute("data-theme", "dark");
+    else document.documentElement.setAttribute("data-theme", "light");
     updateUILanguage();
     checkForAutoResume();
     window.checkForReview = function() {
