@@ -52,6 +52,10 @@
         .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
         .stat-number { font-size: 1.6rem; font-weight: 800; }
         .review-card { background: #1E1E1E; border-radius: 12px; padding: 16px; margin-bottom: 16px; border: 1px solid #333; color: #E0E0E0; box-shadow: none; }
+        .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
+        .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
+        .review-card .question-text { overflow-x: auto !important; white-space: normal !important; }
         .review-card strong { color: #FFFFFF; font-size: 16px; }
         .review-card .option-item { background-color: #242424; border: 1px solid #333; color: #B0B0B0; border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
         .review-card .option-item.correct { background-color: #1b3d22; border: 1px solid #28a745; color: #68d391; font-weight: 600; }
@@ -561,7 +565,7 @@ let QUESTIONS = [
             });
             const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
             html += `<div class="review-card">
-                        <strong>Q${i+1}. ${txt}</strong>
+                        <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
                         ${passageHtml}
                         ${imgHtml}
                         <div class="your-answer">Your Answer: ${userAns}</div>
