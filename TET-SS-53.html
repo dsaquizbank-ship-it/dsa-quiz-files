@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>TET-SS-53</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]], displayMath: [["$$", "$$"], ["\\[", "\\]"]] },
+            options: { ignoreHtmlClass: "no-mathjax" }
+        };
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(145deg, #f0fdf4, #dcfce7); --card-bg: #ffffff; --text-primary: #14532d; --border-light: #bbf7d0; --accent: #10b981; --accent-dark: #059669; --timer-bg: #fef3c7; --timer-text: #b45309; --palette-btn: #f0fdf4; --shadow: 0 10px 25px -5px rgba(0,0,0,0.1); --correct-color: #dc2626; --modal-overlay: rgba(0,0,0,0.5); --rc-bg: #f8fafc; --rc-border: #3b82f6; --puzzle-bg: #fffbeb; --puzzle-border: #f59e0b; }
+        [data-theme="dark"] { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; background: linear-gradient(135deg, #059669, #10b981); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.5; }
+        .option-item { background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .correct-option { font-weight: bold; color: var(--correct-color); }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        mark { background-color: #fef08a; color: #000; padding: 0 4px; border-radius: 3px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { body { background: white !important; color: black !important; } .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn:not(.btn-pdf), .icon-btn { display: none !important; } .review-card { break-inside: avoid; } }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">25:00</div>
+            <div class="top-buttons">
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 Dark", lightMode: "☀️ Light" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 இருண்ட", lightMode: "☀️ ஒளி" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "TET SOCIAL SCIENCE",
+        testNo: "TET-SS-53",
+        date: new Date().toLocaleDateString("en-GB"),
+        subject: "TET SOCIAL SCIENCE",
+        topic: "8TH GEO- ROAD SAFETY RULES & REGULATIONS",
+        duration: "15",
+        totalMarks: "0",
+        negativeMark: 0.33,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "Which of the following is NOT listed as a direct consequence of road accidents in the lesson?",
+    "ta": "பாடத்தில் சாலை விபத்துகளின் நேரடி விளைவாக பின்வருவனவற்றுள் எது பட்டியலிடப்படவில்லை?",
+    "optionsEn": ["Fatality (death)", "Injury", "Property damage", "Increase in traffic congestion"],
+    "optionsTa": ["மரணம்", "காயம்", "சொத்து சேதம்", "போக்குவரத்து நெரிசல் அதிகரிப்பு"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "The main motive behind red light jumping is:",
+    "ta": "சிவப்பு விளக்கைத் தாண்டிச் செல்வதற்குப் பின்னால் உள்ள முக்கிய நோக்கம்:",
+    "optionsEn": ["To show dominance", "Saving time", "Testing vehicle speed", "Avoiding police"],
+    "optionsTa": ["ஆதிக்கத்தைக் காட்டுவது", "நேரத்தைச் சேமிப்பது", "வாகன வேகத்தைச் சோதிப்பது", "போலீஸைத் தவிர்ப்பது"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்",
+    "optionsEn": ["Mandatory Signs -- Triangular shape", "Cautionary Signs -- Circular shape", "Informatory Signs -- Rectangular shape", "Mandatory Signs -- Rectangular shape"],
+    "optionsTa": ["கட்டாய அறிகுறிகள் -- முக்கோண வடிவம்", "எச்சரிக்கை அறிகுறிகள் -- வட்ட வடிவம்", "தகவல் அறிகுறிகள் -- செவ்வக வடிவம்", "கட்டாய அறிகுறிகள் -- செவ்வக வடிவம்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்",
+    "optionsEn": ["Red signal -- Proceed with caution", "Amber (Yellow) -- Stop and wait for green", "Flashing Red -- Slow down and proceed", "Green -- You may go if the way is clear"],
+    "optionsTa": ["சிவப்பு சிக்னல் -- எச்சரிக்கையுடன் தொடரவும்", "அம்பர் (மஞ்சள்) -- நிறுத்தி பச்சைக்காக காத்திருங்கள்", "மின்னும் சிவப்பு -- மெதுவாகி தொடரவும்", "பச்சை -- பாதை தெளிவாக இருந்தால் நீங்கள் செல்லலாம்"],
+    "answer": 3
+  },
+  {
+    "type": "match",
+    "en": "Match the following<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>List I (Road Marking)</b></td><td style='width:50%; padding:6px 0;'><b>List II (Meaning)</b></td></tr><tr><td style='padding:6px 0;'>1. Broken white line</td><td style='padding:6px 0;'>A. Strictly prohibits crossing into the lane</td></tr><tr><td style='padding:6px 0;'>2. Solid white line</td><td style='padding:6px 0;'>B. You may change lanes if safe</td></tr><tr><td style='padding:6px 0;'>3. Double solid yellow lines</td><td style='padding:6px 0;'>C. Stop before traffic signal</td></tr><tr><td style='padding:6px 0;'>4. Stop line</td><td style='padding:6px 0;'>D. Not allowed to overtake; stay within the lane</td></tr></table>",
+    "ta": "பின்வருவனவற்றைப் பொருத்துக<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>பட்டியல் I (சாலைக் குறியீடு)</b></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் II (பொருள்)</b></td></tr><tr><td style='padding:6px 0;'>1. உடைந்த வெள்ளைக் கோடு</td><td style='padding:6px 0;'>A. பாதைக்குள் நுழைவதைக் கண்டிப்பாகத் தடை செய்கிறது</td></tr><tr><td style='padding:6px 0;'>2. திடமான வெள்ளைக் கோடு</td><td style='padding:6px 0;'>B. பாதுகாப்பாக இருந்தால் நீங்கள் பாதைகளை மாற்றலாம்</td></tr><tr><td style='padding:6px 0;'>3. இரட்டை திடமான மஞ்சள் கோடுகள்</td><td style='padding:6px 0;'>C. போக்குவரத்து சிக்னலுக்கு முன் நிறுத்துங்கள்</td></tr><tr><td style='padding:6px 0;'>4. நிறுத்தக் கோடு</td><td style='padding:6px 0;'>D. முந்திச் செல்ல அனுமதி இல்லை; பாதைக்குள் இருங்கள்</td></tr></table>",
+    "optionsEn": ["1-B, 2-D, 3-A, 4-C", "1-B, 2-D, 3-C, 4-A", "1-D, 2-B, 3-A, 4-C", "1-D, 2-A, 3-B, 4-C"],
+    "optionsTa": ["1-B, 2-D, 3-A, 4-C", "1-B, 2-D, 3-C, 4-A", "1-D, 2-B, 3-A, 4-C", "1-D, 2-A, 3-B, 4-C"],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "Match the following<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>List I</b></td><td style='width:50%; padding:6px 0;'><b>List II</b></td></tr><tr><td style='padding:6px 0;'>1. Red Number Plate</td><td style='padding:6px 0;'>A. Commercial vehicle</td></tr><tr><td style='padding:6px 0;'>2. Blue Number Plate</td><td style='padding:6px 0;'>B. Common citizen</td></tr><tr><td style='padding:6px 0;'>3. White Number Plate</td><td style='padding:6px 0;'>C. President / Governor</td></tr><tr><td style='padding:6px 0;'>4. Yellow Number Plate</td><td style='padding:6px 0;'>D. Foreign delegates / Ambassadors</td></tr></table>",
+    "ta": "பின்வருவனவற்றைப் பொருத்துக<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>பட்டியல் I</b></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் II</b></td></tr><tr><td style='padding:6px 0;'>1. சிவப்பு எண் தகடு</td><td style='padding:6px 0;'>A. வணிக வாகனம்</td></tr><tr><td style='padding:6px 0;'>2. நீல எண் தகடு</td><td style='padding:6px 0;'>B. பொதுக் குடிமகன்</td></tr><tr><td style='padding:6px 0;'>3. வெள்ளை எண் தகடு</td><td style='padding:6px 0;'>C. குடியரசுத் தலைவர் / ஆளுநர்</td></tr><tr><td style='padding:6px 0;'>4. மஞ்சள் எண் தகடு</td><td style='padding:6px 0;'>D. வெளிநாட்டு பிரதிநிதிகள் / தூதர்கள்</td></tr></table>",
+    "optionsEn": ["1-A, 2-B, 3-C, 4-D", "1-C, 2-D, 3-B, 4-A", "1-A, 2-B, 3-D, 4-C", "1-C, 2-D, 3-A, 4-B"],
+    "optionsTa": ["1-A, 2-B, 3-C, 4-D", "1-C, 2-D, 3-B, 4-A", "1-A, 2-B, 3-D, 4-C", "1-C, 2-D, 3-A, 4-B"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Odd one out",
+    "ta": "பொருந்தாதது எது",
+    "optionsEn": ["Over speeding", "Drunken driving", "Talking on mobile phone while driving", "Crossing at zebra crossing"],
+    "optionsTa": ["அதிவேகமாக ஓட்டுதல்", "குடிபோதையில் வாகனம் ஓட்டுதல்", "வாகனம் ஓட்டும்போது மொபைல் போனில் பேசுதல்", "ஜீப்ரா கிராசிங்கில் கடப்பது"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Odd one out",
+    "ta": "பொருந்தாதது எது",
+    "optionsEn": ["Damaged road", "Potholes", "Fog and heavy rainfall", "Illegal speed breakers"],
+    "optionsTa": ["சேதமடைந்த சாலை", "பள்ளங்கள்", "பனிமூட்டம் மற்றும் கனமழை", "சட்டவிரோத வேகத்தடைகள்"],
+    "answer": 2
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): Use of seat belt in four-wheelers and helmets for two-wheelers has been brought under law.<br><br>Reason (R): These two things reduce the severity of injury during accidents.",
+    "ta": "Assertion (A): நான்கு சக்கர வாகனங்களில் சீட் பெல்ட் மற்றும் இரு சக்கர வாகனங்களில் ஹெல்மெட் பயன்படுத்துவது சட்டத்தின் கீழ் கொண்டுவரப்பட்டுள்ளது.<br><br>Reason (R): இந்த இரண்டு விஷயங்களும் விபத்துகளின் போது காயத்தின் தீவிரத்தைக் குறைக்கின்றன.",
+    "optionsEn": ["Both A and R are true and R explains A", "Both A and R are true but R does not explain A", "A is true, R is false", "A is false, R is true"],
+    "optionsTa": ["A மற்றும் R இரண்டும் உண்மை, R என்பது A வை விளக்குகிறது", "A மற்றும் R இரண்டும் உண்மை, ஆனால் R என்பது A வை விளக்கவில்லை", "A உண்மை, R தவறு", "A தவறு, R உண்மை"],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): The act of talking on phone while driving occupies a major portion of the brain's function.<br><br>Reason (R): The smaller part of the brain handles the driving skills, leading to distraction.",
+    "ta": "Assertion (A): வாகனம் ஓட்டும்போது போனில் பேசும் செயல் மூளையின் செயல்பாட்டின் பெரும் பகுதியை ஆக்கிரமிக்கிறது.<br><br>Reason (R): மூளையின் சிறிய பகுதி வாகனம் ஓட்டும் திறன்களைக் கையாள்கிறது, இது கவனச்சிதறலுக்கு வழிவகுக்கிறது.",
+    "optionsEn": ["A is false, R is true", "Both A and R are true but R does not explain A", "A is true, R is false", "Both A and R are true and R explains A"],
+    "optionsTa": ["A தவறு, R உண்மை", "A மற்றும் R இரண்டும் உண்மை, ஆனால் R என்பது A வை விளக்கவில்லை", "A உண்மை, R தவறு", "A மற்றும் R இரண்டும் உண்மை, R என்பது A வை விளக்குகிறது"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement",
+    "ta": "சரியான கூற்றைத் தேர்ந்தெடுக்கவும்",
+    "optionsEn": ["The Motor Vehicle Act was passed in 1989", "The Motor Vehicle Act 1988 came into force in 1989 and is applicable to the whole of India", "On a two-way road, the driver must drive on the right side", "Horns can be used freely in hospital and school zones"],
+    "optionsTa": ["மோட்டார் வாகனச் சட்டம் 1989 இல் நிறைவேற்றப்பட்டது", "1988 ஆம் ஆண்டு மோட்டார் வாகனச் சட்டம் 1989 இல் நடைமுறைக்கு வந்தது மற்றும் இந்தியா முழுவதற்கும் பொருந்தும்", "இரு வழிச் சாலையில், ஓட்டுநர் வலது பக்கத்தில் ஓட்ட வேண்டும்", "மருத்துவமனை மற்றும் பள்ளி மண்டலங்களில் ஹார்ன்களை சுதந்திரமாகப் பயன்படுத்தலாம்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement",
+    "ta": "சரியான கூற்றைத் தேர்ந்தெடுக்கவும்",
+    "optionsEn": ["Quick response ambulances are parked every 100 km on National Highways", "Setu Bharatam aims to build more railway level crossings", "Setu Bharatam was launched in 2016 to make all National Highways free of railway level crossings by 2019", "ABS is mandatory only for two-wheelers"],
+    "optionsTa": ["தேசிய நெடுஞ்சாலைகளில் ஒவ்வொரு 100 கி.மீ.க்கும் விரைவு பதில் ஆம்புலன்ஸ்கள் நிறுத்தப்பட்டுள்ளன", "சேது பாரதம் அதிக ரயில் சந்திப்புகளைக் கட்டுவதை நோக்கமாகக் கொண்டுள்ளது", "2019 ஆம் ஆண்டிற்குள் அனைத்து தேசிய நெடுஞ்சாலைகளையும் ரயில் சந்திப்புகள் இல்லாததாக மாற்ற 2016 இல் சேது பாரதம் தொடங்கப்பட்டது", "ABS இரு சக்கர வாகனங்களுக்கு மட்டுமே கட்டாயமாகும்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is an essential document that a driver should possess while driving?",
+    "ta": "வாகனம் ஓட்டும் போது ஓட்டுநர் வைத்திருக்க வேண்டிய அவசியமான ஆவணம் பின்வருவனவற்றுள் எது?",
+    "optionsEn": ["Passport", "Driving Licence, Registration Certificate, Taxation Certificate, Insurance Certificate, Fitness Certificate and Permit", "Aadhaar Card only", "Ration Card"],
+    "optionsTa": ["கடவுச்சீட்டு", "ஓட்டுநர் உரிமம், பதிவுச் சான்றிதழ், வரிச் சான்றிதழ், காப்பீட்டுச் சான்றிதழ், தகுதிச் சான்றிதழ் மற்றும் அனுமதிச் சீட்டு", "ஆதார் அட்டை மட்டும்", "குடும்ப அட்டை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Under 304 A of the Indian Penal Code, the police will file a criminal case for:",
+    "ta": "இந்திய தண்டனைச் சட்டத்தின் 304 A பிரிவின் கீழ், போலீசார் குற்றவியல் வழக்கைப் பதிவு செய்வது எதற்காக:",
+    "optionsEn": ["Offences relating to death due to rashness and negligence of the driver", "Parking in no-parking zone", "Jumping red light", "Using high-beam lights"],
+    "optionsTa": ["ஓட்டுநரின் அலட்சியம் மற்றும் கவனக்குறைவால் ஏற்படும் மரணம் தொடர்பான குற்றங்கள்", "நோ பார்க்கிங் பகுதியில் வாகனம் நிறுத்துதல்", "சிவப்பு விளக்கைத் தாண்டிச் செல்வது", "ஹை-பீம் விளக்குகளைப் பயன்படுத்துதல்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்",
+    "optionsEn": ["Road Safety Week -- Observed in December", "Brasilia Declaration -- Signed by India in 2010", "Decade of Action for Road Safety -- 2011-2020 (UN General Assembly)", "Save LIFE Foundation -- Government organisation"],
+    "optionsTa": ["சாலை பாதுகாப்பு வாரம் -- டிசம்பரில் கடைப்பிடிக்கப்படுகிறது", "பிரேசிலியா பிரகடனம் -- 2010 இல் இந்தியாவால் கையெழுத்திடப்பட்டது", "சாலை பாதுகாப்புக்கான செயல் தசாப்தம் -- 2011-2020 (ஐக்கிய நாடுகள் பொதுச் சபை)", "சேவ் லைஃப் அறக்கட்டளை -- அரசு அமைப்பு"],
+    "answer": 2
+  },
+  {
+    "type": "match",
+    "en": "Match the following<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>List I (Colour of Traffic Light)</b></td><td style='width:50%; padding:6px 0;'><b>List II (Meaning)</b></td></tr><tr><td style='padding:6px 0;'>1. Steady Green Arrow</td><td style='padding:6px 0;'>A. Come to complete stop; proceed only when clear</td></tr><tr><td style='padding:6px 0;'>2. Flashing Red</td><td style='padding:6px 0;'>B. Proceed with caution in the direction of arrow</td></tr><tr><td style='padding:6px 0;'>3. Flashing Yellow</td><td style='padding:6px 0;'>C. Slow down and proceed with caution</td></tr><tr><td style='padding:6px 0;'>4. Red</td><td style='padding:6px 0;'>D. Stop behind the stop line</td></tr></table>",
+    "ta": "பின்வருவனவற்றைப் பொருத்துக<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>பட்டியல் I (போக்குவரத்து விளக்கின் நிறம்)</b></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் II (பொருள்)</b></td></tr><tr><td style='padding:6px 0;'>1. நிலையான பச்சை அம்பு</td><td style='padding:6px 0;'>A. முழுவதுமாக நிறுத்துங்கள்; தெளிவாக இருந்தால் மட்டுமே தொடரவும்</td></tr><tr><td style='padding:6px 0;'>2. மின்னும் சிவப்பு</td><td style='padding:6px 0;'>B. அம்புக்குறியின் திசையில் எச்சரிக்கையுடன் தொடரவும்</td></tr><tr><td style='padding:6px 0;'>3. மின்னும் மஞ்சள்</td><td style='padding:6px 0;'>C. மெதுவாகி எச்சரிக்கையுடன் தொடரவும்</td></tr><tr><td style='padding:6px 0;'>4. சிவப்பு</td><td style='padding:6px 0;'>D. நிறுத்தக் கோட்டின் பின்னால் நிறுத்துங்கள்</td></tr></table>",
+    "optionsEn": ["1-B, 2-A, 3-D, 4-C", "1-A, 2-B, 3-C, 4-D", "1-A, 2-C, 3-B, 4-D", "1-B, 2-A, 3-C, 4-D"],
+    "optionsTa": ["1-B, 2-A, 3-D, 4-C", "1-A, 2-B, 3-C, 4-D", "1-A, 2-C, 3-B, 4-D", "1-B, 2-A, 3-C, 4-D"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Odd one out",
+    "ta": "பொருந்தாதது எது",
+    "optionsEn": ["Engineering", "Enforcement", "Education", "Entertainment"],
+    "optionsTa": ["பொறியியல்", "சட்ட அமலாக்கம்", "கல்வி", "பொழுதுபோக்கு"],
+    "answer": 3
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): India signed the Brasilia Declaration in 2015.<br><br>Reason (R): Through this declaration, participants committed to improve road safety and reduce traffic deaths by the end of the decade.",
+    "ta": "Assertion (A): இந்தியா 2015 இல் பிரேசிலியா பிரகடனத்தில் கையெழுத்திட்டது.<br><br>Reason (R): இந்த பிரகடனத்தின் மூலம், பங்கேற்பாளர்கள் சாலை பாதுகாப்பை மேம்படுத்தவும், தசாப்தத்தின் இறுதிக்குள் போக்குவரத்து மரணங்களைக் குறைக்கவும் உறுதியளித்தனர்.",
+    "optionsEn": ["Both A and R are true and R explains A", "Both A and R are true but R does not explain A", "A is true, R is false", "A is false, R is true"],
+    "optionsTa": ["A மற்றும் R இரண்டும் உண்மை, R என்பது A வை விளக்குகிறது", "A மற்றும் R இரண்டும் உண்மை, ஆனால் R என்பது A வை விளக்கவில்லை", "A உண்மை, R தவறு", "A தவறு, R உண்மை"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement",
+    "ta": "சரியான கூற்றைத் தேர்ந்தெடுக்கவும்",
+    "optionsEn": ["Cautionary signs give orders that must be followed strictly", "All traffic signs are circular in shape", "Mandatory signs are generally circular, Cautionary signs are triangular, and Informatory signs are rectangular", "Informatory signs warn about road situations ahead"],
+    "optionsTa": ["எச்சரிக்கை அறிகுறிகள் கண்டிப்பாகப் பின்பற்றப்பட வேண்டிய உத்தரவுகளை வழங்குகின்றன", "அனைத்து போக்குவரத்து அறிகுறிகளும் வட்ட வடிவத்தில் உள்ளன", "கட்டாய அறிகுறிகள் பொதுவாக வட்டமானவை, எச்சரிக்கை அறிகுறிகள் முக்கோணமானவை, மற்றும் தகவல் அறிகுறிகள் செவ்வகமானவை", "தகவல் அறிகுறிகள் முன்னால் உள்ள சாலை நிலைமைகள் குறித்து எச்சரிக்கின்றன"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "What does the hand signal of raising the right arm and swinging it up and down gently indicate?",
+    "ta": "வலது கையை உயர்த்தி மெதுவாக மேலும் கீழும் ஆட்டும் கை சமிக்ஞை எதைக் குறிக்கிறது?",
+    "optionsEn": ["The driver is turning right", "The driver is slowing down", "The driver is stopping", "The driver is overtaking"],
+    "optionsTa": ["ஓட்டுநர் வலதுபுறம் திரும்புகிறார்", "ஓட்டுநர் வேகத்தைக் குறைக்கிறார்", "ஓட்டுநர் நிறுத்துகிறார்", "ஓட்டுநர் முந்திச் செல்கிறார்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்",
+    "optionsEn": ["AHO -- Automatic Headlight On (mandatory for two-wheelers)", "ABS -- Automatic Brake System", "Speed Governor -- Increases vehicle speed", "Variable Message Signs -- Used only for advertisements"],
+    "optionsTa": ["AHO -- தானியங்கி ஹெட்லைட் ஆன் (இரு சக்கர வாகனங்களுக்கு கட்டாயம்)", "ABS -- தானியங்கி பிரேக் அமைப்பு", "வேக ஆளுநர் -- வாகனத்தின் வேகத்தை அதிகரிக்கிறது", "மாறி செய்தி அறிகுறிகள் -- விளம்பரங்களுக்கு மட்டுமே பயன்படுத்தப்படுகின்றன"],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "Match the following<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List I</b></td><td style='width:60%; padding:6px 0;'><b>List II</b></td></tr><tr><td style='padding:6px 0;'>1. 108</td><td style='padding:6px 0;'>A. Traffic accidents (police)</td></tr><tr><td style='padding:6px 0;'>2. 103</td><td style='padding:6px 0;'>B. Free emergency service (ambulance, police, fire)</td></tr><tr><td style='padding:6px 0;'>3. Tailgating</td><td style='padding:6px 0;'>C. Driving too close behind a vehicle</td></tr><tr><td style='padding:6px 0;'>4. Jaywalkers</td><td style='padding:6px 0;'>D. Pedestrians crossing at wrong places</td></tr></table>",
+    "ta": "பின்வருவனவற்றைப் பொருத்துக<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் I</b></td><td style='width:60%; padding:6px 0;'><b>பட்டியல் II</b></td></tr><tr><td style='padding:6px 0;'>1. 108</td><td style='padding:6px 0;'>A. போக்குவரத்து விபத்துகள் (போலீஸ்)</td></tr><tr><td style='padding:6px 0;'>2. 103</td><td style='padding:6px 0;'>B. இலவச அவசர சேவை (ஆம்புலன்ஸ், போலீஸ், தீ)</td></tr><tr><td style='padding:6px 0;'>3. டெயில்கேட்டிங்</td><td style='padding:6px 0;'>C. வாகனத்திற்குப் பின்னால் மிக நெருக்கமாக ஓட்டுதல்</td></tr><tr><td style='padding:6px 0;'>4. ஜேவாக்கர்கள்</td><td style='padding:6px 0;'>D. தவறான இடங்களில் சாலையைக் கடக்கும் பாதசாரிகள்</td></tr></table>",
+    "optionsEn": ["1-A, 2-B, 3-C, 4-D", "1-A, 2-B, 3-D, 4-C", "1-B, 2-A, 3-C, 4-D", "1-B, 2-A, 3-D, 4-C"],
+    "optionsTa": ["1-A, 2-B, 3-C, 4-D", "1-A, 2-B, 3-D, 4-C", "1-B, 2-A, 3-C, 4-D", "1-B, 2-A, 3-D, 4-C"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Odd one out",
+    "ta": "பொருந்தாதது எது",
+    "optionsEn": ["Always keep to the left", "Use helmets", "Never exceed the speed limit", "Talk on mobile phone while driving"],
+    "optionsTa": ["எப்போதும் இடதுபுறம் செல்லுங்கள்", "ஹெல்மெட் அணியுங்கள்", "வேக வரம்பை ஒருபோதும் மீற வேண்டாம்", "வாகனம் ஓட்டும்போது மொபைல் போனில் பேசுங்கள்"],
+    "answer": 3
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): At night, when traffic has dwindled, traffic police might switch off the signals in many intersections.<br><br>Reason (R): This means proceed with caution but there is no need to stop.",
+    "ta": "Assertion (A): இரவு நேரங்களில், போக்குவரத்து குறைந்துவிட்டால், பல சந்திப்புகளில் போக்குவரத்து காவல்துறையினர் சிக்னல்களை அணைக்கக்கூடும்.<br><br>Reason (R): இதன் பொருள் எச்சரிக்கையுடன் தொடரவும், ஆனால் நிறுத்த வேண்டிய அவசியமில்லை.",
+    "optionsEn": ["Both A and R are true but R does not explain A", "Both A and R are true and R explains A", "A is true, R is false", "A is false, R is true"],
+    "optionsTa": ["A மற்றும் R இரண்டும் உண்மை, ஆனால் R என்பது A வை விளக்கவில்லை", "A மற்றும் R இரண்டும் உண்மை, R என்பது A வை விளக்குகிறது", "A உண்மை, R தவறு", "A தவறு, R உண்மை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement",
+    "ta": "சரியான கூற்றைத் தேர்ந்தெடுக்கவும்",
+    "optionsEn": ["The four Es strategy of the Ministry of Road Transport and Highways includes Engineering, Enforcement, Education and Emergency care", "The four Es include only Engineering and Enforcement", "Speed Governors increase the flow of air and fuel to the engine", "On a one-way road, vehicles can be parked in reverse"],
+    "optionsTa": ["சாலைப் போக்குவரத்து மற்றும் நெடுஞ்சாலை அமைச்சகத்தின் நான்கு E உத்தியில் பொறியியல், சட்ட அமலாக்கம், கல்வி மற்றும் அவசர பராமரிப்பு ஆகியவை அடங்கும்", "நான்கு E-களில் பொறியியல் மற்றும் சட்ட அமலாக்கம் மட்டுமே அடங்கும்", "வேக ஆளுநர்கள் இயந்திரத்திற்கு காற்று மற்றும் எரிபொருளின் ஓட்டத்தை அதிகரிக்கின்றன", "ஒரு வழிச் சாலையில், வாகனங்களை தலைகீழாக நிறுத்தலாம்"],
+    "answer": 0
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false;
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">${String.fromCharCode(65+i)}. ${opt}</div>`;
+        });
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+            </div>
+        `;
+        updateNavButtons(); updatePalette();
+        if (window.MathJax) MathJax.typesetPromise();
+        initImageZoom();
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) return;
+        userAnswers[currentIndex] = optIndex;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let marker = "";
+                if (idx === corr) marker = " ✅ (Correct)";
+                if (u === idx && idx !== corr) marker = " ❌ (Your choice)";
+                else if (u === idx && idx === corr) marker = " ✅ (Correct)";
+                const styleClass = (idx === corr) ? "correct-option" : "";
+                const userWrongStyle = (u === idx && idx !== corr) ? "color:#ef4444;" : "";
+                optsHtml += `<div class="${styleClass}" style="${userWrongStyle}">${String.fromCharCode(65+idx)}. ${optsArray[idx]}${marker}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" style="border-left-color:${isCorr?"#10b981":"#ef4444"}">
+                        <strong>Q${i+1}. ${txt}</strong>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div style="margin-top:8px;"><strong>Your answer:</strong> ${userAns}</div>
+                        <div><strong>Correct:</strong> ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { try { MathJax.typesetPromise(); } catch(e) {} }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            const imgs = Array.from(document.querySelectorAll("#reviewList img"));
+            await Promise.all(imgs.map(img => {
+                if (img.complete && img.naturalWidth > 0) return Promise.resolve();
+                return new Promise(resolve => {
+                    let done = false;
+                    const finish = () => { if (!done) { done = true; resolve(); } };
+                    img.addEventListener("load", finish, { once: true });
+                    img.addEventListener("error", finish, { once: true });
+                    setTimeout(finish, 5000);
+                });
+            }));
+            await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) window.AndroidBridge.printPage();
+            else window.print();
+        } catch (e) {
+            console.error("PDF export failed:", e);
+            alert("Could not prepare PDF. Please try again.");
+        } finally {
+            setTimeout(() => { if (btn) { btn.disabled = false; btn.innerText = originalText; } }, 800);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.checkForReview = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get("review") === "true") {
+            let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+            if (savedAnswers) {
+                try {
+                    userAnswers = JSON.parse(savedAnswers);
+                    try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+                } catch(e) { console.log("Error parsing answers: " + e.message); }
+            }
+            isSubmitted = true; quizActive = false;
+            document.getElementById("startScreen").style.display = "none";
+            document.getElementById("quizContainer").style.display = "none";
+            document.getElementById("resultContainer").style.display = "block";
+            let correct=0, incorrect=0, na=0;
+            for (let i=0; i<QUESTIONS.length; i++) {
+                if (userAnswers[i] === null || userAnswers[i] === undefined) na++;
+                else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+                else incorrect++;
+            }
+            const negMark = dashboard.negativeMark || 0;
+            const finalScore = correct - (incorrect * negMark);
+            const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+            document.getElementById("finalScore").innerText = finalScore;
+            document.getElementById("correctCountStat").innerText = correct;
+            document.getElementById("incorrectCountStat").innerText = incorrect;
+            document.getElementById("notAttemptedStat").innerText = na;
+            document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+            document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+            const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+            document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+            buildDetailedReview();
+        }
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
