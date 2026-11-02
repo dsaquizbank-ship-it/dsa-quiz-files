@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-02T04:33:12.545Z",
+  "version": "2026-11-02T04:36:27.058Z",
   "categories": [
     {
       "id": "BANK",
@@ -768,6 +768,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-SS-53.html",
       "releaseTimestamp": 1793606400000,
       "language": "both"
+    },
+    {
+      "testId": "TET-TA-53",
+      "examId": "TETTAM",
+      "name": "TAMIL -8 IYAL 7,8 TET-SS-53",
+      "topic": "TAMIL -8 IYAL 7,8",
+      "durationMinutes": 20,
+      "order": 53,
+      "questionCount": 30,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-TA-53.html",
+      "releaseTimestamp": 1793606400000,
+      "language": "ta"
     }
   ]
 }
