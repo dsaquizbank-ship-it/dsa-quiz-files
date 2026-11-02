@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-02T02:12:53.139Z",
+  "version": "2026-11-02T02:18:52.816Z",
   "categories": [
     {
       "id": "BANK",
@@ -196,6 +196,12 @@
       "name": "QUANTITATIVE APTITUDE",
       "categoryId": "SSC",
       "order": 2
+    },
+    {
+      "id": "UG-MAT",
+      "name": "UGTRB MATHS",
+      "categoryId": "UGTRB",
+      "order": 3
     }
   ],
   "tests": [
@@ -683,6 +689,19 @@
       "questionCount": 25,
       "negativeMark": 0.25,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SQA-01.html",
+      "releaseTimestamp": 1793606400000,
+      "language": "en"
+    },
+    {
+      "testId": "UGM-94",
+      "examId": "UG-MAT",
+      "name": "LINEAR PROGRAMMING UGM-94",
+      "topic": "LINEAR PROGRAMMING",
+      "durationMinutes": 25,
+      "order": 94,
+      "questionCount": 20,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-94.html",
       "releaseTimestamp": 1793606400000,
       "language": "en"
     }
