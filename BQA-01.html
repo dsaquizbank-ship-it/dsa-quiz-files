@@ -719,7 +719,6 @@ let QUESTIONS = [
         document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
         buildDetailedReview();
     };
-    };
     window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
 </script>
 </body>
