@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-02T04:29:16.699Z",
+  "version": "2026-11-02T04:33:12.545Z",
   "categories": [
     {
       "id": "BANK",
@@ -755,6 +755,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGS-1.html",
       "releaseTimestamp": 1793606400000,
       "language": "en"
+    },
+    {
+      "testId": "TET-SS-53",
+      "examId": "TETSS",
+      "name": "8TH GEO- ROAD SAFETY RULES & REGULATIONS TET-SS-53",
+      "topic": "8TH GEO- ROAD SAFETY RULES & REGULATIONS",
+      "durationMinutes": 15,
+      "order": 1,
+      "questionCount": 25,
+      "negativeMark": 0.33,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-SS-53.html",
+      "releaseTimestamp": 1793606400000,
+      "language": "both"
     }
   ]
 }
