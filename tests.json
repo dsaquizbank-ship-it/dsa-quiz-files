@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-02T07:21:29.960Z",
+  "version": "2026-11-02T07:44:50.575Z",
   "categories": [
     {
       "id": "BANK",
@@ -799,6 +799,19 @@
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TCA-1.html",
       "releaseTimestamp": 1793865600000,
+      "language": "both"
+    },
+    {
+      "testId": "TET-MS-53",
+      "examId": "TETMS",
+      "name": "7th TERM 1 DIRECT AND INVERSE PROPORTION TET-MS-53",
+      "topic": "7th TERM 1 DIRECT AND INVERSE PROPORTION",
+      "durationMinutes": 20,
+      "order": 53,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-MS-53.html",
+      "releaseTimestamp": 1793606400000,
       "language": "both"
     }
   ]
