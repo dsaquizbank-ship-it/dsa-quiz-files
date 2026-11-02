@@ -30,9 +30,7 @@
         .question-container { padding: 0; }
         .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
         .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
-        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.5; overflow-x: auto; padding-bottom: 6px; word-wrap: break-word; }
-        .question-text::-webkit-scrollbar { height: 6px; }
-        .question-text::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.5; }
         .option-item { background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; }
         .option-item:hover { background: var(--border-light); transform: scale(0.99); }
         .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
@@ -152,7 +150,7 @@
     let dashboard = {
         examTitle: "QUANTITATIVE APTITUDE",
         testNo: "BQA-01",
-        date: new Date().toLocaleDateString("en-GB"),
+        date: "02/11/2026",
         subject: "QUANTITATIVE APTITUDE",
         topic: "SIMPLIFICATION (Set-1)",
         duration: "25",
@@ -686,38 +684,41 @@ let QUESTIONS = [
     updateUILanguage();
     checkForAutoResume();
     window.checkForReview = function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get("review") === "true") {
-            let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
-            if (savedAnswers) {
-                try {
-                    userAnswers = JSON.parse(savedAnswers);
-                    try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
-                } catch(e) { console.log("Error parsing answers: " + e.message); }
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
             }
-            isSubmitted = true; quizActive = false;
-            document.getElementById("startScreen").style.display = "none";
-            document.getElementById("quizContainer").style.display = "none";
-            document.getElementById("resultContainer").style.display = "block";
-            let correct=0, incorrect=0, na=0;
-            for (let i=0; i<QUESTIONS.length; i++) {
-                if (userAnswers[i] === null || userAnswers[i] === undefined) na++;
-                else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
-                else incorrect++;
-            }
-            const negMark = dashboard.negativeMark || 0;
-            const finalScore = correct - (incorrect * negMark);
-            const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
-            document.getElementById("finalScore").innerText = finalScore;
-            document.getElementById("correctCountStat").innerText = correct;
-            document.getElementById("incorrectCountStat").innerText = incorrect;
-            document.getElementById("notAttemptedStat").innerText = na;
-            document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
-            document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
-            const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
-            document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
-            buildDetailedReview();
         }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
+    };
     };
     window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
 </script>
