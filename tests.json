@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-02T04:27:40.354Z",
+  "version": "2026-11-02T04:29:16.699Z",
   "categories": [
     {
       "id": "BANK",
@@ -208,6 +208,12 @@
       "name": "GENERAL SCIENCE",
       "categoryId": "SSC",
       "order": 5
+    },
+    {
+      "id": "RRB-GS",
+      "name": "GENERAL SCIENCE",
+      "categoryId": "RRB",
+      "order": 4
     }
   ],
   "tests": [
@@ -734,6 +740,19 @@
       "questionCount": 20,
       "negativeMark": 0.5,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGS-1.html",
+      "releaseTimestamp": 1793606400000,
+      "language": "en"
+    },
+    {
+      "testId": "RGS-1",
+      "examId": "RRB-GS",
+      "name": "PHYSICS-UNITS, DIMENSIONS & FORMULAS RGS-1",
+      "topic": "PHYSICS-UNITS, DIMENSIONS & FORMULAS",
+      "durationMinutes": 10,
+      "order": 1,
+      "questionCount": 20,
+      "negativeMark": 0.33,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGS-1.html",
       "releaseTimestamp": 1793606400000,
       "language": "en"
     }
