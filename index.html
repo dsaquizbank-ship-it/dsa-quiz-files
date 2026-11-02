@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <title>DSA Academy Test</title>
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+
+    <!-- ✅ PATCH 1: MathJax config MUST come BEFORE the script tag -->
     <script>
         window.MathJax = {
-            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
             options: { ignoreHtmlClass: 'no-mathjax' }
         };
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         :root {
@@ -100,15 +106,55 @@
         .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
         .modal-buttons { display: flex; gap: 12px; justify-content: center; }
         .modal-buttons .btn { min-width: 100px; }
+
+        /* ✅ PATCH 2: Improved print CSS to prevent PDF cutoff */
         @media print {
-            body { background: white; padding: 0; margin: 0; }
-            .quiz-wrapper { max-width: 100%; margin: 0; border-radius: 0; box-shadow: none; background: white; }
-            .header-bar .top-buttons, .header-bar .timer-box, .palette-area, .nav-buttons, .btn:not(.btn-pdf), .icon-btn, .flex-buttons .btn:not(.btn-pdf) { display: none !important; }
-            .result-dashboard { background: #064e3b; print-color-adjust: exact; -webkit-print-color-adjust: exact; break-inside: avoid; }
-            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc; margin-bottom: 15px; }
-            .question-image, .review-question-img { max-width: 60% !important; max-height: 150px !important; page-break-inside: avoid; }
-            .stats .stat-card { background: rgba(0,0,0,0.1); print-color-adjust: exact; }
-            .btn-pdf { display: inline-block !important; background: #ef4444; color: white; print-color-adjust: exact; }
+            html, body {
+                background: white !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                min-height: auto !important;
+                overflow: visible !important;
+            }
+            .quiz-wrapper {
+                max-width: 100% !important;
+                margin: 0 !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                background: white !important;
+                overflow: visible !important;
+                border: none !important;
+            }
+            #startScreen, #quizContainer { display: none !important; }
+            #resultContainer { display: block !important; }
+            .header-bar .top-buttons,
+            .header-bar .timer-box,
+            .palette-area,
+            .nav-buttons,
+            .btn:not(.btn-pdf),
+            .icon-btn,
+            .flex-buttons .btn:not(.btn-pdf) { display: none !important; }
+            .result-dashboard {
+                background: #064e3b !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+                break-inside: avoid;
+            }
+            .review-card {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                border: 1px solid #ccc;
+                margin-bottom: 15px;
+            }
+            .review-question-img {
+                max-width: 60% !important;
+                max-height: 150px !important;
+                page-break-inside: avoid;
+            }
+            .stats .stat-card {
+                background: rgba(0,0,0,0.1);
+                print-color-adjust: exact;
+            }
             a, button { text-decoration: none; }
             @page { size: A4; margin: 1.5cm; }
         }
@@ -155,6 +201,7 @@
             <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
                 <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
                 <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button id="downloadPdfBtn" class="btn btn-pdf" onclick="downloadPDFWithImages()">📄 Download PDF</button>
             </div>
         </div>
         <div style="padding:0 1.2rem 1.2rem 1.2rem;">
@@ -376,7 +423,7 @@
             <div>${optsHtml}</div>
         `;
         updateNavButtons(); updatePalette();
-        if(window.MathJax) MathJax.typesetPromise();
+        if (window.MathJax) MathJax.typesetPromise().catch(function(e){ console.error(e); });
     }
 
     function selectOption(optIndex) {
@@ -454,7 +501,41 @@
                     </div>`;
         }
         document.getElementById('reviewList').innerHTML = html;
-        if(window.MathJax) MathJax.typesetPromise();
+        if (window.MathJax) MathJax.typesetPromise().catch(function(e){ console.error(e); });
+    }
+
+    // ✅ PATCH 3: Added checkForReview() — called from Kotlin HtmlQuizActivity
+    function checkForReview() {
+        if (typeof injectedAnswers !== 'undefined' && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        }
+        isSubmitted = true;
+        quizActive = false;
+        document.getElementById('startScreen').style.display = 'none';
+        document.getElementById('quizContainer').style.display = 'none';
+        document.getElementById('resultContainer').style.display = 'block';
+
+        let correct = 0, incorrect = 0, na = 0;
+        for (let i = 0; i < QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+                const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = QUESTIONS.length ? (correct / QUESTIONS.length) * 100 : 0;
+
+        document.getElementById('finalScore').innerText = finalScore;
+        document.getElementById('correctCountStat').innerText = correct;
+        document.getElementById('incorrectCountStat').innerText = incorrect;
+        document.getElementById('notAttemptedStat').innerText = na;
+        document.getElementById('accuracySpan').innerHTML = acc.toFixed(1) + '%';
+        document.getElementById('resultTopicName').innerHTML = '📖 Topic: ' + dashboard.topic;
+        const pct = QUESTIONS.length ? (finalScore / QUESTIONS.length) * 100 : 0;
+        document.getElementById('scoreRing').style.setProperty('--score-percent', pct + '%');
+
+        buildDetailedReview();
+        if (window.MathJax) MathJax.typesetPromise().catch(function(e){ console.error(e); });
     }
 
     function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
@@ -500,6 +581,8 @@
                     wrong: incorrect,
                     skipped: na,
                     total: QUESTIONS.length,
+                    score: finalScore,
+                    answers: userAnswers,
                     stayOnScreen: true
                 }));
             }
@@ -554,7 +637,15 @@
 
     function downloadPDFWithImages() {
         alert(translations[currentLanguage].pdfAlert);
-        setTimeout(() => { window.print(); }, 100);
+        setTimeout(() => {
+            // Try Android native print first (full page A4)
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+            } else {
+                // Fallback: browser print
+                window.print();
+            }
+        }, 300);
     }
 
     renderDashboard();
