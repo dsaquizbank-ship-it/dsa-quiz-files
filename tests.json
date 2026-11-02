@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-02T04:22:53.440Z",
+  "version": "2026-11-02T04:27:40.354Z",
   "categories": [
     {
       "id": "BANK",
@@ -202,6 +202,12 @@
       "name": "UGTRB MATHS",
       "categoryId": "UGTRB",
       "order": 3
+    },
+    {
+      "id": "SSC-GS",
+      "name": "GENERAL SCIENCE",
+      "categoryId": "SSC",
+      "order": 5
     }
   ],
   "tests": [
@@ -715,6 +721,19 @@
       "questionCount": 20,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGE-49.html",
+      "releaseTimestamp": 1793606400000,
+      "language": "en"
+    },
+    {
+      "testId": "SGS-1",
+      "examId": "SSC-GS",
+      "name": "PHYSICS-UNITS, DIMENSIONS & FORMULAS SGS-1",
+      "topic": "PHYSICS-UNITS, DIMENSIONS & FORMULAS",
+      "durationMinutes": 10,
+      "order": 1,
+      "questionCount": 20,
+      "negativeMark": 0.5,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGS-1.html",
       "releaseTimestamp": 1793606400000,
       "language": "en"
     }
