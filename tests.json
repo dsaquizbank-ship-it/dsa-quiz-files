@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-02T10:11:44.407Z",
+  "version": "2026-11-02T10:43:19.542Z",
   "categories": [
     {
       "id": "BANK",
@@ -514,12 +514,14 @@
       "testId": "TIH-01",
       "examId": "TNPSC-IH",
       "name": "TIH-01 INDUS VALLEY CIVILIZATION (Set 1)",
+      "topic": "SIMPLIFICATION (Set-1)",
       "durationMinutes": 10,
       "order": 1,
       "questionCount": 20,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIH-01.html",
-      "releaseTimestamp": 1793606400000
+      "releaseTimestamp": 1793606400000,
+      "language": "both"
     },
     {
       "testId": "TIH-02",
