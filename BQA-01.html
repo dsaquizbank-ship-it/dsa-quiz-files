@@ -65,6 +65,10 @@
         .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
         .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
         .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px 0; border-top: 1px solid var(--border-light); }
+        .review-nav-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .review-nav-btn:disabled { background: var(--border-light); color: var(--text-primary); opacity: 0.5; cursor: not-allowed; }
+        .review-nav-text { font-weight: 600; font-size: 14px; color: var(--text-primary); }
         .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
         .btn-pdf { background: #ef4444; }
         .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
@@ -128,6 +132,11 @@
         <div style="padding:0 1.2rem 1.2rem 1.2rem;">
             <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
             <div id="reviewList"></div>
+            <div id="reviewPagination" class="review-nav-container" style="display: none;">
+                <button class="review-nav-btn" id="prevReviewBtn" onclick="navigateReview(-1)">◀ PREV</button>
+                <span class="review-nav-text" id="reviewPageText">1 / 25</span>
+                <button class="review-nav-btn" id="nextReviewBtn" onclick="navigateReview(1)">NEXT ▶</button>
+            </div>
         </div>
     </div>
 </div>
@@ -533,6 +542,7 @@ let QUESTIONS = [
             }
         }, 1000);
     }
+    let currentReviewIndex = 0;
     function buildDetailedReview() {
         let html = "";
         for (let i=0; i<QUESTIONS.length; i++) {
@@ -564,7 +574,7 @@ let QUESTIONS = [
                 imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
             });
             const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
-            html += `<div class="review-card">
+            html += `<div class="review-card" id="review-card-${i}" style="display: none;">
                         <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
                         ${passageHtml}
                         ${imgHtml}
@@ -579,6 +589,26 @@ let QUESTIONS = [
         document.querySelectorAll("#reviewList img").forEach(img => {
             if (!img.complete) { const pre = new Image(); pre.src = img.src; }
         });
+        currentReviewIndex = 0;
+        showReviewCard(currentReviewIndex);
+    }
+    function showReviewCard(index) {
+        const cards = document.querySelectorAll(".review-card");
+        if (cards.length === 0) return;
+        cards.forEach(c => c.style.display = "none");
+        cards[index].style.display = "block";
+        document.getElementById("reviewPageText").innerText = `${index + 1} / ${cards.length}`;
+        document.getElementById("prevReviewBtn").disabled = (index === 0);
+        document.getElementById("nextReviewBtn").disabled = (index === cards.length - 1);
+        document.getElementById("reviewPagination").style.display = "flex";
+        window.scrollTo(0, 0);
+    }
+    function navigateReview(direction) {
+        const cards = document.querySelectorAll(".review-card");
+        currentReviewIndex += direction;
+        if (currentReviewIndex >= 0 && currentReviewIndex < cards.length) {
+            showReviewCard(currentReviewIndex);
+        }
     }
     async function downloadPdfWithAssets(btn) {
         const originalText = btn ? btn.innerText : "📄 Download PDF";
@@ -596,6 +626,8 @@ let QUESTIONS = [
                     setTimeout(finish, 5000);
                 });
             }));
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
             await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
             if (window.AndroidBridge && window.AndroidBridge.printPage) window.AndroidBridge.printPage();
             else window.print();
