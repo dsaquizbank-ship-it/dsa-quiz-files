@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-01T18:27:22.780Z",
+  "version": "2026-11-02T02:08:33.080Z",
   "categories": [
     {
       "id": "BANK",
@@ -178,6 +178,12 @@
       "name": "GENERAL AWARENESS",
       "categoryId": "RRB",
       "order": 5
+    },
+    {
+      "id": "BANK-QA",
+      "name": "QUANTITATIVE APTITUDE",
+      "categoryId": "BANK",
+      "order": 2
     }
   ],
   "tests": [
@@ -628,6 +634,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGA-1.html",
       "releaseTimestamp": 1793606400000,
       "language": "both"
+    },
+    {
+      "testId": "BQA-01",
+      "examId": "BANK-QA",
+      "name": "BQA-01 SIMPLIFICATION (Set-1)",
+      "topic": "SIMPLIFICATION (Set-1)",
+      "durationMinutes": 25,
+      "order": 1,
+      "questionCount": 25,
+      "negativeMark": 0.25,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BQA-01.html",
+      "releaseTimestamp": 1793606400000,
+      "language": "en"
     }
   ]
 }
