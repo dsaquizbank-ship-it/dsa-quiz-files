@@ -51,7 +51,16 @@
         .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
         .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
         .stat-number { font-size: 1.6rem; font-weight: 800; }
-        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card { background: #1E1E1E; border-radius: 12px; padding: 16px; margin-bottom: 16px; border: 1px solid #333; color: #E0E0E0; box-shadow: none; }
+        .review-card strong { color: #FFFFFF; font-size: 16px; }
+        .review-card .option-item { background-color: #242424; border: 1px solid #333; color: #B0B0B0; border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: #1b3d22; border: 1px solid #28a745; color: #68d391; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: #3d1b1b; border: 1px solid #dc3545; color: #f87171; }
+        .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
+        .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
+        .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
+        .review-card .your-answer { font-size: 13px; color: #9ca3af; margin-top: 12px; margin-bottom: 4px; }
+        .review-card .correct-answer { font-size: 13px; color: #9ca3af; margin-bottom: 12px; }
         .correct-option { font-weight: bold; color: var(--correct-color); }
         .btn-pdf { background: #ef4444; }
         .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
@@ -529,13 +538,11 @@ let QUESTIONS = [
             const optsArray = getCurrentOptions(q) || [];
             let optsHtml = "";
             optsArray.forEach((_, idx) => {
-                let marker = "";
-                if (idx === corr) marker = " ✅ (Correct)";
-                if (u === idx && idx !== corr) marker = " ❌ (Your choice)";
-                else if (u === idx && idx === corr) marker = " ✅ (Correct)";
-                const styleClass = (idx === corr) ? "correct-option" : "";
-                const userWrongStyle = (u === idx && idx !== corr) ? "color:#ef4444;" : "";
-                optsHtml += `<div class="${styleClass}" style="${userWrongStyle}">${String.fromCharCode(65+idx)}. ${optsArray[idx]}${marker}</div>`;
+                let cssClass = "option-item";
+                let markerHtml = "";
+                if (idx === corr) { cssClass += " correct"; markerHtml = "<div class='marker'>✔</div>"; }
+                else if (u === idx && idx !== corr) { cssClass += " wrong"; markerHtml = "<div class='marker'>✖</div>"; }
+                optsHtml += `<div class="${cssClass}"><span>${String.fromCharCode(65+idx)}. ${optsArray[idx]}</span>${markerHtml}</div>`;
             });
             let passageHtml = "";
             if (q.type === "rc") {
@@ -552,13 +559,14 @@ let QUESTIONS = [
                 let safeUrl = getSafeImageUrl(url);
                 imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
             });
-            const userAns = (u !== null && u !== undefined) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
-            html += `<div class="review-card" style="border-left-color:${isCorr?"#10b981":"#ef4444"}">
+            const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card">
                         <strong>Q${i+1}. ${txt}</strong>
                         ${passageHtml}
                         ${imgHtml}
-                        <div style="margin-top:8px;"><strong>Your answer:</strong> ${userAns}</div>
-                        <div><strong>Correct:</strong> ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        <div class="your-answer">Your Answer: ${userAns}</div>
+                        <div class="correct-answer">Correct Answer: ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        ${optsHtml}
                     </div>`;
         }
         document.getElementById("reviewList").innerHTML = html;
