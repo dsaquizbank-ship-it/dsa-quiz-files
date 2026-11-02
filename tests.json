@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-02T02:10:30.869Z",
+  "version": "2026-11-02T02:12:53.139Z",
   "categories": [
     {
       "id": "BANK",
@@ -189,6 +189,12 @@
       "id": "RRB-QA",
       "name": "QUANTITATIVE APTITUDE",
       "categoryId": "RRB",
+      "order": 2
+    },
+    {
+      "id": "SSC-QA",
+      "name": "QUANTITATIVE APTITUDE",
+      "categoryId": "SSC",
       "order": 2
     }
   ],
@@ -664,6 +670,19 @@
       "questionCount": 25,
       "negativeMark": 0.33,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RQA-01.html",
+      "releaseTimestamp": 1793606400000,
+      "language": "en"
+    },
+    {
+      "testId": "SQA-01",
+      "examId": "SSC-QA",
+      "name": "SQA-01 SIMPLIFICATION",
+      "topic": "SIMPLIFICATION (Set-1)",
+      "durationMinutes": 25,
+      "order": 1,
+      "questionCount": 25,
+      "negativeMark": 0.25,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SQA-01.html",
       "releaseTimestamp": 1793606400000,
       "language": "en"
     }
