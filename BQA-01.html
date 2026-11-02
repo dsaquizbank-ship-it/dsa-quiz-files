@@ -446,6 +446,9 @@ let QUESTIONS = [
         document.getElementById("resultContainer").style.display = "none";
     }
     function clearAllAndRestart() {
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
         try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
         document.getElementById("resultContainer").style.display = "none";
         document.getElementById("startScreen").style.display = "flex";
@@ -645,8 +648,16 @@ let QUESTIONS = [
             document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
             document.getElementById("reviewPagination").style.display = "none";
             await new Promise(r => setTimeout(r, 300));
-            if (window.AndroidBridge && window.AndroidBridge.printPage) {
-                window.AndroidBridge.printPage();
+            if (window.AndroidBridge && window.AndroidBridge.saveExamPdf) {
+                const clone = document.documentElement.cloneNode(true);
+                const elementsToRemove = clone.querySelectorAll("#startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard");
+                elementsToRemove.forEach(el => el.remove());
+                const printHeader = clone.querySelector("#printHeader");
+                if (printHeader) printHeader.style.display = "block";
+                const htmlString = "<!DOCTYPE html>
+" + clone.outerHTML;
+                window.AndroidBridge.saveExamPdf(dashboard.testNo, dashboard.examTitle, htmlString);
+                alert("✅ Exam PDF Saved! You can view it in My Profile -> My Exams.");
             } else {
                 window.print();
             }
@@ -723,6 +734,7 @@ let QUESTIONS = [
         document.getElementById("startScreen").style.display = "none";
         document.getElementById("quizContainer").style.display = "none";
         document.getElementById("resultContainer").style.display = "block";
+        history.pushState({ resultPage: true }, "", "#result");
     }
     function startNewExam() {
         try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
@@ -748,6 +760,14 @@ let QUESTIONS = [
     document.documentElement.setAttribute("data-theme", "dark");
     updateUILanguage();
     checkForAutoResume();
+    window.addEventListener("popstate", function(e) {
+        if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+            history.pushState({ resultPage: true }, "", "#result");
+            if (confirm("Do you want to leave the result page? Your results will be lost.")) {
+                history.go(-2);
+            }
+        }
+    });
     window.checkForReview = function() {
         if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
             userAnswers = injectedAnswers;
