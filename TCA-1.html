@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>TCA-1</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]], displayMath: [["$$", "$$"], ["\\[", "\\]"]] },
+            options: { ignoreHtmlClass: "no-mathjax" }
+        };
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(145deg, #f0fdf4, #dcfce7); --card-bg: #ffffff; --text-primary: #14532d; --border-light: #bbf7d0; --accent: #10b981; --accent-dark: #059669; --timer-bg: #fef3c7; --timer-text: #b45309; --palette-btn: #f0fdf4; --shadow: 0 10px 25px -5px rgba(0,0,0,0.1); --correct-color: #dc2626; --modal-overlay: rgba(0,0,0,0.5); --rc-bg: #f8fafc; --rc-border: #3b82f6; --puzzle-bg: #fffbeb; --puzzle-border: #f59e0b; }
+        [data-theme="dark"] { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; background: linear-gradient(135deg, #059669, #10b981); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.5; }
+        .option-item { background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .correct-option { font-weight: bold; color: var(--correct-color); }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        mark { background-color: #fef08a; color: #000; padding: 0 4px; border-radius: 3px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { body { background: white !important; color: black !important; } .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn:not(.btn-pdf), .icon-btn { display: none !important; } .review-card { break-inside: avoid; } }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">25:00</div>
+            <div class="top-buttons">
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 Dark", lightMode: "☀️ Light" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 இருண்ட", lightMode: "☀️ ஒளி" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "CURRENT AFFAIRS",
+        testNo: "TCA-1",
+        date: new Date().toLocaleDateString("en-GB"),
+        subject: "CURRENT AFFAIRS",
+        topic: "SEPTEMBER",
+        duration: "20",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "Who was appointed as Executive Director of RBI with effect from 1 September 2026?",
+    "ta": "செப்டம்பர் 1, 2026 முதல் ரிசர்வ் வங்கியின் நிர்வாக இயக்குநராக நியமிக்கப்பட்டவர் யார்?",
+    "optionsEn": ["Mandeep K Bhandari", "Suman Ray", "Rajat Sharma", "N. Chandrasekaran"],
+    "optionsTa": ["மன்தீப் கே பண்டாரி", "சுமன் ரே", "ராஜத் சர்மா", "என். சந்திரசேகரன்"],
+    "answer": 1
+  },
+  {
+    "type": "match",
+    "en": "Match the following (Newly Appointed Chief Justices):<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>List-I (Chief Justice)</b></td><td style='width:50%; padding:6px 0;'><b>List-II (High Court)</b></td></tr><tr><td style='padding:6px 0;'>a) Valluri Kameswar Rao</td><td style='padding:6px 0;'>1. Bombay High Court</td></tr><tr><td style='padding:6px 0;'>b) Ravindra V. Ghuge</td><td style='padding:6px 0;'>2. Patna High Court</td></tr><tr><td style='padding:6px 0;'>c) Sanjay Kumar Agrawal</td><td style='padding:6px 0;'>3. Calcutta High Court</td></tr><tr><td style='padding:6px 0;'>d) Mahesh Chandra Tripathi</td><td style='padding:6px 0;'>4. Rajasthan High Court</td></tr></table>",
+    "ta": "பின்வருவனவற்றைப் பொருத்துக (புதிதாக நியமிக்கப்பட்ட தலைமை நீதிபதிகள்):<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>பட்டியல்-I (தலைமை நீதிபதி)</b></td><td style='width:50%; padding:6px 0;'><b>பட்டியல்-II (உயர் நீதிமன்றம்)</b></td></tr><tr><td style='padding:6px 0;'>a) வல்லூரி காமேஸ்வர் ராவ்</td><td style='padding:6px 0;'>1. பம்பாய் உயர் நீதிமன்றம்</td></tr><tr><td style='padding:6px 0;'>b) ரவீந்திர வி. குகே</td><td style='padding:6px 0;'>2. பாட்னா உயர் நீதிமன்றம்</td></tr><tr><td style='padding:6px 0;'>c) சஞ்சய் குமார் அகர்வால்</td><td style='padding:6px 0;'>3. கல்கத்தா உயர் நீதிமன்றம்</td></tr><tr><td style='padding:6px 0;'>d) மகேஷ் சந்திர திரிபாதி</td><td style='padding:6px 0;'>4. ராஜஸ்தான் உயர் நீதிமன்றம்</td></tr></table>",
+    "optionsEn": ["a-2, b-3, c-4, d-1", "a-3, b-2, c-1, d-4", "a-1, b-4, c-2, d-3", "a-4, b-1, c-3, d-2"],
+    "optionsTa": ["a-2, b-3, c-4, d-1", "a-3, b-2, c-1, d-4", "a-1, b-4, c-2, d-3", "a-4, b-1, c-3, d-2"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Who became the first woman Inspector General to head the CRPF's elite CoBRA unit?",
+    "ta": "CRPF-இன் உயரடுக்கு CoBRA பிரிவுக்குத் தலைமை தாங்கிய முதல் பெண் இன்ஸ்பெக்டர் ஜெனரல் யார்?",
+    "optionsEn": ["Major Navya Shekhawat", "Kaziah Liz Mejo", "Fatima Zahra El Mansouri", "Sanjukta Parashar"],
+    "optionsTa": ["மேஜர் நவ்யா ஷேகாவத்", "காஜியா லிஸ் மெஜோ", "பாத்திமா சஹ்ரா எல் மான்சூரி", "சஞ்சுக்தா பராஷர்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statements is/are correct regarding the DURGA E-Auto Scheme 2026?<br><br>1. It was approved by the Delhi Cabinet.<br>2. It aims to promote self-employment among women and transgender persons.<br>3. It encourages clean and safe urban transport.",
+    "ta": "துர்கா இ-ஆட்டோ திட்டம் 2026 தொடர்பாக பின்வரும் கூற்றுகளில் எது/எவை சரியானது?<br><br>1. இது டெல்லி அமைச்சரவையால் அங்கீகரிக்கப்பட்டது.<br>2. இது பெண்கள் மற்றும் திருநங்கைகளிடையே சுயதொழில் முன்னெடுப்பை ஊக்குவிப்பதை நோக்கமாகக் கொண்டுள்ளது.<br>3. இது தூய்மையான மற்றும் பாதுகாப்பான நகர்ப்புறப் போக்குவரத்தை ஊக்குவிக்கிறது.",
+    "optionsEn": ["1 and 2 only", "2 and 3 only", "1, 2 and 3", "1 and 3 only"],
+    "optionsTa": ["1 மற்றும் 2 மட்டும்", "2 மற்றும் 3 மட்டும்", "1, 2 மற்றும் 3", "1 மற்றும் 3 மட்டும்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Who was appointed as the first full-time CEO of the Shri Ram Janmabhoomi Teerth Kshetra Trust?",
+    "ta": "ஸ்ரீ ராம் ஜென்மபூமி தீர்த்த சேத்திர அறக்கட்டளையின் முதல் முழுநேர தலைமைச் செயல் அதிகாரியாக நியமிக்கப்பட்டவர் யார்?",
+    "optionsEn": ["Dr. Dinesh Sharma", "Air Marshal (Retd.) Jeetendra Mishra", "Valluri Kameswar Rao", "Mahesh Chandra Tripathi"],
+    "optionsTa": ["டாக்டர். தினேஷ் சர்மா", "ஏர் மார்ஷல் (ஓய்வு) ஜிதேந்திர மிஸ்ரா", "வல்லூரி காமேஸ்வர் ராவ்", "மகேஷ் சந்திர திரிபாதி"],
+    "answer": 1
+  },
+  {
+    "type": "match",
+    "en": "Match the following (2026 Grand Slam Singles Winners):<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>List-I (Tournament)</b></td><td style='width:50%; padding:6px 0;'><b>List-II (Men's Singles Winner)</b></td></tr><tr><td style='padding:6px 0;'>a) Australian Open</td><td style='padding:6px 0;'>1. Alexander Zverev</td></tr><tr><td style='padding:6px 0;'>b) French Open</td><td style='padding:6px 0;'>2. Carlos Alcaraz</td></tr><tr><td style='padding:6px 0;'>c) Wimbledon</td><td style='padding:6px 0;'>3. Jannik Sinner</td></tr><tr><td style='padding:6px 0;'>d) US Open</td><td style='padding:6px 0;'>4. Alexander Zverev</td></tr></table>",
+    "ta": "பின்வருவனவற்றைப் பொருத்துக (2026 கிராண்ட் ஸ்லாம் ஒற்றையர் வெற்றியாளர்கள்):<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>பட்டியல்-I (போட்டி)</b></td><td style='width:50%; padding:6px 0;'><b>பட்டியல்-II (ஆண்கள் ஒற்றையர் வெற்றியாளர்)</b></td></tr><tr><td style='padding:6px 0;'>a) ஆஸ்திரேலிய ஓபன்</td><td style='padding:6px 0;'>1. அலெக்சாண்டர் ஸ்வெரெவ்</td></tr><tr><td style='padding:6px 0;'>b) பிரெஞ்சு ஓபன்</td><td style='padding:6px 0;'>2. கார்லோஸ் அல்காரஸ்</td></tr><tr><td style='padding:6px 0;'>c) விம்பிள்டன்</td><td style='padding:6px 0;'>3. ஜானிக் சின்னர்</td></tr><tr><td style='padding:6px 0;'>d) யூஎஸ் ஓபன்</td><td style='padding:6px 0;'>4. அலெக்சாண்டர் ஸ்வெரெவ்</td></tr></table>",
+    "optionsEn": ["a-2, b-1, c-3, d-4", "a-1, b-2, c-4, d-3", "a-3, b-4, c-1, d-2", "a-4, b-3, c-2, d-1"],
+    "optionsTa": ["a-2, b-1, c-3, d-4", "a-1, b-2, c-4, d-3", "a-3, b-4, c-1, d-2", "a-4, b-3, c-2, d-1"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Who became the first female Indian Army officer appointed as Aide-de-Camp (ADC) to President Droupadi Murmu?",
+    "ta": "குடியரசுத் தலைவர் திரௌபதி முர்முவிற்கு உதவி முகாம் அதிகாரியாக (ADC) நியமிக்கப்பட்ட முதல் பெண் இந்திய ராணுவ அதிகாரி யார்?",
+    "optionsEn": ["Sanjukta Parashar", "Fatima Zahra El Mansouri", "Mandeep K Bhandari", "Major Navya Shekhawat"],
+    "optionsTa": ["சஞ்சுக்தா பராஷர்", "பாத்திமா சஹ்ரா எல் மான்சூரி", "மன்தீப் கே பண்டாரி", "மேஜர் நவ்யா ஷேகாவத்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements about the BRICS Summit 2026:<br><br>1. It was the 18th edition and hosted by India in Delhi.<br>2. The theme was \"Building for Resilience, Innovation, Cooperation and Sustainability\".<br>3. BRICS had 11 members at that time.<br><br>Which of the statements given above are correct?",
+    "ta": "BRICS மாநாடு 2026 பற்றிய பின்வரும் கூற்றுகளைக் கவனியுங்கள்:<br><br>1. இது 18வது பதிப்பாகும், இந்தியாவால் டெல்லியில் நடத்தப்பட்டது.<br>2. கருப்பொருள் \"மீள்திறன், புதுமை, ஒத்துழைப்பு மற்றும் நிலைத்தன்மைக்காகக் கட்டியெழுப்புதல்\" என்பதாகும்.<br>3. அந்த நேரத்தில் BRICS-ல் 11 உறுப்பினர்கள் இருந்தனர்.<br><br>மேற்கூறிய கூற்றுகளில் எவை சரியானவை?",
+    "optionsEn": ["1 and 2 only", "2 and 3 only", "1, 2 and 3", "1 and 3 only"],
+    "optionsTa": ["1 மற்றும் 2 மட்டும்", "2 மற்றும் 3 மட்டும்", "1, 2 மற்றும் 3", "1 மற்றும் 3 மட்டும்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Who was appointed as the new Lieutenant Governor of the Andaman and Nicobar Islands?",
+    "ta": "அந்தமான் நிக்கோபார் தீவுகளின் புதிய துணைநிலை ஆளுநராக நியமிக்கப்பட்டவர் யார்?",
+    "optionsEn": ["Dr. Dinesh Sharma", "Air Marshal (Retd.) Jeetendra Mishra", "Rajat Sharma", "Mandeep K Bhandari"],
+    "optionsTa": ["டாக்டர். தினேஷ் சர்மா", "ஏர் மார்ஷல் (ஓய்வு) ஜிதேந்திர மிஸ்ரா", "ராஜத் சர்மா", "மன்தீப் கே பண்டாரி"],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "Match the following (Military Exercises):<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>List-I (Exercise)</b></td><td style='width:50%; padding:6px 0;'><b>List-II (Partner Country)</b></td></tr><tr><td style='padding:6px 0;'>a) Veer Guardian 2026</td><td style='padding:6px 0;'>1. Kazakhstan</td></tr><tr><td style='padding:6px 0;'>b) SLINEX-26</td><td style='padding:6px 0;'>2. Japan</td></tr><tr><td style='padding:6px 0;'>c) KAZIND-2026</td><td style='padding:6px 0;'>3. Sri Lanka</td></tr><tr><td style='padding:6px 0;'>d) Yudh Abhyas 2026</td><td style='padding:6px 0;'>4. United States</td></tr></table>",
+    "ta": "பின்வருவனவற்றைப் பொருத்துக (ராணுவப் பயிற்சிகள்):<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>பட்டியல்-I (பயிற்சி)</b></td><td style='width:50%; padding:6px 0;'><b>பட்டியல்-II (கூட்டாளி நாடு)</b></td></tr><tr><td style='padding:6px 0;'>a) வீர் கார்டியன் 2026</td><td style='padding:6px 0;'>1. கஜகஸ்தான்</td></tr><tr><td style='padding:6px 0;'>b) SLINEX-26</td><td style='padding:6px 0;'>2. ஜப்பான்</td></tr><tr><td style='padding:6px 0;'>c) KAZIND-2026</td><td style='padding:6px 0;'>3. இலங்கை</td></tr><tr><td style='padding:6px 0;'>d) யுத் அப்யாஸ் 2026</td><td style='padding:6px 0;'>4. அமெரிக்கா</td></tr></table>",
+    "optionsEn": ["a-4, b-1, c-3, d-2", "a-3, b-2, c-4, d-1", "a-1, b-4, c-2, d-3", "a-2, b-3, c-1, d-4"],
+    "optionsTa": ["a-4, b-1, c-3, d-2", "a-3, b-2, c-4, d-1", "a-1, b-4, c-2, d-3", "a-2, b-3, c-1, d-4"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Who was appointed as Morocco's first woman Prime Minister?",
+    "ta": "மொராக்கோவின் முதல் பெண் பிரதமராக நியமிக்கப்பட்டவர் யார்?",
+    "optionsEn": ["Elena Rybakina", "Giorgia Meloni", "Fatima Zahra El Mansouri", "Runa Khan"],
+    "optionsTa": ["எலினா ரைபாகினா", "ஜியோர்ஜியா மெலோனி", "பாத்திமா சஹ்ரா எல் மான்சூரி", "ருனா கான்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements:<br><br>1. Lucknow secured the 1st position in the 5th Swachh Vayu Sarvekshan 2026.<br>2. The survey is organised under the National Clean Air Programme (NCAP).<br>3. Indore secured the 2nd position.<br><br>Which of the statements given above are correct?",
+    "ta": "பின்வரும் கூற்றுகளைக் கவனியுங்கள்:<br><br>1. 5வது சுவச் வாயு சர்வேக்ஷன் 2026 இல் லக்னோ 1வது இடத்தைப் பிடித்தது.<br>2. இந்த ஆய்வு தேசிய தூய்மையான காற்று திட்டத்தின் (NCAP) கீழ் ஏற்பாடு செய்யப்பட்டுள்ளது.<br>3. இந்தூர் 2வது இடத்தைப் பிடித்தது.<br><br>மேற்கூறிய கூற்றுகளில் எவை சரியானவை?",
+    "optionsEn": ["1 and 2 only", "1, 2 and 3", "1 and 3 only", "2 and 3 only"],
+    "optionsTa": ["1 மற்றும் 2 மட்டும்", "1, 2 மற்றும் 3", "1 மற்றும் 3 மட்டும்", "2 மற்றும் 3 மட்டும்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Who became the CEO of Apple on 1 September 2026, succeeding Tim Cook?",
+    "ta": "டிம் குக்கிற்குப் பிறகு செப்டம்பர் 1, 2026 அன்று ஆப்பிளின் தலைமைச் செயல் அதிகாரியாக பொறுப்பேற்றவர் யார்?",
+    "optionsEn": ["Michael Kremer", "Luke Lindberg", "John Ternus", "Tommy Koh"],
+    "optionsTa": ["மைக்கேல் க்ரெமர்", "லூக் லிண்ட்பெர்க்", "ஜான் டெர்னஸ்", "டாமி கோ"],
+    "answer": 2
+  },
+  {
+    "type": "match",
+    "en": "Match the following (Important Days -- September):<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>List-I (Day)</b></td><td style='width:50%; padding:6px 0;'><b>List-II (Date)</b></td></tr><tr><td style='padding:6px 0;'>a) National Teachers' Day</td><td style='padding:6px 0;'>1. 15 September</td></tr><tr><td style='padding:6px 0;'>b) International Literacy Day</td><td style='padding:6px 0;'>2. 5 September</td></tr><tr><td style='padding:6px 0;'>c) Hindi Diwas</td><td style='padding:6px 0;'>3. 8 September</td></tr><tr><td style='padding:6px 0;'>d) Engineers' Day</td><td style='padding:6px 0;'>4. 14 September</td></tr></table>",
+    "ta": "பின்வருவனவற்றைப் பொருத்துக (முக்கிய நாட்கள் -- செப்டம்பர்):<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>பட்டியல்-I (நாள்)</b></td><td style='width:50%; padding:6px 0;'><b>பட்டியல்-II (தேதி)</b></td></tr><tr><td style='padding:6px 0;'>a) தேசிய ஆசிரியர் தினம்</td><td style='padding:6px 0;'>1. செப்டம்பர் 15</td></tr><tr><td style='padding:6px 0;'>b) சர்வதேச எழுத்தறிவு தினம்</td><td style='padding:6px 0;'>2. செப்டம்பர் 5</td></tr><tr><td style='padding:6px 0;'>c) இந்தி திவாஸ்</td><td style='padding:6px 0;'>3. செப்டம்பர் 8</td></tr><tr><td style='padding:6px 0;'>d) பொறியாளர்கள் தினம்</td><td style='padding:6px 0;'>4. செப்டம்பர் 14</td></tr></table>",
+    "optionsEn": ["a-2, b-3, c-4, d-1", "a-3, b-2, c-1, d-4", "a-1, b-4, c-2, d-3", "a-4, b-1, c-3, d-2"],
+    "optionsTa": ["a-2, b-3, c-4, d-1", "a-3, b-2, c-1, d-4", "a-1, b-4, c-2, d-3", "a-4, b-1, c-3, d-2"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "India's first port-based e-methanol production facility is being developed at",
+    "ta": "இந்தியாவின் முதல் துறைமுகம் சார்ந்த மின்-மெத்தனால் உற்பத்தி ஆலை எங்கே உருவாக்கப்படுகிறது?",
+    "optionsEn": ["Paradip Port", "Deendayal Port Authority (Kandla), Gujarat", "Jawaharlal Nehru Port", "Chennai Port"],
+    "optionsTa": ["பாரதீப் துறைமுகம்", "தீன்தயாள் துறைமுக ஆணையம் (காண்ட்லா), குஜராத்", "ஜவஹர்லால் நேரு துறைமுகம்", "சென்னை துறைமுகம்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements about the Archery World Cup Final 2026:<br><br>1. Dheeraj Bommadevar won the gold medal.<br>2. He became the first Indian male recurve archer to win this title.<br>3. The event was held in Saltillo, Mexico.<br><br>Which of the statements given above are correct?",
+    "ta": "வில்வித்தை உலகக் கோப்பை இறுதிப் போட்டி 2026 பற்றிய பின்வரும் கூற்றுகளைக் கவனியுங்கள்:<br><br>1. தீரஜ் பொம்மதேவர் தங்கப் பதக்கத்தை வென்றார்.<br>2. இந்தப் பட்டத்தை வென்ற முதல் இந்திய ஆண் ரிகர்வ் வில்வித்தை வீரர் ஆனார்.<br>3. இந்த நிகழ்வு மெக்சிகோவின் சால்டில்லோவில் நடைபெற்றது.<br><br>மேற்கூறிய கூற்றுகளில் எவை சரியானவை?",
+    "optionsEn": ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    "optionsTa": ["1 மற்றும் 2 மட்டும்", "2 மற்றும் 3 மட்டும்", "1 மற்றும் 3 மட்டும்", "1, 2 மற்றும் 3"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "India's first LNG-powered train was flagged off from",
+    "ta": "இந்தியாவின் முதல் LNG இயக்கப்படும் ரயில் எங்கிருந்து கொடியசைத்து தொடங்கி வைக்கப்பட்டது?",
+    "optionsEn": ["New Delhi", "Sabarmati Railway Station, Ahmedabad", "Howrah", "Chennai Central"],
+    "optionsTa": ["புது டெல்லி", "சபர்மதி ரயில் நிலையம், அகமதாபாத்", "ஹவுரா", "சென்னை சென்ட்ரல்"],
+    "answer": 1
+  },
+  {
+    "type": "match",
+    "en": "Match the following (Awards / Honours):<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>List-I</b></td><td style='width:50%; padding:6px 0;'><b>List-II</b></td></tr><tr><td style='padding:6px 0;'>a) Dadasaheb Phalke Award 2024</td><td style='padding:6px 0;'>1. Justice Dipak Misra</td></tr><tr><td style='padding:6px 0;'>b) Order of Oliy Darajali Do'stlik</td><td style='padding:6px 0;'>2. Anant Nag</td></tr><tr><td style='padding:6px 0;'>c) Kalinga Ratna Award 2026</td><td style='padding:6px 0;'>3. PM Narendra Modi</td></tr><tr><td style='padding:6px 0;'>d) National Lata Mangeshkar Award 2026</td><td style='padding:6px 0;'>4. Shantanu Moitra</td></tr></table>",
+    "ta": "பின்வருவனவற்றைப் பொருத்துக (விருதுகள் / கவுரவங்கள்):<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>பட்டியல்-I</b></td><td style='width:50%; padding:6px 0;'><b>பட்டியல்-II</b></td></tr><tr><td style='padding:6px 0;'>a) தாதாசாகேப் பால்கே விருது 2024</td><td style='padding:6px 0;'>1. நீதிபதி தீபக் மிஸ்ரா</td></tr><tr><td style='padding:6px 0;'>b) ஆர்டர் ஆஃப் ஒலிய் தரஜலி தோஸ்ட்லிக்</td><td style='padding:6px 0;'>2. அனந்த் நாக்</td></tr><tr><td style='padding:6px 0;'>c) கலிங்க ரத்னா விருது 2026</td><td style='padding:6px 0;'>3. பிரதமர் நரேந்திர மோடி</td></tr><tr><td style='padding:6px 0;'>d) தேசிய லதா மங்கேஷ்கர் விருது 2026</td><td style='padding:6px 0;'>4. சாந்தனு மொய்த்ரா</td></tr></table>",
+    "optionsEn": ["a-2, b-3, c-1, d-4", "a-3, b-2, c-4, d-1", "a-1, b-4, c-2, d-3", "a-4, b-1, c-3, d-2"],
+    "optionsTa": ["a-2, b-3, c-1, d-4", "a-3, b-2, c-4, d-1", "a-1, b-4, c-2, d-3", "a-4, b-1, c-3, d-2"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which Caribbean nation is set to become the first to adopt India's UPI technology?",
+    "ta": "இந்தியாவின் UPI தொழில்நுட்பத்தைப் பின்பற்றும் முதல் நாடாக மாறவிருக்கும் கரீபியன் நாடு எது?",
+    "optionsEn": ["Jamaica", "Barbados", "Trinidad and Tobago", "Bahamas"],
+    "optionsTa": ["ஜமைக்கா", "பார்படாஸ்", "டிரினிடாட் மற்றும் டொபாகோ", "பஹாமாஸ்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statements is/are correct about the MDR on UPI transactions announced by the Ministry of Finance?<br><br>1. 0.4% MDR will be charged on P2M transactions exceeding ₹2,000.<br>2. Maximum MDR is ₹300 per transaction for payments of ₹75,000 or more.<br>3. Person-to-Person (P2P) UPI transfers will also attract the same MDR.",
+    "ta": "நிதி அமைச்சகத்தால் அறிவிக்கப்பட்ட UPI பரிவர்த்தனைகளின் மீதான MDR பற்றி பின்வரும் கூற்றுகளில் எது/எவை சரியானது?<br><br>1. ₹2,000க்கு மேல் உள்ள P2M பரிவர்த்தனைகளுக்கு 0.4% MDR வசூலிக்கப்படும்.<br>2. ₹75,000 அல்லது அதற்கு மேற்பட்ட பணப்பட்டுவாடாவிற்கு ஒரு பரிவர்த்தனைக்கு அதிகபட்ச MDR ₹300 ஆகும்.<br>3. நபருக்கு-நபர் (P2P) UPI பரிமாற்றங்களுக்கும் அதே MDR பொருந்தும்.",
+    "optionsEn": ["1, 2 and 3", "2 and 3 only", "1 and 3 only", "1 and 2"],
+    "optionsTa": ["1, 2 மற்றும் 3", "2 மற்றும் 3 மட்டும்", "1 மற்றும் 3 மட்டும்", "1 மற்றும் 2"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which city will host Asia's first dedicated Telecom Manufacturing Zone?",
+    "ta": "ஆசியாவின் முதல் பிரத்யேக தொலைத்தொடர்பு உற்பத்தி மண்டலத்தை எந்த நகரம் நடத்தும்?",
+    "optionsEn": ["Bengaluru", "Gwalior, Madhya Pradesh", "Hyderabad", "Pune"],
+    "optionsTa": ["பெங்களூரு", "குவாலியர், மத்தியப் பிரதேசம்", "ஹைதராபாத்", "புனே"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "COP31 (2026) of UNFCCC will be held in",
+    "ta": "UNFCCC-இன் COP31 (2026) எங்கே நடைபெறும்?",
+    "optionsEn": ["Ulaanbaatar, Mongolia", "Rome, Italy", "Bishkek, Kyrgyzstan", "Antalya, Türkiye"],
+    "ta": "உலான் படார், மங்கோலியா",
+    "optionsEn": ["Ulaanbaatar, Mongolia", "Rome, Italy", "Bishkek, Kyrgyzstan", "Antalya, Türkiye"],
+    "optionsTa": ["உலான் படார், மங்கோலியா", "ரோம், இத்தாலி", "பிஷ்கெக், கிர்கிஸ்தான்", "அந்தால்யா, துருக்கி"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements:<br><br>1. The 22nd edition of Yudh Abhyas 2026 was held between India and the United States.<br>2. Exercise Samudra Laksamana is a bilateral maritime exercise between India and Malaysia.<br>3. SLINEX-26 was the 13th edition of the India-Sri Lanka maritime exercise.<br><br>Which of the statements given above are correct?",
+    "ta": "பின்வரும் கூற்றுகளைக் கவனியுங்கள்:<br><br>1. யுத் அப்யாஸ் 2026 இன் 22வது பதிப்பு இந்தியா மற்றும் அமெரிக்காவுக்கு இடையே நடைபெற்றது.<br>2. சமுத்ரா லக்ஷ்மணா பயிற்சி என்பது இந்தியா மற்றும் மலேசியாவுக்கு இடையேயான இருமுனை கடல்சார் பயிற்சியாகும்.<br>3. SLINEX-26 என்பது இந்தியா-இலங்கை கடல்சார் பயிற்சியின் 13வது பதிப்பாகும்.<br><br>மேற்கூறிய கூற்றுகளில் எவை சரியானவை?",
+    "optionsEn": ["1 and 2 only", "2 and 3 only", "1, 2 and 3", "1 and 3 only"],
+    "optionsTa": ["1 மற்றும் 2 மட்டும்", "2 மற்றும் 3 மட்டும்", "1, 2 மற்றும் 3", "1 மற்றும் 3 மட்டும்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Who inaugurated the 5th edition of SEMICON India 2026?",
+    "ta": "செமிகான் இந்தியா 2026 இன் 5வது பதிப்பைத் தொடங்கி வைத்தவர் யார்?",
+    "optionsEn": ["Prime Minister Narendra Modi", "Union Home Minister Amit Shah", "Nitin Gadkari", "ISRO Chairman Dr. V. Narayanan"],
+    "optionsTa": ["பிரதமர் நரேந்திர மோடி", "மத்திய உள்துறை அமைச்சர் அமித் ஷா", "நிதின் கட்கரி", "இஸ்ரோ தலைவர் டாக்டர். வி. நாராயணன்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Who won the Men's Singles title at the US Open 2026?",
+    "ta": "யூஎஸ் ஓபன் 2026 இல் ஆண்கள் ஒற்றையர் பட்டத்தை வென்றவர் யார்?",
+    "optionsEn": ["Carlos Alcaraz", "Jannik Sinner", "Alexander Zverev", "Ben Shelton"],
+    "optionsTa": ["கார்லோஸ் அல்காரஸ்", "ஜானிக் சின்னர்", "அலெக்சாண்டர் ஸ்வெரெவ்", "பென் ஷெல்டன்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements about Important Days in September:<br><br>1. National Teachers' Day is observed on 5 September to mark the birth anniversary of Dr. S. Radhakrishnan.<br>2. World Ozone Day is observed on 16 September; the 2026 theme was \"Global Action for a Cooler Planet\".<br>3. World Maritime Day is observed on the final Thursday of September.<br><br>Which of the statements given above are correct?",
+    "ta": "செப்டம்பரில் உள்ள முக்கிய நாட்கள் பற்றிய பின்வரும் கூற்றுகளைக் கவனியுங்கள்:<br><br>1. டாக்டர். எஸ். ராதாகிருஷ்ணனின் பிறந்தநாளை நினைவுகூரும் வகையில் செப்டம்பர் 5 அன்று தேசிய ஆசிரியர் தினம் கடைப்பிடிக்கப்படுகிறது.<br>2. செப்டம்பர் 16 அன்று உலக ஓசோன் தினம் கடைப்பிடிக்கப்படுகிறது; 2026 ஆம் ஆண்டின் கருப்பொருள் \"குளிர்ந்த கோளுக்கான உலகளாவிய நடவடிக்கை\" ஆகும்.<br>3. செப்டம்பரின் கடைசி வியாழக்கிழமை அன்று உலக கடல்சார் தினம் கடைப்பிடிக்கப்படுகிறது.<br><br>மேற்கூறிய கூற்றுகளில் எவை சரியானவை?",
+    "optionsEn": ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    "optionsTa": ["1 மற்றும் 2 மட்டும்", "2 மற்றும் 3 மட்டும்", "1 மற்றும் 3 மட்டும்", "1, 2 மற்றும் 3"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statements is correct about India's performance in forest-related rankings (as highlighted at COFO-28, Rome, 2026)?",
+    "ta": "வனம் தொடர்பான தரவரிசைகளில் இந்தியாவின் செயல்திறன் குறித்து (COFO-28, ரோம், 2026 இல் எடுத்துக்காட்டப்பட்டபடி) பின்வரும் கூற்றுகளில் எது சரியானது?",
+    "optionsEn": ["India ranked 1st in total forest area and 9th in net annual forest gain.", "India ranked 9th in total forest area and 3rd in net annual forest gain.", "India ranked 3rd in total forest area and 9th in net annual forest gain.", "India ranked 5th in both categories."],
+    "optionsTa": ["மொத்த வனப் பரப்பளவில் இந்தியா 1வது இடத்திலும், நிகர ஆண்டு வன வளர்ச்சியில் 9வது இடத்திலும் உள்ளது.", "மொத்த வனப் பரப்பளவில் இந்தியா 9வது இடத்திலும், நிகர ஆண்டு வன வளர்ச்சியில் 3வது இடத்திலும் உள்ளது.", "மொத்த வனப் பரப்பளவில் இந்தியா 3வது இடத்திலும், நிகர ஆண்டு வன வளர்ச்சியில் 9வது இடத்திலும் உள்ளது.", "இந்தியா இரண்டு பிரிவுகளிலும் 5வது இடத்தில் உள்ளது."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "India won a record eighth Women's Asia Cup title by defeating",
+    "ta": "இந்தியா எந்த அணியை வீழ்த்தி சாதனையாக எட்டாவது மகளிர் ஆசியா கோப்பை பட்டத்தை வென்றது?",
+    "optionsEn": ["Sri Lanka", "Pakistan", "Bangladesh", "Thailand"],
+    "optionsTa": ["இலங்கை", "பாகிஸ்தான்", "வங்காளதேசம்", "தாய்லாந்து"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is correct regarding the Global Gender Gap Index 2026?",
+    "ta": "உலகளாவிய பாலின இடைவெளி குறியீடு 2026 தொடர்பாக பின்வருவனவற்றுள் எது சரியானது?",
+    "optionsEn": ["India ranked 106th out of 145 economies.", "India ranked 131st out of 145 economies.", "Iceland lost the top position.", "Norway ranked first."],
+    "optionsTa": ["145 பொருளாதாரங்களில் இந்தியா 106வது இடத்தைப் பிடித்தது.", "145 பொருளாதாரங்களில் இந்தியா 131வது இடத்தைப் பிடித்தது.", "ஐஸ்லாந்து முதல் இடத்தை இழந்தது.", "நார்வே முதல் இடத்தைப் பிடித்தது."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statements is correct?",
+    "ta": "பின்வரும் கூற்றுகளில் எது சரியானது?",
+    "optionsEn": ["Rangpur-Sivasagar Historical Ensemble was added to the UNESCO World Heritage List in 2026.", "The Ahom Dynasty ruled from 1826 to 1947.", "It is located in Nagaland.", "Rangpur-Sivasagar Historical Ensemble was added to the UNESCO World Heritage Tentative List in 2026."],
+    "optionsTa": ["ரங்க்பூர்-சிவசாகர் வரலாற்றுத் தொகுப்பு 2026 இல் யுனெஸ்கோ உலக பாரம்பரிய பட்டியலில் சேர்க்கப்பட்டது.", "அகோம் வம்சம் 1826 முதல் 1947 வரை ஆட்சி செய்தது.", "இது நாகாலாந்தில் அமைந்துள்ளது.", "ரங்க்பூர்-சிவசாகர் வரலாற்றுத் தொகுப்பு 2026 இல் யுனெஸ்கோ உலக பாரம்பரிய தற்காலிக பட்டியலில் சேர்க்கப்பட்டது."],
+    "answer": 3
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false;
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">${String.fromCharCode(65+i)}. ${opt}</div>`;
+        });
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+            </div>
+        `;
+        updateNavButtons(); updatePalette();
+        if (window.MathJax) MathJax.typesetPromise();
+        initImageZoom();
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) return;
+        userAnswers[currentIndex] = optIndex;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let marker = "";
+                if (idx === corr) marker = " ✅ (Correct)";
+                if (u === idx && idx !== corr) marker = " ❌ (Your choice)";
+                else if (u === idx && idx === corr) marker = " ✅ (Correct)";
+                const styleClass = (idx === corr) ? "correct-option" : "";
+                const userWrongStyle = (u === idx && idx !== corr) ? "color:#ef4444;" : "";
+                optsHtml += `<div class="${styleClass}" style="${userWrongStyle}">${String.fromCharCode(65+idx)}. ${optsArray[idx]}${marker}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" style="border-left-color:${isCorr?"#10b981":"#ef4444"}">
+                        <strong>Q${i+1}. ${txt}</strong>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div style="margin-top:8px;"><strong>Your answer:</strong> ${userAns}</div>
+                        <div><strong>Correct:</strong> ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { try { MathJax.typesetPromise(); } catch(e) {} }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            const imgs = Array.from(document.querySelectorAll("#reviewList img"));
+            await Promise.all(imgs.map(img => {
+                if (img.complete && img.naturalWidth > 0) return Promise.resolve();
+                return new Promise(resolve => {
+                    let done = false;
+                    const finish = () => { if (!done) { done = true; resolve(); } };
+                    img.addEventListener("load", finish, { once: true });
+                    img.addEventListener("error", finish, { once: true });
+                    setTimeout(finish, 5000);
+                });
+            }));
+            await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) window.AndroidBridge.printPage();
+            else window.print();
+        } catch (e) {
+            console.error("PDF export failed:", e);
+            alert("Could not prepare PDF. Please try again.");
+        } finally {
+            setTimeout(() => { if (btn) { btn.disabled = false; btn.innerText = originalText; } }, 800);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.checkForReview = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get("review") === "true") {
+            let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+            if (savedAnswers) {
+                try {
+                    userAnswers = JSON.parse(savedAnswers);
+                    try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+                } catch(e) { console.log("Error parsing answers: " + e.message); }
+            }
+            isSubmitted = true; quizActive = false;
+            document.getElementById("startScreen").style.display = "none";
+            document.getElementById("quizContainer").style.display = "none";
+            document.getElementById("resultContainer").style.display = "block";
+            let correct=0, incorrect=0, na=0;
+            for (let i=0; i<QUESTIONS.length; i++) {
+                if (userAnswers[i] === null || userAnswers[i] === undefined) na++;
+                else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+                else incorrect++;
+            }
+            const negMark = dashboard.negativeMark || 0;
+            const finalScore = correct - (incorrect * negMark);
+            const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+            document.getElementById("finalScore").innerText = finalScore;
+            document.getElementById("correctCountStat").innerText = correct;
+            document.getElementById("incorrectCountStat").innerText = incorrect;
+            document.getElementById("notAttemptedStat").innerText = na;
+            document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+            document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+            const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+            document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+            buildDetailedReview();
+        }
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
