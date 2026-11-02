@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>SGT-9-35</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]], displayMath: [["$$", "$$"], ["\\[", "\\]"]] },
+            options: { ignoreHtmlClass: "no-mathjax" }
+        };
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(145deg, #f0fdf4, #dcfce7); --card-bg: #ffffff; --text-primary: #14532d; --border-light: #bbf7d0; --accent: #10b981; --accent-dark: #059669; --timer-bg: #fef3c7; --timer-text: #b45309; --palette-btn: #f0fdf4; --shadow: 0 10px 25px -5px rgba(0,0,0,0.1); --correct-color: #dc2626; --modal-overlay: rgba(0,0,0,0.5); --rc-bg: #f8fafc; --rc-border: #3b82f6; --puzzle-bg: #fffbeb; --puzzle-border: #f59e0b; }
+        [data-theme="dark"] { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; background: linear-gradient(135deg, #059669, #10b981); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.5; }
+        .option-item { background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .correct-option { font-weight: bold; color: var(--correct-color); }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        mark { background-color: #fef08a; color: #000; padding: 0 4px; border-radius: 3px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { body { background: white !important; color: black !important; } .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn:not(.btn-pdf), .icon-btn { display: none !important; } .review-card { break-inside: avoid; } }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">25:00</div>
+            <div class="top-buttons">
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 Dark", lightMode: "☀️ Light" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English", darkMode: "🌙 இருண்ட", lightMode: "☀️ ஒளி" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "9TH",
+        testNo: "SGT-9-35",
+        date: new Date().toLocaleDateString("en-GB"),
+        subject: "9TH",
+        topic: "PHYSICS MEASUREMENT",
+        duration: "15",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "One metre is defined as the distance travelled by light through vacuum in",
+    "ta": "ஒரு மீட்டர் என்பது வெற்றிடத்தில் ஒளி பயணிக்கும் தூரமாக வரையறுக்கப்படுகிறது:",
+    "optionsEn": ["$1/299792458$s", "$1/29979245.8$s", "$299792458$s", "$1/3 \\times 10^{8}$s"],
+    "optionsTa": ["$1/299792458$s", "$1/29979245.8$s", "$299792458$s", "$1/3 \\times 10^{8}$s"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "The least count of a typical screw gauge is",
+    "ta": "வழக்கமான திருகு அளவியின் (screw gauge) மீச்சிற்றளவு என்ன?",
+    "optionsEn": ["$0.1$mm", "$0.01$cm", "$0.01$mm", "$0.001$mm"],
+    "optionsTa": ["$0.1$mm", "$0.01$cm", "$0.01$mm", "$0.001$mm"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "1 Parsec is equal to",
+    "ta": "1 பார்செக் எதற்குச் சமம்?",
+    "optionsEn": ["$3.26$light years", "$3.08 \\times 10^{16}$m", "$1.496 \\times 10^{11}$m", "both a and b"],
+    "optionsTa": ["$3.26$ ஒளி ஆண்டுகள்", "$3.08 \\times 10^{16}$m", "$1.496 \\times 10^{11}$m", "a மற்றும் b இரண்டும்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is <b>not</b> a fundamental quantity in the SI system?",
+    "ta": "பின்வருவனவற்றுள் எது SI முறையில் ஒரு அடிப்படை அளவு <b>இல்லை</b>?",
+    "optionsEn": ["Amount of substance", "Surface tension", "Luminous intensity", "Electric current"],
+    "optionsTa": ["பொருளின் அளவு", "மேற்பரப்பு இழுவிசை", "ஒளிச்செறிவு", "மின்னோட்டம்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Zero error of a Vernier caliper is positive when",
+    "ta": "வெர்னியர் அளவுகருவியின் பூச்சிய வழு எப்போது நேர்மறையாக இருக்கும்?",
+    "optionsEn": ["zero of Vernier is to the left of zero of main scale", "zero of Vernier is to the right of zero of main scale", "both zeros coincide", "fifth Vernier division coincides with main scale"],
+    "optionsTa": ["வெர்னியரின் பூச்சியம் பிரதான அளவுகோலின் பூச்சியத்திற்கு இடதுபுறம் இருக்கும்போது", "வெர்னியரின் பூச்சியம் பிரதான அளவுகோலின் பூச்சியத்திற்கு வலதுபுறம் இருக்கும்போது", "இரண்டு பூச்சியங்களும் ஒன்றிணையும்போது", "ஐந்தாவது வெர்னியர் பிரிவு பிரதான அளவுகோலுடன் ஒன்றிணையும்போது"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்",
+    "optionsEn": ["Astronomical unit -- $9.46 \\times 10^{15}$m", "Light year -- $1.496 \\times 10^{11}$m", "Parsec -- $3.08 \\times 10^{16}$m", "Fermi -- $10^{- 10}$m"],
+    "optionsTa": ["வானியல் அலகு -- $9.46 \\times 10^{15}$m", "ஒளி ஆண்டு -- $1.496 \\times 10^{11}$m", "பார்செக் -- $3.08 \\times 10^{16}$m", "ஃபெர்மி -- $10^{- 10}$m"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair (Unit -- Symbol)",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும் (அலகு -- குறியீடு)",
+    "optionsEn": ["Force -- kg m s⁻²", "Temperature -- °K", "Pressure -- N m", "Energy -- N"],
+    "optionsTa": ["விசை -- kg m s⁻²", "வெப்பநிலை -- °K", "அழுத்தம் -- N m", "ஆற்றல் -- N"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair regarding zero correction",
+    "ta": "பூச்சிய திருத்தம் தொடர்பான சரியான இணையைத் தேர்ந்தெடுக்கவும்",
+    "optionsEn": ["Positive zero error of Vernier -- zero correction is positive", "Negative zero error of screw gauge -- zero correction is negative", "Positive zero error of screw gauge -- zero correction is --(n × LC)", "Negative zero error of Vernier -- zero correction is positive"],
+    "optionsTa": ["வெர்னியரின் நேர்மறை பூச்சிய வழு -- பூச்சிய திருத்தம் நேர்மறை", "திருகு அளவியின் எதிர்மறை பூச்சிய வழு -- பூச்சிய திருத்தம் எதிர்மறை", "திருகு அளவியின் நேர்மறை பூச்சிய வழு -- பூச்சிய திருத்தம் --(n × LC)", "வெர்னியரின் எதிர்மறை பூச்சிய வழு -- பூச்சிய திருத்தம் நேர்மறை"],
+    "answer": 3
+  },
+  {
+    "type": "match",
+    "en": "Match the following and choose the correct option<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>LIST I</b></td><td style='width:50%; padding:6px 0;'><b>LIST II</b></td></tr><tr><td style='padding:6px 0;'>A. Pitch of screw gauge</td><td style='padding:6px 0;'>1. 0.01 mm</td></tr><tr><td style='padding:6px 0;'>B. Least count of Vernier</td><td style='padding:6px 0;'>2. 1 mm</td></tr><tr><td style='padding:6px 0;'>C. Least count of screw gauge</td><td style='padding:6px 0;'>3. 0.1 mm</td></tr><tr><td style='padding:6px 0;'>D. Common beam balance accuracy</td><td style='padding:6px 0;'>4. 5 g</td></tr></table>",
+    "ta": "பின்வருவனவற்றைப் பொருத்தி சரியான விருப்பத்தைத் தேர்ந்தெடுக்கவும்<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>பட்டியல் I</b></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் II</b></td></tr><tr><td style='padding:6px 0;'>A. திருகு அளவியின் பிட்ச்</td><td style='padding:6px 0;'>1. 0.01 mm</td></tr><tr><td style='padding:6px 0;'>B. வெர்னியரின் மீச்சிற்றளவு</td><td style='padding:6px 0;'>2. 1 mm</td></tr><tr><td style='padding:6px 0;'>C. திருகு அளவியின் மீச்சிற்றளவு</td><td style='padding:6px 0;'>3. 0.1 mm</td></tr><tr><td style='padding:6px 0;'>D. பொதுவான தராசு துல்லியம்</td><td style='padding:6px 0;'>4. 5 g</td></tr></table>",
+    "optionsEn": ["A-2, B-3, C-1, D-4", "A-1, B-2, C-3, D-4", "A-2, B-1, C-3, D-4", "A-3, B-2, C-1, D-4"],
+    "optionsTa": ["A-2, B-3, C-1, D-4", "A-1, B-2, C-3, D-4", "A-2, B-1, C-3, D-4", "A-3, B-2, C-1, D-4"],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "Match List I with List II<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>LIST I</b></td><td style='width:50%; padding:6px 0;'><b>LIST II</b></td></tr><tr><td style='padding:6px 0;'>A. Mass of electron</td><td style='padding:6px 0;'>1. $2.2 \\times 10^{41}$kg</td></tr><tr><td style='padding:6px 0;'>B. Diameter of nucleus</td><td style='padding:6px 0;'>2. $9.11 \\times 10^{- 31}$kg</td></tr><tr><td style='padding:6px 0;'>C. Mass of Milky Way</td><td style='padding:6px 0;'>3. $10^{- 15}$m</td></tr><tr><td style='padding:6px 0;'>D. Distance between stars</td><td style='padding:6px 0;'>4. $10^{26}$m</td></tr></table>",
+    "ta": "பட்டியல் I உடன் பட்டியல் II ஐப் பொருத்துக<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>பட்டியல் I</b></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் II</b></td></tr><tr><td style='padding:6px 0;'>A. எலக்ட்ரானின் நிறை</td><td style='padding:6px 0;'>1. $2.2 \\times 10^{41}$kg</td></tr><tr><td style='padding:6px 0;'>B. அணுக்கருவின் விட்டம்</td><td style='padding:6px 0;'>2. $9.11 \\times 10^{- 31}$kg</td></tr><tr><td style='padding:6px 0;'>C. பால்வீதியின் நிறை</td><td style='padding:6px 0;'>3. $10^{- 15}$m</td></tr><tr><td style='padding:6px 0;'>D. விண்மீன்களுக்கு இடையேயான தூரம்</td><td style='padding:6px 0;'>4. $10^{26}$m</td></tr></table>",
+    "optionsEn": ["A-3, B-2, C-1, D-4", "A-1, B-2, C-3, D-4", "A-2, B-1, C-4, D-3", "A-2, B-3, C-1, D-4"],
+    "optionsTa": ["A-3, B-2, C-1, D-4", "A-1, B-2, C-3, D-4", "A-2, B-1, C-4, D-3", "A-2, B-3, C-1, D-4"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Find the odd one out",
+    "ta": "பொருந்தாததைக் கண்டறியவும்",
+    "optionsEn": ["Metre", "Kilogram", "Newton", "Second"],
+    "optionsTa": ["மீட்டர்", "கிலோகிராம்", "நியூட்டன்", "வினாடி"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Find the odd one out with respect to SI base units",
+    "ta": "SI அடிப்படை அலகுகள் தொடர்பாக பொருந்தாததைக் கண்டறியவும்",
+    "optionsEn": ["Candela", "Pascal", "Mole", "Ampere"],
+    "optionsTa": ["கேண்டெலா", "பாஸ்கல்", "மோல்", "ஆம்பியர்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Odd one out regarding measuring instruments",
+    "ta": "அளவீட்டுக் கருவிகள் தொடர்பாக பொருந்தாததைக் கண்டறியவும்",
+    "optionsEn": ["Vernier caliper -- external & internal dimensions", "Screw gauge -- diameter of thin wire", "Spring balance -- mass", "Physical balance -- mass up to milligram"],
+    "optionsTa": ["வெர்னியர் அளவுகருவி -- வெளிப்புற மற்றும் உட்புற பரிமாணங்கள்", "திருகு அளவி -- மெல்லிய கம்பியின் விட்டம்", "சுருள்வில் தராசு -- நிறை", "இயற்பியல் தராசு -- மில்லிகிராம் வரை நிறை"],
+    "answer": 2
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): The SI unit of temperature is kelvin and the degree sign is omitted while writing it.<br><br>Reason (R): Zero kelvin is absolute zero and one kelvin is $1/273.16$of the thermodynamic temperature of the triple point of water.",
+    "ta": "Assertion (A): வெப்பநிலையின் SI அலகு கெல்வின் ஆகும், மேலும் அதை எழுதும் போது டிகிரி குறியீடு தவிர்க்கப்படுகிறது.<br><br>Reason (R): பூஜ்ய கெல்வின் என்பது முழுமையான பூஜ்யம், மேலும் ஒரு கெல்வின் என்பது நீரின் மும்மைப் புள்ளியின் வெப்ப இயக்கவியல் வெப்பநிலையின் $1/273.16$ ஆகும்.",
+    "optionsEn": ["Both A and R are true and R is the correct explanation of A", "Both A and R are true but R is not the correct explanation of A", "A is true but R is false", "A is false but R is true"],
+    "optionsTa": ["A மற்றும் R இரண்டும் உண்மை, R என்பது A விற்கான சரியான விளக்கமாகும்", "A மற்றும் R இரண்டும் உண்மை, ஆனால் R என்பது A விற்கான சரியான விளக்கமல்ல", "A உண்மை ஆனால் R தவறு", "A தவறு ஆனால் R உண்மை"],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): In everyday life we use the term \"weight\" for mass.<br><br>Reason (R): Mass remains the same everywhere while weight varies from place to place.",
+    "ta": "Assertion (A): அன்றாட வாழ்வில் நிறைக்கு \"எடை\" என்ற சொல்லைப் பயன்படுத்துகிறோம்.<br><br>Reason (R): நிறை எல்லா இடங்களிலும் ஒரே மாதிரியாக இருக்கும், அதே சமயம் எடை இடத்திற்கு இடம் மாறுபடும்.",
+    "optionsEn": ["Both A and R true, R explains A", "Both A and R true, R does not explain A", "A true, R false", "A false, R true"],
+    "optionsTa": ["A மற்றும் R இரண்டும் உண்மை, R என்பது A வை விளக்குகிறது", "A மற்றும் R இரண்டும் உண்மை, R என்பது A வை விளக்கவில்லை", "A உண்மை, R தவறு", "A தவறு, R உண்மை"],
+    "answer": 1
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): When the zero of the head scale of a screw gauge lies below the pitch scale axis, zero error is positive.<br><br>Reason (R): Positive zero error means the reading obtained is more than the actual reading, so zero correction is negative.",
+    "ta": "Assertion (A): திருகு அளவியின் தலை அளவுகோலின் பூச்சியம் பிட்ச் அளவுகோல் அச்சுக்குக் கீழே இருக்கும்போது, பூச்சிய வழு நேர்மறையாக இருக்கும்.<br><br>Reason (R): நேர்மறை பூச்சிய வழு என்பது பெறப்பட்ட அளவீடு உண்மையான அளவீட்டை விட அதிகமாக இருப்பதைக் குறிக்கிறது, எனவே பூச்சிய திருத்தம் எதிர்மறையாக இருக்கும்.",
+    "optionsEn": ["A false, R true", "Both true but R does not explain A", "A true, R false", "Both A and R true and R explains A"],
+    "optionsTa": ["A தவறு, R உண்மை", "இரண்டும் உண்மை ஆனால் R என்பது A வை விளக்கவில்லை", "A உண்மை, R தவறு", "A மற்றும் R இரண்டும் உண்மை, R என்பது A வை விளக்குகிறது"],
+    "answer": 3
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): 1 light year = $9.46 \\times 10^{15}$m = $9.46 \\times 10^{12}$km.<br><br>Reason (R): Light year is the distance travelled by light in one year in vacuum.",
+    "ta": "Assertion (A): 1 ஒளி ஆண்டு = $9.46 \\times 10^{15}$m = $9.46 \\times 10^{12}$km.<br><br>Reason (R): ஒளி ஆண்டு என்பது வெற்றிடத்தில் ஒளி ஒரு வருடத்தில் பயணிக்கும் தூரம் ஆகும்.",
+    "optionsEn": ["Both A and R true and R explains A", "Both true but R does not explain A", "A true, R false", "A false, R true"],
+    "optionsTa": ["A மற்றும் R இரண்டும் உண்மை, R என்பது A வை விளக்குகிறது", "இரண்டும் உண்மை ஆனால் R என்பது A வை விளக்கவில்லை", "A உண்மை, R தவறு", "A தவறு, R உண்மை"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement",
+    "ta": "சரியான கூற்றைத் தேர்ந்தெடுக்கவும்",
+    "optionsEn": ["Units named after scientists are written with capital initial letter (e.g., Newton).", "Symbols of units named after scientists are written with capital letter (e.g., N).", "Full stop is used after unit symbols.", "Units can be written in plural form (e.g., 10 kgs)."],
+    "optionsTa": ["விஞ்ஞானிகளின் பெயரால் அழைக்கப்படும் அலகுகள் முதல் எழுத்து பெரியதாக எழுதப்படுகின்றன (எ.கா. Newton).", "விஞ்ஞானிகளின் பெயரால் அழைக்கப்படும் அலகுகளின் குறியீடுகள் பெரிய எழுத்தில் எழுதப்படுகின்றன (எ.கா. N).", "அலகு குறியீடுகளுக்குப் பிறகு முற்றுப்புள்ளி பயன்படுத்தப்படுகிறது.", "அலகுகளை பன்மை வடிவில் எழுதலாம் (எ.கா. 10 kgs)."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statements is correct?",
+    "ta": "பின்வரும் கூற்றுகளில் எது சரியானது?",
+    "optionsEn": ["Least count of Vernier caliper = Value of one main scale division × Total number of Vernier scale divisions", "Digital Vernier requires manual calculation of least count", "Zero error of Vernier is always positive", "Pitch of screw = Distance moved by the tip for one complete rotation of the head"],
+    "optionsTa": ["வெர்னியர் அளவுகருவியின் மீச்சிற்றளவு = ஒரு பிரதான அளவுகோல் பிரிவின் மதிப்பு × வெர்னியர் அளவுகோல் பிரிவுகளின் மொத்த எண்ணிக்கை", "டிஜிட்டல் வெர்னியருக்கு மீச்சிற்றளவை கைமுறையாகக் கணக்கிட வேண்டும்", "வெர்னியரின் பூச்சிய வழு எப்போதும் நேர்மறையானது", "திருகின் பிட்ச் = தலையின் ஒரு முழு சுழற்சிக்கு நுனி நகரும் தூரம்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement regarding mass and weight",
+    "ta": "நிறை மற்றும் எடை தொடர்பான சரியான கூற்றைத் தேர்ந்தெடுக்கவும்",
+    "optionsEn": ["Mass is a vector quantity and weight is a scalar quantity", "Weight is measured using physical balance and mass using spring balance", "Mass of a body remains the same on the Moon while its weight becomes 1/6th", "SI unit of weight is kilogram"],
+    "optionsTa": ["நிறை ஒரு திசையன் அளவு மற்றும் எடை ஒரு திசையிலி அளவு", "எடை இயற்பியல் தராசைப் பயன்படுத்தி அளவிடப்படுகிறது மற்றும் நிறை சுருள்வில் தராசைப் பயன்படுத்தி அளவிடப்படுகிறது", "ஒரு பொருளின் நிறை நிலவில் அதே அளவில் இருக்கும், அதே சமயம் அதன் எடை 1/6 ஆக மாறும்", "எடையின் SI அலகு கிலோகிராம்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which statement is correct about unit prefixes?",
+    "ta": "அலகு முன்னொட்டுகள் பற்றிய சரியான கூற்று எது?",
+    "optionsEn": ["$10^{- 12}$is denoted by \"n\" (nano)", "$10^{15}$is denoted by \"T\" (tera)", "$10^{- 15}$is denoted by \"f\" (femto)", "$10^{9}$is denoted by \"M\" (mega)"],
+    "optionsTa": ["$10^{- 12}$ என்பது \"n\" (நானோ) ஆல் குறிக்கப்படுகிறது", "$10^{15}$ என்பது \"T\" (டெரா) ஆல் குறிக்கப்படுகிறது", "$10^{- 15}$ என்பது \"f\" (ஃபெம்டோ) ஆல் குறிக்கப்படுகிறது", "$10^{9}$ என்பது \"M\" (மெகா) ஆல் குறிக்கப்படுகிறது"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement",
+    "ta": "சரியான கூற்றைத் தேர்ந்தெடுக்கவும்",
+    "optionsEn": ["1 g = $10^{- 3}$kg", "1 quintal = 1000 kg", "1 metric tonne = 100 kg", "1 mg = $10^{- 3}$g"],
+    "optionsTa": ["1 g = $10^{- 3}$kg", "1 குவிண்டால் = 1000 kg", "1 மெட்ரிக் டன் = 100 kg", "1 mg = $10^{- 3}$g"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "While measuring with a Vernier caliper, main scale reading = 8 cm, Vernier coincidence = 4, positive zero error = 0.05 cm. The correct reading is",
+    "ta": "வெர்னியர் அளவுகருவியைக் கொண்டு அளவிடும் போது, பிரதான அளவுகோல் அளவீடு = 8 cm, வெர்னியர் பொருத்தம் = 4, நேர்மறை பூச்சிய வழு = 0.05 cm. சரியான அளவீடு என்ன?",
+    "optionsEn": ["8.09 cm", "7.99 cm", "8.04 cm", "8.01 cm"],
+    "optionsTa": ["8.09 cm", "7.99 cm", "8.04 cm", "8.01 cm"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Pitch scale reading of a screw gauge is 1 mm and head scale coincidence is 68. Thickness of the object is",
+    "ta": "ஒரு திருகு அளவியின் பிட்ச் அளவுகோல் அளவீடு 1 mm மற்றும் தலை அளவுகோல் பொருத்தம் 68 ஆகும். பொருளின் தடிமன் என்ன?",
+    "optionsEn": ["0.168 mm", "0.68 mm", "1.068 mm", "1.68 mm"],
+    "optionsTa": ["0.168 mm", "0.68 mm", "1.068 mm", "1.68 mm"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement about the definition of second",
+    "ta": "வினாடியின் வரையறை பற்றிய சரியான கூற்றைத் தேர்ந்தெடுக்கவும்",
+    "optionsEn": ["Time required for light to travel 299792458 m in vacuum", "$1/86400$th part of a mean solar day", "Both a and b are accepted definitions", "Length of time for 9192631770 periods of vibration of Caesium-133 atom only"],
+    "optionsTa": ["வெற்றிடத்தில் 299792458 மீ பயணிக்க ஒளிக்குத் தேவையான நேரம்", "சராசரி சூரிய நாளின் $1/86400$ பங்கு", "a மற்றும் b இரண்டும் ஏற்றுக்கொள்ளப்பட்ட வரையறைகள்", "சீசியம்-133 அணுவின் 9192631770 அதிர்வு காலங்களுக்கான நேரம் மட்டும்"],
+    "answer": 2
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false;
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">${String.fromCharCode(65+i)}. ${opt}</div>`;
+        });
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+            </div>
+        `;
+        updateNavButtons(); updatePalette();
+        if (window.MathJax) MathJax.typesetPromise();
+        initImageZoom();
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) return;
+        userAnswers[currentIndex] = optIndex;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let marker = "";
+                if (idx === corr) marker = " ✅ (Correct)";
+                if (u === idx && idx !== corr) marker = " ❌ (Your choice)";
+                else if (u === idx && idx === corr) marker = " ✅ (Correct)";
+                const styleClass = (idx === corr) ? "correct-option" : "";
+                const userWrongStyle = (u === idx && idx !== corr) ? "color:#ef4444;" : "";
+                optsHtml += `<div class="${styleClass}" style="${userWrongStyle}">${String.fromCharCode(65+idx)}. ${optsArray[idx]}${marker}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" style="border-left-color:${isCorr?"#10b981":"#ef4444"}">
+                        <strong>Q${i+1}. ${txt}</strong>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div style="margin-top:8px;"><strong>Your answer:</strong> ${userAns}</div>
+                        <div><strong>Correct:</strong> ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { try { MathJax.typesetPromise(); } catch(e) {} }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            const imgs = Array.from(document.querySelectorAll("#reviewList img"));
+            await Promise.all(imgs.map(img => {
+                if (img.complete && img.naturalWidth > 0) return Promise.resolve();
+                return new Promise(resolve => {
+                    let done = false;
+                    const finish = () => { if (!done) { done = true; resolve(); } };
+                    img.addEventListener("load", finish, { once: true });
+                    img.addEventListener("error", finish, { once: true });
+                    setTimeout(finish, 5000);
+                });
+            }));
+            await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) window.AndroidBridge.printPage();
+            else window.print();
+        } catch (e) {
+            console.error("PDF export failed:", e);
+            alert("Could not prepare PDF. Please try again.");
+        } finally {
+            setTimeout(() => { if (btn) { btn.disabled = false; btn.innerText = originalText; } }, 800);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.checkForReview = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get("review") === "true") {
+            let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+            if (savedAnswers) {
+                try {
+                    userAnswers = JSON.parse(savedAnswers);
+                    try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+                } catch(e) { console.log("Error parsing answers: " + e.message); }
+            }
+            isSubmitted = true; quizActive = false;
+            document.getElementById("startScreen").style.display = "none";
+            document.getElementById("quizContainer").style.display = "none";
+            document.getElementById("resultContainer").style.display = "block";
+            let correct=0, incorrect=0, na=0;
+            for (let i=0; i<QUESTIONS.length; i++) {
+                if (userAnswers[i] === null || userAnswers[i] === undefined) na++;
+                else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+                else incorrect++;
+            }
+            const negMark = dashboard.negativeMark || 0;
+            const finalScore = correct - (incorrect * negMark);
+            const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+            document.getElementById("finalScore").innerText = finalScore;
+            document.getElementById("correctCountStat").innerText = correct;
+            document.getElementById("incorrectCountStat").innerText = incorrect;
+            document.getElementById("notAttemptedStat").innerText = na;
+            document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+            document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+            const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+            document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+            buildDetailedReview();
+        }
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
