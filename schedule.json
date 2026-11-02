@@ -1,6 +1,17 @@
 {
-  "version": "2026-11-02T00:57:21.297Z",
+  "version": "2026-11-02T10:08:59.138Z",
   "entries": [
+    {
+      "id": "SCH-1793613836155-285",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Tamil",
+      "topicId": "REV-1793613836155",
+      "topicName": "Revision: 6th Term 1 – மொழி, 6th Term 1 – இயற்கை, 6th Term 1 – கல்வி, 6th Term 2 – நாகரிகம், பண்பாடு, 6th Term 2 – தொழில், வணிகம்",
+      "date": "2026-11-02",
+      "testId": "SPT-TA-1",
+      "createdAt": "2026-11-02T10:03:56.155Z"
+    },
     {
       "id": "SCH-1793580956228-54",
       "courseId": "BANK",
@@ -233,6 +244,28 @@
       "createdAt": "2026-10-31T04:26:57.650Z"
     },
     {
+      "id": "SCH-1793613911187-979",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Maths",
+      "topicId": "REV-1793613911187",
+      "topicName": "Revision: 6th Term 1 - Numbers, 6th Term 1 - Introduction To Algebra, 6th Term 1 - Ratio And Proportion, 6th Term 1 - Geometry, 6th Term 1 - Statistics, 6th Term 1 - Information Processing",
+      "date": "2026-11-03",
+      "testId": "SPT-MS-2",
+      "createdAt": "2026-11-02T10:05:11.187Z"
+    },
+    {
+      "id": "SCH-1793613944418-403",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Social Science",
+      "topicId": "REV-1793613944418",
+      "topicName": "Revision: 6th Term 1 - History: What Is History?, 6th Term 1 - History: Human Evolution, 6th Term 1 - History: Indus Civilization, 6th Term 1 - History: Ancient Cities of Tamilagam",
+      "date": "2026-11-03",
+      "testId": "SPT-SS-2",
+      "createdAt": "2026-11-02T10:05:44.418Z"
+    },
+    {
       "id": "SCH-1793437670593-866",
       "courseId": "TNPSC",
       "courseName": "TNPSC",
@@ -275,6 +308,17 @@
       "date": "2026-11-03",
       "testId": "TIP-4",
       "createdAt": "2026-10-31T09:08:51.857Z"
+    },
+    {
+      "id": "SCH-1793613978554-495",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "English",
+      "topicId": "REV-1793613978554",
+      "topicName": "Revision: 6th Term 1 – UNIT 1: Prose: Sea Turtles, Poem: The Crocodile, Supplementary: The Friendship, 6th Term 1 – UNIT 2: Prose: When the Trees Walked, Poem: Trees, Supplementary: The Apple Tree and the Farmer, 6th Term 1 – UNIT 3: Prose: A Visitor from Distant Lands, Poem: I Dream of Spices, Supplementary: Stone Soup, 6th Term 2 – UNIT 1: Prose: Sports Stars, Poem: Team Work, Supplementary: Think to Win, 6th Term 2 – UNIT 2: Prose: Trip to Ooty, Poem: From a Railway Carriage, Supplementary: Gulliver's Travel",
+      "date": "2026-11-04",
+      "testId": "SPT-EG-3",
+      "createdAt": "2026-11-02T10:06:18.554Z"
     },
     {
       "id": "SCH-1793457514005-366",
@@ -464,6 +508,28 @@
       "createdAt": "2026-10-31T04:28:09.865Z"
     },
     {
+      "id": "SCH-1793614070491-801",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Science",
+      "topicId": "REV-1793614070491",
+      "topicName": "Revision: 6th Term 1 - Measurements, 6th Term 1 - Force And Motion, 6th Term 1 - Matter Around Us, 6th Term 1 - The World Of Plants, 6th Term 1 - The World Of Animals, 6th Term 1 - Health And Hygiene",
+      "date": "2026-11-05",
+      "testId": "SPT-SC-4",
+      "createdAt": "2026-11-02T10:07:50.491Z"
+    },
+    {
+      "id": "SCH-1793614103538-220",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Social Science",
+      "topicId": "REV-1793614103538",
+      "topicName": "Revision: 6th Term 1 - Geography: The Universe and Solar System, 6th Term 1 - Geography: Land And Oceans, 6th Term 1 - Civics: Understanding Diversity, 6th Term 1 - Civics: Achieving Equality",
+      "date": "2026-11-05",
+      "testId": "SPT-SS-4",
+      "createdAt": "2026-11-02T10:08:23.538Z"
+    },
+    {
       "id": "SCH-1793437855392-904",
       "courseId": "TNPSC",
       "courseName": "TNPSC",
@@ -484,6 +550,17 @@
       "date": "2026-11-05",
       "testId": "TAP-2",
       "createdAt": "2026-10-31T09:11:14.752Z"
+    },
+    {
+      "id": "SCH-1793614128770-796",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Child Development and Pedagogy",
+      "topicId": "REV-1793614128770",
+      "topicName": "Revision: Unit I - Growth and Development",
+      "date": "2026-11-06",
+      "testId": "SPT-PY-5",
+      "createdAt": "2026-11-02T10:08:48.770Z"
     },
     {
       "id": "SCH-1793457601485-591",
