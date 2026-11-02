@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-01T16:24:43.948Z",
+  "version": "2026-11-02T08:41:15.624Z",
   "timetable": [
     {
       "day": "Monday",
@@ -7,38 +7,32 @@
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Quantitative Aptitude: Approximation, Percentages",
-          "batch": "BANK",
-          "faculty": "Abin"
+          "batch": "BANK"
         },
         {
           "time": "11:30 AM - 01:00 PM",
           "subject": "Unit V - Crown to Independence: Dandi March, Gandhi-Irwin Pact, Round Table Conferences",
-          "batch": "PGTRB HISTORY",
-          "faculty": ""
+          "batch": "PGTRB HISTORY"
         },
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Science: 9th - Universe",
-          "batch": "SGT",
-          "faculty": ""
+          "batch": "SGT"
         },
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Tamil Literature: அலகு 1 - இலக்கணம்",
-          "batch": "TNPSC",
-          "faculty": ""
+          "batch": "TNPSC"
         },
         {
           "time": "11:30 AM - 01:00 PM",
           "subject": "Unit III - History, Culture & INM: Different modes of agitation: Growth of Satyagraha",
-          "batch": "TNPSC",
-          "faculty": ""
+          "batch": "TNPSC"
         },
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "REVISION: PHYSICS",
-          "batch": "TNTET",
-          "faculty": ""
+          "batch": "TNTET"
         }
       ]
     },
@@ -47,11 +41,70 @@
       "classes": [
         {
           "time": "10:00 AM - 11:30 AM",
+          "subject": "Unit I - Aptitude: Simplification",
+          "batch": "TNPSC",
+          "room": ""
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "Unit III - History, Culture & INM: Different modes of agitation: Militant Movements",
+          "batch": "TNPSC",
+          "room": ""
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "English: 8th – UNIT 1: Prose: The Nose-Jewel, Poem: Special Hero, Supplementary: The Woman on Platform 8",
+          "batch": "TNTET",
+          "room": ""
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "Tamil: 6th Term 1 – மொழி",
+          "batch": "TNTET",
+          "room": ""
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "Unit IX - Literary Criticism and Theories: Recent Trends - New Historicism",
+          "batch": "UGTRB ENGLISH",
+          "room": ""
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "Unit V - Crown to Independence: Cripps Mission and Quit India Movement",
+          "batch": "PGTRB HISTORY",
+          "room": ""
+        },
+        {
+          "time": "02:00 PM - 03:30 PM",
+          "subject": "Unit X - Cybersecurity: Attacks: Investigating DoS Attacks, Types of DoS Attacks, Classification of DoS Attacks, Techniques to Detect DoS Attacks",
+          "batch": "PGTRB COMPUTER SCIENCE",
+          "room": ""
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "General Awareness: Modern India - Towards Independence",
+          "batch": "SSC",
+          "room": ""
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "General Awareness: Modern India - Towards Independence",
+          "batch": "RRB",
+          "room": ""
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "Science: 9th - Measurement",
+          "batch": "SGT",
+          "room": ""
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
           "subject": "Reasoning Ability: Puzzles, Seating Arrangements, Syllogism, Input/output",
-          "batch": "BANK",
-          "faculty": "Abin"
+          "batch": "BANK"
         }
       ]
     }
   ]
-} 
+}
