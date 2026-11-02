@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-01T10:31:56.564Z",
+  "version": "2026-11-02T10:01:16.195Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -13256,1080 +13256,960 @@
       "courseName": "SPECIAL TET",
       "topics": [
         {
-          "topicId": "SCHOOL-T001",
-          "topicName": "6th Term 1 | Tamil | மொழி"
+          "topicId": "SPLTET-T270",
+          "topicName": "Child Development and Pedagogy | Unit I - Growth and Development"
         },
         {
-          "topicId": "SCHOOL-T002",
-          "topicName": "6th Term 1 | Tamil | இயற்கை"
+          "topicId": "SPLTET-T271",
+          "topicName": "Child Development and Pedagogy | Unit II - Theories of Child Development"
         },
         {
-          "topicId": "SCHOOL-T003",
-          "topicName": "6th Term 1 | Tamil | கல்வி"
+          "topicId": "SPLTET-T272",
+          "topicName": "Child Development and Pedagogy | Unit III - Attention, Perception and Memory"
         },
         {
-          "topicId": "SCHOOL-T004",
-          "topicName": "6th Term 1 | English | Unit 1: Prose - Sea Turtles"
+          "topicId": "SPLTET-T273",
+          "topicName": "Child Development and Pedagogy | Unit IV - Motivation and Learning"
         },
         {
-          "topicId": "SCHOOL-T005",
-          "topicName": "6th Term 1 | English | Unit 1: Poem - The Crocodile"
+          "topicId": "SPLTET-T274",
+          "topicName": "Child Development and Pedagogy | Unit V - Intelligence and Creativity"
         },
         {
-          "topicId": "SCHOOL-T006",
-          "topicName": "6th Term 1 | English | Unit 1: Supplementary - The Friendship"
+          "topicId": "SPLTET-T275",
+          "topicName": "Child Development and Pedagogy | Unit VI - Personality"
         },
         {
-          "topicId": "SCHOOL-T007",
-          "topicName": "6th Term 1 | English | Unit 2: Prose - When the Trees Walked"
+          "topicId": "SPLTET-T276",
+          "topicName": "Child Development and Pedagogy | Unit VII - Socializing Agencies of Child Development"
         },
         {
-          "topicId": "SCHOOL-T008",
-          "topicName": "6th Term 1 | English | Unit 2: Poem - Trees"
+          "topicId": "SPLTET-T277",
+          "topicName": "Child Development and Pedagogy | Unit VIII - Pedagogical Concerns (Part I)"
         },
         {
-          "topicId": "SCHOOL-T009",
-          "topicName": "6th Term 1 | English | Unit 2: Supplementary - The Apple Tree and the Farmer"
+          "topicId": "SPLTET-T278",
+          "topicName": "Child Development and Pedagogy | Unit IX - Pedagogical Concerns (Part II)"
         },
         {
-          "topicId": "SCHOOL-T010",
-          "topicName": "6th Term 1 | English | Unit 3: Prose - A Visitor from Distant Lands"
+          "topicId": "SPLTET-T279",
+          "topicName": "Child Development and Pedagogy | Unit X - Pedagogical Concerns (Part III)"
         },
         {
-          "topicId": "SCHOOL-T011",
-          "topicName": "6th Term 1 | English | Unit 3: Poem - I Dream of Spices"
+          "topicId": "SPLTET-T280",
+          "topicName": "Tamil | 6th Term 1 – மொழி"
         },
         {
-          "topicId": "SCHOOL-T012",
-          "topicName": "6th Term 1 | English | Unit 3: Supplementary - Stone Soup"
+          "topicId": "SPLTET-T281",
+          "topicName": "Tamil | 6th Term 1 – இயற்கை"
         },
         {
-          "topicId": "SCHOOL-T013",
-          "topicName": "6th Term 1 | Maths | Numbers"
+          "topicId": "SPLTET-T282",
+          "topicName": "Tamil | 6th Term 1 – கல்வி"
         },
         {
-          "topicId": "SCHOOL-T014",
-          "topicName": "6th Term 1 | Maths | Introduction To Algebra"
+          "topicId": "SPLTET-T283",
+          "topicName": "Tamil | 6th Term 2 – நாகரிகம், பண்பாடு"
         },
         {
-          "topicId": "SCHOOL-T015",
-          "topicName": "6th Term 1 | Maths | Ratio And Proportion"
+          "topicId": "SPLTET-T284",
+          "topicName": "Tamil | 6th Term 2 – தொழில், வணிகம்"
         },
         {
-          "topicId": "SCHOOL-T016",
-          "topicName": "6th Term 1 | Maths | Geometry"
+          "topicId": "SPLTET-T285",
+          "topicName": "Tamil | 6th Term 3 – நாடு, சமூகம், அரசு, நிர்வாகம்"
         },
         {
-          "topicId": "SCHOOL-T017",
-          "topicName": "6th Term 1 | Maths | Statistics"
+          "topicId": "SPLTET-T286",
+          "topicName": "Tamil | 6th Term 3 – அறம், தத்துவம், சிந்தனை"
         },
         {
-          "topicId": "SCHOOL-T018",
-          "topicName": "6th Term 1 | Maths | Information Processing"
+          "topicId": "SPLTET-T287",
+          "topicName": "Tamil | 6th Term 3 – மனிதம், ஆளுமை"
         },
         {
-          "topicId": "SCHOOL-T019",
-          "topicName": "6th Term 1 | Science | Measurements"
+          "topicId": "SPLTET-T288",
+          "topicName": "Tamil | 7th Term 1 – வாழி - அழகுத் தமிழ்"
         },
         {
-          "topicId": "SCHOOL-T020",
-          "topicName": "6th Term 1 | Science | Force And Motion"
+          "topicId": "SPLTET-T289",
+          "topicName": "Tamil | 7th Term 1 – இயற்கை - அணிறில் காடு"
         },
         {
-          "topicId": "SCHOOL-T021",
-          "topicName": "6th Term 1 | Science | Matter Around Us"
+          "topicId": "SPLTET-T290",
+          "topicName": "Tamil | 7th Term 1 – நாடு, சமூகம் - நாடு அழகு நாடு"
         },
         {
-          "topicId": "SCHOOL-T022",
-          "topicName": "6th Term 1 | Science | The World Of Plants"
+          "topicId": "SPLTET-T291",
+          "topicName": "Tamil | 7th Term 2 – கல்வி: ஒதுவது ஒழியேல்"
         },
         {
-          "topicId": "SCHOOL-T023",
-          "topicName": "6th Term 1 | Science | The World Of Animals"
+          "topicId": "SPLTET-T292",
+          "topicName": "Tamil | 7th Term 2 – கலை, அழகியல்: கலைவண்ணம்"
         },
         {
-          "topicId": "SCHOOL-T024",
-          "topicName": "6th Term 1 | Science | Health And Hygiene"
+          "topicId": "SPLTET-T293",
+          "topicName": "Tamil | 7th Term 3 – நாகரிகம், பண்பாடு, தொழில், வணிகம் - நபத்து நாகரிகம்"
         },
         {
-          "topicId": "SCHOOL-T025",
-          "topicName": "6th Term 1 | Science | Computer - An Introduction"
+          "topicId": "SPLTET-T294",
+          "topicName": "Tamil | 7th Term 3 – அறம், தத்துவம், சிந்தனை - ஒப்பார ஒழுகு"
         },
         {
-          "topicId": "SCHOOL-T026",
-          "topicName": "6th Term 1 | Social Science | History: What Is History?"
+          "topicId": "SPLTET-T295",
+          "topicName": "Tamil | 7th Term 3 – மனிதம், ஆளுமை - மனுடம் வெல்லும்"
         },
         {
-          "topicId": "SCHOOL-T027",
-          "topicName": "6th Term 1 | Social Science | History: Human Evolution"
+          "topicId": "SPLTET-T296",
+          "topicName": "Tamil | 8th Lesson 1 – மொழி - தமிழ் இன்பம்"
         },
         {
-          "topicId": "SCHOOL-T028",
-          "topicName": "6th Term 1 | Social Science | History: Indus Civilization"
+          "topicId": "SPLTET-T297",
+          "topicName": "Tamil | 8th Lesson 2 – இயற்கை - ஈடில்லா இயற்கை"
         },
         {
-          "topicId": "SCHOOL-T029",
-          "topicName": "6th Term 1 | Social Science | History: Ancient Cities of Tamilagam"
+          "topicId": "SPLTET-T298",
+          "topicName": "Tamil | 8th Lesson 3 – அறிவியல், தொழில்நுட்பம் - உடலை ஓம்புமின்"
         },
         {
-          "topicId": "SCHOOL-T030",
-          "topicName": "6th Term 1 | Social Science | Geography: The Universe and Solar System"
+          "topicId": "SPLTET-T299",
+          "topicName": "Tamil | 8th Lesson 4 – கல்வி - கல்வி கரையில"
         },
         {
-          "topicId": "SCHOOL-T031",
-          "topicName": "6th Term 1 | Social Science | Geography: Land And Oceans"
+          "topicId": "SPLTET-T300",
+          "topicName": "Tamil | 8th Lesson 5 – கலை, அழகியல், பண்பாடு - குழலினிது யாழினிது"
         },
         {
-          "topicId": "SCHOOL-T032",
-          "topicName": "6th Term 1 | Social Science | Civics: Understanding Diversity"
+          "topicId": "SPLTET-T301",
+          "topicName": "Tamil | 8th Lesson 6 – நகரம், தொழில், வணிகம் - வையம்பகழ் வணிகம்"
         },
         {
-          "topicId": "SCHOOL-T033",
-          "topicName": "6th Term 1 | Social Science | Civics: Achieving Equality"
+          "topicId": "SPLTET-T302",
+          "topicName": "Tamil | 8th Lesson 7 – நாடு, சமூகம் - பாருக்குளே நல்ல நாடு"
         },
         {
-          "topicId": "SCHOOL-T034",
-          "topicName": "6th Term 2 | Tamil | நாகரிகம், பண்பாடு"
+          "topicId": "SPLTET-T303",
+          "topicName": "Tamil | 8th Lesson 8 – அறம், தத்துவம், சிந்தனை - அறத்தால் வருவதே இன்பம்"
         },
         {
-          "topicId": "SCHOOL-T035",
-          "topicName": "6th Term 2 | Tamil | தொழில், வணிகம்"
+          "topicId": "SPLTET-T304",
+          "topicName": "Tamil | 8th Lesson 9 – மனிதம், ஆளுமை - குன்றை நிமிர்ந்துநில்"
         },
         {
-          "topicId": "SCHOOL-T036",
-          "topicName": "6th Term 2 | English | Unit 1: Prose - Sports Stars"
+          "topicId": "SPLTET-T305",
+          "topicName": "English | 6th Term 1 – UNIT 1: Prose: Sea Turtles, Poem: The Crocodile, Supplementary: The Friendship"
         },
         {
-          "topicId": "SCHOOL-T037",
-          "topicName": "6th Term 2 | English | Unit 1: Poem - Team Work"
+          "topicId": "SPLTET-T306",
+          "topicName": "English | 6th Term 1 – UNIT 2: Prose: When the Trees Walked, Poem: Trees, Supplementary: The Apple Tree and the Farmer"
         },
         {
-          "topicId": "SCHOOL-T038",
-          "topicName": "6th Term 2 | English | Unit 1: Supplementary - Think to Win"
+          "topicId": "SPLTET-T307",
+          "topicName": "English | 6th Term 1 – UNIT 3: Prose: A Visitor from Distant Lands, Poem: I Dream of Spices, Supplementary: Stone Soup"
         },
         {
-          "topicId": "SCHOOL-T039",
-          "topicName": "6th Term 2 | English | Unit 2: Prose - Trip to Ooty"
+          "topicId": "SPLTET-T308",
+          "topicName": "English | 6th Term 2 – UNIT 1: Prose: Sports Stars, Poem: Team Work, Supplementary: Think to Win"
         },
         {
-          "topicId": "SCHOOL-T040",
-          "topicName": "6th Term 2 | English | Unit 2: Poem - From a Railway Carriage"
+          "topicId": "SPLTET-T309",
+          "topicName": "English | 6th Term 2 – UNIT 2: Prose: Trip to Ooty, Poem: From a Railway Carriage, Supplementary: Gulliver's Travel"
         },
         {
-          "topicId": "SCHOOL-T041",
-          "topicName": "6th Term 2 | English | Unit 2: Supplementary - Gulliver's Travel"
+          "topicId": "SPLTET-T310",
+          "topicName": "English | 6th Term 3 – UNIT 1: Prose: Who Owns the Water?, Poem: Indian Seasons, Supplementary: A Childhood in Malabar: A Memoir"
         },
         {
-          "topicId": "SCHOOL-T042",
-          "topicName": "6th Term 2 | Maths | Numbers"
+          "topicId": "SPLTET-T311",
+          "topicName": "English | 6th Term 3 – UNIT 2: Prose: That Sunday Morning, Poem: A Tragic Story, Supplementary: Brought to Book"
         },
         {
-          "topicId": "SCHOOL-T043",
-          "topicName": "6th Term 2 | Maths | Measurements"
+          "topicId": "SPLTET-T312",
+          "topicName": "English | 6th Term 3 – UNIT 3: Play: The Jungle Book"
         },
         {
-          "topicId": "SCHOOL-T044",
-          "topicName": "6th Term 2 | Maths | Bill, Profit and Loss"
+          "topicId": "SPLTET-T313",
+          "topicName": "English | 7th Term 1 – UNIT 1: Prose: Eidgah, Poem: The Computer Swallowed Grandma, Supplementary: On Monday Morning"
         },
         {
-          "topicId": "SCHOOL-T045",
-          "topicName": "6th Term 2 | Maths | Geometry"
+          "topicId": "SPLTET-T314",
+          "topicName": "English | 7th Term 1 – UNIT 2: Prose: The Wind on Haunted Hill 109, Poem: The Listeners 126 July, Supplementary: The Red-Headed League"
         },
         {
-          "topicId": "SCHOOL-T046",
-          "topicName": "6th Term 2 | Maths | Information Processing"
+          "topicId": "SPLTET-T315",
+          "topicName": "English | 7th Term 1 – UNIT 3: Prose: A Prayer to the Teacher, Poem: Your Space, Supplementary Taking the Bully by the Horns"
         },
         {
-          "topicId": "SCHOOL-T047",
-          "topicName": "6th Term 2 | Science | Heat"
+          "topicId": "SPLTET-T316",
+          "topicName": "English | 7th Term 2 – UNIT 1: Prose: Adventures of Don Quixote, Poem: The Age of Chivalry, Supplementary: Alice in Wonderland"
         },
         {
-          "topicId": "SCHOOL-T048",
-          "topicName": "6th Term 2 | Science | Electricity"
+          "topicId": "SPLTET-T317",
+          "topicName": "English | 7th Term 2 – UNIT 2: Prose: The Last Stone Carver, Poem: Wandering Singers, Supplementary: Naya – The Home of Chitrakaars"
         },
         {
-          "topicId": "SCHOOL-T049",
-          "topicName": "6th Term 2 | Science | Changes around us"
+          "topicId": "SPLTET-T318",
+          "topicName": "English | 7th Term 3 – UNIT 1: Prose: Journey by Train, Poem: Sea Fever, Supplementary: Sindbad – My First Voyage"
         },
         {
-          "topicId": "SCHOOL-T050",
-          "topicName": "6th Term 2 | Science | Air"
+          "topicId": "SPLTET-T319",
+          "topicName": "English | 7th Term 3 – UNIT 2: Prose: A Story of Self Sacrifice and Bravery, Poem: Courage, Supplementary: Man Overboard"
         },
         {
-          "topicId": "SCHOOL-T051",
-          "topicName": "6th Term 2 | Science | The Cell"
+          "topicId": "SPLTET-T320",
+          "topicName": "English | 7th Term 3 – UNIT 3: Play: Jane Eyre"
         },
         {
-          "topicId": "SCHOOL-T052",
-          "topicName": "6th Term 2 | Science | Human Organ Systems"
+          "topicId": "SPLTET-T321",
+          "topicName": "English | 8th – UNIT 1: Prose: The Nose-Jewel, Poem: Special Hero, Supplementary: The Woman on Platform 8"
         },
         {
-          "topicId": "SCHOOL-T053",
-          "topicName": "6th Term 2 | Science | Parts of Computer"
+          "topicId": "SPLTET-T322",
+          "topicName": "English | 8th – UNIT 2: Prose: Hobby Turns into A Successful Career, Poem: My Hobby: Reading, Supplementary: Jim Corbett, A Hunter Turned Naturalist"
         },
         {
-          "topicId": "SCHOOL-T054",
-          "topicName": "6th Term 2 | Social Science | History: Vedic Culture in North India and Megalithic Culture in South India"
+          "topicId": "SPLTET-T323",
+          "topicName": "English | 8th – UNIT 3: Prose - Sir Isaac Newton -The Ingenious Scientist, Poem - Making Life Worth While, Supplementary - The Three Questions"
         },
         {
-          "topicId": "SCHOOL-T055",
-          "topicName": "6th Term 2 | Social Science | History: Great Thinkers and New Faiths"
+          "topicId": "SPLTET-T324",
+          "topicName": "English | 8th – UNIT 4: Prose - My Reminiscence, Poem - A Thing of Beauty, Supplementary - Crossing the River"
         },
         {
-          "topicId": "SCHOOL-T056",
-          "topicName": "6th Term 2 | Social Science | History: From Chiefdoms to Empires"
+          "topicId": "SPLTET-T325",
+          "topicName": "English | 8th – UNIT 5: Prose - Being Safe, Poem - Fire Work Night, Supplementary - When Instinct Works"
         },
         {
-          "topicId": "SCHOOL-T057",
-          "topicName": "6th Term 2 | Social Science | Geography: Resources"
+          "topicId": "SPLTET-T326",
+          "topicName": "English | 8th – UNIT 6: Prose – Friendship, Poem - Lessons in Life, Supplementary - Homeless Man and his Friends"
         },
         {
-          "topicId": "SCHOOL-T058",
-          "topicName": "6th Term 2 | Social Science | Civics: National Symbols"
+          "topicId": "SPLTET-T327",
+          "topicName": "English | 8th – UNIT 7: Prose - Cyber Safety, Poem - My Computer Needs A Break, Supplementary - The Mystery of the Cyber Friend"
         },
         {
-          "topicId": "SCHOOL-T059",
-          "topicName": "6th Term 2 | Social Science | Civics: The Constitution of India"
+          "topicId": "SPLTET-T328",
+          "topicName": "English | 8th – UNIT 8: Play - Jack and the Beanstalk"
         },
         {
-          "topicId": "SCHOOL-T060",
-          "topicName": "6th Term 2 | Social Science | Economics: Economics-An Introduction"
+          "topicId": "SPLTET-T329",
+          "topicName": "Maths | 6th Term 1 - Numbers"
         },
         {
-          "topicId": "SCHOOL-T061",
-          "topicName": "6th Term 3 | Tamil | நாடு, சமூகம், அரசு, நிர்வாகம்"
+          "topicId": "SPLTET-T330",
+          "topicName": "Maths | 6th Term 1 - Introduction To Algebra"
         },
         {
-          "topicId": "SCHOOL-T062",
-          "topicName": "6th Term 3 | Tamil | அறம், தத்துவம், சிந்தனை"
+          "topicId": "SPLTET-T331",
+          "topicName": "Maths | 6th Term 1 - Ratio And Proportion"
         },
         {
-          "topicId": "SCHOOL-T063",
-          "topicName": "6th Term 3 | Tamil | மனிதம், ஆளுமை"
+          "topicId": "SPLTET-T332",
+          "topicName": "Maths | 6th Term 1 - Geometry"
         },
         {
-          "topicId": "SCHOOL-T064",
-          "topicName": "6th Term 3 | English | Unit 1: Prose - Who Owns the Water?"
+          "topicId": "SPLTET-T333",
+          "topicName": "Maths | 6th Term 1 - Statistics"
         },
         {
-          "topicId": "SCHOOL-T065",
-          "topicName": "6th Term 3 | English | Unit 1: Poem - Indian Seasons"
+          "topicId": "SPLTET-T334",
+          "topicName": "Maths | 6th Term 1 - Information Processing"
         },
         {
-          "topicId": "SCHOOL-T066",
-          "topicName": "6th Term 3 | English | Unit 1: Supplementary - A Childhood in Malabar: A Memoir"
+          "topicId": "SPLTET-T335",
+          "topicName": "Maths | 6th Term 2 - Numbers"
         },
         {
-          "topicId": "SCHOOL-T067",
-          "topicName": "6th Term 3 | English | Unit 2: Prose - That Sunday Morning"
+          "topicId": "SPLTET-T336",
+          "topicName": "Maths | 6th Term 2 - Measurements"
         },
         {
-          "topicId": "SCHOOL-T068",
-          "topicName": "6th Term 3 | English | Unit 2: Poem - A Tragic Story"
+          "topicId": "SPLTET-T337",
+          "topicName": "Maths | 6th Term 2 - Bill, Profit and Loss"
         },
         {
-          "topicId": "SCHOOL-T069",
-          "topicName": "6th Term 3 | English | Unit 2: Supplementary - Brought to Book"
+          "topicId": "SPLTET-T338",
+          "topicName": "Maths | 6th Term 2 - Geometry"
         },
         {
-          "topicId": "SCHOOL-T070",
-          "topicName": "6th Term 3 | English | Unit 3: Play - The Jungle Book"
+          "topicId": "SPLTET-T339",
+          "topicName": "Maths | 6th Term 2 - Information Processing"
         },
         {
-          "topicId": "SCHOOL-T071",
-          "topicName": "6th Term 3 | Maths | Fractions"
+          "topicId": "SPLTET-T340",
+          "topicName": "Maths | 6th Term 3 - Fractions"
         },
         {
-          "topicId": "SCHOOL-T072",
-          "topicName": "6th Term 3 | Maths | Integers"
+          "topicId": "SPLTET-T341",
+          "topicName": "Maths | 6th Term 3 - Integers"
         },
         {
-          "topicId": "SCHOOL-T073",
-          "topicName": "6th Term 3 | Maths | Perimeter and Area"
+          "topicId": "SPLTET-T342",
+          "topicName": "Maths | 6th Term 3 - Perimeter and Area"
         },
         {
-          "topicId": "SCHOOL-T074",
-          "topicName": "6th Term 3 | Maths | Symmetry"
+          "topicId": "SPLTET-T343",
+          "topicName": "Maths | 6th Term 3 - Symmetry"
         },
         {
-          "topicId": "SCHOOL-T075",
-          "topicName": "6th Term 3 | Maths | Information Processing"
+          "topicId": "SPLTET-T344",
+          "topicName": "Maths | 6th Term 3 - Information Processing"
         },
         {
-          "topicId": "SCHOOL-T076",
-          "topicName": "6th Term 3 | Science | Magnetism"
+          "topicId": "SPLTET-T345",
+          "topicName": "Maths | 7th Term 1 - Number System"
         },
         {
-          "topicId": "SCHOOL-T077",
-          "topicName": "6th Term 3 | Science | Water"
+          "topicId": "SPLTET-T346",
+          "topicName": "Maths | 7th Term 1 - Measurements"
         },
         {
-          "topicId": "SCHOOL-T078",
-          "topicName": "6th Term 3 | Science | Chemistry in Everyday Life"
+          "topicId": "SPLTET-T347",
+          "topicName": "Maths | 7th Term 1 - Algebra"
         },
         {
-          "topicId": "SCHOOL-T079",
-          "topicName": "6th Term 3 | Science | Our Environment"
+          "topicId": "SPLTET-T348",
+          "topicName": "Maths | 7th Term 1 - Direct and Inverse Proportion"
         },
         {
-          "topicId": "SCHOOL-T080",
-          "topicName": "6th Term 3 | Science | Plants in Daily Life"
+          "topicId": "SPLTET-T349",
+          "topicName": "Maths | 7th Term 1 - Geometry"
         },
         {
-          "topicId": "SCHOOL-T081",
-          "topicName": "6th Term 3 | Science | Hardware and Software"
+          "topicId": "SPLTET-T350",
+          "topicName": "Maths | 7th Term 1 - Information Processing"
         },
         {
-          "topicId": "SCHOOL-T082",
-          "topicName": "6th Term 3 | Social Science | History: Society and Culture in Ancient Tamizhagam: The Sangam Age"
+          "topicId": "SPLTET-T351",
+          "topicName": "Maths | 7th Term 2 - Number System"
         },
         {
-          "topicId": "SCHOOL-T083",
-          "topicName": "6th Term 3 | Social Science | History: The Post-Mauryan India"
+          "topicId": "SPLTET-T352",
+          "topicName": "Maths | 7th Term 2 - Measurements"
         },
         {
-          "topicId": "SCHOOL-T084",
-          "topicName": "6th Term 3 | Social Science | History: The Age of Empires: Guptas and Vardhanas"
+          "topicId": "SPLTET-T353",
+          "topicName": "Maths | 7th Term 2 - Algebra"
         },
         {
-          "topicId": "SCHOOL-T085",
-          "topicName": "6th Term 3 | Social Science | History: South Indian Kingdoms"
+          "topicId": "SPLTET-T354",
+          "topicName": "Maths | 7th Term 2 - Geometry"
         },
         {
-          "topicId": "SCHOOL-T086",
-          "topicName": "6th Term 3 | Social Science | Geography: Asia and Europe"
+          "topicId": "SPLTET-T355",
+          "topicName": "Maths | 7th Term 2 - Information Processing"
         },
         {
-          "topicId": "SCHOOL-T087",
-          "topicName": "6th Term 3 | Social Science | Geography: Globe"
+          "topicId": "SPLTET-T356",
+          "topicName": "Maths | 7th Term 3 - Number System"
         },
         {
-          "topicId": "SCHOOL-T088",
-          "topicName": "6th Term 3 | Social Science | Geography: Understanding Disaster"
+          "topicId": "SPLTET-T357",
+          "topicName": "Maths | 7th Term 3 - Percentage and Simple Interest"
         },
         {
-          "topicId": "SCHOOL-T089",
-          "topicName": "6th Term 3 | Social Science | Civics: Democracy"
+          "topicId": "SPLTET-T358",
+          "topicName": "Maths | 7th Term 3 - Algebra"
         },
         {
-          "topicId": "SCHOOL-T090",
-          "topicName": "6th Term 3 | Social Science | Civics: Local Bodies - Rural and Urban"
+          "topicId": "SPLTET-T359",
+          "topicName": "Maths | 7th Term 3 - Geometry"
         },
         {
-          "topicId": "SCHOOL-T091",
-          "topicName": "6th Term 3 | Social Science | Civics: Road Safety"
+          "topicId": "SPLTET-T360",
+          "topicName": "Maths | 7th Term 3 - Statistics"
         },
         {
-          "topicId": "SCHOOL-T092",
-          "topicName": "7th Term 1 | Tamil | வாழி - அழகத் தமிழ்"
+          "topicId": "SPLTET-T361",
+          "topicName": "Maths | 7th Term 3 - Information Processing"
         },
         {
-          "topicId": "SCHOOL-T093",
-          "topicName": "7th Term 1 | Tamil | இயற்கை - அணிறில் காடு"
+          "topicId": "SPLTET-T362",
+          "topicName": "Maths | 8th Standard - Numbers"
         },
         {
-          "topicId": "SCHOOL-T094",
-          "topicName": "7th Term 1 | Tamil | நாடு, சமூகம் - நாடு அழக நாடு"
+          "topicId": "SPLTET-T363",
+          "topicName": "Maths | 8th Standard - Measurements"
         },
         {
-          "topicId": "SCHOOL-T095",
-          "topicName": "7th Term 1 | English | Unit 1: Prose - Eidgah"
+          "topicId": "SPLTET-T364",
+          "topicName": "Maths | 8th Standard - Algebra"
         },
         {
-          "topicId": "SCHOOL-T096",
-          "topicName": "7th Term 1 | English | Unit 1: Poem - The Computer Swallowed Grandma"
+          "topicId": "SPLTET-T365",
+          "topicName": "Maths | 8th Standard - Life Mathematics"
         },
         {
-          "topicId": "SCHOOL-T097",
-          "topicName": "7th Term 1 | English | Unit 1: Supplementary - On Monday Morning"
+          "topicId": "SPLTET-T366",
+          "topicName": "Maths | 8th Standard - Geometry"
         },
         {
-          "topicId": "SCHOOL-T098",
-          "topicName": "7th Term 1 | English | Unit 2: Prose - The Wind on Haunted Hill"
+          "topicId": "SPLTET-T367",
+          "topicName": "Maths | 8th Standard - Statistics"
         },
         {
-          "topicId": "SCHOOL-T099",
-          "topicName": "7th Term 1 | English | Unit 2: Poem - The Listeners"
+          "topicId": "SPLTET-T368",
+          "topicName": "Maths | 8th Standard - Information Processing"
         },
         {
-          "topicId": "SCHOOL-T100",
-          "topicName": "7th Term 1 | English | Unit 2: Supplementary - The Red-Headed League"
+          "topicId": "SPLTET-T369",
+          "topicName": "Science | 6th Term 1 - Measurements"
         },
         {
-          "topicId": "SCHOOL-T101",
-          "topicName": "7th Term 1 | English | Unit 3: Prose - A Prayer to the Teacher"
+          "topicId": "SPLTET-T370",
+          "topicName": "Science | 6th Term 1 - Force And Motion"
         },
         {
-          "topicId": "SCHOOL-T102",
-          "topicName": "7th Term 1 | English | Unit 3: Poem - Your Space"
+          "topicId": "SPLTET-T371",
+          "topicName": "Science | 6th Term 1 - Matter Around Us"
         },
         {
-          "topicId": "SCHOOL-T103",
-          "topicName": "7th Term 1 | English | Unit 3: Supplementary - Taking the Bully by the Horns"
+          "topicId": "SPLTET-T372",
+          "topicName": "Science | 6th Term 1 - The World Of Plants"
         },
         {
-          "topicId": "SCHOOL-T104",
-          "topicName": "7th Term 1 | Maths | Number System"
+          "topicId": "SPLTET-T373",
+          "topicName": "Science | 6th Term 1 - The World Of Animals"
         },
         {
-          "topicId": "SCHOOL-T105",
-          "topicName": "7th Term 1 | Maths | Measurements"
+          "topicId": "SPLTET-T374",
+          "topicName": "Science | 6th Term 1 - Health And Hygiene"
         },
         {
-          "topicId": "SCHOOL-T106",
-          "topicName": "7th Term 1 | Maths | Algebra"
+          "topicId": "SPLTET-T375",
+          "topicName": "Science | 6th Term 1 - Computer - An Introduction"
         },
         {
-          "topicId": "SCHOOL-T107",
-          "topicName": "7th Term 1 | Maths | Direct and Inverse Proportion"
+          "topicId": "SPLTET-T376",
+          "topicName": "Social Science | 6th Term 1 - History: What Is History?"
         },
         {
-          "topicId": "SCHOOL-T108",
-          "topicName": "7th Term 1 | Maths | Geometry"
+          "topicId": "SPLTET-T377",
+          "topicName": "Social Science | 6th Term 1 - History: Human Evolution"
         },
         {
-          "topicId": "SCHOOL-T109",
-          "topicName": "7th Term 1 | Maths | Information Processing"
+          "topicId": "SPLTET-T378",
+          "topicName": "Social Science | 6th Term 1 - History: Indus Civilization"
         },
         {
-          "topicId": "SCHOOL-T110",
-          "topicName": "7th Term 1 | Science | Measurements"
+          "topicId": "SPLTET-T379",
+          "topicName": "Social Science | 6th Term 1 - History: Ancient Cities of Tamilagam"
         },
         {
-          "topicId": "SCHOOL-T111",
-          "topicName": "7th Term 1 | Science | Force And Motion"
+          "topicId": "SPLTET-T380",
+          "topicName": "Social Science | 6th Term 1 - Geography: The Universe and Solar System"
         },
         {
-          "topicId": "SCHOOL-T112",
-          "topicName": "7th Term 1 | Science | Matter Around Us"
+          "topicId": "SPLTET-T381",
+          "topicName": "Social Science | 6th Term 1 - Geography: Land And Oceans"
         },
         {
-          "topicId": "SCHOOL-T113",
-          "topicName": "7th Term 1 | Science | Atomic Structure"
+          "topicId": "SPLTET-T382",
+          "topicName": "Social Science | 6th Term 1 - Civics: Understanding Diversity"
         },
         {
-          "topicId": "SCHOOL-T114",
-          "topicName": "7th Term 1 | Science | Reproduction and Modification in plants"
+          "topicId": "SPLTET-T383",
+          "topicName": "Social Science | 6th Term 1 - Civics: Achieving Equality"
         },
         {
-          "topicId": "SCHOOL-T115",
-          "topicName": "7th Term 1 | Science | Health And Hygiene"
+          "topicId": "SPLTET-T384",
+          "topicName": "Science | 6th Term 2 - Heat"
         },
         {
-          "topicId": "SCHOOL-T116",
-          "topicName": "7th Term 1 | Science | Computer -Visual Communication"
+          "topicId": "SPLTET-T385",
+          "topicName": "Science | 6th Term 2 - Electricity"
         },
         {
-          "topicId": "SCHOOL-T117",
-          "topicName": "7th Term 1 | Social Science | History: Sources of Medieval India"
+          "topicId": "SPLTET-T386",
+          "topicName": "Science | 6th Term 2 - Changes around us"
         },
         {
-          "topicId": "SCHOOL-T118",
-          "topicName": "7th Term 1 | Social Science | History: Emergence of New Kingdoms in North India"
+          "topicId": "SPLTET-T387",
+          "topicName": "Science | 6th Term 2 - Air"
         },
         {
-          "topicId": "SCHOOL-T119",
-          "topicName": "7th Term 1 | Social Science | History: Emergence of New Kingdoms in South India: Later Cholas and Pandyas"
+          "topicId": "SPLTET-T388",
+          "topicName": "Science | 6th Term 2 - The Cell"
         },
         {
-          "topicId": "SCHOOL-T120",
-          "topicName": "7th Term 1 | Social Science | History: The Delhi Sultanate"
+          "topicId": "SPLTET-T389",
+          "topicName": "Science | 6th Term 2 - Human Organ Systems"
         },
         {
-          "topicId": "SCHOOL-T121",
-          "topicName": "7th Term 1 | Social Science | Geography: Interior of the Earth"
+          "topicId": "SPLTET-T390",
+          "topicName": "Science | 6th Term 2 - Parts of Computer"
         },
         {
-          "topicId": "SCHOOL-T122",
-          "topicName": "7th Term 1 | Social Science | Geography: Landforms"
+          "topicId": "SPLTET-T391",
+          "topicName": "Social Science | 6th Term 2 - History: Vedic Culture in North India and Megalithic Culture in South India"
         },
         {
-          "topicId": "SCHOOL-T123",
-          "topicName": "7th Term 1 | Social Science | Geography: Population and Settlement"
+          "topicId": "SPLTET-T392",
+          "topicName": "Social Science | 6th Term 2 - History: Great Thinkers and New Faiths"
         },
         {
-          "topicId": "SCHOOL-T124",
-          "topicName": "7th Term 1 | Social Science | Civics: Equality"
+          "topicId": "SPLTET-T393",
+          "topicName": "Social Science | 6th Term 2 - History: From Chiefdoms to Empires"
         },
         {
-          "topicId": "SCHOOL-T125",
-          "topicName": "7th Term 1 | Social Science | Civics: Political Parties"
+          "topicId": "SPLTET-T394",
+          "topicName": "Social Science | 6th Term 2 - Geography: Resources"
         },
         {
-          "topicId": "SCHOOL-T126",
-          "topicName": "7th Term 1 | Social Science | Economics: Production"
+          "topicId": "SPLTET-T395",
+          "topicName": "Social Science | 6th Term 2 - Civics: National Symbols"
         },
         {
-          "topicId": "SCHOOL-T127",
-          "topicName": "7th Term 2 | Tamil | கல்வி: ஒதுவது ஒழியேல்"
+          "topicId": "SPLTET-T396",
+          "topicName": "Social Science | 6th Term 2 - Civics: The Constitution of India"
         },
         {
-          "topicId": "SCHOOL-T128",
-          "topicName": "7th Term 2 | Tamil | கலை, அழகியல்: கலைவண்ணம்"
+          "topicId": "SPLTET-T397",
+          "topicName": "Social Science | 6th Term 2 - Economics: Economics-An Introduction"
         },
         {
-          "topicId": "SCHOOL-T129",
-          "topicName": "7th Term 2 | English | Unit 1: Prose - Adventures of Don Quixote"
+          "topicId": "SPLTET-T398",
+          "topicName": "Science | 6th Term 3 - Magnetism"
         },
         {
-          "topicId": "SCHOOL-T130",
-          "topicName": "7th Term 2 | English | Unit 1: Poem - The Age of Chivalry"
+          "topicId": "SPLTET-T399",
+          "topicName": "Science | 6th Term 3 - Water"
         },
         {
-          "topicId": "SCHOOL-T131",
-          "topicName": "7th Term 2 | English | Unit 1: Supplementary - Alice in Wonderland"
+          "topicId": "SPLTET-T400",
+          "topicName": "Science | 6th Term 3 - Chemistry in Everyday Life"
         },
         {
-          "topicId": "SCHOOL-T132",
-          "topicName": "7th Term 2 | English | Unit 2: Prose - The Last Stone Carver"
+          "topicId": "SPLTET-T401",
+          "topicName": "Science | 6th Term 3 - Our Environment"
         },
         {
-          "topicId": "SCHOOL-T133",
-          "topicName": "7th Term 2 | English | Unit 2: Poem - Wandering Singers"
+          "topicId": "SPLTET-T402",
+          "topicName": "Science | 6th Term 3 - Plants in Daily Life"
         },
         {
-          "topicId": "SCHOOL-T134",
-          "topicName": "7th Term 2 | English | Unit 2: Supplementary - Naya - The Home of Chitrakaars"
+          "topicId": "SPLTET-T403",
+          "topicName": "Science | 6th Term 3 - Hardware and Software"
         },
         {
-          "topicId": "SCHOOL-T135",
-          "topicName": "7th Term 2 | Maths | Number System"
+          "topicId": "SPLTET-T404",
+          "topicName": "Social Science | 6th Term 3 - History: Society and Culture in Ancient Tamizhagam: The Sangam Age"
         },
         {
-          "topicId": "SCHOOL-T136",
-          "topicName": "7th Term 2 | Maths | Measurements"
+          "topicId": "SPLTET-T405",
+          "topicName": "Social Science | 6th Term 3 - History: The Post-Mauryan India"
         },
         {
-          "topicId": "SCHOOL-T137",
-          "topicName": "7th Term 2 | Maths | Algebra"
+          "topicId": "SPLTET-T406",
+          "topicName": "Social Science | 6th Term 3 - History: The Age of Empires: Guptas and Vardhanas"
         },
         {
-          "topicId": "SCHOOL-T138",
-          "topicName": "7th Term 2 | Maths | Geometry"
+          "topicId": "SPLTET-T407",
+          "topicName": "Social Science | 6th Term 3 - History: South Indian Kingdoms"
         },
         {
-          "topicId": "SCHOOL-T139",
-          "topicName": "7th Term 2 | Maths | Information Processing"
+          "topicId": "SPLTET-T408",
+          "topicName": "Social Science | 6th Term 3 - Geography: Asia and Europe"
         },
         {
-          "topicId": "SCHOOL-T140",
-          "topicName": "7th Term 2 | Science | Heat and Temperature"
+          "topicId": "SPLTET-T409",
+          "topicName": "Social Science | 6th Term 3 - Geography: Globe"
         },
         {
-          "topicId": "SCHOOL-T141",
-          "topicName": "7th Term 2 | Science | Electricity"
+          "topicId": "SPLTET-T410",
+          "topicName": "Social Science | 6th Term 3 - Geography: Understanding Disaster"
         },
         {
-          "topicId": "SCHOOL-T142",
-          "topicName": "7th Term 2 | Science | Changes around us"
+          "topicId": "SPLTET-T411",
+          "topicName": "Social Science | 6th Term 3 - Civics: Democracy"
         },
         {
-          "topicId": "SCHOOL-T143",
-          "topicName": "7th Term 2 | Science | Cell Biology"
+          "topicId": "SPLTET-T412",
+          "topicName": "Social Science | 6th Term 3 - Civics: Local Bodies - Rural and Urban"
         },
         {
-          "topicId": "SCHOOL-T144",
-          "topicName": "7th Term 2 | Science | Basis of Classification"
+          "topicId": "SPLTET-T413",
+          "topicName": "Social Science | 6th Term 3 - Civics: Road Safety"
         },
         {
-          "topicId": "SCHOOL-T145",
-          "topicName": "7th Term 2 | Science | Digital Painting"
+          "topicId": "SPLTET-T414",
+          "topicName": "Science | 7th Term 1 - Measurements"
         },
         {
-          "topicId": "SCHOOL-T146",
-          "topicName": "7th Term 2 | Social Science | History: Vijayanagar and Bahmani Kingdoms"
+          "topicId": "SPLTET-T415",
+          "topicName": "Science | 7th Term 1 - Force And Motion"
         },
         {
-          "topicId": "SCHOOL-T147",
-          "topicName": "7th Term 2 | Social Science | History: The Mughal Empire"
+          "topicId": "SPLTET-T416",
+          "topicName": "Science | 7th Term 1 - Matter Around Us"
         },
         {
-          "topicId": "SCHOOL-T148",
-          "topicName": "7th Term 2 | Social Science | History: Rise of Marathas and Peshwas"
+          "topicId": "SPLTET-T417",
+          "topicName": "Science | 7th Term 1 - Atomic Structure"
         },
         {
-          "topicId": "SCHOOL-T149",
-          "topicName": "7th Term 2 | Social Science | Geography: Resources"
+          "topicId": "SPLTET-T418",
+          "topicName": "Science | 7th Term 1 - Reproduction and Modification in plants"
         },
         {
-          "topicId": "SCHOOL-T150",
-          "topicName": "7th Term 2 | Social Science | Geography: Tourism"
+          "topicId": "SPLTET-T419",
+          "topicName": "Science | 7th Term 1 - Health And Hygiene"
         },
         {
-          "topicId": "SCHOOL-T151",
-          "topicName": "7th Term 2 | Social Science | Civics: State Government"
+          "topicId": "SPLTET-T420",
+          "topicName": "Science | 7th Term 1 - Computer -Visual Communication"
         },
         {
-          "topicId": "SCHOOL-T152",
-          "topicName": "7th Term 2 | Social Science | Civics: Media and Democracy"
+          "topicId": "SPLTET-T421",
+          "topicName": "Social Science | 7th Term 1 - History: Sources of Medieval India"
         },
         {
-          "topicId": "SCHOOL-T153",
-          "topicName": "7th Term 3 | Tamil | நாகரிகம், பண்பாடு, தொழில், வணிகம் - நபத்து நாகரிகம்"
+          "topicId": "SPLTET-T422",
+          "topicName": "Social Science | 7th Term 1 - History: Emergence of New Kingdoms in North India"
         },
         {
-          "topicId": "SCHOOL-T154",
-          "topicName": "7th Term 3 | Tamil | அறம், தத்துவம், சிந்தனை - ஒப்பார ஒழுகு"
+          "topicId": "SPLTET-T423",
+          "topicName": "Social Science | 7th Term 1 - History: Emergence of New Kingdoms in South India: Later Cholas and Pandyas"
         },
         {
-          "topicId": "SCHOOL-T155",
-          "topicName": "7th Term 3 | Tamil | மனிதம், ஆளுமை - மனுடம் வெல்லும்"
+          "topicId": "SPLTET-T424",
+          "topicName": "Social Science | 7th Term 1 - History: The Delhi Sultanate"
         },
         {
-          "topicId": "SCHOOL-T156",
-          "topicName": "7th Term 3 | English | Unit 1: Prose - Journey by Train"
+          "topicId": "SPLTET-T425",
+          "topicName": "Social Science | 7th Term 1 - Geography: Interior of the Earth"
         },
         {
-          "topicId": "SCHOOL-T157",
-          "topicName": "7th Term 3 | English | Unit 1: Poem - Sea Fever"
+          "topicId": "SPLTET-T426",
+          "topicName": "Social Science | 7th Term 1 - Geography: Landforms"
         },
         {
-          "topicId": "SCHOOL-T158",
-          "topicName": "7th Term 3 | English | Unit 1: Supplementary - Sindbad - My First Voyage"
+          "topicId": "SPLTET-T427",
+          "topicName": "Social Science | 7th Term 1 - Geography: Population and Settlement"
         },
         {
-          "topicId": "SCHOOL-T159",
-          "topicName": "7th Term 3 | English | Unit 2: Prose - A Story of Self Sacrifice and Bravery"
+          "topicId": "SPLTET-T428",
+          "topicName": "Social Science | 7th Term 1 - Civics: Equality"
         },
         {
-          "topicId": "SCHOOL-T160",
-          "topicName": "7th Term 3 | English | Unit 2: Poem - Courage"
+          "topicId": "SPLTET-T429",
+          "topicName": "Social Science | 7th Term 1 - Civics: Political Parties"
         },
         {
-          "topicId": "SCHOOL-T161",
-          "topicName": "7th Term 3 | English | Unit 2: Supplementary - Man Overboard"
+          "topicId": "SPLTET-T430",
+          "topicName": "Social Science | 7th Term 1 - Economics: Production"
         },
         {
-          "topicId": "SCHOOL-T162",
-          "topicName": "7th Term 3 | English | Unit 3: Play - Jane Eyre"
+          "topicId": "SPLTET-T431",
+          "topicName": "Science | 7th Term 2 - Heat and Temperature"
         },
         {
-          "topicId": "SCHOOL-T163",
-          "topicName": "7th Term 3 | Maths | Number System"
+          "topicId": "SPLTET-T432",
+          "topicName": "Science | 7th Term 2 - Electricity"
         },
         {
-          "topicId": "SCHOOL-T164",
-          "topicName": "7th Term 3 | Maths | Percentage and Simple Interest"
+          "topicId": "SPLTET-T433",
+          "topicName": "Science | 7th Term 2 - Changes around us"
         },
         {
-          "topicId": "SCHOOL-T165",
-          "topicName": "7th Term 3 | Maths | Algebra"
+          "topicId": "SPLTET-T434",
+          "topicName": "Science | 7th Term 2 - Cell Biology"
         },
         {
-          "topicId": "SCHOOL-T166",
-          "topicName": "7th Term 3 | Maths | Geometry"
+          "topicId": "SPLTET-T435",
+          "topicName": "Science | 7th Term 2 - Basis of Classification"
         },
         {
-          "topicId": "SCHOOL-T167",
-          "topicName": "7th Term 3 | Maths | Statistics"
+          "topicId": "SPLTET-T436",
+          "topicName": "Science | 7th Term 2 - Digital Painting"
         },
         {
-          "topicId": "SCHOOL-T168",
-          "topicName": "7th Term 3 | Maths | Information Processing"
+          "topicId": "SPLTET-T437",
+          "topicName": "Social Science | 7th Term 2 - History: Vijayanagar and Bahmani Kingdoms"
         },
         {
-          "topicId": "SCHOOL-T169",
-          "topicName": "7th Term 3 | Science | Light"
+          "topicId": "SPLTET-T438",
+          "topicName": "Social Science | 7th Term 2 - History: The Mughal Empire"
         },
         {
-          "topicId": "SCHOOL-T170",
-          "topicName": "7th Term 3 | Science | Universe and Space"
+          "topicId": "SPLTET-T439",
+          "topicName": "Social Science | 7th Term 2 - History: Rise of Marathas and Peshwas"
         },
         {
-          "topicId": "SCHOOL-T171",
-          "topicName": "7th Term 3 | Science | Polymer Chemistry"
+          "topicId": "SPLTET-T440",
+          "topicName": "Social Science | 7th Term 2 - Geography: Resources"
         },
         {
-          "topicId": "SCHOOL-T172",
-          "topicName": "7th Term 3 | Science | Chemistry in Daily Life"
+          "topicId": "SPLTET-T441",
+          "topicName": "Social Science | 7th Term 2 - Geography: Tourism"
         },
         {
-          "topicId": "SCHOOL-T173",
-          "topicName": "7th Term 3 | Science | Animals in Daily Life"
+          "topicId": "SPLTET-T442",
+          "topicName": "Social Science | 7th Term 2 - Civics: State Government"
         },
         {
-          "topicId": "SCHOOL-T174",
-          "topicName": "7th Term 3 | Science | Visual Communication"
+          "topicId": "SPLTET-T443",
+          "topicName": "Social Science | 7th Term 2 - Civics: Media and Democracy"
         },
         {
-          "topicId": "SCHOOL-T175",
-          "topicName": "7th Term 3 | Social Science | History: New Religious Ideas and Movements"
+          "topicId": "SPLTET-T444",
+          "topicName": "Science | 7th Term 3 - Light"
         },
         {
-          "topicId": "SCHOOL-T176",
-          "topicName": "7th Term 3 | Social Science | History: Art and Architecture of Tamil Nadu"
+          "topicId": "SPLTET-T445",
+          "topicName": "Science | 7th Term 3 - Universe and Space"
         },
         {
-          "topicId": "SCHOOL-T177",
-          "topicName": "7th Term 3 | Social Science | History: Jainism, Buddhism and Ajivika Philosophy in Tamil Nadu"
+          "topicId": "SPLTET-T446",
+          "topicName": "Science | 7th Term 3 - Polymer Chemistry"
         },
         {
-          "topicId": "SCHOOL-T178",
-          "topicName": "7th Term 3 | Social Science | Geography: Exploring Continents - North America and South America"
+          "topicId": "SPLTET-T447",
+          "topicName": "Science | 7th Term 3 - Chemistry in Daily Life"
         },
         {
-          "topicId": "SCHOOL-T179",
-          "topicName": "7th Term 3 | Social Science | Geography: Map Reading"
+          "topicId": "SPLTET-T448",
+          "topicName": "Science | 7th Term 3 - Animals in Daily Life"
         },
         {
-          "topicId": "SCHOOL-T180",
-          "topicName": "7th Term 3 | Social Science | Geography: Natural Hazards - Understanding of Disaster Management in Practice"
+          "topicId": "SPLTET-T449",
+          "topicName": "Science | 7th Term 3 - Visual Communication"
         },
         {
-          "topicId": "SCHOOL-T181",
-          "topicName": "7th Term 3 | Social Science | Civics: Women Empowerment"
+          "topicId": "SPLTET-T450",
+          "topicName": "Social Science | 7th Term 3 - History: New Religious Ideas and Movements"
         },
         {
-          "topicId": "SCHOOL-T182",
-          "topicName": "7th Term 3 | Social Science | Civics: Market and Consumer Protection"
+          "topicId": "SPLTET-T451",
+          "topicName": "Social Science | 7th Term 3 - History: Art and Architecture of Tamil Nadu"
         },
         {
-          "topicId": "SCHOOL-T183",
-          "topicName": "7th Term 3 | Social Science | Civics: Road Safety"
+          "topicId": "SPLTET-T452",
+          "topicName": "Social Science | 7th Term 3 - History: Jainism, Buddhism and Ajivika Philosophy in Tamil Nadu"
         },
         {
-          "topicId": "SCHOOL-T184",
-          "topicName": "7th Term 3 | Social Science | Economics: Tax and its importance"
+          "topicId": "SPLTET-T453",
+          "topicName": "Social Science | 7th Term 3 - Geography: Exploring Continents - North America and South America"
         },
         {
-          "topicId": "SCHOOL-T185",
-          "topicName": "8th Standard | Tamil | மொழி - தமிழ் இன்பம்"
+          "topicId": "SPLTET-T454",
+          "topicName": "Social Science | 7th Term 3 - Geography: Map Reading"
         },
         {
-          "topicId": "SCHOOL-T186",
-          "topicName": "8th Standard | Tamil | இயற்கை - ஈடில்லா இயற்கை"
+          "topicId": "SPLTET-T455",
+          "topicName": "Social Science | 7th Term 3 - Geography: Natural Hazards - Understanding of Disaster Management in Practice"
         },
         {
-          "topicId": "SCHOOL-T187",
-          "topicName": "8th Standard | Tamil | அறிவியல், தொழில்நுட்பம் - உடலை ஓம்புமின்"
+          "topicId": "SPLTET-T456",
+          "topicName": "Social Science | 7th Term 3 - Civics: Women Empowerment"
         },
         {
-          "topicId": "SCHOOL-T188",
-          "topicName": "8th Standard | Tamil | கல்வி - கல்வி கரையில"
+          "topicId": "SPLTET-T457",
+          "topicName": "Social Science | 7th Term 3 - Civics: Market and Consumer Protection"
         },
         {
-          "topicId": "SCHOOL-T189",
-          "topicName": "8th Standard | Tamil | கலை, அழகியல், பண்பாடு - குழலினிது யாழினிது"
+          "topicId": "SPLTET-T458",
+          "topicName": "Social Science | 7th Term 3 - Civics: Road Safety"
         },
         {
-          "topicId": "SCHOOL-T190",
-          "topicName": "8th Standard | Tamil | நகரகம், தொழில், வணிகம் - வையம்பகழ் வணிகம்"
+          "topicId": "SPLTET-T459",
+          "topicName": "Social Science | 7th Term 3 - Economics: Tax and its importance"
         },
         {
-          "topicId": "SCHOOL-T191",
-          "topicName": "8th Standard | Tamil | நாடு, சமூகம் - பாருக்குளே நல்ல நாடு"
+          "topicId": "SPLTET-T460",
+          "topicName": "Science | 8th Standard - Measurements"
         },
         {
-          "topicId": "SCHOOL-T192",
-          "topicName": "8th Standard | Tamil | அறம், தத்துவம், சிந்தனை - அறத்தால் வருவதே இன்பம்"
+          "topicId": "SPLTET-T461",
+          "topicName": "Science | 8th Standard - Force And Pressure"
         },
         {
-          "topicId": "SCHOOL-T193",
-          "topicName": "8th Standard | Tamil | மனிதம், ஆளுமை - குன்றை நிமிர்த்துமில்"
+          "topicId": "SPLTET-T462",
+          "topicName": "Science | 8th Standard - Light"
         },
         {
-          "topicId": "SCHOOL-T194",
-          "topicName": "8th Standard | English | Unit 1: Prose - The Nose-Jewel"
+          "topicId": "SPLTET-T463",
+          "topicName": "Science | 8th Standard - Heat"
         },
         {
-          "topicId": "SCHOOL-T195",
-          "topicName": "8th Standard | English | Unit 1: Poem - Special Hero"
+          "topicId": "SPLTET-T464",
+          "topicName": "Science | 8th Standard - Electricity"
         },
         {
-          "topicId": "SCHOOL-T196",
-          "topicName": "8th Standard | English | Unit 1: Supplementary - The Woman on Platform 8"
+          "topicId": "SPLTET-T465",
+          "topicName": "Science | 8th Standard - Sound"
         },
         {
-          "topicId": "SCHOOL-T197",
-          "topicName": "8th Standard | English | Unit 2: Prose - Hobby Turns into A Successful Career"
+          "topicId": "SPLTET-T466",
+          "topicName": "Science | 8th Standard - Magnetism"
         },
         {
-          "topicId": "SCHOOL-T198",
-          "topicName": "8th Standard | English | Unit 2: Poem - My Hobby: Reading"
+          "topicId": "SPLTET-T467",
+          "topicName": "Science | 8th Standard - Universe and Space Science"
         },
         {
-          "topicId": "SCHOOL-T199",
-          "topicName": "8th Standard | English | Unit 2: Supplementary - Jim Corbett, A Hunter Turned Naturalist"
+          "topicId": "SPLTET-T468",
+          "topicName": "Science | 8th Standard - Matter Around Us"
         },
         {
-          "topicId": "SCHOOL-T200",
-          "topicName": "8th Standard | English | Unit 3: Prose - Sir Isaac Newton -The Ingenious Scientist"
+          "topicId": "SPLTET-T469",
+          "topicName": "Science | 8th Standard - Changes around Us"
         },
         {
-          "topicId": "SCHOOL-T201",
-          "topicName": "8th Standard | English | Unit 3: Poem - Making Life Worth While"
+          "topicId": "SPLTET-T470",
+          "topicName": "Science | 8th Standard - Air"
         },
         {
-          "topicId": "SCHOOL-T202",
-          "topicName": "8th Standard | English | Unit 3: Supplementary - The Three Questions"
+          "topicId": "SPLTET-T471",
+          "topicName": "Science | 8th Standard - Atomic Structure"
         },
         {
-          "topicId": "SCHOOL-T203",
-          "topicName": "8th Standard | English | Unit 4: Prose - My Reminiscence"
+          "topicId": "SPLTET-T472",
+          "topicName": "Science | 8th Standard - Water"
         },
         {
-          "topicId": "SCHOOL-T204",
-          "topicName": "8th Standard | English | Unit 4: Poem - A Thing of Beauty"
+          "topicId": "SPLTET-T473",
+          "topicName": "Science | 8th Standard - Acid and Bases"
         },
         {
-          "topicId": "SCHOOL-T205",
-          "topicName": "8th Standard | English | Unit 4: Supplementary - Crossing the River"
+          "topicId": "SPLTET-T474",
+          "topicName": "Science | 8th Standard - Chemistry in Everyday Life"
         },
         {
-          "topicId": "SCHOOL-T206",
-          "topicName": "8th Standard | English | Unit 5: Prose - Being Safe"
+          "topicId": "SPLTET-T475",
+          "topicName": "Science | 8th Standard - Microorganisms"
         },
         {
-          "topicId": "SCHOOL-T207",
-          "topicName": "8th Standard | English | Unit 5: Poem - Fire Work Night"
+          "topicId": "SPLTET-T476",
+          "topicName": "Science | 8th Standard - Plant Kingdom"
         },
         {
-          "topicId": "SCHOOL-T208",
-          "topicName": "8th Standard | English | Unit 5: Supplementary - When Instinct Works"
+          "topicId": "SPLTET-T477",
+          "topicName": "Science | 8th Standard - Organisation of Life"
         },
         {
-          "topicId": "SCHOOL-T209",
-          "topicName": "8th Standard | English | Unit 6: Prose - Friendship"
+          "topicId": "SPLTET-T478",
+          "topicName": "Science | 8th Standard - Movements in Animals"
         },
         {
-          "topicId": "SCHOOL-T210",
-          "topicName": "8th Standard | English | Unit 6: Poem - Lessons in Life"
+          "topicId": "SPLTET-T479",
+          "topicName": "Science | 8th Standard - Reaching the Age of Adolescence"
         },
         {
-          "topicId": "SCHOOL-T211",
-          "topicName": "8th Standard | English | Unit 6: Supplementary - Homeless Man and his Friends"
+          "topicId": "SPLTET-T480",
+          "topicName": "Science | 8th Standard - Crop Production and Management"
         },
         {
-          "topicId": "SCHOOL-T212",
-          "topicName": "8th Standard | English | Unit 7: Prose - Cyber Safety"
+          "topicId": "SPLTET-T481",
+          "topicName": "Science | 8th Standard - Conservation of Plants and Animals"
         },
         {
-          "topicId": "SCHOOL-T213",
-          "topicName": "8th Standard | English | Unit 7: Poem - My Computer Needs A Break"
+          "topicId": "SPLTET-T482",
+          "topicName": "Social Science | 8th Standard - History: Advent of the Europeans"
         },
         {
-          "topicId": "SCHOOL-T214",
-          "topicName": "8th Standard | English | Unit 7: Supplementary - The Mystery of the Cyber Friend"
+          "topicId": "SPLTET-T483",
+          "topicName": "Social Science | 8th Standard - History: From Trade to Territory"
         },
         {
-          "topicId": "SCHOOL-T215",
-          "topicName": "8th Standard | English | Unit 8: Play - Jack and the Beanstalk"
+          "topicId": "SPLTET-T484",
+          "topicName": "Social Science | 8th Standard - History: Rural Life and Society"
         },
         {
-          "topicId": "SCHOOL-T216",
-          "topicName": "8th Standard | Maths | Numbers"
+          "topicId": "SPLTET-T485",
+          "topicName": "Social Science | 8th Standard - History: People's Revolt"
         },
         {
-          "topicId": "SCHOOL-T217",
-          "topicName": "8th Standard | Maths | Measurements"
+          "topicId": "SPLTET-T486",
+          "topicName": "Social Science | 8th Standard - History: Educational Development in India"
         },
         {
-          "topicId": "SCHOOL-T218",
-          "topicName": "8th Standard | Maths | Algebra"
+          "topicId": "SPLTET-T487",
+          "topicName": "Social Science | 8th Standard - History: Development of Industries in India"
         },
         {
-          "topicId": "SCHOOL-T219",
-          "topicName": "8th Standard | Maths | Life Mathematics"
+          "topicId": "SPLTET-T488",
+          "topicName": "Social Science | 8th Standard - History: Urban changes during the British period"
         },
         {
-          "topicId": "SCHOOL-T220",
-          "topicName": "8th Standard | Maths | Geometry"
+          "topicId": "SPLTET-T489",
+          "topicName": "Social Science | 8th Standard - History: Status of Women in India through the ages"
         },
         {
-          "topicId": "SCHOOL-T221",
-          "topicName": "8th Standard | Maths | Statistics"
+          "topicId": "SPLTET-T490",
+          "topicName": "Social Science | 8th Standard - Geography: Rocks and Soils"
         },
         {
-          "topicId": "SCHOOL-T222",
-          "topicName": "8th Standard | Maths | Information Processing"
+          "topicId": "SPLTET-T491",
+          "topicName": "Social Science | 8th Standard - Geography: Weather and Climate"
         },
         {
-          "topicId": "SCHOOL-T223",
-          "topicName": "8th Standard | Science | Measurements"
+          "topicId": "SPLTET-T492",
+          "topicName": "Social Science | 8th Standard - Geography: Hydrologic Cycle"
         },
         {
-          "topicId": "SCHOOL-T224",
-          "topicName": "8th Standard | Science | Force And Pressure"
+          "topicId": "SPLTET-T493",
+          "topicName": "Social Science | 8th Standard - Geography: Migration and Urbanisation"
         },
         {
-          "topicId": "SCHOOL-T225",
-          "topicName": "8th Standard | Science | Light"
+          "topicId": "SPLTET-T494",
+          "topicName": "Social Science | 8th Standard - Geography: Hazards"
         },
         {
-          "topicId": "SCHOOL-T226",
-          "topicName": "8th Standard | Science | Heat"
+          "topicId": "SPLTET-T495",
+          "topicName": "Social Science | 8th Standard - Geography: Industries"
         },
         {
-          "topicId": "SCHOOL-T227",
-          "topicName": "8th Standard | Science | Electricity"
+          "topicId": "SPLTET-T496",
+          "topicName": "Social Science | 8th Standard - Geography: Exploring Continents: Africa, Australia and Antarctica"
         },
         {
-          "topicId": "SCHOOL-T228",
-          "topicName": "8th Standard | Science | Sound"
+          "topicId": "SPLTET-T497",
+          "topicName": "Social Science | 8th Standard - Geography: Map Reading"
         },
         {
-          "topicId": "SCHOOL-T229",
-          "topicName": "8th Standard | Science | Magnetism"
+          "topicId": "SPLTET-T498",
+          "topicName": "Social Science | 8th Standard - Civics: How the State Government Works"
         },
         {
-          "topicId": "SCHOOL-T230",
-          "topicName": "8th Standard | Science | Universe and Space Science"
+          "topicId": "SPLTET-T499",
+          "topicName": "Social Science | 8th Standard - Civics: Citizens and Citizenship"
         },
         {
-          "topicId": "SCHOOL-T231",
-          "topicName": "8th Standard | Science | Matter Around Us"
+          "topicId": "SPLTET-T500",
+          "topicName": "Social Science | 8th Standard - Civics: Understanding Secularism"
         },
         {
-          "topicId": "SCHOOL-T232",
-          "topicName": "8th Standard | Science | Changes around Us"
+          "topicId": "SPLTET-T501",
+          "topicName": "Social Science | 8th Standard - Civics: Human Rights and UNO"
         },
         {
-          "topicId": "SCHOOL-T233",
-          "topicName": "8th Standard | Science | Air"
+          "topicId": "SPLTET-T502",
+          "topicName": "Social Science | 8th Standard - Civics: Road Safety Rules and Regulations"
         },
         {
-          "topicId": "SCHOOL-T234",
-          "topicName": "8th Standard | Science | Atomic Structure"
+          "topicId": "SPLTET-T503",
+          "topicName": "Social Science | 8th Standard - Civics: Defence & Foreign Policy"
         },
         {
-          "topicId": "SCHOOL-T235",
-          "topicName": "8th Standard | Science | Water"
+          "topicId": "SPLTET-T504",
+          "topicName": "Social Science | 8th Standard - Civics: The Judiciary"
         },
         {
-          "topicId": "SCHOOL-T236",
-          "topicName": "8th Standard | Science | Acid and Bases"
+          "topicId": "SPLTET-T505",
+          "topicName": "Social Science | 8th Standard - Economics: Money, Savings and Investments"
         },
         {
-          "topicId": "SCHOOL-T237",
-          "topicName": "8th Standard | Science | Chemistry in Everyday Life"
+          "topicId": "SPLTET-T506",
+          "topicName": "Social Science | 8th Standard - Economics: Public and Private Sectors"
         },
         {
-          "topicId": "SCHOOL-T238",
-          "topicName": "8th Standard | Science | Microorganisms"
+          "topicId": "SPLTET-T507",
+          "topicName": "REVISION | PHYSICS"
         },
         {
-          "topicId": "SCHOOL-T239",
-          "topicName": "8th Standard | Science | Plant Kingdom"
-        },
-        {
-          "topicId": "SCHOOL-T240",
-          "topicName": "8th Standard | Science | Organisation of Life"
-        },
-        {
-          "topicId": "SCHOOL-T241",
-          "topicName": "8th Standard | Science | Movements in Animals"
-        },
-        {
-          "topicId": "SCHOOL-T242",
-          "topicName": "8th Standard | Science | Reaching the Age of Adolescence"
-        },
-        {
-          "topicId": "SCHOOL-T243",
-          "topicName": "8th Standard | Science | Crop Production and Management"
-        },
-        {
-          "topicId": "SCHOOL-T244",
-          "topicName": "8th Standard | Science | Conservation of Plants and Animals"
-        },
-        {
-          "topicId": "SCHOOL-T245",
-          "topicName": "8th Standard | Social Science | History: Advent of the Europeans"
-        },
-        {
-          "topicId": "SCHOOL-T246",
-          "topicName": "8th Standard | Social Science | History: From Trade to Territory"
-        },
-        {
-          "topicId": "SCHOOL-T247",
-          "topicName": "8th Standard | Social Science | History: Rural Life and Society"
-        },
-        {
-          "topicId": "SCHOOL-T248",
-          "topicName": "8th Standard | Social Science | History: People's Revolt"
-        },
-        {
-          "topicId": "SCHOOL-T249",
-          "topicName": "8th Standard | Social Science | History: Educational Development in India"
-        },
-        {
-          "topicId": "SCHOOL-T250",
-          "topicName": "8th Standard | Social Science | History: Development of Industries in India"
-        },
-        {
-          "topicId": "SCHOOL-T251",
-          "topicName": "8th Standard | Social Science | History: Urban changes during the British period"
-        },
-        {
-          "topicId": "SCHOOL-T252",
-          "topicName": "8th Standard | Social Science | History: Status of Women in India through the ages"
-        },
-        {
-          "topicId": "SCHOOL-T253",
-          "topicName": "8th Standard | Social Science | Geography: Rocks and Soils"
-        },
-        {
-          "topicId": "SCHOOL-T254",
-          "topicName": "8th Standard | Social Science | Geography: Weather and Climate"
-        },
-        {
-          "topicId": "SCHOOL-T255",
-          "topicName": "8th Standard | Social Science | Geography: Hydrologic Cycle"
-        },
-        {
-          "topicId": "SCHOOL-T256",
-          "topicName": "8th Standard | Social Science | Geography: Migration and Urbanisation"
-        },
-        {
-          "topicId": "SCHOOL-T257",
-          "topicName": "8th Standard | Social Science | Geography: Hazards"
-        },
-        {
-          "topicId": "SCHOOL-T258",
-          "topicName": "8th Standard | Social Science | Geography: Industries"
-        },
-        {
-          "topicId": "SCHOOL-T259",
-          "topicName": "8th Standard | Social Science | Geography: Exploring Continents: Africa, Australia and Antarctica"
-        },
-        {
-          "topicId": "SCHOOL-T260",
-          "topicName": "8th Standard | Social Science | Geography: Map Reading"
-        },
-        {
-          "topicId": "SCHOOL-T261",
-          "topicName": "8th Standard | Social Science | Civics: How the State Government Works"
-        },
-        {
-          "topicId": "SCHOOL-T262",
-          "topicName": "8th Standard | Social Science | Civics: Citizens and Citizenship"
-        },
-        {
-          "topicId": "SCHOOL-T263",
-          "topicName": "8th Standard | Social Science | Civics: Understanding Secularism"
-        },
-        {
-          "topicId": "SCHOOL-T264",
-          "topicName": "8th Standard | Social Science | Civics: Human Rights and UNO"
-        },
-        {
-          "topicId": "SCHOOL-T265",
-          "topicName": "8th Standard | Social Science | Civics: Road Safety Rules and Regulations"
-        },
-        {
-          "topicId": "SCHOOL-T266",
-          "topicName": "8th Standard | Social Science | Civics: Defence & Foreign Policy"
-        },
-        {
-          "topicId": "SCHOOL-T267",
-          "topicName": "8th Standard | Social Science | Civics: The Judiciary"
-        },
-        {
-          "topicId": "SCHOOL-T268",
-          "topicName": "8th Standard | Social Science | Economics: Money, Savings and Investments"
-        },
-        {
-          "topicId": "SCHOOL-T269",
-          "topicName": "8th Standard | Social Science | Economics: Public and Private Sectors"
+          "topicId": "SPLTET-T508",
+          "topicName": "REVISION | SOCIAL SCIENCE"
         }
       ]
     }
