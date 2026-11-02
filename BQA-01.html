@@ -85,7 +85,18 @@
         .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
         .medium-zoom-overlay { z-index: 9999 !important; }
         .medium-zoom-image--opened { z-index: 10000 !important; }
-        @media print { html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } #startScreen, #quizContainer { display: none !important; } #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn:not(.btn-pdf), .icon-btn { display: none !important; } .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; } @page { size: A4; margin: 1.5cm; } }
+        @media print { 
+            html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } 
+            .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } 
+            #startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard { display: none !important; } 
+            #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } 
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; } 
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; margin-bottom: 20px !important; display: block !important; } 
+            .review-card .option-item { border: 1px solid #ccc !important; background: white !important; color: black !important; } 
+            .review-card .option-item.correct { background: #e6ffe6 !important; border-color: #28a745 !important; color: black !important; } 
+            .review-card .option-item.wrong { background: #ffe6e6 !important; border-color: #dc3545 !important; color: black !important; } 
+            @page { size: A4; margin: 1.5cm; } 
+        }
         @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
     </style>
 </head>
@@ -111,6 +122,11 @@
         </div>
     </div>
     <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div id="printHeader" style="display: none;">
+            <h1>DR SAHITHA IAS ACADEMY</h1>
+            <h3>ANSWER KEY & DETAILED REVIEW</h3>
+            <p><strong>Test:</strong> BQA-01 - QUANTITATIVE APTITUDE</p>
+        </div>
         <div class="result-dashboard">
             <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
             <div id="resultCandidateName"></div>
@@ -628,14 +644,20 @@ let QUESTIONS = [
             }));
             document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
             document.getElementById("reviewPagination").style.display = "none";
-            await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
-            if (window.AndroidBridge && window.AndroidBridge.printPage) window.AndroidBridge.printPage();
-            else window.print();
+            await new Promise(r => setTimeout(r, 300));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+            } else {
+                window.print();
+            }
         } catch (e) {
             console.error("PDF export failed:", e);
             alert("Could not prepare PDF. Please try again.");
         } finally {
-            setTimeout(() => { if (btn) { btn.disabled = false; btn.innerText = originalText; } }, 800);
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 1000);
         }
     }
     async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
