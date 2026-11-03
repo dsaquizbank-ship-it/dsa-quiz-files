@@ -6,7 +6,11 @@
     <title>BQA-01 - BQA-01 SIMPLIFICATION (Set-1)</title>
     <script>
         window.MathJax = {
-            tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]], displayMath: [["$$", "$$"], ["\\[", "\\]"]] },
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true
+            },
             options: { ignoreHtmlClass: "no-mathjax" },
             chtml: {
                 displayAlign: "left",
@@ -16,7 +20,8 @@
             svg: {
                 scale: 0.9,
                 minScale: 0.5,
-                mtextInheritFont: true
+                mtextInheritFont: true,
+                fontCache: "global"
             }
         };
     </script>
@@ -40,7 +45,7 @@
         .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
         .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
         .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; white-space: normal; word-wrap: break-word; padding-bottom: 20px; max-width: 100%; overflow-x: auto; }
-        mjx-container { display: inline-block !important; max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        mjx-container { display: inline !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; }
         .question-text::-webkit-scrollbar { display: none; }
         .question-text { -ms-overflow-style: none; scrollbar-width: none; }
         .option-item { background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; }
