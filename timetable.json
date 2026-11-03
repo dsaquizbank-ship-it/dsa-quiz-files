@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-02T08:41:15.624Z",
+  "version": "2026-11-03T10:14:00.193Z",
   "timetable": [
     {
       "day": "Monday",
@@ -7,32 +7,44 @@
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Quantitative Aptitude: Approximation, Percentages",
-          "batch": "BANK"
+          "batch": "BANK",
+          "faculty": "",
+          "room": ""
         },
         {
           "time": "11:30 AM - 01:00 PM",
           "subject": "Unit V - Crown to Independence: Dandi March, Gandhi-Irwin Pact, Round Table Conferences",
-          "batch": "PGTRB HISTORY"
+          "batch": "PGTRB HISTORY",
+          "faculty": "",
+          "room": ""
         },
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Science: 9th - Universe",
-          "batch": "SGT"
+          "batch": "SGT",
+          "faculty": "",
+          "room": ""
         },
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Tamil Literature: அலகு 1 - இலக்கணம்",
-          "batch": "TNPSC"
+          "batch": "TNPSC",
+          "faculty": "",
+          "room": ""
         },
         {
           "time": "11:30 AM - 01:00 PM",
           "subject": "Unit III - History, Culture & INM: Different modes of agitation: Growth of Satyagraha",
-          "batch": "TNPSC"
+          "batch": "TNPSC",
+          "faculty": "",
+          "room": ""
         },
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "REVISION: PHYSICS",
-          "batch": "TNTET"
+          "batch": "TNTET",
+          "faculty": "",
+          "room": ""
         }
       ]
     },
@@ -43,66 +55,139 @@
           "time": "10:00 AM - 11:30 AM",
           "subject": "Unit I - Aptitude: Simplification",
           "batch": "TNPSC",
+          "faculty": "",
           "room": ""
         },
         {
           "time": "11:30 AM - 01:00 PM",
           "subject": "Unit III - History, Culture & INM: Different modes of agitation: Militant Movements",
           "batch": "TNPSC",
+          "faculty": "",
           "room": ""
         },
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "English: 8th – UNIT 1: Prose: The Nose-Jewel, Poem: Special Hero, Supplementary: The Woman on Platform 8",
           "batch": "TNTET",
+          "faculty": "",
           "room": ""
         },
         {
           "time": "11:30 AM - 01:00 PM",
           "subject": "Tamil: 6th Term 1 – மொழி",
           "batch": "TNTET",
+          "faculty": "",
           "room": ""
         },
         {
           "time": "11:30 AM - 01:00 PM",
           "subject": "Unit IX - Literary Criticism and Theories: Recent Trends - New Historicism",
           "batch": "UGTRB ENGLISH",
+          "faculty": "",
           "room": ""
         },
         {
           "time": "11:30 AM - 01:00 PM",
           "subject": "Unit V - Crown to Independence: Cripps Mission and Quit India Movement",
           "batch": "PGTRB HISTORY",
+          "faculty": "",
           "room": ""
         },
         {
           "time": "02:00 PM - 03:30 PM",
           "subject": "Unit X - Cybersecurity: Attacks: Investigating DoS Attacks, Types of DoS Attacks, Classification of DoS Attacks, Techniques to Detect DoS Attacks",
           "batch": "PGTRB COMPUTER SCIENCE",
+          "faculty": "",
           "room": ""
         },
         {
           "time": "11:30 AM - 01:00 PM",
           "subject": "General Awareness: Modern India - Towards Independence",
           "batch": "SSC",
+          "faculty": "",
           "room": ""
         },
         {
           "time": "11:30 AM - 01:00 PM",
           "subject": "General Awareness: Modern India - Towards Independence",
           "batch": "RRB",
+          "faculty": "",
           "room": ""
         },
         {
           "time": "11:30 AM - 01:00 PM",
           "subject": "Science: 9th - Measurement",
           "batch": "SGT",
+          "faculty": "",
           "room": ""
         },
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Reasoning Ability: Puzzles, Seating Arrangements, Syllogism, Input/output",
-          "batch": "BANK"
+          "batch": "BANK",
+          "faculty": "",
+          "room": ""
+        }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Tamil: 7th Term 1 – வாழி - அழகுத் தமிழ்",
+          "batch": "TNTET",
+          "faculty": "MRS. SREEVIDHYA",
+          "room": "MRS. SREEVIDHYA"
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "Unit I - Aptitude",
+          "batch": "TNPSC",
+          "faculty": "MS. JOTHIKA",
+          "room": "MS. JOTHIKA"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Tamil Grammar: 7TH இலக்கணம்",
+          "batch": "TNPSC",
+          "faculty": "MRS. SREEVIDHYA",
+          "room": "MRS. SREEVIDHYA"
+        },
+        {
+          "time": "10:00 AM - 01:00 PM",
+          "subject": "Quantitative Aptitude",
+          "batch": "SSC",
+          "faculty": "MR. ABIN",
+          "room": "MR. ABIN"
+        },
+        {
+          "time": "10:00 AM - 01:00 PM",
+          "subject": "Quantitative Aptitude",
+          "batch": "BANK",
+          "faculty": "MR. ABIN",
+          "room": "MR. ABIN"
+        },
+        {
+          "time": "10:00 AM - 01:00 PM",
+          "subject": "Quantitative Aptitude",
+          "batch": "RRB",
+          "faculty": "MR. ABIN",
+          "room": "MR. ABIN"
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "Unit II - Real Analysis",
+          "batch": "PGTRB MATHS",
+          "faculty": "MRS. REKHA",
+          "room": "MRS. REKHA"
+        },
+        {
+          "time": "02:00 PM - 03:30 PM",
+          "subject": "Unit V - Data Communication and Computer Networks: Noiseless and Noisy Channels",
+          "batch": "PGTRB COMPUTER SCIENCE",
+          "faculty": "DR SAHITHA",
+          "room": "DR SAHITHA"
         }
       ]
     }
