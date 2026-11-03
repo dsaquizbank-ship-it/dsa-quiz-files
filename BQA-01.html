@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-    <title>BQA-01</title>
+    <title>BQA-01 - BQA-01 SIMPLIFICATION (Set-1)</title>
     <script>
         window.MathJax = {
             tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]], displayMath: [["$$", "$$"], ["\\[", "\\]"]] },
@@ -654,8 +654,7 @@ let QUESTIONS = [
                 elementsToRemove.forEach(el => el.remove());
                 const printHeader = clone.querySelector("#printHeader");
                 if (printHeader) printHeader.style.display = "block";
-                const htmlString = "<!DOCTYPE html>
-" + clone.outerHTML;
+                const htmlString = "<!DOCTYPE html>\n" + clone.outerHTML;
                 window.AndroidBridge.saveExamPdf(dashboard.testNo, dashboard.examTitle, htmlString);
                 alert("✅ Exam PDF Saved! You can view it in My Profile -> My Exams.");
             } else {
