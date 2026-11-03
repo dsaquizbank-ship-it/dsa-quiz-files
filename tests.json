@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-03T08:28:59.962Z",
+  "version": "2026-11-03T08:35:00.661Z",
   "categories": [
     {
       "id": "BANK",
@@ -43,7 +43,7 @@
     },
     {
       "id": "SPLTET",
-      "name": "SPECIAL TET",
+      "name": "SPLTET",
       "order": 9
     },
     {
@@ -238,6 +238,12 @@
       "name": "TET MATHS",
       "categoryId": "TNTET",
       "order": 3
+    },
+    {
+      "id": "SPL-SOCIAL SCIENCE",
+      "name": "SOCIAL SCIENCE",
+      "categoryId": "SPLTET",
+      "order": 5
     }
   ],
   "tests": [
@@ -897,6 +903,19 @@
       "questionCount": 20,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-04.html",
+      "releaseTimestamp": 1793687400000,
+      "language": "both"
+    },
+    {
+      "testId": "SPT-SS-2",
+      "examId": "SPL-SOCIAL SCIENCE",
+      "name": "6TH TERM 1 HISTORY FULL SPT-SS-2",
+      "topic": "6TH TERM 1 HISTORY FULL",
+      "durationMinutes": 30,
+      "order": 2,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-SS-2.html",
       "releaseTimestamp": 1793687400000,
       "language": "both"
     }
