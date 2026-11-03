@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-03T08:23:09.103Z",
+  "version": "2026-11-03T08:24:27.799Z",
   "categories": [
     {
       "id": "BANK",
@@ -882,6 +882,19 @@
       "questionCount": 20,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-02.html",
+      "releaseTimestamp": 1793687400000,
+      "language": "both"
+    },
+    {
+      "testId": "TIP-03",
+      "examId": "TNPSC-IP",
+      "name": "SALIENT FEATURES OF THE CONSTITUTION TIP-03",
+      "topic": "SALIENT FEATURES OF THE CONSTITUTION",
+      "durationMinutes": 10,
+      "order": 2,
+      "questionCount": 20,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-03.html",
       "releaseTimestamp": 1793687400000,
       "language": "both"
     }
