@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-03T17:56:37.117Z",
+  "version": "2026-11-03T17:59:17.029Z",
   "categories": [
     {
       "id": "BANK",
@@ -1059,6 +1059,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGS-02.html",
       "releaseTimestamp": 1793779200000,
       "language": "both"
+    },
+    {
+      "testId": "SGS-02",
+      "examId": "SSC-GS",
+      "name": "CHEMISTRY-ASIC CONCEPTS OF CHEMISTRY SGS-02",
+      "topic": "CHEMISTRY-BASIC CONCEPTS OF CHEMISTRY",
+      "durationMinutes": 10,
+      "order": 1,
+      "questionCount": 20,
+      "negativeMark": 0.5,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGS-02.html",
+      "releaseTimestamp": 1793779200000,
+      "language": "en"
     }
   ]
 }
