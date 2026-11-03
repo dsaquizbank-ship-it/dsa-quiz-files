@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-03T02:36:22.074Z",
+  "version": "2026-11-03T02:40:27.732Z",
   "categories": [
     {
       "id": "BANK",
@@ -360,12 +360,14 @@
       "testId": "DEMO",
       "examId": "DEMO",
       "name": "DEMO",
+      "topic": "SIMPLIFICATION (Set-1)",
       "durationMinutes": 30,
       "order": 1,
       "questionCount": 50,
       "negativeMark": 0.25,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/DEMO.html",
-      "releaseTimestamp": 0
+      "releaseTimestamp": 1793606400000,
+      "language": "both"
     },
     {
       "testId": "NTE-TAM-50",
