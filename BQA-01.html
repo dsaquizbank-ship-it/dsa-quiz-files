@@ -643,17 +643,24 @@ let QUESTIONS = [
         if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
         try {
             if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
-            const imgs = Array.from(document.querySelectorAll("#reviewList img"));
-            await Promise.all(imgs.map(img => {
-                if (img.complete && img.naturalWidth > 0) return Promise.resolve();
-                return new Promise(resolve => {
-                    let done = false;
-                    const finish = () => { if (!done) { done = true; resolve(); } };
-                    img.addEventListener("load", finish, { once: true });
-                    img.addEventListener("error", finish, { once: true });
-                    setTimeout(finish, 5000);
-                });
-            }));
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
+            await new Promise(r => setTimeout(r, 600));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+                if (btn) btn.innerText = "✅ Select Save as PDF";
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+        } finally {
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 3000);
+        }
+    }
             document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
             document.getElementById("reviewPagination").style.display = "none";
             await new Promise(r => setTimeout(r, 300));
