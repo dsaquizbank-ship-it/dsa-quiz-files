@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Schedule Checker</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',Roboto,sans-serif; }
+  body {
+    min-height:100vh; display:flex; align-items:center; justify-content:center;
+    background:#0b1a2e;
+    background-image: radial-gradient(circle at 20% 30%, #0e2a3f 0%, #07111e 90%);
+    padding:16px; overflow:hidden;
+  }
+  .bubble { position:fixed; border-radius:50%; background:rgba(0,230,118,0.06);
+    border:1px solid rgba(0,230,118,0.15); animation:float 12s ease-in-out infinite; pointer-events:none; }
+  .b1{width:140px;height:140px;top:6%;left:4%;}
+  .b2{width:90px;height:90px;bottom:10%;right:6%;background:rgba(0,200,100,0.08);}
+  .b3{width:180px;height:180px;bottom:-50px;left:-30px;}
+  @keyframes float{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-28px) scale(1.05);}}
+
+  .window {
+    width:100%; max-width:540px; background:#0a1c2b; border-radius:20px;
+    box-shadow:0 25px 50px -8px rgba(0,0,0,0.8), 0 0 0 1px rgba(0,230,118,0.2);
+    overflow:hidden; position:relative; border:1px solid rgba(0,230,118,0.25);
+    animation:windowIn .6s cubic-bezier(.2,.9,.3,1.4) both;
+    display:flex; flex-direction:column; max-height:95vh;
+  }
+  @keyframes windowIn{from{opacity:0;transform:translateY(35px) scale(.96);}to{opacity:1;transform:none;}}
+
+  .titlebar {
+    background:#0e2a3a; border-bottom:3px solid #00e676; color:#e0f2e9;
+    padding:16px 20px; position:relative; overflow:hidden;
+    display:flex; align-items:center; justify-content:space-between; gap:10px; flex-shrink:0;
+  }
+  .titlebar > div:first-child { flex:1; }
+  .titlebar h2 { font-size:1.15rem; display:flex; align-items:center; gap:10px; color:#b9f6ca; }
+  .titlebar h2 .ico { color:#00e676; display:inline-block; }
+  .titlebar .sub { font-size:.75rem; color:#80cbc4; margin-top:2px; }
+
+  .body { padding:20px; background:#081c2b; overflow-y:auto; flex:1; }
+
+  .searchrow { display:flex; gap:10px; flex-wrap:wrap; }
+  .searchrow input {
+    flex:1; min-width:100%; padding:14px 16px; border:2px solid #1e4a5c; border-radius:14px;
+    font-size:.95rem; outline:none; background:#0b1f2d; color:#e0f2e9; caret-color:#00e676;
+  }
+  .searchrow input:focus { border-color:#00e676; box-shadow:0 0 0 4px rgba(0,230,118,0.15); }
+  .searchrow button {
+    width:100%; padding:14px 26px; border:none; border-radius:14px; cursor:pointer;
+    background:#00c853; color:#0a1c2b; font-weight:800; font-size:.95rem;
+    text-transform:uppercase; letter-spacing:.8px; box-shadow:0 4px 0 #00693e;
+  }
+  .searchrow button:active { transform:translateY(2px); box-shadow:0 1px 0 #00693e; }
+
+  @media (min-width: 420px) {
+    .searchrow { flex-wrap:nowrap; }
+    .searchrow input { min-width:0; }
+    .searchrow button { width:auto; }
+  }
+
+  .quick-chips { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; margin-top: 14px; scrollbar-width: none; }
+  .quick-chips::-webkit-scrollbar { display: none; }
+  .chip {
+    background: #0b1f2d; border: 1px solid #1e4a5c; color: #b9f6ca;
+    padding: 8px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 700;
+    white-space: nowrap; cursor: pointer; box-shadow: 0 2px 0 #0a1c2b;
+  }
+  .chip:active { background: #00e676; color: #0a1c2b; border-color: #00e676; transform: translateY(1px); box-shadow: none; }
+
+  .hint { font-size:.8rem; color:#6d8f9e; margin-top:10px; min-height:18px; font-weight:500; }
+  .hint.error { color:#ff5252; }
+
+  .card { margin-top:16px; display:none; }
+  .card.show { display:block; }
+  .card-head {
+    display:flex; justify-content:space-between; align-items:center;
+    background:#0d2e3f; border-left:5px solid #00e676; padding:12px 18px;
+    border-radius:12px; margin-bottom:16px; gap: 10px; flex-wrap: wrap;
+  }
+  .card-head .cname { font-weight:700; color:#b9f6ca; font-size:1.05rem; }
+  .card-head .counter { font-size:.75rem; background:#00e676; color:#0a1c2b; padding:4px 14px; border-radius:20px; font-weight:800; }
+
+  .field { display:flex; justify-content:space-between; align-items:center; padding:12px 6px; border-bottom:1px dashed #1e3f4e; gap: 10px; flex-wrap: wrap; }
+  .field:last-of-type { border-bottom:none; }
+  .field .lbl { font-size:.75rem; color:#6d8f9e; font-weight:700; text-transform:uppercase; letter-spacing:1px; }
+  .field .val { font-size:.95rem; color:#e0f2e9; font-weight:600; text-align:right; word-break:break-word; }
+  .val.examId { font-family:'Courier New',monospace; padding:3px 12px; border-radius:8px; font-weight:700; color:#b9f6ca; background:#0f2f3a; border-left:3px solid #00e676; }
+  .val.na { color:#4a6a7a; font-style:italic; background:#0b1f2d; padding:3px 12px; border-radius:8px; border-left:3px solid #2a4a5a; }
+
+  .test-id-list { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; flex: 1; }
+  .test-id-pill { font-family:'Courier New',monospace; padding:4px 10px; border-radius:6px; font-size:.85rem; font-weight:700; color:#a5d6a7; background:#1b3a2e; border-left:2px solid #00e676; display:inline-flex; align-items:center; }
+  .test-id-pill .tid-num { color:#00e676; margin-right:6px; font-weight:900; background:rgba(0,230,118,0.15); padding:0 4px; border-radius:4px; }
+
+  .nav { display:flex; gap:12px; margin-top:18px; }
+  .nav button {
+    flex:1; padding:12px; border:2px solid #00e676; background:transparent; color:#00e676;
+    border-radius:12px; font-weight:800; font-size:.85rem; box-shadow:0 3px 0 #00693e;
+  }
+  .nav button:active:not(:disabled) { transform:translateY(2px); box-shadow:0 1px 0 #00693e; }
+  .nav button:disabled { opacity:.3; border-color:#2a5a4a; box-shadow:none; }
+
+  .list { margin-top:6px; max-height:340px; overflow-y:auto; border-top:1px solid #1e3f4e; }
+  .list::-webkit-scrollbar { width:6px; }
+  .list::-webkit-scrollbar-thumb { background:#00e676; border-radius:3px; }
+  .list-item { padding:12px 16px; border-bottom:1px solid #132e3b; cursor:pointer; display:flex; justify-content:space-between; align-items:center; background:#0a1c2b; }
+  .list-item:active { background:#0e2638; border-left:3px solid #00e676; }
+  .list-item .ln { font-size:.9rem; font-weight:600; color:#c8e6e0; }
+  .list-item .lo { font-size:.7rem; color:#0a1c2b; background:#00e676; padding:3px 10px; border-radius:12px; font-weight:800; }
+  .list-title { font-size:.75rem; color:#4a8a7a; padding:14px 16px 6px; font-weight:800; text-transform:uppercase; border-bottom:1px solid #132e3b; }
+
+  .footer { padding:12px 20px 16px; font-size:.7rem; color:#3a6a6a; text-align:center; border-top:1px solid #132e3b; background:#0a1c2b; flex-shrink:0;}
+</style>
+</head>
+<body>
+<div class="bubble b1"></div><div class="bubble b2"></div><div class="bubble b3"></div>
+
+<div class="window">
+  <div class="titlebar">
+    <div>
+      <h2><span class="ico">📅</span> Schedule Checker</h2>
+      <div class="sub">DSA Institute — Quick Lookup</div>
+    </div>
+  </div>
+  <div class="body">
+    <div class="searchrow">
+      <input id="q" type="text" placeholder="Search..." autocomplete="off" />
+      <button id="go">Check</button>
+    </div>
+    <div class="quick-chips" id="quickChips"></div>
+    <div class="hint" id="hint"></div>
+    <div class="card" id="card"></div>
+    <div id="listWrap"></div>
+  </div>
+  <div class="footer">Tap any category above to instantly filter the list</div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+// ==========================================
+// DEFAULT DATA (v4) — Test IDs as { num, id }
+// ==========================================
+const DEFAULT_DATA = [
+  { cid:"BANK", cname:"BANK", order:1, exams:[
+    {id:"BANK-RE", n:"REASONING", o:1, t:[{num:1,id:"BRE"}]},
+    {id:"BANK-QA", n:"QUANTITATIVE APTITUDE", o:2, t:[{num:1,id:"BQA"}]},
+    {id:"BANK-ENG", n:"ENGLISH", o:3, t:[{num:1,id:"BEG"}]},
+    {id:"BANK-CA", n:"CURRENT AFFAIRS", o:4, t:[{num:1,id:"BCA"}]},
+    {id:"BANK-BA", n:"BANKING AWARENESS", o:5, t:[{num:1,id:"BBA"}]},
+    {id:"BANK-COM", n:"COMPUTER KNOWLEDGE", o:6, t:[{num:1,id:"BCK"}]},
+    {id:"IBPS-CLERK-PRE", n:"IBPS CLERK PRE", o:7, t:[{num:1,id:"ICP"}]},
+    {id:"IBPS-CLERK-MAINS", n:"IBPS CLERK MAINS", o:8, t:[{num:1,id:"ICM"}]},
+    {id:"IBPS-PO-PRE", n:"IBPS PO PRE", o:9, t:[{num:1,id:"IPP"}]},
+    {id:"IBPS-PO-MAINS", n:"IBPS PO MAINS", o:10, t:[{num:1,id:"IPM"}]},
+    {id:"SBI-CLERK-PRE", n:"SBI CLERK PRE", o:11, t:[{num:1,id:"SCP"}]},
+    {id:"SBI-CLERK-MAINS", n:"SBI CLERK MAINS", o:12, t:[{num:1,id:"SCM"}]},
+    {id:"SBI-PO-PRE", n:"SBI PO PRE", o:13, t:[{num:1,id:"SPP"}]},
+    {id:"SBI-PO-MAINS", n:"SBI PO MAINS", o:14, t:[{num:1,id:"SPM"}]},
+    {id:"RRB-OA-PRE", n:"RRB OFFICE ASSISTANT PRE", o:15, t:[{num:1,id:"RCP"}]},
+    {id:"RRB-OA-MAINS", n:"RRB OFFICE ASSISTANT MAINS", o:16, t:[{num:1,id:"RCM"}]},
+    {id:"RRB-AM-PRE", n:"RRB ASSISTANT MANAGER PRE", o:17, t:[{num:1,id:"RAP"}]},
+    {id:"RRB-AM-MAINS", n:"RRB ASSISTANT MANAGER MAINS", o:18, t:[{num:1,id:"RAM"}]},
+    {id:"SBI-APP-PRE", n:"SBI APPRENTICE", o:19, t:[{num:1,id:"SAP"}]},
+    {id:"RBI-ASS-PRE", n:"RBI ASSISTANT PRE", o:20, t:[{num:1,id:"RBP"}]},
+    {id:"RBI-ASS-MAINS", n:"RBI ASSISTANT MAINS", o:21, t:[{num:1,id:"RBM"}]},
+    {id:"RBI-GRADE-PRE", n:"RBI GRADE B PRE", o:22, t:[{num:1,id:"RGP"}]},
+    {id:"RBI-GRADE-MAINS", n:"RBI GRADE B MAINS", o:23, t:[{num:1,id:"RGM"}]},
+    {id:"LIC-OA-PRE", n:"LIC OA PRE", o:24, t:[{num:1,id:"LOP"}]},
+    {id:"LIC-OA-MAINS", n:"LIC OA MAINS", o:25, t:[{num:1,id:"LOM"}]}
+  ]},
+  { cid:"SSC", cname:"SSC", order:2, exams:[
+    {id:"SSC-RE", n:"REASONING", o:1, t:[{num:1,id:"SRE"}]},
+    {id:"SSC-QA", n:"QUANTITATIVE APTITUDE", o:2, t:[{num:1,id:"SQA"}]},
+    {id:"SSC-EG", n:"ENGLISH", o:3, t:[{num:1,id:"SEG"}]},
+    {id:"SSC-CA", n:"CURRENT AFFAIRS", o:4, t:[{num:1,id:"SCA"}]},
+    {id:"SSC-GS", n:"GENERAL SCIENCE", o:5, t:[{num:1,id:"SGS"}]},
+    {id:"SSC-GA", n:"GENERAL AWARENESS", o:6, t:[{num:1,id:"SGA"}]},
+    {id:"SSC-MTS", n:"SSC MTS", o:7, t:[{num:1,id:"SMT"}]},
+    {id:"SSC-STENO", n:"SSC STENOGRAPHER", o:8, t:[{num:1,id:"SST"}]},
+    {id:"SSC-CHSL-I", n:"SSC CHSL Tier I", o:9, t:[{num:1,id:"SC1"}]},
+    {id:"SSC-CHSL-II", n:"SSC CHSL Tier II", o:10, t:[{num:1,id:"SC2"}]},
+    {id:"SSC-CGL-I", n:"SSC CGL Tier I", o:11, t:[{num:1,id:"SG1"}]},
+    {id:"SSC-CGL-II", n:"SSC CGL Tier II", o:12, t:[{num:1,id:"SG2"}]}
+  ]},
+  { cid:"RRB", cname:"RRB", order:3, exams:[
+    {id:"RRB-RE", n:"REASONING", o:1, t:[{num:1,id:"RRE"}]},
+    {id:"RRB-QA", n:"QUANTITATIVE APTITUDE", o:2, t:[{num:1,id:"RQA"}]},
+    {id:"RRB-EG", n:"ENGLISH", o:3, t:[{num:1,id:"REG"}]},
+    {id:"RRB-GS", n:"GENERAL SCIENCE", o:4, t:[{num:1,id:"RGS"}]},
+    {id:"RRB-GA", n:"GENERAL AWARENESS", o:5, t:[{num:1,id:"RGA"}]},
+    {id:"RRB-CA", n:"CURRENT AFFAIRS", o:6, t:[{num:1,id:"RCA"}]}
+  ]},
+  { cid:"TNPSC", cname:"TNPSC", order:4, exams:[
+    {id:"TNPSC-OLD", n:"TNPSC OLD", o:1, t:[{num:1,id:"TNO"}]},
+    {id:"TNPSC-NEW", n:"TNPSC NEW", o:2, t:[{num:1,id:"TNN"}]},
+    {id:"TNPSC-CA", n:"CURRENT AFFAIRS", o:3, t:[{num:1,id:"TCA"}]},
+    {id:"TNPSC-TS", n:"TAMILNADU SOCIETY", o:4, t:[{num:1,id:"TNS"}]},
+    {id:"TNPSC-GS", n:"GENERAL SCIENCE", o:5, t:[{num:1,id:"TGS"}]},
+    {id:"TNPSC-IG", n:"GEOGRAPHY", o:6, t:[{num:1,id:"TIG"}]},
+    {id:"TNPSC-IH", n:"HISTORY", o:7, t:[{num:1,id:"TIH"}]},
+    {id:"TNPSC-IN", n:"INM", o:8, t:[{num:1,id:"TIN"}]},
+    {id:"TNPSC-IP", n:"POLITY", o:9, t:[{num:1,id:"TIP"}]},
+    {id:"TNPSC-IE", n:"ECONOMY", o:10, t:[{num:1,id:"TIE"}]},
+    {id:"TNPSC-AD", n:"TN ADMINISTRATION", o:11, t:[{num:1,id:"TAD"}]},
+    {id:"TNPSC-AP", n:"APTITUDE", o:12, t:[{num:1,id:"TAP"}]},
+    {id:"TNPSC-RE", n:"REASONING", o:13, t:[{num:1,id:"TRE"}]},
+    {id:"TNPSC-TA", n:"TAMIL", o:14, t:[{num:1,id:"TTA"}]}
+  ]},
+  { cid:"PGTRB", cname:"PGTRB", order:5, exams:[
+    {id:"PG-ENG", n:"PGTRB ENGLISH", o:1, t:[{num:1,id:"PGE"}]},
+    {id:"PG-CS", n:"PGTRB COMPUTER SCIENCE", o:2, t:[{num:1,id:"PGCS"}]},
+    {id:"PG-HIS", n:"PGTRB HISTORY", o:3, t:[{num:1,id:"PGH"}]},
+    {id:"PG-MAT", n:"PGTRB MATHS", o:4, t:[{num:1,id:"PGM"}]}
+  ]},
+  { cid:"UGTRB", cname:"UGTRB", order:6, exams:[
+    {id:"UG-PHY", n:"UGTRB PHYSICS", o:1, t:[{num:1,id:"UGP"}]},
+    {id:"UG-ENG", n:"UGTRB ENGLISH", o:2, t:[{num:1,id:"UGE"}]},
+    {id:"UG-MAT", n:"UGTRB MATHS", o:3, t:[{num:1,id:"UGM"}]},
+    {id:"UG-ZOO", n:"UGTRB ZOOLOGY", o:4, t:[{num:1,id:"UGZ"}]}
+  ]},
+  { cid:"TNTET", cname:"TNTET", order:7, exams:[
+    {id:"TET-TAMIL", n:"TET TAMIL", o:1, t:[{num:1,id:"TET-TA"}]},
+    {id:"TET-ENGLISH", n:"TET ENGLISH", o:2, t:[{num:1,id:"TET-EG"}]},
+    {id:"TET-MATHS", n:"TET MATHS", o:3, t:[{num:1,id:"TET-MS"}]},
+    {id:"TET-SCIENCE", n:"TET SCIENCE", o:4, t:[{num:1,id:"TET-SC"}]},
+    {id:"TET-SOCIALSCIENCE", n:"TET SOCIAL SCIENCE", o:5, t:[{num:1,id:"TET-SS"}]},
+    {id:"TET-PSYCHOLOGY", n:"TET PSYCHOLOGY", o:6, t:[{num:1,id:"TET-PY"}]}
+  ]},
+  { cid:"SGT", cname:"SGT", order:8, exams:[
+    {id:"SGT-TAMIL", n:"TAMIL", o:1, t:[{num:1,id:"SGT-TA"}]},
+    {id:"SGT-ENGLISH", n:"ENGLISH", o:2, t:[{num:1,id:"SGT-EG"}]},
+    {id:"SGT-MATHS", n:"MATHS", o:3, t:[{num:1,id:"SGT-MS"}]},
+    {id:"SGT-SCIENCE", n:"SCIENCE", o:4, t:[{num:1,id:"SGT-SC"}]},
+    {id:"SGT-SOCIALSCIENCE", n:"SOCIAL SCIENCE", o:5, t:[{num:1,id:"SGT-SS"}]}
+  ]},
+  { cid:"SPLTET", cname:"SPECIAL TET", order:9, exams:[
+    {id:"SPL-TAMIL", n:"TAMIL", o:1, t:[{num:1,id:"SPT-TA"}]},
+    {id:"SPL-ENGLISH", n:"ENGLISH", o:2, t:[{num:1,id:"SPT-EG"}]},
+    {id:"SPL-MATHS", n:"MATHS", o:3, t:[{num:1,id:"SPT-MS"}]},
+    {id:"SPL-SCIENCE", n:"SCIENCE", o:4, t:[{num:1,id:"SPT-SC"}]},
+    {id:"SPL-SOCIALSCIENCE", n:"SOCIAL SCIENCE", o:5, t:[{num:1,id:"SPT-SS"}]},
+    {id:"SPL-PSYCHOLOGY", n:"PSYCHOLOGY", o:6, t:[{num:1,id:"SPT-PY"}]}
+  ]}
+];
+
+// Normalize (accept legacy string form and object form)
+function normalizeData(d) {
+  d.forEach(cat => {
+    (cat.exams || []).forEach(ex => {
+      const arr = ex.t || [];
+      ex.t = arr.map((it, i) => {
+        if (typeof it === 'string') return { num: i + 1, id: it };
+        if (it && typeof it === 'object') {
+          return { num: Number(it.num) || (i + 1), id: String(it.id ?? '') };
+        }
+        return { num: i + 1, id: '' };
+      });
+    });
+  });
+  return d;
+}
+
+// Load saved data
+const STORAGE_KEY = 'scheduleCheckerData_v4';
+let DATA;
+try {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  DATA = normalizeData(saved ? JSON.parse(saved) : JSON.parse(JSON.stringify(DEFAULT_DATA)));
+} catch(e) {
+  DATA = normalizeData(JSON.parse(JSON.stringify(DEFAULT_DATA)));
+}
+
+// ==========================================
+// Core View Functions
+// ==========================================
+let currentCat=null, currentExams=[], currentIdx=0;
+
+function renderCard() {
+  const cat = currentCat, e = currentExams[currentIdx];
+  const card = $('card');
+  
+  const testIdsHtml = (e.t && e.t.length) 
+    ? e.t.map(it => `<span class="test-id-pill"><span class="tid-num">${esc(it.num)}</span>${esc(it.id)}</span>`).join('') 
+    : `<span class="val na">not set</span>`;
+
+  card.innerHTML = `
+    <div class="card-head">
+      <span class="cname">${esc(cat.cname)}</span>
+      <span class="counter">${currentIdx+1} / ${currentExams.length}</span>
+    </div>
+    <div class="field"><span class="lbl">Category Id</span><span class="val">${esc(cat.cid)}</span></div>
+    <div class="field"><span class="lbl">Category Name</span><span class="val">${esc(cat.cname)}</span></div>
+    <div class="field"><span class="lbl">Order</span><span class="val">${cat.order}</span></div>
+    <div class="field"><span class="lbl">Exam Id</span><span class="val examId">${esc(e.id)}</span></div>
+    <div class="field"><span class="lbl">Exam Name</span><span class="val">${esc(e.n)}</span></div>
+    <div class="field"><span class="lbl">Order</span><span class="val">${e.o}</span></div>
+    
+    <div class="field">
+      <span class="lbl">Test Id(s)</span>
+      <div class="test-id-list">${testIdsHtml}</div>
+    </div>
+    
+    <div class="nav">
+      <button id="prev" ${currentIdx===0?'disabled':''}>← Prev</button>
+      <button id="next" ${currentIdx===currentExams.length-1?'disabled':''}>Next →</button>
+    </div>`;
+  card.classList.add('show');
+
+  $('listWrap').innerHTML = '';
+  $('prev').onclick = () => { if (currentIdx>0){ currentIdx--; renderCard(); } };
+  $('next').onclick = () => { if (currentIdx<currentExams.length-1){ currentIdx++; renderCard(); } };
+}
+
+function renderList(cat) {
+  $('card').classList.remove('show');
+  const w = $('listWrap');
+  w.innerHTML = `
+    <div class="list-title">${esc(cat.cname)} · ${cat.exams.length} exams — tap to view</div>
+    <div class="list">
+      ${cat.exams.map((e,i) => `
+        <div class="list-item" data-i="${i}">
+          <span class="ln">${esc(e.n)}</span>
+          <span class="lo">#${e.o}</span>
+        </div>`).join('')}
+    </div>`;
+  w.querySelectorAll('.list-item').forEach(el => {
+    el.onclick = () => {
+      currentCat = cat; currentExams = cat.exams; currentIdx = +el.dataset.i;
+      renderCard();
+      $('q').blur();
+    };
+  });
+}
+
+function check() {
+  const q = $('q').value.trim().toLowerCase();
+  const hint = $('hint');
+  hint.classList.remove('error');
+  hint.textContent = '';
+  $('card').classList.remove('show');
+  $('listWrap').innerHTML = '';
+
+  if (!DATA.length) {
+    hint.textContent = '⚠ No data loaded.';
+    hint.classList.add('error');
+    return;
+  }
+  if (!q) { hint.textContent='Please type a category or exam name.'; hint.classList.add('error'); return; }
+
+  let cat = DATA.find(c => c.cid.toLowerCase()===q || c.cname.toLowerCase()===q);
+  if (!cat) {
+    const matches = DATA.filter(c => c.cid.toLowerCase().includes(q) || c.cname.toLowerCase().includes(q));
+    if (matches.length === 1) cat = matches[0];
+    else if (matches.length > 1) {
+      $('listWrap').innerHTML = matches.map(m => `
+        <div class="list-title" style="margin-top:10px;">${esc(m.cname)}</div>
+        <div class="list">${m.exams.map((e,i) => `
+          <div class="list-item" data-cat="${esc(m.cid)}" data-i="${i}">
+            <span class="ln">${esc(e.n)}</span><span class="lo">#${e.o}</span>
+          </div>`).join('')}</div>`).join('');
+      $('listWrap').querySelectorAll('.list-item').forEach(el => {
+        el.onclick = () => {
+          const c = DATA.find(x => x.cid === el.dataset.cat);
+          currentCat=c; currentExams=c.exams; currentIdx=+el.dataset.i;
+          renderCard();
+          $('q').blur();
+        };
+      });
+      hint.textContent = `Multiple categories matched — pick an exam.`;
+      return;
+    }
+  }
+
+  if (cat) {
+    if (cat.exams.length === 1) {
+      currentCat=cat; currentExams=cat.exams; currentIdx=0;
+      renderCard();
+    } else {
+      renderList(cat);
+      hint.textContent = `Category matched — tap any exam to view.`;
+    }
+    $('q').blur();
+    return;
+  }
+
+  const hits = [];
+  DATA.forEach(c => c.exams.forEach(e => {
+    const matchTest = e.t && e.t.some(tid => String(tid.id ?? '').toLowerCase().includes(q));
+    if (e.n.toLowerCase().includes(q) || e.id.toLowerCase().includes(q) || matchTest)
+      hits.push({ cat:c, e });
+  }));
+
+  if (hits.length) {
+    if (hits.length === 1) {
+      currentCat=hits[0].cat; currentExams=hits[0].cat.exams;
+      currentIdx = hits[0].cat.exams.indexOf(hits[0].e);
+      renderCard();
+      $('q').blur();
+      return;
+    }
+    const grouped = {};
+    hits.forEach(h => {
+      if (!grouped[h.cat.cid]) grouped[h.cat.cid] = { cat:h.cat, exs:[] };
+      grouped[h.cat.cid].exs.push(h.e);
+    });
+    $('listWrap').innerHTML = Object.values(grouped).map(g => `
+      <div class="list-title" style="margin-top:10px;">${esc(g.cat.cname)}</div>
+      <div class="list">${g.exs.map(e => `
+        <div class="list-item" data-cat="${esc(g.cat.cid)}" data-id="${esc(e.id)}" data-name="${esc(e.n)}">
+          <span class="ln">${esc(e.n)}</span><span class="lo">#${e.o}</span>
+        </div>`).join('')}</div>`).join('');
+    $('listWrap').querySelectorAll('.list-item').forEach(el => {
+      el.onclick = () => {
+        const c = DATA.find(x => x.cid === el.dataset.cat);
+        const idx = c.exams.findIndex(x => x.id === el.dataset.id && x.n === el.dataset.name);
+        currentCat=c; currentExams=c.exams; currentIdx=idx>=0?idx:0;
+        renderCard();
+        $('q').blur();
+      }
+    });
+    hint.textContent = `Found ${hits.length} matching exams — tap to view.`;
+    $('q').blur();
+    return;
+  }
+
+  hint.textContent = `❌ No match for "${q}". Try BANK, TNPSC...`;
+  hint.classList.add('error');
+}
+
+/* ---------------- Quick Chips & Initial View ---------------- */
+function renderQuickChips() {
+  const wrap = $('quickChips');
+  if (!DATA.length) { wrap.style.display = 'none'; return; }
+  wrap.style.display = 'flex';
+  
+  wrap.innerHTML = DATA.map(c => 
+    `<div class="chip" onclick="quickSearch('${esc(c.cid)}')">${esc(c.cname)}</div>`
+  ).join('');
+}
+
+function quickSearch(cid) {
+  $('q').value = cid;
+  check();
+}
+
+function loadInitialView() {
+  renderQuickChips();
+  
+  if (DATA.length > 0) {
+    $('hint').textContent = '👇 Tap a category above or scroll to view';
+    $('listWrap').innerHTML = DATA.map(m => `
+      <div class="list-title" style="margin-top:10px;">${esc(m.cname)}</div>
+      <div class="list">${m.exams.map((e,i) => `
+        <div class="list-item" data-cat="${esc(m.cid)}" data-i="${i}">
+          <span class="ln">${esc(e.n)}</span><span class="lo">#${e.o}</span>
+        </div>`).join('')}</div>`).join('');
+      
+    $('listWrap').querySelectorAll('.list-item').forEach(el => {
+      el.onclick = () => {
+        const c = DATA.find(x => x.cid === el.dataset.cat);
+        currentCat=c; currentExams=c.exams; currentIdx=+el.dataset.i;
+        renderCard();
+        $('q').blur();
+      };
+    });
+  } else {
+    $('hint').textContent = '⚠ No data loaded.';
+    $('hint').classList.add('error');
+  }
+}
+
+/* ---------------- Wire up buttons ---------------- */
+$('go').addEventListener('click', e => { check(); });
+$('q').addEventListener('keydown', e => { if (e.key==='Enter') { e.preventDefault(); check(); } });
+$('q').addEventListener('input', () => { $('hint').textContent=''; $('hint').classList.remove('error'); });
+
+// Boot up
+loadInitialView();
+</script>
+</body>
+</html>
