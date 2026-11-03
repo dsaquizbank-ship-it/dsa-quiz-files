@@ -759,17 +759,26 @@ let QUESTIONS = [
     document.documentElement.setAttribute("data-theme", "dark");
     updateUILanguage();
     checkForAutoResume();
+    function confirmLeaveResult() {
+        if (confirm("Your results will be lost if you leave.\n\nAre you sure you want to exit?")) {
+            if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
+                window.AndroidBridge.exitResultPage();
+            } else {
+                history.back();
+            }
+        }
+    }
     window.addEventListener("popstate", function(e) {
         if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
-            history.pushState({ resultPage: true }, "", "#result");
-            if (window.AndroidBridge && window.AndroidBridge.showToast) {
-                window.AndroidBridge.showToast("Use \"New Attempt\" to start again");
-            } else {
-                const b = document.createElement("div");
-                b.textContent = "⚠️ Use \"🔄 New Attempt\" to leave the result page.";
-                b.style.cssText = "position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#451a03;color:#fcd34d;padding:12px 20px;border-radius:12px;z-index:99999;font-weight:600;font-size:14px;box-shadow:0 6px 20px rgba(0,0,0,0.4);max-width:90%;text-align:center;";
-                document.body.appendChild(b);
-                setTimeout(() => b.remove(), 2500);
+            history.replaceState({ resultPage: true }, "", "#result");
+            confirmLeaveResult();
+        }
+    });
+    document.addEventListener("keydown", function(e) {
+        if (e.key === "Escape" || (e.key === "Backspace" && e.target.tagName !== "INPUT" && e.target.tagName !== "TEXTAREA")) {
+            if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+                e.preventDefault();
+                confirmLeaveResult();
             }
         }
     });
