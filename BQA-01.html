@@ -446,15 +446,15 @@ let QUESTIONS = [
         document.getElementById("resultContainer").style.display = "none";
     }
     function clearAllAndRestart() {
-        if (window.history && window.history.state && window.history.state.resultPage) {
-            history.back();
-        }
         try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
         document.getElementById("resultContainer").style.display = "none";
         document.getElementById("startScreen").style.display = "flex";
         document.getElementById("quizContainer").style.display = "none";
         if (timerInterval) clearInterval(timerInterval);
-        quizActive = false;
+        quizActive = false; isSubmitted = false;
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
     }
     function openNativeLeaderboard() {
         if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
@@ -733,7 +733,7 @@ let QUESTIONS = [
         document.getElementById("startScreen").style.display = "none";
         document.getElementById("quizContainer").style.display = "none";
         document.getElementById("resultContainer").style.display = "block";
-        history.pushState({ resultPage: true }, "", "#result");
+        history.replaceState({ resultPage: true }, "", "#result");
     }
     function startNewExam() {
         try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
@@ -762,8 +762,14 @@ let QUESTIONS = [
     window.addEventListener("popstate", function(e) {
         if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
             history.pushState({ resultPage: true }, "", "#result");
-            if (confirm("Do you want to leave the result page? Your results will be lost.")) {
-                history.go(-2);
+            if (window.AndroidBridge && window.AndroidBridge.showToast) {
+                window.AndroidBridge.showToast("Use \"New Attempt\" to start again");
+            } else {
+                const b = document.createElement("div");
+                b.textContent = "⚠️ Use \"🔄 New Attempt\" to leave the result page.";
+                b.style.cssText = "position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#451a03;color:#fcd34d;padding:12px 20px;border-radius:12px;z-index:99999;font-weight:600;font-size:14px;box-shadow:0 6px 20px rgba(0,0,0,0.4);max-width:90%;text-align:center;";
+                document.body.appendChild(b);
+                setTimeout(() => b.remove(), 2500);
             }
         }
     });
