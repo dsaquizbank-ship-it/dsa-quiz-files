@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-03T17:23:23.291Z",
+  "version": "2026-11-03T17:26:54.403Z",
   "categories": [
     {
       "id": "BANK",
@@ -948,6 +948,19 @@
       "questionCount": 20,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/HISTORY OF TAMIL SOCIETY TNS-01.html",
+      "releaseTimestamp": 0,
+      "language": "both"
+    },
+    {
+      "testId": "TNS-01",
+      "examId": "TNPSC-TS",
+      "name": "HISTORY OF TAMIL SOCIETY TNS-01",
+      "topic": "HISTORY OF TAMIL SOCIETY",
+      "durationMinutes": 10,
+      "order": 1,
+      "questionCount": 20,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TNS-01.html",
       "releaseTimestamp": 0,
       "language": "both"
     }
