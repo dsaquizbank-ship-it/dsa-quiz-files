@@ -1,26 +1,4 @@
 {
   "version": "2026-11-03T10:03:33.281Z",
-  "entries": [
-    {
-      "id": "OL-1793689536394",
-      "course": "TNPSC",
-      "subject": "Unit III - History, Culture & INM",
-      "topic": "South Indian History (Pallava)",
-      "date": "2026-11-04"
-    },
-    {
-      "id": "OL-1793689689891",
-      "course": "TNPSC",
-      "subject": "Tamil Literature",
-      "topic": "அலகு III – எழுதும் திறன்",
-      "date": "2026-11-14"
-    },
-    {
-      "id": "OL-1793689702775",
-      "course": "TNPSC",
-      "subject": "Unit II - Geography of India",
-      "topic": "Forest and Wildlife",
-      "date": "2026-11-17"
-    }
-  ]
+  "entries": []
 }
