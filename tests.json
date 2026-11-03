@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-03T17:30:19.452Z",
+  "version": "2026-11-03T17:39:40.933Z",
   "categories": [
     {
       "id": "BANK",
@@ -974,6 +974,19 @@
       "questionCount": 20,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TNS-02.html",
+      "releaseTimestamp": 1793779200000,
+      "language": "both"
+    },
+    {
+      "testId": "RGA-02",
+      "examId": "RRB-GA",
+      "name": "CONSTITUITION OF INDIA RGA-02",
+      "topic": "CONSTITUITION OF INDIA",
+      "durationMinutes": 10,
+      "order": 2,
+      "questionCount": 20,
+      "negativeMark": 0.33,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGA-02.html",
       "releaseTimestamp": 1793779200000,
       "language": "both"
     }
