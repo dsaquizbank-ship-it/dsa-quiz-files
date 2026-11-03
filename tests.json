@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-03T08:18:49.166Z",
+  "version": "2026-11-03T08:20:54.024Z",
   "categories": [
     {
       "id": "BANK",
@@ -867,6 +867,19 @@
       "questionCount": 50,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-MS-01.html",
+      "releaseTimestamp": 1793687400000,
+      "language": "both"
+    },
+    {
+      "testId": "TIP-01",
+      "examId": "TNPSC-IP",
+      "name": "CONSTITUITION OF INDIA TIP-01",
+      "topic": "CONSTITUITION OF INDIA",
+      "durationMinutes": 10,
+      "order": 1,
+      "questionCount": 20,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-01.html",
       "releaseTimestamp": 1793687400000,
       "language": "both"
     }
