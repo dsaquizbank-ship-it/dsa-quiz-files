@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-03T09:11:10.178Z",
+  "version": "2026-11-03T09:12:22.358Z",
   "categories": [
     {
       "id": "BANK",
@@ -260,14 +260,16 @@
     },
     {
       "testId": "UGM-93",
-      "examId": "UG-MATHS",
+      "examId": "UG-MAT",
       "name": "UGM-93 UNIT 8 PROJECTILE PATH · PROJECTILE ON INCLINED PLANE · STATIC EQUILIBRIUM & EQUIVALENT FORCE SYSTEMS · FRICTION · CENTROIDS & MOMENT OF INERTIA · ELASTIC MEDIUM.",
+      "topic": "LINEAR PROGRAMMING",
       "durationMinutes": 30,
       "order": 93,
       "questionCount": 20,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-93.html",
-      "releaseTimestamp": 1792740600000
+      "releaseTimestamp": 1792740600000,
+      "language": "both"
     },
     {
       "testId": "UGM-92",
