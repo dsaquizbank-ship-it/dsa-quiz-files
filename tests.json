@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-03T17:44:23.470Z",
+  "version": "2026-11-03T17:49:40.774Z",
   "categories": [
     {
       "id": "BANK",
@@ -43,7 +43,7 @@
     },
     {
       "id": "SPLTET",
-      "name": "SPLTET",
+      "name": "SPECIAL TET",
       "order": 9
     },
     {
@@ -250,6 +250,12 @@
       "name": "GENERAL AWARENESS",
       "categoryId": "SSC",
       "order": 6
+    },
+    {
+      "id": "SPL-ENGLISH",
+      "name": "ENGLISH",
+      "categoryId": "SPLTET",
+      "order": 2
     }
   ],
   "tests": [
@@ -1008,6 +1014,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGA-02.html",
       "releaseTimestamp": 1793779200000,
       "language": "both"
+    },
+    {
+      "testId": "SPT-EG-03",
+      "examId": "SPL-ENGLISH",
+      "name": "6TH TERM 1 - 2 SPT-EG-03",
+      "topic": "6TH TERM 1 - 2",
+      "durationMinutes": 30,
+      "order": 3,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-EG-03.html",
+      "releaseTimestamp": 1793779200000,
+      "language": "en"
     }
   ]
 }
