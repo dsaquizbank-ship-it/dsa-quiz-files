@@ -60,12 +60,6 @@
       "order": 1
     },
     {
-      "id": "UG-MATHS",
-      "name": "UGTRB MATHS",
-      "categoryId": "UGTRB",
-      "order": 3
-    },
-    {
       "id": "TETTAM",
       "name": "TET TAMIL",
       "categoryId": "TNTET",
