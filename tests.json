@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-03T08:15:51.758Z",
+  "version": "2026-11-03T08:18:49.166Z",
   "categories": [
     {
       "id": "BANK",
@@ -231,6 +231,12 @@
       "id": "PG-HIS",
       "name": "PGTRB HISTORY",
       "categoryId": "PGTRB",
+      "order": 3
+    },
+    {
+      "id": "TET-MATHS",
+      "name": "TET MATHS",
+      "categoryId": "TNTET",
       "order": 3
     }
   ],
@@ -850,6 +856,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGCS-13.html",
       "releaseTimestamp": 0,
       "language": "en"
+    },
+    {
+      "testId": "TET-MS-01",
+      "examId": "TET-MATHS",
+      "name": "6TH TERM-1 TET-MS-01",
+      "topic": "6TH TERM-1",
+      "durationMinutes": 30,
+      "order": 1,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-MS-01.html",
+      "releaseTimestamp": 1793687400000,
+      "language": "both"
     }
   ]
 }
