@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-03T09:09:57.592Z",
+  "version": "2026-11-03T09:11:10.178Z",
   "categories": [
     {
       "id": "BANK",
@@ -273,12 +273,14 @@
       "testId": "UGM-92",
       "examId": "UG-MATHS",
       "name": "UGM-92 UNIT 8 SIMPLE HARMONIC MOTION (S.H.M) – S.H.M ALONG A HORIZONTAL LINE – S.H.M ALONG A VERTICAL LINE – MOTION UNDER GRAVITY IN A RESISTING MEDIUM.",
+      "topic": "LINEAR PROGRAMMING",
       "durationMinutes": 30,
       "order": 92,
       "questionCount": 20,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-92.html",
-      "releaseTimestamp": 1792567800000
+      "releaseTimestamp": 1792567800000,
+      "language": "both"
     },
     {
       "testId": "UGM-91",
