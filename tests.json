@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-03T09:14:27.352Z",
+  "version": "2026-11-03T13:22:07.541Z",
   "categories": [
     {
       "id": "BANK",
@@ -238,6 +238,12 @@
       "name": "SOCIAL SCIENCE",
       "categoryId": "SPLTET",
       "order": 5
+    },
+    {
+      "id": "SPL-MATHS",
+      "name": "MATHS",
+      "categoryId": "SPLTET",
+      "order": 3
     }
   ],
   "tests": [
@@ -917,6 +923,19 @@
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-SS-2.html",
       "releaseTimestamp": 1793687400000,
+      "language": "both"
+    },
+    {
+      "testId": "SPL-MS-01",
+      "examId": "SPL-MATHS",
+      "name": "Numbers, 6th Term 1 - Introduction To Algebra, 6th Term 1 - Ratio And Proportion, 6th Term 1 - Geometry, 6th Term 1 - Statistics, 6th Term 1 - Information Processing  SPL-MS-01",
+      "topic": "Numbers, 6th Term 1 - Introduction To Algebra, 6th Term 1 - Ratio And Proportion, 6th Term 1 - Geometry, 6th Term 1 - Statistics, 6th Term 1 - Information Processing",
+      "durationMinutes": 30,
+      "order": 1,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPL-MS-01.html",
+      "releaseTimestamp": 0,
       "language": "both"
     }
   ]
