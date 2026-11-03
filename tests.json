@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-03T17:39:40.933Z",
+  "version": "2026-11-03T17:44:23.470Z",
   "categories": [
     {
       "id": "BANK",
@@ -244,6 +244,12 @@
       "name": "MATHS",
       "categoryId": "SPLTET",
       "order": 3
+    },
+    {
+      "id": "SSC-GA",
+      "name": "GENERAL AWARENESS",
+      "categoryId": "SSC",
+      "order": 6
     }
   ],
   "tests": [
@@ -987,6 +993,19 @@
       "questionCount": 20,
       "negativeMark": 0.33,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGA-02.html",
+      "releaseTimestamp": 1793779200000,
+      "language": "both"
+    },
+    {
+      "testId": "SGA-02",
+      "examId": "SSC-GA",
+      "name": "CONSTITUITION OF INDIA SGA-02",
+      "topic": "CONSTITUITION OF INDIA",
+      "durationMinutes": 10,
+      "order": 2,
+      "questionCount": 20,
+      "negativeMark": 0.33,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGA-02.html",
       "releaseTimestamp": 1793779200000,
       "language": "both"
     }
