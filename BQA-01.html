@@ -760,26 +760,28 @@ let QUESTIONS = [
     updateUILanguage();
     checkForAutoResume();
     function confirmLeaveResult() {
-        if (confirm("Your results will be lost if you leave.\n\nAre you sure you want to exit?")) {
+        if (document.getElementById("leaveModal")) return;
+        const overlay = document.createElement("div");
+        overlay.id = "leaveModal";
+        overlay.className = "modal-overlay";
+        overlay.innerHTML = `<div class="modal-container"><h3>⚠️ Leave Result Page?</h3><p>Your results will be lost if you leave.<br>Are you sure you want to exit?</p><div class="modal-buttons"><button id="leaveNoBtn" class="btn btn-secondary">Cancel</button><button id="leaveYesBtn" class="btn btn-danger">Leave</button></div></div>`;
+        document.body.appendChild(overlay);
+        document.getElementById("leaveNoBtn").onclick = () => overlay.remove();
+        document.getElementById("leaveYesBtn").onclick = () => {
+            overlay.remove();
             if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
                 window.AndroidBridge.exitResultPage();
             } else {
-                history.back();
+                history.go(-2);
             }
-        }
+        };
     }
     window.addEventListener("popstate", function(e) {
         if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
-            history.replaceState({ resultPage: true }, "", "#result");
+            // The user pressed back while on the result page.
+            // We must push the state back immediately so the URL stays on #result
+            history.pushState({ resultPage: true }, "", "#result");
             confirmLeaveResult();
-        }
-    });
-    document.addEventListener("keydown", function(e) {
-        if (e.key === "Escape" || (e.key === "Backspace" && e.target.tagName !== "INPUT" && e.target.tagName !== "TEXTAREA")) {
-            if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
-                e.preventDefault();
-                confirmLeaveResult();
-            }
         }
     });
     window.checkForReview = function() {
