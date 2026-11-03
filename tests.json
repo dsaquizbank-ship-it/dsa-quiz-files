@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-03T08:25:25.789Z",
+  "version": "2026-11-03T08:28:59.962Z",
   "categories": [
     {
       "id": "BANK",
@@ -884,6 +884,19 @@
       "questionCount": 20,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-03.html",
+      "releaseTimestamp": 1793687400000,
+      "language": "both"
+    },
+    {
+      "testId": "TIP-04",
+      "examId": "TNPSC-IP",
+      "name": "UNION, STATE AND UNION TERRITORY  TIP-04",
+      "topic": "UNION, STATE AND UNION TERRITORY",
+      "durationMinutes": 10,
+      "order": 2,
+      "questionCount": 20,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-04.html",
       "releaseTimestamp": 1793687400000,
       "language": "both"
     }
