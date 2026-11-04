@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-04T07:23:33.233Z",
+  "version": "2026-11-04T08:07:53.277Z",
   "categories": [
     {
       "id": "BANK",
@@ -1194,7 +1194,7 @@
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-SC-54.html",
       "releaseTimestamp": 1793779200000,
-      "language": "en"
+      "language": "both"
     }
   ]
 }
