@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-04T06:29:15.143Z",
+  "version": "2026-11-04T06:31:54.630Z",
   "categories": [
     {
       "id": "BANK",
@@ -1112,6 +1112,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-SS-54.html",
       "releaseTimestamp": 1793779200000,
       "language": "both"
+    },
+    {
+      "testId": "UGM-94",
+      "examId": "UG-MAT",
+      "name": "LINEAR PROGRAMMING UGM-94",
+      "topic": "LINEAR PROGRAMMING",
+      "durationMinutes": 25,
+      "order": 94,
+      "questionCount": 20,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-94.html",
+      "releaseTimestamp": 1793779200000,
+      "language": "en"
     }
   ]
 }
