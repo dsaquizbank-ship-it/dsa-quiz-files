@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-04T02:11:42.912Z",
+  "version": "2026-11-04T04:20:27.955Z",
   "categories": [
     {
       "id": "BANK",
@@ -1080,6 +1080,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BRE-01.html",
       "releaseTimestamp": 1793779200000,
       "language": "en"
+    },
+    {
+      "testId": "UGZ-74",
+      "examId": "UG-ZOO",
+      "name": "BIOCHEMISTRY AND BIOTECHNOLOGY UGZ-74",
+      "topic": "BIOCHEMISTRY AND BIOTECHNOLOGY",
+      "durationMinutes": 30,
+      "order": 74,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGZ-74.html",
+      "releaseTimestamp": 1793779200000,
+      "language": "both"
     }
   ]
 }
