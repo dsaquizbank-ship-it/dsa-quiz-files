@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-04T06:22:14.112Z",
+  "version": "2026-11-04T06:27:26.413Z",
   "categories": [
     {
       "id": "BANK",
@@ -268,6 +268,12 @@
       "name": "REASONING",
       "categoryId": "BANK",
       "order": 1
+    },
+    {
+      "id": "TET-SOCIALSCIENCE",
+      "name": "TET SOCIAL SCIENCE",
+      "categoryId": "TNTET",
+      "order": 5
     }
   ],
   "tests": [
@@ -1106,6 +1112,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGE-100.html",
       "releaseTimestamp": 1793779200000,
       "language": "en"
+    },
+    {
+      "testId": "TET-SS-54",
+      "examId": "TET-SOCIALSCIENCE",
+      "name": "8TH GEOGRAPHY REVISION TET-SS-54",
+      "topic": "8TH GEOGRAPHY REVISION",
+      "durationMinutes": 25,
+      "order": 54,
+      "questionCount": 15,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-SS-54.html",
+      "releaseTimestamp": 1793779200000,
+      "language": "both"
     }
   ]
 }
