@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-04T06:58:50.736Z",
+  "version": "2026-11-04T07:05:00.319Z",
   "categories": [
     {
       "id": "BANK",
@@ -286,6 +286,12 @@
       "name": "REASONING",
       "categoryId": "RRB",
       "order": 1
+    },
+    {
+      "id": "TET-SCIENCE",
+      "name": "TET SCIENCE",
+      "categoryId": "TNTET",
+      "order": 4
     }
   ],
   "tests": [
@@ -1187,6 +1193,19 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGE-50.html",
+      "releaseTimestamp": 1793779200000,
+      "language": "en"
+    },
+    {
+      "testId": "TET-SC-54",
+      "examId": "TET-SCIENCE",
+      "name": "7TH TERM 3 LIGHT TET-SC-54",
+      "topic": "7TH TERM 3 LIGHT",
+      "durationMinutes": 15,
+      "order": 54,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-SC-54.html",
       "releaseTimestamp": 1793779200000,
       "language": "en"
     }
