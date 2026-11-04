@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-04T06:40:44.860Z",
+  "version": "2026-11-04T06:43:38.697Z",
   "categories": [
     {
       "id": "BANK",
@@ -279,6 +279,12 @@
       "id": "SSC-RE",
       "name": "REASONING",
       "categoryId": "SSC",
+      "order": 1
+    },
+    {
+      "id": "RRB-RE",
+      "name": "REASONING",
+      "categoryId": "RRB",
       "order": 1
     }
   ],
@@ -1142,6 +1148,19 @@
       "questionCount": 50,
       "negativeMark": 0.5,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SRE-01.html",
+      "releaseTimestamp": 1793779200000,
+      "language": "en"
+    },
+    {
+      "testId": "RRE-01",
+      "examId": "RRB-RE",
+      "name": "SYLLOGISM RRE-01",
+      "topic": "SYLLOGISM",
+      "durationMinutes": 50,
+      "order": 1,
+      "questionCount": 50,
+      "negativeMark": 0.3,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RRE-01.html",
       "releaseTimestamp": 1793779200000,
       "language": "en"
     }
