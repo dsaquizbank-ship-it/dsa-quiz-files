@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-04T11:30:54.121Z",
+  "version": "2026-11-04T12:05:11.345Z",
   "timetable": [
     {
       "day": "Monday",
@@ -194,6 +194,20 @@
     {
       "day": "Thursday",
       "classes": [
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "General Science: Chemistry - Solutions",
+          "batch": "SSC",
+          "faculty": "MS. JOTHIKA",
+          "room": "MS. JOTHIKA"
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "General Science: Chemistry - Solutions",
+          "batch": "RRB",
+          "faculty": "MS. JOTHIKA",
+          "room": "MS. JOTHIKA"
+        },
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Unit II - Reasoning",
