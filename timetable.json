@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-03T10:14:00.193Z",
+  "version": "2026-11-04T11:30:54.121Z",
   "timetable": [
     {
       "day": "Monday",
@@ -188,6 +188,60 @@
           "batch": "PGTRB COMPUTER SCIENCE",
           "faculty": "DR SAHITHA",
           "room": "DR SAHITHA"
+        }
+      ]
+    },
+    {
+      "day": "Thursday",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Unit II - Reasoning",
+          "batch": "TNPSC",
+          "faculty": "MR ABIN",
+          "room": "MR ABIN"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability: Blood Relation",
+          "batch": "SSC",
+          "faculty": "MR ABIN",
+          "room": "MR ABIN"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability: Blood Relation",
+          "batch": "BANK",
+          "faculty": "MR ABIN",
+          "room": "MR ABIN"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability: Blood Relation",
+          "batch": "RRB",
+          "faculty": "MR ABIN",
+          "room": "MR ABIN"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "English",
+          "batch": "TNTET",
+          "faculty": "MRS. JAYA SANKAR",
+          "room": "MRS. JAYA SANKAR"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Social Science: 6th Term 1 - History: What Is History?",
+          "batch": "TNTET",
+          "faculty": "MRS. JAYA SANKAR",
+          "room": "MRS. JAYA SANKAR"
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "Unit VI - TN History & Culture: Tamil literature from Sangam age till contemporary times",
+          "batch": "TNPSC",
+          "faculty": "MRS. SREE VIDHYA",
+          "room": "MRS. SREE VIDHYA"
         }
       ]
     }
