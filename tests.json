@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-03T17:59:17.029Z",
+  "version": "2026-11-04T02:09:45.538Z",
   "categories": [
     {
       "id": "BANK",
@@ -262,6 +262,12 @@
       "name": "TET ENGLISH",
       "categoryId": "TNTET",
       "order": 2
+    },
+    {
+      "id": "BANK-RE",
+      "name": "REASONING",
+      "categoryId": "BANK",
+      "order": 1
     }
   ],
   "tests": [
@@ -1070,6 +1076,19 @@
       "questionCount": 20,
       "negativeMark": 0.5,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGS-02.html",
+      "releaseTimestamp": 1793779200000,
+      "language": "en"
+    },
+    {
+      "testId": "BRE-01",
+      "examId": "BANK-RE",
+      "name": "SYLLOGISM BRE-01",
+      "topic": "SYLLOGISM",
+      "durationMinutes": 50,
+      "order": 1,
+      "questionCount": 50,
+      "negativeMark": 0.25,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BRE-01.html",
       "releaseTimestamp": 1793779200000,
       "language": "en"
     }
