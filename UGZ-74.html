@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>UGZ-74 - BIOCHEMISTRY AND BIOTECHNOLOGY UGZ-74</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                linebreaks: { automatic: true, width: "container" }
+            },
+            options: { ignoreHtmlClass: "no-mathjax" },
+            chtml: {
+                displayAlign: "left",
+                displayIndent: "0",
+                mtextInheritFont: true
+            },
+            svg: {
+                scale: 0.9,
+                minScale: 0.5,
+                mtextInheritFont: true,
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; color: #10b981; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; white-space: normal; word-wrap: break-word; padding-bottom: 20px; max-width: 100%; overflow-x: auto; }
+        mjx-container { display: inline !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; }
+        .question-text::-webkit-scrollbar { display: none; }
+        .question-text { -ms-overflow-style: none; scrollbar-width: none; }
+        .option-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; word-wrap: break-word; }
+        .option-letter { font-weight: 800; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+        .option-text { flex-grow: 1; min-width: 0; word-wrap: break-word; overflow-wrap: break-word; }
+        .option-text mjx-container { display: inline-block !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; overflow-x: visible !important; }
+        .option-text mjx-container[jax="CHTML"][display="true"] { margin: 0 !important; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
+        .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
+        .review-card .question-text { overflow-x: hidden !important; white-space: normal !important; word-wrap: break-word !important; }
+        .review-card strong { color: var(--text-primary); font-size: 16px; }
+        .review-card .option-item { background-color: var(--rc-bg); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: rgba(40, 167, 69, 0.1); border: 1px solid #28a745; color: #28a745; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; color: #dc3545; }
+        .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
+        .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
+        .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
+        .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px 0; border-top: 1px solid var(--border-light); }
+        .review-nav-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .review-nav-btn:disabled { background: var(--border-light); color: var(--text-primary); opacity: 0.5; cursor: not-allowed; }
+        .review-nav-text { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+        .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { 
+            html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } 
+            .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } 
+            #startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard { display: none !important; } 
+            #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } 
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; } 
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; margin-bottom: 20px !important; display: block !important; } 
+            .review-card .option-item { border: 1px solid #ccc !important; background: white !important; color: black !important; } 
+            .review-card .option-item.correct { background: #e6ffe6 !important; border-color: #28a745 !important; color: black !important; } 
+            .review-card .option-item.wrong { background: #ffe6e6 !important; border-color: #dc3545 !important; color: black !important; } 
+            @page { size: A4; margin: 1.5cm; } 
+        }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">30:00</div>
+            <div class="top-buttons">
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div id="printHeader" style="display: none;">
+            <h1>DR SAHITHA IAS ACADEMY</h1>
+            <h3>ANSWER KEY & DETAILED REVIEW</h3>
+            <p><strong>Test:</strong> UGZ-74 - UGTRB ZOOLOGY</p>
+        </div>
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+            <div id="reviewPagination" class="review-nav-container" style="display: none;">
+                <button class="review-nav-btn" id="prevReviewBtn" onclick="navigateReview(-1)">◀ PREV</button>
+                <span class="review-nav-text" id="reviewPageText">1 / 25</span>
+                <button class="review-nav-btn" id="nextReviewBtn" onclick="navigateReview(1)">NEXT ▶</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "UGTRB ZOOLOGY",
+        testNo: "UGZ-74",
+        date: "04/11/2026",
+        subject: "UGTRB ZOOLOGY",
+        topic: "BIOCHEMISTRY AND BIOTECHNOLOGY",
+        duration: "30",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "Which statement about cholesterol is FALSE?",
+    "ta": "கொலஸ்ட்ரால் பற்றிய எந்தக் கூற்று தவறானது?",
+    "optionsEn": ["It is insoluble in water", "It is not saponifiable", "It has a double bond between", "It is a saturated alcohol with no double bonds"],
+    "optionsTa": ["இது தண்ணீரில் கரையாது", "இது சவர்க்காரமாக்க முடியாதது", "இதில் ஒரு இரட்டைப் பிணைப்பு உள்ளது", "இது இரட்டைப் பிணைப்புகள் இல்லாத நிறைவுற்ற ஆல்கஹால்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "In the abbreviation of gangliosides, the subscript M, D or T designates:",
+    "ta": "கேங்கிளியோசைடுகளின் சுருக்கத்தில், M, D அல்லது T என்ற கீழெழுத்து எதைக் குறிக்கிறது?",
+    "optionsEn": ["The number of hexose units", "The presence of one, two or three sialic acid residues", "The molecular weigh", "The number of ceramide units"],
+    "optionsTa": ["ஹெக்ஸோஸ் அலகுகளின் எண்ணிக்கை", "ஒன்று, இரண்டு அல்லது மூன்று சியாலிக் அமில எச்சங்களின் இருப்பு", "மூலக்கூறு எடை", "செரமைடு அலகுகளின் எண்ணிக்கை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Glycolipids are compound lipids containing sugars and high molecular weight fatty acids like sphingosine, but they contain",
+    "ta": "கிளைக்கோலிப்பிடுகள் சர்க்கரைகள் மற்றும் ஸ்பிங்கோசின் போன்ற அதிக மூலக்கூறு எடை கொண்ட கொழுப்பு அமிலங்களைக் கொண்ட கூட்டு லிப்பிடுகள் ஆகும், ஆனால் அவற்றில் எது இல்லை?",
+    "optionsEn": ["No phosphoric acid", "No sugar", "No fatty acid", "No nitrogen"],
+    "optionsTa": ["பாஸ்போரிக் அமிலம் இல்லை", "சர்க்கரை இல்லை", "கொழுப்பு அமிலம் இல்லை", "நைட்ரஜன் இல்லை"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "On complete hydrolysis, lecithin yields choline, phosphoric acid, glycerol and:",
+    "ta": "முழுமையான நீர்ப்பகுப்பின் போது, லெசிதின் கொலின், பாஸ்போரிக் அமிலம், கிளிசரால் மற்றும் எதை வெளிப்படுத்துகிறது?",
+    "optionsEn": ["One molecule of fatty acid", "Two molecules of fatty acids", "Three molecules of fatty acids", "Ethanolamine"],
+    "optionsTa": ["ஒரு மூலக்கூறு கொழுப்பு அமிலம்", "இரண்டு மூலக்கூறு கொழுப்பு அமிலங்கள்", "மூன்று மூலக்கூறு கொழுப்பு அமிலங்கள்", "எத்தனாலமைன்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which statement about carotenoids is FALSE?",
+    "ta": "கரோட்டினாய்டுகள் பற்றிய எந்தக் கூற்று தவறானது?",
+    "optionsEn": ["They are non-saponifiable lipids", "They are saponifiable and yield soap on hydrolysis", "Chemically they are hydrocarbons", "They are isoprene derivatives"],
+    "optionsTa": ["அவை சவர்க்காரமாக்க முடியாத லிப்பிடுகள்", "அவை சவர்க்காரமாக்கக்கூடியவை மற்றும் நீர்ப்பகுப்பில் சவர்க்காரத்தை அளிக்கின்றன", "வேதியியல் ரீதியாக அவை ஹைட்ரோகார்பன்கள்", "அவை ஐசோபிரீன் வழித்தோன்றல்கள்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Chemically, terpenes are:",
+    "ta": "வேதியியல் ரீதியாக, டெர்பீன்கள்:",
+    "optionsEn": ["Alcohols", "Hydrocarbons", "Aldehydes", "Ketones"],
+    "optionsTa": ["ஆல்கஹால்கள்", "ஹைட்ரோகார்பன்கள்", "ஆல்டிஹைடுகள்", "கீட்டோன்கள்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Compounds containing which nucleus in their structures are called steroids?",
+    "ta": "எந்த உட்கருவைத் தங்கள் கட்டமைப்பில் கொண்டிருக்கும் சேர்மங்கள் ஸ்டீராய்டுகள் என்று அழைக்கப்படுகின்றன?",
+    "optionsEn": ["Purine nucleus", "1,2-cyclopentanophenylpropanethrene nucleus", "Pyrimidine nucleus", "Imidazole nucleus"],
+    "optionsTa": ["பியூரின் உட்கரு", "1,2-சைக்ளோபென்டனோபீனைல்புரோபேனத்ரீன் உட்கரு", "பைரிமிடின் உட்கரு", "இமிடாசோல் உட்கரு"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Why do glycolipids have no electric charge?",
+    "ta": "கிளைக்கோலிப்பிடுகளுக்கு ஏன் மின் கட்டணம் இல்லை?",
+    "optionsEn": ["Because the polar head groups are neutral", "Because they contain no fatty acids", "Because they contain phosphoric acid", "Because they contain choline"],
+    "optionsTa": ["ஏனெனில் துருவத் தலைக் குழுக்கள் நடுநிலையானவை", "ஏனெனில் அவற்றில் கொழுப்பு அமிலங்கள் இல்லை", "ஏனெனில் அவற்றில் பாஸ்போரிக் அமிலம் உள்ளது", "ஏனெனில் அவற்றில் கொலின் உள்ளது"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Cephalin consists of how many components?",
+    "ta": "செபலின் எத்தனை கூறுகளைக் கொண்டுள்ளது?",
+    "optionsEn": ["Three", "Four", "Five", "Six"],
+    "optionsTa": ["மூன்று", "நான்கு", "ஐந்து", "ஆறு"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which statement about waxes is FALSE?",
+    "ta": "மெழுகுகள் பற்றிய எந்தக் கூற்று தவறானது?",
+    "optionsEn": ["Waxes are simple lipids", "Waxes are liquid at room temperature", "Waxes are secreted by bees, cutaneous glands and plants", "Waxes are the chief storage food for plankton"],
+    "optionsTa": ["மெழுகுகள் எளிய லிப்பிடுகள்", "மெழுகுகள் அறை வெப்பநிலையில் திரவமாக இருக்கும்", "மெழுகுகள் தேனீக்கள், தோல் சுரப்பிகள் மற்றும் தாவரங்களால் சுரக்கப்படுகின்றன", "மெழுகுகள் பிளாங்க்டனுக்கான முக்கிய சேமிப்பு உணவு"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is NOT a biological function of oils mentioned in the text?",
+    "ta": "உரையில் குறிப்பிடப்பட்டுள்ள எண்ணெய்களின் உயிரியல் செயல்பாடு பின்வருவனவற்றுள் எது அல்ல?",
+    "optionsEn": ["Important energy source releasing 9.3 kcal", "Structural component of plasma membrane", "Subcutaneous fats act as insulator against heat loss", "Acts as an enzyme catalyst"],
+    "optionsTa": ["9.3 கிலோகலோரி வெளியிடும் முக்கிய ஆற்றல் மூலம்", "பிளாஸ்மா சவ்வின் கட்டமைப்பு கூறு", "தோலடி கொழுப்புகள் வெப்ப இழப்புக்கு எதிரான காப்பியாக செயல்படுகின்றன", "நொதி வினையூக்கியாக செயல்படுகிறது"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Glycolipids are compound lipids containing sugars and high molecular weight fatty acids like sphingosine, and they contain:",
+    "ta": "கிளைக்கோலிப்பிடுகள் சர்க்கரைகள் மற்றும் ஸ்பிங்கோசின் போன்ற அதிக மூலக்கூறு எடை கொண்ட கொழுப்பு அமிலங்களைக் கொண்ட கூட்டு லிப்பிடுகள் ஆகும், மேலும் அவற்றில் எது உள்ளது/இல்லை?",
+    "optionsEn": ["No phosphoric acid", "No sugar", "No fatty acid", "No nitrogen"],
+    "optionsTa": ["பாஸ்போரிக் அமிலம் இல்லை", "சர்க்கரை இல்லை", "கொழுப்பு அமிலம் இல்லை", "நைட்ரஜன் இல்லை"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which statement about animal and plant fats is FALSE?",
+    "ta": "விலங்கு மற்றும் தாவர கொழுப்புகள் பற்றிய எந்தக் கூற்று தவறானது?",
+    "optionsEn": ["Animal fats are rich in saturated fatty acids", "Plant fats have high iodine value", "Animal fats are liquid at room temperature", "Plant fats are stored mainly in seeds and fruits"],
+    "optionsTa": ["விலங்கு கொழுப்புகளில் நிறைவுற்ற கொழுப்பு அமிலங்கள் அதிகம்", "தாவர கொழுப்புகள் அதிக அயோடின் மதிப்பைக் கொண்டுள்ளன", "விலங்கு கொழுப்புகள் அறை வெப்பநிலையில் திரவமாக இருக்கும்", "தாவர கொழுப்புகள் முக்கியமாக விதைகள் மற்றும் பழங்களில் சேமிக்கப்படுகின்றன"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which statement about fats is FALSE?",
+    "ta": "கொழுப்புகள் பற்றிய எந்தக் கூற்று தவறானது?",
+    "optionsEn": ["Fats are simple lipids", "Fats are found in liver, seeds, and fruits", "Fats are liquids at room temperature", "Fats form insulation to temperature loss"],
+    "optionsTa": ["கொழுப்புகள் எளிய லிப்பிடுகள்", "கொழுப்புகள் கல்லீரல், விதைகள் மற்றும் பழங்களில் காணப்படுகின்றன", "கொழுப்புகள் அறை வெப்பநிலையில் திரவமாக இருக்கும்", "கொழுப்புகள் வெப்பநிலை இழப்புக்கு காப்பை உருவாக்குகின்றன"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Lycopene, carotenes and xanthophylls belong to which class of derived lipids?",
+    "ta": "லைக்கோபீன், கரோட்டின்கள் மற்றும் சாந்தோபில்கள் எந்த வகை வழித்தோன்றல் லிப்பிடுகளைச் சேர்ந்தவை?",
+    "optionsEn": ["Steroids", "Terpenes", "Carotenoids", "Waxes"],
+    "optionsTa": ["ஸ்டீராய்டுகள்", "டெர்பீன்கள்", "கரோட்டினாய்டுகள்", "மெழுகுகள்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which statement about lipids is FALSE?",
+    "ta": "லிப்பிடுகள் பற்றிய எந்தக் கூற்று தவறானது?",
+    "optionsEn": ["They are insoluble in water", "They contain a large proportion of carbon and hydrogen bonds", "They release less energy than carbohydrates on breakdown", "They are found in all organisms including virus"],
+    "optionsTa": ["அவை தண்ணீரில் கரையாதவை", "அவை அதிக அளவு கார்பன் மற்றும் ஹைட்ரஜன் பிணைப்புகளைக் கொண்டுள்ளன", "சிதைவின் போது அவை கார்போஹைட்ரேட்டுகளை விட குறைவான ஆற்றலை வெளியிடுகின்றன", "வைரஸ் உட்பட அனைத்து உயிரினங்களிலும் அவை காணப்படுகின்றன"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which statement about amino acid classification is FALSE?",
+    "ta": "அமினோ அமில வகைப்பாடு பற்றிய எந்தக் கூற்று தவறானது?",
+    "optionsEn": ["Lysine has two amino groups and one acid group", "Cystine has two amino groups and two acid groups", "Isoleucine has a straight chain side chain and is aliphatic", "Lysine has one amino group and two acid groups"],
+    "optionsTa": ["லைசினில் இரண்டு அமினோ குழுக்கள் மற்றும் ஒரு அமில குழு உள்ளது", "சிஸ்டினில் இரண்டு அமினோ குழுக்கள் மற்றும் இரண்டு அமில குழுக்கள் உள்ளன", "ஐசோலூசினில் நேரான சங்கிலி பக்க சங்கிலி உள்ளது மற்றும் இது அலிஃபாட்டிக் ஆகும்", "லைசினில் ஒரு அமினோ குழு மற்றும் இரண்டு அமில குழுக்கள் உள்ளன"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "The imino group present in imino acids is:",
+    "ta": "இமினோ அமிலங்களில் உள்ள இமினோ குழு:",
+    "optionsEn": ["NH₂", "NH", "COOH", "CH₃"],
+    "optionsTa": ["NH₂", "NH", "COOH", "CH₃"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which pairing of amino acid and its R group is CORRECT?",
+    "ta": "அமினோ அமிலம் மற்றும் அதன் R குழுவின் எந்த இணை சரியானது?",
+    "optionsEn": ["Glycine --- CH₃", "Alanine --- H", "Serine --- CH₂OH", "Serine --- CH₃"],
+    "optionsTa": ["கிளைசின் --- CH₃", "அலனைன் --- H", "செரின் --- CH₂OH", "செரின் --- CH₃"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which statement about glycoprotein biosynthesis is FALSE?",
+    "ta": "கிளைக்கோபுரோட்டீன் உயிர்தொகுப்பு பற்றிய எந்தக் கூற்று தவறானது?",
+    "optionsEn": ["It is similar to that of normal proteins", "Carbohydrate side chains are inserted after polypeptide synthesis", "Carbohydrate side chains are inserted before polypeptide synthesis", "The polypeptide is synthesized first"],
+    "optionsTa": ["இது சாதாரண புரதங்களின் உயிர்தொகுப்பைப் போன்றது", "பாலிபெப்டைட் தொகுப்புக்குப் பிறகு கார்போஹைட்ரேட் பக்கச் சங்கிலிகள் செருகப்படுகின்றன", "பாலிபெப்டைட் தொகுப்புக்கு முன் கார்போஹைட்ரேட் பக்கச் சங்கிலிகள் செருகப்படுகின்றன", "பாலிபெப்டைட் முதலில் தொகுக்கப்படுகிறது"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is NOT listed as an example of glycoprotein?",
+    "ta": "பின்வருவனவற்றுள் எது கிளைக்கோபுரோட்டீனுக்கு எடுத்துக்காட்டாக பட்டியலிடப்படவில்லை?",
+    "optionsEn": ["Collagen", "Mucin in saliva", "Human chorionic gonadotropin (HCG)", "Haemoglobin"],
+    "optionsTa": ["கொல்லாஜன்", "உமிழ்நீரில் உள்ள மியூசின்", "மனித கோரியானிக் கோனாடோட்ரோபின் (HCG)", "ஹீமோகுளோபின்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "which is the correct sequence of derived protein breakdown?",
+    "ta": "வழித்தோன்றல் புரதச் சிதைவின் சரியான வரிசை எது?",
+    "optionsEn": ["Proteoses → Peptones → Polypeptides → Simple peptides → Amino acids", "Peptones → Proteoses → Amino acids → Polypeptides", "Polypeptides → Proteoses → Peptones → Amino acids", "Amino acids → Simple peptides → Polypeptides → Peptones"],
+    "optionsTa": ["புரோட்டியோஸ்கள் → பெப்டோன்கள் → பாலிபெப்டைடுகள் → எளிய பெப்டைடுகள் → அமினோ அமிலங்கள்", "பெப்டோன்கள் → புரோட்டியோஸ்கள் → அமினோ அமிலங்கள் → பாலிபெப்டைடுகள்", "பாலிபெப்டைடுகள் → புரோட்டியோஸ்கள் → பெப்டோன்கள் → அமினோ அமிலங்கள்", "அமினோ அமிலங்கள் → எளிய பெப்டைடுகள் → பாலிபெப்டைடுகள் → பெப்டோன்கள்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which statement about conjugated proteins is FALSE?",
+    "ta": "கூட்டு புரதங்கள் பற்றிய எந்தக் கூற்று தவறானது?",
+    "optionsEn": ["They are proteins united with non-protein substances", "On hydrolysis they yield non-protein substances in addition to amino acids", "The prosthetic group and apoprotein together are called holoprotein", "They yield only amino acids on hydrolysis"],
+    "optionsTa": ["அவை புரதமற்ற பொருட்களுடன் இணைந்த புரதங்கள்", "நீர்ப்பகுப்பின் போது அவை அமினோ அமிலங்களுக்கு கூடுதலாக புரதமற்ற பொருட்களை அளிக்கின்றன", "புரோஸ்டெடிக் குழு மற்றும் அபோபுரோட்டீன் ஆகியவை ஒன்றாக ஹோலோபுரோட்டீன் என்று அழைக்கப்படுகின்றன", "நீர்ப்பகுப்பின் போது அவை அமினோ அமிலங்களை மட்டுமே அளிக்கின்றன"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Histones are rich in basic amino acids like:",
+    "ta": "ஹிஸ்டோன்கள் பின்வரும் எந்த கார அமினோ அமிலங்களில் செறிவூட்டப்பட்டுள்ளன?",
+    "optionsEn": ["Glycine and lysine", "Histidine and arginine", "Tryptophan and methionine", "Proline and glutamic acid"],
+    "optionsTa": ["கிளைசின் மற்றும் லைசின்", "ஹிஸ்டிடின் மற்றும் ஆர்ஜினின்", "டிரிப்டோபான் மற்றும் மெத்தியோனின்", "புரோலின் மற்றும் குளுடாமிக் அமிலம்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which pair correctly matches a fibrous protein with its source?",
+    "ta": "எந்த இணை ஒரு நார்ச்சத்து புரதத்தை அதன் மூலத்துடன் சரியாகப் பொருத்துகிறது?",
+    "optionsEn": ["Collagen --- hair", "Keratin --- tendons", "Elastin --- connective tissue", "Fibroin --- connective tissue"],
+    "optionsTa": ["கொல்லாஜன் --- முடி", "கெரட்டின் --- தசைநாண்கள்", "எலாஸ்டின் --- இணைப்பு திசு", "ஃபைப்ரோயின் --- இணைப்பு திசு"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "which of the following is the MOST comprehensive and accurate definition of carbohydrates?",
+    "ta": "பின்வருவனவற்றுள் எது கார்போஹைட்ரேட்டுகளின் மிக விரிவான மற்றும் துல்லியமான வரையறை?",
+    "optionsEn": ["Compounds with the formula Cx(H₂O)y", "Hydrates of carbon with H:O ratio 1:2:1", "Optically active polyhydroxy aldehydes or ketones", "Compounds containing only carbon, hydrogen, and oxygen"],
+    "optionsTa": ["Cx(H₂O)y சூத்திரம் கொண்ட சேர்மங்கள்", "H:O விகிதம் 1:2:1 கொண்ட கார்பனின் ஹைட்ரேட்டுகள்", "ஒளியியல் செயலில் உள்ள பாலிஹைட்ராக்ஸி ஆல்டிஹைடுகள் அல்லது கீட்டோன்கள்", "கார்பன், ஹைட்ரஜன் மற்றும் ஆக்சிஜன் மட்டுமே கொண்ட சேர்மங்கள்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statements is INCORRECT?",
+    "ta": "பின்வரும் கூற்றுகளில் எது தவறானது?",
+    "optionsEn": ["Monosaccharides cannot be hydrolyzed into simpler sugars", "Oligosaccharides yield 2 to 10 monosaccharides on hydrolysis", "Non-sugars include starch, glycogen, cellulose, and chitin", "All polysaccharides are sweet in taste and soluble in water"],
+    "optionsTa": ["மோனோசாக்கரைடுகளை எளிய சர்க்கரைகளாக நீர்ப்பகுக்க முடியாது", "நீர்ப்பகுப்பின் போது ஆலிகோசாக்கரைடுகள் 2 முதல் 10 மோனோசாக்கரைடுகளை அளிக்கின்றன", "சர்க்கரை அல்லாதவற்றில் ஸ்டார்ச், கிளைகோஜன், செல்லுலோஸ் மற்றும் சிடின் அடங்கும்", "அனைத்து பாலிசாக்கரைடுகளும் சுவையில் இனிப்பானவை மற்றும் தண்ணீரில் கரையக்கூடியவை"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statements is INCORRECT?",
+    "ta": "பின்வரும் கூற்றுகளில் எது தவறானது?",
+    "optionsEn": ["Monosaccharides contain 2 or more hydroxyl groups and one aldehyde or ketone group", "Monosaccharides are reducing agents", "Heteropolysaccharides contain only one type of monosaccharide", "Polysaccharides are formed by linking many monosaccharides"],
+    "optionsTa": ["மோனோசாக்கரைடுகள் 2 அல்லது அதற்கு மேற்பட்ட ஹைட்ராக்ஸில் குழுக்கள் மற்றும் ஒரு ஆல்டிஹைடு அல்லது கீட்டோன் குழுவைக் கொண்டுள்ளன", "மோனோசாக்கரைடுகள் குறைக்கும் முகவர்கள்", "ஹெட்டரோபாலிசாக்கரைடுகள் ஒரு வகை மோனோசாக்கரைடை மட்டுமே கொண்டுள்ளன", "பல மோனோசாக்கரைடுகளை இணைப்பதன் மூலம் பாலிசாக்கரைடுகள் உருவாகின்றன"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "A monosaccharide with 7 carbon atoms is called a heptose. which of the following correctly represents the aldose and ketose forms of heptose?",
+    "ta": "7 கார்பன் அணுக்களைக் கொண்ட ஒரு மோனோசாக்கரைடு ஹெப்டோஸ் என்று அழைக்கப்படுகிறது. பின்வருவனவற்றுள் எது ஹெப்டோஸின் ஆல்டோஸ் மற்றும் கீட்டோஸ் வடிவங்களை சரியாகக் குறிக்கிறது?",
+    "optionsEn": ["Glucoheptose and Sedoheptulose", "Glycerose and Dihydroxyacetone", "Erythrose and Erythulose", "Ribose and Ribulose"],
+    "optionsTa": ["குளுக்கோஹெப்டோஸ் மற்றும் செடோஹெப்டுலோஸ்", "கிளிசரோஸ் மற்றும் டைஹைட்ராக்ஸியாசெட்டோன்", "எரித்ரோஸ் மற்றும் எரித்ருலோஸ்", "ரைபோஸ் மற்றும் ரிபுலோஸ்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "If a monosaccharide is an aldotetrose, which of the following statements is TRUE?",
+    "ta": "ஒரு மோனோசாக்கரைடு ஆல்டோடெட்ரோஸ் என்றால், பின்வரும் கூற்றுகளில் எது உண்மையானது?",
+    "optionsEn": ["It contains 4 carbon atoms and a ketone group", "It contains 4 carbon atoms and an aldehyde group", "It contains 5 carbon atoms and an aldehyde group", "It contains 3 carbon atoms and a ketone group"],
+    "optionsTa": ["இது 4 கார்பன் அணுக்கள் மற்றும் ஒரு கீட்டோன் குழுவைக் கொண்டுள்ளது", "இது 4 கார்பன் அணுக்கள் மற்றும் ஒரு ஆல்டிஹைடு குழுவைக் கொண்டுள்ளது", "இது 5 கார்பன் அணுக்கள் மற்றும் ஒரு ஆல்டிஹைடு குழுவைக் கொண்டுள்ளது", "இது 3 கார்பன் அணுக்கள் மற்றும் ஒரு கீட்டோன் குழுவைக் கொண்டுள்ளது"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "which of the following correctly matches the number of asymmetric carbon atoms with the number of isomers?",
+    "ta": "பின்வருவனவற்றுள் எது சமச்சீரற்ற கார்பன் அணுக்களின் எண்ணிக்கையை ஐசோமர்களின் எண்ணிக்கையுடன் சரியாகப் பொருத்துகிறது?",
+    "optionsEn": ["1 asymmetric carbon → 4 isomers", "2 asymmetric carbons → 2 isomers", "1 asymmetric carbon → 2 isomers", "3 asymmetric carbons → 2 isomers"],
+    "optionsTa": ["1 சமச்சீரற்ற கார்பன் → 4 ஐசோமர்கள்", "2 சமச்சீரற்ற கார்பன்கள் → 2 ஐசோமர்கள்", "1 சமச்சீரற்ற கார்பன் → 2 ஐசோமர்கள்", "3 சமச்சீரற்ற கார்பன்கள் → 2 ஐசோமர்கள்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "A student claims that ketohexoses have the same number of isomers as aldohexoses because both contain 6 carbon atoms. Based on the text, which of the following BEST evaluates this claim?",
+    "ta": "இரண்டும் 6 கார்பன் அணுக்களைக் கொண்டிருப்பதால் கீட்டோஹெக்ஸோஸ்கள் ஆல்டோஹெக்ஸோஸ்களைப் போலவே ஐசோமர்களின் எண்ணிக்கையைக் கொண்டுள்ளன என்று ஒரு மாணவர் கூறுகிறார். உரையின் அடிப்படையில், பின்வருவனவற்றுள் எது இந்தக் கூற்றை சிறந்த முறையில் மதிப்பிடுகிறது?",
+    "optionsEn": ["The claim is correct because both have the formula C₆H₁₂O₆", "The claim is incorrect because aldohexoses have 4 asymmetric carbons (16 isomers), while ketohexoses have 3 (8 isomers)", "The claim is correct because both are hexoses", "The claim is incorrect because ketohexoses have more isomers than aldohexoses"],
+    "optionsTa": ["இரண்டும் C₆H₁₂O₆ சூத்திரத்தைக் கொண்டிருப்பதால் கூற்று சரியானது", "ஆல்டோஹெக்ஸோஸ்களில் 4 சமச்சீரற்ற கார்பன்கள் (16 ஐசோமர்கள்) உள்ளன, கீட்டோஹெக்ஸோஸ்களில் 3 (8 ஐசோமர்கள்) உள்ளன என்பதால் கூற்று தவறானது", "இரண்டும் ஹெக்ஸோஸ்கள் என்பதால் கூற்று சரியானது", "கீட்டோஹெக்ஸோஸ்களில் ஆல்டோஹெக்ஸோஸ்களை விட அதிக ஐசோமர்கள் இருப்பதால் கூற்று தவறானது"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is TRUE about the role of oligosaccharides in nitrogen fixation?",
+    "ta": "நைட்ரஜன் நிலைப்படுத்தலில் ஆலிகோசாக்கரைடுகளின் பங்கு பற்றி பின்வருவனவற்றுள் எது உண்மையானது?",
+    "optionsEn": ["They directly convert nitrogen gas to ammonia", "They help bind nitrogen-fixing bacteria to the root hairs of leguminous plants", "They are the sole nitrogen source for plants", "They inhibit bacterial binding to roots"],
+    "optionsTa": ["அவை நைட்ரஜன் வாயுவை நேரடியாக அம்மோனியாவாக மாற்றுகின்றன", "பருப்பு வகை தாவரங்களின் வேர் முடிகளுடன் நைட்ரஜன் நிலைப்படுத்தும் பாக்டீரியாக்களை பிணைக்க அவை உதவுகின்றன", "அவை தாவரங்களுக்கான ஒரே நைட்ரஜன் மூலமாகும்", "வேர்களுடன் பாக்டீரியா பிணைப்பதை அவை தடுக்கின்றன"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statements is INCORRECT?",
+    "ta": "பின்வரும் கூற்றுகளில் எது தவறானது?",
+    "optionsEn": ["In cellulose, the glycosidic linkage is β-1,4", "N-glycosidic bonds are found in the nucleotides of DNA and RNA", "Disaccharides yield 2 molecules of monosaccharides on hydrolysis", "Cellulose is formed by α-1,4-glycosidic linkages between glucose units"],
+    "optionsTa": ["செல்லுலோஸில், கிளைக்கோசிடிக் இணைப்பு β-1,4 ஆகும்", "DNA மற்றும் RNA இன் நியூக்ளியோடைடுகளில் N-கிளைக்கோசிடிக் பிணைப்புகள் காணப்படுகின்றன", "நீர்ப்பகுப்பின் போது டைசாக்கரைடுகள் 2 மூலக்கூறு மோனோசாக்கரைடுகளை அளிக்கின்றன", "குளுக்கோஸ் அலகுகளுக்கு இடையே α-1,4-கிளைக்கோசிடிக் இணைப்புகளால் செல்லுலோஸ் உருவாகிறது"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "which of the following statements is TRUE?",
+    "ta": "பின்வரும் கூற்றுகளில் எது உண்மையானது?",
+    "optionsEn": ["Sucrose is a reducing disaccharide with a C₁-C₄ linkage", "Maltose is a non-reducing disaccharide with a C₁-C₁ linkage", "Lactose is a reducing disaccharide with a C₁-C₄ linkage", "Gentiobiose is a non-reducing disaccharide with a C₁-C₆ linkage"],
+    "optionsTa": ["சுக்ரோஸ் என்பது C₁-C₄ இணைப்பைக் கொண்ட ஒரு குறைக்கும் டைசாக்கரைடு", "மால்டோஸ் என்பது C₁-C₁ இணைப்பைக் கொண்ட ஒரு குறைக்காத டைசாக்கரைடு", "லாக்டோஸ் என்பது C₁-C₄ இணைப்பைக் கொண்ட ஒரு குறைக்கும் டைசாக்கரைடு", "ஜென்டியோபயோஸ் என்பது C₁-C₆ இணைப்பைக் கொண்ட ஒரு குறைக்காத டைசாக்கரைடு"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "what is the molecular formula of glucose (C₆H₁₂O₆) and what type of sugar is it?",
+    "ta": "குளுக்கோஸின் மூலக்கூறு சூத்திரம் (C₆H₁₂O₆) என்ன மற்றும் இது எந்த வகை சர்க்கரை?",
+    "optionsEn": ["A hexose with 6 carbon atoms", "A pentose with 5 carbon atoms", "A tetrose with 4 carbon atoms", "A heptose with 7 carbon atoms"],
+    "optionsTa": ["6 கார்பன் அணுக்களைக் கொண்ட ஒரு ஹெக்ஸோஸ்", "5 கார்பன் அணுக்களைக் கொண்ட ஒரு பென்டோஸ்", "4 கார்பன் அணுக்களைக் கொண்ட ஒரு டெட்ரோஸ்", "7 கார்பன் அணுக்களைக் கொண்ட ஒரு ஹெப்டோஸ்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "A student claims that muscle glycogen and liver glycogen have the same function. which of the following BEST evaluates this claim?",
+    "ta": "தசை கிளைகோஜன் மற்றும் கல்லீரல் கிளைகோஜன் ஒரே செயல்பாட்டைக் கொண்டுள்ளன என்று ஒரு மாணவர் கூறுகிறார். பின்வருவனவற்றுள் எது இந்தக் கூற்றை சிறந்த முறையில் மதிப்பிடுகிறது?",
+    "optionsEn": ["The claim is correct because both are stored in the same organ", "The claim is incorrect because liver glycogen supplies glucose to all tissues through blood, while muscle glycogen is used as an energy source during muscle contraction", "The claim is correct because both are converted into blood glucose", "The claim is incorrect because muscle glycogen is not a polysaccharide"],
+    "optionsTa": ["இரண்டும் ஒரே உறுப்பில் சேமிக்கப்படுவதால் கூற்று சரியானது", "கல்லீரல் கிளைகோஜன் இரத்தத்தின் மூலம் அனைத்து திசுக்களுக்கும் குளுக்கோஸை வழங்குகிறது, அதே சமயம் தசை கிளைகோஜன் தசை சுருக்கத்தின் போது ஆற்றல் மூலமாகப் பயன்படுத்தப்படுகிறது என்பதால் கூற்று தவறானது", "இரண்டும் இரத்த குளுக்கோஸாக மாற்றப்படுவதால் கூற்று சரியானது", "தசை கிளைகோஜன் ஒரு பாலிசாக்கரைடு அல்ல என்பதால் கூற்று தவறானது"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statements is TRUE about glycogen?",
+    "ta": "கிளைகோஜன் பற்றி பின்வரும் கூற்றுகளில் எது உண்மையானது?",
+    "optionsEn": ["It is a heteropolysaccharide found in plants", "It is a non-reducing sugar that gives a red colour with iodine", "It is a reducing sugar that gives a blue colour with iodine", "It is a monosaccharide stored in the liver"],
+    "optionsTa": ["இது தாவரங்களில் காணப்படும் ஒரு ஹெட்டரோபாலிசாக்கரைடு", "இது அயோடினுடன் சிவப்பு நிறத்தைக் கொடுக்கும் குறைக்காத சர்க்கரை", "இது அயோடினுடன் நீல நிறத்தைக் கொடுக்கும் குறைக்கும் சர்க்கரை", "இது கல்லீரலில் சேமிக்கப்படும் ஒரு மோனோசாக்கரைடு"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which statement about globular proteins is FALSE?",
+    "ta": "கோளப் புரதங்கள் பற்றிய எந்தக் கூற்று தவறானது?",
+    "optionsEn": ["They are spherical in shape", "They are soluble in water", "They are highly branched", "Their polypeptide chains are cross-linked by disulphide bonds only"],
+    "optionsTa": ["அவை கோள வடிவத்தில் உள்ளன", "அவை தண்ணீரில் கரையக்கூடியவை", "அவை மிகவும் கிளைத்தவை", "அவற்றின் பாலிபெப்டைட் சங்கிலிகள் டைசல்பைடு பிணைப்புகளால் மட்டுமே குறுக்கு இணைக்கப்பட்டுள்ளன"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "On the basis of solubility or shape, proteins are classified into:",
+    "ta": "கரைதிறன் அல்லது வடிவத்தின் அடிப்படையில், புரதங்கள் பின்வருமாறு வகைப்படுத்தப்படுகின்றன:",
+    "optionsEn": ["Simple and complex proteins", "Globular and fibrous proteins", "Primary and secondary proteins", "Soluble and insoluble proteins"],
+    "optionsTa": ["எளிய மற்றும் சிக்கலான புரதங்கள்", "கோள மற்றும் நார்ச்சத்து புரதங்கள்", "முதன்மை மற்றும் இரண்டாம் நிலை புரதங்கள்", "கரையக்கூடிய மற்றும் கரையாத புரதங்கள்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Globular protein molecules are tightly folded into which shape?",
+    "ta": "கோளப் புரத மூலக்கூறுகள் எந்த வடிவத்தில் இறுக்கமாக மடிக்கப்பட்டுள்ளன?",
+    "optionsEn": ["Linear shape", "Fibrous shape", "Spherical or globular shape", "Helical shape"],
+    "optionsTa": ["நேரியல் வடிவம்", "நார்ச்சத்து வடிவம்", "கோள அல்லது உருண்டை வடிவம்", "சுருள் வடிவம்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Globulins are precipitated by:",
+    "ta": "குளோபுலின்கள் எதனால் வீழ்படிவாக்கப்படுகின்றன?",
+    "optionsEn": ["Saturated ammonium sulphate", "Saturated NaCl solution", "70--80% ethyl alcohol", "Long boiling concentrated acid"],
+    "optionsTa": ["நிறைவுற்ற அம்மோனியம் சல்பேட்", "நிறைவுற்ற NaCl கரைசல்", "70--80% எத்தில் ஆல்கஹால்", "நீண்ட நேரம் கொதிக்கும் செறிவூட்டப்பட்ட அமிலம்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "The phosphoric acid in phosphoproteins is attached to the hydroxyl group of protein by:",
+    "ta": "பாஸ்போபுரோட்டீன்களில் உள்ள பாஸ்போரிக் அமிலம் புரதத்தின் ஹைட்ராக்ஸில் குழுவுடன் எதன் மூலம் இணைக்கப்பட்டுள்ளது?",
+    "optionsEn": ["Peptide linkage", "Ester linkage", "Hydrogen bond", "Disulphide bond"],
+    "optionsTa": ["பெப்டைட் இணைப்பு", "எஸ்டர் இணைப்பு", "ஹைட்ரஜன் பிணைப்பு", "டைசல்பைடு பிணைப்பு"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Serum albumin is described as:",
+    "ta": "சீரம் ஆல்புமின் எவ்வாறு விவரிக்கப்படுகிறது?",
+    "optionsEn": ["The least abundant blood plasma protein", "The number 1 most abundant blood plasma protein", "A fibrous protein", "A conjugated protein"],
+    "optionsTa": ["மிகக் குறைவாக உள்ள இரத்த பிளாஸ்மா புரதம்", "மிக அதிக அளவில் உள்ள இரத்த பிளாஸ்மா புரதம்", "ஒரு நார்ச்சத்து புரதம்", "ஒரு கூட்டு புரதம்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Competition between drugs for albumin binding sites may cause drug interaction by:",
+    "ta": "ஆல்புமின் பிணைப்பு தளங்களுக்கான மருந்துகளுக்கு இடையேயான போட்டி எவ்வாறு மருந்து தொடர்புகளை ஏற்படுத்தலாம்?",
+    "optionsEn": ["Decreasing the free fraction of one drug", "Increasing the free fraction of one of the drugs", "Destroying the albumin molecule", "Increasing albumin synthesis"],
+    "optionsTa": ["ஒரு மருந்தின் இலவச பகுதியைக் குறைப்பதன் மூலம்", "மருந்துகளில் ஒன்றின் இலவச பகுதியை அதிகரிப்பதன் மூலம்", "ஆல்புமின் மூலக்கூறை அழிப்பதன் மூலம்", "ஆல்புமின் தொகுப்பை அதிகரிப்பதன் மூலம்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "The polypeptide in glycoproteins is in which form?",
+    "ta": "கிளைக்கோபுரோட்டீன்களில் உள்ள பாலிபெப்டைட் எந்த வடிவத்தில் உள்ளது?",
+    "optionsEn": ["β pleated sheet", "α helix form", "Random coil", "Globular form"],
+    "optionsTa": ["β மடிப்பு தாள்", "α சுருள் வடிவம்", "சீரற்ற சுருள்", "கோள வடிவம்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "In the biosynthesis of glycoproteins, the carbohydrate side chains are inserted:",
+    "ta": "கிளைக்கோபுரோட்டீன்களின் உயிர்தொகுப்பில், கார்போஹைட்ரேட் பக்கச் சங்கிலிகள் எப்போது செருகப்படுகின்றன?",
+    "optionsEn": ["Before the synthesis of polypeptide", "After the synthesis of polypeptide", "Simultaneously with the synthesis of polypeptide", "During transcription"],
+    "optionsTa": ["பாலிபெப்டைட் தொகுப்புக்கு முன்", "பாலிபெப்டைட் தொகுப்புக்குப் பிறகு", "பாலிபெப்டைட் தொகுப்புடன் ஒரே நேரத்தில்", "படியெடுத்தலின் போது"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "The carbon atom situated next to the COOH group is called:",
+    "ta": "COOH குழுவுக்கு அடுத்ததாக அமைந்துள்ள கார்பன் அணு எவ்வாறு அழைக்கப்படுகிறது?",
+    "optionsEn": ["β-carbon atom", "γ-carbon atom", "α-carbon atom", "δ-carbon atom"],
+    "optionsTa": ["β-கார்பன் அணு", "γ-கார்பன் அணு", "α-கார்பன் அணு", "δ-கார்பன் அணு"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Amino acids containing two amino groups and two acid groups are called:",
+    "ta": "இரண்டு அமினோ குழுக்கள் மற்றும் இரண்டு அமில குழுக்களைக் கொண்ட அமினோ அமிலங்கள் எவ்வாறு அழைக்கப்படுகின்றன?",
+    "optionsEn": ["Monoamino monocarboxylic acids", "Diamino monocarboxylic acids", "Diamino dicarboxylic acids", "Monoamino dicarboxylic acids"],
+    "optionsTa": ["மோனோஅமினோ மோனோகார்பாக்சிலிக் அமிலங்கள்", "டயமினோ மோனோகார்பாக்சிலிக் அமிலங்கள்", "டயமினோ டைகார்பாக்சிலிக் அமிலங்கள்", "மோனோஅமினோ டைகார்பாக்சிலிக் அமிலங்கள்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Most amino acids have only one asymmetric carbon atom, but which two amino acids have TWO asymmetric carbon atoms each?",
+    "ta": "பெரும்பாலான அமினோ அமிலங்களில் ஒரே ஒரு சமச்சீரற்ற கார்பன் அணு மட்டுமே உள்ளது, ஆனால் எந்த இரண்டு அமினோ அமிலங்களில் தலா இரண்டு சமச்சீரற்ற கார்பன் அணுக்கள் உள்ளன?",
+    "optionsEn": ["Glycine and alanine", "Threonine and isoleucine", "Serine and phenylalanine", "Lysine and cystine"],
+    "optionsTa": ["கிளைசின் மற்றும் அலனைன்", "திரியோனின் மற்றும் ஐசோலூசின்", "செரின் மற்றும் பினைலலனைன்", "லைசின் மற்றும் சிஸ்டின்"],
+    "answer": 1
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false; isSubmitted = false;
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">
+                <span class="option-letter">${String.fromCharCode(65+i)}.</span>
+                <span class="option-text">${opt}</span>
+            </div>`;
+        });
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+            </div>
+        `;
+        updateNavButtons(); updatePalette();
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) return;
+        userAnswers[currentIndex] = optIndex;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    let currentReviewIndex = 0;
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let cssClass = "option-item";
+                let markerHtml = "";
+                if (idx === corr) { cssClass += " correct"; markerHtml = "<div class='marker'>✔</div>"; }
+                else if (u === idx && idx !== corr) { cssClass += " wrong"; markerHtml = "<div class='marker'>✖</div>"; }
+                optsHtml += `<div class="${cssClass}"><span>${String.fromCharCode(65+idx)}. ${optsArray[idx]}</span>${markerHtml}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" id="review-card-${i}" style="display: none;">
+                        <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div class="your-answer">Your Answer: ${userAns}</div>
+                        <div class="correct-answer">Correct Answer: ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        ${optsHtml}
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+        currentReviewIndex = 0;
+        showReviewCard(currentReviewIndex);
+    }
+    function showReviewCard(index) {
+        const cards = document.querySelectorAll(".review-card");
+        if (cards.length === 0) return;
+        cards.forEach(c => c.style.display = "none");
+        cards[index].style.display = "block";
+        document.getElementById("reviewPageText").innerText = `${index + 1} / ${cards.length}`;
+        document.getElementById("prevReviewBtn").disabled = (index === 0);
+        document.getElementById("nextReviewBtn").disabled = (index === cards.length - 1);
+        document.getElementById("reviewPagination").style.display = "flex";
+        window.scrollTo(0, 0);
+    }
+    function navigateReview(direction) {
+        const cards = document.querySelectorAll(".review-card");
+        currentReviewIndex += direction;
+        if (currentReviewIndex >= 0 && currentReviewIndex < cards.length) {
+            showReviewCard(currentReviewIndex);
+        }
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
+            await new Promise(r => setTimeout(r, 600));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+                if (btn) btn.innerText = "✅ Select Save as PDF";
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+        } finally {
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 3000);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        history.replaceState({ resultPage: true }, "", "#result");
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.addEventListener("popstate", function(e) {
+        if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+            history.pushState({ resultPage: true }, "", "#result");
+            confirmLeaveResult();
+        }
+    });
+    function confirmLeaveResult() {
+        if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
+            window.AndroidBridge.exitResultPage();
+        } else {
+            history.back();
+        }
+    }
+    window.checkForReview = function() {
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
+            }
+        }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
