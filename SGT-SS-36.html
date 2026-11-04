@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>SGT-SS-36 - HISTORY: INDUSTRIAL REVOLUTION, COLONIALISM IN ASIA AND AFRICA SGT-SS-36</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                linebreaks: { automatic: true, width: "container" }
+            },
+            options: { ignoreHtmlClass: "no-mathjax" },
+            chtml: {
+                displayAlign: "left",
+                displayIndent: "0",
+                mtextInheritFont: true
+            },
+            svg: {
+                scale: 0.9,
+                minScale: 0.5,
+                mtextInheritFont: true,
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; color: #10b981; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; white-space: normal; word-wrap: break-word; padding-bottom: 20px; max-width: 100%; overflow-x: auto; }
+        mjx-container { display: inline !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; }
+        .question-text::-webkit-scrollbar { display: none; }
+        .question-text { -ms-overflow-style: none; scrollbar-width: none; }
+        .option-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; word-wrap: break-word; }
+        .option-letter { font-weight: 800; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+        .option-text { flex-grow: 1; min-width: 0; word-wrap: break-word; overflow-wrap: break-word; }
+        .option-text mjx-container { display: inline-block !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; overflow-x: visible !important; }
+        .option-text mjx-container[jax="CHTML"][display="true"] { margin: 0 !important; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
+        .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
+        .review-card .question-text { overflow-x: hidden !important; white-space: normal !important; word-wrap: break-word !important; }
+        .review-card strong { color: var(--text-primary); font-size: 16px; }
+        .review-card .option-item { background-color: var(--rc-bg); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: rgba(40, 167, 69, 0.1); border: 1px solid #28a745; color: #28a745; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; color: #dc3545; }
+        .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
+        .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
+        .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
+        .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px 0; border-top: 1px solid var(--border-light); }
+        .review-nav-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .review-nav-btn:disabled { background: var(--border-light); color: var(--text-primary); opacity: 0.5; cursor: not-allowed; }
+        .review-nav-text { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+        .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { 
+            html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } 
+            .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } 
+            #startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard { display: none !important; } 
+            #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } 
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; } 
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; margin-bottom: 20px !important; display: block !important; } 
+            .review-card .option-item { border: 1px solid #ccc !important; background: white !important; color: black !important; } 
+            .review-card .option-item.correct { background: #e6ffe6 !important; border-color: #28a745 !important; color: black !important; } 
+            .review-card .option-item.wrong { background: #ffe6e6 !important; border-color: #dc3545 !important; color: black !important; } 
+            @page { size: A4; margin: 1.5cm; } 
+        }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">15:00</div>
+            <div class="top-buttons">
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div id="printHeader" style="display: none;">
+            <h1>DR SAHITHA IAS ACADEMY</h1>
+            <h3>ANSWER KEY & DETAILED REVIEW</h3>
+            <p><strong>Test:</strong> SGT-SS-36 - SOCIAL SCIENCE</p>
+        </div>
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+            <div id="reviewPagination" class="review-nav-container" style="display: none;">
+                <button class="review-nav-btn" id="prevReviewBtn" onclick="navigateReview(-1)">◀ PREV</button>
+                <span class="review-nav-text" id="reviewPageText">1 / 25</span>
+                <button class="review-nav-btn" id="nextReviewBtn" onclick="navigateReview(1)">NEXT ▶</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "SOCIAL SCIENCE",
+        testNo: "SGT-SS-36",
+        date: new Date().toLocaleDateString("en-GB"),
+        subject: "SOCIAL SCIENCE",
+        topic: "HISTORY: INDUSTRIAL REVOLUTION, COLONIALISM IN ASIA AND AFRICA",
+        duration: "15",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "The term <i>Industrial Revolution</i>, denoting Britain's economic development from 1760 to 1840, was popularized by:",
+    "ta": "<i>தொழிற்புரட்சி</i> என்ற சொல், 1760 முதல் 1840 வரையிலான பிரிட்டனின் பொருளாதார வளர்ச்சியைக் குறிக்கும் வகையில், யாரால் பிரபலப்படுத்தப்பட்டது?",
+    "optionsEn": ["French writers", "English economic historians", "German philosophers", "Classical economists"],
+    "optionsTa": ["பிரெஞ்சு எழுத்தாளர்கள்", "ஆங்கில பொருளாதார வரலாற்றாசிரியர்கள்", "ஜெர்மன் தத்துவஞானிகள்", "பாரம்பரிய பொருளாதார நிபுணர்கள்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Who converted the stationary steam engine into a rotary engine which consumed less fuel?",
+    "ta": "நிலையான நீராவி இயந்திரத்தை குறைந்த எரிபொருளைப் பயன்படுத்தும் சுழற்சி இயந்திரமாக மாற்றியவர் யார்?",
+    "optionsEn": ["Thomas Newcomen", "Richard Trevithick", "James Watt", "George Stephenson"],
+    "optionsTa": ["தாமஸ் நியூகோமன்", "ரிச்சர்ட் ட்ரெவிதிக்", "ஜேம்ஸ் வாட்", "ஜார்ஜ் ஸ்டீபன்சன்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "The first railway line in England was opened in 1825 between:",
+    "ta": "இங்கிலாந்தின் முதல் ரயில் பாதை 1825 இல் எந்த இடங்களுக்கு இடையே திறக்கப்பட்டது?",
+    "optionsEn": ["Manchester -- Liverpool", "Stockton -- Darlington", "Nuremberg -- Furth", "St. Etienne -- Andrezieux"],
+    "optionsTa": ["மான்செஸ்டர் -- லிவர்பூல்", "ஸ்டாக்டன் -- டார்லிங்டன்", "நியூரம்பெர்க் -- ஃபர்த்", "செயின்ட் எட்டியென் -- ஆண்ட்ரெசியக்ஸ்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "The first railroad line in Germany, opened in December 1835, ran between:",
+    "ta": "1835 டிசம்பரில் திறக்கப்பட்ட ஜெர்மனியின் முதல் ரயில் பாதை எந்த இடங்களுக்கு இடையே ஓடியது?",
+    "optionsEn": ["Berlin -- Hamburg", "Nuremberg -- Furth", "Bremen -- Ruhr", "Saar -- Saxony"],
+    "optionsTa": ["பெர்லின் -- ஹாம்பர்க்", "நியூரம்பெர்க் -- ஃபர்த்", "ப்ரெமன் -- ரூர்", "சார் -- சாக்சனி"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Who was hailed by U.S. President Andrew Jackson as the \"Father of the American Industrial Revolution\"?",
+    "ta": "அமெரிக்க அதிபர் ஆண்ட்ரூ ஜாக்சனால் \"அமெரிக்க தொழிற்புரட்சியின் தந்தை\" என்று பாராட்டப்பட்டவர் யார்?",
+    "optionsEn": ["Robert Fulton", "Andrew Carnegie", "Elias Howe", "Samuel Slater"],
+    "optionsTa": ["ராபர்ட் ஃபுல்டன்", "ஆண்ட்ரூ கார்னகி", "எலியாஸ் ஹோவே", "சாமுவேல் ஸ்லேட்டர்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "The conference that resolved to divide Africa into spheres of influence among European powers:",
+    "ta": "ஆபிரிக்காவை ஐரோப்பிய சக்திகளுக்கு இடையே செல்வாக்கு மண்டலங்களாகப் பிரிக்க beschreibt மாநாடு எது?",
+    "optionsEn": ["Congress of Vienna, 1815", "Berlin Colonial Conference, 1884--85", "Treaty of Paris, 1898", "League of Nations, 1920"],
+    "optionsTa": ["வியன்னா காங்கிரஸ், 1815", "பெர்லின் காலனித்துவ மாநாடு, 1884--85", "பாரிஸ் ஒப்பந்தம், 1898", "நாடுகள் சங்கம், 1920"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "The Mullai Periyar Dam, built with funds raised by Colonel Pennycuick by selling his family property, was completed in:",
+    "ta": "கர்னல் பென்னிக்யூக் தனது குடும்பச் சொத்தை விற்று திரட்டிய நிதியைக் கொண்டு கட்டப்பட்ட முல்லைப் பெரியாறு அணை எந்த ஆண்டு முடிக்கப்பட்டது?",
+    "optionsEn": ["1887", "1895", "1905", "1910"],
+    "optionsTa": ["1887", "1895", "1905", "1910"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which inventor--invention pair is correctly matched?",
+    "ta": "எந்த கண்டுபிடிப்பாளர்--கண்டுபிடிப்பு இணை சரியானது?",
+    "optionsEn": ["Samuel Crompton -- Cotton Gin", "Eli Whitney -- Spinning Mule", "Edmund Cartwright -- Power Loom", "Richard Arkwright -- Spinning Jenny"],
+    "optionsTa": ["சாமுவேல் க்ராம்ப்டன் -- பருத்தி ஜின்", "எலி விட்னி -- ஸ்பின்னிங் முலே", "எட்மண்ட் கார்ட்ரைட் -- பவர் லூம்", "ரிச்சர்ட் ஆர்க்ரைட் -- ஸ்பின்னிங் ஜென்னி"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which pair relating to France is correctly matched?",
+    "ta": "பிரான்ஸ் தொடர்பான எந்த இணை சரியானது?",
+    "optionsEn": ["Armand Peugeot -- built the quadricycle in 1898", "Louis Renault -- built the quadricycle in 1898", "Francois de Wendel -- invented the safety lamp in Lorraine", "Stamford Raffles -- founded George Town in 1786"],
+    "optionsTa": ["ஆர்மாண்ட் பெஜோ -- 1898 இல் குவாட்ரிசைக்கிளை உருவாக்கினார்", "லூயி ரெனால்ட் -- 1898 இல் குவாட்ரிசைக்கிளை உருவாக்கினார்", "ஃபிரான்சுவா டி வென்டல் -- லொரெய்னில் பாதுகாப்பு விளக்கைக் கண்டுபிடித்தார்", "ஸ்டாம்ஃபோர்ட் ராஃபிள்ஸ் -- 1786 இல் ஜார்ஜ் டவுனை நிறுவினார்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which pair relating to Africa is correctly matched?",
+    "ta": "ஆபிரிக்கா தொடர்பான எந்த இணை சரியானது?",
+    "optionsEn": ["Shaka Zulu -- Emperor of Ethiopia", "Menelik -- Ethiopia", "Kabaka -- Sultan of Zanzibar", "Leopold II -- Gold Coast"],
+    "optionsTa": ["ஷகா ஜூலு -- எத்தியோப்பிய பேரரசர்", "மெனெலிக் -- எத்தியோப்பியா", "கபாகா -- சான்சிபார் சுல்தான்", "லியோபோல்ட் II -- கோல்ட் கோஸ்ட்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which pair relating to the colonial Indian economy is correctly matched?",
+    "ta": "காலனித்துவ இந்தியப் பொருளாதாரம் தொடர்பான எந்த இணை சரியானது?",
+    "optionsEn": ["Permanent Settlement -- South India", "Ryotwari System -- Bengal, Bihar, Orissa", "Nattukottai Chettiyars -- moneylenders in Tamil-speaking areas", "Permanent Settlement -- 1783"],
+    "optionsTa": ["நிரந்தர தீர்வு -- தென்னிந்தியா", "ரயத்வாரி முறை -- வங்காளம், பீகார், ஒரிசா", "நாட்டுக்கோட்டை செட்டியார்கள் -- தமிழ் பேசும் பகுதிகளில் கடன் வழங்குபவர்கள்", "நிரந்தர தீர்வு -- 1783"],
+    "answer": 2
+  },
+  {
+    "type": "match",
+    "en": "Match the inventions with the years:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>Invention</b></td><td style='width:50%; padding:6px 0;'><b>Year</b></td></tr><tr><td style='padding:6px 0;'>1. Flying Shuttle</td><td style='padding:6px 0;'>a) 1733</td></tr><tr><td style='padding:6px 0;'>2. Spinning Jenny</td><td style='padding:6px 0;'>b) 1764</td></tr><tr><td style='padding:6px 0;'>3. Water frame</td><td style='padding:6px 0;'>c) 1793</td></tr><tr><td style='padding:6px 0;'>4. Cotton Gin</td><td style='padding:6px 0;'>d) 1769</td></tr></table>",
+    "ta": "கண்டுபிடிப்புகளை ஆண்டுகளுடன் பொருத்துக:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>கண்டுபிடிப்பு</b></td><td style='width:50%; padding:6px 0;'><b>ஆண்டு</b></td></tr><tr><td style='padding:6px 0;'>1. பறக்கும் வால்நெசவு</td><td style='padding:6px 0;'>a) 1733</td></tr><tr><td style='padding:6px 0;'>2. ஸ்பின்னிங் ஜென்னி</td><td style='padding:6px 0;'>b) 1764</td></tr><tr><td style='padding:6px 0;'>3. வாட்டர் ஃப்ரேம்</td><td style='padding:6px 0;'>c) 1793</td></tr><tr><td style='padding:6px 0;'>4. பருத்தி ஜின்</td><td style='padding:6px 0;'>d) 1769</td></tr></table>",
+    "optionsEn": ["1-b, 2-a, 3-d, 4-c", "1-a, 2-b, 3-c, 4-d", "1-d, 2-c, 3-b, 4-a", "1-c, 2-d, 3-a, 4-b"],
+    "optionsTa": ["1-b, 2-a, 3-d, 4-c", "1-a, 2-b, 3-c, 4-d", "1-d, 2-c, 3-b, 4-a", "1-c, 2-d, 3-a, 4-b"],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "Match the following<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>Person</b></td><td style='width:50%; padding:6px 0;'><b>Contribution</b></td></tr><tr><td style='padding:6px 0;'>1. Humphry Davy</td><td style='padding:6px 0;'>a) Locomotive -- 1814</td></tr><tr><td style='padding:6px 0;'>2. George Stephenson</td><td style='padding:6px 0;'>b) Safety Lamp -- 1815</td></tr><tr><td style='padding:6px 0;'>3. Henry Bessemer</td><td style='padding:6px 0;'>c) Wireless Signals -- 1899</td></tr><tr><td style='padding:6px 0;'>4. Marconi</td><td style='padding:6px 0;'>d) Cheaper method of making steel -- 1856</td></tr></table>",
+    "ta": "பின்வருவனவற்றைப் பொருத்துக<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>நபர்</b></td><td style='width:50%; padding:6px 0;'><b>பங்களிப்பு</b></td></tr><tr><td style='padding:6px 0;'>1. ஹம்ப்ரி டேவி</td><td style='padding:6px 0;'>a) நீராவி இன்ஜின் -- 1814</td></tr><tr><td style='padding:6px 0;'>2. ஜார்ஜ் ஸ்டீபன்சன்</td><td style='padding:6px 0;'>b) பாதுகாப்பு விளக்கு -- 1815</td></tr><tr><td style='padding:6px 0;'>3. ஹென்றி பெஸ்ஸிமர்</td><td style='padding:6px 0;'>c) வயர்லெஸ் சிக்னல்கள் -- 1899</td></tr><tr><td style='padding:6px 0;'>4. மார்க்கோனி</td><td style='padding:6px 0;'>d) எஃகு தயாரிக்கும் மலிவான முறை -- 1856</td></tr></table>",
+    "optionsEn": ["1-b, 2-a, 3-d, 4-c", "1-a, 2-b, 3-c, 4-d", "1-d, 2-c, 3-a, 4-b", "1-c, 2-d, 3-b, 4-a"],
+    "optionsTa": ["1-b, 2-a, 3-d, 4-c", "1-a, 2-b, 3-c, 4-d", "1-d, 2-c, 3-a, 4-b", "1-c, 2-d, 3-b, 4-a"],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "Match the colony with the colonial power:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>Colony</b></td><td style='width:50%; padding:6px 0;'><b>Colonial Power</b></td></tr><tr><td style='padding:6px 0;'>1. Philippines</td><td style='padding:6px 0;'>a) Dutch</td></tr><tr><td style='padding:6px 0;'>2. Indonesia (Java & Sumatra)</td><td style='padding:6px 0;'>b) Spanish (later American)</td></tr><tr><td style='padding:6px 0;'>3. Burma</td><td style='padding:6px 0;'>c) French</td></tr><tr><td style='padding:6px 0;'>4. Indo-China</td><td style='padding:6px 0;'>d) British</td></tr></table>",
+    "ta": "காலனியை காலனித்துவ சக்தியுடன் பொருத்துக:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>காலனி</b></td><td style='width:50%; padding:6px 0;'><b>காலனித்துவ சக்தி</b></td></tr><tr><td style='padding:6px 0;'>1. பிலிப்பைன்ஸ்</td><td style='padding:6px 0;'>a) டச்சு</td></tr><tr><td style='padding:6px 0;'>2. இந்தோனேசியா (ஜாவா & சுமத்ரா)</td><td style='padding:6px 0;'>b) ஸ்பானிஷ் (பின்னர் அமெரிக்க)</td></tr><tr><td style='padding:6px 0;'>3. பர்மா</td><td style='padding:6px 0;'>c) பிரெஞ்சு</td></tr><tr><td style='padding:6px 0;'>4. இந்தோ-சீனா</td><td style='padding:6px 0;'>d) பிரிட்டிஷ்</td></tr></table>",
+    "optionsEn": ["1-b, 2-a, 3-d, 4-c", "1-c, 2-d, 3-a, 4-b", "1-d, 2-b, 3-c, 4-a", "1-a, 2-c, 3-b, 4-d"],
+    "optionsTa": ["1-b, 2-a, 3-d, 4-c", "1-c, 2-d, 3-a, 4-b", "1-d, 2-b, 3-c, 4-a", "1-a, 2-c, 3-b, 4-d"],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "Match the phases of colonisation of the Indian economy:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>Phase</b></td><td style='width:50%; padding:6px 0;'><b>Description</b></td></tr><tr><td style='padding:6px 0;'>1. Phase I</td><td style='padding:6px 0;'>a) Financial Capitalism</td></tr><tr><td style='padding:6px 0;'>2. Phase II</td><td style='padding:6px 0;'>b) Mercantilist Capitalism -- Outright Plunder</td></tr><tr><td style='padding:6px 0;'>3. Phase III</td><td style='padding:6px 0;'>c) Industrial Capitalism</td></tr></table>",
+    "ta": "இந்தியப் பொருளாதாரத்தின் காலனித்துவமயமாக்கலின் கட்டங்களைப் பொருத்துக:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:50%; padding:6px 0;'><b>கட்டம்</b></td><td style='width:50%; padding:6px 0;'><b>விளக்கம்</b></td></tr><tr><td style='padding:6px 0;'>1. கட்டம் I</td><td style='padding:6px 0;'>a) நிதி முதலாளித்துவம்</td></tr><tr><td style='padding:6px 0;'>2. கட்டம் II</td><td style='padding:6px 0;'>b) வணிக முதலாளித்துவம் -- நேரடிச் சூறையாடல்</td></tr><tr><td style='padding:6px 0;'>3. கட்டம் III</td><td style='padding:6px 0;'>c) தொழில்துறை முதலாளித்துவம்</td></tr></table>",
+    "optionsEn": ["1-b, 2-c, 3-a", "1-a, 2-b, 3-c", "1-c, 2-a, 3-b", "1-b, 2-a, 3-c"],
+    "optionsTa": ["1-b, 2-c, 3-a", "1-a, 2-b, 3-c", "1-c, 2-a, 3-b", "1-b, 2-a, 3-c"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Identify the odd one out:",
+    "ta": "பொருந்தாததை அடையாளம் காணவும்:",
+    "optionsEn": ["Derbyshire", "Lancashire", "Cheshire", "Manchester"],
+    "optionsTa": ["டெர்பிஷையர்", "லங்காஷையர்", "செஷையர்", "மான்செஸ்டர்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Identify the odd one out:",
+    "ta": "பொருந்தாததை அடையாளம் காணவும்:",
+    "optionsEn": ["Annam", "Tongking", "Cambodia", "Siam"],
+    "optionsTa": ["அன்னம்", "டோங்கின்", "கம்போடியா", "சியாம்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Identify the odd one out among destinations of indentured Indian labour (1842--1870):",
+    "ta": "ஒப்பந்த இந்திய தொழிலாளர்களின் சேருமிடங்களில் (1842--1870) பொருந்தாததை அடையாளம் காணவும்:",
+    "optionsEn": ["Mauritius", "Demerara", "Trinidad", "Reunion"],
+    "optionsTa": ["மொரிஷியஸ்", "டெமராரா", "டிரினிடாட்", "ரீயூனியன்"],
+    "answer": 3
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): Germany emerged as the most industrialised country by the end of the 19th century, surpassing Great Britain.<br><br>Reason (R): In 1871, Prussia finally united Germany.",
+    "ta": "Assertion (A): 19 ஆம் நூற்றாண்டின் இறுதியில், கிரேட் பிரிட்டனை விட சிறந்து, ஜெர்மனி மிகவும் தொழில்மயமான நாடாக உருவானது.<br><br>Reason (R): 1871 இல், பிரஷ்யா இறுதியாக ஜெர்மனியை ஒன்றிணைத்தது.",
+    "optionsEn": ["A and R correct; R explains A", "A and R correct; R does not explain A", "A correct, R wrong", "A wrong, R correct"],
+    "optionsTa": ["A மற்றும் R சரி; R என்பது A வை விளக்குகிறது", "A மற்றும் R சரி; R என்பது A வை விளக்கவில்லை", "A சரி, R தவறு", "A தவறு, R சரி"],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): In the Madras Presidency, the famine of 1876--78 (Thathu Varusha Panjam) was preceded by droughts.<br><br>Reason (R): The colonial government's policy of laissez faire in the trade of food-grains worsened the famine.",
+    "ta": "Assertion (A): சென்னை மாகாணத்தில், 1876--78 பஞ்சம் (தாது வருஷ பஞ்சம்) வறட்சிக்கு முன்னதாக ஏற்பட்டது.<br><br>Reason (R): உணவு தானியங்களின் வர்த்தகத்தில் காலனித்துவ அரசாங்கத்தின் தலையிடா கொள்கை பஞ்சத்தை மோசமாக்கியது.",
+    "optionsEn": ["A correct, R wrong", "Both wrong", "A correct, R not the correct explanation of A", "A correct, R correct explanation of A"],
+    "optionsTa": ["A சரி, R தவறு", "இரண்டும் தவறு", "A சரி, R என்பது A விற்கான சரியான விளக்கமல்ல", "A சரி, R என்பது A விற்கான சரியான விளக்கம்"],
+    "answer": 2
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): Samuel Slater was called the Father of the American Industrial Revolution.<br><br>Reason (R): His spinning textile mill was duplicated by many entrepreneurs and his techniques became popular.",
+    "ta": "Assertion (A): சாமுவேல் ஸ்லேட்டர் அமெரிக்க தொழிற்புரட்சியின் தந்தை என்று அழைக்கப்பட்டார்.<br><br>Reason (R): அவரது நூற்பு ஜவுளி ஆலை பல தொழில்முனைவோரால் நகலெடுக்கப்பட்டது மற்றும் அவரது நுட்பங்கள் பிரபலமாயின.",
+    "optionsEn": ["A and R correct; R explains A", "A and R correct; R does not explain A", "A correct, R wrong", "A wrong, R correct"],
+    "optionsTa": ["A மற்றும் R சரி; R என்பது A வை விளக்குகிறது", "A மற்றும் R சரி; R என்பது A வை விளக்கவில்லை", "A சரி, R தவறு", "A தவறு, R சரி"],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): Only two countries in Africa managed to evade European colonialism.<br><br>Reason (R): Liberia was formed in the early 19th century as a home for African Blacks repatriated from America.",
+    "ta": "Assertion (A): ஆபிரிக்காவில் இரண்டு நாடுகள் மட்டுமே ஐரோப்பிய காலனித்துவத்தைத் தவிர்த்தன.<br><br>Reason (R): லைபீரியா 19 ஆம் நூற்றாண்டின் முற்பகுதியில் அமெரிக்காவிலிருந்து திருப்பி அனுப்பப்பட்ட ஆபிரிக்க கறுப்பர்களுக்கான வீடாக உருவாக்கப்பட்டது.",
+    "optionsEn": ["A and R correct; R explains A", "A and R correct; R does not explain A", "A correct, R wrong", "A wrong, R correct"],
+    "optionsTa": ["A மற்றும் R சரி; R என்பது A வை விளக்குகிறது", "A மற்றும் R சரி; R என்பது A வை விளக்கவில்லை", "A சரி, R தவறு", "A தவறு, R சரி"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the statements on urbanisation in England:<br><br>i) In pre-industrial society, over 80% of people lived in rural areas<br>ii) London grew from two million people in 1840 to five million in forty years<br>iii) Manchester's population grew from 22,000 in 1771 to about 180,000 in fifty years<br>iv) Manchester's warm climate was ideal for textile production",
+    "ta": "இங்கிலாந்தில் நகரமயமாக்கல் பற்றிய கூற்றுகளைக் கவனியுங்கள்:<br><br>i) தொழில்துறைக்கு முந்தைய சமூகத்தில், 80% க்கும் அதிகமான மக்கள் கிராமப்புறங்களில் வாழ்ந்தனர்<br>ii) லண்டன் 1840 இல் இரண்டு மில்லியன் மக்களிடமிருந்து நாற்பது ஆண்டுகளில் ஐந்து மில்லியனாக வளர்ந்தது<br>iii) மான்செஸ்டரின் மக்கள்தொகை 1771 இல் 22,000 ஆக இருந்து ஐம்பது ஆண்டுகளில் சுமார் 180,000 ஆக வளர்ந்தது<br>iv) ஜவுளி உற்பத்திக்கு மான்செஸ்டரின் வெப்பமான காலநிலை சிறந்ததாக இருந்தது",
+    "optionsEn": ["i, ii, iii correct", "i and iv correct", "ii and iii correct", "All correct"],
+    "optionsTa": ["i, ii, iii சரி", "i மற்றும் iv சரி", "ii மற்றும் iii சரி", "அனைத்தும் சரி"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the statements on the Indentured Labour System:<br><br>i) It was a form of debt bondage by which 3.5 million Indians were transported to British colonies<br>ii) It started in 1843, the year of the abolition of slavery in India<br>iii) It continued until 1947<br>iv) Between 1842 and 1870, a total of 525,482 Indians emigrated to British and French colonies",
+    "ta": "ஒப்பந்த தொழிலாளர் முறை பற்றிய கூற்றுகளைக் கவனியுங்கள்:<br><br>i) இது ஒரு வகையான கடன் அடிமைத்தனமாகும், இதன் மூலம் 3.5 மில்லியன் இந்தியர்கள் பிரிட்டிஷ் காலனிகளுக்கு கொண்டு செல்லப்பட்டனர்<br>ii) இது 1843 இல் தொடங்கியது, இந்தியாவில் அடிமைத்தனம் ஒழிக்கப்பட்ட ஆண்டு<br>iii) இது 1947 வரை தொடர்ந்தது<br>iv) 1842 மற்றும் 1870 க்கு இடையில், மொத்தம் 525,482 இந்தியர்கள் பிரிட்டிஷ் மற்றும் பிரெஞ்சு காலனிகளுக்கு குடிபெயர்ந்தனர்",
+    "optionsEn": ["All correct", "i, ii, iv correct", "i, iii, iv correct", "ii, iii, iv correct"],
+    "optionsTa": ["அனைத்தும் சரி", "i, ii, iv சரி", "i, iii, iv சரி", "ii, iii, iv சரி"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the statements on colonialism and imperialism (Stanford Encyclopaedia of Philosophy):<br><br>i) The term <i>colony</i> comes from the Latin <i>colonus</i>, meaning farmer<br>ii) Imperialism draws attention to the way one country exercises power over another<br>iii) Colonialism usually involved the transfer of population as permanent settlers maintaining allegiance to their country of origin<br>iv) Colonialism and imperialism are identical concepts with no difference",
+    "ta": "காலனித்துவம் மற்றும் ஏகாதிபத்தியம் பற்றிய கூற்றுகளைக் கவனியுங்கள் (ஸ்டான்போர்ட் தத்துவக் கலைக்களஞ்சியம்):<br><br>i) <i>காலனி</i> என்ற சொல் விவசாயி என்பதைக் குறிக்கும் லத்தீன் சொல்லான <i>கொலோனஸ்</i> என்பதிலிருந்து வந்தது<br>ii) ஏகாதிபத்தியம் ஒரு நாடு மற்றொரு நாட்டின் மீது அதிகாரத்தைச் செலுத்தும் விதத்திற்கு கவனத்தை ஈர்க்கிறது<br>iii) காலனித்துவம் பொதுவாக மக்கள்தொகையை நிரந்தர குடியேறிகளாக மாற்றுவதை உள்ளடக்கியது, அவர்கள் தங்கள் தாய்நாட்டின் மீது விசுவாசத்தை பராமரிக்கிறார்கள்<br>iv) காலனித்துவமும் ஏகாதிபத்தியமும் எந்த வித்தியாசமும் இல்லாத ஒரே மாதிரியான கருத்துக்கள்",
+    "optionsEn": ["i, ii, iii correct", "i and iii correct", "ii, iii, iv correct", "All correct"],
+    "optionsTa": ["i, ii, iii சரி", "i மற்றும் iii சரி", "ii, iii, iv சரி", "அனைத்தும் சரி"],
+    "answer": 0
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false; isSubmitted = false;
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">
+                <span class="option-letter">${String.fromCharCode(65+i)}.</span>
+                <span class="option-text">${opt}</span>
+            </div>`;
+        });
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+            </div>
+        `;
+        updateNavButtons(); updatePalette();
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) return;
+        userAnswers[currentIndex] = optIndex;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    let currentReviewIndex = 0;
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let cssClass = "option-item";
+                let markerHtml = "";
+                if (idx === corr) { cssClass += " correct"; markerHtml = "<div class='marker'>✔</div>"; }
+                else if (u === idx && idx !== corr) { cssClass += " wrong"; markerHtml = "<div class='marker'>✖</div>"; }
+                optsHtml += `<div class="${cssClass}"><span>${String.fromCharCode(65+idx)}. ${optsArray[idx]}</span>${markerHtml}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" id="review-card-${i}" style="display: none;">
+                        <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div class="your-answer">Your Answer: ${userAns}</div>
+                        <div class="correct-answer">Correct Answer: ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        ${optsHtml}
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+        currentReviewIndex = 0;
+        showReviewCard(currentReviewIndex);
+    }
+    function showReviewCard(index) {
+        const cards = document.querySelectorAll(".review-card");
+        if (cards.length === 0) return;
+        cards.forEach(c => c.style.display = "none");
+        cards[index].style.display = "block";
+        document.getElementById("reviewPageText").innerText = `${index + 1} / ${cards.length}`;
+        document.getElementById("prevReviewBtn").disabled = (index === 0);
+        document.getElementById("nextReviewBtn").disabled = (index === cards.length - 1);
+        document.getElementById("reviewPagination").style.display = "flex";
+        window.scrollTo(0, 0);
+    }
+    function navigateReview(direction) {
+        const cards = document.querySelectorAll(".review-card");
+        currentReviewIndex += direction;
+        if (currentReviewIndex >= 0 && currentReviewIndex < cards.length) {
+            showReviewCard(currentReviewIndex);
+        }
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
+            await new Promise(r => setTimeout(r, 600));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+                if (btn) btn.innerText = "✅ Select Save as PDF";
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+        } finally {
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 3000);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        history.replaceState({ resultPage: true }, "", "#result");
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.addEventListener("popstate", function(e) {
+        if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+            history.pushState({ resultPage: true }, "", "#result");
+            confirmLeaveResult();
+        }
+    });
+    function confirmLeaveResult() {
+        if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
+            window.AndroidBridge.exitResultPage();
+        } else {
+            history.back();
+        }
+    }
+    window.checkForReview = function() {
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
+            }
+        }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
