@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-04T08:21:23.092Z",
+  "version": "2026-11-04T08:34:02.952Z",
   "categories": [
     {
       "id": "BANK",
@@ -292,6 +292,12 @@
       "name": "TET SCIENCE",
       "categoryId": "TNTET",
       "order": 4
+    },
+    {
+      "id": "SGT-SOCIALSCIENCE",
+      "name": "SOCIAL SCIENCE",
+      "categoryId": "SGT",
+      "order": 5
     }
   ],
   "tests": [
@@ -1194,6 +1200,19 @@
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-SC-54.html",
       "releaseTimestamp": 1793779200000,
+      "language": "both"
+    },
+    {
+      "testId": "SGT-SS-36",
+      "examId": "SGT-SOCIALSCIENCE",
+      "name": "HISTORY: INDUSTRIAL REVOLUTION, COLONIALISM IN ASIA AND AFRICA SGT-SS-36",
+      "topic": "HISTORY: INDUSTRIAL REVOLUTION, COLONIALISM IN ASIA AND AFRICA",
+      "durationMinutes": 15,
+      "order": 36,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGT-SS-36.html",
+      "releaseTimestamp": 0,
       "language": "both"
     }
   ]
