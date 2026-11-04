@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-04T08:34:02.952Z",
+  "version": "2026-11-04T08:36:59.325Z",
   "categories": [
     {
       "id": "BANK",
@@ -1044,7 +1044,7 @@
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-EG-54.html",
       "releaseTimestamp": 1793779200000,
-      "language": "en"
+      "language": "both"
     },
     {
       "testId": "RGS-02",
