@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-04T12:05:11.345Z",
+  "version": "2026-11-05T13:00:10.150Z",
   "timetable": [
     {
       "day": "Monday",
@@ -256,6 +256,67 @@
           "batch": "TNPSC",
           "faculty": "MRS. SREE VIDHYA",
           "room": "MRS. SREE VIDHYA"
+        }
+      ]
+    },
+    {
+      "day": "Friday",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Unit I - Aptitude: Simplification, Percentage",
+          "batch": "TNPSC",
+          "faculty": "MS. JOTHIKA",
+          "room": "MS. JOTHIKA"
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "Unit III - History, Culture & INM: Indus Valley Civilization",
+          "batch": "TNPSC",
+          "faculty": "DR SAHITHA",
+          "room": "DR SAHITHA"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "English",
+          "batch": "SSC",
+          "faculty": "MR ABIN",
+          "room": "MR ABIN"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "English",
+          "batch": "BANK",
+          "faculty": "MR ABIN",
+          "room": "MR ABIN"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "English",
+          "batch": "RRB",
+          "faculty": "MR ABIN",
+          "room": "MR ABIN"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Tamil",
+          "batch": "TNTET",
+          "faculty": "MRS. SREE VIDHYA",
+          "room": "MRS. SREE VIDHYA"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Social Science: 6th Term 1 - History: Indus Civilization",
+          "batch": "TNTET",
+          "faculty": "DR SAHITHA",
+          "room": "DR SAHITHA"
+        },
+        {
+          "time": "02:00 PM - 03:30 PM",
+          "subject": "Unit V - Data Communication and Computer Networks: Analog and Digital Signals",
+          "batch": "PGTRB COMPUTER SCIENCE",
+          "faculty": "DR SAHITHA",
+          "room": "DR SAHITHA"
         }
       ]
     }
