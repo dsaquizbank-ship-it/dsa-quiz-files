@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>TTA-1 - UNIT-1-ILAKKANAM TTA-1</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                linebreaks: { automatic: true, width: "container" }
+            },
+            options: { ignoreHtmlClass: "no-mathjax" },
+            chtml: {
+                displayAlign: "left",
+                displayIndent: "0",
+                mtextInheritFont: true
+            },
+            svg: {
+                scale: 0.9,
+                minScale: 0.5,
+                mtextInheritFont: true,
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; color: #10b981; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; white-space: normal; word-wrap: break-word; padding-bottom: 20px; max-width: 100%; overflow-x: auto; }
+        mjx-container { display: inline !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; }
+        .question-text::-webkit-scrollbar { display: none; }
+        .question-text { -ms-overflow-style: none; scrollbar-width: none; }
+        .option-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; word-wrap: break-word; }
+        .option-letter { font-weight: 800; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+        .option-text { flex-grow: 1; min-width: 0; word-wrap: break-word; overflow-wrap: break-word; }
+        .option-text mjx-container { display: inline-block !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; overflow-x: visible !important; }
+        .option-text mjx-container[jax="CHTML"][display="true"] { margin: 0 !important; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
+        .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
+        .review-card .question-text { overflow-x: hidden !important; white-space: normal !important; word-wrap: break-word !important; }
+        .review-card strong { color: var(--text-primary); font-size: 16px; }
+        .review-card .option-item { background-color: var(--rc-bg); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: rgba(40, 167, 69, 0.1); border: 1px solid #28a745; color: #28a745; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; color: #dc3545; }
+        .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
+        .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
+        .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
+        .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px 0; border-top: 1px solid var(--border-light); }
+        .review-nav-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .review-nav-btn:disabled { background: var(--border-light); color: var(--text-primary); opacity: 0.5; cursor: not-allowed; }
+        .review-nav-text { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+        .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { 
+            html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } 
+            .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } 
+            #startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard { display: none !important; } 
+            #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } 
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; } 
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; margin-bottom: 20px !important; display: block !important; } 
+            .review-card .option-item { border: 1px solid #ccc !important; background: white !important; color: black !important; } 
+            .review-card .option-item.correct { background: #e6ffe6 !important; border-color: #28a745 !important; color: black !important; } 
+            .review-card .option-item.wrong { background: #ffe6e6 !important; border-color: #dc3545 !important; color: black !important; } 
+            @page { size: A4; margin: 1.5cm; } 
+        }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">60:00</div>
+            <div class="top-buttons">
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="display: none;">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div id="printHeader" style="display: none;">
+            <h1>DR SAHITHA IAS ACADEMY</h1>
+            <h3>ANSWER KEY & DETAILED REVIEW</h3>
+            <p><strong>Test:</strong> TTA-1 - TAMIL</p>
+        </div>
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+            <div id="reviewPagination" class="review-nav-container" style="display: none;">
+                <button class="review-nav-btn" id="prevReviewBtn" onclick="navigateReview(-1)">◀ PREV</button>
+                <span class="review-nav-text" id="reviewPageText">1 / 25</span>
+                <button class="review-nav-btn" id="nextReviewBtn" onclick="navigateReview(1)">NEXT ▶</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "ta";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "TAMIL",
+        testNo: "TTA-1",
+        date: "06/11/2026",
+        subject: "TAMIL",
+        topic: "UNIT-1-ILAKKANAM",
+        duration: "60",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "தீஞ்சுவை - பிரித்தெழுதுக",
+    "ta": "தீஞ்சுவை - பிரித்தெழுதுக",
+    "optionsEn": ["தீமை + சுவை", "தீஞ் + சுவை", "தீ + சுவை", "தீமை + சு"],
+    "optionsTa": ["தீமை + சுவை", "தீஞ் + சுவை", "தீ + சுவை", "தீமை + சு"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "நெடுநாவாய் - பிரித்தெழுதுக",
+    "ta": "நெடுநாவாய் - பிரித்தெழுதுக",
+    "optionsEn": ["நெடு + நாவாய்", "நெடுமை + நா + வாய்", "நெடுமை + நாவாய்", "நெடுநா + வாய்"],
+    "optionsTa": ["நெடு + நாவாய்", "நெடுமை + நா + வாய்", "நெடுமை + நாவாய்", "நெடுநா + வாய்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "செங்கடல் - பிரித்தெழுதுக",
+    "ta": "செங்கடல் - பிரித்தெழுதுக",
+    "optionsEn": ["செம்மை + கடல்", "செம்ப் + கடல்", "செங் + கடல்", "செழுமை + கடல்"],
+    "optionsTa": ["செம்மை + கடல்", "செம்ப் + கடல்", "செங் + கடல்", "செழுமை + கடல்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "நெடுங்கடல் - பிரித்தெழுதுக",
+    "ta": "நெடுங்கடல் - பிரித்தெழுதுக",
+    "optionsEn": ["நெடு + கடல்", "நெடுங் + கடல்", "நெடுமை + கடல்", "நெடிய + கடல்"],
+    "optionsTa": ["நெடு + கடல்", "நெடுங் + கடல்", "நெடுமை + கடல்", "நெடிய + கடல்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "கரியன் - பிரித்தெழுதுக",
+    "ta": "கரியன் - பிரித்தெழுதுக",
+    "optionsEn": ["கரு + அன்", "கருமை + அன்", "கரிய + அன்", "கரி + அன்"],
+    "optionsTa": ["கரு + அன்", "கருமை + அன்", "கரிய + அன்", "கரி + அன்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "பரித்தியாகம் - பிரித்தெழுதுக",
+    "ta": "பரித்தியாகம் - பிரித்தெழுதுக",
+    "optionsEn": ["பரித்து + யாகம்", "பரித்தி + யாகம்", "பரி + தியாகம்", "பரிதி + தியாகம்"],
+    "optionsTa": ["பரித்து + யாகம்", "பரித்தி + யாகம்", "பரி + தியாகம்", "பரிதி + தியாகம்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "தவறாகப் பிரிக்கப்பட்டுள்ள சொல்லைத் தேர்க",
+    "ta": "தவறாகப் பிரிக்கப்பட்டுள்ள சொல்லைத் தேர்க",
+    "optionsEn": ["வெண்மதி - வெண் + மதி", "வெந்துவர்ந்து - வெந்து + உவர்ந்து", "காடிதனை - காடு + இதனை", "கருமுகில் - கருமை + முகில்"],
+    "optionsTa": ["வெண்மதி - வெண் + மதி", "வெந்துவர்ந்து - வெந்து + உவர்ந்து", "காடிதனை - காடு + இதனை", "கருமுகில் - கருமை + முகில்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "பொருட்டன்று - பிரித்தெழுதுக",
+    "ta": "பொருட்டன்று - பிரித்தெழுதுக",
+    "optionsEn": ["பொருட் + அன்று", "பொரு + அன்று", "பொருட்டு + அன்று", "பொருட் + டன்று"],
+    "optionsTa": ["பொருட் + அன்று", "பொரு + அன்று", "பொருட்டு + அன்று", "பொருட் + டன்று"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "பெருங்களிறு - பிரித்தெழுதுக",
+    "ta": "பெருங்களிறு - பிரித்தெழுதுக",
+    "optionsEn": ["பெரு + களிறு", "பெரிய + களிறு", "பெருமை + களிறு", "பெருங் + களிறு"],
+    "optionsTa": ["பெரு + களிறு", "பெரிய + களிறு", "பெருமை + களிறு", "பெருங் + களிறு"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "நாற்கரணம் - பிரித்தெழுதுக",
+    "ta": "நாற்கரணம் - பிரித்தெழுதுக",
+    "optionsEn": ["நான்கு + அரணம்", "நான் + கரணம்", "நாண் + கரணம்", "நான்கு + கரணம்"],
+    "optionsTa": ["நான்கு + அரணம்", "நான் + கரணம்", "நாண் + கரணம்", "நான்கு + கரணம்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "வட்டு + ஆடினான் - சேர்த்தெழுதுக",
+    "ta": "வட்டு + ஆடினான் - சேர்த்தெழுதுக",
+    "optionsEn": ["வட்டு ஆடினான்", "வட்டினான்", "வட்டாடினான்", "வட்டுடாடினான்"],
+    "optionsTa": ["வட்டு ஆடினான்", "வட்டினான்", "வட்டாடினான்", "வட்டுடாடினான்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "வாசல் + அலங்காரம் - சேர்த்தெழுதுக",
+    "ta": "வாசல் + அலங்காரம் - சேர்த்தெழுதுக",
+    "optionsEn": ["வாசலிங்காரம்", "வாசலலங்காரம்", "வாசல் அலங்காரம்", "வாசலங்காரம்"],
+    "optionsTa": ["வாசலிங்காரம்", "வாசலலங்காரம்", "வாசல் அலங்காரம்", "வாசலங்காரம்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "செயல் + இழக்க - சேர்த்தெழுதுக",
+    "ta": "செயல் + இழக்க - சேர்த்தெழுதுக",
+    "optionsEn": ["செயலிழக்க", "செயல் இழக்க", "செய இழக்க", "செய்லிழக்க"],
+    "optionsTa": ["செயலிழக்க", "செயல் இழக்க", "செய இழக்க", "செய்லிழக்க"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "சரியான விடையைத் தேர்க",
+    "ta": "சரியான விடையைத் தேர்க",
+    "optionsEn": ["விண் + உண்டு - விண்ணூண்டு", "பண் + அழகு - பண்ணழகு", "நூல் + அகம் - நூலகம்", "விண் + அழகு - விற்பழகு"],
+    "optionsTa": ["விண் + உண்டு - விண்ணூண்டு", "பண் + அழகு - பண்ணழகு", "நூல் + அகம் - நூலகம்", "விண் + அழகு - விற்பழகு"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "இனிமை + உயிர் - சேர்த்தெழுதுக",
+    "ta": "இனிமை + உயிர் - சேர்த்தெழுதுக",
+    "optionsEn": ["இன்உயிர்", "இனிய உயிர்", "இன்னுயிர்", "இனிமை உயிர்"],
+    "optionsTa": ["இன்உயிர்", "இனிய உயிர்", "இன்னுயிர்", "இனிமை உயிர்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "ஆத்தி + சூடி - சேர்த்தெழுதுக",
+    "ta": "ஆத்தி + சூடி - சேர்த்தெழுதுக",
+    "optionsEn": ["ஆத்திச்சூடி", "ஆத்திசூடி", "ஆத்திசுவடி", "ஆதிசூடி"],
+    "optionsTa": ["ஆத்திச்சூடி", "ஆத்திசூடி", "ஆத்திசுவடி", "ஆதிசூடி"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "அறிந்தது + அனைத்தும் - சேர்த்தெழுதுக",
+    "ta": "அறிந்தது + அனைத்தும் - சேர்த்தெழுதுக",
+    "optionsEn": ["அறிந்தது அனைத்தும்", "அறிந்தனைத்தும்", "அறிந்ததனைத்தும்", "அறிந்துனைத்தும்"],
+    "optionsTa": ["அறிந்தது அனைத்தும்", "அறிந்தனைத்தும்", "அறிந்ததனைத்தும்", "அறிந்துனைத்தும்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "மக்கள் + பண்பு - சேர்த்தெழுதுக",
+    "ta": "மக்கள் + பண்பு - சேர்த்தெழுதுக",
+    "optionsEn": ["மக்கட்பண்பு", "மக்கள்பண்பு", "மக்களண்பு", "மக்களின்பண்பு"],
+    "optionsTa": ["மக்கட்பண்பு", "மக்கள்பண்பு", "மக்களண்பு", "மக்களின்பண்பு"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "என்று + ஆகடியம் + ஆன - சேர்த்தெழுதுக",
+    "ta": "என்று + ஆகடியம் + ஆன - சேர்த்தெழுதுக",
+    "optionsEn": ["என்று ஆகடியம் ஆன", "என்றாகடியமான", "என்றாகடியம் ஆன", "என்று ஆகடியமான"],
+    "optionsTa": ["என்று ஆகடியம் ஆன", "என்றாகடியமான", "என்றாகடியம் ஆன", "என்று ஆகடியமான"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "வடக்கு + திசை - சேர்த்தெழுதுக",
+    "ta": "வடக்கு + திசை - சேர்த்தெழுதுக",
+    "optionsEn": ["வடதிசை", "வடக்குதிசை", "வடக்குத்திசை", "வடத்திசை"],
+    "optionsTa": ["வடதிசை", "வடக்குதிசை", "வடக்குத்திசை", "வடத்திசை"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "சந்திப்பிழையற்ற தொடர்களைக் கண்டறிக:<br><br>1. கற்றோருக்குச் சென்ற இடமெல்லாம் சிறப்பு.<br>2. கற்றோருக்கு சென்ற இடமெல்லாம் சிறப்பு.<br>3. கைபொருள் தன்னின் மெய்பொருள் கல்வி.<br>4. கைப்பொருள் தன்னின் மெய்ப்பொருள் கல்வி.",
+    "ta": "சந்திப்பிழையற்ற தொடர்களைக் கண்டறிக:<br><br>1. கற்றோருக்குச் சென்ற இடமெல்லாம் சிறப்பு.<br>2. கற்றோருக்கு சென்ற இடமெல்லாம் சிறப்பு.<br>3. கைபொருள் தன்னின் மெய்பொருள் கல்வி.<br>4. கைப்பொருள் தன்னின் மெய்ப்பொருள் கல்வி.",
+    "optionsEn": ["1 மற்றும் 3 சரியானவை", "1 மற்றும் 4 சரியானவை", "2 மற்றும் 3 சரியானவை", "3 மற்றும் 4 சரியானவை"],
+    "optionsTa": ["1 மற்றும் 3 சரியானவை", "1 மற்றும் 4 சரியானவை", "2 மற்றும் 3 சரியானவை", "3 மற்றும் 4 சரியானவை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "சந்திப்பிழையற்ற தொடர்களைக் கண்டறிக:<br><br>1. குதிரைத் தாண்டியது.<br>2. குதிரை தாண்டியது.<br>3. வரும்படி சொன்னான்.<br>4. வரும்படிச் சொன்னான்.",
+    "ta": "சந்திப்பிழையற்ற தொடர்களைக் கண்டறிக:<br><br>1. குதிரைத் தாண்டியது.<br>2. குதிரை தாண்டியது.<br>3. வரும்படி சொன்னான்.<br>4. வரும்படிச் சொன்னான்.",
+    "optionsEn": ["1 மற்றும் 3 சரியானவை", "2 மற்றும் 4 சரியானவை", "2 மற்றும் 3 சரியானவை", "1 மற்றும் 4 சரியானவை"],
+    "optionsTa": ["1 மற்றும் 3 சரியானவை", "2 மற்றும் 4 சரியானவை", "2 மற்றும் 3 சரியானவை", "1 மற்றும் 4 சரியானவை"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "வல்லினம் மிகா இடம் குறித்த கீழ்க்காணும் கூற்றுகளில் சரியானதைத் தேர்க:",
+    "ta": "வல்லினம் மிகா இடம் குறித்த கீழ்க்காணும் கூற்றுகளில் சரியானதைத் தேர்க:",
+    "optionsEn": ["இரண்டாம் வேற்றுமை விரியில் வல்லினம் மிகாது.", "எழுவாய்த் தொடரில் வல்லினம் மிகாது.", "வன்தொடர்க் குற்றியலுகரத்தின் பின் வல்லினம் மிகாது.", "சால, தவ முதலிய உரிச்சொற்களின் பின் வல்லினம் மிகாது."],
+    "optionsTa": ["இரண்டாம் வேற்றுமை விரியில் வல்லினம் மிகாது.", "எழுவாய்த் தொடரில் வல்லினம் மிகாது.", "வன்தொடர்க் குற்றியலுகரத்தின் பின் வல்லினம் மிகாது.", "சால, தவ முதலிய உரிச்சொற்களின் பின் வல்லினம் மிகாது."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "சந்திப்பிழையற்ற தொடரைக் காண்க:",
+    "ta": "சந்திப்பிழையற்ற தொடரைக் காண்க:",
+    "optionsEn": ["பண்பாட்டுக் கூறுகளைப் பேணிப் பாதுகாப்பது நம் கடமை.", "பண்பாட்டுக் கூறுகளைப் பேணி பாதுகாப்பது நம் கடமை.", "பண்பாட்டு கூறுகளைப் பேணி பாதுகாப்பது நம் கடமை.", "பண்பாட்டு கூறுகளை பேணிப் பாதுகாப்பது நம் கடமை."],
+    "optionsTa": ["பண்பாட்டுக் கூறுகளைப் பேணிப் பாதுகாப்பது நம் கடமை.", "பண்பாட்டுக் கூறுகளைப் பேணி பாதுகாப்பது நம் கடமை.", "பண்பாட்டு கூறுகளைப் பேணி பாதுகாப்பது நம் கடமை.", "பண்பாட்டு கூறுகளை பேணிப் பாதுகாப்பது நம் கடமை."],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "சந்திப்பிழையற்ற தொடரைக் காண்க:",
+    "ta": "சந்திப்பிழையற்ற தொடரைக் காண்க:",
+    "optionsEn": ["வள்ளைப் பாட்டின் சிறப்பு கேற்ப முழவை முழங்குகின்றது.", "வள்ளை பாட்டின் சிறப்புக்கேற்ப முழவை முழங்குகின்றது.", "வள்ளை பாட்டின் சிறப்பு கேற்ப முழவை முழங்குகின்றது.", "மேற்கண்ட எதுவுமில்லை."],
+    "optionsTa": ["வள்ளைப் பாட்டின் சிறப்பு கேற்ப முழவை முழங்குகின்றது.", "வள்ளை பாட்டின் சிறப்புக்கேற்ப முழவை முழங்குகின்றது.", "வள்ளை பாட்டின் சிறப்பு கேற்ப முழவை முழங்குகின்றது.", "மேற்கண்ட எதுவுமில்லை."],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "சந்திப்பிழையற்ற தொடரைக் காண்க:",
+    "ta": "சந்திப்பிழையற்ற தொடரைக் காண்க:",
+    "optionsEn": ["தமிழில் வரலாற்று கருத்துக்களையும் பண்பாட்டுக் கூறுகளையும் காண முடியும்.", "தமிழில் வரலாற்றுக் கருத்துகளையும் பண்பாட்டுக் கூறுகளையும் காண முடியும்.", "தமிழில் வரலாற்றுக் கருத்துக்களையும் பண்பாட்டு கூறுகளையும் காண முடியும்.", "தமிழில் வரலாற்று கருத்துகளையும் பண்பாட்டு கூறுகளையும் காண முடியும்."],
+    "optionsTa": ["தமிழில் வரலாற்று கருத்துக்களையும் பண்பாட்டுக் கூறுகளையும் காண முடியும்.", "தமிழில் வரலாற்றுக் கருத்துகளையும் பண்பாட்டுக் கூறுகளையும் காண முடியும்.", "தமிழில் வரலாற்றுக் கருத்துக்களையும் பண்பாட்டு கூறுகளையும் காண முடியும்.", "தமிழில் வரலாற்று கருத்துகளையும் பண்பாட்டு கூறுகளையும் காண முடியும்."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "சந்திப்பிழையற்ற தொடரைக் கண்டறிக:",
+    "ta": "சந்திப்பிழையற்ற தொடரைக் கண்டறிக:",
+    "optionsEn": ["தலைவித் தோழியொடு பூப்பந்து ஆடினாள்.", "தலைவி தோழியொடுப் பூப்பந்து ஆடினான்.", "தலைவித் தோழியொடு பூபந்து ஆடினாள்.", "தலைவி தோழியொடு பூப்பந்து ஆடினாள்."],
+    "optionsTa": ["தலைவித் தோழியொடு பூப்பந்து ஆடினாள்.", "தலைவி தோழியொடுப் பூப்பந்து ஆடினான்.", "தலைவித் தோழியொடு பூபந்து ஆடினாள்.", "தலைவி தோழியொடு பூப்பந்து ஆடினாள்."],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "குறில் சொல்லை நெடில் சொல்லாக மாற்றி பொருள் வேறுபாடு வருமாறு அமைந்த சரியான தொடரைத் தேர்க:",
+    "ta": "குறில் சொல்லை நெடில் சொல்லாக மாற்றி பொருள் வேறுபாடு வருமாறு அமைந்த சரியான தொடரைத் தேர்க:",
+    "optionsEn": ["மடு - மேடு - மடுவானது மேட்டுப்பாங்கான நிலம் அருகில் இருந்தது.", "மடு - மாடு - கழனி அருகே இருந்த மடுவில் மாடுகள் நீர் பருகின.", "மடு - மூடு - ஓர் உழவன் சிறிது நேரம் மடுவை மூடி வைத்தான்.", "மடு - மனு - கழனி அருகே இருந்த மடுவில் ஒரு மனிதன் நின்று கொண்டிருந்தான்."],
+    "optionsTa": ["மடு - மேடு - மடுவானது மேட்டுப்பாங்கான நிலம் அருகில் இருந்தது.", "மடு - மாடு - கழனி அருகே இருந்த மடுவில் மாடுகள் நீர் பருகின.", "மடு - மூடு - ஓர் உழவன் சிறிது நேரம் மடுவை மூடி வைத்தான்.", "மடு - மனு - கழனி அருகே இருந்த மடுவில் ஒரு மனிதன் நின்று கொண்டிருந்தான்."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "குறில் - நெடில் பொருள் வேறுபாடு அறிக: பனம் - பானம்",
+    "ta": "குறில் - நெடில் பொருள் வேறுபாடு அறிக: பனம் - பானம்",
+    "optionsEn": ["அருமை - வானகம்", "பருமை - பானகம்", "செழுமை - கானகம்", "கருமை - பானகம்"],
+    "optionsTa": ["அருமை - வானகம்", "பருமை - பானகம்", "செழுமை - கானகம்", "கருமை - பானகம்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "குறில் - நெடில் பொருள் வேறுபாடு அறிக: பொலி - போலி",
+    "ta": "குறில் - நெடில் பொருள் வேறுபாடு அறிக: பொலி - போலி",
+    "optionsEn": ["தீமை - நன்மை", "சாயல் - அழகு", "அழகு - சாயல்", "பொலிதல் - சாயல்"],
+    "optionsTa": ["தீமை - நன்மை", "சாயல் - அழகு", "அழகு - சாயல்", "பொலிதல் - சாயல்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "குறில் - நெடில் பொருள் வேறுபாடு அறிக: பெரு - பேரு",
+    "ta": "குறில் - நெடில் பொருள் வேறுபாடு அறிக: பெரு - பேரு",
+    "optionsEn": ["பெரிய - பெயர்", "சிறிய - பெயர்", "வட்ட - பெயர்", "அகல - பெயர்"],
+    "optionsTa": ["பெரிய - பெயர்", "சிறிய - பெயர்", "வட்ட - பெயர்", "அகல - பெயர்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "குறில் - நெடில் பொருள் வேறுபாடு அறிக: கண் - காண்",
+    "ta": "குறில் - நெடில் பொருள் வேறுபாடு அறிக: கண் - காண்",
+    "optionsEn": ["உறுப்பு - மலர்ச்சி", "உறுப்பு - காட்சி", "உறுப்பு - பார்", "உறுப்பு - காடு"],
+    "optionsTa": ["உறுப்பு - மலர்ச்சி", "உறுப்பு - காட்சி", "உறுப்பு - பார்", "உறுப்பு - காடு"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "குறில் - நெடில் பொருள் வேறுபாடு அறிக: கொடை - கோடை",
+    "ta": "குறில் - நெடில் பொருள் வேறுபாடு அறிக: கொடை - கோடை",
+    "optionsEn": ["பணம் - மலை", "ஈகை - வெயில் காலம்", "குடை - ஈகை", "ஈகை - குளிர் காலம்"],
+    "optionsTa": ["பணம் - மலை", "ஈகை - வெயில் காலம்", "குடை - ஈகை", "ஈகை - குளிர் காலம்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "குறில் - நெடில் பொருள் வேறுபாடு அறிக: வரம் - வாரம்",
+    "ta": "குறில் - நெடில் பொருள் வேறுபாடு அறிக: வரம் - வாரம்",
+    "optionsEn": ["இரக்கம் - கிழமை", "அருள் - கிழமை", "தவம் - கிழமை", "யோகம் - மாலை"],
+    "optionsTa": ["இரக்கம் - கிழமை", "அருள் - கிழமை", "தவம் - கிழமை", "யோகம் - மாலை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "குறில் - நெடில் பொருள் வேறுபாடு அறிக: சுடு - சூடு",
+    "ta": "குறில் - நெடில் பொருள் வேறுபாடு அறிக: சுடு - சூடு",
+    "optionsEn": ["சுடுதல் - தீக்காயம்", "மெய் - உண்மை", "நன்மை - தீமை", "பறவை - வானம்"],
+    "optionsTa": ["சுடுதல் - தீக்காயம்", "மெய் - உண்மை", "நன்மை - தீமை", "பறவை - வானம்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "குறில் - நெடில் பொருள் வேறுபாடு அறிக: மறி - மாறி",
+    "ta": "குறில் - நெடில் பொருள் வேறுபாடு அறிக: மறி - மாறி",
+    "optionsEn": ["எடுத்தல் - முடித்தல்", "முடித்தல் - வேறுபடுதல்", "தடுத்தல் - வேறுபடுதல்", "வழங்கல் - வேறுபடுதல்"],
+    "optionsTa": ["எடுத்தல் - முடித்தல்", "முடித்தல் - வேறுபடுதல்", "தடுத்தல் - வேறுபடுதல்", "வழங்கல் - வேறுபடுதல்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "குறில் - நெடில் அடிப்படையில் பிழையான இணை எது?",
+    "ta": "குறில் - நெடில் அடிப்படையில் பிழையான இணை எது?",
+    "optionsEn": ["கல் - கால்", "கிரி - கிரி", "குடம் - கூடம்", "கெண்டை - கொண்டை"],
+    "optionsTa": ["கல் - கால்", "கிரி - கிரி", "குடம் - கூடம்", "கெண்டை - கொண்டை"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "கேட்டார் - வினையாலணையும் பெயரைக் காண்க:",
+    "ta": "கேட்டார் - வினையாலணையும் பெயரைக் காண்க:",
+    "optionsEn": ["கேள்", "கேட்ட", "கேட்டவர்", "கேட்டு"],
+    "optionsTa": ["கேள்", "கேட்ட", "கேட்டவர்", "கேட்டு"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "குறில் - நெடில் அடிப்படையில் சரியான இணையைத் தேர்வு செய்க:",
+    "ta": "குறில் - நெடில் அடிப்படையில் சரியான இணையைத் தேர்வு செய்க:",
+    "optionsEn": ["செ, சோ", "ஆடல், பாடல்", "பெறு, பேறு", "தழல், கழல்"],
+    "optionsTa": ["செ, சோ", "ஆடல், பாடல்", "பெறு, பேறு", "தழல், கழல்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "குறில் - நெடில் மாற்றத்தில் தவறான இணையைக் காண்க:",
+    "ta": "குறில் - நெடில் மாற்றத்தில் தவறான இணையைக் காண்க:",
+    "optionsEn": ["ஒன்று, ஒதல்", "உரிமை, ஊக்கம்", "மக்கள், அறிவியல்", "அகல், ஆவல்"],
+    "optionsTa": ["ஒன்று, ஒதல்", "உரிமை, ஊக்கம்", "மக்கள், அறிவியல்", "அகல், ஆவல்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "கீழ்க்காண்பவற்றுள் குறில் - நெடில் பொருள் வேறுபாடு சரியாக அமைந்துள்ள இணை எது?",
+    "ta": "கீழ்க்காண்பவற்றுள் குறில் - நெடில் பொருள் வேறுபாடு சரியாக அமைந்துள்ள இணை எது?",
+    "optionsEn": ["பனம் - பானகம் (பருமை - பானகம்)", "மடு - மேடு", "கொடை - கோடை (ஈகை - வெயில் காலம்)", "மேற்கூறிய அனைத்தும் சரி"],
+    "optionsTa": ["பனம் - பானகம் (பருமை - பானகம்)", "மடு - மேடு", "கொடை - கோடை (ஈகை - வெயில் காலம்)", "மேற்கூறிய அனைத்தும் சரி"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "ஒலி மற்றும் பொருள் வேறுபாடு அறிக: புல் - புள்",
+    "ta": "ஒலி மற்றும் பொருள் வேறுபாடு அறிக: புல் - புள்",
+    "optionsEn": ["புல் தரை - ஓரறிவுத் தாவரம்", "ஓரறிவுத் தாவரம் - பறவை", "பறவை - புண்", "அசை - பறவை"],
+    "optionsTa": ["புல் தரை - ஓரறிவுத் தாவரம்", "ஓரறிவுத் தாவரம் - பறவை", "பறவை - புண்", "அசை - பறவை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "இராமன் .......... எய்தான்.",
+    "ta": "இராமன் .......... எய்தான்.",
+    "optionsEn": ["கணை", "கனை", "கதை", "களை"],
+    "optionsTa": ["கணை", "கனை", "கதை", "களை"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "ஒலி மற்றும் பொருள் வேறுபாடு அறிக: வாளை - வாழை",
+    "ta": "ஒலி மற்றும் பொருள் வேறுபாடு அறிக: வாளை - வாழை",
+    "optionsEn": ["அரம் - கன்று", "மீன் - மரம்", "கருவி - மீன்", "தோட்டம் - தோப்பு"],
+    "optionsTa": ["அரம் - கன்று", "மீன் - மரம்", "கருவி - மீன்", "தோட்டம் - தோப்பு"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "சிரம் என்பதன் பொருள்",
+    "ta": "சிரம் என்பதன் பொருள்",
+    "optionsEn": ["தலை", "தழை", "தளை", "கலை"],
+    "optionsTa": ["தலை", "தழை", "தளை", "கலை"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "ஒலி மற்றும் பொருள் வேறுபாடு அறிக: கிண்ணம் - கின்னம்",
+    "ta": "ஒலி மற்றும் பொருள் வேறுபாடு அறிக: கிண்ணம் - கின்னம்",
+    "optionsEn": ["சிறுபாத்திரம் - துன்பம்", "குவளை - கீழ்மை", "குவளை - துன்பம்", "சிறுபாத்திரம் - மகிழ்ச்சி"],
+    "optionsTa": ["சிறுபாத்திரம் - துன்பம்", "குவளை - கீழ்மை", "குவளை - துன்பம்", "சிறுபாத்திரம் - மகிழ்ச்சி"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "ஒலி மற்றும் பொருள் வேறுபாடு அறிக: விரை - விறை",
+    "ta": "ஒலி மற்றும் பொருள் வேறுபாடு அறிக: விரை - விறை",
+    "optionsEn": ["விதை - வினை", "விதை - மரத்தல்", "மறத்தல் - மரத்தல்", "வித்து - மறத்தல்"],
+    "optionsTa": ["விதை - வினை", "விதை - மரத்தல்", "மறத்தல் - மரத்தல்", "வித்து - மறத்தல்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "மரம் - மறம் பொருள் வேறுபாடு அறிக:",
+    "ta": "மரம் - மறம் பொருள் வேறுபாடு அறிக:",
+    "optionsEn": ["தாவரம் - வீரம்", "வீரம் - தாவரம்", "வீடு - தோள்", "பகை - நட்பு"],
+    "optionsTa": ["தாவரம் - வீரம்", "வீரம் - தாவரம்", "வீடு - தோள்", "பகை - நட்பு"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "அரை - அறை பொருள் வேறுபாடு அறிக:",
+    "ta": "அரை - அறை பொருள் வேறுபாடு அறிக:",
+    "optionsEn": ["முக்கால் - மேளம்", "பாதி - அறைதல்", "ஒடித்தல் - பறை", "வீடு - ஒலித்தல்"],
+    "optionsTa": ["முக்கால் - மேளம்", "பாதி - அறைதல்", "ஒடித்தல் - பறை", "வீடு - ஒலித்தல்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "குரவர் - குறவர் - ஒலி வேறுபாடு அறிந்து விடை தருக:",
+    "ta": "குரவர் - குறவர் - ஒலி வேறுபாடு அறிந்து விடை தருக:",
+    "optionsEn": ["குலம் - புலவர்", "ஆசிரியர் ஓர் இனத்தார்", "புலவர் - புரவலர்", "ஓர் இனத்தார் - புலவர்"],
+    "optionsTa": ["குலம் - புலவர்", "ஆசிரியர் ஓர் இனத்தார்", "புலவர் - புரவலர்", "ஓர் இனத்தார் - புலவர்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "ஒலி மற்றும் பொருள் வேறுபாடு அறிந்து சரியான இணையைக் காண்க: வானம் - வாணம்",
+    "ta": "ஒலி மற்றும் பொருள் வேறுபாடு அறிந்து சரியான இணையைக் காண்க: வானம் - வாணம்",
+    "optionsEn": ["ஆகாயம் - வெட்டவெளி", "பட்டாசு - ஆகாயம்", "வெடி - ஆகாயம்", "ஆகாயம் - வெடி"],
+    "optionsTa": ["ஆகாயம் - வெட்டவெளி", "பட்டாசு - ஆகாயம்", "வெடி - ஆகாயம்", "ஆகாயம் - வெடி"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "நட்பு எழுத்துகளை தமிழ் இலக்கணம் எவ்வாறு கூறுகிறது?",
+    "ta": "நட்பு எழுத்துகளை தமிழ் இலக்கணம் எவ்வாறு கூறுகிறது?",
+    "optionsEn": ["மொழி எழுத்துகள்", "இன எழுத்துகள்", "தொடர் எழுத்துகள்", "தொகை எழுத்துகள்"],
+    "optionsTa": ["மொழி எழுத்துகள்", "இன எழுத்துகள்", "தொடர் எழுத்துகள்", "தொகை எழுத்துகள்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "இன எழுத்து இல்லாத எழுத்து எது?",
+    "ta": "இன எழுத்து இல்லாத எழுத்து எது?",
+    "optionsEn": ["ஒற்றெழுத்து", "ஆய்த எழுத்து", "உயிர் எழுத்து", "உயிர்மெய் நெடில் எழுத்து"],
+    "optionsTa": ["ஒற்றெழுத்து", "ஆய்த எழுத்து", "உயிர் எழுத்து", "உயிர்மெய் நெடில் எழுத்து"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "தவறாக இணைக்கப்பட்டுள்ள இன எழுத்துகள் யாவை?",
+    "ta": "தவறாக இணைக்கப்பட்டுள்ள இன எழுத்துகள் யாவை?",
+    "optionsEn": ["ப் ம்", "த் ந்", "ன் ண்", "ட் ண்"],
+    "optionsTa": ["ப் ம்", "த் ந்", "ன் ண்", "ட் ண்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "சொற்களில் பெரும்பாலும் மெல்லின மெய்யெழுத்தை அடுத்து அமையும் அதன் இனம் எது?",
+    "ta": "சொற்களில் பெரும்பாலும் மெல்லின மெய்யெழுத்தை அடுத்து அமையும் அதன் இனம் எது?",
+    "optionsEn": ["இடையினம்", "அளபெடை", "வல்லினம்", "உயிர் எழுத்து"],
+    "optionsTa": ["இடையினம்", "அளபெடை", "வல்லினம்", "உயிர் எழுத்து"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "சுட்டு எத்தனை வகைப்படும்?",
+    "ta": "சுட்டு எத்தனை வகைப்படும்?",
+    "optionsEn": ["மூன்று", "நான்கு", "ஐந்து", "இரண்டு"],
+    "optionsTa": ["மூன்று", "நான்கு", "ஐந்து", "இரண்டு"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "கீழ்க்கண்டவற்றுள் எந்த வகையில் சுட்டெழுத்தை நீக்கினால் பொருள் தராது?",
+    "ta": "கீழ்க்கண்டவற்றுள் எந்த வகையில் சுட்டெழுத்தை நீக்கினால் பொருள் தராது?",
+    "optionsEn": ["புறவினா", "சுட்டுத் திரிபு", "புறச்சுட்டு", "அகச்சுட்டு"],
+    "optionsTa": ["புறவினா", "சுட்டுத் திரிபு", "புறச்சுட்டு", "அகச்சுட்டு"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "சுட்டெழுத்து வகையில் சேராதது எது?",
+    "ta": "சுட்டெழுத்து வகையில் சேராதது எது?",
+    "optionsEn": ["அ", "இ", "எ", "உ"],
+    "optionsTa": ["அ", "இ", "எ", "உ"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "சொற்களின் உள்ளேயே சுட்டெழுத்து அடங்கி வருமானால் அது என்ன சுட்டு எனப்படும்?",
+    "ta": "சொற்களின் உள்ளேயே சுட்டெழுத்து அடங்கி வருமானால் அது என்ன சுட்டு எனப்படும்?",
+    "optionsEn": ["சேய்மைச்சுட்டு", "புறச்சுட்டு", "சுட்டுத்திரிபு", "அகச்சுட்டு"],
+    "optionsTa": ["சேய்மைச்சுட்டு", "புறச்சுட்டு", "சுட்டுத்திரிபு", "அகச்சுட்டு"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "அருகில் உள்ளவற்றிற்கும் தொலைவில் உள்ளவற்றிற்கும் இடையில் இருப்பதைச் சுட்டிக் காட்டப் பயன்படுத்தப்பட்ட எழுத்து எது?",
+    "ta": "அருகில் உள்ளவற்றிற்கும் தொலைவில் உள்ளவற்றிற்கும் இடையில் இருப்பதைச் சுட்டிக் காட்டப் பயன்படுத்தப்பட்ட எழுத்து எது?",
+    "optionsEn": ["அ", "உ", "இ", "ஏ"],
+    "optionsTa": ["அ", "உ", "இ", "ஏ"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "கீழ்க்கண்டவற்றில் பொருந்தாத ஒன்றைத் தேர்க:",
+    "ta": "கீழ்க்கண்டவற்றில் பொருந்தாத ஒன்றைத் தேர்க:",
+    "optionsEn": ["அவ்வீடு", "இப்பள்ளி", "இந்நூல்", "அவன்"],
+    "optionsTa": ["அவ்வீடு", "இப்பள்ளி", "இந்நூல்", "அவன்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "எறிந்தான் - வினையெச்சம் காண்க:",
+    "ta": "எறிந்தான் - வினையெச்சம் காண்க:",
+    "optionsEn": ["எறிந்த", "எறிதல்", "எறி", "எறிந்து"],
+    "optionsTa": ["எறிந்த", "எறிதல்", "எறி", "எறிந்து"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "பெறு என்ற சொல்லின் தொழிற்பெயர் காண்க:",
+    "ta": "பெறு என்ற சொல்லின் தொழிற்பெயர் காண்க:",
+    "optionsEn": ["பெற்றவள்", "பெற்ற", "பெற்று", "பெறுதல்"],
+    "optionsTa": ["பெற்றவள்", "பெற்ற", "பெற்று", "பெறுதல்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "உறங்கு என்ற வேர்ச்சொல்லின் வினைமுற்றைக் காண்க:",
+    "ta": "உறங்கு என்ற வேர்ச்சொல்லின் வினைமுற்றைக் காண்க:",
+    "optionsEn": ["உறங்கினாள்", "உறங்கியவர்", "உறங்கிய", "உறங்குதல்"],
+    "optionsTa": ["உறங்கினாள்", "உறங்கியவர்", "உறங்கிய", "உறங்குதல்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "கேட்டார் - வினையாலணையும் பெயரைக் காண்க:",
+    "ta": "கேட்டார் - வினையாலணையும் பெயரைக் காண்க:",
+    "optionsEn": ["கேள்", "கேட்ட", "கேட்டவர்", "கேட்டு"],
+    "optionsTa": ["கேள்", "கேட்ட", "கேட்டவர்", "கேட்டு"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "எழுதுகிறாள் - வியங்கோள் வினைமுற்றைத் தேர்க:",
+    "ta": "எழுதுகிறாள் - வியங்கோள் வினைமுற்றைத் தேர்க:",
+    "optionsEn": ["எழுது", "எழுதுக", "எழுதியவர்", "எழுதுதல்"],
+    "optionsTa": ["எழுது", "எழுதுக", "எழுதியவர்", "எழுதுதல்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "வினைமுற்றை வினையாலணையும் பெயராக மாற்றுக (ஊட்டமிகு உணவு உண்டார், நீண்ட வாழ்நாள் பெற்றார்):",
+    "ta": "வினைமுற்றை வினையாலணையும் பெயராக மாற்றுக (ஊட்டமிகு உணவு உண்டார், நீண்ட வாழ்நாள் பெற்றார்):",
+    "optionsEn": ["வாட்டமிகு உணவு உண்டவர் நீண்ட வாழ்நாள் பெற்றார்", "ஊட்டமிகு உணவு உண்டதால் நீண்ட வாழ்நாள் பெற்றார்", "ஊட்டமிகு உணவு உண்டு நீண்ட வாழ்நாள் பெற்றார்", "ஊட்டமிகு உணவால் நீண்ட வாழ்நாள் பெற்றார்"],
+    "optionsTa": ["வாட்டமிகு உணவு உண்டவர் நீண்ட வாழ்நாள் பெற்றார்", "ஊட்டமிகு உணவு உண்டதால் நீண்ட வாழ்நாள் பெற்றார்", "ஊட்டமிகு உணவு உண்டு நீண்ட வாழ்நாள் பெற்றார்", "ஊட்டமிகு உணவால் நீண்ட வாழ்நாள் பெற்றார்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "வேர்ச்சொல்லுக்குரிய வினையெச்சம் இடம்பெறாத இணையைத் தேர்க:",
+    "ta": "வேர்ச்சொல்லுக்குரிய வினையெச்சம் இடம்பெறாத இணையைத் தேர்க:",
+    "optionsEn": ["வா - வந்து", "காண் - கண்ட", "கொள் - கொண்டு", "நில் - நின்று"],
+    "optionsTa": ["வா - வந்து", "காண் - கண்ட", "கொள் - கொண்டு", "நில் - நின்று"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "வாழியர் - வேர்ச்சொல்லைத் தேர்வு செய்க:",
+    "ta": "வாழியர் - வேர்ச்சொல்லைத் தேர்வு செய்க:",
+    "optionsEn": ["வாழ்", "வாழிய", "வாழி", "வா"],
+    "optionsTa": ["வாழ்", "வாழிய", "வாழி", "வா"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "சென்றார் - பெயரெச்சம் காண்க:",
+    "ta": "சென்றார் - பெயரெச்சம் காண்க:",
+    "optionsEn": ["சென்று", "செல்", "சென்ற", "செல்க"],
+    "optionsTa": ["சென்று", "செல்", "சென்ற", "செல்க"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "பார் என்ற சொல்லின் வினையெச்சம் தேர்க:",
+    "ta": "பார் என்ற சொல்லின் வினையெச்சம் தேர்க:",
+    "optionsEn": ["பார்த்து", "பார்த்த", "பார்த்தான்", "பார்த்தவன்"],
+    "optionsTa": ["பார்த்து", "பார்த்த", "பார்த்தான்", "பார்த்தவன்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "பிறமொழிச் சொற்கள் கலவாத தொடரை எடுத்து எழுதுக:",
+    "ta": "பிறமொழிச் சொற்கள் கலவாத தொடரை எடுத்து எழுதுக:",
+    "optionsEn": ["இராமநாதபுரம் சமஸ்தானம் பெரியது", "வானூர்தி ஓர் அறிவியல் ஆக்கம்", "திருவிழாவிற்கு முக்கியஸ்தர்கள் வந்துள்ளனர்", "ஷாப்பிங்மால் அருகாமையில் உள்ளது"],
+    "optionsTa": ["இராமநாதபுரம் சமஸ்தானம் பெரியது", "வானூர்தி ஓர் அறிவியல் ஆக்கம்", "திருவிழாவிற்கு முக்கியஸ்தர்கள் வந்துள்ளனர்", "ஷாப்பிங்மால் அருகாமையில் உள்ளது"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "கிரீடம் - சரியான இணையைத் தேர்க:",
+    "ta": "கிரீடம் - சரியான இணையைத் தேர்க:",
+    "optionsEn": ["கிரீடம் - மணியழகு", "கிரீடம் - மணிமுடி", "கிரீடம் - பொன்", "கிரீடம் - மணி"],
+    "optionsTa": ["கிரீடம் - மணியழகு", "கிரீடம் - மணிமுடி", "கிரீடம் - பொன்", "கிரீடம் - மணி"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "ஆஸ்தி - சரியான இணையைத் தேர்க:",
+    "ta": "ஆஸ்தி - சரியான இணையைத் தேர்க:",
+    "optionsEn": ["ஆஸ்தி - செல்வம்", "ஆஸ்தி - சொத்து", "ஆஸ்தி -- பணம்", "ஆஸ்தி - வருமானம்"],
+    "optionsTa": ["ஆஸ்தி - செல்வம்", "ஆஸ்தி - சொத்து", "ஆஸ்தி -- பணம்", "ஆஸ்தி - வருமானம்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "பிறமொழிச் சொல்லுக்கு இணையான சரியான தமிழ்ச்சொல்லைக் காண்க (பொக்கிஷம்):",
+    "ta": "பிறமொழிச் சொல்லுக்கு இணையான சரியான தமிழ்ச்சொல்லைக் காண்க (பொக்கிஷம்):",
+    "optionsEn": ["பொக்கிஷம் - செல்வம்", "பொக்கிஷம் - குறைவு", "பொக்கிஷம் - குறுகிய பரப்பு", "பொக்கிஷம் - கோரம்"],
+    "optionsTa": ["பொக்கிஷம் - செல்வம்", "பொக்கிஷம் - குறைவு", "பொக்கிஷம் - குறுகிய பரப்பு", "பொக்கிஷம் - கோரம்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "எதார்த்தம் - பிறமொழிச் சொல்லுக்கு இணையான தமிழ்ச்சொல் காண்க:",
+    "ta": "எதார்த்தம் - பிறமொழிச் சொல்லுக்கு இணையான தமிழ்ச்சொல் காண்க:",
+    "optionsEn": ["இயல்பு", "பழக்கம்", "வழக்கம்", "பழக்கத்திலில்லை"],
+    "optionsTa": ["இயல்பு", "பழக்கம்", "வழக்கம்", "பழக்கத்திலில்லை"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "நாக்கிற்கு நான்கு ஆதார ருசிகள்தாம் தெரியும் என்ற தொடரில் அமைந்துள்ள பிறமொழிச் சொல்லை நீக்கிவிட்டு வரும் சரியான தமிழ்ச்சொல் என்ன?",
+    "ta": "நாக்கிற்கு நான்கு ஆதார ருசிகள்தாம் தெரியும் என்ற தொடரில் அமைந்துள்ள பிறமொழிச் சொல்லை நீக்கிவிட்டு வரும் சரியான தமிழ்ச்சொல் என்ன?",
+    "optionsEn": ["சுவை", "இனிமை", "பதம்", "உணர்வு"],
+    "optionsTa": ["சுவை", "இனிமை", "பதம்", "உணர்வு"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "பிறமொழிச் சொல் கலவாத தொடரைக் கண்டறிக:",
+    "ta": "பிறமொழிச் சொல் கலவாத தொடரைக் கண்டறிக:",
+    "optionsEn": ["சென்னையில் இவ்வருடம் மழைப்பொழிவு அதிகம்", "லக்ஷ்மி பள்ளிக்கு விரைந்து சென்றாள்", "மன்னிக்கும் மனம் உள்ளவனே மனிதன்", "காற்றின் உதவியால் செலுத்தப்படுபவை பாய்மரக் கப்பல்கள்"],
+    "optionsTa": ["சென்னையில் இவ்வருடம் மழைப்பொழிவு அதிகம்", "லக்ஷ்மி பள்ளிக்கு விரைந்து சென்றாள்", "மன்னிக்கும் மனம் உள்ளவனே மனிதன்", "காற்றின் உதவியால் செலுத்தப்படுபவை பாய்மரக் கப்பல்கள்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "பிறமொழிச் சொல்லற்ற தொடர் எது?",
+    "ta": "பிறமொழிச் சொல்லற்ற தொடர் எது?",
+    "optionsEn": ["கொடுங்கோல் அரசன் அதர்மம் செய்தான்", "குழந்தைக்கு கண்திருஷ்டி சுற்றிப் போடு", "ஆகாசத்தில் பட்சி பறந்தது", "கோயிலுக்குச் சென்று இறைவனை வணங்கினேன்"],
+    "optionsTa": ["கொடுங்கோல் அரசன் அதர்மம் செய்தான்", "குழந்தைக்கு கண்திருஷ்டி சுற்றிப் போடு", "ஆகாசத்தில் பட்சி பறந்தது", "கோயிலுக்குச் சென்று இறைவனை வணங்கினேன்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "விவாஹம் - சரியான தமிழ்ச்சொல்லைத் தேர்க:",
+    "ta": "விவாஹம் - சரியான தமிழ்ச்சொல்லைத் தேர்க:",
+    "optionsEn": ["விழா", "திருமணம்", "பண்டிகை", "காதுகுத்து"],
+    "optionsTa": ["விழா", "திருமணம்", "பண்டிகை", "காதுகுத்து"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "சதம் - இணையான தமிழ்ச்சொல்லைக் கண்டறிக:",
+    "ta": "சதம் - இணையான தமிழ்ச்சொல்லைக் கண்டறிக:",
+    "optionsEn": ["பத்து", "ஆயிரம்", "நூறு", "லட்சம்"],
+    "optionsTa": ["பத்து", "ஆயிரம்", "நூறு", "லட்சம்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "பொருத்தமில்லாத எதிர்ச்சொலைக் கண்டறிக:",
+    "ta": "பொருத்தமில்லாத எதிர்ச்சொலைக் கண்டறிக:",
+    "optionsEn": ["தேய்ந்து × வளர்ந்து", "குழப்பம் × தெளிவு", "நண்பர் × செறுநர்", "கரத்தல் × மறைத்தல்"],
+    "optionsTa": ["தேய்ந்து × வளர்ந்து", "குழப்பம் × தெளிவு", "நண்பர் × செறுநர்", "கரத்தல் × மறைத்தல்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "பின்வருவனவற்றுள் தவறான இணையைக் காண்க:",
+    "ta": "பின்வருவனவற்றுள் தவறான இணையைக் காண்க:",
+    "optionsEn": ["சிறிது × பெரிது", "திண்ணிது × வலிது", "உயர்வு × தாழ்வு", "நன்று × தீது"],
+    "optionsTa": ["சிறிது × பெரிது", "திண்ணிது × வலிது", "உயர்வு × தாழ்வு", "நன்று × தீது"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "பிணி என்பதன் எதிர்ச்சொல் தருக:",
+    "ta": "பிணி என்பதன் எதிர்ச்சொல் தருக:",
+    "optionsEn": ["துன்பம்", "நோய்", "இன்பம்", "வறுமை"],
+    "optionsTa": ["துன்பம்", "நோய்", "இன்பம்", "வறுமை"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "வெற்பு - எதிர்ச்சொல் தருக:",
+    "ta": "வெற்பு - எதிர்ச்சொல் தருக:",
+    "optionsEn": ["மலை", "பள்ளம்", "மழை", "பட்டம்"],
+    "optionsTa": ["மலை", "பள்ளம்", "மழை", "பட்டம்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "நல்லவர்கள் தூற்றும்படி வளர்ந்து விடாதே என்ற தொடரில் உள்ள தூற்றும்படி என்பதன் எதிர்ச்சொல் காண்க:",
+    "ta": "நல்லவர்கள் தூற்றும்படி வளர்ந்து விடாதே என்ற தொடரில் உள்ள தூற்றும்படி என்பதன் எதிர்ச்சொல் காண்க:",
+    "optionsEn": ["இகழும்படி", "போற்றும்படி", "துன்புறுத்தும்படி", "வணங்கும்படி"],
+    "optionsTa": ["இகழும்படி", "போற்றும்படி", "துன்புறுத்தும்படி", "வணங்கும்படி"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "நனந்தலை என்பதன் எதிர்ச்சொல் கண்டறிக:",
+    "ta": "நனந்தலை என்பதன் எதிர்ச்சொல் கண்டறிக:",
+    "optionsEn": ["அகன்ற உலகம்", "மேலான உலகம்", "சிறிய உலகம்", "கீழான உலகம்"],
+    "optionsTa": ["அகன்ற உலகம்", "மேலான உலகம்", "சிறிய உலகம்", "கீழான உலகம்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "அழுக்காறுடையான் - எதிர்ச்சொல் கண்டறிக:",
+    "ta": "அழுக்காறுடையான் - எதிர்ச்சொல் கண்டறிக:",
+    "optionsEn": ["பொறாமை உடையவன்", "தூய்மை உடையவன்", "பொறாமையற்றவன்", "தூய்மை அற்றவன்"],
+    "optionsTa": ["பொறாமை உடையவன்", "தூய்மை உடையவன்", "பொறாமையற்றவன்", "தூய்மை அற்றவன்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "துவ்வா - என்பதன் எதிர்ச்சொல் யாது?",
+    "ta": "துவ்வா - என்பதன் எதிர்ச்சொல் யாது?",
+    "optionsEn": ["நுகருதல்", "கொடுத்தல்", "விலக்குதல்", "பறித்தல்"],
+    "optionsTa": ["நுகருதல்", "கொடுத்தல்", "விலக்குதல்", "பறித்தல்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "எத்தனிக்கும் - எதிர்ச்சொல் கண்டறிக:",
+    "ta": "எத்தனிக்கும் - எதிர்ச்சொல் கண்டறிக:",
+    "optionsEn": ["முயலாமை", "அறியாமை", "நீங்காமை", "தளராமை"],
+    "optionsTa": ["முயலாமை", "அறியாமை", "நீங்காமை", "தளராமை"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "கிளை என்பதன் எதிர்ச்சொல் காண்க:",
+    "ta": "கிளை என்பதன் எதிர்ச்சொல் காண்க:",
+    "optionsEn": ["உறவினர்", "தாவர உறுப்பு", "தளிர்", "பகைவர்"],
+    "optionsTa": ["உறவினர்", "தாவர உறுப்பு", "தளிர்", "பகைவர்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "இருவினைகளின் பொருள் வேறுபாடு அறிக: பணிந்து - பணித்து",
+    "ta": "இருவினைகளின் பொருள் வேறுபாடு அறிக: பணிந்து - பணித்து",
+    "optionsEn": ["கயல்விழி பணித்ததால், பணிந்து படித்தாள்", "ஆசிரியர் பணிந்து கூறினார், கயல்விழி பணித்துப் படித்தாள்", "கயல்விழி பணித்து படித்ததால் ஆசிரியர் பணிந்தார்", "ஆசிரியர் பணித்ததால் கயல்விழி பணிந்து படித்தாள்"],
+    "optionsTa": ["கயல்விழி பணித்ததால், பணிந்து படித்தாள்", "ஆசிரியர் பணிந்து கூறினார், கயல்விழி பணித்துப் படித்தாள்", "கயல்விழி பணித்து படித்ததால் ஆசிரியர் பணிந்தார்", "ஆசிரியர் பணித்ததால் கயல்விழி பணிந்து படித்தாள்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "சரியான தொடர்களைத் தேர்க (பணிந்து - பணித்து):<br><br>1. தலைவர் பணித்த வேலையைத் தொண்டன் பணிந்து செய்தான்.<br>2. தலைவர் பணிந்த வேலையைத் தொண்டன் பணித்து செய்தான்.<br>3. தலைவர் பணித்ததால் தொண்டன் பணிந்தான்.<br>4. தலைவர் பணிந்ததால் தொண்டன் பணித்தான்",
+    "ta": "சரியான தொடர்களைத் தேர்க (பணிந்து - பணித்து):<br><br>1. தலைவர் பணித்த வேலையைத் தொண்டன் பணிந்து செய்தான்.<br>2. தலைவர் பணிந்த வேலையைத் தொண்டன் பணித்து செய்தான்.<br>3. தலைவர் பணித்ததால் தொண்டன் பணிந்தான்.<br>4. தலைவர் பணிந்ததால் தொண்டன் பணித்தான்",
+    "optionsEn": ["1 மற்றும் 3 சரியானவை", "2 மற்றும் 4 சரியானவை", "1 மற்றும் 2 சரியானவை", "2 மற்றும் 3 சரியானவை"],
+    "optionsTa": ["1 மற்றும் 3 சரியானவை", "2 மற்றும் 4 சரியானவை", "1 மற்றும் 2 சரியானவை", "2 மற்றும் 3 சரியானவை"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "இருவினைகளின் பொருள் வேறுபாடு அறிக: பணிந்து - பணித்து",
+    "ta": "இருவினைகளின் பொருள் வேறுபாடு அறிக: பணிந்து - பணித்து",
+    "optionsEn": ["இறைவனைப் பணித்ததால் பெற்றோர் பணிந்தனர்", "இறைவனைப் பணிந்து செல்ல வேண்டும் எனப் பெற்றோர் பணித்தனர்", "பெற்றோரைப் பணிந்து இறைவனைப் பணித்தனர்", "பணிந்து சென்றால் இறைவனைப் பணியலாம்"],
+    "optionsTa": ["இறைவனைப் பணித்ததால் பெற்றோர் பணிந்தனர்", "இறைவனைப் பணிந்து செல்ல வேண்டும் எனப் பெற்றோர் பணித்தனர்", "பெற்றோரைப் பணிந்து இறைவனைப் பணித்தனர்", "பணிந்து சென்றால் இறைவனைப் பணியலாம்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "இருவினைகளின் பொருள் வேறுபாடு அறிக: மாறு - மாற்றி",
+    "ta": "இருவினைகளின் பொருள் வேறுபாடு அறிக: மாறு - மாற்றி",
+    "optionsEn": ["மாறு வேடத்தில் பரிசு பெற்றவுடன் வேடத்தை மாற்றிக் கொண்டார்", "மாறி வந்தவர் பரிசு பெற்று மாற்றிக் கொண்டார்", "வேடம் மாறிக் கொண்டு பரிசை மாற்றினார்", "மாறி மாறி வந்தவர் பரிசை மாற்றினார்"],
+    "optionsTa": ["மாறு வேடத்தில் பரிசு பெற்றவுடன் வேடத்தை மாற்றிக் கொண்டார்", "மாறி வந்தவர் பரிசு பெற்று மாற்றிக் கொண்டார்", "வேடம் மாறிக் கொண்டு பரிசை மாற்றினார்", "மாறி மாறி வந்தவர் பரிசை மாற்றினார்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "இருவினைகளின் பொருள் வேறுபாடு அறிக: பரி - பறி",
+    "ta": "இருவினைகளின் பொருள் வேறுபாடு அறிக: பரி - பறி",
+    "optionsEn": ["இறங்கு - வாங்கு", "இரங்கு - வாங்கு", "இரங்கு - அபகரி", "இறங்கு - அபகரி"],
+    "optionsTa": ["இறங்கு - வாங்கு", "இரங்கு - வாங்கு", "இரங்கு - அபகரி", "இறங்கு - அபகரி"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "இருவினைகளின் பொருள் வேறுபாடு அறிக: சீரிய - சீறிய",
+    "ta": "இருவினைகளின் பொருள் வேறுபாடு அறிக: சீரிய - சீறிய",
+    "optionsEn": ["கோபம் கொண்ட - பெருமை பெற்ற", "சிறுமை கொண்ட - பெருமை பெற்ற", "அளவில் குறைந்த - வடிவில் குறைந்த", "பெருமை பெற்ற - கோபம் கொண்ட"],
+    "optionsTa": ["கோபம் கொண்ட - பெருமை பெற்ற", "சிறுமை கொண்ட - பெருமை பெற்ற", "அளவில் குறைந்த - வடிவில் குறைந்த", "பெருமை பெற்ற - கோபம் கொண்ட"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "இருவினைகளின் பொருள் வேறுபாடு அறிக: ஈந்தாள் - ஈன்றாள்",
+    "ta": "இருவினைகளின் பொருள் வேறுபாடு அறிக: ஈந்தாள் - ஈன்றாள்",
+    "optionsEn": ["கொடுத்தாள் - பெற்றெடுத்தாள்", "பெற்றெடுத்தாள் - கொடுத்தாள்", "கேட்டாள் - கொடுத்தாள்", "கண்டாள் - கேட்டாள்"],
+    "optionsTa": ["கொடுத்தாள் - பெற்றெடுத்தாள்", "பெற்றெடுத்தாள் - கொடுத்தாள்", "கேட்டாள் - கொடுத்தாள்", "கண்டாள் - கேட்டாள்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "இருவினைகளின் பொருள் வேறுபாடு அறிக: உரி - உறி",
+    "ta": "இருவினைகளின் பொருள் வேறுபாடு அறிக: உரி - உறி",
+    "optionsEn": ["கழற்று - தூக்கு", "கழல் - தூக்கு", "சுழல் - தூக்கு", "களற்று - தூக்கு"],
+    "optionsTa": ["கழற்று - தூக்கு", "கழல் - தூக்கு", "சுழல் - தூக்கு", "களற்று - தூக்கு"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "இருவினைகளின் பொருள் வேறுபாடு அறிக: நெரி - நெறி",
+    "ta": "இருவினைகளின் பொருள் வேறுபாடு அறிக: நெரி - நெறி",
+    "optionsEn": ["முரண்பாடு - வழி", "பயன்பாடு - வழி", "நெருக்குதல் - வழி", "வழி - நெருக்குதல்"],
+    "optionsTa": ["முரண்பாடு - வழி", "பயன்பாடு - வழி", "நெருக்குதல் - வழி", "வழி - நெருக்குதல்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "இருவினைகளின் பொருள் வேறுபாடு அறிக: வெரு - வெறு",
+    "ta": "இருவினைகளின் பொருள் வேறுபாடு அறிக: வெரு - வெறு",
+    "optionsEn": ["வெறுப்பு - விருப்பு", "அரவணை - ஆணை", "விருப்பு - வெறுப்பு", "அச்சம் - வெறுப்பு"],
+    "optionsTa": ["வெறுப்பு - விருப்பு", "அரவணை - ஆணை", "விருப்பு - வெறுப்பு", "அச்சம் - வெறுப்பு"],
+    "answer": 3
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false; isSubmitted = false;
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">
+                <span class="option-letter">${String.fromCharCode(65+i)}.</span>
+                <span class="option-text">${opt}</span>
+            </div>`;
+        });
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+            </div>
+        `;
+        updateNavButtons(); updatePalette();
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) return;
+        userAnswers[currentIndex] = optIndex;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    let currentReviewIndex = 0;
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let cssClass = "option-item";
+                let markerHtml = "";
+                if (idx === corr) { cssClass += " correct"; markerHtml = "<div class='marker'>✔</div>"; }
+                else if (u === idx && idx !== corr) { cssClass += " wrong"; markerHtml = "<div class='marker'>✖</div>"; }
+                optsHtml += `<div class="${cssClass}"><span>${String.fromCharCode(65+idx)}. ${optsArray[idx]}</span>${markerHtml}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" id="review-card-${i}" style="display: none;">
+                        <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div class="your-answer">Your Answer: ${userAns}</div>
+                        <div class="correct-answer">Correct Answer: ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        ${optsHtml}
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+        currentReviewIndex = 0;
+        showReviewCard(currentReviewIndex);
+    }
+    function showReviewCard(index) {
+        const cards = document.querySelectorAll(".review-card");
+        if (cards.length === 0) return;
+        cards.forEach(c => c.style.display = "none");
+        cards[index].style.display = "block";
+        document.getElementById("reviewPageText").innerText = `${index + 1} / ${cards.length}`;
+        document.getElementById("prevReviewBtn").disabled = (index === 0);
+        document.getElementById("nextReviewBtn").disabled = (index === cards.length - 1);
+        document.getElementById("reviewPagination").style.display = "flex";
+        window.scrollTo(0, 0);
+    }
+    function navigateReview(direction) {
+        const cards = document.querySelectorAll(".review-card");
+        currentReviewIndex += direction;
+        if (currentReviewIndex >= 0 && currentReviewIndex < cards.length) {
+            showReviewCard(currentReviewIndex);
+        }
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
+            await new Promise(r => setTimeout(r, 600));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+                if (btn) btn.innerText = "✅ Select Save as PDF";
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+        } finally {
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 3000);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        history.replaceState({ resultPage: true }, "", "#result");
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.addEventListener("popstate", function(e) {
+        if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+            history.pushState({ resultPage: true }, "", "#result");
+            confirmLeaveResult();
+        }
+    });
+    function confirmLeaveResult() {
+        if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
+            window.AndroidBridge.exitResultPage();
+        } else {
+            history.back();
+        }
+    }
+    window.checkForReview = function() {
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
+            }
+        }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
