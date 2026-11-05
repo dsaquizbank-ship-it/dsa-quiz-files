@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-05T16:44:55.642Z",
+  "version": "2026-11-05T16:49:01.636Z",
   "categories": [
     {
       "id": "BANK",
@@ -1316,6 +1316,19 @@
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGZ-75.html",
       "releaseTimestamp": 1793952000000,
+      "language": "both"
+    },
+    {
+      "testId": "UGZ-76",
+      "examId": "UG-ZOO",
+      "name": "KREBS CYCLE TO ELECTRON TRANSPORT SYSTEM UGZ-76",
+      "topic": "KREBS CYCLE TO ELECTRON TRANSPORT SYSTEM",
+      "durationMinutes": 30,
+      "order": 76,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGZ-76.html",
+      "releaseTimestamp": 1794211200000,
       "language": "both"
     }
   ]
