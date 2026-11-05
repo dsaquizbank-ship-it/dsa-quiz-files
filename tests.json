@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-05T16:49:01.636Z",
+  "version": "2026-11-05T17:17:08.309Z",
   "categories": [
     {
       "id": "BANK",
@@ -310,6 +310,12 @@
       "name": "SCIENCE",
       "categoryId": "SPLTET",
       "order": 4
+    },
+    {
+      "id": "TNPSC-TA",
+      "name": "TAMIL",
+      "categoryId": "TNPSC",
+      "order": 14
     }
   ],
   "tests": [
@@ -1330,6 +1336,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGZ-76.html",
       "releaseTimestamp": 1794211200000,
       "language": "both"
+    },
+    {
+      "testId": "TTA-1",
+      "examId": "TNPSC-TA",
+      "name": "UNIT-1-ILAKKANAM TTA-1",
+      "topic": "UNIT-1-ILAKKANAM",
+      "durationMinutes": 60,
+      "order": 1,
+      "questionCount": 100,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TTA-1.html",
+      "releaseTimestamp": 1793952000000,
+      "language": "ta"
     }
   ]
 }
