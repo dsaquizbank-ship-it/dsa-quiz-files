@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-05T06:53:09.871Z",
+  "version": "2026-11-05T07:05:50.679Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -2818,6 +2818,54 @@
         {
           "topicId": "RRB-T200",
           "topicName": "General Awareness | Environment and Ecology - Disaster and Disaster Management"
+        },
+        {
+          "topicId": "RRB-T212",
+          "topicName": "CURRENT AFFAIRS | JANUARY"
+        },
+        {
+          "topicId": "RRB-T213",
+          "topicName": "CURRENT AFFAIRS | FEBRUARY"
+        },
+        {
+          "topicId": "RRB-T214",
+          "topicName": "CURRENT AFFAIRS | MARCH"
+        },
+        {
+          "topicId": "RRB-T215",
+          "topicName": "CURRENT AFFAIRS | APRIL"
+        },
+        {
+          "topicId": "RRB-T216",
+          "topicName": "CURRENT AFFAIRS | MAY"
+        },
+        {
+          "topicId": "RRB-T217",
+          "topicName": "CURRENT AFFAIRS | JUNE"
+        },
+        {
+          "topicId": "RRB-T218",
+          "topicName": "CURRENT AFFAIRS | JULY"
+        },
+        {
+          "topicId": "RRB-T219",
+          "topicName": "CURRENT AFFAIRS | AUGUST"
+        },
+        {
+          "topicId": "RRB-T220",
+          "topicName": "CURRENT AFFAIRS | SEPTEMBER"
+        },
+        {
+          "topicId": "RRB-T221",
+          "topicName": "CURRENT AFFAIRS | OCTOBER"
+        },
+        {
+          "topicId": "RRB-T222",
+          "topicName": "CURRENT AFFAIRS | NOVEMBER"
+        },
+        {
+          "topicId": "RRB-T223",
+          "topicName": "CURRENT AFFAIRS | DECEMBER"
         }
       ]
     },
