@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-05T13:00:10.150Z",
+  "version": "2026-11-05T13:02:48.294Z",
   "timetable": [
     {
       "day": "Monday",
@@ -262,6 +262,13 @@
     {
       "day": "Friday",
       "classes": [
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "Unit II - Real Analysis",
+          "batch": "PGTRB MATHS",
+          "faculty": "MRS REKHA",
+          "room": "MRS REKHA"
+        },
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Unit I - Aptitude: Simplification, Percentage",
