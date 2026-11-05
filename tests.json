@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-05T07:32:36.706Z",
+  "version": "2026-11-05T16:08:32.722Z",
   "categories": [
     {
       "id": "BANK",
@@ -1265,6 +1265,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGMI-94.html",
       "releaseTimestamp": 1793865600000,
       "language": "en"
+    },
+    {
+      "testId": "PGH-45",
+      "examId": "PG-HIS",
+      "name": "PGH-45 CIVIL DISOBEDIENCE",
+      "topic": "CIVIL DISOBEDIENCE",
+      "durationMinutes": 15,
+      "order": 45,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGH-45.html",
+      "releaseTimestamp": 1793952000000,
+      "language": "both"
     }
   ]
 }
