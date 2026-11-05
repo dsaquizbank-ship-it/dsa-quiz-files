@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-05T07:15:12.425Z",
+  "version": "2026-11-05T07:24:51.656Z",
   "categories": [
     {
       "id": "BANK",
@@ -304,6 +304,12 @@
       "name": "SOCIAL SCIENCE",
       "categoryId": "SPLTET",
       "order": 5
+    },
+    {
+      "id": "SPL-SCIENCE",
+      "name": "SCIENCE",
+      "categoryId": "SPLTET",
+      "order": 4
     }
   ],
   "tests": [
@@ -1231,6 +1237,19 @@
       "questionCount": 50,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-SS-04.html",
+      "releaseTimestamp": 1793865600000,
+      "language": "both"
+    },
+    {
+      "testId": "SPT-SC-04",
+      "examId": "SPL-SCIENCE",
+      "name": "6TH TERM 1 FULL SPT-SC-04",
+      "topic": "6TH TERM 1 FULL",
+      "durationMinutes": 30,
+      "order": 4,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-SC-04.html",
       "releaseTimestamp": 1793865600000,
       "language": "both"
     }
