@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-05T07:24:51.656Z",
+  "version": "2026-11-05T07:32:36.706Z",
   "categories": [
     {
       "id": "BANK",
@@ -1252,6 +1252,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-SC-04.html",
       "releaseTimestamp": 1793865600000,
       "language": "both"
+    },
+    {
+      "testId": "UGMI-94",
+      "examId": "UG-MAT",
+      "name": "Impact , impulsive forces, direct and oblique impact of smooth spheres, and impact on a fixed plane UGM-94",
+      "topic": "Impact , impulsive forces, direct and oblique impact of smooth spheres, and impact on a fixed plane",
+      "durationMinutes": 30,
+      "order": 94,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGMI-94.html",
+      "releaseTimestamp": 1793865600000,
+      "language": "en"
     }
   ]
 }
