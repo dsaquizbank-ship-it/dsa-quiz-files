@@ -715,6 +715,11 @@
         }
       ]
     },
+     {
+      "courseId": "COM-TAM",
+      "courseName": "COMMON TAMIL",
+      "topics": []
+     },
     {
       "courseId": "SSC",
       "courseName": "SSC",
