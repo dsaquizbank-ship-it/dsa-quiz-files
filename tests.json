@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-04T08:36:59.325Z",
+  "version": "2026-11-05T07:15:12.425Z",
   "categories": [
     {
       "id": "BANK",
@@ -297,6 +297,12 @@
       "id": "SGT-SOCIALSCIENCE",
       "name": "SOCIAL SCIENCE",
       "categoryId": "SGT",
+      "order": 5
+    },
+    {
+      "id": "SPL-SOCIALSCIENCE",
+      "name": "SOCIAL SCIENCE",
+      "categoryId": "SPLTET",
       "order": 5
     }
   ],
@@ -1213,6 +1219,19 @@
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGT-SS-36.html",
       "releaseTimestamp": 0,
+      "language": "both"
+    },
+    {
+      "testId": "SPT-SS-04",
+      "examId": "SPL-SOCIALSCIENCE",
+      "name": "6TH TERM 1 GEOGRAPHY AND CIVICS SPL-SS-04",
+      "topic": "6TH TERM 1 GEOGRAPHY AND CIVICS",
+      "durationMinutes": 30,
+      "order": 4,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-SS-04.html",
+      "releaseTimestamp": 1793865600000,
       "language": "both"
     }
   ]
