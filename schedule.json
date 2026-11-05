@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-05T05:15:59.539Z",
+  "version": "2026-11-05T06:00:45.664Z",
   "entries": [
     {
       "id": "SCH-1793613836155-285",
@@ -649,17 +649,6 @@
       "date": "2026-11-06",
       "testId": "UGZ-75",
       "createdAt": "2026-10-31T13:31:39.391Z"
-    },
-    {
-      "id": "SCH-1793450651552-203",
-      "courseId": "TNTET",
-      "courseName": "TNTET",
-      "subject": "Child Development and Pedagogy",
-      "topicId": "REV-1793450651552",
-      "topicName": "Revision: Unit VI - Personality",
-      "date": "2026-11-06",
-      "testId": "NTE-PY-55",
-      "createdAt": "2026-10-31T12:44:11.552Z"
     },
     {
       "id": "SCH-1793447507073-294",
