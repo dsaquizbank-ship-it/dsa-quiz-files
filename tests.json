@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-05T17:31:01.415Z",
+  "version": "2026-11-05T17:42:03.503Z",
   "categories": [
     {
       "id": "BANK",
@@ -316,6 +316,12 @@
       "name": "TAMIL",
       "categoryId": "TNPSC",
       "order": 14
+    },
+    {
+      "id": "RRB-CA",
+      "name": "CURRENT AFFAIRS",
+      "categoryId": "RRB",
+      "order": 6
     }
   ],
   "tests": [
@@ -1349,6 +1355,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TTA-1.html",
       "releaseTimestamp": 1793952000000,
       "language": "ta"
+    },
+    {
+      "testId": "RCA-3",
+      "examId": "RRB-CA",
+      "name": "OCTOBER FULL MONTH RCA-3",
+      "topic": "OCTOBER FULL MONTH",
+      "durationMinutes": 30,
+      "order": 3,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RCA-3.html",
+      "releaseTimestamp": 1793952000000,
+      "language": "en"
     }
   ]
 }
