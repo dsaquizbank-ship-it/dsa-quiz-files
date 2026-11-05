@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-05T05:12:48.355Z",
+  "version": "2026-11-05T05:15:09.059Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -666,8 +666,52 @@
           "topicName": "Tamil Literature | அலகு VII – இலக்கியம், தமிழ் அறிஞர்களும் தமிழ் தொண்டும்"
         },
         {
-          "topicId": "TNPSC-T166",
-          "topicName": "CURRENT AFFAIRS"
+          "topicId": "TNPSC-T167",
+          "topicName": "CURRENT AFFAIRS | JANUARY"
+        },
+        {
+          "topicId": "TNPSC-T168",
+          "topicName": "CURRENT AFFAIRS | FEBRUARY"
+        },
+        {
+          "topicId": "TNPSC-T169",
+          "topicName": "CURRENT AFFAIRS | MARCH"
+        },
+        {
+          "topicId": "TNPSC-T170",
+          "topicName": "CURRENT AFFAIRS | APRIL"
+        },
+        {
+          "topicId": "TNPSC-T171",
+          "topicName": "CURRENT AFFAIRS | MAY"
+        },
+        {
+          "topicId": "TNPSC-T172",
+          "topicName": "CURRENT AFFAIRS | JUNE"
+        },
+        {
+          "topicId": "TNPSC-T173",
+          "topicName": "CURRENT AFFAIRS | JULY"
+        },
+        {
+          "topicId": "TNPSC-T174",
+          "topicName": "CURRENT AFFAIRS | AUGUST"
+        },
+        {
+          "topicId": "TNPSC-T175",
+          "topicName": "CURRENT AFFAIRS | SEPTEMBER"
+        },
+        {
+          "topicId": "TNPSC-T176",
+          "topicName": "CURRENT AFFAIRS | OCTOBER"
+        },
+        {
+          "topicId": "TNPSC-T177",
+          "topicName": "CURRENT AFFAIRS | NOVEMBER"
+        },
+        {
+          "topicId": "TNPSC-T178",
+          "topicName": "CURRENT AFFAIRS | DECEMBER"
         }
       ]
     },
