@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-05T05:15:09.059Z",
+  "version": "2026-11-05T06:51:17.519Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -1562,6 +1562,54 @@
         {
           "topicId": "SSC-T333",
           "topicName": "General Awareness | Environment and Ecology - Disaster and Disaster Management"
+        },
+        {
+          "topicId": "SSC-T212",
+          "topicName": "CURRENT AFFAIRS | JANUARY"
+        },
+        {
+          "topicId": "SSC-T213",
+          "topicName": "CURRENT AFFAIRS | FEBRUARY"
+        },
+        {
+          "topicId": "SSC-T214",
+          "topicName": "CURRENT AFFAIRS | MARCH"
+        },
+        {
+          "topicId": "SSC-T215",
+          "topicName": "CURRENT AFFAIRS | APRIL"
+        },
+        {
+          "topicId": "SSC-T216",
+          "topicName": "CURRENT AFFAIRS | MAY"
+        },
+        {
+          "topicId": "SSC-T217",
+          "topicName": "CURRENT AFFAIRS | JUNE"
+        },
+        {
+          "topicId": "SSC-T218",
+          "topicName": "CURRENT AFFAIRS | JULY"
+        },
+        {
+          "topicId": "SSC-T219",
+          "topicName": "CURRENT AFFAIRS | AUGUST"
+        },
+        {
+          "topicId": "SSC-T220",
+          "topicName": "CURRENT AFFAIRS | SEPTEMBER"
+        },
+        {
+          "topicId": "SSC-T221",
+          "topicName": "CURRENT AFFAIRS | OCTOBER"
+        },
+        {
+          "topicId": "SSC-T222",
+          "topicName": "CURRENT AFFAIRS | NOVEMBER"
+        },
+        {
+          "topicId": "SSC-T223",
+          "topicName": "CURRENT AFFAIRS | DECEMBER"
         }
       ]
     },
