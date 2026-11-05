@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-05T16:08:32.722Z",
+  "version": "2026-11-05T16:15:28.220Z",
   "categories": [
     {
       "id": "BANK",
@@ -1278,6 +1278,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGH-45.html",
       "releaseTimestamp": 1793952000000,
       "language": "both"
+    },
+    {
+      "testId": "PGCS-15",
+      "examId": "PG-CS",
+      "name": "PGCS-15 PASSWORD MANAGEMENT",
+      "topic": "PASSWORD MANAGEMENT",
+      "durationMinutes": 15,
+      "order": 15,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGCS-15.html",
+      "releaseTimestamp": 1793952000000,
+      "language": "en"
     }
   ]
 }
