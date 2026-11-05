@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-05T06:51:17.519Z",
+  "version": "2026-11-05T06:53:09.871Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -1920,6 +1920,54 @@
         {
           "topicId": "BANK-T076",
           "topicName": "Computer Awareness | Computer Related Abbreviations and Shortcuts"
+        },
+        {
+          "topicId": "BANK-T077",
+          "topicName": "CURRENT AFFAIRS | JANUARY"
+        },
+        {
+          "topicId": "BANK-T078",
+          "topicName": "CURRENT AFFAIRS | FEBRUARY"
+        },
+        {
+          "topicId": "BANK-T079",
+          "topicName": "CURRENT AFFAIRS | MARCH"
+        },
+        {
+          "topicId": "BANK-T080",
+          "topicName": "CURRENT AFFAIRS | APRIL"
+        },
+        {
+          "topicId": "BANK-T081",
+          "topicName": "CURRENT AFFAIRS | MAY"
+        },
+        {
+          "topicId": "BANK-T082",
+          "topicName": "CURRENT AFFAIRS | JUNE"
+        },
+        {
+          "topicId": "BANK-T083",
+          "topicName": "CURRENT AFFAIRS | JULY"
+        },
+        {
+          "topicId": "BANK-T084",
+          "topicName": "CURRENT AFFAIRS | AUGUST"
+        },
+        {
+          "topicId": "BANK-T085",
+          "topicName": "CURRENT AFFAIRS | SEPTEMBER"
+        },
+        {
+          "topicId": "BANK-T086",
+          "topicName": "CURRENT AFFAIRS | OCTOBER"
+        },
+        {
+          "topicId": "BANK-T087",
+          "topicName": "CURRENT AFFAIRS | NOVEMBER"
+        },
+        {
+          "topicId": "BANK-T088",
+          "topicName": "CURRENT AFFAIRS | DECEMBER"
         }
       ]
     },
