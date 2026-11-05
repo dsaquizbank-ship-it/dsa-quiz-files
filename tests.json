@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-05T16:42:01.657Z",
+  "version": "2026-11-05T16:44:55.642Z",
   "categories": [
     {
       "id": "BANK",
@@ -1304,6 +1304,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGE-101.html",
       "releaseTimestamp": 1793952000000,
       "language": "en"
+    },
+    {
+      "testId": "UGZ-75",
+      "examId": "UG-ZOO",
+      "name": "METABOLISM TO GLYCOGENESIS UGZ-75",
+      "topic": "METABOLISM TO GLYCOGENESIS",
+      "durationMinutes": 30,
+      "order": 75,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGZ-75.html",
+      "releaseTimestamp": 1793952000000,
+      "language": "both"
     }
   ]
 }
