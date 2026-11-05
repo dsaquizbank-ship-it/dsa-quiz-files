@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-02T10:01:16.195Z",
+  "version": "2026-11-05T05:12:48.355Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -664,6 +664,10 @@
         {
           "topicId": "TNPSC-T153",
           "topicName": "Tamil Literature | அலகு VII – இலக்கியம், தமிழ் அறிஞர்களும் தமிழ் தொண்டும்"
+        },
+        {
+          "topicId": "TNPSC-T166",
+          "topicName": "CURRENT AFFAIRS"
         }
       ]
     },
