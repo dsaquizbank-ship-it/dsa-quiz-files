@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-06T07:54:35.083Z",
+  "version": "2026-11-06T07:55:18.270Z",
   "categories": [
     {
       "id": "BANK",
@@ -344,6 +344,12 @@
       "id": "SSC-EG",
       "name": "ENGLISH",
       "categoryId": "SSC",
+      "order": 3
+    },
+    {
+      "id": "RRB-EG",
+      "name": "ENGLISH",
+      "categoryId": "RRB",
       "order": 3
     }
   ],
@@ -1480,6 +1486,19 @@
       "questionCount": 30,
       "negativeMark": 0.5,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SEG-1.html",
+      "releaseTimestamp": 1793952000000,
+      "language": "en"
+    },
+    {
+      "testId": "REG-1",
+      "examId": "RRB-EG",
+      "name": "READING COMPREHENSION REG-1",
+      "topic": "READING COMPREHENSION",
+      "durationMinutes": 30,
+      "order": 1,
+      "questionCount": 30,
+      "negativeMark": 0.33,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/REG-1.html",
       "releaseTimestamp": 1793952000000,
       "language": "en"
     }
