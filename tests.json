@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-06T00:48:39.918Z",
+  "version": "2026-11-06T01:13:55.349Z",
   "categories": [
     {
       "id": "BANK",
@@ -1300,7 +1300,7 @@
     {
       "testId": "PGCS-15",
       "examId": "PG-CS",
-      "name": "PGCS-15 PASSWORD MANAGEMENT",
+      "name": "PASSWORD MANAGEMENT PGCS-15",
       "topic": "PASSWORD MANAGEMENT",
       "durationMinutes": 15,
       "order": 15,
