@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-06T08:01:39.410Z",
+  "version": "2026-11-06T08:07:05.067Z",
   "categories": [
     {
       "id": "BANK",
@@ -1473,7 +1473,7 @@
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/COM-TA-1.html",
       "releaseTimestamp": 1793952000000,
-      "language": "ta"
+      "language": "both"
     },
     {
       "testId": "PGE-51",
