@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-06T13:15:35.803Z",
+  "version": "2026-11-06T14:04:55.098Z",
   "entries": [
     {
       "id": "SCH-1793613836155-285",
@@ -805,6 +805,28 @@
       "createdAt": "2026-10-31T04:28:45.361Z"
     },
     {
+      "id": "SCH-1793971719883-53",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit III - History, Culture & INM",
+      "topicId": "TNPSC-T155",
+      "topicName": "Delhi Sultans",
+      "date": "2026-11-09",
+      "testId": "TIH-3",
+      "createdAt": "2026-11-06T13:28:39.883Z"
+    },
+    {
+      "id": "SCH-1793971743683-62",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit III - History, Culture & INM",
+      "topicId": "REV-1793971743683",
+      "topicName": "Revision: South Indian History (Chera), South Indian History (Chola), South Indian History (Pandya), South Indian History (Pallava)",
+      "date": "2026-11-09",
+      "testId": "TIH-8",
+      "createdAt": "2026-11-06T13:29:03.683Z"
+    },
+    {
       "id": "SCH-1793967908052-163",
       "courseId": "SPLTET",
       "courseName": "SPECIAL TET",
@@ -959,6 +981,50 @@
       "createdAt": "2026-10-31T04:29:10.209Z"
     },
     {
+      "id": "SCH-1793972384970-164",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit IV - Indian Polity",
+      "topicId": "REV-1793972384970",
+      "topicName": "Revision: Citizenship",
+      "date": "2026-11-10",
+      "testId": "TIP-5",
+      "createdAt": "2026-11-06T13:39:44.970Z"
+    },
+    {
+      "id": "SCH-1793972396666-397",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit IV - Indian Polity",
+      "topicId": "REV-1793972396666",
+      "topicName": "Revision: Fundamental Rights",
+      "date": "2026-11-10",
+      "testId": "TIP-6",
+      "createdAt": "2026-11-06T13:39:56.666Z"
+    },
+    {
+      "id": "SCH-1793972417178-626",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit IV - Indian Polity",
+      "topicId": "REV-1793972417178",
+      "topicName": "Revision: Fundamental Duties",
+      "date": "2026-11-10",
+      "testId": "TIP-7",
+      "createdAt": "2026-11-06T13:40:17.178Z"
+    },
+    {
+      "id": "SCH-1793972442090-121",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit IV - Indian Polity",
+      "topicId": "REV-1793972442090",
+      "topicName": "Revision: Directive Principles of State Policy",
+      "date": "2026-11-10",
+      "testId": "TIP-8",
+      "createdAt": "2026-11-06T13:40:42.090Z"
+    },
+    {
       "id": "SCH-1793968479676-840",
       "courseId": "SPLTET",
       "courseName": "SPECIAL TET",
@@ -979,6 +1045,17 @@
       "date": "2026-11-10",
       "testId": "SPT-SS-7",
       "createdAt": "2026-11-06T12:42:09.844Z"
+    },
+    {
+      "id": "SCH-1793972835082-233",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit VI - TN History & Culture",
+      "topicId": "REV-1793972835082",
+      "topicName": "Revision: Tamil literature from Sangam age till contemporary times",
+      "date": "2026-11-11",
+      "testId": "TNS-3",
+      "createdAt": "2026-11-06T13:47:15.082Z"
     },
     {
       "id": "SCH-1793969668307-44",
@@ -1124,6 +1201,17 @@
       "createdAt": "2026-10-31T04:29:31.441Z"
     },
     {
+      "id": "SCH-1793973101010-680",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit I - Aptitude",
+      "topicId": "REV-1793973101010",
+      "topicName": "Revision: Highest Common Factor (HCF), Lowest Common Multiple (LCM)",
+      "date": "2026-11-12",
+      "testId": "TAP-3",
+      "createdAt": "2026-11-06T13:51:41.010Z"
+    },
+    {
       "id": "SCH-1793969154908-317",
       "courseId": "SPLTET",
       "courseName": "SPECIAL TET",
@@ -1144,6 +1232,17 @@
       "date": "2026-11-12",
       "testId": "SPT-SC-9",
       "createdAt": "2026-11-06T13:06:09.747Z"
+    },
+    {
+      "id": "SCH-1793973424890-760",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Tamil Literature",
+      "topicId": "REV-1793973424890",
+      "topicName": "Revision: அலகு II – சொல்லகராதி",
+      "date": "2026-11-13",
+      "testId": "TTA-2",
+      "createdAt": "2026-11-06T13:57:04.890Z"
     },
     {
       "id": "SCH-1793970092323-368",
@@ -1232,6 +1331,28 @@
       "date": "2026-11-13",
       "testId": "PGE-54",
       "createdAt": "2026-10-31T04:30:24.897Z"
+    },
+    {
+      "id": "SCH-1793971773227-450",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit III - History, Culture & INM",
+      "topicId": "TNPSC-T156",
+      "topicName": "Mughals",
+      "date": "2026-11-16",
+      "testId": "TIH-4",
+      "createdAt": "2026-11-06T13:29:33.227Z"
+    },
+    {
+      "id": "SCH-1793971793219-463",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit III - History, Culture & INM",
+      "topicId": "TNPSC-T157",
+      "topicName": "Marathas",
+      "date": "2026-11-16",
+      "testId": "TIH-5",
+      "createdAt": "2026-11-06T13:29:53.219Z"
     },
     {
       "id": "SCH-1793967986692-341",
@@ -1366,6 +1487,50 @@
       "createdAt": "2026-10-31T04:34:38.953Z"
     },
     {
+      "id": "SCH-1793972469986-795",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit IV - Indian Polity",
+      "topicId": "REV-1793972469986",
+      "topicName": "Revision: Union Executive",
+      "date": "2026-11-17",
+      "testId": "TIP-9",
+      "createdAt": "2026-11-06T13:41:09.986Z"
+    },
+    {
+      "id": "SCH-1793972482874-208",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit IV - Indian Polity",
+      "topicId": "REV-1793972482874",
+      "topicName": "Revision: Union Legislature",
+      "date": "2026-11-17",
+      "testId": "TIP-10",
+      "createdAt": "2026-11-06T13:41:22.874Z"
+    },
+    {
+      "id": "SCH-1793972499618-745",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit IV - Indian Polity",
+      "topicId": "REV-1793972499618",
+      "topicName": "Revision: State Executive",
+      "date": "2026-11-17",
+      "testId": "TIP-11",
+      "createdAt": "2026-11-06T13:41:39.618Z"
+    },
+    {
+      "id": "SCH-1793972516850-315",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit IV - Indian Polity",
+      "topicId": "REV-1793972516850",
+      "topicName": "Revision: State Legislature",
+      "date": "2026-11-17",
+      "testId": "TIP-12",
+      "createdAt": "2026-11-06T13:41:56.850Z"
+    },
+    {
       "id": "SCH-1793968513188-185",
       "courseId": "SPLTET",
       "courseName": "SPECIAL TET",
@@ -1386,6 +1551,17 @@
       "date": "2026-11-17",
       "testId": "SPT-SS-12",
       "createdAt": "2026-11-06T12:46:20.276Z"
+    },
+    {
+      "id": "SCH-1793972867586-318",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit VI - TN History & Culture",
+      "topicId": "REV-1793972867586",
+      "topicName": "Revision: Thirukkural - Significance as a secular literature, Thirukkural - Relevance to everyday life, Thirukkural - Impact on humanity and universal values, Thirukkural - Relevance to Socio-politico-economic affairs, Philosophical content in Thirukkural",
+      "date": "2026-11-18",
+      "testId": "TNS-4",
+      "createdAt": "2026-11-06T13:47:47.586Z"
     },
     {
       "id": "SCH-1793969706851-139",
@@ -1520,6 +1696,17 @@
       "createdAt": "2026-10-31T04:35:22.281Z"
     },
     {
+      "id": "SCH-1793973121578-833",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit I - Aptitude",
+      "topicId": "REV-1793973121578",
+      "topicName": "Revision: Ratio and Proportion",
+      "date": "2026-11-19",
+      "testId": "TAP-4",
+      "createdAt": "2026-11-06T13:52:01.578Z"
+    },
+    {
       "id": "SCH-1793969219292-522",
       "courseId": "SPLTET",
       "courseName": "SPECIAL TET",
@@ -1540,6 +1727,17 @@
       "date": "2026-11-19",
       "testId": "SPT-SC-14",
       "createdAt": "2026-11-06T13:06:33.915Z"
+    },
+    {
+      "id": "SCH-1793973448338-369",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Tamil Literature",
+      "topicId": "REV-1793973448338",
+      "topicName": "Revision: அலகு III – எழுதும் திறன்",
+      "date": "2026-11-20",
+      "testId": "TTA-3",
+      "createdAt": "2026-11-06T13:57:28.338Z"
     },
     {
       "id": "SCH-1793970152075-915",
@@ -1628,6 +1826,39 @@
       "date": "2026-11-20",
       "testId": "PGE-57",
       "createdAt": "2026-10-31T04:35:50.225Z"
+    },
+    {
+      "id": "SCH-1793971861386-278",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit III - History, Culture & INM",
+      "topicId": "TNPSC-T046",
+      "topicName": "National Renaissance",
+      "date": "2026-11-23",
+      "testId": "TIN-1",
+      "createdAt": "2026-11-06T13:31:01.386Z"
+    },
+    {
+      "id": "SCH-1793971884411-30",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit III - History, Culture & INM",
+      "topicId": "TNPSC-T047",
+      "topicName": "Early uprising against British rule",
+      "date": "2026-11-23",
+      "testId": "TIN-2",
+      "createdAt": "2026-11-06T13:31:24.411Z"
+    },
+    {
+      "id": "SCH-1793971902154-963",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit III - History, Culture & INM",
+      "topicId": "TNPSC-T048",
+      "topicName": "Indian National Congress",
+      "date": "2026-11-23",
+      "testId": "TIN-3",
+      "createdAt": "2026-11-06T13:31:42.154Z"
     },
     {
       "id": "SCH-1793968059252-341",
@@ -1762,6 +1993,28 @@
       "createdAt": "2026-10-31T04:38:26.153Z"
     },
     {
+      "id": "SCH-1793972540122-279",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit IV - Indian Polity",
+      "topicId": "REV-1793972540122",
+      "topicName": "Revision: Local Governments, Panchayat Raj",
+      "date": "2026-11-24",
+      "testId": "TIP-13",
+      "createdAt": "2026-11-06T13:42:20.122Z"
+    },
+    {
+      "id": "SCH-1793972553402-656",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit IV - Indian Polity",
+      "topicId": "REV-1793972553402",
+      "topicName": "Revision: Spirit of federalism: Centre - State relationships",
+      "date": "2026-11-24",
+      "testId": "TIP-14",
+      "createdAt": "2026-11-06T13:42:33.402Z"
+    },
+    {
       "id": "SCH-1793968550124-502",
       "courseId": "SPLTET",
       "courseName": "SPECIAL TET",
@@ -1782,6 +2035,28 @@
       "date": "2026-11-24",
       "testId": "SPT-SS-17",
       "createdAt": "2026-11-06T12:47:30.987Z"
+    },
+    {
+      "id": "SCH-1793972896747-651",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit VI - TN History & Culture",
+      "topicId": "REV-1793972896747",
+      "topicName": "Revision: Role of Tamil Nadu in freedom struggle",
+      "date": "2026-11-25",
+      "testId": "TNS-5",
+      "createdAt": "2026-11-06T13:48:16.747Z"
+    },
+    {
+      "id": "SCH-1793972915018-714",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit VI - TN History & Culture",
+      "topicId": "REV-1793972915018",
+      "topicName": "Revision: Role of women in freedom struggle",
+      "date": "2026-11-25",
+      "testId": "TNS-7",
+      "createdAt": "2026-11-06T13:48:35.018Z"
     },
     {
       "id": "SCH-1793969741003-377",
@@ -1916,6 +2191,28 @@
       "createdAt": "2026-10-31T04:42:45.457Z"
     },
     {
+      "id": "SCH-1793973142946-528",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit I - Aptitude",
+      "topicId": "REV-1793973142946",
+      "topicName": "Revision: Simple interest",
+      "date": "2026-11-26",
+      "testId": "TAP-5",
+      "createdAt": "2026-11-06T13:52:22.946Z"
+    },
+    {
+      "id": "SCH-1793973152378-936",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit I - Aptitude",
+      "topicId": "REV-1793973152378",
+      "topicName": "Revision: Compound interest",
+      "date": "2026-11-26",
+      "testId": "TAP-6",
+      "createdAt": "2026-11-06T13:52:32.378Z"
+    },
+    {
       "id": "SCH-1793969284091-441",
       "courseId": "SPLTET",
       "courseName": "SPECIAL TET",
@@ -1936,6 +2233,17 @@
       "date": "2026-11-26",
       "testId": "SPT-SC-19",
       "createdAt": "2026-11-06T13:07:41.819Z"
+    },
+    {
+      "id": "SCH-1793973482906-398",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Tamil Literature",
+      "topicId": "REV-1793973482906",
+      "topicName": "Revision: அலகு IV – கலைச் சொற்கள்",
+      "date": "2026-11-27",
+      "testId": "TTA-4",
+      "createdAt": "2026-11-06T13:58:02.906Z"
     },
     {
       "id": "SCH-1793970175284-120",
@@ -2024,6 +2332,17 @@
       "date": "2026-11-27",
       "testId": "PGE-60",
       "createdAt": "2026-10-31T04:43:21.913Z"
+    },
+    {
+      "id": "SCH-1793971975211-26",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit III - History, Culture & INM",
+      "topicId": "REV-1793971975211",
+      "topicName": "Revision: Emergence of leaders - B.R.Ambedkar, Bhagat Singh, Bharathiar, V.O.Chidambaranar, Emergence of leaders - Jawaharlal Nehru, Kamarajar, Mahatma Gandhi, Emergence of leaders - Maulana Abul Kalam Azad, Thanthai Periyar, Rajaji, Subash Chandra Bose, Rabindranath Tagore",
+      "date": "2026-11-30",
+      "testId": "TIN-4",
+      "createdAt": "2026-11-06T13:32:55.211Z"
     },
     {
       "id": "SCH-1793968087500-514",
@@ -2158,6 +2477,28 @@
       "createdAt": "2026-10-31T04:43:56.393Z"
     },
     {
+      "id": "SCH-1793972575986-63",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit IV - Indian Polity",
+      "topicId": "REV-1793972575986",
+      "topicName": "Revision: Election",
+      "date": "2026-12-01",
+      "testId": "TIP-15",
+      "createdAt": "2026-11-06T13:42:55.986Z"
+    },
+    {
+      "id": "SCH-1793972588650-547",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit IV - Indian Polity",
+      "topicId": "REV-1793972588650",
+      "topicName": "Revision: Judiciary in India, Rule of Law",
+      "date": "2026-12-01",
+      "testId": "TIP-16",
+      "createdAt": "2026-11-06T13:43:08.650Z"
+    },
+    {
       "id": "SCH-1793968606324-559",
       "courseId": "SPLTET",
       "courseName": "SPECIAL TET",
@@ -2180,6 +2521,17 @@
       "createdAt": "2026-11-06T12:48:32.652Z"
     },
     {
+      "id": "SCH-1793972944362-746",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit VI - TN History & Culture",
+      "topicId": "REV-1793972944362",
+      "topicName": "Revision: Early agitations against British Rule",
+      "date": "2026-12-02",
+      "testId": "TNS-6",
+      "createdAt": "2026-11-06T13:49:04.362Z"
+    },
+    {
       "id": "SCH-1793969783739-700",
       "courseId": "SPLTET",
       "courseName": "SPECIAL TET",
@@ -2189,6 +2541,17 @@
       "date": "2026-12-02",
       "testId": "SPT-EG-23",
       "createdAt": "2026-11-06T12:56:23.739Z"
+    },
+    {
+      "id": "SCH-1793973190314-484",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit I - Aptitude",
+      "topicId": "REV-1793973190314",
+      "topicName": "Revision: Time and Work",
+      "date": "2026-12-03",
+      "testId": "TAP-9",
+      "createdAt": "2026-11-06T13:53:10.314Z"
     },
     {
       "id": "SCH-1793969362772-224",
@@ -2213,6 +2576,17 @@
       "createdAt": "2026-11-06T13:08:50.467Z"
     },
     {
+      "id": "SCH-1793973505522-750",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Tamil Literature",
+      "topicId": "REV-1793973505522",
+      "topicName": "Revision: அலகு V – வாசித்தல் – புரிந்து கொள்ளும் திறன்",
+      "date": "2026-12-04",
+      "testId": "TTA-5",
+      "createdAt": "2026-11-06T13:58:25.522Z"
+    },
+    {
       "id": "SCH-1793970215483-905",
       "courseId": "SPLTET",
       "courseName": "SPECIAL TET",
@@ -2224,6 +2598,17 @@
       "createdAt": "2026-11-06T13:03:35.483Z"
     },
     {
+      "id": "SCH-1793972020530-684",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit III - History, Culture & INM",
+      "topicId": "REV-1793972020530",
+      "topicName": "Revision: Different modes of agitation: Growth of Satyagraha, Different modes of agitation: Militant Movements",
+      "date": "2026-12-07",
+      "testId": "TIN-5",
+      "createdAt": "2026-11-06T13:33:40.530Z"
+    },
+    {
       "id": "SCH-1793968113548-560",
       "courseId": "SPLTET",
       "courseName": "SPECIAL TET",
@@ -2233,6 +2618,50 @@
       "date": "2026-12-07",
       "testId": "SPT-TA-26",
       "createdAt": "2026-11-06T12:28:33.548Z"
+    },
+    {
+      "id": "SCH-1793972618498-430",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit IV - Indian Polity",
+      "topicId": "REV-1793972618498",
+      "topicName": "Revision: Corruption in public life, Anti-corruption measures, Lokpal and Lok Ayukta",
+      "date": "2026-12-08",
+      "testId": "TIP-17",
+      "createdAt": "2026-11-06T13:43:38.498Z"
+    },
+    {
+      "id": "SCH-1793972648322-716",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit IV - Indian Polity",
+      "topicId": "REV-1793972648322",
+      "topicName": "Revision: Right to Information (RTI), Empowerment of Women",
+      "date": "2026-12-08",
+      "testId": "TIP-19",
+      "createdAt": "2026-11-06T13:44:08.322Z"
+    },
+    {
+      "id": "SCH-1793972744618-270",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit IV - Indian Polity",
+      "topicId": "REV-1793972744618",
+      "topicName": "Revision: Consumer Protection Forums",
+      "date": "2026-12-08",
+      "testId": "TIP-20",
+      "createdAt": "2026-11-06T13:45:44.618Z"
+    },
+    {
+      "id": "SCH-1793972756066-985",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit IV - Indian Polity",
+      "topicId": "REV-1793972756066",
+      "topicName": "Revision: Human Rights Charter",
+      "date": "2026-12-08",
+      "testId": "TIP-21",
+      "createdAt": "2026-11-06T13:45:56.066Z"
     },
     {
       "id": "SCH-1793968642811-177",
@@ -2257,6 +2686,17 @@
       "createdAt": "2026-11-06T12:50:03.931Z"
     },
     {
+      "id": "SCH-1793972998386-544",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit VI - TN History & Culture",
+      "topicId": "REV-1793972998386",
+      "topicName": "Revision: Evolution of 19th and 20th century socio-political movements in TN",
+      "date": "2026-12-09",
+      "testId": "TNS-8",
+      "createdAt": "2026-11-06T13:49:58.386Z"
+    },
+    {
       "id": "SCH-1793969814283-146",
       "courseId": "SPLTET",
       "courseName": "SPECIAL TET",
@@ -2266,6 +2706,17 @@
       "date": "2026-12-09",
       "testId": "SPT-EG-28",
       "createdAt": "2026-11-06T12:56:54.283Z"
+    },
+    {
+      "id": "SCH-1793973207594-298",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit I - Aptitude",
+      "topicId": "REV-1793973207594",
+      "topicName": "Revision: Area",
+      "date": "2026-12-10",
+      "testId": "TAP-7",
+      "createdAt": "2026-11-06T13:53:27.594Z"
     },
     {
       "id": "SCH-1793969445932-973",
@@ -2290,6 +2741,17 @@
       "createdAt": "2026-11-06T13:09:30.675Z"
     },
     {
+      "id": "SCH-1793973522794-591",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Tamil Literature",
+      "topicId": "REV-1793973522794",
+      "topicName": "Revision: அலகு VI – எளிய மொழி பெயர்ப்பு",
+      "date": "2026-12-11",
+      "testId": "TTA-6",
+      "createdAt": "2026-11-06T13:58:42.794Z"
+    },
+    {
       "id": "SCH-1793970244963-474",
       "courseId": "SPLTET",
       "courseName": "SPECIAL TET",
@@ -2301,6 +2763,17 @@
       "createdAt": "2026-11-06T13:04:04.963Z"
     },
     {
+      "id": "SCH-1793972061083-552",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit III - History, Culture & INM",
+      "topicId": "REV-1793972061083",
+      "topicName": "Revision: Characteristics of Indian Culture, Unity in Diversity (Race, Language, Custom), India as a Secular State, Social Harmony, Prominent personalities in Arts, Science, Literature and Philosophy, National symbols, Eminent personalities and places in news, Sports, Books and Authors, Current affairs in History",
+      "date": "2026-12-14",
+      "testId": "TIN-6",
+      "createdAt": "2026-11-06T13:34:21.083Z"
+    },
+    {
       "id": "SCH-1793968300508-451",
       "courseId": "SPLTET",
       "courseName": "SPECIAL TET",
@@ -2310,6 +2783,17 @@
       "date": "2026-12-14",
       "testId": "SPT-TA-31",
       "createdAt": "2026-11-06T12:31:40.508Z"
+    },
+    {
+      "id": "SCH-1793972787546-373",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit IV - Indian Polity",
+      "topicId": "REV-1793972787546",
+      "topicName": "Revision: Political parties and political system in India, Current affairs in Polity",
+      "date": "2026-12-15",
+      "testId": "TIP-22",
+      "createdAt": "2026-11-06T13:46:27.546Z"
     },
     {
       "id": "SCH-1793968696836-477",
@@ -2334,6 +2818,17 @@
       "createdAt": "2026-11-06T12:51:59.396Z"
     },
     {
+      "id": "SCH-1793973689210-645",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit V - Indian Economy & TN Admin",
+      "topicId": "REV-1793973689210",
+      "topicName": "Revision: Education and health systems in Tamil Nadu",
+      "date": "2026-12-16",
+      "testId": "TAD-1",
+      "createdAt": "2026-11-06T14:01:29.210Z"
+    },
+    {
       "id": "SCH-1793969950995-814",
       "courseId": "SPLTET",
       "courseName": "SPECIAL TET",
@@ -2343,6 +2838,17 @@
       "date": "2026-12-16",
       "testId": "SPT-EG-33",
       "createdAt": "2026-11-06T12:59:10.995Z"
+    },
+    {
+      "id": "SCH-1793973229826-973",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit I - Aptitude",
+      "topicId": "REV-1793973229826",
+      "topicName": "Revision: Volume",
+      "date": "2026-12-17",
+      "testId": "TAP-8",
+      "createdAt": "2026-11-06T13:53:49.826Z"
     },
     {
       "id": "SCH-1793969576996-891",
@@ -2367,6 +2873,17 @@
       "createdAt": "2026-11-06T13:10:28.603Z"
     },
     {
+      "id": "SCH-1793973544386-413",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Tamil Literature",
+      "topicId": "REV-1793973544386",
+      "topicName": "Revision: அலகு VII – இலக்கியம், தமிழ் அறிஞர்களும் தமிழ் தொண்டும்",
+      "date": "2026-12-18",
+      "testId": "TTA-7",
+      "createdAt": "2026-11-06T13:59:04.386Z"
+    },
+    {
       "id": "SCH-1793970298667-463",
       "courseId": "SPLTET",
       "courseName": "SPECIAL TET",
@@ -2376,6 +2893,149 @@
       "date": "2026-12-18",
       "testId": "SPT-PY-35",
       "createdAt": "2026-11-06T13:04:58.667Z"
+    },
+    {
+      "id": "SCH-1793972201754-714",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit V - Indian Economy & TN Admin",
+      "topicId": "REV-1793972201754",
+      "topicName": "Revision: Nature of Indian Economy, Five-year plan models - an assessment, Planning Commission and Niti Aayog, Sources of revenue, Reserve Bank of India, Finance Commission, Resource sharing between Union and State, Goods and Services Tax (GST)",
+      "date": "2026-12-21",
+      "testId": "TIE-1",
+      "createdAt": "2026-11-06T13:36:41.754Z"
+    },
+    {
+      "id": "SCH-1793973818538-309",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit II - Geography of India",
+      "topicId": "REV-1793973818538",
+      "topicName": "Revision: Location, Physical features, Monsoon, rainfall, weather and climate, Water resources, Rivers in India",
+      "date": "2026-12-22",
+      "testId": "TIG-1",
+      "createdAt": "2026-11-06T14:03:38.538Z"
+    },
+    {
+      "id": "SCH-1793973725058-485",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit V - Indian Economy & TN Admin",
+      "topicId": "REV-1793973725058",
+      "topicName": "Revision: Geography of Tamil Nadu and its impact on economic growth",
+      "date": "2026-12-23",
+      "testId": "TAD-2",
+      "createdAt": "2026-11-06T14:02:05.058Z"
+    },
+    {
+      "id": "SCH-1793973273650-660",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit II - Reasoning",
+      "topicId": "REV-1793973273650",
+      "topicName": "Revision: Logical reasoning",
+      "date": "2026-12-24",
+      "testId": "TRE-1",
+      "createdAt": "2026-11-06T13:54:33.650Z"
+    },
+    {
+      "id": "SCH-1793973294906-13",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit II - Reasoning",
+      "topicId": "REV-1793973294906",
+      "topicName": "Revision: Puzzles",
+      "date": "2026-12-24",
+      "testId": "TRE-2",
+      "createdAt": "2026-11-06T13:54:54.906Z"
+    },
+    {
+      "id": "SCH-1793973309898-150",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit II - Reasoning",
+      "topicId": "REV-1793973309898",
+      "topicName": "Revision: Dice",
+      "date": "2026-12-24",
+      "testId": "TRE-3",
+      "createdAt": "2026-11-06T13:55:09.898Z"
+    },
+    {
+      "id": "SCH-1793972240139-262",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit V - Indian Economy & TN Admin",
+      "topicId": "REV-1793972240139",
+      "topicName": "Revision: Structure of Indian economy and employment generation, Land Reforms and Agriculture, Application of Science and Technology in Agriculture, Industrial growth, Rural welfare oriented programmes",
+      "date": "2026-12-28",
+      "testId": "TIE-2",
+      "createdAt": "2026-11-06T13:37:20.139Z"
+    },
+    {
+      "id": "SCH-1793973885746-920",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit II - Geography of India",
+      "topicId": "REV-1793973885746",
+      "topicName": "Revision: Soil, Minerals and Natural Resources, Forest and Wildlife, Agricultural pattern, Transport and Communication, Natural calamity and Disaster management, Environmental pollution - Reasons and preventive measures, Climate change and Green energy, Geographical landmarks, Current affairs in Geography",
+      "date": "2026-12-29",
+      "testId": "TIG-2",
+      "createdAt": "2026-11-06T14:04:45.746Z"
+    },
+    {
+      "id": "SCH-1793973765674-870",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit V - Indian Economy & TN Admin",
+      "topicId": "REV-1793973765674",
+      "topicName": "Revision: Welfare oriented Government schemes and their utility, Current socio-economic issues",
+      "date": "2026-12-30",
+      "testId": "TAD-3",
+      "createdAt": "2026-11-06T14:02:45.674Z"
+    },
+    {
+      "id": "SCH-1793973336170-63",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit II - Reasoning",
+      "topicId": "REV-1793973336170",
+      "topicName": "Revision: Visual reasoning",
+      "date": "2026-12-31",
+      "testId": "TRE-4",
+      "createdAt": "2026-11-06T13:55:36.170Z"
+    },
+    {
+      "id": "SCH-1793973352434-341",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit II - Reasoning",
+      "topicId": "REV-1793973352434",
+      "topicName": "Revision: Alpha numeric reasoning",
+      "date": "2026-12-31",
+      "testId": "TRE-5",
+      "createdAt": "2026-11-06T13:55:52.434Z"
+    },
+    {
+      "id": "SCH-1793973366410-572",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit II - Reasoning",
+      "topicId": "REV-1793973366410",
+      "topicName": "Revision: Number series",
+      "date": "2026-12-31",
+      "testId": "TRE-6",
+      "createdAt": "2026-11-06T13:56:06.410Z"
+    },
+    {
+      "id": "SCH-1793972297546-73",
+      "courseId": "TNPSC",
+      "courseName": "TNPSC",
+      "subject": "Unit V - Indian Economy & TN Admin",
+      "topicId": "REV-1793972297546",
+      "topicName": "Revision: Social problems (Population, Education, Health, Employment, Poverty), Social justice and social harmony",
+      "date": "2027-01-01",
+      "testId": "TIE-3",
+      "createdAt": "2026-11-06T13:38:17.546Z"
     }
   ]
 }
