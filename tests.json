@@ -328,12 +328,6 @@
       "name": "CURRENT AFFAIRS",
       "categoryId": "SSC",
       "order": 4
-    },
-    {
-      "id": "COM-TAM",
-      "name": "COMMON TAMIL",
-      "categoryId": "COMMON",
-      "order": 1
     }
   ],
   "tests": [
