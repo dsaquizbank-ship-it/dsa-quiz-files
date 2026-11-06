@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-06T08:07:05.067Z",
+  "version": "2026-11-06T08:21:27.490Z",
   "categories": [
     {
       "id": "BANK",
@@ -1539,6 +1539,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-PY-1.html",
       "releaseTimestamp": 1793952000000,
       "language": "both"
+    },
+    {
+      "testId": "UGM-96",
+      "examId": "UG-MAT",
+      "name": "SIMPLEX, BIG-M, TWO PHASE METHOD  UGM-96",
+      "topic": "SIMPLEX, BIG-M, TWO PHASE METHOD",
+      "durationMinutes": 20,
+      "order": 96,
+      "questionCount": 20,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-96.html",
+      "releaseTimestamp": 1793952000000,
+      "language": "en"
     }
   ]
 }
