@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-06T12:30:49.196Z",
+  "version": "2026-11-06T12:58:15.739Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -13712,6 +13712,18 @@
         {
           "topicId": "SPLTET-T328",
           "topicName": "English | 8th – UNIT 8: Play - Jack and the Beanstalk"
+        },
+        {
+          "topicId": "SPLTET-T245",
+          "topicName": "English | 6th  –  GRAMMAR"
+        },
+        {
+          "topicId": "SPLTET-T246",
+          "topicName": "English | 7th  –  GRAMMAR"
+        },
+        {
+          "topicId": "SPLTET-T247",
+          "topicName": "English | 8th  –  GRAMMAR"
         },
         {
           "topicId": "SPLTET-T329",
