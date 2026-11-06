@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-06T12:31:51.876Z",
+  "version": "2026-11-06T13:15:35.803Z",
   "entries": [
     {
       "id": "SCH-1793613836155-285",
@@ -959,6 +959,39 @@
       "createdAt": "2026-10-31T04:29:10.209Z"
     },
     {
+      "id": "SCH-1793968479676-840",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Maths",
+      "topicId": "REV-1793968479676",
+      "topicName": "Revision: 6th Term 2 - Numbers, 6th Term 2 - Measurements, 6th Term 2 - Bill, Profit and Loss, 6th Term 2 - Geometry, 6th Term 2 - Information Processing",
+      "date": "2026-11-10",
+      "testId": "SPT-MS-7",
+      "createdAt": "2026-11-06T12:34:39.676Z"
+    },
+    {
+      "id": "SCH-1793968929844-400",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Social Science",
+      "topicId": "REV-1793968929844",
+      "topicName": "Revision: 6th Term 2 - History: Vedic Culture in North India and Megalithic Culture in South India, 6th Term 2 - History: Great Thinkers and New Faiths, 6th Term 2 - History: From Chiefdoms to Empires",
+      "date": "2026-11-10",
+      "testId": "SPT-SS-7",
+      "createdAt": "2026-11-06T12:42:09.844Z"
+    },
+    {
+      "id": "SCH-1793969668307-44",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "English",
+      "topicId": "REV-1793969668307",
+      "topicName": "Revision: 6th Term 3 – UNIT 1: Prose: Who Owns the Water?, Poem: Indian Seasons, Supplementary: A Childhood in Malabar: A Memoir, 6th Term 3 – UNIT 2: Prose: That Sunday Morning, Poem: A Tragic Story, Supplementary: Brought to Book, 6th Term 3 – UNIT 3: Play: The Jungle Book, 7th Term 1 – UNIT 1: Prose: Eidgah, Poem: The Computer Swallowed Grandma, Supplementary: On Monday Morning, 7th Term 1 – UNIT 2: Prose: The Wind on Haunted Hill 109, Poem: The Listeners 126 July, Supplementary: The Red-Headed League, 7th Term 1 – UNIT 3: Prose: A Prayer to the Teacher, Poem: Your Space, Supplementary Taking the Bully by the Horns",
+      "date": "2026-11-11",
+      "testId": "SPT-EG-8",
+      "createdAt": "2026-11-06T12:54:28.307Z"
+    },
+    {
       "id": "SCH-1793457532358-278",
       "courseId": "RRB",
       "courseName": "RRB",
@@ -1089,6 +1122,39 @@
       "date": "2026-11-11",
       "testId": "PGE-53",
       "createdAt": "2026-10-31T04:29:31.441Z"
+    },
+    {
+      "id": "SCH-1793969154908-317",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Social Science",
+      "topicId": "REV-1793969154908",
+      "topicName": "Revision: 6th Term 2 - Geography: Resources, 6th Term 2 - Civics: National Symbols, 6th Term 2 - Civics: The Constitution of India, 6th Term 2 - Economics: Economics-An Introduction",
+      "date": "2026-11-12",
+      "testId": "SPT-SS-9",
+      "createdAt": "2026-11-06T12:45:54.908Z"
+    },
+    {
+      "id": "SCH-1793970369747-444",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Science",
+      "topicId": "REV-1793970369747",
+      "topicName": "Revision: 6th Term 2 - Heat, 6th Term 2 - Electricity, 6th Term 2 - Changes around us, 6th Term 2 - Air, 6th Term 2 - The Cell, 6th Term 2 - Human Organ Systems",
+      "date": "2026-11-12",
+      "testId": "SPT-SC-9",
+      "createdAt": "2026-11-06T13:06:09.747Z"
+    },
+    {
+      "id": "SCH-1793970092323-368",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Child Development and Pedagogy",
+      "topicId": "REV-1793970092323",
+      "topicName": "Revision: Unit II - Theories of Child Development",
+      "date": "2026-11-13",
+      "testId": "SPT-PY-6",
+      "createdAt": "2026-11-06T13:01:32.323Z"
     },
     {
       "id": "SCH-1793457628006-535",
@@ -1300,6 +1366,39 @@
       "createdAt": "2026-10-31T04:34:38.953Z"
     },
     {
+      "id": "SCH-1793968513188-185",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Maths",
+      "topicId": "REV-1793968513188",
+      "topicName": "Revision: 6th Term 3 - Fractions, 6th Term 3 - Integers, 6th Term 3 - Perimeter and Area, 6th Term 3 - Symmetry, 6th Term 3 - Information Processing",
+      "date": "2026-11-17",
+      "testId": "SPT-MS-12",
+      "createdAt": "2026-11-06T12:35:13.188Z"
+    },
+    {
+      "id": "SCH-1793969180276-560",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Social Science",
+      "topicId": "REV-1793969180276",
+      "topicName": "Revision: 6th Term 3 - History: Society and Culture in Ancient Tamizhagam: The Sangam Age, 6th Term 3 - History: The Post-Mauryan India, 6th Term 3 - History: The Age of Empires: Guptas and Vardhanas, 6th Term 3 - History: South Indian Kingdoms",
+      "date": "2026-11-17",
+      "testId": "SPT-SS-12",
+      "createdAt": "2026-11-06T12:46:20.276Z"
+    },
+    {
+      "id": "SCH-1793969706851-139",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "English",
+      "topicId": "REV-1793969706851",
+      "topicName": "Revision: 7th Term 2 – UNIT 1: Prose: Adventures of Don Quixote, Poem: The Age of Chivalry, Supplementary: Alice in Wonderland, 7th Term 2 – UNIT 2: Prose: The Last Stone Carver, Poem: Wandering Singers, Supplementary: Naya – The Home of Chitrakaars, 7th Term 3 – UNIT 1: Prose: Journey by Train, Poem: Sea Fever, Supplementary: Sindbad – My First Voyage, 7th Term 3 – UNIT 2: Prose: A Story of Self Sacrifice and Bravery, Poem: Courage, Supplementary: Man Overboard, 7th Term 3 – UNIT 3: Play: Jane Eyre",
+      "date": "2026-11-18",
+      "testId": "SPT-EG-13",
+      "createdAt": "2026-11-06T12:55:06.851Z"
+    },
+    {
       "id": "SCH-1793457554885-495",
       "courseId": "RRB",
       "courseName": "RRB",
@@ -1419,6 +1518,39 @@
       "date": "2026-11-18",
       "testId": "PGE-56",
       "createdAt": "2026-10-31T04:35:22.281Z"
+    },
+    {
+      "id": "SCH-1793969219292-522",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Social Science",
+      "topicId": "REV-1793969219292",
+      "topicName": "Revision: 6th Term 3 - Geography: Asia and Europe, 6th Term 3 - Geography: Globe, 6th Term 3 - Geography: Understanding Disaster, 6th Term 3 - Civics: Democracy, 6th Term 3 - Civics: Local Bodies - Rural and Urban, 6th Term 3 - Civics: Road Safety",
+      "date": "2026-11-19",
+      "testId": "SPT-SS-14",
+      "createdAt": "2026-11-06T12:46:59.292Z"
+    },
+    {
+      "id": "SCH-1793970393915-814",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Science",
+      "topicId": "REV-1793970393915",
+      "topicName": "Revision: 6th Term 3 - Magnetism, 6th Term 3 - Water, 6th Term 3 - Chemistry in Everyday Life, 6th Term 3 - Our Environment, 6th Term 3 - Plants in Daily Life",
+      "date": "2026-11-19",
+      "testId": "SPT-SC-14",
+      "createdAt": "2026-11-06T13:06:33.915Z"
+    },
+    {
+      "id": "SCH-1793970152075-915",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Child Development and Pedagogy",
+      "topicId": "REV-1793970152075",
+      "topicName": "Revision: Unit III - Attention, Perception and Memory",
+      "date": "2026-11-20",
+      "testId": "SPT-PY-15",
+      "createdAt": "2026-11-06T13:02:32.075Z"
     },
     {
       "id": "SCH-1793457653853-424",
@@ -1630,6 +1762,39 @@
       "createdAt": "2026-10-31T04:38:26.153Z"
     },
     {
+      "id": "SCH-1793968550124-502",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Maths",
+      "topicId": "REV-1793968550124",
+      "topicName": "Revision: 7th Term 1 - Number System, 7th Term 1 - Measurements, 7th Term 1 - Algebra, 7th Term 1 - Direct and Inverse Proportion, 7th Term 1 - Geometry, 7th Term 1 - Information Processing",
+      "date": "2026-11-24",
+      "testId": "SPT-MS-17",
+      "createdAt": "2026-11-06T12:35:50.124Z"
+    },
+    {
+      "id": "SCH-1793969250987-950",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Social Science",
+      "topicId": "REV-1793969250987",
+      "topicName": "Revision: 7th Term 1 - History: Sources of Medieval India, 7th Term 1 - History: Emergence of New Kingdoms in North India, 7th Term 1 - History: Emergence of New Kingdoms in South India: Later Cholas and Pandyas, 7th Term 1 - History: The Delhi Sultanate, 7th Term 1 - Economics: Production",
+      "date": "2026-11-24",
+      "testId": "SPT-SS-17",
+      "createdAt": "2026-11-06T12:47:30.987Z"
+    },
+    {
+      "id": "SCH-1793969741003-377",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "English",
+      "topicId": "REV-1793969741003",
+      "topicName": "Revision: 8th – UNIT 1: Prose: The Nose-Jewel, Poem: Special Hero, Supplementary: The Woman on Platform 8, 8th – UNIT 2: Prose: Hobby Turns into A Successful Career, Poem: My Hobby: Reading, Supplementary: Jim Corbett, A Hunter Turned Naturalist, 8th – UNIT 3: Prose - Sir Isaac Newton -The Ingenious Scientist, Poem - Making Life Worth While, Supplementary - The Three Questions",
+      "date": "2026-11-25",
+      "testId": "SPT-EG-18",
+      "createdAt": "2026-11-06T12:55:41.003Z"
+    },
+    {
       "id": "SCH-1793457576205-749",
       "courseId": "RRB",
       "courseName": "RRB",
@@ -1749,6 +1914,39 @@
       "date": "2026-11-25",
       "testId": "PGE-59",
       "createdAt": "2026-10-31T04:42:45.457Z"
+    },
+    {
+      "id": "SCH-1793969284091-441",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Social Science",
+      "topicId": "REV-1793969284091",
+      "topicName": "Revision: 7th Term 1 - Geography: Interior of the Earth, 7th Term 1 - Geography: Landforms, 7th Term 1 - Geography: Population and Settlement, 7th Term 1 - Civics: Equality, 7th Term 1 - Civics: Political Parties",
+      "date": "2026-11-26",
+      "testId": "SPT-SS-19",
+      "createdAt": "2026-11-06T12:48:04.091Z"
+    },
+    {
+      "id": "SCH-1793970461819-551",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Science",
+      "topicId": "REV-1793970461819",
+      "topicName": "Revision: 7th Term 1 - Measurements, 7th Term 1 - Force And Motion, 7th Term 1 - Matter Around Us, 7th Term 1 - Atomic Structure, 7th Term 1 - Reproduction and Modification in plants, 7th Term 1 - Health And Hygiene",
+      "date": "2026-11-26",
+      "testId": "SPT-SC-19",
+      "createdAt": "2026-11-06T13:07:41.819Z"
+    },
+    {
+      "id": "SCH-1793970175284-120",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Child Development and Pedagogy",
+      "topicId": "REV-1793970175284",
+      "topicName": "Revision: Unit IV - Motivation and Learning",
+      "date": "2026-11-27",
+      "testId": "SPT-PY-20",
+      "createdAt": "2026-11-06T13:02:55.284Z"
     },
     {
       "id": "SCH-1793457675341-144",
@@ -1960,6 +2158,72 @@
       "createdAt": "2026-10-31T04:43:56.393Z"
     },
     {
+      "id": "SCH-1793968606324-559",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Maths",
+      "topicId": "REV-1793968606324",
+      "topicName": "Revision: 7th Term 2 - Number System, 7th Term 2 - Measurements, 7th Term 2 - Algebra, 7th Term 2 - Geometry, 7th Term 2 - Information Processing",
+      "date": "2026-12-01",
+      "testId": "SPT-MS-22",
+      "createdAt": "2026-11-06T12:36:46.324Z"
+    },
+    {
+      "id": "SCH-1793969312652-689",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Social Science",
+      "topicId": "REV-1793969312652",
+      "topicName": "Revision: 7th Term 2 - History: Vijayanagar and Bahmani Kingdoms, 7th Term 2 - History: The Mughal Empire, 7th Term 2 - History: Rise of Marathas and Peshwas",
+      "date": "2026-12-01",
+      "testId": "SPT-SS-22",
+      "createdAt": "2026-11-06T12:48:32.652Z"
+    },
+    {
+      "id": "SCH-1793969783739-700",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "English",
+      "topicId": "REV-1793969783739",
+      "topicName": "Revision: 8th – UNIT 4: Prose - My Reminiscence, Poem - A Thing of Beauty, Supplementary - Crossing the River, 8th – UNIT 5: Prose - Being Safe, Poem - Fire Work Night, Supplementary - When Instinct Works, 8th – UNIT 6: Prose – Friendship, Poem - Lessons in Life, Supplementary - Homeless Man and his Friends",
+      "date": "2026-12-02",
+      "testId": "SPT-EG-23",
+      "createdAt": "2026-11-06T12:56:23.739Z"
+    },
+    {
+      "id": "SCH-1793969362772-224",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Social Science",
+      "topicId": "REV-1793969362772",
+      "topicName": "Revision: 7th Term 2 - Geography: Resources, 7th Term 2 - Geography: Tourism, 7th Term 2 - Civics: State Government, 7th Term 2 - Civics: Media and Democracy",
+      "date": "2026-12-03",
+      "testId": "SPT-SS-24",
+      "createdAt": "2026-11-06T12:49:22.772Z"
+    },
+    {
+      "id": "SCH-1793970530467-659",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Science",
+      "topicId": "REV-1793970530467",
+      "topicName": "Revision: 7th Term 2 - Heat and Temperature, 7th Term 2 - Electricity, 7th Term 2 - Changes around us, 7th Term 2 - Cell Biology, 7th Term 2 - Basis of Classification",
+      "date": "2026-12-03",
+      "testId": "SPT-SC-24",
+      "createdAt": "2026-11-06T13:08:50.467Z"
+    },
+    {
+      "id": "SCH-1793970215483-905",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Child Development and Pedagogy",
+      "topicId": "REV-1793970215483",
+      "topicName": "Revision: Unit V - Intelligence and Creativity",
+      "date": "2026-12-04",
+      "testId": "SPT-PY-25",
+      "createdAt": "2026-11-06T13:03:35.483Z"
+    },
+    {
       "id": "SCH-1793968113548-560",
       "courseId": "SPLTET",
       "courseName": "SPECIAL TET",
@@ -1971,6 +2235,72 @@
       "createdAt": "2026-11-06T12:28:33.548Z"
     },
     {
+      "id": "SCH-1793968642811-177",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Maths",
+      "topicId": "REV-1793968642811",
+      "topicName": "Revision: 7th Term 3 - Number System, 7th Term 3 - Percentage and Simple Interest, 7th Term 3 - Algebra, 7th Term 3 - Geometry, 7th Term 3 - Statistics, 7th Term 3 - Information Processing",
+      "date": "2026-12-08",
+      "testId": "SPT-MS-27",
+      "createdAt": "2026-11-06T12:37:22.811Z"
+    },
+    {
+      "id": "SCH-1793969403931-526",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Social Science",
+      "topicId": "REV-1793969403931",
+      "topicName": "Revision: 7th Term 3 - History: New Religious Ideas and Movements, 7th Term 3 - History: Art and Architecture of Tamil Nadu, 7th Term 3 - History: Jainism, Buddhism and Ajivika Philosophy in Tamil Nadu, 7th Term 3 - Economics: Tax and its importance",
+      "date": "2026-12-08",
+      "testId": "SPT-SS-27",
+      "createdAt": "2026-11-06T12:50:03.931Z"
+    },
+    {
+      "id": "SCH-1793969814283-146",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "English",
+      "topicId": "REV-1793969814283",
+      "topicName": "Revision: 8th – UNIT 7: Prose - Cyber Safety, Poem - My Computer Needs A Break, Supplementary - The Mystery of the Cyber Friend, 8th – UNIT 8: Play - Jack and the Beanstalk",
+      "date": "2026-12-09",
+      "testId": "SPT-EG-28",
+      "createdAt": "2026-11-06T12:56:54.283Z"
+    },
+    {
+      "id": "SCH-1793969445932-973",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Social Science",
+      "topicId": "REV-1793969445932",
+      "topicName": "Revision: 7th Term 3 - Geography: Exploring Continents - North America and South America, 7th Term 3 - Geography: Map Reading, 7th Term 3 - Geography: Natural Hazards - Understanding of Disaster Management in Practice, 7th Term 3 - Civics: Women Empowerment, 7th Term 3 - Civics: Market and Consumer Protection, 7th Term 3 - Civics: Road Safety",
+      "date": "2026-12-10",
+      "testId": "SPT-SS-29",
+      "createdAt": "2026-11-06T12:50:45.932Z"
+    },
+    {
+      "id": "SCH-1793970570675-544",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Science",
+      "topicId": "REV-1793970570675",
+      "topicName": "Revision: 7th Term 3 - Light, 7th Term 3 - Universe and Space, 7th Term 3 - Polymer Chemistry, 7th Term 3 - Chemistry in Daily Life, 7th Term 3 - Animals in Daily Life",
+      "date": "2026-12-10",
+      "testId": "SPT-SC-29",
+      "createdAt": "2026-11-06T13:09:30.675Z"
+    },
+    {
+      "id": "SCH-1793970244963-474",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Child Development and Pedagogy",
+      "topicId": "REV-1793970244963",
+      "topicName": "Revision: Unit VI - Personality",
+      "date": "2026-12-11",
+      "testId": "SPT-PY-30",
+      "createdAt": "2026-11-06T13:04:04.963Z"
+    },
+    {
       "id": "SCH-1793968300508-451",
       "courseId": "SPLTET",
       "courseName": "SPECIAL TET",
@@ -1980,6 +2310,72 @@
       "date": "2026-12-14",
       "testId": "SPT-TA-31",
       "createdAt": "2026-11-06T12:31:40.508Z"
+    },
+    {
+      "id": "SCH-1793968696836-477",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Maths",
+      "topicId": "REV-1793968696836",
+      "topicName": "Revision: 8th Standard - Numbers, 8th Standard - Measurements, 8th Standard - Algebra, 8th Standard - Life Mathematics, 8th Standard - Geometry, 8th Standard - Statistics, 8th Standard - Information Processing",
+      "date": "2026-12-15",
+      "testId": "SPT-MS-32",
+      "createdAt": "2026-11-06T12:38:16.836Z"
+    },
+    {
+      "id": "SCH-1793969519396-820",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Social Science",
+      "topicId": "REV-1793969519396",
+      "topicName": "Revision: 8th Standard - History: Advent of the Europeans, 8th Standard - History: From Trade to Territory, 8th Standard - History: Rural Life and Society, 8th Standard - History: People's Revolt, 8th Standard - History: Educational Development in India, 8th Standard - History: Development of Industries in India, 8th Standard - History: Urban changes during the British period, 8th Standard - History: Status of Women in India through the ages, 8th Standard - Economics: Money, Savings and Investments, 8th Standard - Economics: Public and Private Sectors",
+      "date": "2026-12-15",
+      "testId": "SPT-SS-32",
+      "createdAt": "2026-11-06T12:51:59.396Z"
+    },
+    {
+      "id": "SCH-1793969950995-814",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "English",
+      "topicId": "REV-1793969950995",
+      "topicName": "Revision: 6th  –  GRAMMAR, 7th  –  GRAMMAR, 8th  –  GRAMMAR",
+      "date": "2026-12-16",
+      "testId": "SPT-EG-33",
+      "createdAt": "2026-11-06T12:59:10.995Z"
+    },
+    {
+      "id": "SCH-1793969576996-891",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Social Science",
+      "topicId": "REV-1793969576996",
+      "topicName": "Revision: 8th Standard - Geography: Rocks and Soils, 8th Standard - Geography: Weather and Climate, 8th Standard - Geography: Hydrologic Cycle, 8th Standard - Geography: Migration and Urbanisation, 8th Standard - Geography: Hazards, 8th Standard - Geography: Industries, 8th Standard - Geography: Exploring Continents: Africa, Australia and Antarctica, 8th Standard - Geography: Map Reading, 8th Standard - Civics: How the State Government Works, 8th Standard - Civics: Citizens and Citizenship, 8th Standard - Civics: Understanding Secularism, 8th Standard - Civics: Human Rights and UNO, 8th Standard - Civics: Road Safety Rules and Regulations, 8th Standard - Civics: Defence & Foreign Policy, 8th Standard - Civics: The Judiciary",
+      "date": "2026-12-17",
+      "testId": "SPT-SS-34",
+      "createdAt": "2026-11-06T12:52:56.996Z"
+    },
+    {
+      "id": "SCH-1793970628603-729",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Science",
+      "topicId": "REV-1793970628603",
+      "topicName": "Revision: 8th Standard - Measurements, 8th Standard - Force And Pressure, 8th Standard - Light, 8th Standard - Heat, 8th Standard - Electricity, 8th Standard - Sound, 8th Standard - Magnetism, 8th Standard - Universe and Space Science, 8th Standard - Matter Around Us, 8th Standard - Changes around Us, 8th Standard - Air, 8th Standard - Atomic Structure, 8th Standard - Water, 8th Standard - Acid and Bases, 8th Standard - Chemistry in Everyday Life, 8th Standard - Microorganisms, 8th Standard - Plant Kingdom, 8th Standard - Organisation of Life, 8th Standard - Movements in Animals, 8th Standard - Reaching the Age of Adolescence, 8th Standard - Crop Production and Management, 8th Standard - Conservation of Plants and Animals",
+      "date": "2026-12-17",
+      "testId": "SPT-SC-34",
+      "createdAt": "2026-11-06T13:10:28.603Z"
+    },
+    {
+      "id": "SCH-1793970298667-463",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Child Development and Pedagogy",
+      "topicId": "REV-1793970298667",
+      "topicName": "Revision: Unit VII - Socializing Agencies of Child Development, Unit VIII - Pedagogical Concerns (Part I), Unit IX - Pedagogical Concerns (Part II), Unit X - Pedagogical Concerns (Part III)",
+      "date": "2026-12-18",
+      "testId": "SPT-PY-35",
+      "createdAt": "2026-11-06T13:04:58.667Z"
     }
   ]
 }
