@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-05T17:48:57.671Z",
+  "version": "2026-11-06T00:48:39.918Z",
   "categories": [
     {
       "id": "BANK",
@@ -322,6 +322,12 @@
       "name": "CURRENT AFFAIRS",
       "categoryId": "RRB",
       "order": 6
+    },
+    {
+      "id": "BANK-ENG",
+      "name": "ENGLISH",
+      "categoryId": "BANK",
+      "order": 3
     }
   ],
   "tests": [
@@ -1394,6 +1400,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGA-3.html",
       "releaseTimestamp": 1793952000000,
       "language": "both"
+    },
+    {
+      "testId": "BEG-1",
+      "examId": "BANK-ENG",
+      "name": "READING COMPREHENSION BEG-1",
+      "topic": "READING COMPREHENSION",
+      "durationMinutes": 30,
+      "order": 1,
+      "questionCount": 30,
+      "negativeMark": 0.25,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BEG-1.html",
+      "releaseTimestamp": 1793952000000,
+      "language": "en"
     }
   ]
 }
