@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-05T07:05:50.679Z",
+  "version": "2026-11-06T12:30:49.196Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -13596,6 +13596,26 @@
         {
           "topicId": "SPLTET-T304",
           "topicName": "Tamil | 8th Lesson 9 – மனிதம், ஆளுமை - குன்றை நிமிர்ந்துநில்"
+        },
+        {
+          "topicId": "SPLTET-T240",
+          "topicName": "Tamil | 6th  –  இலக்கணம்"
+        },
+        {
+          "topicId": "SPLTET-T241",
+          "topicName": "Tamil | 7th  –  இலக்கணம்"
+        },
+        {
+          "topicId": "SPLTET-T242",
+          "topicName": "Tamil | 8th  –  இலக்கணம்"
+        },
+        {
+          "topicId": "SPLTET-T243",
+          "topicName": "Tamil | 9th  –  இலக்கணம்"
+        },
+        {
+          "topicId": "SPLTET-T244",
+          "topicName": "Tamil | 10th  –  இலக்கணம்"
         },
         {
           "topicId": "SPLTET-T305",
