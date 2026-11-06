@@ -47,12 +47,7 @@
       "order": 9
     },
     {
-      "id": "COM-TAM",
-      "name": "COMMON TAMIL",
-      "order": 10
-    },
-    {
-      "id": "COMMON",
+      "id": "COMMONTAMIL",
       "name": "COMMON TAMIL",
       "order": 10
     }
@@ -333,12 +328,6 @@
       "name": "CURRENT AFFAIRS",
       "categoryId": "SSC",
       "order": 4
-    },
-    {
-      "id": "COM-TAM",
-      "name": "COMMON TAMIL",
-      "categoryId": "COMMON",
-      "order": 1
     },
     {
       "id": "SSC-EG",
