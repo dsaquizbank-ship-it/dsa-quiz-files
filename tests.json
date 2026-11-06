@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-06T07:59:48.848Z",
+  "version": "2026-11-06T08:01:39.410Z",
   "categories": [
     {
       "id": "BANK",
@@ -356,6 +356,12 @@
       "id": "SPL-PSYCHOLOGY",
       "name": "PSYCHOLOGY",
       "categoryId": "SPLTET",
+      "order": 6
+    },
+    {
+      "id": "TET-PSYCHOLOGY",
+      "name": "TET PSYCHOLOGY",
+      "categoryId": "TNTET",
       "order": 6
     }
   ],
@@ -1518,6 +1524,19 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-PY-1.html",
+      "releaseTimestamp": 1793952000000,
+      "language": "both"
+    },
+    {
+      "testId": "TET-PY-1",
+      "examId": "TET-PSYCHOLOGY",
+      "name": "UNIT-1: GROWTH AND DEVELOPMENT TET-PY-1",
+      "topic": "UNIT-1: GROWTH AND DEVELOPMENT",
+      "durationMinutes": 15,
+      "order": 1,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-PY-1.html",
       "releaseTimestamp": 1793952000000,
       "language": "both"
     }
