@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-06T12:58:15.739Z",
+  "version": "2026-11-06T13:45:02.986Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -362,8 +362,12 @@
           "topicName": "Unit IV - Indian Polity | Empowerment of Women"
         },
         {
-          "topicId": "TNPSC-T078",
-          "topicName": "Unit IV - Indian Polity | Consumer Protection Forums, Human Rights Charter"
+          "topicId": "TNPSC-T178",
+          "topicName": "Unit IV - Indian Polity | Consumer Protection Forums"
+        },
+        {
+          "topicId": "TNPSC-T179",
+          "topicName": "Unit IV - Indian Polity | Human Rights Charter"
         },
         {
           "topicId": "TNPSC-T079",
