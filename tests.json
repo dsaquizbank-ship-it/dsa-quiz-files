@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-06T08:21:27.490Z",
+  "version": "2026-11-06T09:37:50.844Z",
   "categories": [
     {
       "id": "BANK",
@@ -352,6 +352,12 @@
       "name": "TET PSYCHOLOGY",
       "categoryId": "TNTET",
       "order": 6
+    },
+    {
+      "id": "COM-TAM",
+      "name": "COMMON TAMIL",
+      "categoryId": "COMMONTAMIL",
+      "order": 1
     }
   ],
   "tests": [
