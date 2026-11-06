@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-06T07:40:01.707Z",
+  "version": "2026-11-06T07:48:26.187Z",
   "categories": [
     {
       "id": "BANK",
@@ -48,6 +48,11 @@
     },
     {
       "id": "COM-TAM",
+      "name": "COMMON TAMIL",
+      "order": 10
+    },
+    {
+      "id": "COMMON",
       "name": "COMMON TAMIL",
       "order": 10
     }
@@ -328,6 +333,12 @@
       "name": "CURRENT AFFAIRS",
       "categoryId": "SSC",
       "order": 4
+    },
+    {
+      "id": "COM-TAM",
+      "name": "COMMON TAMIL",
+      "categoryId": "COMMON",
+      "order": 1
     }
   ],
   "tests": [
@@ -1437,6 +1448,19 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/COM-TA-1.html",
+      "releaseTimestamp": 1793952000000,
+      "language": "ta"
+    },
+    {
+      "testId": "COM-TA-2",
+      "examId": "COM-TAM",
+      "name": "10 TH IYAL 4 COM-TA-1",
+      "topic": "10 TH IYAL 4",
+      "durationMinutes": 20,
+      "order": 1,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/COM-TA-2.html",
       "releaseTimestamp": 1793952000000,
       "language": "ta"
     }
