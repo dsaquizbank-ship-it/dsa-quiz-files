@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-06T06:20:48.559Z",
+  "version": "2026-11-06T06:41:45.854Z",
   "categories": [
     {
       "id": "BANK",
@@ -1445,6 +1445,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SCA-1.html",
       "releaseTimestamp": 1793952000000,
       "language": "en"
+    },
+    {
+      "testId": "RGS-3",
+      "examId": "RRB-GS",
+      "name": "CELL, GENETICS & EVOLUTION RGS-3",
+      "topic": "CELL, GENETICS & EVOLUTION",
+      "durationMinutes": 10,
+      "order": 3,
+      "questionCount": 20,
+      "negativeMark": 0.33,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGS-3.html",
+      "releaseTimestamp": 1793952000000,
+      "language": "both"
     }
   ]
 }
