@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-06T09:37:50.844Z",
+  "version": "2026-11-06T09:47:28.607Z",
   "categories": [
     {
       "id": "BANK",
@@ -355,6 +355,12 @@
     },
     {
       "id": "10TH",
+      "name": "10TH STD",
+      "categoryId": "COMMONTAMIL",
+      "order": 1
+    },
+    {
+      "id": "COM-TAM",
       "name": "10TH STD",
       "categoryId": "COMMONTAMIL",
       "order": 1
