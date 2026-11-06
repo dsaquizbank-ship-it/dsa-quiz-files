@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-06T06:18:08.406Z",
+  "version": "2026-11-06T06:20:04.403Z",
   "categories": [
     {
       "id": "BANK",
@@ -328,6 +328,12 @@
       "name": "ENGLISH",
       "categoryId": "BANK",
       "order": 3
+    },
+    {
+      "id": "SSC-CA",
+      "name": "CURRENT AFFAIRS",
+      "categoryId": "SSC",
+      "order": 4
     }
   ],
   "tests": [
@@ -1424,6 +1430,19 @@
       "questionCount": 50,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RCA-1.html",
+      "releaseTimestamp": 1793952000000,
+      "language": "en"
+    },
+    {
+      "testId": "SCA-1",
+      "examId": "SSC-CA",
+      "name": "OCTOBER FULL MONTH RCA-3",
+      "topic": "OCTOBER FULL MONTH",
+      "durationMinutes": 30,
+      "order": 1,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SCA-1.html",
       "releaseTimestamp": 1793952000000,
       "language": "en"
     }
