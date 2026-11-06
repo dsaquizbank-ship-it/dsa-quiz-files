@@ -715,11 +715,16 @@
         }
       ]
     },
-{
-  "courseId": "DEMO",
-  "courseName": "DEMO",
-  "topics": []
-},
+    {
+      "courseId": "DEMO",
+      "courseName": "DEMO",
+      "topics": []
+    },
+    {
+      "courseId": "COMMON",
+      "courseName": "COMMON TAMIL",
+      "topics": []
+    },
     {
       "courseId": "SSC",
       "courseName": "SSC",
