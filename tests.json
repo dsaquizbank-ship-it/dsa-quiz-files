@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-06T06:11:32.634Z",
+  "version": "2026-11-06T06:16:59.385Z",
   "categories": [
     {
       "id": "BANK",
@@ -123,7 +123,7 @@
       "id": "BANK-CA",
       "name": "CURRENT AFFAIRS",
       "categoryId": "BANK",
-      "order": 24
+      "order": 4
     },
     {
       "id": "TET-PSY",
@@ -1398,6 +1398,19 @@
       "questionCount": 30,
       "negativeMark": 0.25,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BEG-1.html",
+      "releaseTimestamp": 1793952000000,
+      "language": "en"
+    },
+    {
+      "testId": "BCA-1",
+      "examId": "BANK-CA",
+      "name": "OCTOBER FULL MONTH BCA-1",
+      "topic": "OCTOBER FULL MONTH",
+      "durationMinutes": 30,
+      "order": 1,
+      "questionCount": 50,
+      "negativeMark": 0.25,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BCA-1.html",
       "releaseTimestamp": 1793952000000,
       "language": "en"
     }
