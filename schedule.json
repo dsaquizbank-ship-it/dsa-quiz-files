@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-05T12:14:57.239Z",
+  "version": "2026-11-06T12:31:51.876Z",
   "entries": [
     {
       "id": "SCH-1793613836155-285",
@@ -805,6 +805,17 @@
       "createdAt": "2026-10-31T04:28:45.361Z"
     },
     {
+      "id": "SCH-1793967908052-163",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Tamil",
+      "topicId": "REV-1793967908052",
+      "topicName": "Revision: 6th Term 3 – நாடு, சமூகம், அரசு, நிர்வாகம், 6th Term 3 – அறம், தத்துவம், சிந்தனை, 6th Term 3 – மனிதம், ஆளுமை, 7th Term 1 – வாழி - அழகுத் தமிழ், 7th Term 1 – இயற்கை - அணிறில் காடு, 7th Term 1 – நாடு, சமூகம் - நாடு அழகு நாடு",
+      "date": "2026-11-09",
+      "testId": "SPT-TA-6",
+      "createdAt": "2026-11-06T12:25:08.052Z"
+    },
+    {
       "id": "SCH-1793457426942-371",
       "courseId": "RRB",
       "courseName": "RRB",
@@ -1157,6 +1168,17 @@
       "createdAt": "2026-10-31T04:30:24.897Z"
     },
     {
+      "id": "SCH-1793967986692-341",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Tamil",
+      "topicId": "REV-1793967986692",
+      "topicName": "Revision: 7th Term 2 – கல்வி: ஒதுவது ஒழியேல், 7th Term 2 – கலை, அழகியல்: கலைவண்ணம், 7th Term 3 – நாகரிகம், பண்பாடு, தொழில், வணிகம் - நபத்து நாகரிகம், 7th Term 3 – அறம், தத்துவம், சிந்தனை - ஒப்பார ஒழுகு, 7th Term 3 – மனிதம், ஆளுமை - மனுடம் வெல்லும்",
+      "date": "2026-11-16",
+      "testId": "SPT-TA-11",
+      "createdAt": "2026-11-06T12:26:26.692Z"
+    },
+    {
       "id": "SCH-1793457446501-494",
       "courseId": "RRB",
       "courseName": "RRB",
@@ -1474,6 +1496,17 @@
       "date": "2026-11-20",
       "testId": "PGE-57",
       "createdAt": "2026-10-31T04:35:50.225Z"
+    },
+    {
+      "id": "SCH-1793968059252-341",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Tamil",
+      "topicId": "REV-1793968059252",
+      "topicName": "Revision: 8th Lesson 1 – மொழி - தமிழ் இன்பம், 8th Lesson 2 – இயற்கை - ஈடில்லா இயற்கை, 8th Lesson 3 – அறிவியல், தொழில்நுட்பம் - உடலை ஓம்புமின்",
+      "date": "2026-11-23",
+      "testId": "SPT-TA-16",
+      "createdAt": "2026-11-06T12:27:39.252Z"
     },
     {
       "id": "SCH-1793457467405-376",
@@ -1795,6 +1828,17 @@
       "createdAt": "2026-10-31T04:43:21.913Z"
     },
     {
+      "id": "SCH-1793968087500-514",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Tamil",
+      "topicId": "REV-1793968087500",
+      "topicName": "Revision: 8th Lesson 4 – கல்வி - கல்வி கரையில, 8th Lesson 5 – கலை, அழகியல், பண்பாடு - குழலினிது யாழினிது, 8th Lesson 6 – நகரம், தொழில், வணிகம் - வையம்பகழ் வணிகம்",
+      "date": "2026-11-30",
+      "testId": "SPT-TA-21",
+      "createdAt": "2026-11-06T12:28:07.500Z"
+    },
+    {
       "id": "SCH-1793457488558-671",
       "courseId": "RRB",
       "courseName": "RRB",
@@ -1914,6 +1958,28 @@
       "date": "2026-11-30",
       "testId": "PGE-61",
       "createdAt": "2026-10-31T04:43:56.393Z"
+    },
+    {
+      "id": "SCH-1793968113548-560",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Tamil",
+      "topicId": "REV-1793968113548",
+      "topicName": "Revision: 8th Lesson 7 – நாடு, சமூகம் - பாருக்குளே நல்ல நாடு, 8th Lesson 8 – அறம், தத்துவம், சிந்தனை - அறத்தால் வருவதே இன்பம், 8th Lesson 9 – மனிதம், ஆளுமை - குன்றை நிமிர்ந்துநில்",
+      "date": "2026-12-07",
+      "testId": "SPT-TA-26",
+      "createdAt": "2026-11-06T12:28:33.548Z"
+    },
+    {
+      "id": "SCH-1793968300508-451",
+      "courseId": "SPLTET",
+      "courseName": "SPECIAL TET",
+      "subject": "Tamil",
+      "topicId": "REV-1793968300508",
+      "topicName": "Revision: 6th  –  இலக்கணம், 7th  –  இலக்கணம், 8th  –  இலக்கணம், 9th  –  இலக்கணம், 10th  –  இலக்கணம்",
+      "date": "2026-12-14",
+      "testId": "SPT-TA-31",
+      "createdAt": "2026-11-06T12:31:40.508Z"
     }
   ]
 }
