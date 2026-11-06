@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-06T07:08:27.711Z",
+  "version": "2026-11-06T07:40:01.707Z",
   "categories": [
     {
       "id": "BANK",
@@ -1359,19 +1359,6 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TTA-1.html",
       "releaseTimestamp": 1793952000000,
       "language": "ta"
-    },
-    {
-      "testId": "RCA-3",
-      "examId": "RRB-CA",
-      "name": "OCTOBER FULL MONTH RCA-3",
-      "topic": "OCTOBER FULL MONTH",
-      "durationMinutes": 30,
-      "order": 3,
-      "questionCount": 50,
-      "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RCA-3.html",
-      "releaseTimestamp": 1793952000000,
-      "language": "en"
     },
     {
       "testId": "SGS-3",
