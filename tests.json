@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-06T07:55:18.270Z",
+  "version": "2026-11-06T07:59:48.848Z",
   "categories": [
     {
       "id": "BANK",
@@ -351,6 +351,12 @@
       "name": "ENGLISH",
       "categoryId": "RRB",
       "order": 3
+    },
+    {
+      "id": "SPL-PSYCHOLOGY",
+      "name": "PSYCHOLOGY",
+      "categoryId": "SPLTET",
+      "order": 6
     }
   ],
   "tests": [
@@ -1501,6 +1507,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/REG-1.html",
       "releaseTimestamp": 1793952000000,
       "language": "en"
+    },
+    {
+      "testId": "SPT-PY-1",
+      "examId": "SPL-PSYCHOLOGY",
+      "name": "UNIT-1: GROWTH AND DEVELOPMENT SPT-PY-1",
+      "topic": "UNIT-1: GROWTH AND DEVELOPMENT",
+      "durationMinutes": 15,
+      "order": 1,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-PY-1.html",
+      "releaseTimestamp": 1793952000000,
+      "language": "both"
     }
   ]
 }
