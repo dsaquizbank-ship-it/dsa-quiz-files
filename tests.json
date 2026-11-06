@@ -47,8 +47,8 @@
       "order": 9
     },
     {
-      "id": "DEMO",
-      "name": "DEMO",
+      "id": "COM-TAM",
+      "name": "COMMON TAMIL",
       "order": 10
     }
   ],
@@ -105,12 +105,6 @@
       "id": "TETSC",
       "name": "TET SCIENCE",
       "categoryId": "TNTET",
-      "order": 1
-    },
-    {
-      "id": "DEMO",
-      "name": "DEMO",
-      "categoryId": "DEMO",
       "order": 1
     },
     {
