@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-07T11:33:40.276Z",
+  "version": "2026-11-07T11:37:17.449Z",
   "categories": [
     {
       "id": "BANK",
@@ -1493,6 +1493,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-EG-57.html",
       "releaseTimestamp": 1794384000000,
       "language": "en"
+    },
+    {
+      "testId": "TIH-8",
+      "examId": "TNPSC-IH",
+      "name": "SOUTH INDIAN HISTORY TIH-8",
+      "topic": "SOUTH INDIAN HISTORY",
+      "durationMinutes": 15,
+      "order": 8,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIH-8.html",
+      "releaseTimestamp": 1794211200000,
+      "language": "both"
     }
   ]
 }
