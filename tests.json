@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-07T02:06:40.561Z",
+  "version": "2026-11-07T02:08:27.563Z",
   "categories": [
     {
       "id": "BANK",
@@ -1524,6 +1524,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BQA-2.html",
       "releaseTimestamp": 0,
       "language": "both"
+    },
+    {
+      "testId": "BRE-2",
+      "examId": "BANK-RE",
+      "name": "CODING DECODING BRE-2",
+      "topic": "CODING DECODING",
+      "durationMinutes": 30,
+      "order": 2,
+      "questionCount": 25,
+      "negativeMark": 0.25,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BRE-2.html",
+      "releaseTimestamp": 0,
+      "language": "en"
     }
   ]
 }
