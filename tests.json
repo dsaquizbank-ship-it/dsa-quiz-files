@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-07T11:39:57.368Z",
+  "version": "2026-11-07T11:45:40.964Z",
   "categories": [
     {
       "id": "BANK",
@@ -1519,6 +1519,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIH-3.html",
       "releaseTimestamp": 1794211200000,
       "language": "both"
+    },
+    {
+      "testId": "PGE-52",
+      "examId": "PG-ENG",
+      "name": "ALEXANDER POPE – THE RAPE OF THE LOCK PGE-52",
+      "topic": "ALEXANDER POPE – THE RAPE OF THE LOCK",
+      "durationMinutes": 15,
+      "order": 52,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGE-52.html",
+      "releaseTimestamp": 1794211200000,
+      "language": "en"
     }
   ]
 }
