@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-07T10:54:17.137Z",
+  "version": "2026-11-07T10:55:58.912Z",
   "entries": [
     {
       "id": "SCH-1794038030683-992",
@@ -396,17 +396,6 @@
       "date": "2026-11-04",
       "testId": "UGZ-74",
       "createdAt": "2026-10-31T13:31:15.743Z"
-    },
-    {
-      "id": "SCH-1793450601024-121",
-      "courseId": "TNTET",
-      "courseName": "TNTET",
-      "subject": "Social Science",
-      "topicId": "REV-1793450601024",
-      "topicName": "Revision: 8th Standard - Geography: Rocks and Soils, 8th Standard - Geography: Weather and Climate, 8th Standard - Geography: Hydrologic Cycle, 8th Standard - Geography: Migration and Urbanisation, 8th Standard - Geography: Hazards, 8th Standard - Geography: Industries, 8th Standard - Geography: Exploring Continents: Africa, Australia and Antarctica, 8th Standard - Geography: Map Reading",
-      "date": "2026-11-04",
-      "testId": "NTE-SS-54",
-      "createdAt": "2026-10-31T12:43:21.024Z"
     },
     {
       "id": "SCH-1793447486889-686",
