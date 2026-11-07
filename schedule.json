@@ -1,17 +1,6 @@
 {
-  "version": "2026-11-07T07:14:47.427Z",
+  "version": "2026-11-07T07:52:49.925Z",
   "entries": [
-    {
-      "id": "SCH-1793580956228-54",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "Quantitative Aptitude",
-      "topicId": "BANK-T001",
-      "topicName": "Simplification",
-      "date": "2026-11-02",
-      "testId": "BQA-01",
-      "createdAt": "2026-11-02T00:55:56.228Z"
-    },
     {
       "id": "SCH-1793580987320-77",
       "courseId": "RRB",
