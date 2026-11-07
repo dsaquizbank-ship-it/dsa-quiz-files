@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-06T10:00:00.000Z",
+  "version": "2026-11-07T02:06:40.561Z",
   "categories": [
     {
       "id": "BANK",
@@ -1511,6 +1511,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-96.html",
       "releaseTimestamp": 1793952000000,
       "language": "en"
+    },
+    {
+      "testId": "BQA-2",
+      "examId": "BANK-QA",
+      "name": "PROFIT & LOSS BSR-51",
+      "topic": "PROFIT & LOSS",
+      "durationMinutes": 25,
+      "order": 51,
+      "questionCount": 25,
+      "negativeMark": 0.25,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BQA-2.html",
+      "releaseTimestamp": 0,
+      "language": "both"
     }
   ]
 }
