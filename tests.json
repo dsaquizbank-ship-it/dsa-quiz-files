@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-06T09:47:28.607Z",
+  "version": "2026-11-06T10:00:00.000Z",
   "categories": [
     {
       "id": "BANK",
@@ -47,7 +47,7 @@
       "order": 9
     },
     {
-      "id": "COMMONTAMIL",
+      "id": "COM-TAM",
       "name": "COMMON TAMIL",
       "order": 10
     }
@@ -60,10 +60,10 @@
       "order": 1
     },
     {
-      "id": "TETTAM",
+      "id": "TET-TAMIL",
       "name": "TET TAMIL",
       "categoryId": "TNTET",
-      "order": 6
+      "order": 1
     },
     {
       "id": "UG-ENG",
@@ -78,40 +78,40 @@
       "order": 2
     },
     {
-      "id": "TETMS",
+      "id": "TET-MATHS",
       "name": "TET MATHS",
       "categoryId": "TNTET",
       "order": 3
     },
     {
-      "id": "BANK-PRACTICE",
-      "name": "PRACTICE TEST",
+      "id": "BANK-RE",
+      "name": "REASONING",
       "categoryId": "BANK",
-      "order": 19
+      "order": 1
     },
     {
       "id": "SSR-GS",
       "name": "GENERAL SCIENCE",
-      "categoryId": "SSC-RRB",
+      "categoryId": "SSC",
       "order": 30
     },
     {
-      "id": "TETSS",
+      "id": "TET-SOCIALSCIENCE",
       "name": "TET SOCIAL SCIENCE",
       "categoryId": "TNTET",
-      "order": 2
+      "order": 5
     },
     {
-      "id": "TETSC",
+      "id": "TET-SCIENCE",
       "name": "TET SCIENCE",
       "categoryId": "TNTET",
-      "order": 1
+      "order": 4
     },
     {
-      "id": "SGT-10",
-      "name": "10TH",
+      "id": "SGT-TAMIL",
+      "name": "TAMIL",
       "categoryId": "SGT",
-      "order": 5
+      "order": 1
     },
     {
       "id": "BANK-CA",
@@ -120,10 +120,10 @@
       "order": 4
     },
     {
-      "id": "TET-PSY",
-      "name": "TET PSYCOLOGY",
+      "id": "TET-PSYCHOLOGY",
+      "name": "TET PSYCHOLOGY",
       "categoryId": "TNTET",
-      "order": 5
+      "order": 6
     },
     {
       "id": "TNPSC-IH",
@@ -210,8 +210,8 @@
       "order": 3
     },
     {
-      "id": "SGT-9",
-      "name": "9TH",
+      "id": "SGT-SCIENCE",
+      "name": "SCIENCE",
       "categoryId": "SGT",
       "order": 4
     },
@@ -222,13 +222,7 @@
       "order": 3
     },
     {
-      "id": "TET-MATHS",
-      "name": "TET MATHS",
-      "categoryId": "TNTET",
-      "order": 3
-    },
-    {
-      "id": "SPL-SOCIAL SCIENCE",
+      "id": "SPL-SOCIALSCIENCE",
       "name": "SOCIAL SCIENCE",
       "categoryId": "SPLTET",
       "order": 5
@@ -258,18 +252,6 @@
       "order": 2
     },
     {
-      "id": "BANK-RE",
-      "name": "REASONING",
-      "categoryId": "BANK",
-      "order": 1
-    },
-    {
-      "id": "TET-SOCIALSCIENCE",
-      "name": "TET SOCIAL SCIENCE",
-      "categoryId": "TNTET",
-      "order": 5
-    },
-    {
       "id": "SSC-RE",
       "name": "REASONING",
       "categoryId": "SSC",
@@ -282,21 +264,9 @@
       "order": 1
     },
     {
-      "id": "TET-SCIENCE",
-      "name": "TET SCIENCE",
-      "categoryId": "TNTET",
-      "order": 4
-    },
-    {
       "id": "SGT-SOCIALSCIENCE",
       "name": "SOCIAL SCIENCE",
       "categoryId": "SGT",
-      "order": 5
-    },
-    {
-      "id": "SPL-SOCIALSCIENCE",
-      "name": "SOCIAL SCIENCE",
-      "categoryId": "SPLTET",
       "order": 5
     },
     {
@@ -348,21 +318,9 @@
       "order": 6
     },
     {
-      "id": "TET-PSYCHOLOGY",
-      "name": "TET PSYCHOLOGY",
-      "categoryId": "TNTET",
-      "order": 6
-    },
-    {
-      "id": "10TH",
-      "name": "10TH STD",
-      "categoryId": "COMMONTAMIL",
-      "order": 1
-    },
-    {
       "id": "COM-TAM",
       "name": "10TH STD",
-      "categoryId": "COMMONTAMIL",
+      "categoryId": "COM-TAM",
       "order": 1
     }
   ],
@@ -463,7 +421,7 @@
     },
     {
       "testId": "BSR-51",
-      "examId": "BANK-PRACTICE",
+      "examId": "BANK-RE",
       "name": "BSR-51 PROFIT & LOSS",
       "durationMinutes": 25,
       "order": 51,
@@ -474,7 +432,7 @@
     },
     {
       "testId": "BSR-52",
-      "examId": "BANK-PRACTICE",
+      "examId": "BANK-RE",
       "name": "BSR-52 REASONING - CODING DECODING",
       "durationMinutes": 30,
       "order": 52,
@@ -509,7 +467,7 @@
     },
     {
       "testId": "NTE-TAM-50",
-      "examId": "TETTAM",
+      "examId": "TET-TAMIL",
       "name": "NTE-TAMIL-50 IYAL 5,6 ILAKKANAM",
       "durationMinutes": 20,
       "order": 50,
@@ -520,7 +478,7 @@
     },
     {
       "testId": "NTE-MS-50",
-      "examId": "TETMS",
+      "examId": "TET-MATHS",
       "name": "NTEMS-50 UNIT 7 TERM 1 ALGEBRA",
       "durationMinutes": 20,
       "order": 50,
@@ -531,7 +489,7 @@
     },
     {
       "testId": "NTE-SC-51",
-      "examId": "TETSC",
+      "examId": "TET-SCIENCE",
       "name": "NTESC-51 7TH ELECTRICITY",
       "durationMinutes": 15,
       "order": 51,
@@ -542,7 +500,7 @@
     },
     {
       "testId": "NTE-SS-50",
-      "examId": "TETSS",
+      "examId": "TET-SOCIALSCIENCE",
       "name": "NTESS-50 8TH GEO- MAP READING",
       "durationMinutes": 15,
       "order": 50,
@@ -553,7 +511,7 @@
     },
     {
       "testId": "NTE-SS-51",
-      "examId": "TETSS",
+      "examId": "TET-SOCIALSCIENCE",
       "name": "NTESS-51 8TH HUMAN RIGHTS AND UNO",
       "durationMinutes": 15,
       "order": 51,
@@ -564,7 +522,7 @@
     },
     {
       "testId": "SGT-TA-34",
-      "examId": "SGT-10",
+      "examId": "SGT-TAMIL",
       "name": "SGT-TA-34 TAMIL IYAL 3",
       "durationMinutes": 20,
       "order": 34,
@@ -619,7 +577,7 @@
     },
     {
       "testId": "NTE-PY-52",
-      "examId": "TET-PSY",
+      "examId": "TET-PSYCHOLOGY",
       "name": "NTE-PY-52 PERSONALITY",
       "durationMinutes": 20,
       "order": 52,
@@ -630,7 +588,7 @@
     },
     {
       "testId": "BSR-53",
-      "examId": "BANK-PRACTICE",
+      "examId": "BANK-RE",
       "name": "BSR-53 WORD REPLACEMENT",
       "durationMinutes": 20,
       "order": 53,
@@ -828,7 +786,7 @@
     },
     {
       "testId": "TET-SS-53",
-      "examId": "TETSS",
+      "examId": "TET-SOCIALSCIENCE",
       "name": "8TH GEO- ROAD SAFETY RULES & REGULATIONS TET-SS-53",
       "topic": "8TH GEO- ROAD SAFETY RULES & REGULATIONS",
       "durationMinutes": 15,
@@ -841,7 +799,7 @@
     },
     {
       "testId": "TET-TA-53",
-      "examId": "TETTAM",
+      "examId": "TET-TAMIL",
       "name": "TAMIL -8 IYAL 7,8 TET-SS-53",
       "topic": "TAMIL -8 IYAL 7,8",
       "durationMinutes": 20,
@@ -867,7 +825,7 @@
     },
     {
       "testId": "TET-MS-53",
-      "examId": "TETMS",
+      "examId": "TET-MATHS",
       "name": "7th TERM 1 DIRECT AND INVERSE PROPORTION TET-MS-53",
       "topic": "7th TERM 1 DIRECT AND INVERSE PROPORTION",
       "durationMinutes": 20,
@@ -880,7 +838,7 @@
     },
     {
       "testId": "SGT-9-35",
-      "examId": "SGT-9",
+      "examId": "SGT-SCIENCE",
       "name": "PHYSICS-MEASUREMENT SGT-9-35",
       "topic": "PHYSICS MEASUREMENT",
       "durationMinutes": 15,
@@ -997,7 +955,7 @@
     },
     {
       "testId": "SPT-SS-2",
-      "examId": "SPL-SOCIAL SCIENCE",
+      "examId": "SPL-SOCIALSCIENCE",
       "name": "6TH TERM 1 HISTORY FULL SPT-SS-2",
       "topic": "6TH TERM 1 HISTORY FULL",
       "durationMinutes": 30,
