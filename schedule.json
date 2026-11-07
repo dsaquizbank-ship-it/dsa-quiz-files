@@ -1,6 +1,17 @@
 {
-  "version": "2026-11-07T07:54:40.411Z",
+  "version": "2026-11-07T07:55:42.714Z",
   "entries": [
+    {
+      "id": "SCH-1794038097122-373",
+      "courseId": "SSC",
+      "courseName": "SSC",
+      "subject": "Quantitative Aptitude",
+      "topicId": "SSC-T168",
+      "topicName": "Simplification",
+      "date": "2026-11-02",
+      "testId": "SQA-1",
+      "createdAt": "2026-11-07T07:54:57.122Z"
+    },
     {
       "id": "SCH-1794038030683-992",
       "courseId": "RRB",
