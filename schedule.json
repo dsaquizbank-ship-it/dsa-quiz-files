@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-07T10:50:09.724Z",
+  "version": "2026-11-07T10:51:31.283Z",
   "entries": [
     {
       "id": "SCH-1794038030683-992",
@@ -121,17 +121,6 @@
       "date": "2026-11-02",
       "testId": "NTE-MS-53",
       "createdAt": "2026-10-31T12:40:22.112Z"
-    },
-    {
-      "id": "SCH-1793450452104-707",
-      "courseId": "TNTET",
-      "courseName": "TNTET",
-      "subject": "Social Science",
-      "topicId": "REV-1793450452104",
-      "topicName": "Revision: 8th Standard - Civics: Road Safety Rules and Regulations",
-      "date": "2026-11-02",
-      "testId": "NTE-SS-53",
-      "createdAt": "2026-10-31T12:40:52.104Z"
     },
     {
       "id": "SCH-1793447468074-8",
