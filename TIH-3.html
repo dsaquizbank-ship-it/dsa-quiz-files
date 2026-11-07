@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>TIH-3 - DELHI SULTANATE TIH-3</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                linebreaks: { automatic: true, width: "container" }
+            },
+            options: { ignoreHtmlClass: "no-mathjax" },
+            chtml: {
+                displayAlign: "left",
+                displayIndent: "0",
+                mtextInheritFont: true
+            },
+            svg: {
+                scale: 0.9,
+                minScale: 0.5,
+                mtextInheritFont: true,
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; color: #10b981; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; white-space: normal; word-wrap: break-word; padding-bottom: 20px; max-width: 100%; overflow-x: auto; }
+        mjx-container { display: inline !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; }
+        .question-text::-webkit-scrollbar { display: none; }
+        .question-text { -ms-overflow-style: none; scrollbar-width: none; }
+        .option-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; word-wrap: break-word; }
+        .option-letter { font-weight: 800; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+        .option-text { flex-grow: 1; min-width: 0; word-wrap: break-word; overflow-wrap: break-word; }
+        .option-text mjx-container { display: inline-block !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; overflow-x: visible !important; }
+        .option-text mjx-container[jax="CHTML"][display="true"] { margin: 0 !important; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
+        .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
+        .review-card .question-text { overflow-x: hidden !important; white-space: normal !important; word-wrap: break-word !important; }
+        .review-card strong { color: var(--text-primary); font-size: 16px; }
+        .review-card .option-item { background-color: var(--rc-bg); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: rgba(40, 167, 69, 0.1); border: 1px solid #28a745; color: #28a745; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; color: #dc3545; }
+        .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
+        .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
+        .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
+        .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px 0; border-top: 1px solid var(--border-light); }
+        .review-nav-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .review-nav-btn:disabled { background: var(--border-light); color: var(--text-primary); opacity: 0.5; cursor: not-allowed; }
+        .review-nav-text { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+        .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { 
+            html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } 
+            .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } 
+            #startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard { display: none !important; } 
+            #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } 
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; } 
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; margin-bottom: 20px !important; display: block !important; } 
+            .review-card .option-item { border: 1px solid #ccc !important; background: white !important; color: black !important; } 
+            .review-card .option-item.correct { background: #e6ffe6 !important; border-color: #28a745 !important; color: black !important; } 
+            .review-card .option-item.wrong { background: #ffe6e6 !important; border-color: #dc3545 !important; color: black !important; } 
+            @page { size: A4; margin: 1.5cm; } 
+        }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">15:00</div>
+            <div class="top-buttons">
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div id="printHeader" style="display: none;">
+            <h1>DR SAHITHA IAS ACADEMY</h1>
+            <h3>ANSWER KEY & DETAILED REVIEW</h3>
+            <p><strong>Test:</strong> TIH-3 - HISTORY</p>
+        </div>
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+            <div id="reviewPagination" class="review-nav-container" style="display: none;">
+                <button class="review-nav-btn" id="prevReviewBtn" onclick="navigateReview(-1)">◀ PREV</button>
+                <span class="review-nav-text" id="reviewPageText">1 / 25</span>
+                <button class="review-nav-btn" id="nextReviewBtn" onclick="navigateReview(1)">NEXT ▶</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "HISTORY",
+        testNo: "TIH-3",
+        date: "09/11/2026",
+        subject: "HISTORY",
+        topic: "DELHI SULTANATE",
+        duration: "15",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "In the First Battle of Tarain in 1191 A.D., Prithviraj Chauhan, the ruler of Ajmer,",
+    "ta": "1191 ஆம் ஆண்டு நடைபெற்ற முதலாம் தரெய்ன் போரில், அஜ்மீர் மன்னரான பிருத்விராஜ் சௌகான்,",
+    "optionsEn": [
+      "defeated Muhammed Ghori",
+      "was defeated by Muhammed Ghori",
+      "The first Battle of Tarain was not fought in 1191 A.D.",
+      "none of these",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "முகமது கோரியைத் தோற்கடித்தார்",
+      "முகமது கோரியால் தோற்கடிக்கப்பட்டார்",
+      "முதலாம் தரெய்ன் போர் 1191 இல் நடைபெறவில்லை",
+      "இவற்றில் எதுவுமில்லை",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "When did Mahmud of Ghazni plunder the holy city of Mathura?",
+    "ta": "கஜினி முகமது புனித நகரான மதுராவை எப்போது சூறையாடினார்?",
+    "optionsEn": [
+      "1001",
+      "1008",
+      "1018",
+      "1024",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "1001",
+      "1008",
+      "1018",
+      "1024",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Who was the first Muslim invader of India?",
+    "ta": "இந்தியாவின் மீதான முதல் முஸ்லிம் படையெடுப்பாளர் யார்?",
+    "optionsEn": [
+      "Muhammad of Ghur",
+      "Muhammad-bin-Qasim",
+      "Muhammad-bin-Suri",
+      "Muhammad of Ghazni",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "கோரி முகமது",
+      "முகமது பின் காசிம்",
+      "முகமது பின் சூரி",
+      "கஜினி முகமது",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Kharaj means",
+    "ta": "கராஜ் என்பது",
+    "optionsEn": [
+      "Land tax from non-Muslims",
+      "Booty captured in the war",
+      "Religious tax on the non-Muslims",
+      "Land tax from Muslim peasants",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "முஸ்லிம்கள் அல்லாதவர்களிடமிருந்து வசூலிக்கப்படும் நிலவரி",
+      "போரில் கைப்பற்றப்பட்ட பொருட்கள்",
+      "முஸ்லிம்கள் அல்லாதோர் மீது விதிக்கப்பட்ட சமய வரி",
+      "முஸ்லிம் விவசாயிகளிடமிருந்து வசூலிக்கப்படும் நிலவரி",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Assertion [A]: Muhammad Ghur attacked the Fortress of Tabarhind, a strategic point for the Chauhans of Ajmer.<br>Reason [R]: The ruler of Ajmer, Prithvi Raj Chauhan, marched to Tabarhinda and faced the invader in the first Battle of Tarain (1191).",
+    "ta": "கூற்று [A]: அஜ்மீர் சௌகான்களின் முக்கிய வியூக மையமான தபார்ஹிந்த் கோட்டையின் மீது முகமது கோரி தாக்குதல் நடத்தினார்.<br>காரணம் [R]: அஜ்மீர் ஆட்சியாளரான பிருத்விராஜ் சௌகான் தபார்ஹிந்தாவை நோக்கிச் சென்று முதலாம் தரெய்ன் போரில் (1191) படையெடுப்பாளரை எதிர்த்துப் போராடினார்.",
+    "optionsEn": [
+      "[A] is true, but [R] is false",
+      "Both [A] and [R] are true, and [R] is the correct explanation of [A]",
+      "Both [A] and [R] are true, but [R] is not the correct explanation of [A]",
+      "[A] is false, [R] is true",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "[A] சரி, ஆனால் [R] தவறு",
+      "[A] மற்றும் [R] இரண்டும் சரி, மேலும் [R] என்பது [A] இன் சரியான விளக்கமாகும்",
+      "[A] மற்றும் [R] இரண்டும் சரி, ஆனால் [R] என்பது [A] இன் சரியான விளக்கம் அல்ல",
+      "[A] தவறு, [R] சரி",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "How were the Sultans of Delhi called?",
+    "ta": "தில்லி சுல்தான்கள் எவ்வாறு அழைக்கப்பட்டனர்?",
+    "optionsEn": [
+      "Ashvapati (lord of horses)",
+      "Gajapati (lord of elephants)",
+      "Ganapati (lord of class)",
+      "Narapati (lord of men)",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "அஸ்வபதி (குதிரைகளின் தலைவர்)",
+      "கஜபதி (யானைகளின் தலைவர்)",
+      "கணபதி",
+      "நரபதி (மக்களின் தலைவர்)",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statements are true about Qutub-ud-din?<br>(i) He was the real founder of the Turkish dominion in India.<br>(ii) He organised the ‘Group of Forty’.<br>(iii) He started the construction of Qutub Minar.",
+    "ta": "குதுப் உத்-தின் ஐபக் குறித்த பின்வரும் கூற்றுகளில் எது/எவை உண்மையானது/உண்மையானவை?<br>(i) அவர் இந்தியாவில் துருக்கிய ஆட்சியின் உண்மையான நிறுவனர் ஆவார்.<br>(ii) அவர் 'நாற்பதின்மர் குழுவை' ஏற்பாடு செய்தார்.<br>(iii) அவர் குதுப் மினார் கட்டுமானத்தைத் தொடங்கினார்.",
+    "optionsEn": [
+      "(i) only",
+      "(i) and (ii) only",
+      "(ii) and (iii) only",
+      "(i) and (iii) only",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "(i) மட்டும்",
+      "(i) மற்றும் (ii) மட்டும்",
+      "(ii) மற்றும் (iii) மட்டும்",
+      "(i) மற்றும் (iii) மட்டும்",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statements are true about Iltutmish?<br>(i) He was a slave of Qutubuddin Aibak.<br>(ii) He established Zil-i-Ilahi.<br>(iii) He built the main portions of Qutub Minar.",
+    "ta": "இல்துமிஷ் குறித்த பின்வரும் கூற்றுகளில் எது/எவை உண்மையானது/உண்மையானவை?<br>(i) அவர் குதுப்புதின் ஐபக்கின் அடிமையாக இருந்தார்.<br>(ii) அவர் ஜில்-இ-இலாஹியை நிறுவினார்.<br>(iii) அவர் குதுப் மினாரின் முக்கிய பகுதிகளைக் கட்டினார்.",
+    "optionsEn": [
+      "(i) only",
+      "(i) and (ii) only",
+      "(i) and (iii) only",
+      "(ii) and (iii) only",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "(i) மட்டும்",
+      "(i) மற்றும் (ii) மட்டும்",
+      "(i) மற்றும் (iii) மட்டும்",
+      "(ii) மற்றும் (iii) மட்டும்",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which one of the following mosques is best known for its tower of victory?",
+    "ta": "பின்வரும் மசூதிகளில் எது அதன் வெற்றித் தூணுக்காக மிகவும் அறியப்படுகிறது?",
+    "optionsEn": [
+      "Begumpuri Mosque",
+      "Quwwat-ul-Islam Mosque",
+      "Moti Ki Masjid",
+      "Jamali Kamali Mosque",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "பேகம்புரி மசூதி",
+      "குவத்-உல்-இஸ்லாம் மசூதி",
+      "மோதி கி மசூதி",
+      "ஜமாலி கமாலி மசூதி",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Name Iltutmish’s vizier who rebelled against Raziyya.",
+    "ta": "ரெசுவாவிற்கு எதிராகக் கிளர்ச்சி செய்த இல்துமிஷின் வசியர் (அமைச்சர்) யார்?",
+    "optionsEn": [
+      "Nizamul-mulk Junaydi",
+      "Muhazzabuddin",
+      "Jamalud din Yaqut",
+      "Altunia",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "நிஜாமுல்-முல்க் ஜுனைதி",
+      "முகஸப்பீதீன்",
+      "ஜமாலுதீன் யாகூத்",
+      "அல்தூனியா",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Name the Delhi Sultan who introduced the Silver Tanka and the Copper Jital, the two basic coins during the Sultanate period.",
+    "ta": "சுல்தானிய காலத்தில் இரண்டு அடிப்படையான நாணயங்களான வெள்ளி 'டங்கா' மற்றும் செப்பு 'ஜிடால்' ஆகியவற்றை அறிமுகப்படுத்திய தில்லி சுல்தான் யார்?",
+    "optionsEn": [
+      "Qutb-ud-din Aibak",
+      "Iltutmish",
+      "Sultana Raziya",
+      "Ghiyas-Ud-Din Balban",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "குதுப்-உத்-தின் ஐபக்",
+      "இல்துமிஷ்",
+      "சுல்தானா ரசியா",
+      "தியாசுதீன் பால்பன்",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Assertion [A]: Iltutmish, whenever he left his capital, made Raziya Sultan in charge of Delhi affairs.<br>Reason [R]: After the death of Iltutmish, Razia Sultan succeeded her father’s throne, and she became the first female Muslim ruler of South Asia.",
+    "ta": "கூற்று [A]: இல்துமிஷ் தனது தலைநகரைவிட்டு வெளியேறும்போதெல்லாம் ரசியா சுல்தானை தில்லி விவகாரங்களுக்கு பொறுப்பேற்கச் செய்தார்.<br>காரணம் [R]: இல்துமிஷின் மறைவுக்குப் பிறகு, ரசியா சுல்தான் தனது தந்தையின் அரியணை ஏறினார், மேலும் அவர் தெற்காசியாவின் முதல் பெண் முஸ்லிம் ஆட்சியாளர் ஆனார்.",
+    "optionsEn": [
+      "[A] is true, but [R] is false",
+      "Both [A] and [R] are true, and [R] is the correct explanation of [A]",
+      "[A] is false, [R] is true",
+      "Both [A] and [R] are true, but [R] is not the correct explanation of [A]",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "[A] சரி, ஆனால் [R] தவறு",
+      "[A] மற்றும் [R] இரண்டும் சரி, மேலும் [R] என்பது [A] இன் சரியான விளக்கமாகும்",
+      "[A] தவறு, [R] சரி",
+      "[A] மற்றும் [R] இரண்டும் சரி, ஆனால் [R] என்பது [A] இன் சரியான விளக்கம் அல்ல",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Arrange the conquests of Iltutmish in chronological order:<br>I. Bengal<br>II. Bilsa Fort<br>III. Gwalior<br>IV. Ranthambhor",
+    "ta": "இல்துமிஷின் படையெடுப்புகளை காலவரிசைப்படி ஒழுங்குபடுத்துக:<br>I. வங்காளம்<br>II. பில்சா கோட்டை<br>III. குவாலியர்<br>IV. ரந்தம்பூர்",
+    "optionsEn": [
+      "I, II, III, IV",
+      "I, III, IV, II",
+      "IV, I, III, II",
+      "IV, III, II, I",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "I, II, III, IV",
+      "I, III, IV, II",
+      "IV, I, III, II",
+      "IV, III, II, I",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "________ dynasty is known as the Mamluk dynasty.",
+    "ta": "________ வம்சம் மாம்லுக் வம்சம் என்று அழைக்கப்படுகிறது.",
+    "optionsEn": [
+      "Slave",
+      "King",
+      "Queen",
+      "Soldier",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "அடிமை",
+      "அரசன்",
+      "அரசி",
+      "வீரன்",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Who levied Jizya tax on non-Muslims for the first time in India?",
+    "ta": "இந்தியாவில் முதன்முதலில் முஸ்லிம்கள் அல்லாதவர்கள் மீது ஜிஸியா வரியை விதித்தவர் யார்?",
+    "optionsEn": [
+      "Aurangzeb",
+      "Akbar",
+      "Qutb-ud-din Aibak",
+      "Muhammad Bin Tughlaq",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "ஔரங்கசீப்",
+      "அக்பர்",
+      "குதுப்-உத்-தின் ஐபக்",
+      "முகமது பின் துக்ளக்",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which Delhi Sultan is called ‘A slave of a slave’?",
+    "ta": "'அடிமையின் அடிமை' என்று அழைக்கப்படும் தில்லி சுல்தான் யார்?",
+    "optionsEn": [
+      "Balban",
+      "Qutb-ud-din Aibak",
+      "Raziya",
+      "Iltutmish",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "பால்பன்",
+      "குதுப்-உத்-தின் ஐபக்",
+      "ரசியா",
+      "இல்துமிஷ்",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which Sultan of Delhi died after falling from his horse during a polo match?",
+    "ta": "போலோ விளையாட்டின் போது குதிரையிலிருந்து விழுந்து காலமான தில்லி சுல்தான் யார்?",
+    "optionsEn": [
+      "Qutb-ud-din Aibak",
+      "Razia Sultan",
+      "Jalaluddin Khalji",
+      "Alaudin Khalji",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "குதுப்-உத்-தின் ஐபக்",
+      "ரசியா சுல்தான்",
+      "ஜலாலுதீன் கில்ஜி",
+      "அலாவுதீன் கில்ஜி",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statement(s) is/are true about Khilji buildings?<br>I. K.S. Lal observes that with the enthronement of Alauddin Khilji, a new era was ushered in architecture in the Hindu-Muslim style.<br>II. Marshall writes, “Hauz-i-Khas is one of the most treasured gems of Islamic architecture.”<br>III. Percy Brown remarks, “The entrance gateway of the mosque of Alauddin Khilji occupies a key position in the evolution of Islamic architecture in India.”",
+    "ta": "கில்ஜி கட்டிடங்கள் குறித்த பின்வரும் கூற்றில்/கூற்றுகளில் எது/எவை உண்மையானது/உண்மையானவை?<br>I. அலாவுதீன் கில்ஜியின் அரியணை ஏறலுடன் இந்து-முஸ்லிம் பாணியில் கட்டிடக்கலையில் ஒரு புதிய சகாப்தம் தோன்றியது என்று கே.எஸ். லால் குறிப்பிடுகிறார்.<br>II. \"ஹவுஸ்-இ-காஸ் இஸ்லாமிய கட்டிடக்கலையின் மிக விலைமதிப்பற்ற மாணிக்கங்களில் ஒன்றாகும்\" என்று மார்ஷல் எழுதுகிறார்.<br>III. \"அலாவுதீன் கில்ஜியின் மசூதியின் நுழைவாயில் இந்தியாவில் இஸ்லாமிய கட்டிடக்கலையின் வளர்ச்சியில் முக்கிய பங்கு வகிக்கிறது\" என்று பெர்சி பிரவுன் குறிப்பிடுகிறார்.",
+    "optionsEn": [
+      "I only",
+      "I and II only",
+      "I and III only",
+      "II and III only",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "I மட்டும்",
+      "I மற்றும் II மட்டும்",
+      "I மற்றும் III மட்டும்",
+      "II மற்றும் III மட்டும்",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which land distribution system was adopted by the Sultans of Delhi?",
+    "ta": "தில்லி சுல்தான்களால் பின்பற்றப்பட்ட நில பகிர்வு முறை எது?",
+    "optionsEn": [
+      "Iqtadari",
+      "Mansapdhari",
+      "Subhadhari",
+      "Zamindhari",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "இக்தாதாரி",
+      "மன்சப்தாரி",
+      "சுபதாரி",
+      "ஜமீன்தாரி",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Assertion (A): Alauddin Khilji imposed price control in Delhi.<br>Reason (R): He wanted to pay lower wages to artisans building his palaces in Delhi.",
+    "ta": "கூற்று (A): அலாவுதீன் கில்ஜி தில்லியில் விலை கட்டுப்பாட்டைக் கொண்டுவந்தார்.<br>காரணம் (R): அவர் தில்லியில் தனது அரண்மனைகளைக் கட்டும் கைவினைஞர்களுக்குக் குறைந்த ஊதியம் வழங்க விரும்பினார்.",
+    "optionsEn": [
+      "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true but (R) is not the correct explanation of (A)",
+      "(A) is true but (R) is false",
+      "(A) is false but (R) is true",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "(A) மற்றும் (R) இரண்டும் சரி மற்றும் (R) என்பது (A) இன் சரியான விளக்கமாகும்",
+      "(A) மற்றும் (R) இரண்டும் சரி ஆனால் (R) என்பது (A) இன் சரியான விளக்கம் அல்ல",
+      "(A) சரி ஆனால் (R) தவறு",
+      "(A) தவறு ஆனால் (R) சரி",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Who was the author of the book “Tabaqat-i-Nasiri”?",
+    "ta": "\"தபகாத்-இ-நசிரி\" என்ற நூலின் ஆசிரியர் யார்?",
+    "optionsEn": [
+      "Zia-ud-Din-Barani",
+      "Minhajus-Siraj",
+      "Ghulam Yahya bin Ahamad",
+      "Hasan Nizami",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "ஜியா-உத்-தின்-பரணி",
+      "மின்காஜ்-உஸ்-சிராஜ்",
+      "குலாம் யகியா பின் அகமது",
+      "ஹசன் நிசாமி",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Amir Khusrau hailed which city as the “Second Heaven and a great centre of justice”?",
+    "ta": "அமீர் குஸ்ரு எந்த நகரத்தை \"இரண்டாவது சொர்க்கம் மற்றும் நீதியின் ஒரு பெரிய மையம்\" என்று புகழ்ந்தார்?",
+    "optionsEn": [
+      "Mathura",
+      "Agra",
+      "Kashmir",
+      "Delhi",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "மதுரா",
+      "ஆக்ரா",
+      "காஷ்மீர்",
+      "தில்லி",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Sufism originated from",
+    "ta": "சூஃபித்துவம் எங்கு தோன்றியது?",
+    "optionsEn": [
+      "Iran",
+      "China",
+      "Egypt",
+      "India",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "ஈரான்",
+      "சீனா",
+      "எகிப்து",
+      "இந்தியா",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Malik Kafur arrived in Madurai in",
+    "ta": "மாலிக் காபூர் எப்போது மதுரைக்கு வந்தார்?",
+    "optionsEn": [
+      "1211 A.D.",
+      "1311 A.D.",
+      "1212 A.D.",
+      "1312 A.D.",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "கி.பி. 1211",
+      "கி.பி. 1311",
+      "கி.பி. 1212",
+      "கி.பி. 1312",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following pairs are correctly matched?<br>I. City of Jaunpur – Firuz Tughluq<br>II. City of Ahamadabad – Ahmad Shah<br>III. Zain-ul-Abidin – The Akbar of Kashmir<br>IV. Founder of Khalji Dynasty in Malwa – Husain Shah",
+    "ta": "பின்வரும் ஜோடிகளில் எவை சரியாகப் பொருத்தப்பட்டுள்ளன?<br>I. ஜான்பூர் நகரம் - பெரோஸ் துக்ளக்<br>II. அகமதாபாத் நகரம் - அகமது ஷா<br>III. ஜைனுல்-ஆபிதீன் - காஷ்மீரின் அக்பர்<br>IV. மாளவத்தில் கில்ஜி வம்சத்தை நிறுவியவர் - ஹுசைன் ஷா",
+    "optionsEn": [
+      "I, II, III only",
+      "II, III only",
+      "III, IV only",
+      "I only",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "I, II, III மட்டும்",
+      "II, III மட்டும்",
+      "III, IV மட்டும்",
+      "I மட்டும்",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 0
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false; isSubmitted = false;
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">
+                <span class="option-letter">${String.fromCharCode(65+i)}.</span>
+                <span class="option-text">${opt}</span>
+            </div>`;
+        });
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+            </div>
+        `;
+        updateNavButtons(); updatePalette();
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) return;
+        userAnswers[currentIndex] = optIndex;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    let currentReviewIndex = 0;
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let cssClass = "option-item";
+                let markerHtml = "";
+                if (idx === corr) { cssClass += " correct"; markerHtml = "<div class='marker'>✔</div>"; }
+                else if (u === idx && idx !== corr) { cssClass += " wrong"; markerHtml = "<div class='marker'>✖</div>"; }
+                optsHtml += `<div class="${cssClass}"><span>${String.fromCharCode(65+idx)}. ${optsArray[idx]}</span>${markerHtml}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" id="review-card-${i}" style="display: none;">
+                        <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div class="your-answer">Your Answer: ${userAns}</div>
+                        <div class="correct-answer">Correct Answer: ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        ${optsHtml}
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+        currentReviewIndex = 0;
+        showReviewCard(currentReviewIndex);
+    }
+    function showReviewCard(index) {
+        const cards = document.querySelectorAll(".review-card");
+        if (cards.length === 0) return;
+        cards.forEach(c => c.style.display = "none");
+        cards[index].style.display = "block";
+        document.getElementById("reviewPageText").innerText = `${index + 1} / ${cards.length}`;
+        document.getElementById("prevReviewBtn").disabled = (index === 0);
+        document.getElementById("nextReviewBtn").disabled = (index === cards.length - 1);
+        document.getElementById("reviewPagination").style.display = "flex";
+        window.scrollTo(0, 0);
+    }
+    function navigateReview(direction) {
+        const cards = document.querySelectorAll(".review-card");
+        currentReviewIndex += direction;
+        if (currentReviewIndex >= 0 && currentReviewIndex < cards.length) {
+            showReviewCard(currentReviewIndex);
+        }
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
+            await new Promise(r => setTimeout(r, 600));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+                if (btn) btn.innerText = "✅ Select Save as PDF";
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+        } finally {
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 3000);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        history.replaceState({ resultPage: true }, "", "#result");
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.addEventListener("popstate", function(e) {
+        if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+            history.pushState({ resultPage: true }, "", "#result");
+            confirmLeaveResult();
+        }
+    });
+    function confirmLeaveResult() {
+        if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
+            window.AndroidBridge.exitResultPage();
+        } else {
+            history.back();
+        }
+    }
+    window.checkForReview = function() {
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
+            }
+        }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
