@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-07T09:52:40.248Z",
+  "version": "2026-11-07T10:14:02.827Z",
   "entries": [
     {
       "id": "SCH-1794038097122-373",
@@ -1177,17 +1177,6 @@
       "date": "2026-11-11",
       "testId": "NTE-SS-57",
       "createdAt": "2026-10-31T13:13:09.663Z"
-    },
-    {
-      "id": "SCH-1793452527287-194",
-      "courseId": "TNTET",
-      "courseName": "TNTET",
-      "subject": "English",
-      "topicId": "REV-1793452527287",
-      "topicName": "Revision: 6th Term 1 – UNIT 1: Prose: Sea Turtles, Poem: The Crocodile, Supplementary: The Friendship",
-      "date": "2026-11-11",
-      "testId": "NTE-ENG-57",
-      "createdAt": "2026-10-31T13:15:27.287Z"
     },
     {
       "id": "SCH-1793452612727-660",
