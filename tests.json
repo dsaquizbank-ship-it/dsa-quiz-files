@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-07T12:01:51.101Z",
+  "version": "2026-11-07T12:04:47.859Z",
   "categories": [
     {
       "id": "BANK",
@@ -1556,6 +1556,19 @@
       "questionCount": 25,
       "negativeMark": 0.33,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGS-4.html",
+      "releaseTimestamp": 1794211200000,
+      "language": "both"
+    },
+    {
+      "testId": "SGS-4",
+      "examId": "SSC-GS",
+      "name": "MOTION SGS-4",
+      "topic": "MOTION",
+      "durationMinutes": 15,
+      "order": 4,
+      "questionCount": 25,
+      "negativeMark": 0.5,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGS-4.html",
       "releaseTimestamp": 1794211200000,
       "language": "both"
     }
