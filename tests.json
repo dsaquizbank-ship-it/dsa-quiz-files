@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-07T11:45:40.964Z",
+  "version": "2026-11-07T11:48:56.082Z",
   "categories": [
     {
       "id": "BANK",
@@ -1530,6 +1530,19 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGE-52.html",
+      "releaseTimestamp": 1794211200000,
+      "language": "en"
+    },
+    {
+      "testId": "UGE-102",
+      "examId": "UG-ENG",
+      "name": "MULK RAJ ANAND – COOLIE (FICTION) UGE-102",
+      "topic": "MULK RAJ ANAND – COOLIE (FICTION)",
+      "durationMinutes": 15,
+      "order": 102,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGE-102.html",
       "releaseTimestamp": 1794211200000,
       "language": "en"
     }
