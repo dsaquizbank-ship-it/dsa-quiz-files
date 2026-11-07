@@ -108,7 +108,7 @@
       "topicId": "REV-1793450344392",
       "topicName": "Revision: 8th Lesson 7 – நாடு, சமூகம் - பாருக்குளே நல்ல நாடு, 8th Lesson 8 – அறம், தத்துவம், சிந்தனை - அறத்தால் வருவதே இன்பம்",
       "date": "2026-11-02",
-      "testId": "NTE-TAM-53",
+      "testId": "TET-TA-53",
       "createdAt": "2026-10-31T12:39:04.392Z"
     },
     {
@@ -119,7 +119,7 @@
       "topicId": "REV-1793450422112",
       "topicName": "Revision: 7th Term 1 - Direct and Inverse Proportion",
       "date": "2026-11-02",
-      "testId": "NTE-MS-53",
+      "testId": "TET-MS-53",
       "createdAt": "2026-10-31T12:40:22.112Z"
     },
     {
@@ -878,7 +878,7 @@
       "topicId": "REV-1793452099151",
       "topicName": "Revision: 6th Term 1 – மொழி",
       "date": "2026-11-09",
-      "testId": "NTE-TAM-56",
+      "testId": "TET-TA-56",
       "createdAt": "2026-10-31T13:08:19.151Z"
     },
     {
@@ -889,7 +889,7 @@
       "topicId": "REV-1793452223391",
       "topicName": "Revision: 7th Term 1 - Geometry",
       "date": "2026-11-09",
-      "testId": "NTE-MS-56",
+      "testId": "TET-MS-56",
       "createdAt": "2026-10-31T13:10:23.391Z"
     },
     {
@@ -1461,7 +1461,7 @@
       "topicId": "REV-1793452143399",
       "topicName": "Revision: 6th Term 1 – இயற்கை",
       "date": "2026-11-16",
-      "testId": "NTE-TAM-59",
+      "testId": "TET-TA-59",
       "createdAt": "2026-10-31T13:09:03.399Z"
     },
     {
@@ -1472,7 +1472,7 @@
       "topicId": "REV-1793452280087",
       "topicName": "Revision: 7th Term 1 - Information Processing",
       "date": "2026-11-16",
-      "testId": "NTE-MS-59",
+      "testId": "TET-MS-59",
       "createdAt": "2026-10-31T13:11:20.087Z"
     },
     {
@@ -1483,7 +1483,7 @@
       "topicId": "REV-1793452415103",
       "topicName": "Revision: 6th Term 2 - Civics: National Symbols",
       "date": "2026-11-16",
-      "testId": "NTE-SS-59",
+      "testId": "TET-SS-59",
       "createdAt": "2026-10-31T13:13:35.103Z"
     },
     {
@@ -1670,7 +1670,7 @@
       "topicId": "REV-1793452434015",
       "topicName": "Revision: 6th Term 2 - Civics: The Constitution of India",
       "date": "2026-11-18",
-      "testId": "NTE-SS-60",
+      "testId": "TET-SS-60",
       "createdAt": "2026-10-31T13:13:54.015Z"
     },
     {
@@ -1956,7 +1956,7 @@
       "topicId": "REV-1793452162895",
       "topicName": "Revision: 6th Term 1 – கல்வி",
       "date": "2026-11-23",
-      "testId": "NTE-TAM-62",
+      "testId": "TET-TA-62",
       "createdAt": "2026-10-31T13:09:22.895Z"
     },
     {
@@ -1967,7 +1967,7 @@
       "topicId": "REV-1793452300343",
       "topicName": "Revision: 7th Term 2 - Number System",
       "date": "2026-11-23",
-      "testId": "NTE-MS-62",
+      "testId": "TET-MS-62",
       "createdAt": "2026-10-31T13:11:40.343Z"
     },
     {
@@ -1978,7 +1978,7 @@
       "topicId": "REV-1793452458463",
       "topicName": "Revision: 6th Term 3 - Civics: Democracy",
       "date": "2026-11-23",
-      "testId": "NTE-SS-62",
+      "testId": "TET-SS-62",
       "createdAt": "2026-10-31T13:14:18.463Z"
     },
     {
@@ -2154,7 +2154,7 @@
       "topicId": "REV-1793452478879",
       "topicName": "Revision: 6th Term 3 - Civics: Local Bodies - Rural and Urban",
       "date": "2026-11-25",
-      "testId": "NTE-SS-63",
+      "testId": "TET-SS-63",
       "createdAt": "2026-10-31T13:14:38.879Z"
     },
     {
@@ -2429,7 +2429,7 @@
       "topicId": "REV-1793452185167",
       "topicName": "Revision: 6th Term 2 – நாகரிகம், பண்பாடு",
       "date": "2026-11-30",
-      "testId": "NTE-TAM-65",
+      "testId": "TET-TA-65",
       "createdAt": "2026-10-31T13:09:45.167Z"
     },
     {
@@ -2440,7 +2440,7 @@
       "topicId": "REV-1793452319983",
       "topicName": "Revision: 7th Term 2 - Measurements",
       "date": "2026-11-30",
-      "testId": "NTE-MS-65",
+      "testId": "TET-MS-65",
       "createdAt": "2026-10-31T13:11:59.983Z"
     },
     {
@@ -2451,7 +2451,7 @@
       "topicId": "REV-1793452496199",
       "topicName": "Revision: 6th Term 3 - Civics: Road Safety",
       "date": "2026-11-30",
-      "testId": "NTE-SS-65",
+      "testId": "TET-SS-65",
       "createdAt": "2026-10-31T13:14:56.199Z"
     },
     {
