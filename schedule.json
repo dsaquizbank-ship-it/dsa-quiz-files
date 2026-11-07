@@ -1,17 +1,6 @@
 {
-  "version": "2026-11-06T14:04:55.098Z",
+  "version": "2026-11-07T07:12:55.132Z",
   "entries": [
-    {
-      "id": "SCH-1793613836155-285",
-      "courseId": "SPLTET",
-      "courseName": "SPECIAL TET",
-      "subject": "Tamil",
-      "topicId": "REV-1793613836155",
-      "topicName": "Revision: 6th Term 1 – மொழி, 6th Term 1 – இயற்கை, 6th Term 1 – கல்வி, 6th Term 2 – நாகரிகம், பண்பாடு, 6th Term 2 – தொழில், வணிகம்",
-      "date": "2026-11-02",
-      "testId": "SPT-TA-1",
-      "createdAt": "2026-11-02T10:03:56.155Z"
-    },
     {
       "id": "SCH-1793580956228-54",
       "courseId": "BANK",
