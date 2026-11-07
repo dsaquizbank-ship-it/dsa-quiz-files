@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-07T10:51:31.283Z",
+  "version": "2026-11-07T10:54:17.137Z",
   "entries": [
     {
       "id": "SCH-1794038030683-992",
@@ -1025,6 +1025,17 @@
       "createdAt": "2026-11-06T12:42:09.844Z"
     },
     {
+      "id": "SCH-1794048800730-18",
+      "courseId": "TNTET",
+      "courseName": "TNTET",
+      "subject": "Social Science",
+      "topicId": "TNTET-T114",
+      "topicName": "6th Term 1 - Civics: Achieving Equality",
+      "date": "2026-11-11",
+      "testId": "TET-SS-57",
+      "createdAt": "2026-11-07T10:53:20.730Z"
+    },
+    {
       "id": "SCH-1794047866068-56",
       "courseId": "TNTET",
       "courseName": "TNTET",
@@ -1144,17 +1155,6 @@
       "date": "2026-11-11",
       "testId": "UGZ-77",
       "createdAt": "2026-10-31T13:32:55.759Z"
-    },
-    {
-      "id": "SCH-1793452389663-484",
-      "courseId": "TNTET",
-      "courseName": "TNTET",
-      "subject": "Social Science",
-      "topicId": "REV-1793452389663",
-      "topicName": "Revision: 6th Term 1 - Civics: Achieving Equality",
-      "date": "2026-11-11",
-      "testId": "NTE-SS-57",
-      "createdAt": "2026-10-31T13:13:09.663Z"
     },
     {
       "id": "SCH-1793452612727-660",
