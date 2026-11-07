@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-07T11:37:17.449Z",
+  "version": "2026-11-07T11:39:57.368Z",
   "categories": [
     {
       "id": "BANK",
@@ -1504,6 +1504,19 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIH-8.html",
+      "releaseTimestamp": 1794211200000,
+      "language": "both"
+    },
+    {
+      "testId": "TIH-3",
+      "examId": "TNPSC-IH",
+      "name": "DELHI SULTANATE TIH-3",
+      "topic": "DELHI SULTANATE",
+      "durationMinutes": 15,
+      "order": 3,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIH-3.html",
       "releaseTimestamp": 1794211200000,
       "language": "both"
     }
