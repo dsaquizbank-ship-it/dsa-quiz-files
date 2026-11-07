@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-07T11:48:56.082Z",
+  "version": "2026-11-07T12:01:51.101Z",
   "categories": [
     {
       "id": "BANK",
@@ -1545,6 +1545,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGE-102.html",
       "releaseTimestamp": 1794211200000,
       "language": "en"
+    },
+    {
+      "testId": "RGS-4",
+      "examId": "RRB-GS",
+      "name": "MOTION RGS-4",
+      "topic": "MOTION",
+      "durationMinutes": 15,
+      "order": 4,
+      "questionCount": 25,
+      "negativeMark": 0.33,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGS-4.html",
+      "releaseTimestamp": 1794211200000,
+      "language": "both"
     }
   ]
 }
