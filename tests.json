@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-08T16:24:43.050Z",
+  "version": "2026-11-08T16:37:17.863Z",
   "categories": [
     {
       "id": "BANK",
@@ -321,6 +321,12 @@
       "id": "COM-TAM",
       "name": "10TH STD",
       "categoryId": "COM-TAM",
+      "order": 1
+    },
+    {
+      "id": "SPL-TAMIL",
+      "name": "TAMIL",
+      "categoryId": "SPLTET",
       "order": 1
     }
   ],
@@ -1649,6 +1655,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGA-4.html",
       "releaseTimestamp": 1794211200000,
       "language": "both"
+    },
+    {
+      "testId": "SPT-TA-6",
+      "examId": "SPL-TAMIL",
+      "name": "6TH TERM 3 – 7TH TERM 1 SPT-TA-6",
+      "topic": "6TH TERM 3 – 7TH TERM 1",
+      "durationMinutes": 30,
+      "order": 6,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-TA-6.html",
+      "releaseTimestamp": 1794211200000,
+      "language": "ta"
     }
   ]
 }
