@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-08T16:10:52.353Z",
+  "version": "2026-11-08T16:14:08.149Z",
   "categories": [
     {
       "id": "BANK",
@@ -1583,6 +1583,19 @@
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-TA-56.html",
       "releaseTimestamp": 1794211200000,
+      "language": "ta"
+    },
+    {
+      "testId": "COM-TA-5",
+      "examId": "COM-TAM",
+      "name": "10 TH IYAL 5 COM-TA-5",
+      "topic": "10 TH IYAL 5",
+      "durationMinutes": 15,
+      "order": 5,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/COM-TA-5.html",
+      "releaseTimestamp": 1794556800000,
       "language": "ta"
     }
   ]
