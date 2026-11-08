@@ -1,9 +1,72 @@
 {
-  "version": "2026-11-08T15:21:50.169Z",
+  "version": "2026-11-08T15:33:22.748Z",
   "timetable": [
     {
       "day": "Monday",
       "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Tamil Grammar",
+          "batch": "TNPSC",
+          "faculty": "Mrs Sreevidhya",
+          "room": "Mrs Sreevidhya"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Tamil",
+          "batch": "TNTET",
+          "faculty": "Mrs Sreevidhya",
+          "room": "Mrs Sreevidhya"
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "Science",
+          "batch": "TNTET",
+          "faculty": "Mrs Ebisha",
+          "room": "Mrs Ebisha"
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "Social Science",
+          "batch": "TNTET",
+          "faculty": "Mrs Ebisha",
+          "room": "Mrs Ebisha"
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "Unit III - History, Culture & INM: Different modes of agitation: Militant Movements, Communalism and Partition",
+          "batch": "TNPSC",
+          "faculty": "Dr Sahitha",
+          "room": "Dr Sahitha"
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "General Awareness: Modern India - Towards Independence",
+          "batch": "SSC",
+          "faculty": "Dr Sahitha",
+          "room": "Dr Sahitha"
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "General Awareness: Modern India - Towards Independence",
+          "batch": "RRB",
+          "faculty": "Dr Sahitha",
+          "room": "Dr Sahitha"
+        },
+        {
+          "time": "10:00 AM - 01:00 PM",
+          "subject": "Unit VII (Indian)",
+          "batch": "PGTRB ENGLISH",
+          "faculty": "Mrs Deepthi",
+          "room": "Mrs Deepthi"
+        },
+        {
+          "time": "02:00 PM - 03:30 PM",
+          "subject": "Unit V - Data Communication and Computer Networks: Analog and Digital Signals",
+          "batch": "PGTRB COMPUTER SCIENCE",
+          "faculty": "Dr Sahitha",
+          "room": "Dr Sahitha"
+        },
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Quantitative Aptitude",
