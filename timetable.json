@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-08T15:20:41.610Z",
+  "version": "2026-11-08T15:21:50.169Z",
   "timetable": [
     {
       "day": "Monday",
@@ -17,13 +17,6 @@
           "batch": "PGTRB HISTORY",
           "faculty": "Dr Sahitha",
           "room": "Dr Sahitha"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Tamil Literature: அலகு 1 - இலக்கணம்",
-          "batch": "TNPSC",
-          "faculty": "",
-          "room": ""
         },
         {
           "time": "11:30 AM - 01:00 PM",
