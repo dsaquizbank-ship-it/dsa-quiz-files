@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-08T16:21:10.163Z",
+  "version": "2026-11-08T16:23:03.916Z",
   "categories": [
     {
       "id": "BANK",
@@ -1621,6 +1621,19 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-SS-56.html",
+      "releaseTimestamp": 1794211200000,
+      "language": "both"
+    },
+    {
+      "testId": "SGA-4",
+      "examId": "SSC-GA",
+      "name": "GUPTAS SGA-4",
+      "topic": "GUPTAS",
+      "durationMinutes": 10,
+      "order": 4,
+      "questionCount": 20,
+      "negativeMark": 0.5,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGA-4.html",
       "releaseTimestamp": 1794211200000,
       "language": "both"
     }
