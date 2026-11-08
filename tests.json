@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-08T16:23:03.916Z",
+  "version": "2026-11-08T16:24:43.050Z",
   "categories": [
     {
       "id": "BANK",
@@ -1634,6 +1634,19 @@
       "questionCount": 20,
       "negativeMark": 0.5,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGA-4.html",
+      "releaseTimestamp": 1794211200000,
+      "language": "both"
+    },
+    {
+      "testId": "RGA-4",
+      "examId": "RRB-GA",
+      "name": "GUPTAS RGA-4",
+      "topic": "GUPTAS",
+      "durationMinutes": 10,
+      "order": 4,
+      "questionCount": 20,
+      "negativeMark": 0.33,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGA-4.html",
       "releaseTimestamp": 1794211200000,
       "language": "both"
     }
