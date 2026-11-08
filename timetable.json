@@ -1,9 +1,16 @@
 {
-  "version": "2026-11-05T13:02:48.294Z",
+  "version": "2026-11-08T15:12:17.048Z",
   "timetable": [
     {
       "day": "Monday",
       "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude: Quadratic Equation",
+          "batch": "BANK",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Quantitative Aptitude: Approximation, Percentages",
