@@ -1,16 +1,9 @@
 {
-  "version": "2026-11-08T15:14:22.841Z",
+  "version": "2026-11-08T15:18:49.332Z",
   "timetable": [
     {
       "day": "Monday",
       "classes": [
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Quantitative Aptitude: Quadratic Equation",
-          "batch": "BANK",
-          "faculty": "Abin",
-          "room": "Abin"
-        },
         {
           "time": "11:30 AM - 01:00 PM",
           "subject": "Unit V - Crown to Independence: Dandi March, Gandhi-Irwin Pact, Round Table Conferences",
