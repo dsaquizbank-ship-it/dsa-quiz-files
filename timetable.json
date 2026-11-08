@@ -1,22 +1,22 @@
 {
-  "version": "2026-11-08T15:18:49.332Z",
+  "version": "2026-11-08T15:20:41.610Z",
   "timetable": [
     {
       "day": "Monday",
       "classes": [
         {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "Unit V - Crown to Independence: Dandi March, Gandhi-Irwin Pact, Round Table Conferences",
-          "batch": "PGTRB HISTORY",
-          "faculty": "",
-          "room": ""
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude",
+          "batch": "BANK",
+          "faculty": "Mr Abin",
+          "room": "Mr Abin"
         },
         {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Science: 9th - Universe",
-          "batch": "SGT",
-          "faculty": "",
-          "room": ""
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "Unit V - Crown to Independence: Mountbatten Plan, Government of India Act, 1935, Indian Independence Act of 1947",
+          "batch": "PGTRB HISTORY",
+          "faculty": "Dr Sahitha",
+          "room": "Dr Sahitha"
         },
         {
           "time": "10:00 AM - 11:30 AM",
