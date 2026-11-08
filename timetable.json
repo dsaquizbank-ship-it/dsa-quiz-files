@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-08T15:12:17.048Z",
+  "version": "2026-11-08T15:14:22.841Z",
   "timetable": [
     {
       "day": "Monday",
@@ -10,13 +10,6 @@
           "batch": "BANK",
           "faculty": "Abin",
           "room": "Abin"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Quantitative Aptitude: Approximation, Percentages",
-          "batch": "BANK",
-          "faculty": "",
-          "room": ""
         },
         {
           "time": "11:30 AM - 01:00 PM",
