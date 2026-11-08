@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-08T16:18:28.149Z",
+  "version": "2026-11-08T16:21:10.163Z",
   "categories": [
     {
       "id": "BANK",
@@ -1610,6 +1610,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGCS-16.html",
       "releaseTimestamp": 1794211200000,
       "language": "en"
+    },
+    {
+      "testId": "TET-SS-56",
+      "examId": "TET-SOCIALSCIENCE",
+      "name": "6TH TERM 1 CIVICS UNIT 1: UNDERSTANDING DIVERSITY TET-SS-56",
+      "topic": "6TH TERM 1 CIVICS UNIT 1: UNDERSTANDING DIVERSITY",
+      "durationMinutes": 15,
+      "order": 56,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-SS-56.html",
+      "releaseTimestamp": 1794211200000,
+      "language": "both"
     }
   ]
 }
