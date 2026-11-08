@@ -1,9 +1,30 @@
 {
-  "version": "2026-11-08T15:35:42.683Z",
+  "version": "2026-11-08T15:38:50.618Z",
   "timetable": [
     {
       "day": "Monday",
       "classes": [
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "Social Science",
+          "batch": "TNTET",
+          "faculty": "Mrs Sreevidhya",
+          "room": "Mrs Sreevidhya"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude",
+          "batch": "SSC",
+          "faculty": "Mr Abin",
+          "room": "Mr Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude",
+          "batch": "RRB",
+          "faculty": "Mr Abin",
+          "room": "Mr Abin"
+        },
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Tamil Grammar",
@@ -73,20 +94,6 @@
           "batch": "PGTRB HISTORY",
           "faculty": "Dr Sahitha",
           "room": "Dr Sahitha"
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "Unit III - History, Culture & INM: Different modes of agitation: Growth of Satyagraha",
-          "batch": "TNPSC",
-          "faculty": "",
-          "room": ""
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "REVISION: PHYSICS",
-          "batch": "TNTET",
-          "faculty": "",
-          "room": ""
         }
       ]
     },
