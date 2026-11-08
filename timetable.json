@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-08T15:33:22.748Z",
+  "version": "2026-11-08T15:35:42.683Z",
   "timetable": [
     {
       "day": "Monday",
@@ -21,13 +21,6 @@
         {
           "time": "11:30 AM - 01:00 PM",
           "subject": "Science",
-          "batch": "TNTET",
-          "faculty": "Mrs Ebisha",
-          "room": "Mrs Ebisha"
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "Social Science",
           "batch": "TNTET",
           "faculty": "Mrs Ebisha",
           "room": "Mrs Ebisha"
