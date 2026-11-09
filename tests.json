@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-09T07:57:31.129Z",
+  "version": "2026-11-09T07:58:32.010Z",
   "categories": [
     {
       "id": "BANK",
@@ -1707,19 +1707,6 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RQA-2.html",
       "releaseTimestamp": 1794211200000,
       "language": "en"
-    },
-    {
-      "testId": "TET-MS-54",
-      "examId": "TET-MATHS",
-      "name": "7TH TERM 1 GEOMETRY TET-MS-54",
-      "topic": "7TH TERM 1 GEOMETRY",
-      "durationMinutes": 25,
-      "order": 54,
-      "questionCount": 25,
-      "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-MS-54.html",
-      "releaseTimestamp": 1794211200000,
-      "language": "both"
     },
     {
       "testId": "UGM-97",
