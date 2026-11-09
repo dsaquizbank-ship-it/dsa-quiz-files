@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-09T15:23:33.117Z",
+  "version": "2026-11-09T15:27:32.013Z",
   "timetable": [
     {
       "day": "Monday",
@@ -100,6 +100,27 @@
     {
       "day": "Tuesday",
       "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude: Ratio And Proportion",
+          "batch": "RRB",
+          "faculty": "Mr Abin",
+          "room": "Mr Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude: Ratio And Proportion",
+          "batch": "BANK",
+          "faculty": "Mr Abin",
+          "room": "Mr Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude: Ratio And Proportion",
+          "batch": "SSC",
+          "faculty": "Mr Abin",
+          "room": "Mr Abin"
+        },
         {
           "time": "11:30 AM - 01:00 PM",
           "subject": "Science",
