@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-09T07:59:43.417Z",
+  "version": "2026-11-09T08:50:11.321Z",
   "categories": [
     {
       "id": "BANK",
@@ -327,6 +327,12 @@
       "id": "SPL-TAMIL",
       "name": "TAMIL",
       "categoryId": "SPLTET",
+      "order": 1
+    },
+    {
+      "id": "UG-PHY",
+      "name": "UGTRB PHYSICS",
+      "categoryId": "UGTRB",
       "order": 1
     }
   ],
@@ -1733,6 +1739,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-MS-56.html",
       "releaseTimestamp": 1794211200000,
       "language": "both"
+    },
+    {
+      "testId": "UGP-73",
+      "examId": "UG-PHY",
+      "name": "Barton's radiation correction-focal length of concave and convex lens by contact - galvanometer - conversion of galvanometer into ammeter and voltmeter. calibration of low range ammeter and voltmeter-ballistic galvanometer- figure of merit. UGP-73",
+      "topic": "Barton's radiation correction-focal length of concave and convex lens by contact - galvanometer - conversion of galvanometer into ammeter and voltmeter. calibration of low range ammeter and voltmeter-ballistic galvanometer- figure of merit.",
+      "durationMinutes": 20,
+      "order": 73,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGP-73.html",
+      "releaseTimestamp": 1794211200000,
+      "language": "en"
     }
   ]
 }
