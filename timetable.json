@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-09T15:46:29.825Z",
+  "version": "2026-11-09T15:46:50.542Z",
   "timetable": [
     {
       "day": "Monday",
@@ -169,13 +169,6 @@
           "batch": "TNTET",
           "faculty": "Mrs Sreevidhya",
           "room": "Mrs Sreevidhya"
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "Unit IX - Literary Criticism and Theories: Recent Trends - New Historicism",
-          "batch": "UGTRB ENGLISH",
-          "faculty": "",
-          "room": ""
         },
         {
           "time": "11:30 AM - 01:00 PM",
