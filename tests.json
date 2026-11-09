@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-08T16:37:17.863Z",
+  "version": "2026-11-09T06:50:39.798Z",
   "categories": [
     {
       "id": "BANK",
@@ -1668,6 +1668,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-TA-6.html",
       "releaseTimestamp": 1794211200000,
       "language": "ta"
+    },
+    {
+      "testId": "BQA-2",
+      "examId": "BANK-QA",
+      "name": "APPROXIMATION BQA-2",
+      "topic": "APPROXIMATION",
+      "durationMinutes": 25,
+      "order": 2,
+      "questionCount": 25,
+      "negativeMark": 0.25,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BQA-2.html",
+      "releaseTimestamp": 1794211200000,
+      "language": "en"
     }
   ]
 }
