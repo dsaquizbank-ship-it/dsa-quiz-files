@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-09T15:27:32.013Z",
+  "version": "2026-11-09T15:46:29.825Z",
   "timetable": [
     {
       "day": "Monday",
@@ -169,13 +169,6 @@
           "batch": "TNTET",
           "faculty": "Mrs Sreevidhya",
           "room": "Mrs Sreevidhya"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "English: 8th – UNIT 1: Prose: The Nose-Jewel, Poem: Special Hero, Supplementary: The Woman on Platform 8",
-          "batch": "TNTET",
-          "faculty": "",
-          "room": ""
         },
         {
           "time": "11:30 AM - 01:00 PM",
