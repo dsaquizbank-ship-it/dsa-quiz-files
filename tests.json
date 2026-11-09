@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-09T06:50:39.798Z",
+  "version": "2026-11-09T06:52:04.007Z",
   "categories": [
     {
       "id": "BANK",
@@ -1679,6 +1679,19 @@
       "questionCount": 25,
       "negativeMark": 0.25,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BQA-2.html",
+      "releaseTimestamp": 1794211200000,
+      "language": "en"
+    },
+    {
+      "testId": "SQA-2",
+      "examId": "SSC-QA",
+      "name": "APPROXIMATION SQA-2",
+      "topic": "APPROXIMATION",
+      "durationMinutes": 25,
+      "order": 2,
+      "questionCount": 25,
+      "negativeMark": 0.33,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SQA-2.html",
       "releaseTimestamp": 1794211200000,
       "language": "en"
     }
