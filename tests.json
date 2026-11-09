@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-09T07:30:41.547Z",
+  "version": "2026-11-09T07:38:09.712Z",
   "categories": [
     {
       "id": "BANK",
@@ -1720,6 +1720,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-MS-54.html",
       "releaseTimestamp": 1794211200000,
       "language": "both"
+    },
+    {
+      "testId": "UGM-97",
+      "examId": "UG-MAT",
+      "name": "QUEUING THEORY- BASIC CONCEPTS, STEADY STATE ANALYSISOF M/M/1 AND M/M/SYSTEM UGM-97",
+      "topic": "QUEUING THEORY- BASIC CONCEPTS, STEADY STATE ANALYSISOF M/M/1 AND M/M/SYSTEM",
+      "durationMinutes": 25,
+      "order": 97,
+      "questionCount": 20,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-97.html",
+      "releaseTimestamp": 1794211200000,
+      "language": "en"
     }
   ]
 }
