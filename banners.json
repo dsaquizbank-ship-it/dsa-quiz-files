@@ -1,4 +1,9 @@
 {
-  "version": "1.0",
-  "banners": []
+  "version": "2026-11-09T09:51:53.527Z",
+  "banners": [
+    {
+      "imageUrl": "https://raw.githubusercontent.com/dsaquizbank-ship-it/dsa-quiz-files/main/banner1.png",
+      "link": ""
+    }
+  ]
 }
