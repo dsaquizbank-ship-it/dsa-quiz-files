@@ -1,9 +1,16 @@
 {
-  "version": "2026-11-08T15:38:50.618Z",
+  "version": "2026-11-09T02:05:06.901Z",
   "timetable": [
     {
       "day": "Monday",
       "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Unit I - Aptitude",
+          "batch": "TNPSC",
+          "faculty": "Ms.Jothika",
+          "room": "Ms.Jothika"
+        },
         {
           "time": "11:30 AM - 01:00 PM",
           "subject": "Social Science",
@@ -24,13 +31,6 @@
           "batch": "RRB",
           "faculty": "Mr Abin",
           "room": "Mr Abin"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Tamil Grammar",
-          "batch": "TNPSC",
-          "faculty": "Mrs Sreevidhya",
-          "room": "Mrs Sreevidhya"
         },
         {
           "time": "10:00 AM - 11:30 AM",
