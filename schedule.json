@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-07T10:55:58.912Z",
+  "version": "2026-11-09T10:02:11.463Z",
   "entries": [
     {
       "id": "SCH-1794038030683-992",
@@ -1014,6 +1014,17 @@
       "createdAt": "2026-11-06T12:42:09.844Z"
     },
     {
+      "id": "SCH-1794218188928-564",
+      "courseId": "SGT",
+      "courseName": "SGT",
+      "subject": "Social Science",
+      "topicId": "SGT-T508",
+      "topicName": "9th - Evolution of Humans and Society - Prehistoric Period",
+      "date": "2026-11-11",
+      "testId": "SGT-SS-1",
+      "createdAt": "2026-11-09T09:56:28.928Z"
+    },
+    {
       "id": "SCH-1794048800730-18",
       "courseId": "TNTET",
       "courseName": "TNTET",
@@ -1234,6 +1245,17 @@
       "createdAt": "2026-11-06T13:06:09.747Z"
     },
     {
+      "id": "SCH-1794218312287-3",
+      "courseId": "SGT",
+      "courseName": "SGT",
+      "subject": "Social Science",
+      "topicId": "SGT-T509",
+      "topicName": "9th - Ancient Civilisations",
+      "date": "2026-11-13",
+      "testId": "SGT-SS-2",
+      "createdAt": "2026-11-09T09:58:32.287Z"
+    },
+    {
       "id": "SCH-1794045156576-822",
       "courseId": "SSC",
       "courseName": "SSC",
@@ -1364,6 +1386,17 @@
       "date": "2026-11-13",
       "testId": "PGE-54",
       "createdAt": "2026-10-31T04:30:24.897Z"
+    },
+    {
+      "id": "SCH-1794218332599-747",
+      "courseId": "SGT",
+      "courseName": "SGT",
+      "subject": "Social Science",
+      "topicId": "SGT-T510",
+      "topicName": "9th - Early Tamil Society and Culture",
+      "date": "2026-11-16",
+      "testId": "SGT-SS-3",
+      "createdAt": "2026-11-09T09:58:52.599Z"
     },
     {
       "id": "SCH-1793971773227-450",
@@ -1584,6 +1617,17 @@
       "date": "2026-11-17",
       "testId": "SPT-SS-12",
       "createdAt": "2026-11-06T12:46:20.276Z"
+    },
+    {
+      "id": "SCH-1794218350607-5",
+      "courseId": "SGT",
+      "courseName": "SGT",
+      "subject": "Social Science",
+      "topicId": "SGT-T511",
+      "topicName": "9th - Intellectual Awakening and Socio-Political Changes",
+      "date": "2026-11-18",
+      "testId": "SGT-SS-4",
+      "createdAt": "2026-11-09T09:59:10.607Z"
     },
     {
       "id": "SCH-1793972867586-318",
@@ -1850,6 +1894,17 @@
       "createdAt": "2026-10-31T04:35:50.225Z"
     },
     {
+      "id": "SCH-1794218401807-90",
+      "courseId": "SGT",
+      "courseName": "SGT",
+      "subject": "Social Science",
+      "topicId": "SGT-T513",
+      "topicName": "9th - The Middle Ages",
+      "date": "2026-11-23",
+      "testId": "SGT-SS-6",
+      "createdAt": "2026-11-09T10:00:01.807Z"
+    },
+    {
       "id": "SCH-1793971861386-278",
       "courseId": "TNPSC",
       "courseName": "TNPSC",
@@ -2059,6 +2114,17 @@
       "createdAt": "2026-11-06T12:47:30.987Z"
     },
     {
+      "id": "SCH-1794218423767-382",
+      "courseId": "SGT",
+      "courseName": "SGT",
+      "subject": "Social Science",
+      "topicId": "SGT-T514",
+      "topicName": "9th - State and Society in Medieval India",
+      "date": "2026-11-25",
+      "testId": "SGT-SS-7",
+      "createdAt": "2026-11-09T10:00:23.767Z"
+    },
+    {
       "id": "SCH-1793972896747-651",
       "courseId": "TNPSC",
       "courseName": "TNPSC",
@@ -2246,6 +2312,17 @@
       "createdAt": "2026-11-06T13:07:41.819Z"
     },
     {
+      "id": "SCH-1794218443327-361",
+      "courseId": "SGT",
+      "courseName": "SGT",
+      "subject": "Social Science",
+      "topicId": "SGT-T515",
+      "topicName": "9th - The Beginning of the Modern Age",
+      "date": "2026-11-27",
+      "testId": "SGT-SS-8",
+      "createdAt": "2026-11-09T10:00:43.327Z"
+    },
+    {
       "id": "SCH-1793973482906-398",
       "courseId": "TNPSC",
       "courseName": "TNPSC",
@@ -2343,6 +2420,17 @@
       "date": "2026-11-27",
       "testId": "PGE-60",
       "createdAt": "2026-10-31T04:43:21.913Z"
+    },
+    {
+      "id": "SCH-1794218470927-929",
+      "courseId": "SGT",
+      "courseName": "SGT",
+      "subject": "Social Science",
+      "topicId": "SGT-T516",
+      "topicName": "9th - The Age of Revolutions",
+      "date": "2026-11-30",
+      "testId": "SGT-SS-9",
+      "createdAt": "2026-11-09T10:01:10.927Z"
     },
     {
       "id": "SCH-1793971975211-26",
@@ -2532,6 +2620,17 @@
       "createdAt": "2026-11-06T12:48:32.652Z"
     },
     {
+      "id": "SCH-1794218489927-33",
+      "courseId": "SGT",
+      "courseName": "SGT",
+      "subject": "Social Science",
+      "topicId": "SGT-T517",
+      "topicName": "9th - Industrial Revolution",
+      "date": "2026-12-02",
+      "testId": "SGT-SS-10",
+      "createdAt": "2026-11-09T10:01:29.927Z"
+    },
+    {
       "id": "SCH-1793972944362-746",
       "courseId": "TNPSC",
       "courseName": "TNPSC",
@@ -2585,6 +2684,17 @@
       "date": "2026-12-03",
       "testId": "SPT-SC-24",
       "createdAt": "2026-11-06T13:08:50.467Z"
+    },
+    {
+      "id": "SCH-1794218521663-142",
+      "courseId": "SGT",
+      "courseName": "SGT",
+      "subject": "Social Science",
+      "topicId": "SGT-T518",
+      "topicName": "9th - Colonialism in Asia and Africa",
+      "date": "2026-12-04",
+      "testId": "SGT-SS-11",
+      "createdAt": "2026-11-09T10:02:01.663Z"
     },
     {
       "id": "SCH-1793973505522-750",
