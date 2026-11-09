@@ -2,7 +2,11 @@
   "version": "2026-11-09T10:14:29.033Z",
   "banners": [
     {
-      "imageUrl": "https://github.com/dsaquizbank-ship-it/dsa-quiz-files/blob/main/IMAGES/Screenshot%202026-10-29%20231339.png?raw=true",
+      "imageUrl": "https://raw.githubusercontent.com/dsaquizbank-ship-it/dsa-quiz-files/main/IMAGES/Screenshot%202026-10-29%20211339.png",
+      "link": ""
+    },
+    {
+      "imageUrl": "https://raw.githubusercontent.com/dsaquizbank-ship-it/dsa-quiz-files/main/IMAGES/YOUR_SECOND_IMAGE.png",
       "link": ""
     }
   ]
