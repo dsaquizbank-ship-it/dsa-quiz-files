@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-09T15:18:34.706Z",
+  "version": "2026-11-09T15:19:56.030Z",
   "timetable": [
     {
       "day": "Monday",
@@ -102,17 +102,17 @@
       "classes": [
         {
           "time": "10:00 AM - 11:30 AM",
+          "subject": "Unit I - Aptitude",
+          "batch": "TNPSC",
+          "faculty": "Ms Jothika",
+          "room": "Ms Jothika"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
           "subject": "Tamil",
           "batch": "TNTET",
           "faculty": "Mrs Sreevidhya",
           "room": "Mrs Sreevidhya"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Unit I - Aptitude: Simplification",
-          "batch": "TNPSC",
-          "faculty": "",
-          "room": ""
         },
         {
           "time": "11:30 AM - 01:00 PM",
