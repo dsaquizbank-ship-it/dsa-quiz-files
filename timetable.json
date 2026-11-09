@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-09T15:46:50.542Z",
+  "version": "2026-11-09T15:47:53.319Z",
   "timetable": [
     {
       "day": "Monday",
@@ -202,13 +202,6 @@
           "time": "11:30 AM - 01:00 PM",
           "subject": "Science: 9th - Measurement",
           "batch": "SGT",
-          "faculty": "",
-          "room": ""
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Reasoning Ability: Puzzles, Seating Arrangements, Syllogism, Input/output",
-          "batch": "BANK",
           "faculty": "",
           "room": ""
         }
