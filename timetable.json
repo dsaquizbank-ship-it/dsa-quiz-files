@@ -1,9 +1,16 @@
 {
-  "version": "2026-11-09T02:05:06.901Z",
+  "version": "2026-11-09T02:07:18.779Z",
   "timetable": [
     {
       "day": "Monday",
       "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "English",
+          "batch": "TNTET",
+          "faculty": "Mrs.Jaya",
+          "room": "Mrs.Jaya"
+        },
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Unit I - Aptitude",
@@ -31,13 +38,6 @@
           "batch": "RRB",
           "faculty": "Mr Abin",
           "room": "Mr Abin"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Tamil",
-          "batch": "TNTET",
-          "faculty": "Mrs Sreevidhya",
-          "room": "Mrs Sreevidhya"
         },
         {
           "time": "11:30 AM - 01:00 PM",
