@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-09T15:19:56.030Z",
+  "version": "2026-11-09T15:23:33.117Z",
   "timetable": [
     {
       "day": "Monday",
@@ -101,6 +101,41 @@
       "day": "Tuesday",
       "classes": [
         {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "Science",
+          "batch": "TNTET",
+          "faculty": "Ms Jothika",
+          "room": "Ms Jothika"
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "Social Science",
+          "batch": "TNTET",
+          "faculty": "Mrs Sreevidhya",
+          "room": "Mrs Sreevidhya"
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "Unit IV - Indian Polity",
+          "batch": "TNPSC",
+          "faculty": "Dr Sahitha",
+          "room": "Dr Sahitha"
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "General Awareness",
+          "batch": "SSC",
+          "faculty": "Dr Sahitha",
+          "room": "Dr Sahitha"
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "General Awareness",
+          "batch": "RRB",
+          "faculty": "Dr Sahitha",
+          "room": "Dr Sahitha"
+        },
+        {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Unit I - Aptitude",
           "batch": "TNPSC",
@@ -113,13 +148,6 @@
           "batch": "TNTET",
           "faculty": "Mrs Sreevidhya",
           "room": "Mrs Sreevidhya"
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "Unit III - History, Culture & INM: Different modes of agitation: Militant Movements",
-          "batch": "TNPSC",
-          "faculty": "",
-          "room": ""
         },
         {
           "time": "10:00 AM - 11:30 AM",
