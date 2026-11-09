@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-09T06:52:04.007Z",
+  "version": "2026-11-09T06:53:02.571Z",
   "categories": [
     {
       "id": "BANK",
@@ -1692,6 +1692,19 @@
       "questionCount": 25,
       "negativeMark": 0.33,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SQA-2.html",
+      "releaseTimestamp": 1794211200000,
+      "language": "en"
+    },
+    {
+      "testId": "RQA-2",
+      "examId": "RRB-QA",
+      "name": "APPROXIMATION RQA-2",
+      "topic": "APPROXIMATION",
+      "durationMinutes": 25,
+      "order": 2,
+      "questionCount": 25,
+      "negativeMark": 0.5,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RQA-2.html",
       "releaseTimestamp": 1794211200000,
       "language": "en"
     }
