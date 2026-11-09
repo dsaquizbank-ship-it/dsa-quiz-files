@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-09T02:07:18.779Z",
+  "version": "2026-11-09T15:18:34.706Z",
   "timetable": [
     {
       "day": "Monday",
@@ -102,6 +102,13 @@
       "classes": [
         {
           "time": "10:00 AM - 11:30 AM",
+          "subject": "Tamil",
+          "batch": "TNTET",
+          "faculty": "Mrs Sreevidhya",
+          "room": "Mrs Sreevidhya"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
           "subject": "Unit I - Aptitude: Simplification",
           "batch": "TNPSC",
           "faculty": "",
@@ -117,13 +124,6 @@
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "English: 8th – UNIT 1: Prose: The Nose-Jewel, Poem: Special Hero, Supplementary: The Woman on Platform 8",
-          "batch": "TNTET",
-          "faculty": "",
-          "room": ""
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "Tamil: 6th Term 1 – மொழி",
           "batch": "TNTET",
           "faculty": "",
           "room": ""
