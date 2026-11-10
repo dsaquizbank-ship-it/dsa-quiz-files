@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-10T07:03:20.698Z",
+  "version": "2026-11-10T07:06:19.938Z",
   "categories": [
     {
       "id": "BANK",
@@ -1815,6 +1815,19 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-6.html",
+      "releaseTimestamp": 1794297600000,
+      "language": "both"
+    },
+    {
+      "testId": "SGS-5",
+      "examId": "SSC-GS",
+      "name": "ATOMS AND MOLECULES SGS-5",
+      "topic": "ATOMS AND MOLECULES",
+      "durationMinutes": 15,
+      "order": 5,
+      "questionCount": 25,
+      "negativeMark": 0.5,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGS-5.html",
       "releaseTimestamp": 1794297600000,
       "language": "both"
     }
