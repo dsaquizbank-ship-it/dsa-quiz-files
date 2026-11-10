@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-10T06:56:39.448Z",
+  "version": "2026-11-10T06:58:32.936Z",
   "categories": [
     {
       "id": "BANK",
@@ -1776,6 +1776,19 @@
       "questionCount": 50,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-SS-7.html",
+      "releaseTimestamp": 1794297600000,
+      "language": "both"
+    },
+    {
+      "testId": "TIP-8",
+      "examId": "TNPSC-IP",
+      "name": "DIRECTIVE PRINCIPLES OF STATE POLICY TIP-8",
+      "topic": "DIRECTIVE PRINCIPLES OF STATE POLICY",
+      "durationMinutes": 15,
+      "order": 8,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-8.html",
       "releaseTimestamp": 1794297600000,
       "language": "both"
     }
