@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-10T07:10:14.440Z",
+  "version": "2026-11-10T07:10:42.578Z",
   "categories": [
     {
       "id": "BANK",
@@ -1839,7 +1839,7 @@
       "durationMinutes": 15,
       "order": 5,
       "questionCount": 25,
-      "negativeMark": 0.5,
+      "negativeMark": 0.33,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGS-5.html",
       "releaseTimestamp": 1794297600000,
       "language": "both"
