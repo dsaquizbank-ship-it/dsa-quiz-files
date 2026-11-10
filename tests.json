@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-10T07:01:22.078Z",
+  "version": "2026-11-10T07:03:20.698Z",
   "categories": [
     {
       "id": "BANK",
@@ -1802,6 +1802,19 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-7.html",
+      "releaseTimestamp": 1794297600000,
+      "language": "both"
+    },
+    {
+      "testId": "TIP-6",
+      "examId": "TNPSC-IP",
+      "name": "FUNDAMENTAL RIGHTS TIP-6",
+      "topic": "FUNDAMENTAL RIGHTS",
+      "durationMinutes": 15,
+      "order": 6,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-6.html",
       "releaseTimestamp": 1794297600000,
       "language": "both"
     }
