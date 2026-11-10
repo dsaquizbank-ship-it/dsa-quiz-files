@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-10T06:52:37.080Z",
+  "version": "2026-11-10T06:56:39.448Z",
   "categories": [
     {
       "id": "BANK",
@@ -1763,6 +1763,19 @@
       "questionCount": 50,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-MS-7.html",
+      "releaseTimestamp": 1794297600000,
+      "language": "both"
+    },
+    {
+      "testId": "SPT-SS-7",
+      "examId": "SPL-SOCIALSCIENCE",
+      "name": "6TH TERM 2 HISTORY FULL SPT-SS-7",
+      "topic": "6TH TERM 2 HISTORY FULL",
+      "durationMinutes": 30,
+      "order": 7,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-SS-7.html",
       "releaseTimestamp": 1794297600000,
       "language": "both"
     }
