@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-09T10:36:52.972Z",
+  "version": "2026-11-10T06:52:37.080Z",
   "categories": [
     {
       "id": "BANK",
@@ -1752,6 +1752,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGP-73.html",
       "releaseTimestamp": 1794211200000,
       "language": "en"
+    },
+    {
+      "testId": "SPT-MS-7",
+      "examId": "SPL-MATHS",
+      "name": "6TH TERM 2 SPT-MS-7",
+      "topic": "6TH TERM 2",
+      "durationMinutes": 30,
+      "order": 7,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-MS-7.html",
+      "releaseTimestamp": 1794297600000,
+      "language": "both"
     }
   ]
 }
