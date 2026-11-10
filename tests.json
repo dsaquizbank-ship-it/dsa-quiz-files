@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-10T07:07:32.200Z",
+  "version": "2026-11-10T07:10:14.440Z",
   "categories": [
     {
       "id": "BANK",
@@ -1841,6 +1841,19 @@
       "questionCount": 25,
       "negativeMark": 0.5,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGS-5.html",
+      "releaseTimestamp": 1794297600000,
+      "language": "both"
+    },
+    {
+      "testId": "TIP-9",
+      "examId": "TNPSC-IP",
+      "name": "CITIZENSHIP TIP-5",
+      "topic": "CITIZENSHIP",
+      "durationMinutes": 10,
+      "order": 5,
+      "questionCount": 20,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-9.html",
       "releaseTimestamp": 1794297600000,
       "language": "both"
     }
