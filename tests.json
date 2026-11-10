@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-10T06:58:32.936Z",
+  "version": "2026-11-10T07:01:22.078Z",
   "categories": [
     {
       "id": "BANK",
@@ -1789,6 +1789,19 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-8.html",
+      "releaseTimestamp": 1794297600000,
+      "language": "both"
+    },
+    {
+      "testId": "TIP-7",
+      "examId": "TNPSC-IP",
+      "name": "FUNDAMENTAL DUTIES TIP-7",
+      "topic": "FUNDAMENTAL DUTIES",
+      "durationMinutes": 15,
+      "order": 7,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-7.html",
       "releaseTimestamp": 1794297600000,
       "language": "both"
     }
