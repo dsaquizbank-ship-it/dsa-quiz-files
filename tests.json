@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-10T07:06:19.938Z",
+  "version": "2026-11-10T07:07:32.200Z",
   "categories": [
     {
       "id": "BANK",
@@ -1828,6 +1828,19 @@
       "questionCount": 25,
       "negativeMark": 0.5,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGS-5.html",
+      "releaseTimestamp": 1794297600000,
+      "language": "both"
+    },
+    {
+      "testId": "RGS-5",
+      "examId": "RRB-GS",
+      "name": "RGS-5 ATOMS AND MOLECULES",
+      "topic": "ATOMS AND MOLECULES",
+      "durationMinutes": 15,
+      "order": 5,
+      "questionCount": 25,
+      "negativeMark": 0.5,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGS-5.html",
       "releaseTimestamp": 1794297600000,
       "language": "both"
     }
