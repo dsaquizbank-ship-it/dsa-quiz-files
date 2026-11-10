@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-09T10:02:11.463Z",
+  "version": "2026-11-10T09:05:33.428Z",
   "entries": [
     {
       "id": "SCH-1794038030683-992",
@@ -1958,17 +1958,6 @@
       "date": "2026-11-23",
       "testId": "RGS-10",
       "createdAt": "2026-10-31T14:37:47.405Z"
-    },
-    {
-      "id": "SCH-1793457805021-994",
-      "courseId": "RRB",
-      "courseName": "RRB",
-      "subject": "General Awareness",
-      "topicId": "REV-1793457805021",
-      "topicName": "Revision: Medieval India - Mughal Empire",
-      "date": "2026-11-23",
-      "testId": "RGA-10",
-      "createdAt": "2026-10-31T14:43:25.021Z"
     },
     {
       "id": "SCH-1793456389470-454",
