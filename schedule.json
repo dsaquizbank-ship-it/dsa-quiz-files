@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-10T15:09:33.718Z",
+  "version": "2026-11-10T15:35:27.894Z",
   "entries": [
     {
       "id": "SCH-1794038030683-992",
@@ -1012,17 +1012,6 @@
       "date": "2026-11-10",
       "testId": "SPT-SS-7",
       "createdAt": "2026-11-06T12:42:09.844Z"
-    },
-    {
-      "id": "SCH-1794323285613-353",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "Reasoning Ability",
-      "topicId": "BANK-T029",
-      "topicName": "Syllogism",
-      "date": "2026-11-11",
-      "testId": "BRE-4",
-      "createdAt": "2026-11-10T15:08:05.616Z"
     },
     {
       "id": "SCH-1794218188928-564",
