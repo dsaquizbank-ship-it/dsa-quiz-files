@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-10T09:19:37.142Z",
+  "version": "2026-11-10T09:30:38.758Z",
   "entries": [
     {
       "id": "SCH-1794038030683-992",
@@ -1014,17 +1014,6 @@
       "createdAt": "2026-11-06T12:42:09.844Z"
     },
     {
-      "id": "SCH-AUTO-1794302377141-0",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "Quantitative Aptitude",
-      "topicId": "BANK-T001",
-      "topicName": "Simplification",
-      "date": "2026-11-10",
-      "testId": "BANK-AUTO-1",
-      "createdAt": "2026-11-10T09:19:37.141Z"
-    },
-    {
       "id": "SCH-1794218188928-564",
       "courseId": "SGT",
       "courseName": "SGT",
@@ -1223,17 +1212,6 @@
       "createdAt": "2026-10-31T04:29:31.441Z"
     },
     {
-      "id": "SCH-AUTO-1794302377141-1",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "Quantitative Aptitude",
-      "topicId": "BANK-T002",
-      "topicName": "Approximation",
-      "date": "2026-11-11",
-      "testId": "BANK-AUTO-2",
-      "createdAt": "2026-11-10T09:19:37.141Z"
-    },
-    {
       "id": "SCH-1793973101010-680",
       "courseId": "TNPSC",
       "courseName": "TNPSC",
@@ -1265,17 +1243,6 @@
       "date": "2026-11-12",
       "testId": "SPT-SC-9",
       "createdAt": "2026-11-06T13:06:09.747Z"
-    },
-    {
-      "id": "SCH-AUTO-1794302377141-2",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "Quantitative Aptitude",
-      "topicId": "BANK-T003",
-      "topicName": "Percentages",
-      "date": "2026-11-12",
-      "testId": "BANK-AUTO-3",
-      "createdAt": "2026-11-10T09:19:37.141Z"
     },
     {
       "id": "SCH-1794218312287-3",
@@ -1419,39 +1386,6 @@
       "date": "2026-11-13",
       "testId": "PGE-54",
       "createdAt": "2026-10-31T04:30:24.897Z"
-    },
-    {
-      "id": "SCH-AUTO-1794302377141-3",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "Quantitative Aptitude",
-      "topicId": "BANK-T004",
-      "topicName": "Ratio And Proportion",
-      "date": "2026-11-13",
-      "testId": "BANK-AUTO-4",
-      "createdAt": "2026-11-10T09:19:37.141Z"
-    },
-    {
-      "id": "SCH-AUTO-1794302377141-4",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "Quantitative Aptitude",
-      "topicId": "BANK-T005",
-      "topicName": "Number Series",
-      "date": "2026-11-14",
-      "testId": "BANK-AUTO-5",
-      "createdAt": "2026-11-10T09:19:37.141Z"
-    },
-    {
-      "id": "SCH-AUTO-1794302377141-5",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "Quantitative Aptitude",
-      "topicId": "BANK-T006",
-      "topicName": "Quadratic Equation",
-      "date": "2026-11-15",
-      "testId": "BANK-AUTO-6",
-      "createdAt": "2026-11-10T09:19:37.141Z"
     },
     {
       "id": "SCH-1794218332599-747",
@@ -1619,17 +1553,6 @@
       "createdAt": "2026-10-31T04:34:38.953Z"
     },
     {
-      "id": "SCH-AUTO-1794302377141-6",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "Quantitative Aptitude",
-      "topicId": "BANK-T007",
-      "topicName": "Ages",
-      "date": "2026-11-16",
-      "testId": "BANK-AUTO-7",
-      "createdAt": "2026-11-10T09:19:37.141Z"
-    },
-    {
       "id": "SCH-1793972469986-795",
       "courseId": "TNPSC",
       "courseName": "TNPSC",
@@ -1694,17 +1617,6 @@
       "date": "2026-11-17",
       "testId": "SPT-SS-12",
       "createdAt": "2026-11-06T12:46:20.276Z"
-    },
-    {
-      "id": "SCH-AUTO-1794302377141-7",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "Quantitative Aptitude",
-      "topicId": "BANK-T008",
-      "topicName": "Time & Work / Pipe & Cistern",
-      "date": "2026-11-17",
-      "testId": "BANK-AUTO-8",
-      "createdAt": "2026-11-10T09:19:37.141Z"
     },
     {
       "id": "SCH-1794218350607-5",
@@ -1850,17 +1762,6 @@
       "createdAt": "2026-10-31T04:35:22.281Z"
     },
     {
-      "id": "SCH-AUTO-1794302377141-8",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "Quantitative Aptitude",
-      "topicId": "BANK-T009",
-      "topicName": "Time, Speed and Distance",
-      "date": "2026-11-18",
-      "testId": "BANK-AUTO-9",
-      "createdAt": "2026-11-10T09:19:37.141Z"
-    },
-    {
       "id": "SCH-1793973121578-833",
       "courseId": "TNPSC",
       "courseName": "TNPSC",
@@ -1892,17 +1793,6 @@
       "date": "2026-11-19",
       "testId": "SPT-SC-14",
       "createdAt": "2026-11-06T13:06:33.915Z"
-    },
-    {
-      "id": "SCH-AUTO-1794302377141-9",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "Quantitative Aptitude",
-      "topicId": "BANK-T010",
-      "topicName": "Boats & Streams",
-      "date": "2026-11-19",
-      "testId": "BANK-AUTO-10",
-      "createdAt": "2026-11-10T09:19:37.141Z"
     },
     {
       "id": "SCH-1793973448338-369",
@@ -2002,39 +1892,6 @@
       "date": "2026-11-20",
       "testId": "PGE-57",
       "createdAt": "2026-10-31T04:35:50.225Z"
-    },
-    {
-      "id": "SCH-AUTO-1794302377141-10",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "Quantitative Aptitude",
-      "topicId": "BANK-T011",
-      "topicName": "Profit and Loss",
-      "date": "2026-11-20",
-      "testId": "BANK-AUTO-11",
-      "createdAt": "2026-11-10T09:19:37.141Z"
-    },
-    {
-      "id": "SCH-AUTO-1794302377141-11",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "Quantitative Aptitude",
-      "topicId": "BANK-T012",
-      "topicName": "Partnership",
-      "date": "2026-11-21",
-      "testId": "BANK-AUTO-12",
-      "createdAt": "2026-11-10T09:19:37.141Z"
-    },
-    {
-      "id": "SCH-AUTO-1794302377141-12",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "Quantitative Aptitude",
-      "topicId": "BANK-T013",
-      "topicName": "Mensuration: Cylinder, Cone, Sphere and Cuboid",
-      "date": "2026-11-22",
-      "testId": "BANK-AUTO-13",
-      "createdAt": "2026-11-10T09:19:37.141Z"
     },
     {
       "id": "SCH-1794218401807-90",
@@ -2202,17 +2059,6 @@
       "createdAt": "2026-10-31T04:38:26.153Z"
     },
     {
-      "id": "SCH-AUTO-1794302377141-13",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "Quantitative Aptitude",
-      "topicId": "BANK-T014",
-      "topicName": "Mixtures and Allegations",
-      "date": "2026-11-23",
-      "testId": "BANK-AUTO-14",
-      "createdAt": "2026-11-10T09:19:37.141Z"
-    },
-    {
       "id": "SCH-1793972540122-279",
       "courseId": "TNPSC",
       "courseName": "TNPSC",
@@ -2255,17 +2101,6 @@
       "date": "2026-11-24",
       "testId": "SPT-SS-17",
       "createdAt": "2026-11-06T12:47:30.987Z"
-    },
-    {
-      "id": "SCH-AUTO-1794302377141-14",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "Quantitative Aptitude",
-      "topicId": "BANK-T015",
-      "topicName": "Simple and Compound Interest",
-      "date": "2026-11-24",
-      "testId": "BANK-AUTO-15",
-      "createdAt": "2026-11-10T09:19:37.141Z"
     },
     {
       "id": "SCH-1794218423767-382",
@@ -2422,17 +2257,6 @@
       "createdAt": "2026-10-31T04:42:45.457Z"
     },
     {
-      "id": "SCH-AUTO-1794302377141-15",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "Quantitative Aptitude",
-      "topicId": "BANK-T016",
-      "topicName": "Averages",
-      "date": "2026-11-25",
-      "testId": "BANK-AUTO-16",
-      "createdAt": "2026-11-10T09:19:37.141Z"
-    },
-    {
       "id": "SCH-1793973142946-528",
       "courseId": "TNPSC",
       "courseName": "TNPSC",
@@ -2475,17 +2299,6 @@
       "date": "2026-11-26",
       "testId": "SPT-SC-19",
       "createdAt": "2026-11-06T13:07:41.819Z"
-    },
-    {
-      "id": "SCH-AUTO-1794302377141-16",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "Quantitative Aptitude",
-      "topicId": "BANK-T017",
-      "topicName": "Data Interpretation",
-      "date": "2026-11-26",
-      "testId": "BANK-AUTO-17",
-      "createdAt": "2026-11-10T09:19:37.141Z"
     },
     {
       "id": "SCH-1794218443327-361",
@@ -2596,39 +2409,6 @@
       "date": "2026-11-27",
       "testId": "PGE-60",
       "createdAt": "2026-10-31T04:43:21.913Z"
-    },
-    {
-      "id": "SCH-AUTO-1794302377141-17",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "Quantitative Aptitude",
-      "topicId": "BANK-T018",
-      "topicName": "Caselet DI",
-      "date": "2026-11-27",
-      "testId": "BANK-AUTO-18",
-      "createdAt": "2026-11-10T09:19:37.141Z"
-    },
-    {
-      "id": "SCH-AUTO-1794302377141-18",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "Quantitative Aptitude",
-      "topicId": "BANK-T019",
-      "topicName": "Permutation and Combination",
-      "date": "2026-11-28",
-      "testId": "BANK-AUTO-19",
-      "createdAt": "2026-11-10T09:19:37.141Z"
-    },
-    {
-      "id": "SCH-AUTO-1794302377141-19",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "Quantitative Aptitude",
-      "topicId": "BANK-T020",
-      "topicName": "Probability",
-      "date": "2026-11-29",
-      "testId": "BANK-AUTO-20",
-      "createdAt": "2026-11-10T09:19:37.141Z"
     },
     {
       "id": "SCH-1794218470927-929",
