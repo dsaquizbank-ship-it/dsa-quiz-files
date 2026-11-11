@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-11T07:47:40.918Z",
+  "version": "2026-11-11T07:51:09.289Z",
   "categories": [
     {
       "id": "BANK",
@@ -2010,6 +2010,19 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-SS-57.html",
+      "releaseTimestamp": 1794384000000,
+      "language": "both"
+    },
+    {
+      "testId": "SGT-SS-1",
+      "examId": "SGT-SOCIALSCIENCE",
+      "name": "9TH EVOLUTION OF HUMANS AND SOCIETY - PREHISTORIC PERIOD SGT-SS-1",
+      "topic": "9TH EVOLUTION OF HUMANS AND SOCIETY - PREHISTORIC PERIOD",
+      "durationMinutes": 15,
+      "order": 1,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGT-SS-1.html",
       "releaseTimestamp": 1794384000000,
       "language": "both"
     }
