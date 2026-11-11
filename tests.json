@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-11T07:45:35.926Z",
+  "version": "2026-11-11T07:47:40.918Z",
   "categories": [
     {
       "id": "BANK",
@@ -1997,6 +1997,19 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TNS-3.html",
+      "releaseTimestamp": 1794384000000,
+      "language": "both"
+    },
+    {
+      "testId": "TET-SS-57",
+      "examId": "TET-SOCIALSCIENCE",
+      "name": "6TH TERM 1 CIVICS UNIT 2: ACHIEVING EQUALITY TET-SS-57",
+      "topic": "6TH TERM 1 CIVICS UNIT 2: ACHIEVING EQUALITY",
+      "durationMinutes": 15,
+      "order": 57,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-SS-57.html",
       "releaseTimestamp": 1794384000000,
       "language": "both"
     }
