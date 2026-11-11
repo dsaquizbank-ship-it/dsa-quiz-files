@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>SGT-SS-1 - 9TH EVOLUTION OF HUMANS AND SOCIETY - PREHISTORIC PERIOD SGT-SS-1</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                linebreaks: { automatic: true, width: "container" }
+            },
+            options: { ignoreHtmlClass: "no-mathjax" },
+            chtml: {
+                displayAlign: "left",
+                displayIndent: "0",
+                mtextInheritFont: true
+            },
+            svg: {
+                scale: 0.9,
+                minScale: 0.5,
+                mtextInheritFont: true,
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; color: #10b981; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; white-space: normal; word-wrap: break-word; padding-bottom: 20px; max-width: 100%; overflow-x: auto; }
+        mjx-container { display: inline !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; }
+        .question-text::-webkit-scrollbar { display: none; }
+        .question-text { -ms-overflow-style: none; scrollbar-width: none; }
+        .option-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; word-wrap: break-word; }
+        .option-letter { font-weight: 800; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+        .option-text { flex-grow: 1; min-width: 0; word-wrap: break-word; overflow-wrap: break-word; }
+        .option-text mjx-container { display: inline-block !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; overflow-x: visible !important; }
+        .option-text mjx-container[jax="CHTML"][display="true"] { margin: 0 !important; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
+        .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
+        .review-card .question-text { overflow-x: hidden !important; white-space: normal !important; word-wrap: break-word !important; }
+        .review-card strong { color: var(--text-primary); font-size: 16px; }
+        .review-card .option-item { background-color: var(--rc-bg); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: rgba(40, 167, 69, 0.1); border: 1px solid #28a745; color: #28a745; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; color: #dc3545; }
+        .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
+        .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
+        .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
+        .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px 0; border-top: 1px solid var(--border-light); }
+        .review-nav-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .review-nav-btn:disabled { background: var(--border-light); color: var(--text-primary); opacity: 0.5; cursor: not-allowed; }
+        .review-nav-text { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+        .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { 
+            html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } 
+            .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } 
+            #startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard { display: none !important; } 
+            #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } 
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; } 
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; margin-bottom: 20px !important; display: block !important; } 
+            .review-card .option-item { border: 1px solid #ccc !important; background: white !important; color: black !important; } 
+            .review-card .option-item.correct { background: #e6ffe6 !important; border-color: #28a745 !important; color: black !important; } 
+            .review-card .option-item.wrong { background: #ffe6e6 !important; border-color: #dc3545 !important; color: black !important; } 
+            @page { size: A4; margin: 1.5cm; } 
+        }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">15:00</div>
+            <div class="top-buttons">
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div id="printHeader" style="display: none;">
+            <h1>DR SAHITHA IAS ACADEMY</h1>
+            <h3>ANSWER KEY & DETAILED REVIEW</h3>
+            <p><strong>Test:</strong> SGT-SS-1 - SOCIAL SCIENCE</p>
+        </div>
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+            <div id="reviewPagination" class="review-nav-container" style="display: none;">
+                <button class="review-nav-btn" id="prevReviewBtn" onclick="navigateReview(-1)">◀ PREV</button>
+                <span class="review-nav-text" id="reviewPageText">1 / 25</span>
+                <button class="review-nav-btn" id="nextReviewBtn" onclick="navigateReview(1)">NEXT ▶</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "SOCIAL SCIENCE",
+        testNo: "SGT-SS-1",
+        date: "11/11/2026",
+        subject: "SOCIAL SCIENCE",
+        topic: "9TH EVOLUTION OF HUMANS AND SOCIETY - PREHISTORIC PERIOD",
+        duration: "15",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "The Earth was formed approximately",
+    "ta": "பூமி தோராயமாக எப்போது உருவானது?",
+    "optionsEn": ["4.54 billion years ago", "45.4 million years ago", "5.4 billion years ago", "454 million years ago"],
+    "optionsTa": ["4.54 பில்லியன் ஆண்டுகளுக்கு முன்பு", "45.4 மில்லியன் ஆண்டுகளுக்கு முன்பு", "5.4 பில்லியன் ஆண்டுகளுக்கு முன்பு", "454 மில்லியன் ஆண்டுகளுக்கு முன்பு"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "The earliest tools made by human ancestors, dated to 3.3 million years, are found at",
+    "ta": "3.3 மில்லியன் ஆண்டுகளுக்கு முந்தைய மனித முன்னோர்களால் உருவாக்கப்பட்ட மிக ஆரம்பகாலக் கருவிகள் எங்கு கண்டுபிடிக்கப்பட்டுள்ளன?",
+    "optionsEn": ["Olduvai Gorge", "Lomekwi in Kenya", "Athirampakkam", "Isampur"],
+    "optionsTa": ["ஓல்டுவாய் பள்ளத்தாக்கு", "கென்யாவில் உள்ள லோமெக்வி", "அத்திரம்பாக்கம்", "ஈசம்பூர்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "The Great Rift Valley runs for about ______ from the northern part of Syria to Central Mozambique.",
+    "ta": "பெரும் பிளவுப் பள்ளத்தாக்கு சிரியாவின் வடக்குப் பகுதியிலிருந்து மத்திய மொசாம்பிக் வரை சுமார் ______ வரை நீண்டுள்ளது.",
+    "optionsEn": ["4600 km", "6000 km", "7400 km", "6400 km"],
+    "optionsTa": ["4600 கி.மீ", "6000 கி.மீ", "7400 கி.மீ", "6400 கி.மீ"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which is the oldest university museum in the world?",
+    "ta": "உலகின் மிகப் பழமையான பல்கலைக்கழக அருங்காட்சியகம் எது?",
+    "optionsEn": ["Capitoline Museum", "Ennigaldi-Nanna Museum", "Chennai Museum", "Ashmolean Museum at Oxford University"],
+    "optionsTa": ["கேபிடோலின் அருங்காட்சியகம்", "என்னிகால்டி-நன்னா அருங்காட்சியகம்", "சென்னை அருங்காட்சியகம்", "ஆக்ஸ்போர்டு பல்கலைக்கழகத்தில் உள்ள அஷ்மோலியன் அருங்காட்சியகம்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Cosmic-ray exposure dating of artefacts at Athirampakkam suggests that people lived there about",
+    "ta": "அத்திரம்பாக்கத்தில் உள்ள கலைப்பொருட்களின் அண்டக்கதிர் வெளிப்பாட்டு காலக்கணிப்பு, அங்கு மக்கள் சுமார் எப்போது வாழ்ந்தார்கள் என்பதைக் குறிக்கிறது?",
+    "optionsEn": ["1.5 to 2 million years ago", "3.3 million years ago", "300,000 years ago", "60,000 years ago"],
+    "optionsTa": ["1.5 முதல் 2 மில்லியன் ஆண்டுகளுக்கு முன்பு", "3.3 மில்லியன் ஆண்டுகளுக்கு முன்பு", "300,000 ஆண்டுகளுக்கு முன்பு", "60,000 ஆண்டுகளுக்கு முன்பு"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Charles Darwin published *The Descent of Man* in",
+    "ta": "சார்லஸ் டார்வின் *தி டீசென்ட் ஆஃப் மேன்* நூலை எப்போது வெளியிட்டார்?",
+    "optionsEn": ["1859", "1871", "1677", "1471"],
+    "optionsTa": ["1859", "1871", "1677", "1471"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair.",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": ["Burin -- A stone-made chisel with a sharp cutting edge", "Core -- A small chip removed from a large stone block", "Flake -- The main block of stone from which chips are flaked", "Biface -- A tool with flaking on one side only"],
+    "optionsTa": ["பியூரின் -- கூர்மையான வெட்டும் விளிம்புடன் கூடிய கல்லால் செய்யப்பட்ட உளி", "கோர் -- ஒரு பெரிய கல் தொகுதியிலிருந்து அகற்றப்பட்ட ஒரு சிறிய சில்லு", "ஃப்ளேக் -- சில்லுகள் உருவாக்கப்படும் முக்கிய கல் தொகுதி", "பைஃபேஸ் -- ஒரு பக்கத்தில் மட்டுமே சில்லுகள் கொண்ட கருவி"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair.",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": ["Sithannavasal -- Near Madhuranthakam", "Sanur -- Near Pudukkottai", "Adhichanallur -- Thoothukudi district", "Payyampalli -- Chennai district"],
+    "optionsTa": ["சித்தன்னவாசல் -- மதுராந்தகத்திற்கு அருகில்", "சனூர் -- புதுக்கோட்டைக்கு அருகில்", "ஆதிச்சநல்லூர் -- தூத்துக்குடி மாவட்டம்", "பையம்பள்ளி -- சென்னை மாவட்டம்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair of megalithic burial type and description.",
+    "ta": "மெகாலிதிக் புதைப்பு வகை மற்றும் விளக்கத்தின் சரியான இணையைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": ["Dolmen -- Pillar-like stone erected as part of a burial", "Menhir -- Table-like stone structure", "Urn -- Terracotta burial receptacle with legs", "Cist -- Stone enclosure buried under the earth"],
+    "optionsTa": ["டால்மென் -- புதைப்பின் ஒரு பகுதியாக எழுப்பப்பட்ட தூண் போன்ற கல்", "மென்ஹிர் -- மேசை போன்ற கல் அமைப்பு", "கலசம் -- கால்கள் கொண்ட டெரகோட்டா புதைப்புப் பாத்திரம்", "சிஸ்ட் -- பூமிக்கு அடியில் புதைக்கப்பட்ட கல் அடைப்பு"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair of burial type in Kerala and its meaning.",
+    "ta": "கேரளாவில் உள்ள புதைப்பு வகை மற்றும் அதன் பொருளின் சரியான இணையைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": ["Kodakkal -- Hatstone", "Paththikal -- Umbrella stone", "Toppikkal -- Hatstone", "Kodakkal -- Hoodstone"],
+    "optionsTa": ["கொடக்கல் -- தொப்பிக்கல்", "பத்திக்கல் -- குடைக்கல்", "தொப்பிக்கல் -- தொப்பிக்கல்", "கொடக்கல் -- முகட்டுக்கல்"],
+    "answer": 2
+  },
+  {
+    "type": "match",
+    "en": "Match the human ancestors with their descriptions.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>LIST 1</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>LIST 2</b></td></tr><tr><td style='padding:6px 0;'>a. Homo habilis</td><td></td><td style='padding:6px 0;'>1. Wise man, first appeared around 300,000 years ago</td></tr><tr><td style='padding:6px 0;'>b. Homo erectus/ergaster</td><td></td><td style='padding:6px 0;'>2. Handy human, earliest known tool maker about 2.6 million years ago</td></tr><tr><td style='padding:6px 0;'>c. Homo sapiens</td><td></td><td style='padding:6px 0;'>3. Buried the dead systematically</td></tr><tr><td style='padding:6px 0;'>d. Neanderthals</td><td></td><td style='padding:6px 0;'>4. Emerged around 2 million years ago and made hand axes</td></tr></table>",
+    "ta": "மனித முன்னோர்களை அவர்களின் விவரங்களுடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் 1</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் 2</b></td></tr><tr><td style='padding:6px 0;'>a. ஹோமோ ஹபிலிஸ்</td><td></td><td style='padding:6px 0;'>1. ஞானமுள்ள மனிதன், சுமார் 300,000 ஆண்டுகளுக்கு முன்பு முதலில் தோன்றினார்</td></tr><tr><td style='padding:6px 0;'>b. ஹோமோ எரெக்டஸ்/எர்காஸ்டர்</td><td></td><td style='padding:6px 0;'>2. கைவினைஞன், சுமார் 2.6 மில்லியன் ஆண்டுகளுக்கு முன்பு அறியப்பட்ட மிக ஆரம்பகால கருவி தயாரிப்பாளர்</td></tr><tr><td style='padding:6px 0;'>c. ஹோமோ சேபியன்ஸ்</td><td></td><td style='padding:6px 0;'>3. இறந்தவர்களை முறையாகப் புதைத்தனர்</td></tr><tr><td style='padding:6px 0;'>d. நியாண்டர்தால்கள்</td><td></td><td style='padding:6px 0;'>4. சுமார் 2 மில்லியன் ஆண்டுகளுக்கு முன்பு தோன்றி கைக் கோடரிகளை உருவாக்கினர்</td></tr></table>",
+    "optionsEn": ["a-2, b-1, c-4, d-3", "a-4, b-2, c-1, d-3", "a-2, b-4, c-3, d-1", "a-2, b-4, c-1, d-3"],
+    "optionsTa": ["a-2, b-1, c-4, d-3", "a-4, b-2, c-1, d-3", "a-2, b-4, c-3, d-1", "a-2, b-4, c-1, d-3"],
+    "answer": 3
+  },
+  {
+    "type": "match",
+    "en": "Match the tool types with their cultures.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>LIST 1</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>LIST 2</b></td></tr><tr><td style='padding:6px 0;'>a. Hand axes and cleavers</td><td></td><td style='padding:6px 0;'>1. Upper Paleolithic</td></tr><tr><td style='padding:6px 0;'>b. Levalloisian flakes</td><td></td><td style='padding:6px 0;'>2. Mesolithic</td></tr><tr><td style='padding:6px 0;'>c. Long blades and burins</td><td></td><td style='padding:6px 0;'>3. Lower Paleolithic</td></tr><tr><td style='padding:6px 0;'>d. Lunates and triangles</td><td></td><td style='padding:6px 0;'>4. Middle Paleolithic</td></tr></table>",
+    "ta": "கருவி வகைகளை அவற்றின் பண்பாடுகளுடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் 1</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் 2</b></td></tr><tr><td style='padding:6px 0;'>a. கைக் கோடரிகள் மற்றும் வெட்டுக் கருவிகள்</td><td></td><td style='padding:6px 0;'>1. மேல் பழைய கற்காலம்</td></tr><tr><td style='padding:6px 0;'>b. லெவல்லோசியன் சில்லுகள்</td><td></td><td style='padding:6px 0;'>2. இடைக் கற்காலம்</td></tr><tr><td style='padding:6px 0;'>c. நீண்ட கத்திகள் மற்றும் பியூரின்கள்</td><td></td><td style='padding:6px 0;'>3. கீழ் பழைய கற்காலம்</td></tr><tr><td style='padding:6px 0;'>d. பிறைக்கற்கள் மற்றும் முக்கோணங்கள்</td><td></td><td style='padding:6px 0;'>4. நடுப் பழைய கற்காலம்</td></tr></table>",
+    "optionsEn": ["a-3, b-4, c-1, d-2", "a-3, b-1, c-4, d-2", "a-4, b-3, c-1, d-2", "a-3, b-4, c-2, d-1"],
+    "optionsTa": ["a-3, b-4, c-1, d-2", "a-3, b-1, c-4, d-2", "a-4, b-3, c-1, d-2", "a-3, b-4, c-2, d-1"],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "Match the terms with their meanings.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>LIST 1</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>LIST 2</b></td></tr><tr><td style='padding:6px 0;'>a. Stratigraphy</td><td></td><td style='padding:6px 0;'>1. Study of fossils</td></tr><tr><td style='padding:6px 0;'>b. Palaeontology</td><td></td><td style='padding:6px 0;'>2. Study of the human past through material remains</td></tr><tr><td style='padding:6px 0;'>c. Archaeology</td><td></td><td style='padding:6px 0;'>3. Study of rock and soil layers</td></tr><tr><td style='padding:6px 0;'>d. Palaeoanthropology</td><td></td><td style='padding:6px 0;'>4. Study of human ancestors through fossil remains</td></tr></table>",
+    "ta": "சொற்களை அவற்றின் பொருள்களுடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் 1</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் 2</b></td></tr><tr><td style='padding:6px 0;'>a. அடுக்குக்கல் இயல்</td><td></td><td style='padding:6px 0;'>1. புதைபடிவங்கள் பற்றிய ஆய்வு</td></tr><tr><td style='padding:6px 0;'>b. தொல்லுயிரியல்</td><td></td><td style='padding:6px 0;'>2. பொருள் எச்சங்கள் மூலம் மனித கடந்த காலம் பற்றிய ஆய்வு</td></tr><tr><td style='padding:6px 0;'>c. தொல்லியல்</td><td></td><td style='padding:6px 0;'>3. பாறை மற்றும் மண் அடுக்குகள் பற்றிய ஆய்வு</td></tr><tr><td style='padding:6px 0;'>d. தொல்மானிடவியல்</td><td></td><td style='padding:6px 0;'>4. புதைபடிவ எச்சங்கள் மூலம் மனித முன்னோர்கள் பற்றிய ஆய்வு</td></tr></table>",
+    "optionsEn": ["a-1, b-3, c-2, d-4", "a-3, b-1, c-2, d-4", "a-3, b-2, c-1, d-4", "a-3, b-1, c-4, d-2"],
+    "optionsTa": ["a-1, b-3, c-2, d-4", "a-3, b-1, c-2, d-4", "a-3, b-2, c-1, d-4", "a-3, b-1, c-4, d-2"],
+    "answer": 1
+  },
+  {
+    "type": "match",
+    "en": "Match the places with their locations.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>LIST 1</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>LIST 2</b></td></tr><tr><td style='padding:6px 0;'>a. Isampur</td><td></td><td style='padding:6px 0;'>1. Madhya Pradesh</td></tr><tr><td style='padding:6px 0;'>b. Bhimbetka</td><td></td><td style='padding:6px 0;'>2. France</td></tr><tr><td style='padding:6px 0;'>c. Lomekwi</td><td></td><td style='padding:6px 0;'>3. Karnataka</td></tr><tr><td style='padding:6px 0;'>d. St. Acheul</td><td></td><td style='padding:6px 0;'>4. Kenya</td></tr></table>",
+    "ta": "இடங்களை அவற்றின் இருப்பிடங்களுடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் 1</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் 2</b></td></tr><tr><td style='padding:6px 0;'>a. ஈசம்பூர்</td><td></td><td style='padding:6px 0;'>1. மத்தியப் பிரதேசம்</td></tr><tr><td style='padding:6px 0;'>b. பீம்பெட்கா</td><td></td><td style='padding:6px 0;'>2. பிரான்ஸ்</td></tr><tr><td style='padding:6px 0;'>c. லோமெக்வி</td><td></td><td style='padding:6px 0;'>3. கர்நாடகா</td></tr><tr><td style='padding:6px 0;'>d. செயின்ட் அச்சூல்</td><td></td><td style='padding:6px 0;'>4. கென்யா</td></tr></table>",
+    "optionsEn": ["a-1, b-3, c-4, d-2", "a-3, b-1, c-2, d-4", "a-3, b-1, c-4, d-2", "a-3, b-4, c-1, d-2"],
+    "optionsTa": ["a-1, b-3, c-4, d-2", "a-3, b-1, c-2, d-4", "a-3, b-1, c-4, d-2", "a-3, b-4, c-1, d-2"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the odd one out with reference to the members of the zoological tribe Hominins.",
+    "ta": "விலங்கியல் பழங்குடியினமான ஹோமினின்களின் உறுப்பினர்களைக் குறிப்பிடுகையில் பொருந்தாததைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": ["Gorilla", "Homo habilis", "Homo erectus", "Neanderthalensis"],
+    "optionsTa": ["கொரில்லா", "ஹோமோ ஹபிலிஸ்", "ஹோமோ எரெக்டஸ்", "நியாண்டர்தாலென்சிஸ்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the odd one out with reference to the megalithic burial types.",
+    "ta": "மெகாலிதிக் புதைப்பு வகைகளைக் குறிப்பிடுகையில் பொருந்தாததைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": ["Dolmen", "Cist", "Celt", "Urn"],
+    "optionsTa": ["டால்மென்", "சிஸ்ட்", "செல்ட்", "கலசம்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the odd one out with reference to the tool types of the Mesolithic period.",
+    "ta": "இடைக் கற்காலத்தின் கருவி வகைகளைக் குறிப்பிடுகையில் பொருந்தாததைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": ["Lunates", "Cleavers", "Triangles", "Trapezes"],
+    "optionsTa": ["பிறைக்கற்கள்", "வெட்டுக் கருவிகள்", "முக்கோணங்கள்", "சரிவகங்கள்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the odd one out with reference to the Iron Age sites of Tamil Nadu.",
+    "ta": "தமிழ்நாட்டின் இரும்புக் கால தளங்களைக் குறிப்பிடுகையில் பொருந்தாததைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": ["Adhichanallur", "Sanur", "Sithannavasal", "Payyampalli"],
+    "optionsTa": ["ஆதிச்சநல்லூர்", "சனூர்", "சித்தன்னவாசல்", "பையம்பள்ளி"],
+    "answer": 3
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): The Neolithic Age is called the \"new age\".<br><br>Reason (R): New grinding and polishing techniques were used for making tools.",
+    "ta": "Assertion (A): புதிய கற்காலம் \"புதிய யுகம்\" என்று அழைக்கப்படுகிறது.<br><br>Reason (R): கருவிகள் தயாரிக்க புதிய அரைக்கும் மற்றும் மெருகூட்டும் நுட்பங்கள் பயன்படுத்தப்பட்டன.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, மேலும் R என்பது A-விற்கான சரியான விளக்கம்.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-விற்கான சரியான விளக்கம் அல்ல.",
+      "A சரி, ஆனால் R தவறு.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): Herodotus is considered the Father of History.<br><br>Reason (R): Charles Darwin published *On the Origin of Species* in 1859.",
+    "ta": "Assertion (A): ஹெரோடோடஸ் வரலாற்றின் தந்தையாகக் கருதப்படுகிறார்.<br><br>Reason (R): சார்லஸ் டார்வின் 1859 இல் *ஆன் தி ஆரிஜின் ஆஃப் ஸ்பீசீஸ்* நூலை வெளியிட்டார்.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, மேலும் R என்பது A-விற்கான சரியான விளக்கம்.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-விற்கான சரியான விளக்கம் அல்ல.",
+      "A சரி, ஆனால் R தவறு.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 1
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): The Neanderthals of the Middle Paleolithic period buried their dead systematically.<br><br>Reason (R): Neanderthals appeared only after the Upper Paleolithic culture.",
+    "ta": "Assertion (A): நடுப் பழைய கற்காலத்தைச் சேர்ந்த நியாண்டர்தால்கள் தங்கள் இறந்தவர்களை முறையாகப் புதைத்தனர்.<br><br>Reason (R): நியாண்டர்தால்கள் மேல் பழைய கற்கால பண்பாட்டிற்குப் பின்னரே தோன்றினர்.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, மேலும் R என்பது A-விற்கான சரியான விளக்கம்.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-விற்கான சரியான விளக்கம் அல்ல.",
+      "A சரி, ஆனால் R தவறு.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 2
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): The Upper Paleolithic culture is well attested in Tamil Nadu.<br><br>Reason (R): The Mesolithic people used microliths and lived in many parts of Tamil Nadu.",
+    "ta": "Assertion (A): மேல் பழைய கற்கால பண்பாடு தமிழ்நாட்டில் நன்கு உறுதிப்படுத்தப்பட்டுள்ளது.<br><br>Reason (R): இடைக் கற்கால மக்கள் நுண்கற்களைப் பயன்படுத்தி தமிழ்நாட்டின் பல பகுதிகளில் வாழ்ந்தனர்.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, மேலும் R என்பது A-விற்கான சரியான விளக்கம்.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-விற்கான சரியான விளக்கம் அல்ல.",
+      "A சரி, ஆனால் R தவறு.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements about the Lower Paleolithic culture in Tamil Nadu and choose the correct option.<br><br>A. The earliest Stone Age tools in Tamil Nadu are from Athirampakkam, dated to about 1.5 to 2 million years ago.<br>B. Sir Robert Bruce Foote first discovered Paleolithic tools at Pallavaram in 1863.<br>C. The Lower Paleolithic culture is found in southern Tamil Nadu and Sri Lanka.<br>D. Basalt rocks were used by the Lower Paleolithic people of North Arcot and Dharmapuri.",
+    "ta": "தமிழ்நாட்டின் கீழ் பழைய கற்கால பண்பாடு பற்றிய பின்வரும் கூற்றுகளை ஆராய்ந்து சரியான விருப்பத்தைத் தேர்ந்தெடுக்கவும்.<br><br>A. தமிழ்நாட்டின் ஆரம்பகால கற்காலக் கருவிகள் அத்திரம்பாக்கத்தில் இருந்து சுமார் 1.5 முதல் 2 மில்லியன் ஆண்டுகளுக்கு முந்தையவை.<br>B. சர் ராபர்ட் புரூஸ் ஃபூட் 1863 இல் பல்லாவரத்தில் பழைய கற்காலக் கருவிகளை முதலில் கண்டுபிடித்தார்.<br>C. கீழ் பழைய கற்கால பண்பாடு தென் தமிழ்நாடு மற்றும் இலங்கையில் காணப்படுகிறது.<br>D. வட ஆற்காடு மற்றும் தர்மபுரியின் கீழ் பழைய கற்கால மக்களால் பசால்ட் பாறைகள் பயன்படுத்தப்பட்டன.",
+    "optionsEn": ["A, B and D only", "A and C only", "B, C and D only", "A, B, C and D"],
+    "optionsTa": ["A, B மற்றும் D மட்டும்", "A மற்றும் C மட்டும்", "B, C மற்றும் D மட்டும்", "A, B, C மற்றும் D"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements about megalithic burials and choose the correct option.<br><br>A. Menhirs are pillar-like stones erected as part of burials or memorials.<br>B. Sarcophagi are burial receptacles made of terracotta that sometimes had multiple legs.<br>C. Portholes are holes found on one side of cists and dolmens.<br>D. Urns are table-like stone structures erected as funerary monuments.",
+    "ta": "மெகாலிதிக் புதைப்புகள் பற்றிய பின்வரும் கூற்றுகளை ஆராய்ந்து சரியான விருப்பத்தைத் தேர்ந்தெடுக்கவும்.<br><br>A. மென்ஹிர்கள் என்பவை புதைப்புகள் அல்லது நினைவுச்சின்னங்களின் ஒரு பகுதியாக எழுப்பப்பட்ட தூண் போன்ற கற்கள்.<br>B. சர்கோபகிகள் என்பவை சில சமயங்களில் பல கால்களைக் கொண்ட டெரகோட்டாவால் செய்யப்பட்ட புதைப்புப் பாத்திரங்கள்.<br>C. போர்ட்ஹோல்கள் என்பவை சிஸ்ட்கள் மற்றும் டால்மென்களின் ஒரு பக்கத்தில் காணப்படும் துளைகள்.<br>D. கலசங்கள் என்பவை இறுதி ஊர்வல நினைவுச்சின்னங்களாக எழுப்பப்பட்ட மேசை போன்ற கல் அமைப்புகள்.",
+    "optionsEn": ["A and D only", "B and C only", "A, B and C only", "A, B, C and D"],
+    "optionsTa": ["A மற்றும் D மட்டும்", "B மற்றும் C மட்டும்", "A, B மற்றும் C மட்டும்", "A, B, C மற்றும் D"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement.",
+    "ta": "சரியான கூற்றைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": ["Evidence of a Neolithic village is found at Payyampalli in Chennai district.", "The Neolithic people used polished stone axes called celts.", "Mesolithic microliths were larger than 5 cm in size.", "The Iron Age came before the Neolithic period."],
+    "optionsTa": ["சென்னை மாவட்டத்தில் உள்ள பையம்பள்ளியில் புதிய கற்கால கிராமத்திற்கான ஆதாரங்கள் காணப்படுகின்றன.", "புதிய கற்கால மக்கள் செல்ட்ஸ் என்று அழைக்கப்படும் மெருகூட்டப்பட்ட கல் கோடரிகளைப் பயன்படுத்தினர்.", "இடைக் கற்கால நுண்கற்கள் 5 செ.மீ அளவை விடப் பெரியவை.", "இரும்புக் காலம் புதிய கற்காலத்திற்கு முன் வந்தது."],
+    "answer": 1
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false; isSubmitted = false;
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">
+                <span class="option-letter">${String.fromCharCode(65+i)}.</span>
+                <span class="option-text">${opt}</span>
+            </div>`;
+        });
+        let clearBtnHtml = "";
+        if (sel !== null && sel !== undefined) {
+            clearBtnHtml = `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;">
+                <button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button>
+            </div>`;
+        }
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+                ${sel !== null && sel !== undefined ? `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;"><button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button></div>` : ``}
+            </div>
+        `;
+        updateNavButtons(); updatePalette();
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) {
+            userAnswers[currentIndex] = null;
+        } else {
+            userAnswers[currentIndex] = optIndex;
+        }
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+
+    function clearSelection() {
+        if (isSubmitted) return;
+        userAnswers[currentIndex] = null;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    let currentReviewIndex = 0;
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let cssClass = "option-item";
+                let markerHtml = "";
+                if (idx === corr) { cssClass += " correct"; markerHtml = "<div class='marker'>✔</div>"; }
+                else if (u === idx && idx !== corr) { cssClass += " wrong"; markerHtml = "<div class='marker'>✖</div>"; }
+                optsHtml += `<div class="${cssClass}"><span>${String.fromCharCode(65+idx)}. ${optsArray[idx]}</span>${markerHtml}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" id="review-card-${i}" style="display: none;">
+                        <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div class="your-answer">Your Answer: ${userAns}</div>
+                        <div class="correct-answer">Correct Answer: ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        ${optsHtml}
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+        currentReviewIndex = 0;
+        showReviewCard(currentReviewIndex);
+    }
+    function showReviewCard(index) {
+        const cards = document.querySelectorAll(".review-card");
+        if (cards.length === 0) return;
+        cards.forEach(c => c.style.display = "none");
+        cards[index].style.display = "block";
+        document.getElementById("reviewPageText").innerText = `${index + 1} / ${cards.length}`;
+        document.getElementById("prevReviewBtn").disabled = (index === 0);
+        document.getElementById("nextReviewBtn").disabled = (index === cards.length - 1);
+        document.getElementById("reviewPagination").style.display = "flex";
+        window.scrollTo(0, 0);
+    }
+    function navigateReview(direction) {
+        const cards = document.querySelectorAll(".review-card");
+        currentReviewIndex += direction;
+        if (currentReviewIndex >= 0 && currentReviewIndex < cards.length) {
+            showReviewCard(currentReviewIndex);
+        }
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
+            await new Promise(r => setTimeout(r, 600));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+                if (btn) btn.innerText = "✅ Select Save as PDF";
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+        } finally {
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 3000);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        history.replaceState({ resultPage: true }, "", "#result");
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.addEventListener("popstate", function(e) {
+        if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+            history.pushState({ resultPage: true }, "", "#result");
+            confirmLeaveResult();
+        }
+    });
+    function confirmLeaveResult() {
+        if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
+            window.AndroidBridge.exitResultPage();
+        } else {
+            history.back();
+        }
+    }
+    window.checkForReview = function() {
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
+            }
+        }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
