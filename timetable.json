@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-10T10:10:50.411Z",
+  "version": "2026-11-11T23:30:53.067Z",
   "timetable": [
     {
       "day": "Monday",
@@ -272,11 +272,67 @@
       "day": "Thursday",
       "classes": [
         {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "General Science: Chemistry - Solutions",
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Unit I - Aptitude",
+          "batch": "TNPSC",
+          "faculty": "Ms Jothika",
+          "room": "Ms Jothika"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "English",
+          "batch": "TNTET",
+          "faculty": "Mrs Jayashankar",
+          "room": "Mrs Jayashankar"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability",
           "batch": "SSC",
-          "faculty": "MS. JOTHIKA",
-          "room": "MS. JOTHIKA"
+          "faculty": "Mr Abin",
+          "room": "Mr Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability",
+          "batch": "BANK",
+          "faculty": "Mr Abin",
+          "room": "Mr Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability",
+          "batch": "RRB",
+          "faculty": "Mr Abin",
+          "room": "Mr Abin"
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "CURRENT AFFAIRS",
+          "batch": "TNPSC",
+          "faculty": "Dr Sahitha",
+          "room": "Dr Sahitha"
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "CURRENT AFFAIRS",
+          "batch": "SSC",
+          "faculty": "Dr Sahitha",
+          "room": "Dr Sahitha"
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "CURRENT AFFAIRS",
+          "batch": "BANK",
+          "faculty": "Dr Sahitha",
+          "room": "Dr Sahitha"
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "CURRENT AFFAIRS",
+          "batch": "RRB",
+          "faculty": "Dr Sahitha",
+          "room": "Dr Sahitha"
         },
         {
           "time": "11:30 AM - 01:00 PM",
