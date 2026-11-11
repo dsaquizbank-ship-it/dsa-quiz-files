@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>UGZ-77 - DEAMINATION TO BMI,BMR UGZ-77</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                linebreaks: { automatic: true, width: "container" }
+            },
+            options: { ignoreHtmlClass: "no-mathjax" },
+            chtml: {
+                displayAlign: "left",
+                displayIndent: "0",
+                mtextInheritFont: true
+            },
+            svg: {
+                scale: 0.9,
+                minScale: 0.5,
+                mtextInheritFont: true,
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; color: #10b981; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; white-space: normal; word-wrap: break-word; padding-bottom: 20px; max-width: 100%; overflow-x: auto; }
+        mjx-container { display: inline !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; }
+        .question-text::-webkit-scrollbar { display: none; }
+        .question-text { -ms-overflow-style: none; scrollbar-width: none; }
+        .option-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; word-wrap: break-word; }
+        .option-letter { font-weight: 800; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+        .option-text { flex-grow: 1; min-width: 0; word-wrap: break-word; overflow-wrap: break-word; }
+        .option-text mjx-container { display: inline-block !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; overflow-x: visible !important; }
+        .option-text mjx-container[jax="CHTML"][display="true"] { margin: 0 !important; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
+        .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
+        .review-card .question-text { overflow-x: hidden !important; white-space: normal !important; word-wrap: break-word !important; }
+        .review-card strong { color: var(--text-primary); font-size: 16px; }
+        .review-card .option-item { background-color: var(--rc-bg); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: rgba(40, 167, 69, 0.1); border: 1px solid #28a745; color: #28a745; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; color: #dc3545; }
+        .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
+        .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
+        .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
+        .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px 0; border-top: 1px solid var(--border-light); }
+        .review-nav-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .review-nav-btn:disabled { background: var(--border-light); color: var(--text-primary); opacity: 0.5; cursor: not-allowed; }
+        .review-nav-text { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+        .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { 
+            html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } 
+            .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } 
+            #startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard { display: none !important; } 
+            #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } 
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; } 
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; margin-bottom: 20px !important; display: block !important; } 
+            .review-card .option-item { border: 1px solid #ccc !important; background: white !important; color: black !important; } 
+            .review-card .option-item.correct { background: #e6ffe6 !important; border-color: #28a745 !important; color: black !important; } 
+            .review-card .option-item.wrong { background: #ffe6e6 !important; border-color: #dc3545 !important; color: black !important; } 
+            @page { size: A4; margin: 1.5cm; } 
+        }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">30:00</div>
+            <div class="top-buttons">
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div id="printHeader" style="display: none;">
+            <h1>DR SAHITHA IAS ACADEMY</h1>
+            <h3>ANSWER KEY & DETAILED REVIEW</h3>
+            <p><strong>Test:</strong> UGZ-77 - UGTRB ZOOLOGY</p>
+        </div>
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+            <div id="reviewPagination" class="review-nav-container" style="display: none;">
+                <button class="review-nav-btn" id="prevReviewBtn" onclick="navigateReview(-1)">◀ PREV</button>
+                <span class="review-nav-text" id="reviewPageText">1 / 25</span>
+                <button class="review-nav-btn" id="nextReviewBtn" onclick="navigateReview(1)">NEXT ▶</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "UGTRB ZOOLOGY",
+        testNo: "UGZ-77",
+        date: "11/11/2026",
+        subject: "UGTRB ZOOLOGY",
+        topic: "DEAMINATION TO BMI,BMR",
+        duration: "30",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "Underweight according to WHO is BMI:",
+    "ta": "உலக சுகாதார அமைப்பின் (WHO) படி, எடைக்குறைவு என்பது BMI:",
+    "optionsEn": ["< 18.5", "< 17.5", "< 20", "< 16"],
+    "optionsTa": ["< 18.5", "< 17.5", "< 20", "< 16"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "For Asian Indian women, waist circumference > ______ indicates central obesity:",
+    "ta": "ஆசிய இந்தியப் பெண்களுக்கு, இடுப்பு சுற்றளவு > ______ மைய உடல் பருமனைக் குறிக்கிறது:",
+    "optionsEn": ["80 cm", "88 cm", "90 cm", "102 cm"],
+    "optionsTa": ["80 செ.மீ", "88 செ.மீ", "90 செ.மீ", "102 செ.மீ"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "BMI of 22 kg/m² falls in which category (WHO)?",
+    "ta": "22 கி.கி/மீ² என்ற BMI எந்த வகையில் வருகிறது (WHO)?",
+    "optionsEn": ["Underweight", "Normal", "Overweight", "Obese"],
+    "optionsTa": ["எடைக்குறைவு", "சாதாரண எடை", "அதிக எடை", "உடல் பருமன்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which condition is associated with low BMI?",
+    "ta": "எந்த நோய் நிலை குறைந்த BMI உடன் தொடர்புடையது?",
+    "optionsEn": ["Type 2 diabetes", "Osteoporosis and immunodeficiency", "Hypertension", "Sleep apnea"],
+    "optionsTa": ["வகை 2 நீரிழிவு", "எலும்பு மெலிதல் மற்றும் நோயெதிர்ப்புக் குறைபாடு", "உயர் இரத்த அழுத்தம்", "தூக்கத்தில் மூச்சுத்திணறல்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "The most important clinical use of BMI is:",
+    "ta": "BMI-இன் மிக முக்கியமான மருத்துவப் பயன்பாடு:",
+    "optionsEn": ["Screening for weight-related health risks at population level", "Diagnosing diabetes", "Measuring body fat percentage", "Determining bone density"],
+    "optionsTa": ["மக்கள்தொகை அளவில் எடை தொடர்பான சுகாதார அபாயங்களுக்கான பரிசோதனை", "நீரிழிவு நோயைக் கண்டறிதல்", "உடல் கொழுப்பு சதவீதத்தை அளவிடுதல்", "எலும்பு அடர்த்தியைத் தீர்மானித்தல்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "BMR is measured under which of the following conditions?",
+    "ta": "பின்வரும் எந்த நிலையில் BMR அளவிடப்படுகிறது?",
+    "optionsEn": ["After 12--14 hours of fasting, at complete rest, thermoneutral environment", "After a meal, during light activity", "During sleep only", "After exercise"],
+    "optionsTa": ["12-14 மணி நேர விரதத்திற்குப் பிறகு, முழு ஓய்வில், வெப்பநிலை சீரான சூழலில்", "உணவுக்குப் பிறகு, இலகுவான செயல்பாட்டின் போது", "தூக்கத்தின் போது மட்டும்", "உடற்பயிற்சிக்குப் பிறகு"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "The \"Rule of Thumb\" for estimating BMR is approximately:",
+    "ta": "BMR-ஐ மதிப்பிடுவதற்கான \"பெருவிரல் விதி\" தோராயமாக:",
+    "optionsEn": ["10 kcal/kg/day", "1 kcal/kg/hour", "5 kcal/kg/hour", "30 kcal/kg/day"],
+    "optionsTa": ["10 கிலோகலோரி/கி.கி/நாள்", "1 கிலோகலோரி/கி.கி/மணி", "5 கிலோகலோரி/கி.கி/மணி", "30 கிலோகலோரி/கி.கி/நாள்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "NEAT (Non-Exercise Activity Thermogenesis) does NOT include:",
+    "ta": "NEAT (உடற்பயிற்சி அல்லாத செயல்பாட்டு வெப்ப உற்பத்தி) எதை உள்ளடக்கவில்லை?",
+    "optionsEn": ["Fidgeting", "Walking to work", "Structured gym exercise", "Standing"],
+    "optionsTa": ["சிறு அசைவுகள்", "வேலைக்கு நடந்து செல்லுதல்", "முறையான உடற்பயிற்சிக் கூடப் பயிற்சி", "நிற்றல்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "The most accurate method to determine an individual's BMR is:",
+    "ta": "ஒரு நபரின் BMR-ஐ தீர்மானிக்கும் மிகத் துல்லியமான முறை:",
+    "optionsEn": ["Mifflin-St Jeor equation", "Harris-Benedict equation", "indirect calorimetry", "MET tables"],
+    "optionsTa": ["மிஃப்ளின்-செயின்ட் ஜியோர் சமன்பாடு", "ஹாரிஸ்-பெனடிக்ட் சமன்பாடு", "மறைமுக வெப்ப அளவியல்", "MET அட்டவணைகள்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is NOT an anabolic reaction?",
+    "ta": "பின்வருவனவற்றுள் எது ஒரு உள்ளமைப்பு (anabolic) வினை அல்ல?",
+    "optionsEn": ["Synthesis of protein from amino acids", "Synthesis of lipids from fatty acids and glycerol", "Synthesis of polysaccharides from monosaccharides", "Splitting of protoplasmic molecules into smaller ones"],
+    "optionsTa": ["அமினோ அமிலங்களிலிருந்து புரதங்களை உருவாக்குதல்", "கொழுப்பு அமிலங்கள் மற்றும் கிளிசராலிலிருந்து கொழுப்புகளை உருவாக்குதல்", "ஒற்றை சர்க்கரைகளிலிருந்து பாலிசாக்கரைடுகளை உருவாக்குதல்", "புரோட்டோபிளாஸ்மிக் மூலக்கூறுகளை சிறியவையாகப் பிரித்தல்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "What is the primary purpose of catabolism?",
+    "ta": "வினையூக்கச் சிதைவின் (catabolism) முதன்மை நோக்கம் என்ன?",
+    "optionsEn": ["Growth of protoplasm", "Energy supply", "Tissue repair", "Large molecules synthesis"],
+    "optionsTa": ["புரோட்டோபிளாஸ்மாவின் வளர்ச்சி", "ஆற்றல் வழங்குதல்", "திசு பழுதுநீக்கம்", "பெரிய மூலக்கூறுகளை உருவாக்குதல்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is NOT included among the steps of glucose metabolism?",
+    "ta": "குளுக்கோஸ் வளர்சிதை மாற்றத்தின் படிகளில் பின்வருவனவற்றுள் எது சேர்க்கப்படவில்லை?",
+    "optionsEn": ["Glycogenesis", "Glycogenolysis", "Photosynthesis", "Krebs Cycle"],
+    "optionsTa": ["கிளைக்கோஜெனெசிஸ்", "கிளைக்கோஜெனாலிசிஸ்", "ஒளிச்சேர்க்கை", "கிரெப்ஸ் சுழற்சி"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Pasteur effect is which step in glucose metabolism?",
+    "ta": "பாஸ்டர் விளைவு குளுக்கோஸ் வளர்சிதை மாற்றத்தின் எந்தப் படியாகும்?",
+    "optionsEn": ["3rd step", "4th step", "5th step", "7th step"],
+    "optionsTa": ["3வது படி", "4வது படி", "5வது படி", "7வது படி"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which enzyme catalyzes the conversion of Glucose-6-phosphate into Glucose-1-phosphate?",
+    "ta": "குளுக்கோஸ்-6-பாஸ்பேட்டை குளுக்கோஸ்-1-பாஸ்பேட்டாக மாற்றுவதை வினையூக்கும் நொதி எது?",
+    "optionsEn": ["Glucokinase", "Phosphoglucomutase", "Branching enzyme", "Glycogen synthetase"],
+    "optionsTa": ["குளுக்கோகினேஸ்", "பாஸ்போகுளுக்கோமியூட்டேஸ்", "கிளை நொதி", "கிளைக்கோஜென் சின்தெட்டேஸ்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which ion acts as a cofactor for the phosphoglucomutase reaction?",
+    "ta": "பாஸ்போகுளுக்கோமியூட்டேஸ் வினைக்கு எந்த அயனி துணைக்காரணியாகச் செயல்படுகிறது?",
+    "optionsEn": ["$Mg^{++}$", "$Zn^{++}$", "$Fe^{++}$", "$Cu^{++}$"],
+    "optionsTa": ["$Mg^{++}$", "$Zn^{++}$", "$Fe^{++}$", "$Cu^{++}$"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which molecule is freed from UDPG in the glycogen synthetase reaction?",
+    "ta": "கிளைக்கோஜென் சின்தெட்டேஸ் வினையில் UDPG-யிலிருந்து எந்த மூலக்கூறு விடுவிக்கப்படுகிறது?",
+    "optionsEn": ["UTP", "UDP", "UMP", "$PP_i$"],
+    "optionsTa": ["UTP", "UDP", "UMP", "$PP_i$"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "After how many glucose units in length does the branching enzyme act on glycogen?",
+    "ta": "கிளைக்கோஜெனில் எத்தனை குளுக்கோஸ் அலகுகள் நீளத்திற்குப் பிறகு கிளை நொதி செயல்படுகிறது?",
+    "optionsEn": ["4 glucose units", "6 glucose units", "8 glucose units", "10 glucose units"],
+    "optionsTa": ["4 குளுக்கோஸ் அலகுகள்", "6 குளுக்கோஸ் அலகுகள்", "8 குளுக்கோஸ் அலகுகள்", "10 குளுக்கோஸ் அலகுகள்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Why can glycogenolysis NOT take place in muscles?",
+    "ta": "தசைகளில் கிளைக்கோஜெனாலிசிஸ் ஏன் நடைபெற முடியாது?",
+    "optionsEn": ["Phosphorylase is absent", "Phosphoglucomutase is absent", "Phosphatase is absent", "Glycogen is absent"],
+    "optionsTa": ["பாஸ்போரிலேஸ் இல்லை", "பாஸ்போகுளுக்கோமியூட்டேஸ் இல்லை", "பாஸ்பேடேஸ் இல்லை", "கிளைக்கோஜென் இல்லை"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which enzyme catalyzes the formation of Glucose-1-phosphate from Glycogen?",
+    "ta": "கிளைக்கோஜெனிலிருந்து குளுக்கோஸ்-1-பாஸ்பேட் உருவாவதை வினையூக்கும் நொதி எது?",
+    "optionsEn": ["Phosphoglucomutase", "Phosphorylase", "Liver phosphatase", "Branching enzyme"],
+    "optionsTa": ["பாஸ்போகுளுக்கோமியூட்டேஸ்", "பாஸ்போரிலேஸ்", "கல்லீரல் பாஸ்பேடேஸ்", "கிளை நொதி"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "How much gluconeogenesis takes place in the brain, skeletal muscle and heart muscle?",
+    "ta": "மூளை, எலும்புத் தசை மற்றும் இதயத் தசையில் எவ்வளவு குளுக்கோனியோஜெனெசிஸ் நடைபெறுகிறது?",
+    "optionsEn": ["Very high", "Moderate", "Very little", "None at all"],
+    "optionsTa": ["மிக அதிகம்", "மிதமானது", "மிகக் குறைவு", "முற்றிலும் இல்லை"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "What is the purpose of gluconeogenesis occurring in the liver and kidney?",
+    "ta": "கல்லீரல் மற்றும் சிறுநீரகத்தில் நடைபெறும் குளுக்கோனியோஜெனெசிஸின் நோக்கம் என்ன?",
+    "optionsEn": ["Storage of glycogen", "To maintain the glucose level in the blood", "Synthesis of fats", "Protein breakdown"],
+    "optionsTa": ["கிளைக்கோஜெனைச் சேமித்தல்", "இரத்தத்தில் குளுக்கோஸ் அளவைப் பராமரிக்க", "கொழுப்புகளை உருவாக்குதல்", "புரதச் சிதைவு"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which enzyme catalyzes the conversion of Glucose to Glucose-6-phosphate in glycolysis?",
+    "ta": "கிளைக்காலிசிஸில் குளுக்கோஸை குளுக்கோஸ்-6-பாஸ்பேட்டாக மாற்றுவதை வினையூக்கும் நொதி எது?",
+    "optionsEn": ["Glucose-6-phosphatase", "Hexokinase", "Pyruvate kinase", "Phosphofructokinase"],
+    "optionsTa": ["குளுக்கோஸ்-6-பாஸ்பேடேஸ்", "ஹெக்ஸோகினேஸ்", "பைருவேட் கினேஸ்", "பாஸ்போஃப்ரக்டோகினேஸ்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which enzyme catalyzes the conversion of Fructose 1,6-diphosphate to Fructose 6-phosphate in gluconeogenesis?",
+    "ta": "குளுக்கோனியோஜெனெசிஸில் ஃப்ரக்டோஸ் 1,6-டைபாஸ்பேட்டை ஃப்ரக்டோஸ் 6-பாஸ்பேட்டாக மாற்றுவதை வினையூக்கும் நொதி எது?",
+    "optionsEn": ["Phosphofructokinase", "Fructose 1,6-diphosphatase", "Pyruvate carboxylase", "Glucose-6-phosphatase"],
+    "optionsTa": ["பாஸ்போஃப்ரக்டோகினேஸ்", "ஃப்ரக்டோஸ் 1,6-டைபாஸ்பேடேஸ்", "பைருவேட் கார்பாக்சிலேஸ்", "குளுக்கோஸ்-6-பாஸ்பேடேஸ்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "What is the correct stoichiometry of gluconeogenesis?",
+    "ta": "குளுக்கோனியோஜெனெசிஸின் சரியான ஸ்டோய்க்கியோமெட்ரி என்ன?",
+    "optionsEn": ["2 Pyruvic acid + 4ATP + 2GTP + 2NADH + 2H₂O → Glucose + 4ADP + 2GDP + 6Pi + 2NAD⁺", "2 Pyruvic acid + 2ATP + 2GTP + 2NADH → Glucose + 2ADP + 2GDP + 4Pi + 2NAD⁺", "2 Pyruvic acid + 6ATP + 2NADH → Glucose + 6ADP + 4Pi + 2NAD⁺", "2 Pyruvic acid + 4ATP + 4GTP + 2NADH → Glucose + 4ADP + 4GDP + 8Pi + 2NAD⁺"],
+    "optionsTa": ["2 பைருவிக் அமிலம் + 4ATP + 2GTP + 2NADH + 2H₂O → குளுக்கோஸ் + 4ADP + 2GDP + 6Pi + 2NAD⁺", "2 பைருவிக் அமிலம் + 2ATP + 2GTP + 2NADH → குளுக்கோஸ் + 2ADP + 2GDP + 4Pi + 2NAD⁺", "2 பைருவிக் அமிலம் + 6ATP + 2NADH → குளுக்கோஸ் + 6ADP + 4Pi + 2NAD⁺", "2 பைருவிக் அமிலம் + 4ATP + 4GTP + 2NADH → குளுக்கோஸ் + 4ADP + 4GDP + 8Pi + 2NAD⁺"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Phenylalanine, tyrosine, and aspartic acid enter the TCA cycle as which intermediate?",
+    "ta": "ஃபினைலாலனின், டைரோசின் மற்றும் அஸ்பார்டிக் அமிலம் எந்த இடைநிலைப் பொருளாக TCA சுழற்சியில் நுழைகின்றன?",
+    "optionsEn": ["Oxaloacetic acid", "Fumaric acid", "Succinyl CoA", "Citric acid"],
+    "optionsTa": ["ஆக்ஸாலோஅசிட்டிக் அமிலம்", "ஃபியூமரிக் அமிலம்", "சக்சினைல் CoA", "சிட்ரிக் அமிலம்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Arginine, glutamic acid, glutamine, histidine, lysine, and proline are converted into what?",
+    "ta": "அர்ஜினின், குளுட்டமிக் அமிலம், குளுட்டமின், ஹிஸ்டிடின், லைசின் மற்றும் புரோலின் எதாக மாற்றப்படுகின்றன?",
+    "optionsEn": ["α-ketoglutaric acid", "Succinyl CoA", "Oxaloacetic acid", "Pyruvic acid"],
+    "optionsTa": ["α-கீட்டோகுளூட்டாரிக் அமிலம்", "சக்சினைல் CoA", "ஆக்ஸாலோஅசிட்டிக் அமிலம்", "பைருவிக் அமிலம்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Why is muscle tissue incapable of synthesizing glucose from lactic acid?",
+    "ta": "தசைத் திசு ஏன் லாக்டிக் அமிலத்திலிருந்து குளுக்கோஸை உருவாக்க முடியாது?",
+    "optionsEn": ["Glycogen phosphorylase is absent", "The enzyme glucose-6-phosphatase is absent", "Pyruvate carboxylase is absent", "Lactic acid dehydrogenase is absent"],
+    "optionsTa": ["கிளைக்கோஜென் பாஸ்போரிலேஸ் இல்லை", "குளுக்கோஸ்-6-பாஸ்பேடேஸ் என்ற நொதி இல்லை", "பைருவேட் கார்பாக்சிலேஸ் இல்லை", "லாக்டிக் அமில டீஹைட்ரஜனேஸ் இல்லை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Why can further metabolism of glycerol NOT take place in adipose tissue?",
+    "ta": "கொழுப்புத் திசுவில் கிளிசராலின் மேலதிக வளர்சிதை மாற்றம் ஏன் நடைபெற முடியாது?",
+    "optionsEn": ["Glycerol-3-phosphate dehydrogenase is absent", "Glycerokinase is absent", "Pyruvate kinase is absent", "Hexokinase is absent"],
+    "optionsTa": ["கிளிசரால்-3-பாஸ்பேட் டீஹைட்ரஜனேஸ் இல்லை", "கிளிசரோகினேஸ் இல்லை", "பைருவேட் கினேஸ் இல்லை", "ஹெக்ஸோகினேஸ் இல்லை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "In the liver, glycerol is phosphorylated by which enzyme?",
+    "ta": "கல்லீரலில், கிளிசரால் எந்த நொதியால் பாஸ்போரிலேற்றம் செய்யப்படுகிறது?",
+    "optionsEn": ["Glycerol-3-phosphate dehydrogenase", "Glycerokinase", "Glucokinase", "Phosphoglucomutase"],
+    "optionsTa": ["கிளிசரால்-3-பாஸ்பேட் டீஹைட்ரஜனேஸ்", "கிளிசரோகினேஸ்", "குளுக்கோகினேஸ்", "பாஸ்போகுளுக்கோமியூட்டேஸ்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which enzyme catalyzes the conversion of Glucose-6-phosphate to Fructose-6-phosphate?",
+    "ta": "குளுக்கோஸ்-6-பாஸ்பேட்டை ஃப்ரக்டோஸ்-6-பாஸ்பேட்டாக மாற்றுவதை வினையூக்கும் நொதி எது?",
+    "optionsEn": ["Glucohexokinase", "Glucose phosphate isomerase", "Phosphofructokinase", "Triose phosphate isomerase"],
+    "optionsTa": ["குளுக்கோஹெக்ஸோகினேஸ்", "குளுக்கோஸ் பாஸ்பேட் ஐசோமரேஸ்", "பாஸ்போஃப்ரக்டோகினேஸ்", "ட்ரையோஸ் பாஸ்பேட் ஐசோமரேஸ்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which enzyme catalyzes the conversion of Fructose-6-phosphate to Fructose 1,6-diphosphate?",
+    "ta": "ஃப்ரக்டோஸ்-6-பாஸ்பேட்டை ஃப்ரக்டோஸ் 1,6-டைபாஸ்பேட்டாக மாற்றுவதை வினையூக்கும் நொதி எது?",
+    "optionsEn": ["Glucose phosphate isomerase", "Phosphofructokinase", "Aldolase", "Glucohexokinase"],
+    "optionsTa": ["குளுக்கோஸ் பாஸ்பேட் ஐசோமரேஸ்", "பாஸ்போஃப்ரக்டோகினேஸ்", "ஆல்டோலேஸ்", "குளுக்கோஹெக்ஸோகினேஸ்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which enzyme catalyzes the conversion of 1,3-diphosphoglyceric acid to 3-phosphoglyceric acid?",
+    "ta": "1,3-டைபாஸ்போகிளிசரிக் அமிலத்தை 3-பாஸ்போகிளிசரிக் அமிலமாக மாற்றுவதை வினையூக்கும் நொதி எது?",
+    "optionsEn": ["3-phosphoglyceraldehyde dehydrogenase", "3-phosphoglycerate kinase", "Phosphoglyceromutase", "Enolase"],
+    "optionsTa": ["3-பாஸ்போகிளிசரால்டிஹைட் டீஹைட்ரஜனேஸ்", "3-பாஸ்போகிளிசரேட் கினேஸ்", "பாஸ்போகிளிசரோமியூட்டேஸ்", "எனோலேஸ்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which enzyme catalyzes the reduction of Pyruvic acid to Lactic acid?",
+    "ta": "பைருவிக் அமிலத்தை லாக்டிக் அமிலமாகக் குறைப்பதை வினையூக்கும் நொதி எது?",
+    "optionsEn": ["Pyruvate carboxylase", "Lactic dehydrogenase", "Enolase", "Phosphopyruvate kinase"],
+    "optionsTa": ["பைருவேட் கார்பாக்சிலேஸ்", "லாக்டிக் டீஹைட்ரஜனேஸ்", "எனோலேஸ்", "பாஸ்போபைருவேட் கினேஸ்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which enzyme splits Fructose-1,6-diphosphate into Dihydroxyacetone phosphate and 3-phosphoglyceraldehyde?",
+    "ta": "ஃப்ரக்டோஸ்-1,6-டைபாஸ்பேட்டை டைஹைட்ராக்ஸி அசிட்டோன் பாஸ்பேட் மற்றும் 3-பாஸ்போகிளிசரால்டிஹைடாகப் பிரிக்கும் நொதி எது?",
+    "optionsEn": ["Phosphofructo kinase", "Aldolase", "Triose phosphate isomerase", "Phosphoglyceraldehyde dehydrogenase"],
+    "optionsTa": ["பாஸ்போஃப்ரக்டோ கினேஸ்", "ஆல்டோலேஸ்", "ட்ரையோஸ் பாஸ்பேட் ஐசோமரேஸ்", "பாஸ்போகிளிசரால்டிஹைட் டீஹைட்ரஜனேஸ்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Where does the Krebs cycle mainly take place?",
+    "ta": "கிரெப்ஸ் சுழற்சி முக்கியமாக எங்கு நடைபெறுகிறது?",
+    "optionsEn": ["Cytoplasm", "Mitochondria", "Nucleus", "Ribosome"],
+    "optionsTa": ["சைட்டோபிளாஸம்", "மைட்டோகாண்ட்ரியா", "கரு", "ரைபோசோம்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which enzyme catalyzes the conversion of Pyruvic acid to Acetyl-CoA?",
+    "ta": "பைருவிக் அமிலத்தை அசிட்டைல்-CoA-வாக மாற்றுவதை வினையூக்கும் நொதி எது?",
+    "optionsEn": ["Citric acid synthetase", "Pyruvic acid dehydrogenase", "Aconitase", "Oxalosuccinic acid decarboxylase"],
+    "optionsTa": ["சிட்ரிக் அமில சின்தெட்டேஸ்", "பைருவிக் அமில டீஹைட்ரஜனேஸ்", "அகோனிடேஸ்", "ஆக்ஸாலோசக்சினிக் அமில டீகார்பாக்சிலேஸ்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "What is formed when Pyruvic acid is converted to Acetyl-CoA?",
+    "ta": "பைருவிக் அமிலம் அசிட்டைல்-CoA-வாக மாற்றப்படும்போது என்ன உருவாகிறது?",
+    "optionsEn": ["CO₂ only", "NADH₂ + CO₂", "FADH₂ + CO₂", "ATP + CO₂"],
+    "optionsTa": ["CO₂ மட்டும்", "NADH₂ + CO₂", "FADH₂ + CO₂", "ATP + CO₂"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "In the oxidation of Succinic acid to Fumaric acid, the hydrogen atoms released are accepted by what?",
+    "ta": "சக்சினிக் அமிலம் ஃபியூமரிக் அமிலமாக ஆக்சிஜனேற்றப்படும்போது, வெளியிடப்படும் ஹைட்ரஜன் அணுக்கள் எதனால் ஏற்றுக்கொள்ளப்படுகின்றன?",
+    "optionsEn": ["NAD", "FAD", "NADP⁺", "CoA"],
+    "optionsTa": ["NAD", "FAD", "NADP⁺", "CoA"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is NOT a component of the Electron Transport System?",
+    "ta": "பின்வருவனவற்றுள் எது எலக்ட்ரான் கடத்தல் அமைப்பின் ஒரு அங்கமாக இல்லை?",
+    "optionsEn": ["Cytochrome b", "Cytochrome c", "Cytochrome a", "Pyruvate kinase"],
+    "optionsTa": ["சைட்டோக்ரோம் b", "சைட் டோக்ரோம் c", "சைட்டோக்ரோம் a", "பைருவேட் கினேஸ்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "When NADH₂ is oxidized to NAD, its hydrogen ion is transferred to what?",
+    "ta": "NADH₂ NAD ஆக ஆக்சிஜனேற்றப்படும்போது, அதன் ஹைட்ரஜன் அயனி எதற்கு மாற்றப்படுகிறது?",
+    "optionsEn": ["Cytochrome b", "FAD (hydrogen carrier)", "Cytochrome oxidase", "Oxygen"],
+    "optionsTa": ["சைட்டோக்ரோம் b", "FAD (ஹைட்ரஜன் கடத்தி)", "சைட்டோக்ரோம் ஆக்சிடேஸ்", "ஆக்சிஜன்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "From FAD, where is the hydrogen ion discharged?",
+    "ta": "FAD-இலிருந்து, ஹைட்ரஜன் அயனி எங்கே வெளியேற்றப்படுகிறது?",
+    "optionsEn": ["In the mitochondria", "In the cell fluid", "In the nucleus", "In the blood"],
+    "optionsTa": ["மைட்டோகாண்ட்ரியாவில்", "செல் திரவத்தில்", "கருவில்", "இரத்தத்தில்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "In the transamination reaction, the donor amino acid becomes what, and the recipient keto acid becomes what?",
+    "ta": "டிரான்ஸ்அமினேஷன் வினையில், வழங்கும் அமினோ அமிலம் எதுவாக மாறுகிறது, மற்றும் பெறும் கீட்டோ அமிலம் எதுவாக மாறுகிறது?",
+    "optionsEn": ["Keto acid; amino acid", "Amino acid; keto acid", "Urea; ammonia", "Ammonia; urea"],
+    "optionsTa": ["கீட்டோ அமிலம்; அமினோ அமிலம்", "அமினோ அமிலம்; கீட்டோ அமிலம்", "யூரியா; அம்மோனியா", "அம்மோனியா; யூரியா"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Urea is a nitrogenous waste product. Most of the ammonia formed by deamination and transamination is transformed into what?",
+    "ta": "யூரியா ஒரு நைட்ரஜன் கழிவுப் பொருளாகும். டீஅமினேஷன் மற்றும் டிரான்ஸ்அமினேஷன் மூலம் உருவாகும் பெரும்பாலான அம்மோனியா எதுவாக மாற்றப்படுகிறது?",
+    "optionsEn": ["Uric acid", "Urea", "Creatinine", "Glucose"],
+    "optionsTa": ["யூரிக் அமிலம்", "யூரியா", "கிரியேட்டினின்", "குளுக்கோஸ்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "In the arginosuccinase reaction, arginosuccinic acid is cleaved into which two substances?",
+    "ta": "அர்ஜினோசக்சினேஸ் வினையில், அர்ஜினோசக்சினிக் அமிலம் எந்த இரு பொருட்களாகப் பிரிக்கப்படுகிறது?",
+    "optionsEn": ["Ornithine and urea", "Arginine and fumaric acid", "Citrulline and aspartic acid", "Carbamyl phosphate and ornithine"],
+    "optionsTa": ["ஆர்னிதின் மற்றும் யூரியா", "அர்ஜினின் மற்றும் ஃபியூமரிக் அமிலம்", "சிட்ருலின் மற்றும் அஸ்பார்டிக் அமிலம்", "கார்பமைல் பாஸ்பேட் மற்றும் ஆர்னிதின்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "In the final stage of the ornithine cycle, arginine is cleaved by which enzyme?",
+    "ta": "ஆர்னிதின் சுழற்சியின் இறுதி நிலையில், அர்ஜினின் எந்த நொதியால் பிரிக்கப்படுகிறது?",
+    "optionsEn": ["Arginosuccinase", "Arginase", "Carbamyl phosphate synthetase", "Transaminase"],
+    "optionsTa": ["அர்ஜினோசக்சினேஸ்", "அர்ஜினேஸ்", "கார்பமைல் பாஸ்பேட் சின்தெட்டேஸ்", "டிரான்ஸ்அமினேஸ்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "In animal cells, deamination or transamination produces which three keto acids?",
+    "ta": "விலங்கு செல்களில், டீஅமினேஷன் அல்லது டிரான்ஸ்அமினேஷன் எந்த மூன்று கீட்டோ அமிலங்களை உற்பத்தி செய்கிறது?",
+    "optionsEn": ["α-ketoglutaric acid, Oxaloacetic acid, Pyruvic acid", "Citric acid, Fumaric acid, Malic acid", "Acetoacetic acid, β-hydroxybutyric acid, Acetone", "Lactic acid, Pyruvic acid, Acetyl CoA"],
+    "optionsTa": ["α-கீட்டோகுளூட்டாரிக் அமிலம், ஆக்ஸாலோஅசிட்டிக் அமிலம், பைருவிக் அமிலம்", "சிட்ரிக் அமிலம், ஃபியூமரிக் அமிலம், மாலிக் அமிலம்", "அசிட்டோஅசிட்டிக் அமிலம், β-ஹைட்ராக்ஸிபியூட்ரிக் அமிலம், அசிட்டோன்", "லாக்டிக் அமிலம், பைருவிக் அமிலம், அசிட்டைல் CoA"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "α-ketoglutaric acid is converted into what?",
+    "ta": "α-கீட்டோகுளூட்டாரிக் அமிலம் எதுவாக மாற்றப்படுகிறது?",
+    "optionsEn": ["Aspartic acid", "Glutamic acid", "Alanine", "Pyruvic acid"],
+    "optionsTa": ["அஸ்பார்டிக் அமிலம்", "குளுட்டமிக் அமிலம்", "அலனைன்", "பைருவிக் அமிலம்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Where does β-oxidation occur?",
+    "ta": "β-ஆக்சிஜனேற்றம் எங்கு நடைபெறுகிறது?",
+    "optionsEn": ["Cytoplasm", "Mitochondria", "Nucleus", "Ribosome"],
+    "optionsTa": ["சைட்டோபிளாஸம்", "மைட்டோகாண்ட்ரியா", "கரு", "ரைபோசோம்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "In β-oxidation, the four-carbon atom residue left at the end is what?",
+    "ta": "β-ஆக்சிஜனேற்றத்தில், இறுதியில் எஞ்சியிருக்கும் நான்கு கார்பன் அணு எச்சம் என்ன?",
+    "optionsEn": ["Acetic acid", "Butyric acid", "Acetoacetic acid", "Propionic acid"],
+    "optionsTa": ["அசிட்டிக் அமிலம்", "பியூட்ரிக் அமிலம்", "அசிட்டோஅசிட்டிக் அமிலம்", "புரோபியோனிக் அமிலம்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which enzyme catalyzes the hydration of α,β-Unsaturated acyl CoA to β-Hydroxy acyl CoA?",
+    "ta": "α,β-நிறைவுறா அசைல் CoA-வை β-ஹைட்ராக்ஸி அசைல் CoA-வாக நீரேற்றம் செய்வதை வினையூக்கும் நொதி எது?",
+    "optionsEn": ["Acyl CoA dehydrogenase", "Enol hydrase", "β-Hydroxy acyl dehydrogenase", "β-Keto acyl thiolase"],
+    "optionsTa": ["அசைல் CoA டீஹைட்ரஜனேஸ்", "எனோல் ஹைட்ரேஸ்", "β-ஹைட்ராக்ஸி அசைல் டீஹைட்ரஜனேஸ்", "β-கீட்டோ அசைல் தயோலேஸ்"],
+    "answer": 1
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false; isSubmitted = false;
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">
+                <span class="option-letter">${String.fromCharCode(65+i)}.</span>
+                <span class="option-text">${opt}</span>
+            </div>`;
+        });
+        let clearBtnHtml = "";
+        if (sel !== null && sel !== undefined) {
+            clearBtnHtml = `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;">
+                <button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button>
+            </div>`;
+        }
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+                ${sel !== null && sel !== undefined ? `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;"><button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button></div>` : ``}
+            </div>
+        `;
+        updateNavButtons(); updatePalette();
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) {
+            userAnswers[currentIndex] = null;
+        } else {
+            userAnswers[currentIndex] = optIndex;
+        }
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+
+    function clearSelection() {
+        if (isSubmitted) return;
+        userAnswers[currentIndex] = null;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    let currentReviewIndex = 0;
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let cssClass = "option-item";
+                let markerHtml = "";
+                if (idx === corr) { cssClass += " correct"; markerHtml = "<div class='marker'>✔</div>"; }
+                else if (u === idx && idx !== corr) { cssClass += " wrong"; markerHtml = "<div class='marker'>✖</div>"; }
+                optsHtml += `<div class="${cssClass}"><span>${String.fromCharCode(65+idx)}. ${optsArray[idx]}</span>${markerHtml}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" id="review-card-${i}" style="display: none;">
+                        <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div class="your-answer">Your Answer: ${userAns}</div>
+                        <div class="correct-answer">Correct Answer: ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        ${optsHtml}
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+        currentReviewIndex = 0;
+        showReviewCard(currentReviewIndex);
+    }
+    function showReviewCard(index) {
+        const cards = document.querySelectorAll(".review-card");
+        if (cards.length === 0) return;
+        cards.forEach(c => c.style.display = "none");
+        cards[index].style.display = "block";
+        document.getElementById("reviewPageText").innerText = `${index + 1} / ${cards.length}`;
+        document.getElementById("prevReviewBtn").disabled = (index === 0);
+        document.getElementById("nextReviewBtn").disabled = (index === cards.length - 1);
+        document.getElementById("reviewPagination").style.display = "flex";
+        window.scrollTo(0, 0);
+    }
+    function navigateReview(direction) {
+        const cards = document.querySelectorAll(".review-card");
+        currentReviewIndex += direction;
+        if (currentReviewIndex >= 0 && currentReviewIndex < cards.length) {
+            showReviewCard(currentReviewIndex);
+        }
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
+            await new Promise(r => setTimeout(r, 600));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+                if (btn) btn.innerText = "✅ Select Save as PDF";
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+        } finally {
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 3000);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        history.replaceState({ resultPage: true }, "", "#result");
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.addEventListener("popstate", function(e) {
+        if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+            history.pushState({ resultPage: true }, "", "#result");
+            confirmLeaveResult();
+        }
+    });
+    function confirmLeaveResult() {
+        if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
+            window.AndroidBridge.exitResultPage();
+        } else {
+            history.back();
+        }
+    }
+    window.checkForReview = function() {
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
+            }
+        }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
