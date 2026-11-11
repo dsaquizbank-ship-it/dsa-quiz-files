@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-11T01:52:17.519Z",
+  "version": "2026-11-11T07:15:36.054Z",
   "categories": [
     {
       "id": "BANK",
@@ -1867,6 +1867,19 @@
       "questionCount": 25,
       "negativeMark": 0.25,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BRE-3.html",
+      "releaseTimestamp": 1794384000000,
+      "language": "en"
+    },
+    {
+      "testId": "UGM-98",
+      "examId": "UG-MAT",
+      "name": "PERT AND CPM – PROJECT NETWORK DIAGRAAM, CRITICAL PATH AND PERT COMPUTATIONS UGM-98",
+      "topic": "PERT AND CPM – PROJECT NETWORK DIAGRAAM, CRITICAL PATH AND PERT COMPUTATIONS",
+      "durationMinutes": 30,
+      "order": 98,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-98.html",
       "releaseTimestamp": 1794384000000,
       "language": "en"
     }
