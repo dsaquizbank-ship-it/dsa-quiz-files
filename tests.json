@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-11T08:01:23.093Z",
+  "version": "2026-11-11T08:08:54.354Z",
   "categories": [
     {
       "id": "BANK",
@@ -1862,7 +1862,7 @@
       "examId": "BANK-RE",
       "name": "INPUT/OUTPUT BRE-3",
       "topic": "INPUT/OUTPUT",
-      "durationMinutes": 25,
+      "durationMinutes": 30,
       "order": 3,
       "questionCount": 25,
       "negativeMark": 0.25,
