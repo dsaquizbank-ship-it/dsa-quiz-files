@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-11T07:51:09.289Z",
+  "version": "2026-11-11T07:53:43.450Z",
   "categories": [
     {
       "id": "BANK",
@@ -2023,6 +2023,19 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGT-SS-1.html",
+      "releaseTimestamp": 1794384000000,
+      "language": "both"
+    },
+    {
+      "testId": "TAP-3",
+      "examId": "TNPSC-AP",
+      "name": "HCF AND LCM TAP-3",
+      "topic": "HCF AND LCM",
+      "durationMinutes": 25,
+      "order": 3,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TAP-3.html",
       "releaseTimestamp": 1794384000000,
       "language": "both"
     }
