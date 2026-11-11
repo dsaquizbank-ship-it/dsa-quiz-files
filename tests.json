@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-11T07:15:36.054Z",
+  "version": "2026-11-11T07:17:54.024Z",
   "categories": [
     {
       "id": "BANK",
@@ -1880,6 +1880,19 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-98.html",
+      "releaseTimestamp": 1794384000000,
+      "language": "en"
+    },
+    {
+      "testId": "PGCS-17",
+      "examId": "PG-CS",
+      "name": "ATTACKS PGCS-17",
+      "topic": "ATTACKS",
+      "durationMinutes": 15,
+      "order": 17,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGCS-17.html",
       "releaseTimestamp": 1794384000000,
       "language": "en"
     }
