@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-11T07:53:43.450Z",
+  "version": "2026-11-11T07:58:27.773Z",
   "categories": [
     {
       "id": "BANK",
@@ -2036,6 +2036,19 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TAP-3.html",
+      "releaseTimestamp": 1794384000000,
+      "language": "both"
+    },
+    {
+      "testId": "UGZ-77",
+      "examId": "UG-ZOO",
+      "name": "DEAMINATION TO BMI,BMR UGZ-77",
+      "topic": "DEAMINATION TO BMI,BMR",
+      "durationMinutes": 30,
+      "order": 77,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGZ-77.html",
       "releaseTimestamp": 1794384000000,
       "language": "both"
     }
