@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-11T23:33:18.203Z",
+  "version": "2026-11-11T23:37:04.651Z",
   "timetable": [
     {
       "day": "Monday",
@@ -354,13 +354,6 @@
           "batch": "TNTET",
           "faculty": "MRS. JAYA SANKAR",
           "room": "MRS. JAYA SANKAR"
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "Unit VI - TN History & Culture: Tamil literature from Sangam age till contemporary times",
-          "batch": "TNPSC",
-          "faculty": "MRS. SREE VIDHYA",
-          "room": "MRS. SREE VIDHYA"
         }
       ]
     },
