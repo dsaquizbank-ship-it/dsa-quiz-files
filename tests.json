@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-10T07:10:42.578Z",
+  "version": "2026-11-11T01:52:17.519Z",
   "categories": [
     {
       "id": "BANK",
@@ -1856,6 +1856,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-9.html",
       "releaseTimestamp": 1794297600000,
       "language": "both"
+    },
+    {
+      "testId": "BRE-3",
+      "examId": "BANK-RE",
+      "name": "INPUT/OUTPUT BRE-3",
+      "topic": "INPUT/OUTPUT",
+      "durationMinutes": 25,
+      "order": 3,
+      "questionCount": 25,
+      "negativeMark": 0.25,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BRE-3.html",
+      "releaseTimestamp": 1794384000000,
+      "language": "en"
     }
   ]
 }
