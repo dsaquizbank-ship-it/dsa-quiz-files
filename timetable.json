@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-11T23:30:53.067Z",
+  "version": "2026-11-11T23:32:13.254Z",
   "timetable": [
     {
       "day": "Monday",
@@ -340,20 +340,6 @@
           "batch": "RRB",
           "faculty": "MS. JOTHIKA",
           "room": "MS. JOTHIKA"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Unit II - Reasoning",
-          "batch": "TNPSC",
-          "faculty": "MR ABIN",
-          "room": "MR ABIN"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Reasoning Ability: Blood Relation",
-          "batch": "SSC",
-          "faculty": "MR ABIN",
-          "room": "MR ABIN"
         },
         {
           "time": "10:00 AM - 11:30 AM",
