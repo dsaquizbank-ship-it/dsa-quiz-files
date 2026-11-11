@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-11T07:42:24.505Z",
+  "version": "2026-11-11T07:45:35.926Z",
   "categories": [
     {
       "id": "BANK",
@@ -1984,6 +1984,19 @@
       "questionCount": 20,
       "negativeMark": 0.33,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGA-5.html",
+      "releaseTimestamp": 1794384000000,
+      "language": "both"
+    },
+    {
+      "testId": "TNS-3",
+      "examId": "TNPSC-TS",
+      "name": "TAMIL LITERATURE FROM SANGAM AGE TILL CONTEMPORARY TIMES TNS-3",
+      "topic": "TAMIL LITERATURE FROM SANGAM AGE TILL CONTEMPORARY TIMES",
+      "durationMinutes": 15,
+      "order": 3,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TNS-3.html",
       "releaseTimestamp": 1794384000000,
       "language": "both"
     }
