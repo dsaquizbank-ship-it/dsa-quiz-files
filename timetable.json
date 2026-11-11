@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-11T23:32:13.254Z",
+  "version": "2026-11-11T23:33:18.203Z",
   "timetable": [
     {
       "day": "Monday",
@@ -335,13 +335,6 @@
           "room": "Dr Sahitha"
         },
         {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "General Science: Chemistry - Solutions",
-          "batch": "RRB",
-          "faculty": "MS. JOTHIKA",
-          "room": "MS. JOTHIKA"
-        },
-        {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Reasoning Ability: Blood Relation",
           "batch": "BANK",
@@ -358,13 +351,6 @@
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "English",
-          "batch": "TNTET",
-          "faculty": "MRS. JAYA SANKAR",
-          "room": "MRS. JAYA SANKAR"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Social Science: 6th Term 1 - History: What Is History?",
           "batch": "TNTET",
           "faculty": "MRS. JAYA SANKAR",
           "room": "MRS. JAYA SANKAR"
