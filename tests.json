@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-11T07:32:55.954Z",
+  "version": "2026-11-11T07:36:03.118Z",
   "categories": [
     {
       "id": "BANK",
@@ -1941,7 +1941,7 @@
       "name": "INPUT/OUTPUT SRE-3",
       "topic": "INPUT/OUTPUT",
       "durationMinutes": 25,
-      "order": 3,
+      "order": 2,
       "questionCount": 25,
       "negativeMark": 0.5,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SRE-2.html",
