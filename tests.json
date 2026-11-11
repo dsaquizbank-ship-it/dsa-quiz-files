@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-11T08:10:15.629Z",
+  "version": "2026-11-11T08:12:35.254Z",
   "categories": [
     {
       "id": "BANK",
@@ -1953,7 +1953,7 @@
       "examId": "RRB-RE",
       "name": "INPUT/OUTPUT RRE-3",
       "topic": "INPUT/OUTPUT",
-      "durationMinutes": 25,
+      "durationMinutes": 30,
       "order": 2,
       "questionCount": 25,
       "negativeMark": 0.33,
