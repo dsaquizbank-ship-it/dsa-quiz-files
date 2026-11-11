@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-11T07:29:18.540Z",
+  "version": "2026-11-11T07:31:32.758Z",
   "categories": [
     {
       "id": "BANK",
@@ -1934,6 +1934,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-SC-57.html",
       "releaseTimestamp": 1794384000000,
       "language": "both"
+    },
+    {
+      "testId": "SRE-2",
+      "examId": "SSC-RE",
+      "name": "INPUT/OUTPUT SRE-3",
+      "topic": "INPUT/OUTPUT",
+      "durationMinutes": 25,
+      "order": 3,
+      "questionCount": 25,
+      "negativeMark": 0.5,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SRE-2.html",
+      "releaseTimestamp": 1794384000000,
+      "language": "en"
     }
   ]
 }
