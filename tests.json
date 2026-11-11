@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-11T07:31:32.758Z",
+  "version": "2026-11-11T07:32:55.954Z",
   "categories": [
     {
       "id": "BANK",
@@ -1945,6 +1945,19 @@
       "questionCount": 25,
       "negativeMark": 0.5,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SRE-2.html",
+      "releaseTimestamp": 1794384000000,
+      "language": "en"
+    },
+    {
+      "testId": "RRE-2",
+      "examId": "RRB-RE",
+      "name": "INPUT/OUTPUT RRE-3",
+      "topic": "INPUT/OUTPUT",
+      "durationMinutes": 25,
+      "order": 2,
+      "questionCount": 25,
+      "negativeMark": 0.33,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RRE-2.html",
       "releaseTimestamp": 1794384000000,
       "language": "en"
     }
