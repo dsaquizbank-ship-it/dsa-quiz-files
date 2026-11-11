@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-11T07:58:27.773Z",
+  "version": "2026-11-11T08:01:23.093Z",
   "categories": [
     {
       "id": "BANK",
@@ -2049,6 +2049,19 @@
       "questionCount": 50,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGZ-77.html",
+      "releaseTimestamp": 1794384000000,
+      "language": "both"
+    },
+    {
+      "testId": "SPT-EG-8",
+      "examId": "SPL-ENGLISH",
+      "name": "6TH TERM 3 – 7TH TERM 1 SPT-EG-8",
+      "topic": "6TH TERM 3 – 7TH TERM 1",
+      "durationMinutes": 30,
+      "order": 8,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-EG-8.html",
       "releaseTimestamp": 1794384000000,
       "language": "both"
     }
