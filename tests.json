@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-11T08:08:54.354Z",
+  "version": "2026-11-11T08:10:15.629Z",
   "categories": [
     {
       "id": "BANK",
@@ -1940,7 +1940,7 @@
       "examId": "SSC-RE",
       "name": "INPUT/OUTPUT SRE-3",
       "topic": "INPUT/OUTPUT",
-      "durationMinutes": 25,
+      "durationMinutes": 30,
       "order": 2,
       "questionCount": 25,
       "negativeMark": 0.5,
