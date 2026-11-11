@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-11T08:12:35.254Z",
+  "version": "2026-11-11T08:38:51.865Z",
   "categories": [
     {
       "id": "BANK",
@@ -2064,6 +2064,19 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-EG-8.html",
       "releaseTimestamp": 1794384000000,
       "language": "both"
+    },
+    {
+      "testId": "UGP-74",
+      "examId": "UG-PHY",
+      "name": "OHM METER-MULTIMETER-TANGENT-GALVANOMETER-MAGNETOMETER-METER BRIDGE-POTENTIOMETER-LCR CIRCUIT-REGISTERS & COUNTERS UGP-74",
+      "topic": "OHM METER-MULTIMETER-TANGENT-GALVANOMETER-MAGNETOMETER-METER BRIDGE-POTENTIOMETER-LCR CIRCUIT-REGISTERS & COUNTERS",
+      "durationMinutes": 25,
+      "order": 74,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGP-74.html",
+      "releaseTimestamp": 1794384000000,
+      "language": "en"
     }
   ]
 }
