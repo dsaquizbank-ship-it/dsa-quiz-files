@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-11T07:40:27.378Z",
+  "version": "2026-11-11T07:42:24.505Z",
   "categories": [
     {
       "id": "BANK",
@@ -1971,6 +1971,19 @@
       "questionCount": 20,
       "negativeMark": 0.5,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGA-5.html",
+      "releaseTimestamp": 1794384000000,
+      "language": "both"
+    },
+    {
+      "testId": "RGA-5",
+      "examId": "RRB-GA",
+      "name": "PREAMBLE TO THE CONSTITUTION RGA-5",
+      "topic": "PREAMBLE TO THE CONSTITUTION",
+      "durationMinutes": 10,
+      "order": 5,
+      "questionCount": 20,
+      "negativeMark": 0.33,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGA-5.html",
       "releaseTimestamp": 1794384000000,
       "language": "both"
     }
