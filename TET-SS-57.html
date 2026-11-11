@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>TET-SS-57 - 6TH TERM 1 CIVICS UNIT 2: ACHIEVING EQUALITY TET-SS-57</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                linebreaks: { automatic: true, width: "container" }
+            },
+            options: { ignoreHtmlClass: "no-mathjax" },
+            chtml: {
+                displayAlign: "left",
+                displayIndent: "0",
+                mtextInheritFont: true
+            },
+            svg: {
+                scale: 0.9,
+                minScale: 0.5,
+                mtextInheritFont: true,
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; color: #10b981; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; white-space: normal; word-wrap: break-word; padding-bottom: 20px; max-width: 100%; overflow-x: auto; }
+        mjx-container { display: inline !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; }
+        .question-text::-webkit-scrollbar { display: none; }
+        .question-text { -ms-overflow-style: none; scrollbar-width: none; }
+        .option-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; word-wrap: break-word; }
+        .option-letter { font-weight: 800; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+        .option-text { flex-grow: 1; min-width: 0; word-wrap: break-word; overflow-wrap: break-word; }
+        .option-text mjx-container { display: inline-block !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; overflow-x: visible !important; }
+        .option-text mjx-container[jax="CHTML"][display="true"] { margin: 0 !important; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
+        .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
+        .review-card .question-text { overflow-x: hidden !important; white-space: normal !important; word-wrap: break-word !important; }
+        .review-card strong { color: var(--text-primary); font-size: 16px; }
+        .review-card .option-item { background-color: var(--rc-bg); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: rgba(40, 167, 69, 0.1); border: 1px solid #28a745; color: #28a745; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; color: #dc3545; }
+        .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
+        .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
+        .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
+        .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px 0; border-top: 1px solid var(--border-light); }
+        .review-nav-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .review-nav-btn:disabled { background: var(--border-light); color: var(--text-primary); opacity: 0.5; cursor: not-allowed; }
+        .review-nav-text { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+        .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { 
+            html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } 
+            .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } 
+            #startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard { display: none !important; } 
+            #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } 
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; } 
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; margin-bottom: 20px !important; display: block !important; } 
+            .review-card .option-item { border: 1px solid #ccc !important; background: white !important; color: black !important; } 
+            .review-card .option-item.correct { background: #e6ffe6 !important; border-color: #28a745 !important; color: black !important; } 
+            .review-card .option-item.wrong { background: #ffe6e6 !important; border-color: #dc3545 !important; color: black !important; } 
+            @page { size: A4; margin: 1.5cm; } 
+        }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">15:00</div>
+            <div class="top-buttons">
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div id="printHeader" style="display: none;">
+            <h1>DR SAHITHA IAS ACADEMY</h1>
+            <h3>ANSWER KEY & DETAILED REVIEW</h3>
+            <p><strong>Test:</strong> TET-SS-57 - TET SOCIAL SCIENCE</p>
+        </div>
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+            <div id="reviewPagination" class="review-nav-container" style="display: none;">
+                <button class="review-nav-btn" id="prevReviewBtn" onclick="navigateReview(-1)">◀ PREV</button>
+                <span class="review-nav-text" id="reviewPageText">1 / 25</span>
+                <button class="review-nav-btn" id="nextReviewBtn" onclick="navigateReview(1)">NEXT ▶</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "TET SOCIAL SCIENCE",
+        testNo: "TET-SS-57",
+        date: "11/11/2026",
+        subject: "TET SOCIAL SCIENCE",
+        topic: "6TH TERM 1 CIVICS UNIT 2: ACHIEVING EQUALITY",
+        duration: "15",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "Which of the following is NOT listed as a common social factor contributing to the rise of prejudice in the text?",
+    "ta": "பாடப்பகுதியில் பாகுபாடு அதிகரிப்பதற்குக் காரணமான பொதுவான சமூகக் காரணிகளில் பின்வருவனவற்றுள் எது பட்டியலிடப்படவில்லை?",
+    "optionsEn": ["Socialisation", "Economic benefits", "Authoritarian personality", "Geography"],
+    "optionsTa": ["சமூகமயமாக்கல்", "பொருளாதார நன்மைகள்", "சர்வாதிகார ஆளுமை", "புவியியல்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "According to the text, what is the exact wording of Article 15(1) of the Constitution?",
+    "ta": "பாடப்பகுதியின்படி, அரசியலமைப்பின் சட்டப்பிரிவு 15(1) இன் சரியான வாசகம் என்ன?",
+    "optionsEn": ["The State shall ensure equality before the law for all citizens.", "The State shall not discriminate against any citizen on grounds of religion, race, caste, sex, place of birth.", "Untouchability is abolished and its practice in any form is forbidden.", "The State shall provide free and compulsory education to all children."],
+    "optionsTa": ["அனைத்துக் குடிமக்களுக்கும் சட்டத்தின் முன் சமத்துவத்தை அரசு உறுதி செய்யும்.", "மதம், இனம், சாதி, பாலினம், பிறந்த இடம் ஆகியவற்றின் அடிப்படையில் எந்தக் குடிமகனுக்கும் அரசு பாகுபாடு காட்டக்கூடாது.", "தீண்டாமை ஒழிக்கப்படுகிறது, எந்த வடிவத்திலும் அதைக் கடைப்பிடிப்பது தடைசெய்யப்பட்டுள்ளது.", "அனைத்துக் குழந்தைகளுக்கும் இலவச மற்றும் கட்டாயக் கல்வியை அரசு வழங்கும்."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "As per the 2011 Census data provided in the lesson, which district in Tamil Nadu has the lowest literacy rate?",
+    "ta": "பாடத்தில் வழங்கப்பட்ட 2011 மக்கள்தொகை கணக்கெடுப்புத் தரவுகளின்படி, தமிழ்நாட்டில் எந்த மாவட்டத்தில் கல்வியறிவு விகிதம் மிகக் குறைவாக உள்ளது?",
+    "optionsEn": ["Ariyalur", "Dharmapuri", "Villupuram", "Krishnagiri"],
+    "optionsTa": ["அரியலூர்", "தர்மபுரி", "விழுப்புரம்", "கிருஷ்ணகிரி"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "In which year did Viswanathan Anand become India's first grandmaster?",
+    "ta": "விஸ்வநாதன் ஆனந்த் எந்த ஆண்டு இந்தியாவின் முதல் கிராண்ட்மாஸ்டர் ஆனார்?",
+    "optionsEn": ["1985", "1986", "1987", "1988"],
+    "optionsTa": ["1985", "1986", "1987", "1988"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "S. Ilavazhagi won the World Carrom Championship in 2008 at Cannes, France, defeating which former World Champion?",
+    "ta": "எஸ். இளவழகி 2008 இல் பிரான்சின் கேன்ஸில் நடந்த உலக கேரம் சாம்பியன்ஷிப்பில் எந்த முன்னாள் உலக சாம்பியனை வீழ்த்தி வெற்றி பெற்றார்?",
+    "optionsEn": ["Reshmi Kumari", "Kanyakumari", "Dharmapuri", "Mariyappan"],
+    "optionsTa": ["ரேஷ்மி குமாரி", "கன்னியாகுமரி", "தர்மபுரி", "மாரியப்பன்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Dr. B.R. Ambedkar was posthumously awarded the Bharat Ratna in which year?",
+    "ta": "டாக்டர் பி.ஆர். அம்பேத்கருக்கு எந்த ஆண்டு மரணத்திற்குப் பின் பாரத ரத்னா விருது வழங்கப்பட்டது?",
+    "optionsEn": ["1988", "1989", "1990", "1997"],
+    "optionsTa": ["1988", "1989", "1990", "1997"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which one of the following pairs is correctly matched regarding the definitions provided in the text?",
+    "ta": "பாடப்பகுதியில் வழங்கப்பட்ட வரையறைகளைப் பொறுத்தவரை பின்வரும் எந்த இணை சரியாகப் பொருந்துகிறது?",
+    "optionsEn": ["Stereotype -- Judging other people in a negative manner without knowing much about them.", "Prejudice -- A false view or idea about something.", "Discrimination -- Negative actions towards people.", "Inequality -- Lacking equality, either economic or social or both."],
+    "optionsTa": ["முன்முடிவு (Stereotype) -- மற்றவர்களைப் பற்றி அதிகம் அறியாமல் எதிர்மறையான முறையில் தீர்ப்பளித்தல்.", "பாகுபாடு (Prejudice) -- ஒன்றைப் பற்றிய தவறான பார்வை அல்லது கருத்து.", "வேறுபாடு காட்டுதல் (Discrimination) -- மக்கள் மீதான எதிர்மறைச் செயல்கள்.", "சமத்துவமின்மை (Inequality) -- பொருளாதார அல்லது சமூக அல்லது இரண்டிலும் சமத்துவம் இல்லாமை."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which one of the following Article--Provision pairs is correctly matched?",
+    "ta": "பின்வரும் எந்தச் சட்டப்பிரிவு--விதி இணை சரியாகப் பொருந்துகிறது?",
+    "optionsEn": ["Article 14 -- Abolition of untouchability.", "Article 17 -- Equality before the law or equal protection within the territory of India.", "Article 15(1) -- Prohibits discrimination on grounds of religion, race, caste, sex, place of birth.", "Article 21 -- Ensures freedom to follow religion."],
+    "optionsTa": ["சட்டப்பிரிவு 14 -- தீண்டாமை ஒழிப்பு.", "சட்டப்பிரிவு 17 -- சட்டத்தின் முன் சமத்துவம் அல்லது இந்திய எல்லைக்குள் சமமான பாதுகாப்பு.", "சட்டப்பிரிவு 15(1) -- மதம், இனம், சாதி, பாலினம், பிறந்த இடம் ஆகியவற்றின் அடிப்படையில் பாகுபாட்டைத் தடை செய்கிறது.", "சட்டப்பிரிவு 21 -- மதத்தைப் பின்பற்றும் சுதந்திரத்தை உறுதி செய்கிறது."],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which one of the following Book--Author pairs is correctly matched?",
+    "ta": "பின்வரும் எந்த நூல்--ஆசிரியர் இணை சரியாகப் பொருந்துகிறது?",
+    "optionsEn": ["India 2020 -- Viswanathan Anand", "Wings of Fire -- Dr. B.R. Ambedkar", "Ignited Minds -- A.P.J. Abdul Kalam", "The Luminous Sparks -- S. Ilavazhagi"],
+    "optionsTa": ["இந்தியா 2020 -- விஸ்வநாதன் ஆனந்த்", "விங்ஸ் ஆஃப் ஃபயர் -- டாக்டர் பி.ஆர். அம்பேத்கர்", "இக்னைடட் மைண்ட்ஸ் -- ஏ.பி.ஜே. அப்துல் கலாம்", "தி லுமினஸ் ஸ்பார்க்ஸ் -- எஸ். இளவழகி"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which one of the following District--Census 2011 data pairs is correctly matched?",
+    "ta": "பின்வரும் எந்த மாவட்டம்--2011 மக்கள்தொகை கணக்கெடுப்புத் தரவு இணை சரியாகப் பொருந்துகிறது?",
+    "optionsEn": ["The Nilgiris -- Highest literacy rate (92.14%).", "Kanyakumari -- Highest sex ratio (1041).", "Dharmapuri -- Lowest sex ratio (946).", "Chennai -- Lowest literacy rate (64.71%)."],
+    "optionsTa": ["நீலகிரி -- அதிக கல்வியறிவு விகிதம் (92.14%).", "கன்னியாகுமரி -- அதிக பாலின விகிதம் (1041).", "தர்மபுரி -- குறைந்த பாலின விகிதம் (946).", "சென்னை -- குறைந்த கல்வியறிவு விகிதம் (64.71%)."],
+    "answer": 2
+  },
+  {
+    "type": "match",
+    "en": "Match the Cause of Prejudice with its social factor.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>COLUMN 1</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>COLUMN 2</b></td></tr><tr><td style='padding:6px 0;'>a. Socialisation</td><td></td><td style='padding:6px 0;'>1. Conforming behaviours</td></tr><tr><td style='padding:6px 0;'>b. Economic benefits</td><td></td><td style='padding:6px 0;'>2. Ethno-centrism</td></tr><tr><td style='padding:6px 0;'>c. Authoritarian personality</td><td></td><td style='padding:6px 0;'>3. Conflicts</td></tr><tr><td style='padding:6px 0;'>d. Group closure</td><td></td><td style='padding:6px 0;'>4. Competing for resources</td></tr></table>",
+    "ta": "பாகுபாட்டிற்கான காரணத்தை அதன் சமூகக் காரணியுடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>நெடுவரிசை 1</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>நெடுவரிசை 2</b></td></tr><tr><td style='padding:6px 0;'>a. சமூகமயமாக்கல்</td><td></td><td style='padding:6px 0;'>1. இணக்கமான நடத்தைகள்</td></tr><tr><td style='padding:6px 0;'>b. பொருளாதார நன்மைகள்</td><td></td><td style='padding:6px 0;'>2. இனத்துவ மையவாதம்</td></tr><tr><td style='padding:6px 0;'>c. சர்வாதிகார ஆளுமை</td><td></td><td style='padding:6px 0;'>3. மோதல்கள்</td></tr><tr><td style='padding:6px 0;'>d. குழு மூடல்</td><td></td><td style='padding:6px 0;'>4. வளங்களுக்காகப் போட்டியிடுதல்</td></tr></table>",
+    "optionsEn": ["a-4, b-2, c-3, d-1", "a-1, b-4, c-2, d-3", "a-2, b-3, c-1, d-4", "a-3, b-1, c-4, d-2"],
+    "optionsTa": ["a-4, b-2, c-3, d-1", "a-1, b-4, c-2, d-3", "a-2, b-3, c-1, d-4", "a-3, b-1, c-4, d-2"],
+    "answer": 1
+  },
+  {
+    "type": "match",
+    "en": "Match the Personality with their Specific Achievement or Award.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>COLUMN 1</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>COLUMN 2</b></td></tr><tr><td style='padding:6px 0;'>a. A.P.J. Abdul Kalam</td><td></td><td style='padding:6px 0;'>1. First recipient of Rajiv Gandhi Khel Ratna Award (1991-92)</td></tr><tr><td style='padding:6px 0;'>b. Viswanathan Anand</td><td></td><td style='padding:6px 0;'>2. Rio Paralympics Gold in men's high jump T-42 (2016)</td></tr><tr><td style='padding:6px 0;'>c. S. Ilavazhagi</td><td></td><td style='padding:6px 0;'>3. Bharat Ratna (1997)</td></tr><tr><td style='padding:6px 0;'>d. Mariyappan Thangavelu</td><td></td><td style='padding:6px 0;'>4. World Carrom Championship (2008)</td></tr></table>",
+    "ta": "நபர்களை அவர்களின் குறிப்பிட்ட சாதனை அல்லது விருதுடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>நெடுவரிசை 1</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>நெடுவரிசை 2</b></td></tr><tr><td style='padding:6px 0;'>a. ஏ.பி.ஜே. அப்துல் கலாம்</td><td></td><td style='padding:6px 0;'>1. ராஜீவ் காந்தி கேல் ரத்னா விருதை முதன்முதலில் பெற்றவர் (1991-92)</td></tr><tr><td style='padding:6px 0;'>b. விஸ்வநாதன் ஆனந்த்</td><td></td><td style='padding:6px 0;'>2. ரியோ பாராலிம்பிக்ஸ் ஆண்கள் உயரம் தாண்டுதல் T-42 தங்கம் (2016)</td></tr><tr><td style='padding:6px 0;'>c. எஸ். இளவழகி</td><td></td><td style='padding:6px 0;'>3. பாரத ரத்னா (1997)</td></tr><tr><td style='padding:6px 0;'>d. மாரியப்பன் தங்கவேலு</td><td></td><td style='padding:6px 0;'>4. உலக கேரம் சாம்பியன்ஷிப் (2008)</td></tr></table>",
+    "optionsEn": ["a-3, b-1, c-4, d-2", "a-1, b-2, c-3, d-4", "a-4, b-3, c-2, d-1", "a-2, b-4, c-1, d-3"],
+    "optionsTa": ["a-3, b-1, c-4, d-2", "a-1, b-2, c-3, d-4", "a-4, b-3, c-2, d-1", "a-2, b-4, c-1, d-3"],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "Match the District with its rank in the 2011 Census of Tamil Nadu.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>COLUMN 1</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>COLUMN 2</b></td></tr><tr><td style='padding:6px 0;'>a. Kanyakumari</td><td></td><td style='padding:6px 0;'>1. Lowest sex ratio</td></tr><tr><td style='padding:6px 0;'>b. Dharmapuri</td><td></td><td style='padding:6px 0;'>2. Lowest literacy rate</td></tr><tr><td style='padding:6px 0;'>c. The Nilgiris</td><td></td><td style='padding:6px 0;'>3. Highest literacy rate</td></tr><tr><td style='padding:6px 0;'>d. Thanjavur</td><td></td><td style='padding:6px 0;'>4. Second highest sex ratio</td></tr></table>",
+    "ta": "தமிழ்நாட்டின் 2011 மக்கள்தொகை கணக்கெடுப்பில் மாவட்டத்தை அதன் தரவரிசையுடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>நெடுவரிசை 1</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>நெடுவரிசை 2</b></td></tr><tr><td style='padding:6px 0;'>a. கன்னியாகுமரி</td><td></td><td style='padding:6px 0;'>1. குறைந்த பாலின விகிதம்</td></tr><tr><td style='padding:6px 0;'>b. தர்மபுரி</td><td></td><td style='padding:6px 0;'>2. குறைந்த கல்வியறிவு விகிதம்</td></tr><tr><td style='padding:6px 0;'>c. நீலகிரி</td><td></td><td style='padding:6px 0;'>3. அதிக கல்வியறிவு விகிதம்</td></tr><tr><td style='padding:6px 0;'>d. தஞ்சாவூர்</td><td></td><td style='padding:6px 0;'>4. இரண்டாவது அதிக பாலின விகிதம்</td></tr></table>",
+    "optionsEn": ["a-3, b-1, c-4, d-2", "a-3, b-2, c-1, d-4", "a-1, b-2, c-3, d-4", "a-3, b-2, c-4, d-1"],
+    "optionsTa": ["a-3, b-1, c-4, d-2", "a-3, b-2, c-1, d-4", "a-1, b-2, c-3, d-4", "a-3, b-2, c-4, d-1"],
+    "answer": 3
+  },
+  {
+    "type": "match",
+    "en": "Match the Constitutional Article with its Provision.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>COLUMN 1</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>COLUMN 2</b></td></tr><tr><td style='padding:6px 0;'>a. Article 14</td><td></td><td style='padding:6px 0;'>1. Abolition of untouchability</td></tr><tr><td style='padding:6px 0;'>b. Article 15(1)</td><td></td><td style='padding:6px 0;'>2. Equality before the law</td></tr><tr><td style='padding:6px 0;'>c. Article 17</td><td></td><td style='padding:6px 0;'>3. Prohibits discrimination on grounds of religion, race, caste, sex, place of birth</td></tr><tr><td style='padding:6px 0;'>d. Constitution</td><td></td><td style='padding:6px 0;'>4. Set of rules and regulations guiding the administration of a country</td></tr></table>",
+    "ta": "அரசியலமைப்புச் சட்டப்பிரிவை அதன் விதியுடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>நெடுவரிசை 1</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>நெடுவரிசை 2</b></td></tr><tr><td style='padding:6px 0;'>a. சட்டப்பிரிவு 14</td><td></td><td style='padding:6px 0;'>1. தீண்டாமை ஒழிப்பு</td></tr><tr><td style='padding:6px 0;'>b. சட்டப்பிரிவு 15(1)</td><td></td><td style='padding:6px 0;'>2. சட்டத்தின் முன் சமத்துவம்</td></tr><tr><td style='padding:6px 0;'>c. சட்டப்பிரிவு 17</td><td></td><td style='padding:6px 0;'>3. மதம், இனம், சாதி, பாலினம், பிறந்த இடம் ஆகியவற்றின் அடிப்படையில் பாகுபாட்டைத் தடை செய்கிறது</td></tr><tr><td style='padding:6px 0;'>d. அரசியலமைப்பு</td><td></td><td style='padding:6px 0;'>4. ஒரு நாட்டின் நிர்வாகத்தை வழிநடத்தும் விதிகள் மற்றும் ஒழுங்குமுறைகளின் தொகுப்பு</td></tr></table>",
+    "optionsEn": ["a-2, b-3, c-1, d-4", "a-1, b-2, c-3, d-4", "a-3, b-4, c-1, d-2", "a-4, b-3, c-2, d-1"],
+    "optionsTa": ["a-2, b-3, c-1, d-4", "a-1, b-2, c-3, d-4", "a-3, b-4, c-1, d-2", "a-4, b-3, c-2, d-1"],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "Match the Remedial Measure with its description.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>COLUMN 1</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>COLUMN 2</b></td></tr><tr><td style='padding:6px 0;'>a. Wider access</td><td></td><td style='padding:6px 0;'>1. May help students sit together without bias of caste, religion, or gender.</td></tr><tr><td style='padding:6px 0;'>b. Make women visible</td><td></td><td style='padding:6px 0;'>2. To quality basic services like healthcare and education for all.</td></tr><tr><td style='padding:6px 0;'>c. Community dining</td><td></td><td style='padding:6px 0;'>3. In public life and institution to eradicate gender disparity.</td></tr><tr><td style='padding:6px 0;'>d. Effective implementation</td><td></td><td style='padding:6px 0;'>4. Of laws.</td></tr></table>",
+    "ta": "தீர்வு நடவடிக்கையை அதன் விளக்கத்துடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>நெடுவரிசை 1</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>நெடுவரிசை 2</b></td></tr><tr><td style='padding:6px 0;'>a. பரந்த அணுகல்</td><td></td><td style='padding:6px 0;'>1. சாதி, மதம் அல்லது பாலின அடிப்படையில் பாகுபாடு இல்லாமல் மாணவர்கள் ஒன்றாக அமர உதவும்.</td></tr><tr><td style='padding:6px 0;'>b. பெண்களைத் தெரியப்படுத்துதல்</td><td></td><td style='padding:6px 0;'>2. அனைவருக்கும் சுகாதாரம் மற்றும் கல்வி போன்ற தரமான அடிப்படை சேவைகளுக்கு.</td></tr><tr><td style='padding:6px 0;'>c. சமூக உணவு</td><td></td><td style='padding:6px 0;'>3. பாலின ஏற்றத்தாழ்வை ஒழிக்க பொது வாழ்க்கை மற்றும் நிறுவனங்களில்.</td></tr><tr><td style='padding:6px 0;'>d. பயனுள்ள செயல்படுத்தல்</td><td></td><td style='padding:6px 0;'>4. சட்டங்களின்.</td></tr></table>",
+    "optionsEn": ["a-2, b-3, c-1, d-4", "a-1, b-2, c-3, d-4", "a-4, b-3, c-2, d-1", "a-3, b-1, c-4, d-2"],
+    "optionsTa": ["a-2, b-3, c-1, d-4", "a-1, b-2, c-3, d-4", "a-4, b-3, c-2, d-1", "a-3, b-1, c-4, d-2"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which one of the following is NOT a type of prejudice mentioned in the text?",
+    "ta": "பாடப்பகுதியில் குறிப்பிடப்பட்டுள்ள பாகுபாட்டின் வகைகளில் பின்வருவனவற்றுள் எது இல்லை?",
+    "optionsEn": ["Gender prejudice", "Racial prejudice", "Disability prejudice", "Economic prejudice"],
+    "optionsTa": ["பாலினப் பாகுபாடு", "இனப் பாகுபாடு", "ஊனமுற்றோர் பாகுபாடு", "பொருளாதாரப் பாகுபாடு"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which one of the following is NOT a remedial measure for abolishing inequality and discrimination in Indian society?",
+    "ta": "இந்தியச் சமூகத்தில் சமத்துவமின்மை மற்றும் பாகுபாட்டை ஒழிப்பதற்கான தீர்வு நடவடிக்கைகளில் பின்வருவனவற்றுள் எது இல்லை?",
+    "optionsEn": ["Be aware of current gender bias.", "Be open to learning about other religions.", "Socialise only with people from similar backgrounds outside home.", "Promoting community dining in the classroom."],
+    "optionsTa": ["தற்போதைய பாலினப் பாகுபாடு குறித்து விழிப்புடன் இருத்தல்.", "பிற மதங்களைப் பற்றி அறிய திறந்த மனதுடன் இருத்தல்.", "வீட்டிற்கு வெளியே ஒத்த பின்னணியைச் சேர்ந்தவர்களுடன் மட்டுமே சமூகமயமாக்குதல்.", "வகுப்பறையில் சமூக உணவை ஊக்குவித்தல்."],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which one of the following is NOT a book written by A.P.J. Abdul Kalam?",
+    "ta": "பின்வருவனவற்றுள் எது ஏ.பி.ஜே. அப்துல் கலாம் எழுதிய நூல் அல்ல?",
+    "optionsEn": ["India 2020", "Wings of Fire", "Ignited Minds", "Discovery of India"],
+    "optionsTa": ["இந்தியா 2020", "விங்ஸ் ஆஃப் ஃபயர்", "இக்னைடட் மைண்ட்ஸ்", "டிஸ்கவரி ஆஃப் இந்தியா"],
+    "answer": 3
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): Prejudice means to judge other people in a negative or inferior manner, without knowing much about them.<br><br>Reason (R): It happens when people have false belief and ideas.",
+    "ta": "Assertion (A): பாகுபாடு என்பது மற்றவர்களைப் பற்றி அதிகம் அறியாமல் எதிர்மறையான அல்லது தாழ்வான முறையில் தீர்ப்பளிப்பதாகும்.<br><br>Reason (R): மக்களுக்குத் தவறான நம்பிக்கையும் கருத்துகளும் இருக்கும்போது இது நிகழ்கிறது.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, மேலும் R என்பது A-விற்கான சரியான விளக்கம்.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-விற்கான சரியான விளக்கம் அல்ல.",
+      "A சரி, ஆனால் R தவறு.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): Dr. B.R. Ambedkar is regarded as the father of the Indian Constitution.<br><br>Reason (R): He served as the chairman of the drafting committee of the constituent assembly.",
+    "ta": "Assertion (A): டாக்டர் பி.ஆர். அம்பேத்கர் இந்திய அரசியலமைப்பின் தந்தையாகக் கருதப்படுகிறார்.<br><br>Reason (R): அவர் அரசியலமைப்புச் சபையின் வரைவுக் குழுவின் தலைவராகப் பணியாற்றினார்.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, மேலும் R என்பது A-விற்கான சரியான விளக்கம்.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-விற்கான சரியான விளக்கம் அல்ல.",
+      "A சரி, ஆனால் R தவறு.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): Gender discrimination is prevalent in Indian society.<br><br>Reason (R): In some families, girls are not allowed to wear modern dresses while boys in such families often wear modern dresses.",
+    "ta": "Assertion (A): இந்தியச் சமூகத்தில் பாலினப் பாகுபாடு நிலவுகிறது.<br><br>Reason (R): சில குடும்பங்களில், பெண் குழந்தைகள் நவீன உடைகளை அணிய அனுமதிக்கப்படுவதில்லை, அதேசமயம் அத்தகைய குடும்பங்களில் ஆண் குழந்தைகள் பெரும்பாலும் நவீன உடைகளை அணிகிறார்கள்.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, மேலும் R என்பது A-விற்கான சரியான விளக்கம்.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-விற்கான சரியான விளக்கம் அல்ல.",
+      "A சரி, ஆனால் R தவறு.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement regarding stereotypes:",
+    "ta": "முன்முடிவுகள் (stereotypes) தொடர்பாக சரியான கூற்றைத் தேர்ந்தெடுக்கவும்:",
+    "optionsEn": ["Stereotype is learned only during adulthood.", "Gender-based stereotypes are often portrayed in films, advertisements and TV serials.", "Stereotypes are always positive views about a group of people.", "Boys crying is a common stereotype portrayed in media."],
+    "optionsTa": ["முன்முடிவு வயது வந்த பருவத்தில் மட்டுமே கற்றுக்கொள்ளப்படுகிறது.", "பாலின அடிப்படையிலான முன்முடிவுகள் பெரும்பாலும் திரைப்படங்கள், விளம்பரங்கள் மற்றும் தொலைக்காட்சித் தொடர்களில் சித்தரிக்கப்படுகின்றன.", "முன்முடிவுகள் எப்போதும் ஒரு குழுவைப் பற்றிய நேர்மறையான பார்வைகளாகவே இருக்கும்.", "ஆண் குழந்தைகள் அழுவது ஊடகங்களில் சித்தரிக்கப்படும் ஒரு பொதுவான முன்முடிவு."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement about Mariyappan Thangavelu:",
+    "ta": "மாரியப்பன் தங்கவேலு பற்றிய சரியான கூற்றைத் தேர்ந்தெடுக்கவும்:",
+    "optionsEn": ["He won the gold medal in the men's high jump T-42 event at the 2016 Rio Paralympics with a leap of 1.89 m.", "He suffered permanent disability in his left leg.", "He became India's first grandmaster in 1988.", "He won the World Carrom Championship in 2008."],
+    "optionsTa": ["2016 ரியோ பாராலிம்பிக்ஸில் ஆண்கள் உயரம் தாண்டுதல் T-42 பிரிவில் 1.89 மீ தாண்டி தங்கப் பதக்கம் வென்றார்.", "இவரது இடது காலில் நிரந்தர ஊனம் ஏற்பட்டது.", "1988 இல் இந்தியாவின் முதல் கிராண்ட்மாஸ்டர் ஆனார்.", "2008 இல் உலக கேரம் சாம்பியன்ஷிப்பை வென்றார்."],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement about the 2011 Census data of Tamil Nadu:",
+    "ta": "தமிழ்நாட்டின் 2011 மக்கள்தொகை கணக்கெடுப்புத் தரவு பற்றிய சரியான கூற்றைத் தேர்ந்தெடுக்கவும்:",
+    "optionsEn": ["Kanyakumari has the highest sex ratio (1041).", "The Nilgiris has the highest sex ratio (1041).", "Dharmapuri has the highest literacy rate (92.14%).", "Chennai has the lowest literacy rate (64.71%)."],
+    "optionsTa": ["கன்னியாகுமரியில் அதிக பாலின விகிதம் (1041) உள்ளது.", "நீலகிரியில் அதிக பாலின விகிதம் (1041) உள்ளது.", "தர்மபுரியில் அதிக கல்வியறிவு விகிதம் (92.14%) உள்ளது.", "சென்னையில் குறைந்த கல்வியறிவு விகிதம் (64.71%) உள்ளது."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement regarding the Constitution:",
+    "ta": "அரசியலமைப்பு தொடர்பாக சரியான கூற்றைத் தேர்ந்தெடுக்கவும்:",
+    "optionsEn": ["Article 17 states that the State shall not discriminate against any citizen.", "Article 14 provides equality before the law or equal protection within the territory of India.", "The Constitution does not provide freedom to follow one's religion.", "Untouchability is still a legally accepted practice in India."],
+    "optionsTa": ["சட்டப்பிரிவு 17, எந்தக் குடிமகனுக்கும் அரசு பாகுபாடு காட்டக்கூடாது என்று கூறுகிறது.", "சட்டப்பிரிவு 14 சட்டத்தின் முன் சமத்துவம் அல்லது இந்திய எல்லைக்குள் சமமான பாதுகாப்பை வழங்குகிறது.", "அரசியலமைப்பு ஒருவரின் மதத்தைப் பின்பற்றும் சுதந்திரத்தை வழங்கவில்லை.", "இந்தியாவில் தீண்டாமை இன்னும் சட்டப்பூர்வமாக ஏற்றுக்கொள்ளப்பட்ட நடைமுறையாக உள்ளது."],
+    "answer": 1
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false; isSubmitted = false;
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">
+                <span class="option-letter">${String.fromCharCode(65+i)}.</span>
+                <span class="option-text">${opt}</span>
+            </div>`;
+        });
+        let clearBtnHtml = "";
+        if (sel !== null && sel !== undefined) {
+            clearBtnHtml = `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;">
+                <button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button>
+            </div>`;
+        }
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+                ${sel !== null && sel !== undefined ? `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;"><button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button></div>` : ``}
+            </div>
+        `;
+        updateNavButtons(); updatePalette();
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) {
+            userAnswers[currentIndex] = null;
+        } else {
+            userAnswers[currentIndex] = optIndex;
+        }
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+
+    function clearSelection() {
+        if (isSubmitted) return;
+        userAnswers[currentIndex] = null;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    let currentReviewIndex = 0;
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let cssClass = "option-item";
+                let markerHtml = "";
+                if (idx === corr) { cssClass += " correct"; markerHtml = "<div class='marker'>✔</div>"; }
+                else if (u === idx && idx !== corr) { cssClass += " wrong"; markerHtml = "<div class='marker'>✖</div>"; }
+                optsHtml += `<div class="${cssClass}"><span>${String.fromCharCode(65+idx)}. ${optsArray[idx]}</span>${markerHtml}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" id="review-card-${i}" style="display: none;">
+                        <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div class="your-answer">Your Answer: ${userAns}</div>
+                        <div class="correct-answer">Correct Answer: ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        ${optsHtml}
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+        currentReviewIndex = 0;
+        showReviewCard(currentReviewIndex);
+    }
+    function showReviewCard(index) {
+        const cards = document.querySelectorAll(".review-card");
+        if (cards.length === 0) return;
+        cards.forEach(c => c.style.display = "none");
+        cards[index].style.display = "block";
+        document.getElementById("reviewPageText").innerText = `${index + 1} / ${cards.length}`;
+        document.getElementById("prevReviewBtn").disabled = (index === 0);
+        document.getElementById("nextReviewBtn").disabled = (index === cards.length - 1);
+        document.getElementById("reviewPagination").style.display = "flex";
+        window.scrollTo(0, 0);
+    }
+    function navigateReview(direction) {
+        const cards = document.querySelectorAll(".review-card");
+        currentReviewIndex += direction;
+        if (currentReviewIndex >= 0 && currentReviewIndex < cards.length) {
+            showReviewCard(currentReviewIndex);
+        }
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
+            await new Promise(r => setTimeout(r, 600));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+                if (btn) btn.innerText = "✅ Select Save as PDF";
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+        } finally {
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 3000);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        history.replaceState({ resultPage: true }, "", "#result");
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.addEventListener("popstate", function(e) {
+        if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+            history.pushState({ resultPage: true }, "", "#result");
+            confirmLeaveResult();
+        }
+    });
+    function confirmLeaveResult() {
+        if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
+            window.AndroidBridge.exitResultPage();
+        } else {
+            history.back();
+        }
+    }
+    window.checkForReview = function() {
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
+            }
+        }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
