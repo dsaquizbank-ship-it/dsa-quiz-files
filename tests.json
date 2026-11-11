@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-11T07:19:49.157Z",
+  "version": "2026-11-11T07:25:45.151Z",
   "categories": [
     {
       "id": "BANK",
@@ -1906,6 +1906,19 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGE-53.html",
+      "releaseTimestamp": 1794384000000,
+      "language": "en"
+    },
+    {
+      "testId": "UGE-103",
+      "examId": "UG-ENG",
+      "name": "R K NARAYAN - SWAMI AND FRIENDS (FICTION) UGE-103",
+      "topic": "R K NARAYAN - SWAMI AND FRIENDS (FICTION)",
+      "durationMinutes": 15,
+      "order": 103,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGE-103.html",
       "releaseTimestamp": 1794384000000,
       "language": "en"
     }
