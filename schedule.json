@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-10T15:35:27.894Z",
+  "version": "2026-11-12T09:38:06.130Z",
   "entries": [
     {
       "id": "SCH-1794038030683-992",
@@ -1342,17 +1342,6 @@
       "date": "2026-11-13",
       "testId": "UGZ-78",
       "createdAt": "2026-10-31T13:33:36.911Z"
-    },
-    {
-      "id": "SCH-1793452697176-434",
-      "courseId": "TNTET",
-      "courseName": "TNTET",
-      "subject": "Child Development and Pedagogy",
-      "topicId": "REV-1793452697176",
-      "topicName": "Revision: Unit I - Growth and Development",
-      "date": "2026-11-13",
-      "testId": "TET-PY-58",
-      "createdAt": "2026-10-31T13:18:17.176Z"
     },
     {
       "id": "SCH-1793448071129-399",
