@@ -1846,15 +1846,15 @@
       "language": "both"
     },
     {
-      "testId": "BRE-3",
+      "testId": "BRE-2",
       "examId": "BANK-RE",
-      "name": "INPUT/OUTPUT BRE-3",
+      "name": "INPUT/OUTPUT BRE-2",
       "topic": "INPUT/OUTPUT",
       "durationMinutes": 30,
       "order": 3,
       "questionCount": 25,
       "negativeMark": 0.25,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BRE-3.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BRE-2.html",
       "releaseTimestamp": 1794384000000,
       "language": "en"
     },
@@ -1926,7 +1926,7 @@
     {
       "testId": "SRE-2",
       "examId": "SSC-RE",
-      "name": "INPUT/OUTPUT SRE-3",
+      "name": "INPUT/OUTPUT SRE-2",
       "topic": "INPUT/OUTPUT",
       "durationMinutes": 30,
       "order": 2,
@@ -1939,7 +1939,7 @@
     {
       "testId": "RRE-2",
       "examId": "RRB-RE",
-      "name": "INPUT/OUTPUT RRE-3",
+      "name": "INPUT/OUTPUT RRE-2",
       "topic": "INPUT/OUTPUT",
       "durationMinutes": 30,
       "order": 2,
