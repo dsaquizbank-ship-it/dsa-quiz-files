@@ -675,15 +675,15 @@
       "language": "both"
     },
     {
-      "testId": "BQA-01",
+      "testId": "BQA-1",
       "examId": "BANK-QA",
-      "name": "BQA-01 SIMPLIFICATION (Set-1)",
+      "name": "SIMPLIFICATION BQA-1 (Set-1)",
       "topic": "SIMPLIFICATION (Set-1)",
       "durationMinutes": 25,
       "order": 1,
       "questionCount": 25,
       "negativeMark": 0.25,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BQA-01.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BQA-1.html",
       "releaseTimestamp": 1793606400000,
       "language": "en"
     },
@@ -1666,7 +1666,7 @@
     {
       "testId": "BQA-2",
       "examId": "BANK-QA",
-      "name": "APPROXIMATION BQA-2",
+      "name": "APPROXIMATION BQA-2 (Set-1)",
       "topic": "APPROXIMATION",
       "durationMinutes": 25,
       "order": 2,
@@ -1679,7 +1679,7 @@
     {
       "testId": "SQA-2",
       "examId": "SSC-QA",
-      "name": "APPROXIMATION SQA-2",
+      "name": "APPROXIMATION SQA-2 (Set-1)",
       "topic": "APPROXIMATION",
       "durationMinutes": 25,
       "order": 2,
@@ -1692,7 +1692,7 @@
     {
       "testId": "RQA-2",
       "examId": "RRB-QA",
-      "name": "APPROXIMATION RQA-2",
+      "name": "APPROXIMATION RQA-2 (Set-1)",
       "topic": "APPROXIMATION",
       "durationMinutes": 25,
       "order": 2,
