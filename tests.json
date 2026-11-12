@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-11T08:38:51.865Z",
+  "version": "2026-11-12T07:31:55.357Z",
   "categories": [
     {
       "id": "BANK",
@@ -2077,6 +2077,20 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGP-74.html",
       "releaseTimestamp": 1794384000000,
       "language": "en"
+    },
+    {
+      "testId": "SGS-6",
+      "examId": "SSC-GS",
+      "name": "Test SGS-6",
+      "topic": "TISSUE",
+      "durationMinutes": 15,
+      "order": 6,
+      "questionCount": 25,
+      "negativeMark": 0.5,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGS-6.html",
+      "releaseTimestamp": 1794556800000,
+      "language": "both",
+      "createdAt": 1794468715357
     }
   ]
 }
