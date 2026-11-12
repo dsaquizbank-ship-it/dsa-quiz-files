@@ -1,4 +1,17 @@
 {
-  "version": "2026-11-12T14:33:22.256Z",
-  "timetable": []
+  "version": "2026-11-12T14:34:31.701Z",
+  "timetable": [
+    {
+      "date": "2026-11-13",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability",
+          "batch": "BANK",
+          "faculty": "AAbin",
+          "room": "AAbin"
+        }
+      ]
+    }
+  ]
 }
