@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-12T10:05:36.028Z",
+  "version": "2026-11-12T10:06:46.451Z",
   "entries": [
     {
       "id": "SCH-1794038030683-992",
@@ -1265,17 +1265,6 @@
       "date": "2026-11-13",
       "testId": "SGT-SS-2",
       "createdAt": "2026-11-09T09:58:32.287Z"
-    },
-    {
-      "id": "SCH-1794044805124-563",
-      "courseId": "RRB",
-      "courseName": "RRB",
-      "subject": "English",
-      "topicId": "RRB-T224",
-      "topicName": "Para Jumble",
-      "date": "2026-11-13",
-      "testId": "REG-2",
-      "createdAt": "2026-11-07T09:46:45.124Z"
     },
     {
       "id": "SCH-1793973424890-760",
