@@ -1,9 +1,23 @@
 {
-  "version": "2026-11-12T14:42:32.524Z",
+  "version": "2026-11-12T14:51:17.393Z",
   "timetable": [
     {
       "date": "2026-11-13",
       "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability: Blood Relation",
+          "batch": "SSC",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability: Blood Relation",
+          "batch": "RRB",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Reasoning Ability",
@@ -19,6 +33,20 @@
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Quantitative Aptitude: Averages",
+          "batch": "SSC",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude: Averages",
+          "batch": "RRB",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude: Averages",
           "batch": "BANK",
           "faculty": "Abin",
           "room": "Abin"
@@ -28,6 +56,20 @@
     {
       "date": "2026-11-17",
       "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude: Averages",
+          "batch": "SSC",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude: Averages",
+          "batch": "RRB",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Quantitative Aptitude: Averages",
@@ -43,6 +85,20 @@
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Reasoning Ability: Inequality",
+          "batch": "SSC",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability: Inequality",
+          "batch": "RRB",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability: Inequality",
           "batch": "BANK",
           "faculty": "Abin",
           "room": "Abin"
@@ -52,6 +108,20 @@
     {
       "date": "2026-11-19",
       "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability: Inequality",
+          "batch": "SSC",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability: Inequality",
+          "batch": "RRB",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Reasoning Ability: Inequality",
@@ -67,7 +137,177 @@
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "English: Error Spotting",
+          "batch": "SSC",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "English: Error Spotting",
+          "batch": "RRB",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "English: Error Spotting",
           "batch": "BANK",
+          "faculty": "Abin",
+          "room": "Abin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-23",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude: Time, Speed and Distance",
+          "batch": "BANK",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude: Time, Speed and Distance",
+          "batch": "SSC",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude: Time, Speed and Distance",
+          "batch": "RRB",
+          "faculty": "Abin",
+          "room": "Abin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-24",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude: Time, Speed and Distance",
+          "batch": "BANK",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude: Time, Speed and Distance",
+          "batch": "SSC",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude: Time, Speed and Distance",
+          "batch": "RRB",
+          "faculty": "Abin",
+          "room": "Abin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-25",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability: Directions",
+          "batch": "BANK",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability: Directions",
+          "batch": "SSC",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability: Directions",
+          "batch": "RRB",
+          "faculty": "Abin",
+          "room": "Abin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-26",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability: Directions",
+          "batch": "BANK",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability: Directions",
+          "batch": "SSC",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability: Directions",
+          "batch": "RRB",
+          "faculty": "Abin",
+          "room": "Abin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-27",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "English: Word Replacement",
+          "batch": "BANK",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "English: Word Replacement",
+          "batch": "SSC",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "English: Word Replacement",
+          "batch": "RRB",
+          "faculty": "Abin",
+          "room": "Abin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-30",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude: Boats & Streams",
+          "batch": "BANK",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude: Boats & Streams",
+          "batch": "SSC",
+          "faculty": "Abin",
+          "room": "Abin"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude: Boats & Streams",
+          "batch": "RRB",
           "faculty": "Abin",
           "room": "Abin"
         }
