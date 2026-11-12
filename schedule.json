@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-12T09:42:32.989Z",
+  "version": "2026-11-12T10:03:35.277Z",
   "entries": [
     {
       "id": "SCH-1794038030683-992",
@@ -1265,17 +1265,6 @@
       "date": "2026-11-13",
       "testId": "SGT-SS-2",
       "createdAt": "2026-11-09T09:58:32.287Z"
-    },
-    {
-      "id": "SCH-1794045156576-822",
-      "courseId": "SSC",
-      "courseName": "SSC",
-      "subject": "English",
-      "topicId": "SSC-T224",
-      "topicName": "Para Jumble",
-      "date": "2026-11-13",
-      "testId": "SEG-2",
-      "createdAt": "2026-11-07T09:52:36.576Z"
     },
     {
       "id": "SCH-1794044805124-563",
