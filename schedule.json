@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-12T10:03:35.277Z",
+  "version": "2026-11-12T10:05:36.028Z",
   "entries": [
     {
       "id": "SCH-1794038030683-992",
@@ -1276,17 +1276,6 @@
       "date": "2026-11-13",
       "testId": "REG-2",
       "createdAt": "2026-11-07T09:46:45.124Z"
-    },
-    {
-      "id": "SCH-1794044489247-785",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "English",
-      "topicId": "BANK-T041",
-      "topicName": "Para Jumble",
-      "date": "2026-11-13",
-      "testId": "BEG-2",
-      "createdAt": "2026-11-07T09:41:29.247Z"
     },
     {
       "id": "SCH-1793973424890-760",
