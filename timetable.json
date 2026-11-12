@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-12T08:55:02.578Z",
+  "version": "2026-11-12T08:57:50.053Z",
   "timetable": [
     {
       "date": "2026-11-09",
@@ -103,6 +103,90 @@
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Reasoning Ability: Inequality",
+          "batch": "BANK",
+          "faculty": "Abin",
+          "room": "Abin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-20",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "English: Error Spotting",
+          "batch": "BANK",
+          "faculty": "Abin",
+          "room": "Abin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-23",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude: Time, Speed and Distance",
+          "batch": "BANK",
+          "faculty": "Abin",
+          "room": "Abin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-24",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude: Time, Speed and Distance",
+          "batch": "BANK",
+          "faculty": "Abin",
+          "room": "Abin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-25",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability: Directions",
+          "batch": "BANK",
+          "faculty": "Abin",
+          "room": "Abin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-26",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability: Directions",
+          "batch": "BANK",
+          "faculty": "Abin",
+          "room": "Abin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-27",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "English: Word Replacement",
+          "batch": "BANK",
+          "faculty": "Abin",
+          "room": "Abin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-30",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude: Boats & Streams",
           "batch": "BANK",
           "faculty": "Abin",
           "room": "Abin"
