@@ -284,7 +284,7 @@
       "topicId": "BANK-T029",
       "topicName": "Syllogism",
       "date": "2026-11-04",
-      "testId": "BRE-01",
+      "testId": "BRE-1",
       "createdAt": "2026-11-03T09:05:45.192Z"
     },
     {
@@ -1076,7 +1076,7 @@
       "topicId": "BANK-T030",
       "topicName": "Input/output",
       "date": "2026-11-11",
-      "testId": "BRE-3",
+      "testId": "BRE-2",
       "createdAt": "2026-11-07T09:40:52.783Z"
     },
     {
@@ -1615,7 +1615,7 @@
       "topicId": "BANK-T026",
       "topicName": "Blood Relation",
       "date": "2026-11-18",
-      "testId": "BRE-4",
+      "testId": "BRE-3",
       "createdAt": "2026-11-12T09:38:01.808Z"
     },
     {
@@ -2132,7 +2132,7 @@
       "topicId": "BANK-T025",
       "topicName": "Inequality",
       "date": "2026-11-25",
-      "testId": "BRE-5",
+      "testId": "BRE-4",
       "createdAt": "2026-11-12T09:40:09.838Z"
     },
     {
