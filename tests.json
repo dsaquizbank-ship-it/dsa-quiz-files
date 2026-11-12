@@ -1208,15 +1208,15 @@
       "language": "both"
     },
     {
-      "testId": "SPT-SC-04",
+      "testId": "SPT-SC-1",
       "examId": "SPL-SCIENCE",
-      "name": "6TH TERM 1 FULL SPT-SC-04",
+      "name": "6TH TERM 1 FULL SPT-SC-1",
       "topic": "6TH TERM 1 FULL",
       "durationMinutes": 30,
       "order": 4,
       "questionCount": 50,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-SC-04.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-SC-1.html",
       "releaseTimestamp": 1793865600000,
       "language": "both"
     },
@@ -2149,15 +2149,15 @@
       "createdAt": 1794470697828
     },
     {
-      "testId": "SPT-SC-9",
+      "testId": "SPT-SC-2",
       "examId": "SPL-SCIENCE",
-      "name": "6TH TERM 2 FULL SPT-SC-9",
+      "name": "6TH TERM 2 FULL SPT-SC-2",
       "topic": "6TH TERM 2 FULL",
       "durationMinutes": 30,
       "order": 9,
       "questionCount": 50,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-SC-9.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-SC-2.html",
       "releaseTimestamp": 1794556800000,
       "language": "both",
       "createdAt": 1794471142718
