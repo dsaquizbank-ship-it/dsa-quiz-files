@@ -568,9 +568,9 @@
       "courseName": "TNTET",
       "subject": "Child Development and Pedagogy",
       "topicId": "TNTET-T072",
-      "topicName": "Unit II - Growth and Development",
+      "topicName": "Unit I-Growth and Development",
       "date": "2026-11-06",
-      "testId": "TET-PY-55",
+      "testId": "TET-PY-1",
       "createdAt": "2026-11-05T06:01:31.944Z"
     },
     {
@@ -634,9 +634,9 @@
       "courseName": "SPECIAL TET",
       "subject": "Child Development and Pedagogy",
       "topicId": "REV-1793614128770",
-      "topicName": "Revision: Unit II - Growth and Development",
+      "topicName": "Revision: Unit I - Growth and Development",
       "date": "2026-11-06",
-      "testId": "SPT-PY-2",
+      "testId": "SPT-PY-1",
       "createdAt": "2026-11-02T10:08:48.770Z"
     },
     {
@@ -1285,7 +1285,7 @@
       "topicId": "REV-1793970092323",
       "topicName": "Revision: Unit II - Theories of Child Development",
       "date": "2026-11-13",
-      "testId": "SPT-PY-6",
+      "testId": "SPT-PY-2",
       "createdAt": "2026-11-06T13:01:32.323Z"
     },
     {
@@ -1813,7 +1813,7 @@
       "topicId": "REV-1793970152075",
       "topicName": "Revision: Unit III - Attention, Perception and Memory",
       "date": "2026-11-20",
-      "testId": "SPT-PY-15",
+      "testId": "SPT-PY-3",
       "createdAt": "2026-11-06T13:02:32.075Z"
     },
     {
@@ -1857,7 +1857,7 @@
       "topicId": "REV-1793452727063",
       "topicName": "Revision: Unit II - Theories of Child Development",
       "date": "2026-11-20",
-      "testId": "TET-PY-61",
+      "testId": "TET-PY-2",
       "createdAt": "2026-10-31T13:18:47.063Z"
     },
     {
@@ -2363,7 +2363,7 @@
       "topicId": "REV-1793970175284",
       "topicName": "Revision: Unit IV - Motivation and Learning",
       "date": "2026-11-27",
-      "testId": "SPT-PY-20",
+      "testId": "SPT-PY-4",
       "createdAt": "2026-11-06T13:02:55.284Z"
     },
     {
@@ -2407,7 +2407,7 @@
       "topicId": "REV-1793452752855",
       "topicName": "Revision: Unit III - Attention, Perception and Memory",
       "date": "2026-11-27",
-      "testId": "TET-PY-64",
+      "testId": "TET-PY-3",
       "createdAt": "2026-10-31T13:19:12.855Z"
     },
     {
@@ -2748,7 +2748,7 @@
       "topicId": "REV-1793970215483",
       "topicName": "Revision: Unit V - Intelligence and Creativity",
       "date": "2026-12-04",
-      "testId": "SPT-PY-25",
+      "testId": "SPT-PY-5",
       "createdAt": "2026-11-06T13:03:35.483Z"
     },
     {
@@ -2913,7 +2913,7 @@
       "topicId": "REV-1793970244963",
       "topicName": "Revision: Unit VI - Personality",
       "date": "2026-12-11",
-      "testId": "SPT-PY-30",
+      "testId": "SPT-PY-6",
       "createdAt": "2026-11-06T13:04:04.963Z"
     },
     {
@@ -3045,7 +3045,7 @@
       "topicId": "REV-1793970298667",
       "topicName": "Revision: Unit VII - Socializing Agencies of Child Development, Unit VIII - Pedagogical Concerns (Part I), Unit IX - Pedagogical Concerns (Part II), Unit X - Pedagogical Concerns (Part III)",
       "date": "2026-12-18",
-      "testId": "SPT-PY-35",
+      "testId": "SPT-PY-7",
       "createdAt": "2026-11-06T13:04:58.667Z"
     },
     {
