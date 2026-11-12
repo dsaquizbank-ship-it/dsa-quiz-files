@@ -58,11 +58,22 @@
         }
 
         function groupByDate(entries) {
+            // 🛑 HIDE PAST DATES 🛑
+            // Get today's date in YYYY-MM-DD format
+            const today = new Date();
+            const todayStr = today.getFullYear() + '-' + 
+                String(today.getMonth() + 1).padStart(2, '0') + '-' + 
+                String(today.getDate()).padStart(2, '0');
+
             const map = {};
             entries.forEach(e => {
+                // Skip entries whose date is older than today
+                if (e.date && e.date < todayStr) return;
+
                 if (!map[e.date]) map[e.date] = [];
                 map[e.date].push(e);
             });
+            
             // Sort dates chronologically
             return Object.keys(map).sort().map(date => ({
                 date,
@@ -75,7 +86,7 @@
             const grouped = groupByDate(ALL_ENTRIES);
             dateSelector.innerHTML = '';
             if (grouped.length === 0) {
-                container.innerHTML = '<div class="empty-state">No exams scheduled yet.</div>';
+                container.innerHTML = '<div class="empty-state">No upcoming exams scheduled yet.</div>';
                 return;
             }
             grouped.forEach((g, index) => {
