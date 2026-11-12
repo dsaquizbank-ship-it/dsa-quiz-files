@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-12T08:37:25.098Z",
+  "version": "2026-11-12T08:38:33.600Z",
   "categories": [
     {
       "id": "BANK",
@@ -2155,11 +2155,11 @@
       "name": "6TH TERM 2 FULL SPT-SC-2",
       "topic": "6TH TERM 2 FULL",
       "durationMinutes": 30,
-      "order": 9,
+      "order": 2,
       "questionCount": 50,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-SC-2.html",
-      "releaseTimestamp": 1794556800000,
+      "releaseTimestamp": 0,
       "language": "both",
       "createdAt": 1794471142718
     }
