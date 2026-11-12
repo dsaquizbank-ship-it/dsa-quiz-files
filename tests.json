@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-12T07:34:38.506Z",
+  "version": "2026-11-12T07:41:04.793Z",
   "categories": [
     {
       "id": "BANK",
@@ -2105,6 +2105,20 @@
       "releaseTimestamp": 1794556800000,
       "language": "both",
       "createdAt": 1794468878506
+    },
+    {
+      "testId": "UGZ-78",
+      "examId": "UG-ZOO",
+      "name": "BIOTECHNOLOGY SCOPE UGZ-78",
+      "topic": "BIOTECHNOLOGY SCOPE",
+      "durationMinutes": 30,
+      "order": 78,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGZ-78.html",
+      "releaseTimestamp": 1794556800000,
+      "language": "both",
+      "createdAt": 1794469264793
     }
   ]
 }
