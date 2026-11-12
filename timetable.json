@@ -1,17 +1,4 @@
 {
-  "version": "2026-11-12T14:15:27.574Z",
-  "timetable": [
-    {
-      "date": "2026-11-13",
-      "classes": [
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Reasoning Ability: Blood Relation",
-          "batch": "BANK",
-          "faculty": "Abin",
-          "room": "Abin"
-        }
-      ]
-    }
-  ]
+  "version": "2026-11-12T14:33:22.256Z",
+  "timetable": []
 }
