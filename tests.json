@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-12T07:54:52.305Z",
+  "version": "2026-11-12T08:04:57.828Z",
   "categories": [
     {
       "id": "BANK",
@@ -2133,6 +2133,20 @@
       "releaseTimestamp": 1794556800000,
       "language": "en",
       "createdAt": 1794470092305
+    },
+    {
+      "testId": "SPT-SS-9",
+      "examId": "UG-MAT",
+      "name": "6TH TERM 2 GEOGRAPHY LESSON 1, CIVICS LESSON 1, LESSON 2, ECONOMICS LESSON 1 SPT-SS-9",
+      "topic": "6TH TERM 2 GEOGRAPHY LESSON 1, CIVICS LESSON 1, LESSON 2, ECONOMICS LESSON 1",
+      "durationMinutes": 30,
+      "order": 9,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-SS-9.html",
+      "releaseTimestamp": 1794556800000,
+      "language": "both",
+      "createdAt": 1794470697828
     }
   ]
 }
