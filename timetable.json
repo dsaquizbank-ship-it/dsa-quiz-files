@@ -1,427 +1,111 @@
 {
-  "version": "2026-11-11T23:37:04.651Z",
+  "version": "2026-11-12T08:55:02.578Z",
   "timetable": [
     {
-      "day": "Monday",
-      "classes": [
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "English",
-          "batch": "TNTET",
-          "faculty": "Mrs.Jaya",
-          "room": "Mrs.Jaya"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Unit I - Aptitude",
-          "batch": "TNPSC",
-          "faculty": "Ms.Jothika",
-          "room": "Ms.Jothika"
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "Social Science",
-          "batch": "TNTET",
-          "faculty": "Mrs Sreevidhya",
-          "room": "Mrs Sreevidhya"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Quantitative Aptitude",
-          "batch": "SSC",
-          "faculty": "Mr Abin",
-          "room": "Mr Abin"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Quantitative Aptitude",
-          "batch": "RRB",
-          "faculty": "Mr Abin",
-          "room": "Mr Abin"
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "Science",
-          "batch": "TNTET",
-          "faculty": "Mrs Ebisha",
-          "room": "Mrs Ebisha"
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "Unit III - History, Culture & INM: Different modes of agitation: Militant Movements, Communalism and Partition",
-          "batch": "TNPSC",
-          "faculty": "Dr Sahitha",
-          "room": "Dr Sahitha"
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "General Awareness: Modern India - Towards Independence",
-          "batch": "SSC",
-          "faculty": "Dr Sahitha",
-          "room": "Dr Sahitha"
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "General Awareness: Modern India - Towards Independence",
-          "batch": "RRB",
-          "faculty": "Dr Sahitha",
-          "room": "Dr Sahitha"
-        },
-        {
-          "time": "10:00 AM - 01:00 PM",
-          "subject": "Unit VII (Indian)",
-          "batch": "PGTRB ENGLISH",
-          "faculty": "Mrs Deepthi",
-          "room": "Mrs Deepthi"
-        },
-        {
-          "time": "02:00 PM - 03:30 PM",
-          "subject": "Unit V - Data Communication and Computer Networks: Analog and Digital Signals",
-          "batch": "PGTRB COMPUTER SCIENCE",
-          "faculty": "Dr Sahitha",
-          "room": "Dr Sahitha"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Quantitative Aptitude",
-          "batch": "BANK",
-          "faculty": "Mr Abin",
-          "room": "Mr Abin"
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "Unit V - Crown to Independence: Mountbatten Plan, Government of India Act, 1935, Indian Independence Act of 1947",
-          "batch": "PGTRB HISTORY",
-          "faculty": "Dr Sahitha",
-          "room": "Dr Sahitha"
-        }
-      ]
-    },
-    {
-      "day": "Tuesday",
+      "date": "2026-11-09",
       "classes": [
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Quantitative Aptitude: Ratio And Proportion",
-          "batch": "RRB",
-          "faculty": "Mr Abin",
-          "room": "Mr Abin"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Quantitative Aptitude: Ratio And Proportion",
           "batch": "BANK",
-          "faculty": "Mr Abin",
-          "room": "Mr Abin"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Quantitative Aptitude: Ratio And Proportion",
-          "batch": "SSC",
-          "faculty": "Mr Abin",
-          "room": "Mr Abin"
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "Science",
-          "batch": "TNTET",
-          "faculty": "Ms Jothika",
-          "room": "Ms Jothika"
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "Social Science",
-          "batch": "TNTET",
-          "faculty": "Mrs Sreevidhya",
-          "room": "Mrs Sreevidhya"
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "Unit IV - Indian Polity",
-          "batch": "TNPSC",
-          "faculty": "Dr Sahitha",
-          "room": "Dr Sahitha"
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "General Awareness",
-          "batch": "SSC",
-          "faculty": "Dr Sahitha",
-          "room": "Dr Sahitha"
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "General Awareness",
-          "batch": "RRB",
-          "faculty": "Dr Sahitha",
-          "room": "Dr Sahitha"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Unit I - Aptitude",
-          "batch": "TNPSC",
-          "faculty": "Ms Jothika",
-          "room": "Ms Jothika"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Tamil",
-          "batch": "TNTET",
-          "faculty": "Mrs Sreevidhya",
-          "room": "Mrs Sreevidhya"
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "Unit V - Crown to Independence: Cripps Mission and Quit India Movement",
-          "batch": "PGTRB HISTORY",
-          "faculty": "",
-          "room": ""
-        },
-        {
-          "time": "02:00 PM - 03:30 PM",
-          "subject": "Unit X - Cybersecurity: Attacks: Investigating DoS Attacks, Types of DoS Attacks, Classification of DoS Attacks, Techniques to Detect DoS Attacks",
-          "batch": "PGTRB COMPUTER SCIENCE",
-          "faculty": "",
-          "room": ""
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "General Awareness: Modern India - Towards Independence",
-          "batch": "SSC",
-          "faculty": "",
-          "room": ""
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "General Awareness: Modern India - Towards Independence",
-          "batch": "RRB",
-          "faculty": "",
-          "room": ""
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "Science: 9th - Measurement",
-          "batch": "SGT",
-          "faculty": "",
-          "room": ""
+          "faculty": "Abin",
+          "room": "Abin"
         }
       ]
     },
     {
-      "day": "Wednesday",
+      "date": "2026-11-10",
       "classes": [
         {
           "time": "10:00 AM - 11:30 AM",
-          "subject": "Child Development and Pedagogy",
-          "batch": "TNTET",
-          "faculty": "DR SAHITHA",
-          "room": "DR SAHITHA"
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "Unit I - Aptitude",
-          "batch": "TNPSC",
-          "faculty": "MS. JOTHIKA",
-          "room": "MS. JOTHIKA"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Tamil Grammar: 7TH இலக்கணம்",
-          "batch": "TNPSC",
-          "faculty": "MRS. SREEVIDHYA",
-          "room": "MRS. SREEVIDHYA"
-        },
-        {
-          "time": "10:00 AM - 01:00 PM",
-          "subject": "Quantitative Aptitude",
-          "batch": "SSC",
-          "faculty": "MR. ABIN",
-          "room": "MR. ABIN"
-        },
-        {
-          "time": "10:00 AM - 01:00 PM",
-          "subject": "Quantitative Aptitude",
+          "subject": "Quantitative Aptitude: Ratio And Proportion",
           "batch": "BANK",
-          "faculty": "MR. ABIN",
-          "room": "MR. ABIN"
-        },
-        {
-          "time": "10:00 AM - 01:00 PM",
-          "subject": "Quantitative Aptitude",
-          "batch": "RRB",
-          "faculty": "MR. ABIN",
-          "room": "MR. ABIN"
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "Unit II - Real Analysis",
-          "batch": "PGTRB MATHS",
-          "faculty": "MRS. REKHA",
-          "room": "MRS. REKHA"
-        },
-        {
-          "time": "02:00 PM - 03:30 PM",
-          "subject": "Unit V - Data Communication and Computer Networks: Noiseless and Noisy Channels",
-          "batch": "PGTRB COMPUTER SCIENCE",
-          "faculty": "DR SAHITHA",
-          "room": "DR SAHITHA"
+          "faculty": "Abin",
+          "room": "Abin"
         }
       ]
     },
     {
-      "day": "Thursday",
+      "date": "2026-11-11",
       "classes": [
         {
           "time": "10:00 AM - 11:30 AM",
-          "subject": "Unit I - Aptitude",
-          "batch": "TNPSC",
-          "faculty": "Ms Jothika",
-          "room": "Ms Jothika"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "English",
-          "batch": "TNTET",
-          "faculty": "Mrs Jayashankar",
-          "room": "Mrs Jayashankar"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Reasoning Ability",
-          "batch": "SSC",
-          "faculty": "Mr Abin",
-          "room": "Mr Abin"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Reasoning Ability",
+          "subject": "Quantitative Aptitude: Ratio And Proportion",
           "batch": "BANK",
-          "faculty": "Mr Abin",
-          "room": "Mr Abin"
-        },
+          "faculty": "Abin",
+          "room": "Abin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-12",
+      "classes": [
         {
           "time": "10:00 AM - 11:30 AM",
-          "subject": "Reasoning Ability",
-          "batch": "RRB",
-          "faculty": "Mr Abin",
-          "room": "Mr Abin"
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "CURRENT AFFAIRS",
-          "batch": "TNPSC",
-          "faculty": "Dr Sahitha",
-          "room": "Dr Sahitha"
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "CURRENT AFFAIRS",
-          "batch": "SSC",
-          "faculty": "Dr Sahitha",
-          "room": "Dr Sahitha"
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "CURRENT AFFAIRS",
+          "subject": "Quantitative Aptitude: Ratio And Proportion",
           "batch": "BANK",
-          "faculty": "Dr Sahitha",
-          "room": "Dr Sahitha"
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "CURRENT AFFAIRS",
-          "batch": "RRB",
-          "faculty": "Dr Sahitha",
-          "room": "Dr Sahitha"
-        },
+          "faculty": "Abin",
+          "room": "Abin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-13",
+      "classes": [
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Reasoning Ability: Blood Relation",
           "batch": "BANK",
-          "faculty": "MR ABIN",
-          "room": "MR ABIN"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "Reasoning Ability: Blood Relation",
-          "batch": "RRB",
-          "faculty": "MR ABIN",
-          "room": "MR ABIN"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "English",
-          "batch": "TNTET",
-          "faculty": "MRS. JAYA SANKAR",
-          "room": "MRS. JAYA SANKAR"
+          "faculty": "Abin",
+          "room": "Abin"
         }
       ]
     },
     {
-      "day": "Friday",
+      "date": "2026-11-16",
       "classes": [
         {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "Unit II - Real Analysis",
-          "batch": "PGTRB MATHS",
-          "faculty": "MRS REKHA",
-          "room": "MRS REKHA"
-        },
-        {
           "time": "10:00 AM - 11:30 AM",
-          "subject": "Unit I - Aptitude: Simplification, Percentage",
-          "batch": "TNPSC",
-          "faculty": "MS. JOTHIKA",
-          "room": "MS. JOTHIKA"
-        },
-        {
-          "time": "11:30 AM - 01:00 PM",
-          "subject": "Unit III - History, Culture & INM: Indus Valley Civilization",
-          "batch": "TNPSC",
-          "faculty": "DR SAHITHA",
-          "room": "DR SAHITHA"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "English",
-          "batch": "SSC",
-          "faculty": "MR ABIN",
-          "room": "MR ABIN"
-        },
-        {
-          "time": "10:00 AM - 11:30 AM",
-          "subject": "English",
+          "subject": "Quantitative Aptitude: Averages",
           "batch": "BANK",
-          "faculty": "MR ABIN",
-          "room": "MR ABIN"
-        },
+          "faculty": "Abin",
+          "room": "Abin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-17",
+      "classes": [
         {
           "time": "10:00 AM - 11:30 AM",
-          "subject": "English",
-          "batch": "RRB",
-          "faculty": "MR ABIN",
-          "room": "MR ABIN"
-        },
+          "subject": "Quantitative Aptitude: Averages",
+          "batch": "BANK",
+          "faculty": "Abin",
+          "room": "Abin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-18",
+      "classes": [
         {
           "time": "10:00 AM - 11:30 AM",
-          "subject": "Tamil",
-          "batch": "TNTET",
-          "faculty": "MRS. SREE VIDHYA",
-          "room": "MRS. SREE VIDHYA"
-        },
+          "subject": "Reasoning Ability: Inequality",
+          "batch": "BANK",
+          "faculty": "Abin",
+          "room": "Abin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-19",
+      "classes": [
         {
           "time": "10:00 AM - 11:30 AM",
-          "subject": "Social Science: 6th Term 1 - History: Indus Civilization",
-          "batch": "TNTET",
-          "faculty": "DR SAHITHA",
-          "room": "DR SAHITHA"
-        },
-        {
-          "time": "02:00 PM - 03:30 PM",
-          "subject": "Unit V - Data Communication and Computer Networks: Analog and Digital Signals",
-          "batch": "PGTRB COMPUTER SCIENCE",
-          "faculty": "DR SAHITHA",
-          "room": "DR SAHITHA"
+          "subject": "Reasoning Ability: Inequality",
+          "batch": "BANK",
+          "faculty": "Abin",
+          "room": "Abin"
         }
       ]
     }
