@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>SPT-SC-1 - 6TH TERM 1 FULL SPT-SC-1</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                linebreaks: { automatic: true, width: "container" }
+            },
+            options: { ignoreHtmlClass: "no-mathjax" },
+            chtml: {
+                displayAlign: "left",
+                displayIndent: "0",
+                mtextInheritFont: true
+            },
+            svg: {
+                scale: 0.9,
+                minScale: 0.5,
+                mtextInheritFont: true,
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; color: #10b981; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; white-space: normal; word-wrap: break-word; padding-bottom: 20px; max-width: 100%; overflow-x: auto; }
+        mjx-container { display: inline !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; }
+        .question-text::-webkit-scrollbar { display: none; }
+        .question-text { -ms-overflow-style: none; scrollbar-width: none; }
+        .option-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; word-wrap: break-word; }
+        .option-letter { font-weight: 800; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+        .option-text { flex-grow: 1; min-width: 0; word-wrap: break-word; overflow-wrap: break-word; }
+        .option-text mjx-container { display: inline-block !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; overflow-x: visible !important; }
+        .option-text mjx-container[jax="CHTML"][display="true"] { margin: 0 !important; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
+        .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
+        .review-card .question-text { overflow-x: hidden !important; white-space: normal !important; word-wrap: break-word !important; }
+        .review-card strong { color: var(--text-primary); font-size: 16px; }
+        .review-card .option-item { background-color: var(--rc-bg); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: rgba(40, 167, 69, 0.1); border: 1px solid #28a745; color: #28a745; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; color: #dc3545; }
+        .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
+        .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
+        .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
+        .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px 0; border-top: 1px solid var(--border-light); }
+        .review-nav-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .review-nav-btn:disabled { background: var(--border-light); color: var(--text-primary); opacity: 0.5; cursor: not-allowed; }
+        .review-nav-text { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+        .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { 
+            html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } 
+            .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } 
+            #startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard { display: none !important; } 
+            #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } 
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; } 
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; margin-bottom: 20px !important; display: block !important; } 
+            .review-card .option-item { border: 1px solid #ccc !important; background: white !important; color: black !important; } 
+            .review-card .option-item.correct { background: #e6ffe6 !important; border-color: #28a745 !important; color: black !important; } 
+            .review-card .option-item.wrong { background: #ffe6e6 !important; border-color: #dc3545 !important; color: black !important; } 
+            @page { size: A4; margin: 1.5cm; } 
+        }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">30:00</div>
+            <div class="top-buttons">
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div id="printHeader" style="display: none;">
+            <h1>DR SAHITHA IAS ACADEMY</h1>
+            <h3>ANSWER KEY & DETAILED REVIEW</h3>
+            <p><strong>Test:</strong> SPT-SC-1 - SCIENCE</p>
+        </div>
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+            <div id="reviewPagination" class="review-nav-container" style="display: none;">
+                <button class="review-nav-btn" id="prevReviewBtn" onclick="navigateReview(-1)">◀ PREV</button>
+                <span class="review-nav-text" id="reviewPageText">1 / 25</span>
+                <button class="review-nav-btn" id="nextReviewBtn" onclick="navigateReview(1)">NEXT ▶</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "SCIENCE",
+        testNo: "SPT-SC-1",
+        date: new Date().toLocaleDateString("en-GB"),
+        subject: "SCIENCE",
+        topic: "6TH TERM 1 FULL",
+        duration: "30",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "The SI unit of length is",
+    "ta": "நீளத்தின் SI அலகு என்ன?",
+    "optionsEn": ["kilogram", "second", "metre", "candela"],
+    "optionsTa": ["கிலோகிராம்", "வினாடி", "மீட்டர்", "கேண்டெலா"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்",
+    "optionsEn": ["Time - second", "Mass - metre", "Length - kilogram", "Area - second"],
+    "optionsTa": ["நேரம் - வினாடி", "நிறை - மீட்டர்", "நீளம் - கிலோகிராம்", "பரப்பளவு - வினாடி"],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "Match the following<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List I</b></td><td style='width:60%; padding:6px 0;'><b>List II</b></td></tr><tr><td style='padding:6px 0;'>1. 1 km</td><td style='padding:6px 0;'>A. 100 cm</td></tr><tr><td style='padding:6px 0;'>2. 1 m</td><td style='padding:6px 0;'>B. 1000 m</td></tr><tr><td style='padding:6px 0;'>3. 1 cm</td><td style='padding:6px 0;'>C. 10 mm</td></tr><tr><td style='padding:6px 0;'>4. 1 tonne</td><td style='padding:6px 0;'>D. 1000 kg</td></tr></table>",
+    "ta": "பின்வருவனவற்றைப் பொருத்துக<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் I</b></td><td style='width:60%; padding:6px 0;'><b>பட்டியல் II</b></td></tr><tr><td style='padding:6px 0;'>1. 1 கி.மீ.</td><td style='padding:6px 0;'>A. 100 செ.மீ.</td></tr><tr><td style='padding:6px 0;'>2. 1 மீ.</td><td style='padding:6px 0;'>B. 1000 மீ.</td></tr><tr><td style='padding:6px 0;'>3. 1 செ.மீ.</td><td style='padding:6px 0;'>C. 10 மி.மீ.</td></tr><tr><td style='padding:6px 0;'>4. 1 டன்</td><td style='padding:6px 0;'>D. 1000 கி.கி.</td></tr></table>",
+    "optionsEn": ["1- A, 2- B, 3- C, 4- D", "1- B, 2- A, 3- C, 4- D", "1- A, 2- B, 3- D, 4- C", "1- B, 2- C, 3- A, 4- D"],
+    "optionsTa": ["1- A, 2- B, 3- C, 4- D", "1- B, 2- A, 3- C, 4- D", "1- A, 2- B, 3- D, 4- C", "1- B, 2- C, 3- A, 4- D"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Odd one out",
+    "ta": "பொருந்தாததைக் கண்டறியவும்",
+    "optionsEn": ["Metre", "kilogram", "second", "litre"],
+    "optionsTa": ["மீட்டர்", "கிலோகிராம்", "வினாடி", "லிட்டர்"],
+    "answer": 3
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): Measurement is the comparison of an unknown quantity with a known quantity.<br><br>Reason (R): Every measurement has two parts - a number and a unit.",
+    "ta": "Assertion (A): அளவீடு என்பது தெரியாத அளவை தெரிந்த அளவுடன் ஒப்பிடுவதாகும்.<br><br>Reason (R): ஒவ்வொரு அளவீட்டிலும் இரண்டு பகுதிகள் உள்ளன - ஒரு எண் மற்றும் ஒரு அலகு.",
+    "optionsEn": ["Both A and R are true and R explains A", "Both A and R are true but R does not explain A", "A is true, R is false", "A is false, R is true"],
+    "optionsTa": ["A மற்றும் R இரண்டும் உண்மை, R என்பது A வை விளக்குகிறது", "A மற்றும் R இரண்டும் உண்மை, ஆனால் R என்பது A வை விளக்கவில்லை", "A உண்மை, R தவறு", "A தவறு, R உண்மை"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Force can",
+    "ta": "விசை எதைச் செய்ய முடியும்?",
+    "optionsEn": ["change the state of rest or motion", "change the direction of motion", "change the shape of a body", "all of the above"],
+    "optionsTa": ["ஓய்வு அல்லது இயக்க நிலையை மாற்றலாம்", "இயக்கத்தின் திசையை மாற்றலாம்", "ஒரு பொருளின் வடிவத்தை மாற்றலாம்", "மேற்கூறிய அனைத்தும்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்",
+    "optionsEn": ["Linear motion - spinning top", "Oscillatory motion - pendulum", "Circular motion - person walking straight", "Rotatory motion - ball thrown"],
+    "optionsTa": ["நேரியல் இயக்கம் - சுழலும் பம்பரம்", "அலைவு இயக்கம் - ஊசல்", "வட்ட இயக்கம் - நேராக நடக்கும் நபர்", "சுழற்சி இயக்கம் - எறியப்பட்ட பந்து"],
+    "answer": 1
+  },
+  {
+    "type": "match",
+    "en": "Match the following<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List I</b></td><td style='width:60%; padding:6px 0;'><b>List II</b></td></tr><tr><td style='padding:6px 0;'>1. Contact force</td><td style='padding:6px 0;'>A. Magnet and iron nail</td></tr><tr><td style='padding:6px 0;'>2. Non-contact force</td><td style='padding:6px 0;'>B. Kicking a football</td></tr><tr><td style='padding:6px 0;'>3. Uniform motion</td><td style='padding:6px 0;'>C. Equal distances in equal intervals</td></tr><tr><td style='padding:6px 0;'>4. Speed</td><td style='padding:6px 0;'>D. Distance / Time</td></tr></table>",
+    "ta": "பின்வருவனவற்றைப் பொருத்துக<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் I</b></td><td style='width:60%; padding:6px 0;'><b>பட்டியல் II</b></td></tr><tr><td style='padding:6px 0;'>1. தொடு விசை</td><td style='padding:6px 0;'>A. காந்தம் மற்றும் இரும்பு ஆணி</td></tr><tr><td style='padding:6px 0;'>2. தொடா விசை</td><td style='padding:6px 0;'>B. கால்பந்தை உதைத்தல்</td></tr><tr><td style='padding:6px 0;'>3. சீரான இயக்கம்</td><td style='padding:6px 0;'>C. சமமான இடைவெளிகளில் சமமான தூரங்கள்</td></tr><tr><td style='padding:6px 0;'>4. வேகம்</td><td style='padding:6px 0;'>D. தூரம் / நேரம்</td></tr></table>",
+    "optionsEn": ["1-B, 2-A, 3-D, 4-C", "1-A, 2-B, 3-C, 4-D", "1-B, 2-A, 3-C, 4-D", "1-B, 2-C, 3-D, 4-A"],
+    "optionsTa": ["1-B, 2-A, 3-D, 4-C", "1-A, 2-B, 3-C, 4-D", "1-B, 2-A, 3-C, 4-D", "1-B, 2-C, 3-D, 4-A"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Odd one out",
+    "ta": "பொருந்தாததைக் கண்டறியவும்",
+    "optionsEn": ["Linear", "Curvilinear", "Circular", "Mass"],
+    "optionsTa": ["நேரியல்", "வளைவு", "வட்ட", "நிறை"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement",
+    "ta": "சரியான கூற்றைத் தேர்ந்தெடுக்கவும்",
+    "optionsEn": ["Rest and motion are absolute.", "Rest and motion are relative.", "Force is always a contact force.", "Speed has no unit."],
+    "optionsTa": ["ஓய்வு மற்றும் இயக்கம் முழுமையானவை.", "ஓய்வு மற்றும் இயக்கம் ஒப்பீட்டளவில் உள்ளவை.", "விசை எப்போதும் தொடு விசையாகும்.", "வேகத்திற்கு அலகு இல்லை."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Anything that occupies space and has mass is called",
+    "ta": "இடத்தை ஆக்கிரமித்து நிறையைக் கொண்ட எதுவும் எவ்வாறு அழைக்கப்படுகிறது?",
+    "optionsEn": ["matter", "energy", "force", "motion"],
+    "optionsTa": ["பொருள்", "ஆற்றல்", "விசை", "இயக்கம்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்",
+    "optionsEn": ["Gas - definite shape and volume", "Liquid - definite shape, no definite volume", "Solid - definite shape and volume", "Solid - highly compressible"],
+    "optionsTa": ["வாயு - திட்டவட்டமான வடிவம் மற்றும் அளவு", "திரவம் - திட்டவட்டமான வடிவம், திட்டவட்டமான அளவு இல்லை", "திடப்பொருள் - திட்டவட்டமான வடிவம் மற்றும் அளவு", "திடப்பொருள் - மிகவும் அழுத்தக்கூடியது"],
+    "answer": 2
+  },
+  {
+    "type": "match",
+    "en": "Match the following<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List I</b></td><td style='width:60%; padding:6px 0;'><b>List II</b></td></tr><tr><td style='padding:6px 0;'>1. Hand picking</td><td style='padding:6px 0;'>A. Husk from grain</td></tr><tr><td style='padding:6px 0;'>2. Winnowing</td><td style='padding:6px 0;'>B. Stones from rice</td></tr><tr><td style='padding:6px 0;'>3. Filtration</td><td style='padding:6px 0;'>C. Mud from water</td></tr><tr><td style='padding:6px 0;'>4. Magnetic separation</td><td style='padding:6px 0;'>D. Iron from sand</td></tr></table>",
+    "ta": "பின்வருவனவற்றைப் பொருத்துக<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் I</b></td><td style='width:60%; padding:6px 0;'><b>பட்டியல் II</b></td></tr><tr><td style='padding:6px 0;'>1. கையால் பொறுக்குதல்</td><td style='padding:6px 0;'>A. தானியத்திலிருந்து உமி</td></tr><tr><td style='padding:6px 0;'>2. தூற்றுதல்</td><td style='padding:6px 0;'>B. அரிசியிலிருந்து கற்கள்</td></tr><tr><td style='padding:6px 0;'>3. வடிகட்டுதல்</td><td style='padding:6px 0;'>C. நீரிலிருந்து சேறு</td></tr><tr><td style='padding:6px 0;'>4. காந்தப் பிரிப்பு</td><td style='padding:6px 0;'>D. மணலிலிருந்து இரும்பு</td></tr></table>",
+    "optionsEn": ["1-B, 2-A, 3-D, 4-C", "1-A, 2-B, 3-C, 4-D", "1-B, 2-A, 3-C, 4-D", "1-B, 2-C, 3-D, 4-A"],
+    "optionsTa": ["1-B, 2-A, 3-D, 4-C", "1-A, 2-B, 3-C, 4-D", "1-B, 2-A, 3-C, 4-D", "1-B, 2-C, 3-D, 4-A"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Odd one out",
+    "ta": "பொருந்தாததைக் கண்டறியவும்",
+    "optionsEn": ["Sedimentation", "Decantation", "Filtration", "Photosynthesis"],
+    "optionsTa": ["படிவு", "வடித்தெடுத்தல்", "வடிகட்டுதல்", "ஒளிச்சேர்க்கை"],
+    "answer": 3
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): Gases are highly compressible.<br><br>Reason (R): Particles of gases are far apart with large inter-particle spaces.",
+    "ta": "Assertion (A): வாயுக்கள் மிகவும் அழுத்தக்கூடியவை.<br><br>Reason (R): வாயுக்களின் துகள்கள் பெரிய இடைத்துகள் இடைவெளிகளுடன் வெகு தொலைவில் உள்ளன.",
+    "optionsEn": ["Both A and R are true and R explains A", "Both A and R are true but R does not explain A", "A is true, R is false", "A is false, R is true"],
+    "optionsTa": ["A மற்றும் R இரண்டும் உண்மை, R என்பது A வை விளக்குகிறது", "A மற்றும் R இரண்டும் உண்மை, ஆனால் R என்பது A வை விளக்கவில்லை", "A உண்மை, R தவறு", "A தவறு, R உண்மை"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "The underground part of a plant is called",
+    "ta": "தாவரத்தின் நிலத்தடிப் பகுதி எவ்வாறு அழைக்கப்படுகிறது?",
+    "optionsEn": ["stem", "root", "leaf", "flower"],
+    "optionsTa": ["தண்டு", "வேர்", "இலை", "மலர்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்",
+    "optionsEn": ["Tap root - grass", "Fibrous root - mango", "Photosynthesis - leaf", "Absorption of water - flower"],
+    "optionsTa": ["ஆணிவேர் - புல்", "இழைவேர் - மாமரம்", "ஒளிச்சேர்க்கை - இலை", "நீர் உறிஞ்சுதல் - மலர்"],
+    "answer": 2
+  },
+  {
+    "type": "match",
+    "en": "Match the following<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List I</b></td><td style='width:60%; padding:6px 0;'><b>List II</b></td></tr><tr><td style='padding:6px 0;'>1. Aquatic habitat</td><td style='padding:6px 0;'>A. Cactus</td></tr><tr><td style='padding:6px 0;'>2. Desert habitat</td><td style='padding:6px 0;'>B. Lotus</td></tr><tr><td style='padding:6px 0;'>3. Tendril</td><td style='padding:6px 0;'>C. Weak stem climber</td></tr><tr><td style='padding:6px 0;'>4. Thorn</td><td style='padding:6px 0;'>D. Defence</td></tr></table>",
+    "ta": "பின்வருவனவற்றைப் பொருத்துக<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் I</b></td><td style='width:60%; padding:6px 0;'><b>பட்டியல் II</b></td></tr><tr><td style='padding:6px 0;'>1. நீர்வாழ் வாழ்விடம்</td><td style='padding:6px 0;'>A. கற்றாழை</td></tr><tr><td style='padding:6px 0;'>2. பாலைவன வாழ்விடம்</td><td style='padding:6px 0;'>B. தாமரை</td></tr><tr><td style='padding:6px 0;'>3. பற்றுக்கம்பி</td><td style='padding:6px 0;'>C. பலவீனமான தண்டு ஏறுகொடி</td></tr><tr><td style='padding:6px 0;'>4. முள்</td><td style='padding:6px 0;'>D. பாதுகாப்பு</td></tr></table>",
+    "optionsEn": ["1- B, 2- A, 3- C, 4- D", "1- A, 2- B, 3- C, 4- D", "1- B, 2- A, 3- D, 4- C", "1- B, 2- C, 3- D, 4- A"],
+    "optionsTa": ["1- B, 2- A, 3- C, 4- D", "1- A, 2- B, 3- C, 4- D", "1- B, 2- A, 3- D, 4- C", "1- B, 2- C, 3- D, 4- A"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Odd one out",
+    "ta": "பொருந்தாததைக் கண்டறியவும்",
+    "optionsEn": ["Root", "Stem", "Leaf", "Magnet"],
+    "optionsTa": ["வேர்", "தண்டு", "இலை", "காந்தம்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement",
+    "ta": "சரியான கூற்றைத் தேர்ந்தெடுக்கவும்",
+    "optionsEn": ["Roots prepare food by photosynthesis.", "Stem transports water and minerals.", "Leaves only help in respiration.", "All plants have fibrous roots."],
+    "optionsTa": ["வேர்கள் ஒளிச்சேர்க்கை மூலம் உணவைத் தயாரிக்கின்றன.", "தண்டு நீர் மற்றும் தாதுக்களைக் கடத்துகிறது.", "இலைகள் சுவாசத்திற்கு மட்டுமே உதவுகின்றன.", "அனைத்து தாவரங்களும் இழைவேர்களைக் கொண்டுள்ளன."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Organisms made up of a single cell are called",
+    "ta": "ஒற்றைச் செல்லால் ஆன உயிரினங்கள் எவ்வாறு அழைக்கப்படுகின்றன?",
+    "optionsEn": ["multicellular", "unicellular", "complex", "tissue"],
+    "optionsTa": ["பலசெல்லுலார்", "ஒற்றைச்செல்லுலார்", "சிக்கலான", "திசு"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்",
+    "optionsEn": ["Amoeba - cilia", "Camels - gills", "Bird - scales", "Fish - gills"],
+    "optionsTa": ["அமீபா - சிலியா", "ஒட்டகங்கள் - செவுள்கள்", "பறவை - செதில்கள்", "மீன் - செவுள்கள்"],
+    "answer": 3
+  },
+  {
+    "type": "match",
+    "en": "Match the following<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List I</b></td><td style='width:60%; padding:6px 0;'><b>List II</b></td></tr><tr><td style='padding:6px 0;'>1. Polar bear</td><td style='padding:6px 0;'>A. Streamlined body, gills</td></tr><tr><td style='padding:6px 0;'>2. Fish</td><td style='padding:6px 0;'>B. Thick fur, white colour</td></tr><tr><td style='padding:6px 0;'>3. Camel</td><td style='padding:6px 0;'>C. Hollow bones, wings</td></tr><tr><td style='padding:6px 0;'>4. Bird</td><td style='padding:6px 0;'>D. Hump, padded feet</td></tr></table>",
+    "ta": "பின்வருவனவற்றைப் பொருத்துக<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் I</b></td><td style='width:60%; padding:6px 0;'><b>பட்டியல் II</b></td></tr><tr><td style='padding:6px 0;'>1. துருவக் கரடி</td><td style='padding:6px 0;'>A. நீரோட்ட வடிவ உடல், செவுள்கள்</td></tr><tr><td style='padding:6px 0;'>2. மீன்</td><td style='padding:6px 0;'>B. அடர்த்தியான ரோமம், வெள்ளை நிறம்</td></tr><tr><td style='padding:6px 0;'>3. ஒட்டகம்</td><td style='padding:6px 0;'>C. hollow எலும்புகள், இறக்கைகள்</td></tr><tr><td style='padding:6px 0;'>4. பறவை</td><td style='padding:6px 0;'>D. திமில், திண்டு போட்ட கால்கள்</td></tr></table>",
+    "optionsEn": ["1- B, 2- A, 3- D, 4- C", "1- A, 2- B, 3- C, 4- D", "1- B, 2- A, 3- C, 4- D", "1- B, 2- C, 3- D, 4- A"],
+    "optionsTa": ["1- B, 2- A, 3- D, 4- C", "1- A, 2- B, 3- C, 4- D", "1- B, 2- A, 3- C, 4- D", "1- B, 2- C, 3- D, 4- A"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Odd one out",
+    "ta": "பொருந்தாததைக் கண்டறியவும்",
+    "optionsEn": ["Amoeba", "Paramecium", "Euglena", "Tiger"],
+    "optionsTa": ["அமீபா", "பரமேசியம்", "யூக்லினா", "புலி"],
+    "answer": 3
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): Camel is called the ship of the desert.<br><br>Reason (R): It has adaptations like padded feet and ability to store water.",
+    "ta": "Assertion (A): ஒட்டகம் பாலைவனத்தின் கப்பல் என்று அழைக்கப்படுகிறது.<br><br>Reason (R): இது திண்டு போட்ட கால்கள் மற்றும் தண்ணீரை சேமிக்கும் திறன் போன்ற தழுவல்களைக் கொண்டுள்ளது.",
+    "optionsEn": ["Both A and R are true and R explains A", "Both A and R are true but R does not explain A", "A is true, R is false", "A is false, R is true"],
+    "optionsTa": ["A மற்றும் R இரண்டும் உண்மை, R என்பது A வை விளக்குகிறது", "A மற்றும் R இரண்டும் உண்மை, ஆனால் R என்பது A வை விளக்கவில்லை", "A உண்மை, R தவறு", "A தவறு, R உண்மை"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "According to WHO, health is a state of complete",
+    "ta": "WHO இன் கூற்றுப்படி, ஆரோக்கியம் என்பது முழுமையான எதன் நிலை?",
+    "optionsEn": ["physical well-being only", "physical, mental and social well-being", "absence of disease only", "mental well-being only"],
+    "optionsTa": ["உடல் நலன் மட்டும்", "உடல், மன மற்றும் சமூக நலன்", "நோய் இல்லாதிருத்தல் மட்டும்", "மன நலன் மட்டும்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்",
+    "optionsEn": ["Carbohydrate - body building", "Protein - energy giving", "Fat - energy giving", "Vitamin - body building"],
+    "optionsTa": ["கார்போஹைட்ரேட் - உடல் வளர்ச்சி", "புரதம் - ஆற்றல் தரும்", "கொழுப்பு - ஆற்றல் தரும்", "வைட்டமின் - உடல் வளர்ச்சி"],
+    "answer": 2
+  },
+  {
+    "type": "match",
+    "en": "Match the following<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List I</b></td><td style='width:60%; padding:6px 0;'><b>List II</b></td></tr><tr><td style='padding:6px 0;'>1. Carbohydrate</td><td style='padding:6px 0;'>A. Pulses, eggs, milk</td></tr><tr><td style='padding:6px 0;'>2. Protein</td><td style='padding:6px 0;'>B. Rice, potato, fruits</td></tr><tr><td style='padding:6px 0;'>3. Fat</td><td style='padding:6px 0;'>C. Butter, ghee, nuts</td></tr><tr><td style='padding:6px 0;'>4. Vitamin</td><td style='padding:6px 0;'>D. Fruits, vegetables</td></tr></table>",
+    "ta": "பின்வருவனவற்றைப் பொருத்துக<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் I</b></td><td style='width:60%; padding:6px 0;'><b>பட்டியல் II</b></td></tr><tr><td style='padding:6px 0;'>1. கார்போஹைட்ரேட்</td><td style='padding:6px 0;'>A. பருப்பு வகைகள், முட்டை, பால்</td></tr><tr><td style='padding:6px 0;'>2. புரதம்</td><td style='padding:6px 0;'>B. அரிசி, உருளைக்கிழங்கு, பழங்கள்</td></tr><tr><td style='padding:6px 0;'>3. கொழுப்பு</td><td style='padding:6px 0;'>C. வெண்ணெய், நெய், கொட்டைகள்</td></tr><tr><td style='padding:6px 0;'>4. வைட்டமின்</td><td style='padding:6px 0;'>D. பழங்கள், காய்கறிகள்</td></tr></table>",
+    "optionsEn": ["1- B, 2- A, 3- D, 4- C", "1- A, 2- B, 3- C, 4- D", "1- B, 2- A, 3- C, 4- D", "1- B, 2- A, 3- C, 4-"],
+    "optionsTa": ["1- B, 2- A, 3- D, 4- C", "1- A, 2- B, 3- C, 4- D", "1- B, 2- A, 3- C, 4- D", "1- B, 2- A, 3- C, 4-"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Odd one out",
+    "ta": "பொருந்தாததைக் கண்டறியவும்",
+    "optionsEn": ["Carbohydrate", "Protein", "Fat", "Force"],
+    "optionsTa": ["கார்போஹைட்ரேட்", "புரதம்", "கொழுப்பு", "விசை"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement",
+    "ta": "சரியான கூற்றைத் தேர்ந்தெடுக்கவும்",
+    "optionsEn": ["Hygiene means keeping only the body clean.", "Balanced diet contains all essential nutrients in proper amounts.", "Water is not necessary for the body.", "Only vitamins are required for a healthy body."],
+    "optionsTa": ["சுகாதாரம் என்பது உடலை மட்டும் சுத்தமாக வைத்திருப்பதாகும்.", "சமச்சீர் உணவு அனைத்து அத்தியாவசிய ஊட்டச்சத்துக்களையும் சரியான அளவுகளில் கொண்டுள்ளது.", "உடலுக்கு நீர் தேவையில்லை.", "ஆரோக்கியமான உடலுக்கு வைட்டமின்கள் மட்டுமே தேவை."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which pair is correct?",
+    "ta": "எந்த இணை சரியானது?",
+    "optionsEn": ["Kanada - atomos", "Democritus - paramanu", "Aryabhata - the Earth rotates from west to east", "William Bedwell - the metric system"],
+    "optionsTa": ["கணாதர் - அணு", "டெமோக்ரிடஸ் - பரமாணு", "ஆர்யபட்டர் - பூமி மேற்கிலிருந்து கிழக்காகச் சுழல்கிறது", "வில்லியம் பெட்வெல் - மெட்ரிக் முறை"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which separation method- example pair is correct?",
+    "ta": "எந்தப் பிரிப்பு முறை-எடுத்துக்காட்டு இணை சரியானது?",
+    "optionsEn": ["Churning - separating butter from curd", "Winnowing - separating gravel from sand", "Centrifugation - separating tea leaves from tea", "Threshing - separating husk from grain"],
+    "optionsTa": ["கடைதல் - தயிரிலிருந்து வெண்ணெய் பிரித்தல்", "தூற்றுதல் - மணலிலிருந்து சரளை பிரித்தல்", "மையவிலக்கு - தேநீரிலிருந்து தேயிலை இலைகளைப் பிரித்தல்", "கதிரடித்தல் - தானியத்திலிருந்து உமி பிரித்தல்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which plant- modification pair is correct?",
+    "ta": "எந்தத் தாவர-மாற்றம் இணை சரியானது?",
+    "optionsEn": ["Sweet pea - axillary buds modified into tendrils", "Bitter gourd - leaflets modified into tendrils", "Agave - leaf apex and margins modified into thorns", "Opuntia - stem bearing sharp thorns"],
+    "optionsTa": ["பட்டாணி - இலைக்கோண மொட்டுகள் பற்றுக்கம்பிகளாக மாற்றப்பட்டன", "பாகற்காய் - சிற்றிலைகள் பற்றுக்கம்பிகளாக மாற்றப்பட்டன", "அகேவ் - இலை நுனி மற்றும் விளிம்புகள் முட்களாக மாற்றப்பட்டன", "கள்ளி - கூர்மையான முட்களைக் கொண்ட தண்டு"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which food test- observation pair is correct?",
+    "ta": "எந்த உணவுப் பரிசோதனை-கவனிப்பு இணை சரியானது?",
+    "optionsEn": ["Starch with iodine - violet colour", "Protein with copper sulphate and NaOH - blue-black colour", "Starch with iodine - translucent paper", "Fat rubbed on paper - translucent, greasy spot"],
+    "optionsTa": ["மாவுச்சத்து அயோடினுடன் - ஊதா நிறம்", "புரதம் காப்பர் சல்பேட் மற்றும் NaOH உடன் - நீல-கருப்பு நிறம்", "மாவுச்சத்து அயோடினுடன் - ஒளி ஊடுருவும் காகிதம்", "காகிதத்தில் தேய்க்கப்பட்ட கொழுப்பு - ஒளி ஊடுருவும், எண்ணெய் பசை"],
+    "answer": 3
+  },
+  {
+    "type": "match",
+    "en": "Match the motion with its example.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>Motion</b></td><td style='width:60%; padding:6px 0;'><b>Example</b></td></tr><tr><td style='padding:6px 0;'>a. Circular</td><td style='padding:6px 0;'>1. Swirling a stone tied to a rope</td></tr><tr><td style='padding:6px 0;'>b. Rotatory</td><td style='padding:6px 0;'>2. Rotating top</td></tr><tr><td style='padding:6px 0;'>c. Curvilinear</td><td style='padding:6px 0;'>3. Flight path of a thrown ball</td></tr><tr><td style='padding:6px 0;'>d. Oscillatory</td><td style='padding:6px 0;'>4. Pendulum</td></tr></table>",
+    "ta": "இயக்கத்தை அதன் எடுத்துக்காட்டுடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>இயக்கம்</b></td><td style='width:60%; padding:6px 0;'><b>எடுத்துக்காட்டு</b></td></tr><tr><td style='padding:6px 0;'>a. வட்ட இயக்கம்</td><td style='padding:6px 0;'>1. கயிற்றில் கட்டப்பட்ட கல்லைச் சுழற்றுதல்</td></tr><tr><td style='padding:6px 0;'>b. சுழற்சி இயக்கம்</td><td style='padding:6px 0;'>2. சுழலும் பம்பரம்</td></tr><tr><td style='padding:6px 0;'>c. வளைவு இயக்கம்</td><td style='padding:6px 0;'>3. எறியப்பட்ட பந்தின் பாதை</td></tr><tr><td style='padding:6px 0;'>d. அலைவு இயக்கம்</td><td style='padding:6px 0;'>4. ஊசல்</td></tr></table>",
+    "optionsEn": ["a-2, b-1, c-3, d-4", "a-1, b-2, c-3, d-4", "a-1, b-2, c-4, d-3", "a-3, b-2, c-1, d-4"],
+    "optionsTa": ["a-2, b-1, c-3, d-4", "a-1, b-2, c-3, d-4", "a-1, b-2, c-4, d-3", "a-3, b-2, c-1, d-4"],
+    "answer": 1
+  },
+  {
+    "type": "match",
+    "en": "Match the animal with its feature.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>Animal</b></td><td style='width:60%; padding:6px 0;'><b>Feature</b></td></tr><tr><td style='padding:6px 0;'>a. Camel</td><td style='padding:6px 0;'>1. Gills</td></tr><tr><td style='padding:6px 0;'>b. Fish</td><td style='padding:6px 0;'>2. Hollow, light bones</td></tr><tr><td style='padding:6px 0;'>c. Frog</td><td style='padding:6px 0;'>3. Hump with stored fat</td></tr><tr><td style='padding:6px 0;'>d. Bird</td><td style='padding:6px 0;'>4. Adult breathes through skin, lungs and bucco-pharyngeal region</td></tr></table>",
+    "ta": "விலங்கை அதன் அம்சத்துடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>விலங்கு</b></td><td style='width:60%; padding:6px 0;'><b>அம்சம்</b></td></tr><tr><td style='padding:6px 0;'>a. ஒட்டகம்</td><td style='padding:6px 0;'>1. செவுள்கள்</td></tr><tr><td style='padding:6px 0;'>b. மீன்</td><td style='padding:6px 0;'>2. உள்ளீடற்ற, இலகுவான எலும்புகள்</td></tr><tr><td style='padding:6px 0;'>c. தவளை</td><td style='padding:6px 0;'>3. சேமிக்கப்பட்ட கொழுப்பைக் கொண்ட திமில்</td></tr><tr><td style='padding:6px 0;'>d. பறவை</td><td style='padding:6px 0;'>4. வயது வந்தவை தோல், நுரையீரல் மற்றும் வாய்-தொண்டைப் பகுதி வழியாக சுவாசிக்கின்றன</td></tr></table>",
+    "optionsEn": ["a-3, b-1, c-4, d-2", "a-3, b-1, c-2, d-4", "a-1, b-3, c-4, d-2", "a-4, b-1, c-3, d-2"],
+    "optionsTa": ["a-3, b-1, c-4, d-2", "a-3, b-1, c-2, d-4", "a-1, b-3, c-4, d-2", "a-4, b-1, c-3, d-2"],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "Match the unicellular structure with its function.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>Organism / Structure</b></td><td style='width:60%; padding:6px 0;'><b>Function</b></td></tr><tr><td style='padding:6px 0;'>a. Amoeba</td><td style='padding:6px 0;'>1. Moves with cilia</td></tr><tr><td style='padding:6px 0;'>b. Paramecium</td><td style='padding:6px 0;'>2. Moves with a flagellum</td></tr><tr><td style='padding:6px 0;'>c. Euglena</td><td style='padding:6px 0;'>3. Moves with pseudopodia</td></tr><tr><td style='padding:6px 0;'>d. Contractile vacuole</td><td style='padding:6px 0;'>4. Excretion</td></tr></table>",
+    "ta": "ஒற்றைச் செல் கட்டமைப்பை அதன் செயல்பாட்டுடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>உயிரினம் / கட்டமைப்பு</b></td><td style='width:60%; padding:6px 0;'><b>செயல்பாடு</b></td></tr><tr><td style='padding:6px 0;'>a. அமீபா</td><td style='padding:6px 0;'>1. சிலியா மூலம் நகர்கிறது</td></tr><tr><td style='padding:6px 0;'>b. பரமேசியம்</td><td style='padding:6px 0;'>2. கசையிழை மூலம் நகர்கிறது</td></tr><tr><td style='padding:6px 0;'>c. யூக்லினா</td><td style='padding:6px 0;'>3. போலிக்கால்கள் மூலம் நகர்கிறது</td></tr><tr><td style='padding:6px 0;'>d. சுருங்கும் நுண்குமிழ்</td><td style='padding:6px 0;'>4. கழிவுநீக்கம்</td></tr></table>",
+    "optionsEn": ["a-1, b-2, c-3, d-4", "a-3, b-1, c-2, d-4", "a-3, b-2, c-1, d-4", "a-2, b-1, c-3, d-4"],
+    "optionsTa": ["a-1, b-2, c-3, d-4", "a-3, b-1, c-2, d-4", "a-3, b-2, c-1, d-4", "a-2, b-1, c-3, d-4"],
+    "answer": 1
+  },
+  {
+    "type": "match",
+    "en": "Match the measurement facts.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>Item</b></td><td style='width:60%; padding:6px 0;'><b>Fact</b></td></tr><tr><td style='padding:6px 0;'>a. Standard metre rod</td><td style='padding:6px 0;'>1. Platinum-iridium alloy, kept in Paris</td></tr><tr><td style='padding:6px 0;'>b. Standard kilogram</td><td style='padding:6px 0;'>2. Platinum-iridium bar kept at Sèvres since 1889</td></tr><tr><td style='padding:6px 0;'>c. Metric system</td><td style='padding:6px 0;'>3. Created by the French in 1790</td></tr><tr><td style='padding:6px 0;'>d. Ruler (scale)</td><td style='padding:6px 0;'>4. Invented by William Bedwell in the 16th century</td></tr></table>",
+    "ta": "அளவீட்டு உண்மைகளைப் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பொருள்</b></td><td style='width:60%; padding:6px 0;'><b>உண்மை</b></td></tr><tr><td style='padding:6px 0;'>a. நிலையான மீட்டர் தண்டு</td><td style='padding:6px 0;'>1. பிளாட்டினம்-இரிடியம் கலவை, பாரிஸில் வைக்கப்பட்டுள்ளது</td></tr><tr><td style='padding:6px 0;'>b. நிலையான கிலோகிராம்</td><td style='padding:6px 0;'>2. 1889 முதல் செவ்ரெஸில் வைக்கப்பட்டுள்ள பிளாட்டினம்-இரிடியம் தண்டு</td></tr><tr><td style='padding:6px 0;'>c. மெட்ரிக் முறை</td><td style='padding:6px 0;'>3. 1790 இல் பிரெஞ்சுக்காரர்களால் உருவாக்கப்பட்டது</td></tr><tr><td style='padding:6px 0;'>d. அளவுகோல்</td><td style='padding:6px 0;'>4. 16 ஆம் நூற்றாண்டில் வில்லியம் பெட்வெல்லால் கண்டுபிடிக்கப்பட்டது</td></tr></table>",
+    "optionsEn": ["a-1, b-2, c-4, d-3", "a-2, b-1, c-3, d-4", "a-1, b-2, c-3, d-4", "a-1, b-3, c-2, d-4"],
+    "optionsTa": ["a-1, b-2, c-4, d-3", "a-2, b-1, c-3, d-4", "a-1, b-2, c-3, d-4", "a-1, b-3, c-2, d-4"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the odd one out.",
+    "ta": "பொருந்தாததைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": ["Magnetism", "Gravity", "Kicking a football", "A magnet attracting an iron nail"],
+    "optionsTa": ["காந்தவியல்", "புவியீர்ப்பு", "கால்பந்தை உதைத்தல்", "ஒரு காந்தம் இரும்பு ஆணியை ஈர்த்தல்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the odd one out.",
+    "ta": "பொருந்தாததைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": ["22 carat gold", "Aerated drink", "Tincture of iodine", "Copper wire"],
+    "optionsTa": ["22 காரட் தங்கம்", "கார்பனேற்றப்பட்ட பானம்", "அயோடின் டிஞ்சர்", "செப்பு கம்பி"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the odd one out.",
+    "ta": "பொருந்தாததைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": ["Amoeba", "Paramecium", "Earthworm", "Euglena"],
+    "optionsTa": ["அமீபா", "பரமேசியம்", "மண்புழு", "யூக்லினா"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the odd one out.",
+    "ta": "பொருந்தாததைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": ["Vitamin A", "Vitamin D", "Vitamin K", "Vitamin C"],
+    "optionsTa": ["வைட்டமின் A", "வைட்டமின் D", "வைட்டமின் K", "வைட்டமின் C"],
+    "answer": 3
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): Rest and motion are relative.<br><br>Reason (R): A passenger sitting in a moving bus is at rest to a co-passenger but moving to a person standing outside.",
+    "ta": "Assertion (A): ஓய்வு மற்றும் இயக்கம் ஒப்பீட்டளவில் உள்ளவை.<br><br>Reason (R): நகரும் பேருந்தில் அமர்ந்திருக்கும் பயணி ஒரு சக பயணிக்கு ஓய்வில் இருப்பதாகவும், வெளியே நிற்கும் நபருக்கு நகர்ந்து கொண்டிருப்பதாகவும் தெரிகிறது.",
+    "optionsEn": ["Both A and R are true, and R is the correct explanation of A.", "Both A and R are true, but R is not the correct explanation of A.", "A is true, but R is false.", "A is false, but R is true."],
+    "optionsTa": ["A மற்றும் R இரண்டும் உண்மை, மேலும் R என்பது A விற்கான சரியான விளக்கமாகும்.", "A மற்றும் R இரண்டும் உண்மை, ஆனால் R என்பது A விற்கான சரியான விளக்கமல்ல.", "A உண்மை, ஆனால் R தவறு.", "A தவறு, ஆனால் R உண்மை."],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): An object weighs less on the Moon than on the Earth.<br><br>Reason (R): The mass of the object decreases on the Moon.",
+    "ta": "Assertion (A): ஒரு பொருள் பூமியை விட நிலவில் குறைவான எடையைக் கொண்டுள்ளது.<br><br>Reason (R): நிலவில் பொருளின் நிறை குறைகிறது.",
+    "optionsEn": ["Both A and R are true, and R is the correct explanation of A.", "Both A and R are true, but R is not the correct explanation of A.", "A is true, but R is false.", "A is false, but R is true."],
+    "optionsTa": ["A மற்றும் R இரண்டும் உண்மை, மேலும் R என்பது A விற்கான சரியான விளக்கமாகும்.", "A மற்றும் R இரண்டும் உண்மை, ஆனால் R என்பது A விற்கான சரியான விளக்கமல்ல.", "A உண்மை, ஆனால் R தவறு.", "A தவறு, ஆனால் R உண்மை."],
+    "answer": 2
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): All plants have a taproot system.<br><br>Reason (R): Monocotyledonous plants have a fibrous root system.",
+    "ta": "Assertion (A): அனைத்து தாவரங்களும் ஆணிவேர் முறையைக் கொண்டுள்ளன.<br><br>Reason (R): ஒரு வித்திலைத் தாவரங்கள் இழைவேர் முறையைக் கொண்டுள்ளன.",
+    "optionsEn": ["Both A and R are true, and R is the correct explanation of A.", "Both A and R are true, but R is not the correct explanation of A.", "A is true, but R is false.", "A is false, but R is true."],
+    "optionsTa": ["A மற்றும் R இரண்டும் உண்மை, மேலும் R என்பது A விற்கான சரியான விளக்கமாகும்.", "A மற்றும் R இரண்டும் உண்மை, ஆனால் R என்பது A விற்கான சரியான விளக்கமல்ல.", "A உண்மை, ஆனால் R தவறு.", "A தவறு, ஆனால் R உண்மை."],
+    "answer": 3
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): A turtle spends winter in a dormant condition (hibernation).<br><br>Reason (R): A snail spends the hot, dry period in an inactive state (aestivation).",
+    "ta": "Assertion (A): ஆமை குளிர்காலத்தை உறக்கநிலையில் (hibernation) கழிக்கிறது.<br><br>Reason (R): நத்தை வெப்பமான, வறண்ட காலத்தை செயலற்ற நிலையில் (aestivation) கழிக்கிறது.",
+    "optionsEn": ["Both A and R are true, and R is the correct explanation of A.", "Both A and R are true, but R is not the correct explanation of A.", "A is true, but R is false.", "A is false, but R is true."],
+    "optionsTa": ["A மற்றும் R இரண்டும் உண்மை, மேலும் R என்பது A விற்கான சரியான விளக்கமாகும்.", "A மற்றும் R இரண்டும் உண்மை, ஆனால் R என்பது A விற்கான சரியான விளக்கமல்ல.", "A உண்மை, ஆனால் R தவறு.", "A தவறு, ஆனால் R உண்மை."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the statements:<br><br>I. The SI unit of mass is the kilogram.<br>II. 1000 kilograms make one tonne.<br>III. The weight of an object is the same on the Moon and the Earth.",
+    "ta": "கூற்றுகளைக் கவனியுங்கள்:<br><br>I. நிறையின் SI அலகு கிலோகிராம்.<br>II. 1000 கிலோகிராம் ஒரு டன்னாகும்.<br>III. ஒரு பொருளின் எடை நிலவிலும் பூமியிலும் ஒரே மாதிரியாக இருக்கும்.",
+    "optionsEn": ["I and II only", "II and III only", "I and III only", "I, II and III"],
+    "optionsTa": ["I மற்றும் II மட்டும்", "II மற்றும் III மட்டும்", "I மற்றும் III மட்டும்", "I, II மற்றும் III"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the statements:<br><br>I. The liquid that passes through a filter paper is the filtrate.<br>II. The insoluble solid left on the filter paper is the residue.<br>III. Decantation is carried out before sedimentation.",
+    "ta": "கூற்றுகளைக் கவனியுங்கள்:<br><br>I. வடிகட்டிக் காகிதம் வழியாகச் செல்லும் திரவம் வடிவம் (filtrate).<br>II. வடிகட்டிக் காகிதத்தில் எஞ்சியிருக்கும் கரையாத திடப்பொருள் எச்சம் (residue).<br>III. படிவுக்கு முன் வடித்தெடுத்தல் (decantation) செய்யப்படுகிறது.",
+    "optionsEn": ["I only", "I and II only", "II and III only", "I, II and III"],
+    "optionsTa": ["I மட்டும்", "I மற்றும் II மட்டும்", "II மற்றும் III மட்டும்", "I, II மற்றும் III"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which statement about roots is NOT correct?",
+    "ta": "வேர்கள் பற்றிய எந்தக் கூற்று சரியானது அல்ல?",
+    "optionsEn": ["A root has no nodes and internodes.", "Roots are positively geotropic.", "A taproot system is seen in monocotyledonous plants.", "A root has a root cap at its tip."],
+    "optionsTa": ["வேரில் முடிச்சுகள் மற்றும் இடைமுடிச்சுகள் இல்லை.", "வேர்கள் நேர்மறை புவியீர்ப்பு விசைக்கு உட்பட்டவை.", "ஒரு வித்திலைத் தாவரங்களில் ஆணிவேர் முறை காணப்படுகிறது.", "வேரின் நுனியில் வேர்க்கவசம் உள்ளது."],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the statements:<br><br>I. Vedanthangal, Kodiyakkara and Koondhankulam are bird sanctuaries in Tamil Nadu.<br>II. Hibernation is a summer sleep.<br>III. A snail undergoes aestivation.",
+    "ta": "கூற்றுகளைக் கவனியுங்கள்:<br><br>I. வேடந்தாங்கல், கோடியக்கரை மற்றும் கூந்தன்குளம் ஆகியவை தமிழ்நாட்டில் உள்ள பறவைகள் சரணாலயங்கள்.<br>II. குளிர்கால உறக்கம் (Hibernation) என்பது கோடைகால உறக்கம்.<br>III. நத்தை கோடைக்கால உறக்கத்திற்கு (aestivation) உட்படுகிறது.",
+    "optionsEn": ["I only", "I and II only", "I and III only", "II and III only"],
+    "optionsTa": ["I மட்டும்", "I மற்றும் II மட்டும்", "I மற்றும் III மட்டும்", "II மற்றும் III மட்டும்"],
+    "answer": 2
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false; isSubmitted = false;
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">
+                <span class="option-letter">${String.fromCharCode(65+i)}.</span>
+                <span class="option-text">${opt}</span>
+            </div>`;
+        });
+        let clearBtnHtml = "";
+        if (sel !== null && sel !== undefined) {
+            clearBtnHtml = `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;">
+                <button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button>
+            </div>`;
+        }
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+                ${sel !== null && sel !== undefined ? `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;"><button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button></div>` : ``}
+            </div>
+        `;
+        updateNavButtons(); updatePalette();
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) {
+            userAnswers[currentIndex] = null;
+        } else {
+            userAnswers[currentIndex] = optIndex;
+        }
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+
+    function clearSelection() {
+        if (isSubmitted) return;
+        userAnswers[currentIndex] = null;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    let currentReviewIndex = 0;
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let cssClass = "option-item";
+                let markerHtml = "";
+                if (idx === corr) { cssClass += " correct"; markerHtml = "<div class='marker'>✔</div>"; }
+                else if (u === idx && idx !== corr) { cssClass += " wrong"; markerHtml = "<div class='marker'>✖</div>"; }
+                optsHtml += `<div class="${cssClass}"><span>${String.fromCharCode(65+idx)}. ${optsArray[idx]}</span>${markerHtml}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" id="review-card-${i}" style="display: none;">
+                        <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div class="your-answer">Your Answer: ${userAns}</div>
+                        <div class="correct-answer">Correct Answer: ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        ${optsHtml}
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+        currentReviewIndex = 0;
+        showReviewCard(currentReviewIndex);
+    }
+    function showReviewCard(index) {
+        const cards = document.querySelectorAll(".review-card");
+        if (cards.length === 0) return;
+        cards.forEach(c => c.style.display = "none");
+        cards[index].style.display = "block";
+        document.getElementById("reviewPageText").innerText = `${index + 1} / ${cards.length}`;
+        document.getElementById("prevReviewBtn").disabled = (index === 0);
+        document.getElementById("nextReviewBtn").disabled = (index === cards.length - 1);
+        document.getElementById("reviewPagination").style.display = "flex";
+        window.scrollTo(0, 0);
+    }
+    function navigateReview(direction) {
+        const cards = document.querySelectorAll(".review-card");
+        currentReviewIndex += direction;
+        if (currentReviewIndex >= 0 && currentReviewIndex < cards.length) {
+            showReviewCard(currentReviewIndex);
+        }
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
+            await new Promise(r => setTimeout(r, 600));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+                if (btn) btn.innerText = "✅ Select Save as PDF";
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+        } finally {
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 3000);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        history.replaceState({ resultPage: true }, "", "#result");
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.addEventListener("popstate", function(e) {
+        if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+            history.pushState({ resultPage: true }, "", "#result");
+            confirmLeaveResult();
+        }
+    });
+    function confirmLeaveResult() {
+        if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
+            window.AndroidBridge.exitResultPage();
+        } else {
+            history.back();
+        }
+    }
+    window.checkForReview = function() {
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
+            }
+        }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
