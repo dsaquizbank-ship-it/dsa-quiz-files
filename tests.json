@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-12T07:41:04.793Z",
+  "version": "2026-11-12T07:54:52.305Z",
   "categories": [
     {
       "id": "BANK",
@@ -2119,6 +2119,20 @@
       "releaseTimestamp": 1794556800000,
       "language": "both",
       "createdAt": 1794469264793
+    },
+    {
+      "testId": "UGM-99",
+      "examId": "UG-MAT",
+      "name": "PERT AND CPM – INVENTORY MODELS-EOQ MODELS,CLASSICAL NEWSPAPER BOY PROBLEM UGM-99",
+      "topic": "PERT AND CPM – INVENTORY MODELS-EOQ MODELS,CLASSICAL NEWSPAPER BOY PROBLEM",
+      "durationMinutes": 30,
+      "order": 99,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-99.html",
+      "releaseTimestamp": 1794556800000,
+      "language": "en",
+      "createdAt": 1794470092305
     }
   ]
 }
