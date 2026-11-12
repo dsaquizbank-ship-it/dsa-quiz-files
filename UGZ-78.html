@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>UGZ-78 - BIOTECHNOLOGY SCOPE UGZ-78</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                linebreaks: { automatic: true, width: "container" }
+            },
+            options: { ignoreHtmlClass: "no-mathjax" },
+            chtml: {
+                displayAlign: "left",
+                displayIndent: "0",
+                mtextInheritFont: true
+            },
+            svg: {
+                scale: 0.9,
+                minScale: 0.5,
+                mtextInheritFont: true,
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; color: #10b981; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; white-space: normal; word-wrap: break-word; padding-bottom: 20px; max-width: 100%; overflow-x: auto; }
+        mjx-container { display: inline !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; }
+        .question-text::-webkit-scrollbar { display: none; }
+        .question-text { -ms-overflow-style: none; scrollbar-width: none; }
+        .option-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; word-wrap: break-word; }
+        .option-letter { font-weight: 800; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+        .option-text { flex-grow: 1; min-width: 0; word-wrap: break-word; overflow-wrap: break-word; }
+        .option-text mjx-container { display: inline-block !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; overflow-x: visible !important; }
+        .option-text mjx-container[jax="CHTML"][display="true"] { margin: 0 !important; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
+        .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
+        .review-card .question-text { overflow-x: hidden !important; white-space: normal !important; word-wrap: break-word !important; }
+        .review-card strong { color: var(--text-primary); font-size: 16px; }
+        .review-card .option-item { background-color: var(--rc-bg); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: rgba(40, 167, 69, 0.1); border: 1px solid #28a745; color: #28a745; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; color: #dc3545; }
+        .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
+        .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
+        .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
+        .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px 0; border-top: 1px solid var(--border-light); }
+        .review-nav-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .review-nav-btn:disabled { background: var(--border-light); color: var(--text-primary); opacity: 0.5; cursor: not-allowed; }
+        .review-nav-text { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+        .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { 
+            html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } 
+            .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } 
+            #startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard { display: none !important; } 
+            #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } 
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; } 
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; margin-bottom: 20px !important; display: block !important; } 
+            .review-card .option-item { border: 1px solid #ccc !important; background: white !important; color: black !important; } 
+            .review-card .option-item.correct { background: #e6ffe6 !important; border-color: #28a745 !important; color: black !important; } 
+            .review-card .option-item.wrong { background: #ffe6e6 !important; border-color: #dc3545 !important; color: black !important; } 
+            @page { size: A4; margin: 1.5cm; } 
+        }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">30:00</div>
+            <div class="top-buttons">
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div id="printHeader" style="display: none;">
+            <h1>DR SAHITHA IAS ACADEMY</h1>
+            <h3>ANSWER KEY & DETAILED REVIEW</h3>
+            <p><strong>Test:</strong> UGZ-78 - UGTRB ZOOLOGY</p>
+        </div>
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+            <div id="reviewPagination" class="review-nav-container" style="display: none;">
+                <button class="review-nav-btn" id="prevReviewBtn" onclick="navigateReview(-1)">◀ PREV</button>
+                <span class="review-nav-text" id="reviewPageText">1 / 25</span>
+                <button class="review-nav-btn" id="nextReviewBtn" onclick="navigateReview(1)">NEXT ▶</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "UGTRB ZOOLOGY",
+        testNo: "UGZ-78",
+        date: "13/11/2026",
+        subject: "UGTRB ZOOLOGY",
+        topic: "BIOTECHNOLOGY SCOPE",
+        duration: "30",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "Which combination of scopes accurately reflects the points stated in the text regarding animal biotechnology?<br><br>I. Producing more meat<br>II. Increasing milk production in dairy animals<br>III. Enhancing the immune system of humans directly through vaccines<br>IV. Introducing microbial preparations in animal feed to enhance growth rate",
+    "ta": "விலங்கு உயிரித் தொழில்நுட்பம் தொடர்பாக உரையில் கூறப்பட்டுள்ள புள்ளிகளை எந்த விருப்பங்களின் கலவை துல்லியமாகப் பிரதிபலிக்கிறது?<br><br>I. அதிக இறைச்சி உற்பத்தி செய்தல்<br>II. பால் விலங்குகளில் பால் உற்பத்தியை அதிகரித்தல்<br>III. தடுப்பூசிகள் மூலம் மனிதர்களின் நோயெதிர்ப்பு அமைப்பை நேரடியாக மேம்படுத்துதல்<br>IV. வளர்ச்சி விகிதத்தை அதிகரிக்க விலங்கு தீவனத்தில் நுண்ணுயிர் தயாரிப்புகளை அறிமுகப்படுத்துதல்",
+    "optionsEn": ["I, II, and III only", "I, III, and IV only", "I, II, and IV only", "II, III, and IV only"],
+    "optionsTa": ["I, II மற்றும் III மட்டும்", "I, III மற்றும் IV மட்டும்", "I, II மற்றும் IV மட்டும்", "II, III மற்றும் IV மட்டும்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Where are antibiotics like penicillin generally harvested or obtained?",
+    "ta": "பெனிசிலின் போன்ற நுண்ணுயிர் எதிர்ப்பிகள் பொதுவாக எங்கிருந்து சேகரிக்கப்படுகின்றன அல்லது பெறப்படுகின்றன?",
+    "optionsEn": ["Harvested from fungus, bacteria, etc.", "Synthesized chemically from petroleum byproducts", "Extracted solely from mammalian endocrine glands", "Isolated directly from transgenic plant roots"],
+    "optionsTa": ["பூஞ்சை, பாக்டீரியா போன்றவற்றிலிருந்து சேகரிக்கப்படுகின்றன", "பெட்ரோலியம் துணைப்பொருட்களிலிருந்து வேதியியல் முறையில் தொகுக்கப்படுகின்றன", "பாலூட்டி நாளமில்லாச் சுரப்பிகளிலிருந்து மட்டுமே பிரித்தெடுக்கப்படுகின்றன", "மாற்றியமைக்கப்பட்ட தாவர வேர்களிலிருந்து நேரடியாகத் தனிமைப்படுத்தப்படுகின்றன"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which transgenic aquatic organisms are specifically developed to increase fish production?",
+    "ta": "மீன் உற்பத்தியை அதிகரிக்க குறிப்பாக உருவாக்கப்பட்ட மாற்றியமைக்கப்பட்ட நீர்வாழ் உயிரினங்கள் எவை?",
+    "optionsEn": ["Organotypic tissue-cultured prawns", "Transgenic fishes and shrimps", "Recombinant E. coli aquatic variants", "Monolayer-cultured marine species"],
+    "optionsTa": ["உறுப்பு வகை திசு வளர்ப்பு இறால்கள்", "மாற்றியமைக்கப்பட்ட மீன்கள் மற்றும் இறால்கள்", "மறுசீரமைக்கப்பட்ட ஈ. கோலை நீர்வாழ் வகைகள்", "ஒற்றை அடுக்கு வளர்ப்பு கடல் இனங்கள்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "What does Genomics primarily deal with according to the text?",
+    "ta": "உரையின்படி, மரபணுத்தொகுப்பியல் (Genomics) முதன்மையாக எதைக் கையாள்கிறது?",
+    "optionsEn": ["Computer-based sequencing of the genome of an organism", "Clinical industrial fermentation using animal cell cultures", "Artificial insemination and embryo splitting technologies", "Western blotting confirmative diagnostic procedures"],
+    "optionsTa": ["ஒரு உயிரினத்தின் மரபணுத்தொகுப்பை கணினி அடிப்படையிலான தரவரிசைப்படுத்துதல்", "விலங்கு செல் வளர்ப்புகளைப் பயன்படுத்தி மருத்துவத் தொழில்துறை நொதித்தல்", "செயற்கை கருவூட்டல் மற்றும் கரு பிளவு தொழில்நுட்பங்கள்", "வெஸ்டர்ன் பிளாட்டிங் உறுதிப்படுத்தும் கண்டறியும் நடைமுறைகள்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which entities are coordinated by the Department of Biotechnology (DBT) for special research programmes?",
+    "ta": "சிறப்பு ஆராய்ச்சித் திட்டங்களுக்காக உயிரித் தொழில்நுட்பத் துறையால் (DBT) எந்த நிறுவனங்கள் ஒருங்கிணைக்கப்படுகின்றன?",
+    "optionsEn": ["International space and nuclear agencies", "Agricultural cooperative banks and dairy farms", "Forensic crime laboratories and legal parentage boards", "Research institutes, universities, and industries"],
+    "optionsTa": ["சர்வதேச விண்வெளி மற்றும் அணுசக்தி நிறுவனங்கள்", "வேளாண் கூட்டுறவு வங்கிகள் மற்றும் பால் பண்ணைகள்", "தடயவியல் குற்றவியல் ஆய்வகங்கள் மற்றும் சட்ட தந்தைமை வாரியங்கள்", "ஆராய்ச்சி நிறுவனங்கள், பல்கலைக்கழகங்கள் மற்றும் தொழில்துறைகள்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which institution houses the Biotechnology Information Centre (BIC) dedicated to Oncogene Research?",
+    "ta": "புற்றுநோய் மரபணு ஆராய்ச்சிக்காக அர்ப்பணிக்கப்பட்ட உயிரித் தொழில்நுட்ப தகவல் மையத்தை (BIC) எந்த நிறுவனம் கொண்டுள்ளது?",
+    "optionsEn": ["Centre for Cellular and Molecular Biology Research (CCMB), Hyderabad", "National Institute of Immunology (NII), New Delhi", "Bose Institute, Kolkata", "MK University, Madurai"],
+    "optionsTa": ["செல் மற்றும் மூலக்கூறு உயிரியல் ஆராய்ச்சி மையம் (CCMB), ஹைதராபாத்", "தேசிய நோயெதிர்ப்பியல் நிறுவனம் (NII), புது தில்லி", "போஸ் நிறுவனம், கொல்கத்தா", "எம்.கே. பல்கலைக்கழகம், மதுரை"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which R&D priority area focuses heavily on marine applications alongside aquaculture?",
+    "ta": "நீர்வளர்ப்புடன் கூடுதலாக கடல் பயன்பாடுகளில் அதிக கவனம் செலுத்தும் ஆராய்ச்சி மற்றும் மேம்பாட்டு முன்னுரிமைப் பகுதி எது?",
+    "optionsEn": ["Aquaculture and Marine Biotechnology", "Fuel, Fodder, Biomass and Green cover", "Integrated systems in Biotechnology", "Microbial and Industrial Biotechnology"],
+    "optionsTa": ["நீர்வளர்ப்பு மற்றும் கடல் உயிரித் தொழில்நுட்பம்", "எரிபொருள், தீவனம், உயிர்ப்பொருள் மற்றும் பசுமைப் போர்வை", "உயிரித் தொழில்நுட்பத்தில் ஒருங்கிணைந்த அமைப்புகள்", "நுண்ணுயிர் மற்றும் தொழில்துறை உயிரித் தொழில்நுட்பம்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Among the following options, which institution is explicitly listed as being located in Karnal?",
+    "ta": "பின்வரும் விருப்பங்களில், கர்னாலில் அமைந்துள்ளதாக வெளிப்படையாகப் பட்டியலிடப்பட்டுள்ள நிறுவனம் எது?",
+    "optionsEn": ["National Dairy Research Institute (NDRI)", "Indian Veterinary Research Institute (IVRI)", "Central Food and Technology Research Institute (CFTRI)", "Central Drug Research Institute (CDRI)"],
+    "optionsTa": ["தேசிய பால் ஆராய்ச்சி நிறுவனம் (NDRI)", "இந்திய கால்நடை ஆராய்ச்சி நிறுவனம் (IVRI)", "மத்திய உணவு மற்றும் தொழில்நுட்ப ஆராய்ச்சி நிறுவனம் (CFTRI)", "மத்திய மருந்து ஆராய்ச்சி நிறுவனம் (CDRI)"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "What do the four bases of DNA provide instructions for, which in turn determine life activities?",
+    "ta": "DNA-வின் நான்கு காரங்கள் எதற்கான வழிமுறைகளை வழங்குகின்றன, அவை வாழ்க்கைச் செயல்பாடுகளைத் தீர்மானிக்கின்றன?",
+    "optionsEn": ["Enucleated diploid cell nuclei", "Organotypic tissue monolayer grafts", "Recombinant plasmid vectors exclusively", "Thousands of proteins"],
+    "optionsTa": ["கருவற்ற இரட்டைமடி செல் உட்கருக்கள்", "உறுப்பு வகை திசு ஒற்றை அடுக்கு ஒட்டுதல்", "மறுசீரமைக்கப்பட்ட பிளாஸ்மிட் வெக்டர்கள் மட்டுமே", "ஆயிரக்கணக்கான புரதங்கள்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is TRUE about the flow of genetic information as depicted in Figure?",
+    "ta": "படத்தில் சித்தரிக்கப்பட்டுள்ளபடி மரபணு தகவலின் ஓட்டம் பற்றிய பின்வரும் கூற்றுகளில் எது சரியானது?",
+    "optionsEn": ["Protein → mRNA → DNA", "DNA → mRNA → Protein", "DNA → Protein → mRNA", "mRNA → DNA → Protein"],
+    "optionsTa": ["புரதம் → mRNA → DNA", "DNA → mRNA → புரதம்", "DNA → புரதம் → mRNA", "mRNA → DNA → புரதம்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "\"Anything in the cell is formed of protein or is the result of a protein's action.\" Which of the following conclusions can be drawn from this statement?",
+    "ta": "\"செல்லில் உள்ள எதுவும் புரதத்தால் ஆனது அல்லது ஒரு புரதத்தின் செயல்பாட்டின் விளைவாகும்.\" இந்தக் கூற்றிலிருந்து பின்வரும் எந்த முடிவை எடுக்க முடியும்?",
+    "optionsEn": ["Proteins are only found in the nucleus.", "Proteins play a central role in all cellular structures and functions.", "DNA is not necessary for protein formation.", "Proteins are only involved in metabolic activities, not structure."],
+    "optionsTa": ["புரதங்கள் கருவில் மட்டுமே காணப்படுகின்றன.", "அனைத்து செல் கட்டமைப்புகள் மற்றும் செயல்பாடுகளிலும் புரதங்கள் முக்கிய பங்கு வகிக்கின்றன.", "புரத உருவாக்கத்திற்கு DNA தேவையில்லை.", "புரதங்கள் வளர்சிதை மாற்ற செயல்பாடுகளில் மட்டுமே ஈடுபடுகின்றன, கட்டமைப்பில் அல்ல."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "The central dogma is called a \"general rule\" because:",
+    "ta": "மத்திய கோட்பாடு (central dogma) ஒரு \"பொது விதி\" என்று அழைக்கப்படுகிறது, ஏனெனில்:",
+    "optionsEn": ["It applies only to plants.", "It applies only to animals.", "All living beings follow it in the expression of genes.", "It applies only to bacteria."],
+    "optionsTa": ["இது தாவரங்களுக்கு மட்டுமே பொருந்தும்.", "இது விலங்குகளுக்கு மட்டுமே பொருந்தும்.", "மரபணு வெளிப்பாட்டில் அனைத்து உயிரினங்களும் இதைப் பின்பற்றுகின்றன.", "இது பாக்டீரியாவுக்கு மட்டுமே பொருந்தும்."],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "The mRNA sequence is shown as AUG CAG GUU. If the codons are read sequentially and are non-overlapping, how many amino acids would this sequence code for?",
+    "ta": "mRNA வரிசை AUG CAG GUU எனக் காட்டப்பட்டுள்ளது. கோடான்கள் தொடர்ச்சியாகவும் ஒன்றுடன் ஒன்று ஒன்றிணையாமலும் படிக்கப்பட்டால், இந்த வரிசை எத்தனை அமினோ அமிலங்களுக்குக் குறியாக அமையும்?",
+    "optionsEn": ["1", "2", "3", "9"],
+    "optionsTa": ["1", "2", "3", "9"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Termination codons \"do not encode for any amino acid.\" If a termination codon appears in the middle of an mRNA sequence due to a mutation, what would likely happen?",
+    "ta": "நிறுத்தக் கோடான்கள் \"எந்த அமினோ அமிலத்திற்கும் குறியாக அமைவதில்லை.\" ஒரு பிறழ்வு காரணமாக mRNA வரிசையின் நடுவில் நிறுத்தக் கோடான் தோன்றினால், என்ன நிகழ வாய்ப்புள்ளது?",
+    "optionsEn": ["Protein synthesis would continue normally.", "Protein synthesis would terminate prematurely.", "The codon would be read as an initiation codon.", "The mRNA would become a DNA molecule."],
+    "optionsTa": ["புரதத் தொகுப்பு இயல்பாகத் தொடரும்.", "புரதத் தொகுப்பு முன்கூட்டியே நிறைவடையும்.", "கோடான் துவக்கக் கோடானாகப் படிக்கப்படும்.", "mRNA ஒரு DNA மூலக்கூறாக மாறும்."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Restriction enzymes are a \"special group of nucleases.\" What distinguishes them from other nucleases?",
+    "ta": "தடை நொதிகள் (Restriction enzymes) ஒரு \"சிறப்பு நியூக்ளியேஸ் குழு\" ஆகும். மற்ற நியூக்ளியேஸ்களிடமிருந்து அவற்றை வேறுபடுத்துவது எது?",
+    "optionsEn": ["They make specific cuts on DNA strands to produce fragments.", "They only degrade RNA.", "They are found only in viruses.", "They synthesize DNA rather than cleave it."],
+    "optionsTa": ["DNA இழைகளில் குறிப்பிட்ட வெட்டுக்களைச் செய்து துண்டுகளை உருவாக்குகின்றன.", "அவை RNA-வை மட்டுமே சிதைக்கின்றன.", "அவை வைரஸ்களில் மட்டுமே காணப்படுகின்றன.", "அவை DNA-வை வெட்டுவதற்குப் பதிலாகத் தொகுக்கின்றன."],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Based on Table 3.1, which statement correctly describes the sequence of cutting for Type I and Type II enzymes?",
+    "ta": "அட்டவணை 3.1 இன் அடிப்படையில், வகை I மற்றும் வகை II நொதிகளின் வெட்டு வரிசையை எந்தக் கூற்று சரியாக விவரிக்கிறது?",
+    "optionsEn": ["Type I: specific; Type II: non-specific", "Type I: non-specific; Type II: specific", "Both are specific", "Both are non-specific"],
+    "optionsTa": ["வகை I: குறிப்பானது; வகை II: குறிப்பற்றது", "வகை I: குறிப்பற்றது; வகை II: குறிப்பானது", "இரண்டும் குறிப்பானவை", "இரண்டும் குறிப்பற்றவை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "\"when ligase is added to a mixture of DNA fragments, the complementary sticky ends rejoin.\" What does this imply about the requirement for ligase function?",
+    "ta": "\"DNA துண்டுகளின் கலவையில் லைகேஸ் சேர்க்கப்படும்போது, நிரப்பு ஒட்டும் முனைகள் மீண்டும் இணைகின்றன.\" லைகேஸ் செயல்பாட்டிற்கான தேவை பற்றி இது என்ன குறிக்கிறது?",
+    "optionsEn": ["Ligase can join any two DNA fragments regardless of their ends.", "Ligase requires complementary sticky ends to rejoin DNA fragments.", "Ligase only works on blunt ends.", "Ligase works only in the presence of restriction enzymes."],
+    "optionsTa": ["முனைகளைப் பொருட்படுத்தாமல் லைகேஸ் எந்த இரு DNA துண்டுகளையும் இணைக்க முடியும்.", "DNA துண்டுகளை மீண்டும் இணைக்க லைகேஸ்க்கு நிரப்பு ஒட்டும் முனைகள் தேவை.", "லைகேஸ் மொட்டை முனைகளில் மட்டுமே செயல்படுகிறது.", "தடை நொதிகள் முன்னிலையில் மட்டுமே லைகேஸ் செயல்படுகிறது."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which enzyme is isolated from Arthrobacter luteus?",
+    "ta": "ஆர்த்ரோபாக்டர் லூட்டியஸிலிருந்து எந்த நொதி தனிமைப்படுத்தப்படுகிறது?",
+    "optionsEn": ["Hae II", "Alu II", "Bal I", "Sau 3 A I"],
+    "optionsTa": ["Hae II", "Alu II", "Bal I", "Sau 3 A I"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "What is PCR?",
+    "ta": "PCR என்றால் என்ன?",
+    "optionsEn": ["A technique to produce proteins from DNA", "A technique to produce multiple copies of DNA from a single fragment by repeated cycles", "A technique to separate proteins based on size", "A technique to transfer DNA between organisms"],
+    "optionsTa": ["DNA-விலிருந்து புரதங்களை உற்பத்தி செய்யும் ஒரு நுட்பம்", "தொடர்ச்சியான சுழற்சிகள் மூலம் ஒரு துண்டிலிருந்து DNA-வின் பல நகல்களை உற்பத்தி செய்யும் ஒரு நுட்பம்", "அளவின் அடிப்படையில் புரதங்களைப் பிரிக்கும் ஒரு நுட்பம்", "உயிரினங்களுக்கிடையே DNA-வை மாற்றும் ஒரு நுட்பம்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "\"In a matter of 5 hours, millions of copies of DNAs are produced in the same tube.\" What is the underlying principle that allows this exponential amplification?",
+    "ta": "\"5 மணி நேரத்தில், அதே குழாயில் லட்சக்கணக்கான DNA நகல்கள் உற்பத்தி செய்யப்படுகின்றன.\" இந்த அதிவேகப் பெருக்கத்தை அனுமதிக்கும் அடிப்படைக் கொள்கை என்ன?",
+    "optionsEn": ["Each cycle doubles the number of DNA molecules.", "Each cycle adds one DNA molecule.", "Each cycle produces a random number of DNA molecules.", "Each cycle destroys half of the DNA molecules."],
+    "optionsTa": ["ஒவ்வொரு சுழற்சியும் DNA மூலக்கூறுகளின் எண்ணிக்கையை இரட்டிப்பாக்குகிறது.", "ஒவ்வொரு சுழற்சியும் ஒரு DNA மூலக்கூறைச் சேர்க்கிறது.", "ஒவ்வொரு சுழற்சியும் சீரற்ற எண்ணிக்கையிலான DNA மூலக்கூறுகளை உற்பத்தி செய்கிறது.", "ஒவ்வொரு சுழற்சியும் பாதி DNA மூலக்கூறுகளை அழிக்கிறது."],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "The desired gene is introduced into another organism using a \"suitable vector.\" What is the role of the vector?",
+    "ta": "\"பொருத்தமான வெக்டர்\" ஒன்றைப் பயன்படுத்தி விரும்பிய மரபணு மற்றொரு உயிரினத்தில் அறிமுகப்படுத்தப்படுகிறது. வெக்டரின் பங்கு என்ன?",
+    "optionsEn": ["To destroy the host cell", "To carry the desired gene into the host organism", "To provide the 3'-OH group for polymerization", "To degrade the host's DNA"],
+    "optionsTa": ["புரவலன் உயிரணுவை அழிக்க", "விரும்பிய மரபணுவை புரவலன் உயிரினத்திற்குள் எடுத்துச் செல்ல", "பாலிமரைசேஷனுக்கு 3'-OH குழுவை வழங்க", "புரவலனின் DNA-வைச் சிதைக்க"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "The desired gene can be obtained from a \"DNA Library.\" What does this imply?",
+    "ta": "\"DNA நூலகத்திலிருந்து\" விரும்பிய மரபணுவைப் பெறலாம். இது என்ன குறிக்கிறது?",
+    "optionsEn": ["A collection of DNA fragments that can be screened to find a specific gene", "A library building where DNA is stored physically", "A type of vector used in cloning", "A technique to amplify DNA"],
+    "optionsTa": ["ஒரு குறிப்பிட்ட மரபணுவைக் கண்டறிய பரிசோதிக்கக்கூடிய DNA துண்டுகளின் தொகுப்பு", "DNA இயற்பியல் ரீதியாகச் சேமிக்கப்படும் நூலகக் கட்டிடம்", "குளோனிங்கில் பயன்படுத்தப்படும் ஒரு வகை வெக்டர்", "DNA-வைப் பெருக்கும் ஒரு நுட்பம்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "The cDNA synthesized on mRNA is single-stranded. What is required to convert it into double-stranded DNA?",
+    "ta": "mRNA-வில் தொகுக்கப்படும் cDNA ஒற்றை இழையாகும். அதை இரட்டை இழை DNA-வாக மாற்ற என்ன தேவை?",
+    "optionsEn": ["Reverse transcriptase and nucleotides", "DNA polymerase and nucleotides", "Ribonuclease and ethanol", "Protease and SDS"],
+    "optionsTa": ["தலைகீழ் டிரான்ஸ்கிரிப்டேஸ் மற்றும் நியூக்ளியோடைடுகள்", "DNA பாலிமரேஸ் மற்றும் நியூக்ளியோடைடுகள்", "ரைபோநியூக்ளியேஸ் மற்றும் எத்தனால்", "புரோட்டீஸ் மற்றும் SDS"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "What is the role of a cloning vector in genetic engineering?",
+    "ta": "மரபணுப் பொறியியலில் குளோனிங் வெக்டரின் பங்கு என்ன?",
+    "optionsEn": ["To transfer a desired gene to a host cell", "To degrade the desired gene", "To produce proteins directly", "To act as a restriction enzyme"],
+    "optionsTa": ["விரும்பிய மரபணுவை புரவலன் உயிரணுவிற்கு மாற்ற", "விரும்பிய மரபணுவைச் சிதைக்க", "புரதங்களை நேரடியாக உற்பத்தி செய்ய", "தடை நொதியாகச் செயல்பட"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "\"The desired gene may be hydrolysed by cellular enzymes immediately after introduction.\" What does this imply about the need for a cloning vector?",
+    "ta": "\"அறிமுகப்படுத்தப்பட்ட உடனேயே விரும்பிய மரபணு செல்லுலார் நொதிகளால் நீர்ப்பகுக்கப்படலாம்.\" குளோனிங் வெக்டரின் தேவை பற்றி இது என்ன குறிக்கிறது?",
+    "optionsEn": ["The vector protects the desired gene from being degraded by cellular enzymes.", "The vector enhances the degradation of the desired gene.", "The vector has no role in protecting the gene.", "The vector itself is degraded by cellular enzymes."],
+    "optionsTa": ["வெக்டர், விரும்பிய மரபணுவை செல்லுலார் நொதிகளால் சிதைக்கப்படுவதிலிருந்து பாதுகாக்கிறது.", "வெக்டர், விரும்பிய மரபணுவின் சிதைவை அதிகரிக்கிறது.", "மரபணுவைப் பாதுகாப்பதில் வெக்டருக்கு எந்தப் பங்கும் இல்லை.", "வெக்டர் செல்லுலார் நொதிகளால் சிதைக்கப்படுகிறது."],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "\"A suitable cloning vector is chosen and cut with a restriction enzyme. The desired gene is inserted into the cleaved vector by using DNA ligase.\" What is the role of DNA ligase in this process?",
+    "ta": "\"பொருத்தமான குளோனிங் வெக்டர் தேர்ந்தெடுக்கப்பட்டு தடை நொதியால் வெட்டப்படுகிறது. DNA லைகேஸைப் பயன்படுத்தி விரும்பிய மரபணு வெட்டப்பட்ட வெக்டரில் செருகப்படுகிறது.\" இந்தச் செயல்பாட்டில் DNA லைகேஸின் பங்கு என்ன?",
+    "optionsEn": ["It cuts the vector DNA.", "It joins the desired gene to the cleaved vector.", "It degrades the desired gene.", "It amplifies the vector DNA."],
+    "optionsTa": ["இது வெக்டர் DNA-வை வெட்டுகிறது.", "இது விரும்பிய மரபணுவை வெட்டப்பட்ட வெக்டருடன் இணைக்கிறது.", "இது விரும்பிய மரபணுவைச் சிதைக்கிறது.", "இது வெக்டர் DNA-வைப் பெருக்குகிறது."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "How is Bioinformatics defined in the context of biological sciences?",
+    "ta": "உயிரியல் அறிவியலின் சூழலில் உயிரியல் தகவலியல் (Bioinformatics) எவ்வாறு வரையறுக்கப்படுகிறது?",
+    "optionsEn": ["The collection and storage of a vast array of information about DNA sequencing data and use of such data in further research and development", "The sequencing of human DNA and identifying all human genes", "The computer-based sequencing of proteins and cellular metabolites", "The transplantation of diploid nuclei into enucleated eggs"],
+    "optionsTa": ["DNA தரவரிசைப்படுத்தல் தரவு பற்றிய பரந்த அளவிலான தகவல்களைச் சேகரித்து சேமித்தல் மற்றும் மேலதிக ஆராய்ச்சி மற்றும் மேம்பாட்டில் அத்தகைய தரவுகளைப் பயன்படுத்துதல்", "மனித DNA-வை தரவரிசைப்படுத்துதல் மற்றும் அனைத்து மனித மரபணுக்களையும் அடையாளம் காணுதல்", "புரதங்கள் மற்றும் செல்லுலார் வளர்சிதை மாற்றங்களின் கணினி அடிப்படையிலான தரவரிசைப்படுத்துதல்", "கருவற்ற முட்டைகளில் இரட்டைமடி உட்கருக்களை மாற்றுதல்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which Indian agencies under the administrative control of the Government of India are mentioned as promoting biotechnology R&D activities?",
+    "ta": "இந்திய அரசாங்கத்தின் நிர்வாகக் கட்டுப்பாட்டின் கீழ் உள்ள எந்த இந்திய நிறுவனங்கள் உயிரித் தொழில்நுட்ப ஆராய்ச்சி மற்றும் மேம்பாட்டு நடவடிக்கைகளை ஊக்குவிப்பதாகக் குறிப்பிடப்பட்டுள்ளன?",
+    "optionsEn": ["DBT, DST, CSIR, ICAR, ICMR, IARI, etc.", "TDB, NBTB, and Ministry of Science exclusively", "Human Genome Project committees only", "State agricultural and dairy boards"],
+    "optionsTa": ["DBT, DST, CSIR, ICAR, ICMR, IARI, போன்றவை", "TDB, NBTB மற்றும் அறிவியல் அமைச்சகம் மட்டும்", "மனித மரபணுத்தொகுப்பு திட்டக் குழுக்கள் மட்டும்", "மாநில வேளாண் மற்றும் பால் வாரியங்கள்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which test serves as the confirmative test for many diseases?",
+    "ta": "பல நோய்களுக்கான உறுதிப்படுத்தும் சோதனையாக எந்தச் சோதனை செயல்படுகிறது?",
+    "optionsEn": ["Southern blotting", "ELISA", "Western blotting", "RT-PCR"],
+    "optionsTa": ["சதர்ன் பிளாட்டிங்", "எலைசா", "வெஸ்டர்ன் பிளாட்டிங்", "RT-PCR"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "The text states that \"The precipitate is dissolved in ethanol-sodium chloride solution. It contains DNA.\" What is the role of ethanol in this step?",
+    "ta": "\"வீழ்படிவு எத்தனால்-சோடியம் குளோரைடு கரைசலில் கரைக்கப்படுகிறது. அதில் DNA உள்ளது\" என்று உரை கூறுகிறது. இந்தப் படியில் எத்தனாலின் பங்கு என்ன?",
+    "optionsEn": ["It dissolves the DNA.", "It precipitates the DNA.", "It degrades the RNA.", "It activates the DNA polymerase."],
+    "optionsTa": ["இது DNA-வைக் கரைக்கிறது.", "இது DNA-வை வீழ்படிவாக்குகிறது.", "இது RNA-வைச் சிதைக்கிறது.", "இது DNA பாலிமரேஸைச் செயல்படுத்துகிறது."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "The plasmid DNA is separated from other cell components by which method?",
+    "ta": "பிளாஸ்மிட் DNA மற்ற செல் கூறுகளிலிருந்து எந்த முறையால் பிரிக்கப்படுகிறது?",
+    "optionsEn": ["Electrophoresis", "Centrifugation", "Chromatography", "Filtration"],
+    "optionsTa": ["மின்னியக்கவியல்", "மையவிலக்கு", "நிறச்சாரல் முறை", "வடிகட்டுதல்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Two types of cuts made by restriction enzymes. Which of the following statements correctly distinguishes them?",
+    "ta": "தடை நொதிகளால் செய்யப்படும் இரண்டு வகையான வெட்டுக்கள். பின்வரும் எந்தக் கூற்று அவற்றைச் சரியாக வேறுபடுத்துகிறது?",
+    "optionsEn": ["Sticky ends are produced by cutting both strands at the same position; blunt ends are produced by cutting at different positions.", "Sticky ends have single-stranded tails; blunt ends are cut along the line of symmetry without overhangs.", "Sticky ends are non-complementary; blunt ends are complementary.", "Sticky ends are produced only by Ball; blunt ends are produced only by EcoRI."],
+    "optionsTa": ["இரு இழைகளையும் ஒரே நிலையில் வெட்டுவதன் மூலம் ஒட்டும் முனைகள் உருவாகின்றன; வெவ்வேறு நிலைகளில் வெட்டுவதன் மூலம் மொட்டை முனைகள் உருவாகின்றன.", "ஒட்டும் முனைகளில் ஒற்றை இழை வால்கள் உள்ளன; மொட்டை முனைகள் எந்த மேலோட்டமும் இல்லாமல் சமச்சீர் கோட்டில் வெட்டப்படுகின்றன.", "ஒட்டும் முனைகள் நிரப்பு அல்ல; மொட்டை முனைகள் நிரப்பாக இருக்கும்.", "ஒட்டும் முனைகள் Ball மூலம் மட்டுமே உருவாகின்றன; மொட்டை முனைகள் EcoRI மூலம் மட்டுமே உருவாகின்றன."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "What is the result of transformation for the recipient cell?",
+    "ta": "பெறுநர் செல்லிற்கான மாற்றத்தின் (transformation) விளைவு என்ன?",
+    "optionsEn": ["The cell loses its original genetic properties.", "The cell gets a new genetic property.", "The cell stops dividing.", "The cell becomes a virus."],
+    "optionsTa": ["செல் அதன் அசல் மரபணு பண்புகளை இழக்கிறது.", "செல் ஒரு புதிய மரபணு பண்பைப் பெறுகிறது.", "செல் பிரிவதை நிறுத்துகிறது.", "செல் ஒரு வைரஸாக மாறுகிறது."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following methods for introducing rDNA involves the use of a \"gene gun\" or similar physical force?",
+    "ta": "rDNA-வை அறிமுகப்படுத்தும் பின்வரும் எந்த முறையில் \"மரபணு துப்பாக்கி\" அல்லது அதுபோன்ற இயற்பியல் விசை பயன்படுத்தப்படுகிறது?",
+    "optionsEn": ["Transformation", "Electroporation", "Shot gun method", "Liposome mediated fusion"],
+    "optionsTa": ["மாற்றம்", "மின்துளைவு முறை", "ஷாட் கன் முறை", "லிப்போசோம் மத்தியஸ்த இணைவு"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statements correctly distinguishes microinjection from the shot gun method?",
+    "ta": "பின்வரும் எந்தக் கூற்று நுண் ஊசி முறையை (microinjection) ஷாட் கன் முறையிலிருந்து சரியாக வேறுபடுத்துகிறது?",
+    "optionsEn": ["Microinjection uses a syringe, while the shot gun method uses a microprojectile gun.", "Microinjection uses electric shock, while the shot gun method uses liposomes.", "Microinjection uses gold particles, while the shot gun method uses a syringe.", "Microinjection is used only for plant cells, while the shot gun method is used only for animal cells."],
+    "optionsTa": ["நுண் ஊசி முறை ஒரு ஊசியைப் பயன்படுத்துகிறது, அதே சமயம் ஷாட் கன் முறை ஒரு நுண் எறிகணு துப்பாக்கியைப் பயன்படுத்துகிறது.", "நுண் ஊசி முறை மின் அதிர்ச்சியைப் பயன்படுத்துகிறது, அதே சமயம் ஷாட் கன் முறை லிப்போசோம்களைப் பயன்படுத்துகிறது.", "நுண் ஊசி முறை தங்கத் துகள்களைப் பயன்படுத்துகிறது, அதே சமயம் ஷாட் கன் முறை ஒரு ஊசியைப் பயன்படுத்துகிறது.", "நுண் ஊசி முறை தாவர செல்களுக்கு மட்டுமே பயன்படுத்தப்படுகிறது, அதே சமயம் ஷாட் கன் முறை விலங்கு செல்களுக்கு மட்டுமே பயன்படுத்தப்படுகிறது."],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "What is the purpose of insertional inactivation in gene cloning?",
+    "ta": "மரபணு குளோனிங்கில் செருகல் செயலிழப்பின் (insertional inactivation) நோக்கம் என்ன?",
+    "optionsEn": ["To identify the presence of rDNA or cloned gene in the host cell", "To amplify the rDNA", "To introduce rDNA into the host cell", "To degrade the host cell's DNA"],
+    "optionsTa": ["புரவலன் செல்லில் rDNA அல்லது குளோன் செய்யப்பட்ட மரபணு இருப்பதை அடையாளம் காண", "rDNA-வைப் பெருக்க", "புரவலன் செல்லில் rDNA-வை அறிமுகப்படுத்த", "புரவலன் செல்லின் DNA-வைச் சிதைக்க"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "If a plasmid contains a Tet gene and a desired gene is inserted into it, how would you identify the transformed cells that have taken up the recombinant plasmid?",
+    "ta": "ஒரு பிளாஸ்மிடில் Tet மரபணு உள்ளது மற்றும் அதில் விரும்பிய மரபணு செருகப்பட்டால், மறுசீரமைக்கப்பட்ட பிளாஸ்மிட்டை எடுத்துக்கொண்ட மாற்றமடைந்த செல்களை எவ்வாறு அடையாளம் காண்பீர்கள்?",
+    "optionsEn": ["Grow them on a medium containing tetracycline; only cells with inactivated Tet will grow.", "Grow them on a medium containing tetracycline; cells with inactivated Tet will NOT grow, while cells with intact Tet will grow.", "Grow them on a medium without tetracycline; all cells will grow equally.", "Use electroporation to identify them."],
+    "optionsTa": ["டெட்ராசைக்கிளின் கொண்ட ஊடகத்தில் வளர்க்கவும்; செயலிழந்த Tet உள்ள செல்கள் மட்டுமே வளரும்.", "டெட்ராசைக்கிளின் கொண்ட ஊடகத்தில் வளர்க்கவும்; செயலிழந்த Tet உள்ள செல்கள் வளராது, அதே சமயம் அப்படியே உள்ள Tet கொண்ட செல்கள் வளரும்.", "டெட்ராசைக்கிளின் இல்லாத ஊடகத்தில் வளர்க்கவும்; அனைத்து செல்களும் சமமாக வளரும்.", "அவற்றை அடையாளம் காண மின்துளைவு முறையைப் பயன்படுத்தவும்."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "What is the principle behind colony hybridization?",
+    "ta": "காலனி கலப்பினமாக்கலின் (colony hybridization) பின்னணியில் உள்ள கொள்கை என்ன?",
+    "optionsEn": ["The rDNA of the transformed cell will base pair with radio labelled complementary mRNA.", "The rDNA will bind with radio labelled antibodies.", "The rDNA will be inactivated by insertion.", "The rDNA will be amplified by PCR."],
+    "optionsTa": ["மாற்றமடைந்த செல்லின் rDNA கதிரியக்க லேபிள் செய்யப்பட்ட நிரப்பு mRNA உடன் இணையும்.", "rDNA கதிரியக்க லேபிள் செய்யப்பட்ட ஆன்டிபாடிகளுடன் பிணைக்கும்.", "செருகல் மூலம் rDNA செயலிழக்கும்.", "PCR மூலம் rDNA பெருக்கப்படும்."],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statements is TRUE about the insertional inactivation method described in the text?",
+    "ta": "உரையில் விவரிக்கப்பட்டுள்ள செருகல் செயலிழப்பு முறை பற்றிய பின்வரும் கூற்றுகளில் எது சரியானது?",
+    "optionsEn": ["The desired gene is inserted into the Tet gene, making it non-functional, and transformed cells cannot grow on tetracycline.", "The desired gene is inserted into the Tet gene, making it more functional, and transformed cells grow faster on tetracycline.", "The Tet gene is removed from the plasmid before inserting the desired gene.", "The transformed cells are identified by their ability to produce antigenic proteins."],
+    "optionsTa": ["விரும்பிய மரபணு Tet மரபணுவில் செருகப்பட்டு, அதை செயலிழக்கச் செய்கிறது, மேலும் மாற்றமடைந்த செல்கள் டெட்ராசைக்கிளினில் வளர முடியாது.", "விரும்பிய மரபணு Tet மரபணுவில் செருகப்பட்டு, அதை மேலும் செயல்படுத்துகிறது, மேலும் மாற்றமடைந்த செல்கள் டெட்ராசைக்கிளினில் வேகமாக வளரும்.", "விரும்பிய மரபணுவைச் செருகுவதற்கு முன்பு Tet மரபணு பிளாஸ்மிட்டிலிருந்து அகற்றப்படுகிறது.", "எதிர்ப்பு புரதங்களை உற்பத்தி செய்யும் திறனால் மாற்றமடைந்த செல்கள் அடையாளம் காணப்படுகின்றன."],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "The desired gene may be hydrolysed by \"cellular enzymes.\" What type of enzymes are likely responsible for this hydrolysis?",
+    "ta": "விரும்பிய மரபணு \"செல்லுலார் நொதிகளால்\" நீர்ப்பகுக்கப்படலாம். இந்த நீர்ப்பகுப்புக்கு எந்த வகை நொதிகள் காரணமாக இருக்க வாய்ப்புள்ளது?",
+    "optionsEn": ["Nucleases (e.g., restriction enzymes or exonucleases)", "Proteases", "Ligases", "Polymerases"],
+    "optionsTa": ["நியூக்ளியேஸ்கள் (எ.கா., தடை நொதிகள் அல்லது எக்ஸோநியூக்ளியேஸ்கள்)", "புரோட்டீஸ்கள்", "லைகேஸ்கள்", "பாலிமரேஸ்கள்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is the best definition of a cloning vector?",
+    "ta": "பின்வருவனவற்றுள் குளோனிங் வெக்டரின் சிறந்த வரையறை எது?",
+    "optionsEn": ["A DNA molecule that carries a desired gene into a host cell and protects it from degradation", "An enzyme that cuts DNA", "A host cell that receives a desired gene", "A protein that is produced by a desired gene"],
+    "optionsTa": ["விரும்பிய மரபணுவை புரவலன் செல்லுக்குள் எடுத்துச் செல்லும் மற்றும் சிதைவிலிருந்து பாதுகாக்கும் ஒரு DNA மூலக்கூறு", "DNA-வை வெட்டும் ஒரு நொதி", "விரும்பிய மரபணுவைப் பெறும் ஒரு புரவலன் செல்", "விரும்பிய மரபணுவால் உற்பத்தி செய்யப்படும் ஒரு புரதம்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Why is a suitable vector necessary for gene cloning?",
+    "ta": "மரபணு குளோனிங்கிற்கு பொருத்தமான வெக்டர் ஏன் அவசியம்?",
+    "optionsEn": ["Because the chance for expression of the desired gene is very poor without a vector, and it may be hydrolysed by cellular enzymes.", "Because the desired gene cannot be isolated without a vector.", "Because the host cell cannot survive without a vector.", "Because the vector provides energy for the host cell."],
+    "optionsTa": ["ஏனெனில் வெக்டர் இல்லாமல் விரும்பிய மரபணுவின் வெளிப்பாட்டிற்கான வாய்ப்பு மிகவும் குறைவு, மேலும் அது செல்லுலார் நொதிகளால் நீர்ப்பகுக்கப்படலாம்.", "ஏனெனில் வெக்டர் இல்லாமல் விரும்பிய மரபணுவைத் தனிமைப்படுத்த முடியாது.", "ஏனெனில் வெக்டர் இல்லாமல் புரவலன் செல் உயிர் வாழ முடியாது.", "ஏனெனில் வெக்டர் புரவலன் செல்லுக்கு ஆற்றலை வழங்குகிறது."],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which vector would be most suitable for carrying a large DNA segment of 40 kbp to bacteria?",
+    "ta": "40 kbp அளவுள்ள ஒரு பெரிய DNA துண்டை பாக்டீரியாவுக்கு எடுத்துச் செல்ல மிகவும் பொருத்தமான வெக்டர் எது?",
+    "optionsEn": ["Plasmid", "Viral DNA", "Cosmid", "Ti plasmid"],
+    "optionsTa": ["பிளாஸ்மிட்", "வைரஸ் DNA", "காஸ்மிட்", "Ti பிளாஸ்மிட்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "\"Some plasmids replicate only in the cells from which they were isolated, but fail to replicate in the host cell.\" What does this imply about the selection of a plasmid vector?",
+    "ta": "\"சில பிளாஸ்மிட்கள் அவை தனிமைப்படுத்தப்பட்ட செல்களில் மட்டுமே பிரதிபலிக்கின்றன, ஆனால் புரவலன் செல்லில் பிரதிபலிக்கத் தவறிவிடுகின்றன.\" பிளாஸ்மிட் வெக்டரின் தேர்வு பற்றி இது என்ன குறிக்கிறது?",
+    "optionsEn": ["Any plasmid can be used as a vector regardless of its replication ability in the host.", "A plasmid vector must be able to replicate in the host cell for successful gene cloning.", "Plasmids cannot replicate in any host cell.", "Replication is not important for gene cloning."],
+    "optionsTa": ["புரவலனில் அதன் பிரதிபலிப்புத் திறனைப் பொருட்படுத்தாமல் எந்தப் பிளாஸ்மிட்டையும் வெக்டராகப் பயன்படுத்தலாம்.", "வெற்றிகரமான மரபணு குளோனிங்கிற்கு ஒரு பிளாஸ்மிட் வெக்டர் புரவலன் செல்லில் பிரதிபலிக்கக்கூடியதாக இருக்க வேண்டும்.", "பிளாஸ்மிட்கள் எந்தப் புரவலன் செல்லிலும் பிரதிபலிக்க முடியாது.", "மரபணு குளோனிங்கிற்கு பிரதிபலிப்பு முக்கியமல்ல."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is a characteristic feature of an ideal plasmid vector?",
+    "ta": "பின்வருவனவற்றுள் சிறந்த பிளாஸ்மிட் வெக்டரின் சிறப்பியல்பு எது?",
+    "optionsEn": ["It is easily isolated from the bacterial cells.", "It lacks an origin of replication.", "It cannot be passed on to daughter cells.", "It has no restriction sites."],
+    "optionsTa": ["இது பாக்டீரியா செல்களிலிருந்து எளிதில் தனிமைப்படுத்தப்படுகிறது.", "இதில் பிரதிபலிப்பு தோற்றம் இல்லை.", "இதை சேய் செல்களுக்கு அனுப்ப முடியாது.", "இதில் தடை தளங்கள் இல்லை."],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "The text mentions that natural plasmids \"confer pathogenicity to the host.\" What does this mean?",
+    "ta": "இயற்கை பிளாஸ்மிட்கள் \"புரவலனுக்கு நோய்க்கிருமித்தன்மையை அளிக்கின்றன\" என்று உரை குறிப்பிடுகிறது. இதன் பொருள் என்ன?",
+    "optionsEn": ["They make the host organism disease-causing.", "They make the host organism resistant to antibiotics.", "They help the host organism grow faster.", "They prevent the host organism from replicating."],
+    "optionsTa": ["அவை புரவலன் உயிரினத்தை நோய் உண்டாக்கக்கூடியதாக மாற்றுகின்றன.", "அவை புரவலன் உயிரினத்தை நுண்ணுயிர் எதிர்ப்பிகளுக்கு எதிர்ப்புத் திறன் கொண்டதாக மாற்றுகின்றன.", "அவை புரவலன் உயிரினம் வேகமாக வளர உதவுகின்றன.", "அவை புரவலன் உயிரினம் பிரதிபலிப்பதைத் தடுக்கின்றன."],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "According to the text, which of the following is an example of a constructed or artificial vector?",
+    "ta": "உரையின்படி, பின்வருவனவற்றுள் எது கட்டமைக்கப்பட்ட அல்லது செயற்கை வெக்டருக்கு எடுத்துக்காட்டு?",
+    "optionsEn": ["Col E1 of E. coli", "pBR322", "Ti plasmid", "RP plasmid of Pseudomonas"],
+    "optionsTa": ["ஈ. கோலையின் Col E1", "pBR322", "Ti பிளாஸ்மிட்", "சூடோமோனாஸின் RP பிளாஸ்மிட்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Why can pBR322 carry relatively large DNA segments of 5-10 kbp despite being only 4.4 kbp in size?",
+    "ta": "pBR322 4.4 kbp அளவு மட்டுமே இருந்தபோதிலும், 5-10 kbp அளவுள்ள ஒப்பீட்டளவில் பெரிய DNA துண்டுகளை ஏன் எடுத்துச் செல்ல முடியும்?",
+    "optionsEn": ["Because pBR322 has a high copy number", "Because bacterial cells can uptake DNAs of up to 15 kbp size, allowing pBR322 to carry larger segments", "Because pBR322 has two selectable markers", "Because pBR322 is a natural plasmid"],
+    "optionsTa": ["ஏனெனில் pBR322 அதிக நகல் எண்ணைக் கொண்டுள்ளது", "ஏனெனில் பாக்டீரியா செல்கள் 15 kbp வரை அளவுள்ள DNA-வை உள்ளெடுக்க முடியும், இது pBR322 பெரிய துண்டுகளை எடுத்துச் செல்ல அனுமதிக்கிறது", "ஏனெனில் pBR322 இரண்டு தேர்ந்தெடுக்கக்கூடிய குறிப்பான்களைக் கொண்டுள்ளது", "ஏனெனில் pBR322 ஒரு இயற்கை பிளாஸ்மிட்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statements about pBR322 is TRUE?",
+    "ta": "pBR322 பற்றிய பின்வரும் கூற்றுகளில் எது சரியானது?",
+    "optionsEn": ["It is a small plasmid of 4363 base pairs with a copy number of 15.", "It has only one selectable marker.", "It cannot replicate in E. coli.", "It has no unique restriction sites."],
+    "optionsTa": ["இது 4363 தள ஜோடிகளைக் கொண்ட ஒரு சிறிய பிளாஸ்மிட் ஆகும், இதன் நகல் எண் 15.", "இதில் ஒரே ஒரு தேர்ந்தெடுக்கக்கூடிய குறிப்பான் உள்ளது.", "இது ஈ. கோலையில் பிரதிபலிக்க முடியாது.", "இதில் தனித்துவமான தடை தளங்கள் இல்லை."],
+    "answer": 0
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false; isSubmitted = false;
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">
+                <span class="option-letter">${String.fromCharCode(65+i)}.</span>
+                <span class="option-text">${opt}</span>
+            </div>`;
+        });
+        let clearBtnHtml = "";
+        if (sel !== null && sel !== undefined) {
+            clearBtnHtml = `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;">
+                <button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button>
+            </div>`;
+        }
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+                ${sel !== null && sel !== undefined ? `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;"><button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button></div>` : ``}
+            </div>
+        `;
+        updateNavButtons(); updatePalette();
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) {
+            userAnswers[currentIndex] = null;
+        } else {
+            userAnswers[currentIndex] = optIndex;
+        }
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+
+    function clearSelection() {
+        if (isSubmitted) return;
+        userAnswers[currentIndex] = null;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    let currentReviewIndex = 0;
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let cssClass = "option-item";
+                let markerHtml = "";
+                if (idx === corr) { cssClass += " correct"; markerHtml = "<div class='marker'>✔</div>"; }
+                else if (u === idx && idx !== corr) { cssClass += " wrong"; markerHtml = "<div class='marker'>✖</div>"; }
+                optsHtml += `<div class="${cssClass}"><span>${String.fromCharCode(65+idx)}. ${optsArray[idx]}</span>${markerHtml}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" id="review-card-${i}" style="display: none;">
+                        <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div class="your-answer">Your Answer: ${userAns}</div>
+                        <div class="correct-answer">Correct Answer: ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        ${optsHtml}
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+        currentReviewIndex = 0;
+        showReviewCard(currentReviewIndex);
+    }
+    function showReviewCard(index) {
+        const cards = document.querySelectorAll(".review-card");
+        if (cards.length === 0) return;
+        cards.forEach(c => c.style.display = "none");
+        cards[index].style.display = "block";
+        document.getElementById("reviewPageText").innerText = `${index + 1} / ${cards.length}`;
+        document.getElementById("prevReviewBtn").disabled = (index === 0);
+        document.getElementById("nextReviewBtn").disabled = (index === cards.length - 1);
+        document.getElementById("reviewPagination").style.display = "flex";
+        window.scrollTo(0, 0);
+    }
+    function navigateReview(direction) {
+        const cards = document.querySelectorAll(".review-card");
+        currentReviewIndex += direction;
+        if (currentReviewIndex >= 0 && currentReviewIndex < cards.length) {
+            showReviewCard(currentReviewIndex);
+        }
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
+            await new Promise(r => setTimeout(r, 600));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+                if (btn) btn.innerText = "✅ Select Save as PDF";
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+        } finally {
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 3000);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        history.replaceState({ resultPage: true }, "", "#result");
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.addEventListener("popstate", function(e) {
+        if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+            history.pushState({ resultPage: true }, "", "#result");
+            confirmLeaveResult();
+        }
+    });
+    function confirmLeaveResult() {
+        if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
+            window.AndroidBridge.exitResultPage();
+        } else {
+            history.back();
+        }
+    }
+    window.checkForReview = function() {
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
+            }
+        }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
