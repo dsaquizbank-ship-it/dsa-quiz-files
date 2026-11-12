@@ -1482,19 +1482,6 @@
       "language": "en"
     },
     {
-      "testId": "BRE-2",
-      "examId": "BANK-RE",
-      "name": "CODING DECODING BRE-2",
-      "topic": "CODING DECODING",
-      "durationMinutes": 30,
-      "order": 2,
-      "questionCount": 25,
-      "negativeMark": 0.25,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BRE-2.html",
-      "releaseTimestamp": 0,
-      "language": "en"
-    },
-    {
       "testId": "TET-EG-57",
       "examId": "TET-ENGLISH",
       "name": "6th STD  1 TERM UNIT 1- SEA TURTLES-THE FRIENDSHIP TET-EG-55",
