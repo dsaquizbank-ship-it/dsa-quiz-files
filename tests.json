@@ -555,11 +555,11 @@
       "releaseTimestamp": 1792742400000
     },
     {
-      "testId": "NTE-PY-52",
+      "testId": "TET-PY-6",
       "examId": "TET-PSYCHOLOGY",
-      "name": "NTE-PY-52 PERSONALITY",
+      "name": "TET-PY-6 PERSONALITY (Set-1)",
       "durationMinutes": 20,
-      "order": 52,
+      "order": 6,
       "questionCount": 30,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTE-PY-52.html",
