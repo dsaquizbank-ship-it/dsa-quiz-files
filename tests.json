@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-12T07:31:55.357Z",
+  "version": "2026-11-12T07:32:55.374Z",
   "categories": [
     {
       "id": "BANK",
@@ -2081,8 +2081,8 @@
     {
       "testId": "SGS-6",
       "examId": "SSC-GS",
-      "name": "Test SGS-6",
-      "topic": "TISSUE",
+      "name": "BIOLOGY-TISSUE SGS-6",
+      "topic": "BIOLOGY-TISSUE",
       "durationMinutes": 15,
       "order": 6,
       "questionCount": 25,
