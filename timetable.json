@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-12T14:34:31.701Z",
+  "version": "2026-11-12T14:42:32.524Z",
   "timetable": [
     {
       "date": "2026-11-13",
@@ -10,6 +10,66 @@
           "batch": "BANK",
           "faculty": "AAbin",
           "room": "AAbin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-16",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude: Averages",
+          "batch": "BANK",
+          "faculty": "Abin",
+          "room": "Abin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-17",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Quantitative Aptitude: Averages",
+          "batch": "BANK",
+          "faculty": "Abin",
+          "room": "Abin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-18",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability: Inequality",
+          "batch": "BANK",
+          "faculty": "Abin",
+          "room": "Abin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-19",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability: Inequality",
+          "batch": "BANK",
+          "faculty": "Abin",
+          "room": "Abin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-20",
+      "classes": [
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "English: Error Spotting",
+          "batch": "BANK",
+          "faculty": "Abin",
+          "room": "Abin"
         }
       ]
     }
