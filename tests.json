@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-13T01:39:42.599Z",
+  "version": "2026-11-13T01:42:11.318Z",
   "categories": [
     {
       "id": "BANK",
@@ -2177,6 +2177,20 @@
       "releaseTimestamp": 1794556800000,
       "language": "en",
       "createdAt": 1794533982599
+    },
+    {
+      "testId": "REG-2",
+      "examId": "RRB-EG",
+      "name": "CLOZE TEST REG-2 (Set-1)",
+      "topic": "COLZE TEST REG-2",
+      "durationMinutes": 30,
+      "order": 2,
+      "questionCount": 30,
+      "negativeMark": 0.33,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/REG-2.html",
+      "releaseTimestamp": 1794556800000,
+      "language": "en",
+      "createdAt": 1794534131318
     }
   ]
 }
