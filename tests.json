@@ -677,8 +677,8 @@
     {
       "testId": "BQA-1",
       "examId": "BANK-QA",
-      "name": "SIMPLIFICATION BQA-1 (Set-1)",
-      "topic": "SIMPLIFICATION (Set-1)",
+      "name": "SIMPLIFICATION (Set-1)",
+      "topic": "SIMPLIFICATION",
       "durationMinutes": 25,
       "order": 1,
       "questionCount": 25,
@@ -690,8 +690,8 @@
     {
       "testId": "RQA-01",
       "examId": "RRB-QA",
-      "name": "RQA-01 SIMPLIFICATION",
-      "topic": "SIMPLIFICATION (Set-1)",
+      "name": "RQA-01 SIMPLIFICATION (Set-1)",
+      "topic": "SIMPLIFICATION",
       "durationMinutes": 25,
       "order": 1,
       "questionCount": 25,
@@ -703,8 +703,8 @@
     {
       "testId": "SQA-01",
       "examId": "SSC-QA",
-      "name": "SQA-01 SIMPLIFICATION",
-      "topic": "SIMPLIFICATION (Set-1)",
+      "name": "SQA-01 SIMPLIFICATION (Set-1)",
+      "topic": "SIMPLIFICATION",
       "durationMinutes": 25,
       "order": 1,
       "questionCount": 25,
