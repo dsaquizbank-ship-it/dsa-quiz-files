@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-12T18:02:07.016Z",
+  "version": "2026-11-13T07:03:12.295Z",
   "entries": [
     {
       "id": "SCH-1794038030683-992",
@@ -1254,17 +1254,6 @@
       "date": "2026-11-13",
       "testId": "BEG-2",
       "createdAt": "2026-11-12T09:37:11.649Z"
-    },
-    {
-      "id": "SCH-1794218312287-3",
-      "courseId": "SGT",
-      "courseName": "SGT",
-      "subject": "Social Science",
-      "topicId": "SGT-T509",
-      "topicName": "9th - Ancient Civilisations",
-      "date": "2026-11-13",
-      "testId": "SGT-SS-2",
-      "createdAt": "2026-11-09T09:58:32.287Z"
     },
     {
       "id": "SCH-1793973424890-760",
