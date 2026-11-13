@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-13T06:42:27.184Z",
+  "version": "2026-11-13T06:44:36.464Z",
   "categories": [
     {
       "id": "BANK",
@@ -2275,6 +2275,20 @@
       "releaseTimestamp": 1794556800000,
       "language": "en",
       "createdAt": 1794552147184
+    },
+    {
+      "testId": "SGT-SS-37",
+      "examId": "SGT-SOCIALSCIENCE",
+      "name": "9TH ANCIENT CIVILIZATION SGT-SS-37",
+      "topic": "9TH ANCIENT CIVILIZATION",
+      "durationMinutes": 15,
+      "order": 37,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGT-SS-37.html",
+      "releaseTimestamp": 1794556800000,
+      "language": "en",
+      "createdAt": 1794552276464
     }
   ]
 }
