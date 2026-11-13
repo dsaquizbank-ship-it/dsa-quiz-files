@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>SPT-TA-7 - 7TH TERM 2 – TERM 3 SPT-TA-7</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                linebreaks: { automatic: true, width: "container" }
+            },
+            options: { ignoreHtmlClass: "no-mathjax" },
+            chtml: {
+                displayAlign: "left",
+                displayIndent: "0",
+                mtextInheritFont: true
+            },
+            svg: {
+                scale: 0.9,
+                minScale: 0.5,
+                mtextInheritFont: true,
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; color: #10b981; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; white-space: normal; word-wrap: break-word; padding-bottom: 20px; max-width: 100%; overflow-x: auto; }
+        mjx-container { display: inline !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; }
+        .question-text::-webkit-scrollbar { display: none; }
+        .question-text { -ms-overflow-style: none; scrollbar-width: none; }
+        .option-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; word-wrap: break-word; }
+        .option-letter { font-weight: 800; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+        .option-text { flex-grow: 1; min-width: 0; word-wrap: break-word; overflow-wrap: break-word; }
+        .option-text mjx-container { display: inline-block !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; overflow-x: visible !important; }
+        .option-text mjx-container[jax="CHTML"][display="true"] { margin: 0 !important; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
+        .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
+        .review-card .question-text { overflow-x: hidden !important; white-space: normal !important; word-wrap: break-word !important; }
+        .review-card strong { color: var(--text-primary); font-size: 16px; }
+        .review-card .option-item { background-color: var(--rc-bg); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: rgba(40, 167, 69, 0.1); border: 1px solid #28a745; color: #28a745; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; color: #dc3545; }
+        .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
+        .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
+        .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
+        .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px 0; border-top: 1px solid var(--border-light); }
+        .review-nav-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .review-nav-btn:disabled { background: var(--border-light); color: var(--text-primary); opacity: 0.5; cursor: not-allowed; }
+        .review-nav-text { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+        .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { 
+            html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } 
+            .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } 
+            #startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard { display: none !important; } 
+            #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } 
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; } 
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; margin-bottom: 20px !important; display: block !important; } 
+            .review-card .option-item { border: 1px solid #ccc !important; background: white !important; color: black !important; } 
+            .review-card .option-item.correct { background: #e6ffe6 !important; border-color: #28a745 !important; color: black !important; } 
+            .review-card .option-item.wrong { background: #ffe6e6 !important; border-color: #dc3545 !important; color: black !important; } 
+            @page { size: A4; margin: 1.5cm; } 
+        }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">30:00</div>
+            <div class="top-buttons">
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="display: none;">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div id="printHeader" style="display: none;">
+            <h1>DR SAHITHA IAS ACADEMY</h1>
+            <h3>ANSWER KEY & DETAILED REVIEW</h3>
+            <p><strong>Test:</strong> SPT-TA-7 - TAMIL</p>
+        </div>
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+            <div id="reviewPagination" class="review-nav-container" style="display: none;">
+                <button class="review-nav-btn" id="prevReviewBtn" onclick="navigateReview(-1)">◀ PREV</button>
+                <span class="review-nav-text" id="reviewPageText">1 / 25</span>
+                <button class="review-nav-btn" id="nextReviewBtn" onclick="navigateReview(1)">NEXT ▶</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "ta";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "TAMIL",
+        testNo: "SPT-TA-7",
+        date: "13/11/2026",
+        subject: "TAMIL",
+        topic: "7TH TERM 2 – TERM 3",
+        duration: "30",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "assertion",
+    "en": "கூற்று (A): ஒரு செயலின் அல்லது வினையின் பெயராக அமைவது தொழிற்பெயர் எனப்படும்.<br><br>காரணம் (R): தொழிற்பெயர் எண், இடம், காலம், பால் ஆகியவற்றை வெளிப்படையாகக் காட்டும் மற்றும் அனைத்து இடங்களிலும் வரும்.",
+    "ta": "கூற்று (A): ஒரு செயலின் அல்லது வினையின் பெயராக அமைவது தொழிற்பெயர் எனப்படும்.<br><br>காரணம் (R): தொழிற்பெயர் எண், இடம், காலம், பால் ஆகியவற்றை வெளிப்படையாகக் காட்டும் மற்றும் அனைத்து இடங்களிலும் வரும்.",
+    "optionsEn": [
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; காரணம் கூற்றுக்கான சரியான விளக்கம் ஆகும்.",
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; ஆனால், காரணம் கூற்றுக்கான சரியான விளக்கம் அல்ல.",
+      "கூற்று சரி, காரணம் தவறு.",
+      "கூற்று தவறு, காரணம் சரி."
+    ],
+    "optionsTa": [
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; காரணம் கூற்றுக்கான சரியான விளக்கம் ஆகும்.",
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; ஆனால், காரணம் கூற்றுக்கான சரியான விளக்கம் அல்ல.",
+      "கூற்று சரி, காரணம் தவறு.",
+      "கூற்று தவறு, காரணம் சரி."
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "தொழிற்பெயர்கள் எத்தனை வகையாகப் பிரிக்கப்படுகின்றன? அவையாவை?",
+    "ta": "தொழிற்பெயர்கள் எத்தனை வகையாகப் பிரிக்கப்படுகின்றன? அவையாவை?",
+    "optionsEn": ["இருவகைப்படும் (இயற்தொழில், திரிதொழில்)", "மூன்று வகைப்படும் (விகுதி பெற்ற தொழிற்பெயர், முதனிலைத் தொழிற்பெயர், முதனிலை திரிந்த தொழிற்பெயர்)", "நான்கு வகைப்படும் (பெயர், வினை, இடை, உரி)", "ஐந்து வகைப்படும்"],
+    "optionsTa": ["இருவகைப்படும் (இயற்தொழில், திரிதொழில்)", "மூன்று வகைப்படும் (விகுதி பெற்ற தொழிற்பெயர், முதனிலைத் தொழிற்பெயர், முதனிலை திரிந்த தொழிற்பெயர்)", "நான்கு வகைப்படும் (பெயர், வினை, இடை, உரி)", "ஐந்து வகைப்படும்"],
+    "answer": 1
+  },
+  {
+    "type": "match",
+    "en": "பட்டியல் I-ல் உள்ள விகுதி பெற்ற தொழிற்பெயர்களை, பட்டியல் II-ல் உள்ளவற்றுடன் பொருத்திச் சரியான விடையைத் தேர்ந்தெடுக்க:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் II</b></td></tr><tr><td style='padding:6px 0;'>1. தருதல்</td><td></td><td style='padding:6px 0;'>அ. பு</td></tr><tr><td style='padding:6px 0;'>2. நட்பு</td><td></td><td style='padding:6px 0;'>ஆ. வு</td></tr><tr><td style='padding:6px 0;'>3. மறைவு</td><td></td><td style='padding:6px 0;'>இ. தல்</td></tr><tr><td style='padding:6px 0;'>4. கல்வி</td><td></td><td style='padding:6px 0;'>ஈ. வி</td></tr></table>",
+    "ta": "பட்டியல் I-ல் உள்ள விகுதி பெற்ற தொழிற்பெயர்களை, பட்டியல் II-ல் உள்ளவற்றுடன் பொருத்திச் சரியான விடையைத் தேர்ந்தெடுக்க:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் II</b></td></tr><tr><td style='padding:6px 0;'>1. தருதல்</td><td></td><td style='padding:6px 0;'>அ. பு</td></tr><tr><td style='padding:6px 0;'>2. நட்பு</td><td></td><td style='padding:6px 0;'>ஆ. வு</td></tr><tr><td style='padding:6px 0;'>3. மறைவு</td><td></td><td style='padding:6px 0;'>இ. தல்</td></tr><tr><td style='padding:6px 0;'>4. கல்வி</td><td></td><td style='padding:6px 0;'>ஈ. வி</td></tr></table>",
+    "optionsEn": ["1 - இ, 2 - அ, 3 - ஆ, 4 - ஈ", "1 - அ, 2 - ஆ, 3 - இ, 4 - ஈ", "1 - ஈ, 2 - இ, 3 - அ, 4 - ஆ", "1 - இ, 2 - ஈ, 3 - ஆ, 4 - அ"],
+    "optionsTa": ["1 - இ, 2 - அ, 3 - ஆ, 4 - ஈ", "1 - அ, 2 - ஆ, 3 - இ, 4 - ஈ", "1 - ஈ, 2 - இ, 3 - அ, 4 - ஆ", "1 - இ, 2 - ஈ, 3 - ஆ, 4 - அ"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "கீழ்க்கண்டவற்றுள் தொழிற்பெயர் விகுதியாக வராத எழுத்துரு எது?",
+    "ta": "கீழ்க்கண்டவற்றுள் தொழிற்பெயர் விகுதியாக வராத எழுத்துரு எது?",
+    "optionsEn": ["தல், அல்", "அம், கை", "கு, பு", "இன், தான்"],
+    "optionsTa": ["தல், அல்", "அம், கை", "கு, பு", "இன், தான்"],
+    "answer": 3
+  },
+  {
+    "type": "assertion",
+    "en": "கூற்று (A): ஏவல் ஒருமை வினையாக அமையும் வினைச்சொற்களின் பகுதியை 'முதனிலை' என்பர்.<br><br>காரணம் (R): முதனிலை எவ்வகை மாற்றமும் பெறாமல் தொழிற்பெயராக அமைவது முதனிலைத் தொழிற்பெயர் எனப்படும்.",
+    "ta": "கூற்று (A): ஏவல் ஒருமை வினையாக அமையும் வினைச்சொற்களின் பகுதியை 'முதனிலை' என்பர்.<br><br>காரணம் (R): முதனிலை எவ்வகை மாற்றமும் பெறாமல் தொழிற்பெயராக அமைவது முதனிலைத் தொழிற்பெயர் எனப்படும்.",
+    "optionsEn": [
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; காரணம் கூற்றுக்கான சரியான விளக்கம் ஆகும்.",
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; ஆனால், காரணம் கூற்றுக்கான சரியான விளக்கம் அல்ல.",
+      "கூற்று சரி, காரணம் தவறு.",
+      "கூற்று தவறு, காரணம் சரி."
+    ],
+    "optionsTa": [
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; காரணம் கூற்றுக்கான சரியான விளக்கம் ஆகும்.",
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; ஆனால், காரணம் கூற்றுக்கான சரியான விளக்கம் அல்ல.",
+      "கூற்று சரி, காரணம் தவறு.",
+      "கூற்று தவறு, காரணம் சரி."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "கீழ்க்கண்டவற்றுள் முதனிலைத் தொழிற்பெயருக்குப் பொருத்தமான தொடர் எது?",
+    "ta": "கீழ்க்கண்டவற்றுள் முதனிலைத் தொழிற்பெயருக்குப் பொருத்தமான தொடர் எது?",
+    "optionsEn": ["செல்லமாக ஓர் அடி அடித்தான்", "நடத்தல், உண்ணல் என்பவை வாழ்வு முறைகள்", "தமிழ் படிக்கும் பேறு பெற்றேன்", "உணவின் சூடு குறையவில்லை"],
+    "optionsTa": ["செல்லமாக ஓர் அடி அடித்தான்", "நடத்தல், உண்ணல் என்பவை வாழ்வு முறைகள்", "தமிழ் படிக்கும் பேறு பெற்றேன்", "உணவின் சூடு குறையவில்லை"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "கூற்று (A): பெறு, சுடு என்னும் பகுதிகளின் முதலெழுத்து நீண்டு, 'பேறு', 'சூடு' எனத் திரிந்து தொழிற்பெயர்களாக மாறுவது முதனிலை திரிந்த தொழிற்பெயர் ஆகும்.<br><br>கூற்று (B): விடு என்பது 'வீடு' எனவும், கொள் என்பது 'கோள்' எனவும் திரிவது இதன் கீழ் வராது.",
+    "ta": "கூற்று (A): பெறு, சுடு என்னும் பகுதிகளின் முதலெழுத்து நீண்டு, 'பேறு', 'சூடு' எனத் திரிந்து தொழிற்பெயர்களாக மாறுவது முதனிலை திரிந்த தொழிற்பெயர் ஆகும்.<br><br>கூற்று (B): விடு என்பது 'வீடு' எனவும், கொள் என்பது 'கோள்' எனவும் திரிவது இதன் கீழ் வராது.",
+    "optionsEn": ["கூற்று A தவறு, B சரி", "கூற்று A சரி, B தவறு", "இரண்டும் சரி", "இரண்டும் தவறு"],
+    "optionsTa": ["கூற்று A தவறு, B சரி", "கூற்று A சரி, B தவறு", "இரண்டும் சரி", "இரண்டும் தவறு"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "மின்னணுப் பகுதியின்படி, முதனிலை திரிந்த தொழிற்பெயர் இணைகளில் தவறானது எது?",
+    "ta": "மின்னணுப் பகுதியின்படி, முதனிலை திரிந்த தொழிற்பெயர் இணைகளில் தவறானது எது?",
+    "optionsEn": ["விடு -- வீடு", "மின் -- மீன்", "கொள் -- கோள்", "இடி -- இடித்தல்"],
+    "optionsTa": ["விடு -- வீடு", "மின் -- மீன்", "கொள் -- கோள்", "இடி -- இடித்தல்"],
+    "answer": 3
+  },
+  {
+    "type": "match",
+    "en": "பட்டியல் I-ல் உள்ள சொற்களை, பட்டியல் II-ல் உள்ள சரியான தொழிற்பெயர் வகையுடன் பொருத்துக:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் II</b></td></tr><tr><td style='padding:6px 0;'>1. ஓட்டம்</td><td></td><td style='padding:6px 0;'>அ. முதனிலைத் தொழிற்பெயர்</td></tr><tr><td style='padding:6px 0;'>2. பிடி</td><td></td><td style='padding:6px 0;'>ஆ. முதனிலை திரிந்த தொழிற்பெயர்</td></tr><tr><td style='padding:6px 0;'>3. சூடு</td><td></td><td style='padding:6px 0;'>இ. விகுதி பெற்ற தொழிற்பெயர்</td></tr></table>",
+    "ta": "பட்டியல் I-ல் உள்ள சொற்களை, பட்டியல் II-ல் உள்ள சரியான தொழிற்பெயர் வகையுடன் பொருத்துக:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் II</b></td></tr><tr><td style='padding:6px 0;'>1. ஓட்டம்</td><td></td><td style='padding:6px 0;'>அ. முதனிலைத் தொழிற்பெயர்</td></tr><tr><td style='padding:6px 0;'>2. பிடி</td><td></td><td style='padding:6px 0;'>ஆ. முதனிலை திரிந்த தொழிற்பெயர்</td></tr><tr><td style='padding:6px 0;'>3. சூடு</td><td></td><td style='padding:6px 0;'>இ. விகுதி பெற்ற தொழிற்பெயர்</td></tr></table>",
+    "optionsEn": ["1 - இ, 2 - அ, 3 - ஆ", "1 - அ, 2 - ஆ, 3 - இ", "1 - ஆ, 2 - இ, 3 - அ", "1 - இ, 2 - ஆ, 3 - அ"],
+    "optionsTa": ["1 - இ, 2 - அ, 3 - ஆ", "1 - அ, 2 - ஆ, 3 - இ", "1 - ஆ, 2 - இ, 3 - அ", "1 - இ, 2 - ஆ, 3 - அ"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "'படித்தல்' என்னும் சொல் எவ்வகைத் தொழிற்பெயரைக் குறிக்கும்?",
+    "ta": "'படித்தல்' என்னும் சொல் எவ்வகைத் தொழிற்பெயரைக் குறிக்கும்?",
+    "optionsEn": ["விகுதி பெற்ற தொழிற்பெயர்", "முதனிலைத் தொழிற்பெயர்", "முதனிலை திரிந்த தொழிற்பெயர்", "பகாப்பதம்"],
+    "optionsTa": ["விகுதி பெற்ற தொழிற்பெயர்", "முதனிலைத் தொழிற்பெயர்", "முதனிலை திரிந்த தொழிற்பெயர்", "பகாப்பதம்"],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "கூற்று (A): தமிழில் நன்னூல் நூலின்படி 42 ஓரெழுத்து ஒருமொழிகள் உள்ளன.<br><br>காரணம் (R): இவற்றுள் 'நொ', 'து' ஆகிய இரண்டு சொற்களைத் தவிர ஏனைய 40 சொற்களும் குறில் எழுத்துகளாக அமைந்தவை ஆகும்.",
+    "ta": "கூற்று (A): தமிழில் நன்னூல் நூலின்படி 42 ஓரெழுத்து ஒருமொழிகள் உள்ளன.<br><br>காரணம் (R): இவற்றுள் 'நொ', 'து' ஆகிய இரண்டு சொற்களைத் தவிர ஏனைய 40 சொற்களும் குறில் எழுத்துகளாக அமைந்தவை ஆகும்.",
+    "optionsEn": [
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; காரணம் கூற்றுக்கான சரியான விளக்கம் ஆகும்.",
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; ஆனால், காரணம் கூற்றுக்கான சரியான விளக்கம் அல்ல.",
+      "கூற்று சரி, காரணம் தவறு.",
+      "கூற்று தவறு, காரணம் சரி."
+    ],
+    "optionsTa": [
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; காரணம் கூற்றுக்கான சரியான விளக்கம் ஆகும்.",
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; ஆனால், காரணம் கூற்றுக்கான சரியான விளக்கம் அல்ல.",
+      "கூற்று சரி, காரணம் தவறு.",
+      "கூற்று தவறு, காரணம் சரி."
+    ],
+    "answer": 2
+  },
+  {
+    "type": "match",
+    "en": "பட்டியல் I-ல் உள்ள ஓரெழுத்து ஒருமொழிகளை, பட்டியல் II-ல் உள்ள அவற்றுக்கான சரியான பொருளுடன் பொருத்திச் விடையைத் தேர்ந்தெடுக்க:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் II</b></td></tr><tr><td style='padding:6px 0;'>1. ஈ</td><td></td><td style='padding:6px 0;'>அ. அம்பு</td></tr><tr><td style='padding:6px 0;'>2. ஏ</td><td></td><td style='padding:6px 0;'>ஆ. கொடு</td></tr><tr><td style='padding:6px 0;'>3. மை</td><td></td><td style='padding:6px 0;'>இ. அரசன்</td></tr><tr><td style='padding:6px 0;'>4. கோ</td><td></td><td style='padding:6px 0;'>ஈ. அஞ்சனம்</td></tr></table>",
+    "ta": "பட்டியல் I-ல் உள்ள ஓரெழுத்து ஒருமொழிகளை, பட்டியல் II-ல் உள்ள அவற்றுக்கான சரியான பொருளுடன் பொருத்திச் விடையைத் தேர்ந்தெடுக்க:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் II</b></td></tr><tr><td style='padding:6px 0;'>1. ஈ</td><td></td><td style='padding:6px 0;'>அ. அம்பு</td></tr><tr><td style='padding:6px 0;'>2. ஏ</td><td></td><td style='padding:6px 0;'>ஆ. கொடு</td></tr><tr><td style='padding:6px 0;'>3. மை</td><td></td><td style='padding:6px 0;'>இ. அரசன்</td></tr><tr><td style='padding:6px 0;'>4. கோ</td><td></td><td style='padding:6px 0;'>ஈ. அஞ்சனம்</td></tr></table>",
+    "optionsEn": ["1 - ஆ, 2 - அ, 3 - ஈ, 4 - இ", "1 - அ, 2 - ஆ, 3 - இ, 4 - ஈ", "1 - இ, 2 - ஈ, 3 - அ, 4 - ஆ", "1 - ஆ, 2 - இ, 3 - ஈ, 4 - அ"],
+    "optionsTa": ["1 - ஆ, 2 - அ, 3 - ஈ, 4 - இ", "1 - அ, 2 - ஆ, 3 - இ, 4 - ஈ", "1 - இ, 2 - ஈ, 3 - அ, 4 - ஆ", "1 - ஆ, 2 - இ, 3 - ஈ, 4 - அ"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "கீழ்க்கண்டவற்றுள் பகுபதம் மற்றும் அதன் உறுப்புகள் குறித்த சரியான கூற்றைத் தேர்ந்தெடுக்க:",
+    "ta": "கீழ்க்கண்டவற்றுள் பகுபதம் மற்றும் அதன் உறுப்புகள் குறித்த சரியான கூற்றைத் தேர்ந்தெடுக்க:",
+    "optionsEn": ["சிறுசிறு உறுப்புகளாகப் பிரிக்க முடியாத வகையில் அமையும் சொற்கள் பகுபதங்கள் எனப்படும்.", "பகுபத உறுப்புகள் மொத்தம் ஐந்து வகைப்படும்.", "வினைப்பகுபதத்தின் பகுதி கட்டளையாகவே அமையும்.", "பெரும்பாலும் விகுதிக்கும் இடைநிலைக்கும் இடையே இடம்பெறும் மெய்யெழுத்து சந்தி எனப்படும்."],
+    "optionsTa": ["சிறுசிறு உறுப்புகளாகப் பிரிக்க முடியாத வகையில் அமையும் சொற்கள் பகுபதங்கள் எனப்படும்.", "பகுபத உறுப்புகள் மொத்தம் ஐந்து வகைப்படும்.", "வினைப்பகுபதத்தின் பகுதி கட்டளையாகவே அமையும்.", "பெரும்பாலும் விகுதிக்கும் இடைநிலைக்கும் இடையே இடம்பெறும் மெய்யெழுத்து சந்தி எனப்படும்."],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "பெயர்ப்பகுபதத்தின் ஆறு வகைகளையும் அவற்றுக்கான எடுத்துக்காட்டுகளையும் ஒப்பிடுகையில் தவறான இணையைத் தேர்ந்தெடுக்க:",
+    "ta": "பெயர்ப்பகுபதத்தின் ஆறு வகைகளையும் அவற்றுக்கான எடுத்துக்காட்டுகளையும் ஒப்பிடுகையில் தவறான இணையைத் தேர்ந்தெடுக்க:",
+    "optionsEn": ["பொருள் -- பொன்னன் (பொன் + அன்)", "இடம் -- நாடன் (நாடு + அன்)", "சினை -- இனியன் (இனிமை + அன்)", "தொழில் -- உழவன் (உழவு + அன்)"],
+    "optionsTa": ["பொருள் -- பொன்னன் (பொன் + அன்)", "இடம் -- நாடன் (நாடு + அன்)", "சினை -- இனியன் (இனிமை + அன்)", "தொழில் -- உழவன் (உழவு + அன்)"],
+    "answer": 2
+  },
+  {
+    "type": "assertion",
+    "en": "கூற்று 1: பகுபதத்தின் முதலில் அமைந்து முதன்மையான பொருளைத் தருவது 'பகுதி' ஆகும்.<br><br>கூற்று 2: பகுதிக்கும் விகுதிக்கும் இடையில் அமைந்து காலம் அல்லது எதிர்மறையைக் காட்டுவது 'இடைநிலை' ஆகும்.",
+    "ta": "கூற்று 1: பகுபதத்தின் முதலில் அமைந்து முதன்மையான பொருளைத் தருவது 'பகுதி' ஆகும்.<br><br>கூற்று 2: பகுதிக்கும் விகுதிக்கும் இடையில் அமைந்து காலம் அல்லது எதிர்மறையைக் காட்டுவது 'இடைநிலை' ஆகும்.",
+    "optionsEn": ["கூற்று 1 மட்டும் சரி", "கூற்று 2 மட்டும் சரி", "இரண்டும் சரி", "இரண்டும் தவறு"],
+    "optionsTa": ["கூற்று 1 மட்டும் சரி", "கூற்று 2 மட்டும் சரி", "இரண்டும் சரி", "இரண்டும் தவறு"],
+    "answer": 2
+  },
+  {
+    "type": "assertion",
+    "en": "கூற்று (A): பகுபதத்தின் இறுதியில் அமையும் விகுதியானது திணை, பால், எண், இடம் ஆகியவற்றைக் மட்டுமே காட்டும்.<br><br>காரணம் (R): விகுதியானது முற்று அல்லது எச்சம் ஆகியவற்றைக் காட்டுவதில்லை.",
+    "ta": "கூற்று (A): பகுபதத்தின் இறுதியில் அமையும் விகுதியானது திணை, பால், எண், இடம் ஆகியவற்றைக் மட்டுமே காட்டும்.<br><br>காரணம் (R): விகுதியானது முற்று அல்லது எச்சம் ஆகியவற்றைக் காட்டுவதில்லை.",
+    "optionsEn": [
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி.",
+      "கூற்று சரி, காரணம் தவறு.",
+      "கூற்று தவறு, காரணம் சரி.",
+      "கூற்று மற்றும் காரணம் இரண்டும் தவறு."
+    ],
+    "optionsTa": [
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி.",
+      "கூற்று சரி, காரணம் தவறு.",
+      "கூற்று தவறு, காரணம் சரி.",
+      "கூற்று மற்றும் காரணம் இரண்டும் தவறு."
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "'வந்தனன்' என்ற சொல்லைப் பிரிக்கும்போது 'வ' மற்றும் 'ந்' என்பவை எப்படிக் குறிப்பிடப்படுகின்றன?",
+    "ta": "'வந்தனன்' என்ற சொல்லைப் பிரிக்கும்போது 'வ' மற்றும் 'ந்' என்பவை எப்படிக் குறிப்பிடப்படுகின்றன?",
+    "optionsEn": ["பகுதி மற்றும் சந்தி", "பகுதி விகாரம் மற்றும் சந்தி விகாரம்", "இடைநிலை மற்றும் சாரியை", "விகுதி மற்றும் பகுதி"],
+    "optionsTa": ["பகுதி மற்றும் சந்தி", "பகுதி விகாரம் மற்றும் சந்தி விகாரம்", "இடைநிலை மற்றும் சாரியை", "விகுதி மற்றும் பகுதி"],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "கூற்று (A): பகுபத உறுப்புகளாகப் பிரிக்க முடியாத சொல் பகாப்பதம் எனப்படும்.<br><br>காரணம் (R): இவை அடிச்சொல் அல்லது வேர்ச்சொல்லாக அமையும்.",
+    "ta": "கூற்று (A): பகுபத உறுப்புகளாகப் பிரிக்க முடியாத சொல் பகாப்பதம் எனப்படும்.<br><br>காரணம் (R): இவை அடிச்சொல் அல்லது வேர்ச்சொல்லாக அமையும்.",
+    "optionsEn": [
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; காரணம் கூற்றுக்கான சரியான விளக்கம் ஆகும்.",
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; ஆனால், காரணம் கூற்றுக்கான சரியான விளக்கம் அல்ல.",
+      "கூற்று சரி, காரணம் தவறு.",
+      "கூற்று தவறு, காரணம் சரி."
+    ],
+    "optionsTa": [
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; காரணம் கூற்றுக்கான சரியான விளக்கம் ஆகும்.",
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; ஆனால், காரணம் கூற்றுக்கான சரியான விளக்கம் அல்ல.",
+      "கூற்று சரி, காரணம் தவறு.",
+      "கூற்று தவறு, காரணம் சரி."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "பட்டியல் I-ல் உள்ள பகாப்பத வகைகளை, பட்டியல் II-ல் உள்ள எடுத்துக்காட்டுகளுடன் பொருத்திச் சரியான விடையைத் தேர்ந்தெடுக்க:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் II</b></td></tr><tr><td style='padding:6px 0;'>1. பெயர்ப் பகாப்பதம்</td><td></td><td style='padding:6px 0;'>அ. உண், வா</td></tr><tr><td style='padding:6px 0;'>2. வினைப் பகாப்பதம்</td><td></td><td style='padding:6px 0;'>ஆ. நிலம், நீர்</td></tr><tr><td style='padding:6px 0;'>3. இடைப் பகாப்பதம்</td><td></td><td style='padding:6px 0;'>இ. உறு, தவ</td></tr><tr><td style='padding:6px 0;'>4. உரிப் பகாப்பதம்</td><td></td><td style='padding:6px 0;'>ஈ. மன், கொல்</td></tr></table>",
+    "ta": "பட்டியல் I-ல் உள்ள பகாப்பத வகைகளை, பட்டியல் II-ல் உள்ள எடுத்துக்காட்டுகளுடன் பொருத்திச் சரியான விடையைத் தேர்ந்தெடுக்க:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் II</b></td></tr><tr><td style='padding:6px 0;'>1. பெயர்ப் பகாப்பதம்</td><td></td><td style='padding:6px 0;'>அ. உண், வா</td></tr><tr><td style='padding:6px 0;'>2. வினைப் பகாப்பதம்</td><td></td><td style='padding:6px 0;'>ஆ. நிலம், நீர்</td></tr><tr><td style='padding:6px 0;'>3. இடைப் பகாப்பதம்</td><td></td><td style='padding:6px 0;'>இ. உறு, தவ</td></tr><tr><td style='padding:6px 0;'>4. உரிப் பகாப்பதம்</td><td></td><td style='padding:6px 0;'>ஈ. மன், கொல்</td></tr></table>",
+    "optionsEn": ["1 - ஆ, 2 - அ, 3 - ஈ, 4 - இ", "1 - அ, 2 - ஆ, 3 - இ, 4 - ஈ", "1 - இ, 2 - ஈ, 3 - அ, 4 - ஆ", "1 - ஆ, 2 - இ, 3 - ஈ, 4 - அ"],
+    "optionsTa": ["1 - ஆ, 2 - அ, 3 - ஈ, 4 - இ", "1 - அ, 2 - ஆ, 3 - இ, 4 - ஈ", "1 - இ, 2 - ஈ, 3 - அ, 4 - ஆ", "1 - ஆ, 2 - இ, 3 - ஈ, 4 - அ"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "'எழுதினான்' என்னும் சொல் எவ்வகைச் சொல்லைச் சார்ந்தது?",
+    "ta": "'எழுதினான்' என்னும் சொல் எவ்வகைச் சொல்லைச் சார்ந்தது?",
+    "optionsEn": ["பெயர்ப் பகுபதம்", "வினைப் பகுபதம்", "பெயர்ப் பகாப்பதம்", "வினைப் பகாப்பதம்"],
+    "optionsTa": ["பெயர்ப் பகுபதம்", "வினைப் பகுபதம்", "பெயர்ப் பகாப்பதம்", "வினைப் பகாப்பதம்"],
+    "answer": 1
+  },
+  {
+    "type": "assertion",
+    "en": "கூற்று (A): ஓர் எழுத்து தனித்தும், ஒன்றிற்கும் மேற்பட்ட எழுத்துகள் தொடர்ந்தும் வந்து பொருள் தருவது 'சொல்' எனப்படும்.<br><br>காரணம் (R): மொழி, பதம், கிளவி என்பன சொல் என்னும் பொருள் தரும் வேறு சொற்களாகும்.",
+    "ta": "கூற்று (A): ஓர் எழுத்து தனித்தும், ஒன்றிற்கும் மேற்பட்ட எழுத்துகள் தொடர்ந்தும் வந்து பொருள் தருவது 'சொல்' எனப்படும்.<br><br>காரணம் (R): மொழி, பதம், கிளவி என்பன சொல் என்னும் பொருள் தரும் வேறு சொற்களாகும்.",
+    "optionsEn": [
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; காரணம் கூற்றுக்கான சரியான விளக்கம் ஆகும்.",
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; ஆனால், காரணம் கூற்றுக்கான சரியான விளக்கம் அல்ல.",
+      "கூற்று சரி, காரணம் தவறு.",
+      "கூற்று தவறு, காரணம் சரி."
+    ],
+    "optionsTa": [
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; காரணம் கூற்றுக்கான சரியான விளக்கம் ஆகும்.",
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; ஆனால், காரணம் கூற்றுக்கான சரியான விளக்கம் அல்ல.",
+      "கூற்று சரி, காரணம் தவறு.",
+      "கூற்று தவறு, காரணம் சரி."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "கூற்று 1: இலக்கண முறைப்படி சொற்கள் இயற்சொல், திரிசொல், திசைச்சொல், வடசொல் என நான்கு வகைப்படும்.<br><br>கூற்று 2: இலக்கிய வகையில் சொற்கள் பெயர்ச்சொல், வினைச்சொல், இடைச்சொல், உரிச்சொல் என நான்கு வகைப்படும்.",
+    "ta": "கூற்று 1: இலக்கண முறைப்படி சொற்கள் இயற்சொல், திரிசொல், திசைச்சொல், வடசொல் என நான்கு வகைப்படும்.<br><br>கூற்று 2: இலக்கிய வகையில் சொற்கள் பெயர்ச்சொல், வினைச்சொல், இடைச்சொல், உரிச்சொல் என நான்கு வகைப்படும்.",
+    "optionsEn": ["கூற்று 1 மட்டும் சரி", "கூற்று 2 மட்டும் சரி", "இரண்டும் சரி", "இரண்டும் தவறு"],
+    "optionsTa": ["கூற்று 1 மட்டும் சரி", "கூற்று 2 மட்டும் சரி", "இரண்டும் சரி", "இரண்டும் தவறு"],
+    "answer": 3
+  },
+  {
+    "type": "match",
+    "en": "பட்டியல் I-ல் உள்ள இயற்சொற்களையும், பட்டியல் II-ல் உள்ள அவற்றின் வகைகளையும் பொருத்திச் சரியான விடையைத் தேர்ந்தெடுக்க:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் II</b></td></tr><tr><td style='padding:6px 0;'>1. மண், பொன்</td><td></td><td style='padding:6px 0;'>அ. உரி இயற்சொல்</td></tr><tr><td style='padding:6px 0;'>2. நடந்தான், வந்தான்</td><td></td><td style='padding:6px 0;'>ஆ. இடை இயற்சொல்</td></tr><tr><td style='padding:6px 0;'>3. அவனை, அவனால்</td><td></td><td style='padding:6px 0;'>இ. வினை இயற்சொல்</td></tr><tr><td style='padding:6px 0;'>4. மாநகர்</td><td></td><td style='padding:6px 0;'>ஈ. பெயர் இயற்சொல்</td></tr></table>",
+    "ta": "பட்டியல் I-ல் உள்ள இயற்சொற்களையும், பட்டியல் II-ல் உள்ள அவற்றின் வகைகளையும் பொருத்திச் சரியான விடையைத் தேர்ந்தெடுக்க:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் II</b></td></tr><tr><td style='padding:6px 0;'>1. மண், பொன்</td><td></td><td style='padding:6px 0;'>அ. உரி இயற்சொல்</td></tr><tr><td style='padding:6px 0;'>2. நடந்தான், வந்தான்</td><td></td><td style='padding:6px 0;'>ஆ. இடை இயற்சொல்</td></tr><tr><td style='padding:6px 0;'>3. அவனை, அவனால்</td><td></td><td style='padding:6px 0;'>இ. வினை இயற்சொல்</td></tr><tr><td style='padding:6px 0;'>4. மாநகர்</td><td></td><td style='padding:6px 0;'>ஈ. பெயர் இயற்சொல்</td></tr></table>",
+    "optionsEn": ["1 - ஈ, 2 - இ, 3 - ஆ, 4 - அ", "1 - அ, 2 - ஆ, 3 - இ, 4 - ஈ", "1 - இ, 2 - ஈ, 3 - அ, 4 - ஆ", "1 - ஈ, 2 - அ, 3 - ஆ, 4 - இ"],
+    "optionsTa": ["1 - ஈ, 2 - இ, 3 - ஆ, 4 - அ", "1 - அ, 2 - ஆ, 3 - இ, 4 - ஈ", "1 - இ, 2 - ஈ, 3 - அ, 4 - ஆ", "1 - ஈ, 2 - அ, 3 - ஆ, 4 - இ"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "கீழ்க்கண்டவற்றுள் திரிசொல் பற்றிய தவறான கூற்றைத் தேர்ந்தெடுக்க:",
+    "ta": "கீழ்க்கண்டவற்றுள் திரிசொல் பற்றிய தவறான கூற்றைத் தேர்ந்தெடுக்க:",
+    "optionsEn": ["கற்றோருக்கு மட்டுமே விளங்குபவையாகவும் இலக்கியங்களில் மட்டுமே பயின்று வருபவையாகவும் அமையும்.", "திரிசொல் பெயர், வினை, இடை, உரி ஆகிய நான்கு வகையிலும் வரும்.", "'அழுவம்', 'வங்கம்' என்பன பெயர்த் திரிசொற்களுக்கு எடுத்துக்காட்டுகளாகும்.", "'அன்ன', 'மான' என்பன வினைத் திரிசொற்களுக்கு எடுத்துக்காட்டுகளாகும்."],
+    "optionsTa": ["கற்றோருக்கு மட்டுமே விளங்குபவையாகவும் இலக்கியங்களில் மட்டுமே பயின்று வருபவையாகவும் அமையும்.", "திரிசொல் பெயர், வினை, இடை, உரி ஆகிய நான்கு வகையிலும் வரும்.", "'அழுவம்', 'வங்கம்' என்பன பெயர்த் திரிசொற்களுக்கு எடுத்துக்காட்டுகளாகும்.", "'அன்ன', 'மான' என்பன வினைத் திரிசொற்களுக்கு எடுத்துக்காட்டுகளாகும்."],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "பின்வரும் இணைகளில் 'ஒரு பொருள் குறித்த பல திரிசொல்' எது?",
+    "ta": "பின்வரும் இணைகளில் 'ஒரு பொருள் குறித்த பல திரிசொல்' எது?",
+    "optionsEn": ["பூவின் இதழ், உதடு, கண் இமை, பனையேடு, நாளிதழ்", "வங்கம், அம்பி, நாவாய்", "அழுவம், வங்கம், இயம்பினான்", "கூர், கழி, அன்ன"],
+    "optionsTa": ["பூவின் இதழ், உதடு, கண் இமை, பனையேடு, நாளிதழ்", "வங்கம், அம்பி, நாவாய்", "அழுவம், வங்கம், இயம்பினான்", "கூர், கழி, அன்ன"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "ஆகுபெயர் பற்றிய கீழ்க்கண்ட கூற்றுகளில் மிகவும் சரியானதைத் தேர்ந்தெடு:",
+    "ta": "ஆகுபெயர் பற்றிய கீழ்க்கண்ட கூற்றுகளில் மிகவும் சரியானதைத் தேர்ந்தெடு:",
+    "optionsEn": ["ஒன்றன் பெயர் அதனைக் குறிக்காமல் அதனோடு தொடர்புடைய வேறு ஒன்றிற்கு ஆகி வருவது ஆகுபெயர் எனப்படும்.", "ஒன்றன் பெயர் அதனைக் குறிக்காமல் அதனோடு எந்தத் தொடர்பும் இல்லாத வேறு ஒன்றைக் குறிப்பது ஆகுபெயர் ஆகும்.", "ஆகுபெயர்கள் அனைத்துப் பெயர்ச்சொற்களிலும் இல்லாமல், பொருள் மற்றும் இடப்பெயர்களில் மட்டுமே உண்டு.", "ஒன்றன் பெயர் தன்னைக் குறிக்கும் இயல்பான சொல்லை மட்டுமே குறிப்பது ஆகுபெயர் எனப்படும்."],
+    "optionsTa": ["ஒன்றன் பெயர் அதனைக் குறிக்காமல் அதனோடு தொடர்புடைய வேறு ஒன்றிற்கு ஆகி வருவது ஆகுபெயர் எனப்படும்.", "ஒன்றன் பெயர் அதனைக் குறிக்காமல் அதனோடு எந்தத் தொடர்பும் இல்லாத வேறு ஒன்றைக் குறிப்பது ஆகுபெயர் ஆகும்.", "ஆகுபெயர்கள் அனைத்துப் பெயர்ச்சொற்களிலும் இல்லாமல், பொருள் மற்றும் இடப்பெயர்களில் மட்டுமே உண்டு.", "ஒன்றன் பெயர் தன்னைக் குறிக்கும் இயல்பான சொல்லை மட்டுமே குறிப்பது ஆகுபெயர் எனப்படும்."],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "ஆகுபெயர்கள் எத்தனை வகையான பெயர்ச்சொற்களில் செயல்படுகின்றன?",
+    "ta": "ஆகுபெயர்கள் எத்தனை வகையான பெயர்ச்சொற்களில் செயல்படுகின்றன?",
+    "optionsEn": ["நான்கு வகையான பெயர்ச்சொற்கள்", "ஐந்து வகையான பெயர்ச்சொற்கள்", "ஆறு வகையான பெயர்ச்சொற்கள்", "ஏழு வகையான பெயர்ச்சொற்கள்"],
+    "optionsTa": ["நான்கு வகையான பெயர்ச்சொற்கள்", "ஐந்து வகையான பெயர்ச்சொற்கள்", "ஆறு வகையான பெயர்ச்சொற்கள்", "ஏழு வகையான பெயர்ச்சொற்கள்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "\"மல்லிகை சூடினாள்\" - இத்தொடரில் இடம்பெற்றுள்ள ஆகுபெயரின் வகை மற்றும் அதன் காரணம் என்ன?",
+    "ta": "\"மல்லிகை சூடினாள்\" - இத்தொடரில் இடம்பெற்றுள்ள ஆகுபெயரின் வகை மற்றும் அதன் காரணம் என்ன?",
+    "optionsEn": ["இடவாகு பெயர் - இடத்தின் பெயர் அணியைக் குறிப்பது", "பொருளாகு பெயர் (முதலாகு பெயர்) - முழுப்பொருளின் பெயர் அதன் ஓர் உறுப்பாகிய மலரைக் குறிப்பது", "சினையாகு பெயர் - உறுப்பின் பெயர் முழுப்பொருளுக்கு ஆகிவருவது", "காலவாகு பெயர் - காலத்தின் பெயர் பூவைக் குறிப்பது"],
+    "optionsTa": ["இடவாகு பெயர் - இடத்தின் பெயர் அணியைக் குறிப்பது", "பொருளாகு பெயர் (முதலாகு பெயர்) - முழுப்பொருளின் பெயர் அதன் ஓர் உறுப்பாகிய மலரைக் குறிப்பது", "சினையாகு பெயர் - உறுப்பின் பெயர் முழுப்பொருளுக்கு ஆகிவருவது", "காலவாகு பெயர் - காலத்தின் பெயர் பூவைக் குறிப்பது"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "\"சடுகுடு போட்டியில் தமிழ்நாடு வெற்றி பெற்றது\" - இத்தொடர் எவ்வகை ஆகுபெயருக்குச் சான்றாகும்?",
+    "ta": "\"சடுகுடு போட்டியில் தமிழ்நாடு வெற்றி பெற்றது\" - இத்தொடர் எவ்வகை ஆகுபெயருக்குச் சான்றாகும்?",
+    "optionsEn": ["பொருளாகு பெயர்", "காலவாகு பெயர்", "இடவாகு பெயர்", "சினையாகு பெயர்"],
+    "optionsTa": ["பொருளாகு பெயர்", "காலவாகு பெயர்", "இடவாகு பெயர்", "சினையாகு பெயர்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "\"திசம்பர் சூடினாள்\" - இத்தொடரில் காலவாகு பெயர் எதனை உணர்த்துகிறது?",
+    "ta": "\"திசம்பர் சூடினாள்\" - இத்தொடரில் காலவாகு பெயர் எதனை உணர்த்துகிறது?",
+    "optionsEn": ["திசம்பர் மாதத்தில் பிறந்த குழந்தையைக் குறிக்கிறது", "திசம்பர் மாதத்தில் பெய்த மழையைக் குறிக்கிறது", "திசம்பர் மாதத்தில் மலரும் பூவைக் குறிக்கிறது", "திசம்பர் மாத விடுமுறையைக் குறிக்கிறது"],
+    "optionsTa": ["திசம்பர் மாதத்தில் பிறந்த குழந்தையைக் குறிக்கிறது", "திசம்பர் மாதத்தில் பெய்த மழையைக் குறிக்கிறது", "திசம்பர் மாதத்தில் மலரும் பூவைக் குறிக்கிறது", "திசம்பர் மாத விடுமுறையைக் குறிக்கிறது"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "\"தலைக்கு ஒரு பழம் கொடு\" - இத்தொடரின் உட்பொருளும், இடம்பெற்றுள்ள ஆகுபெயரின் வகையும் யாவை?",
+    "ta": "\"தலைக்கு ஒரு பழம் கொடு\" - இத்தொடரின் உட்பொருளும், இடம்பெற்றுள்ள ஆகுபெயரின் வகையும் யாவை?",
+    "optionsEn": ["ஆளுக்கு ஒரு பழம் கொடு - பொருளாகு பெயர்", "ஆளுக்கு ஒரு பழம் கொடு - சினையாகு பெயர்", "தலைவிக்கு ஒரு பழம் கொடு - தொழிலாகு பெயர்", "தலைமைக்கு ஒரு பழம் கொடு - பண்பாகுபெயர்"],
+    "optionsTa": ["ஆளுக்கு ஒரு பழம் கொடு - பொருளாகு பெயர்", "ஆளுக்கு ஒரு பழம் கொடு - சினையாகு பெயர்", "தலைவிக்கு ஒரு பழம் கொடு - தொழிலாகு பெயர்", "தலைமைக்கு ஒரு பழம் கொடு - பண்பாகுபெயர்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "\"இனிப்பு தின்றான்\" - இத்தொடர் எவ்வகை ஆகுபெயர் மற்றும் ஏன்?",
+    "ta": "\"இனிப்பு தின்றான்\" - இத்தொடர் எவ்வகை ஆகுபெயர் மற்றும் ஏன்?",
+    "optionsEn": ["தொழிலாகு பெயர் - பொங்குதல் தொழிலால் உருவானது", "பண்பாகுபெயர் - இனிப்பு என்னும் பண்புப் பெயர் அத்திகாரப் பொருளைக் குறிப்பது", "பண்பாகுபெயர் - இனிப்பு என்னும் பண்புப் பெயர் தின்பண்டத்தைக் குறிப்பது", "பொருளாகு பெயர் - இனிப்பான பொருளின் முழுப்பெயர்"],
+    "optionsTa": ["தொழிலாகு பெயர் - பொங்குதல் தொழிலால் உருவானது", "பண்பாகுபெயர் - இனிப்பு என்னும் பண்புப் பெயர் அத்திகாரப் பொருளைக் குறிப்பது", "பண்பாகுபெயர் - இனிப்பு என்னும் பண்புப் பெயர் தின்பண்டத்தைக் குறிப்பது", "பொருளாகு பெயர் - இனிப்பான பொருளின் முழுப்பெயர்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "\"பொங்கல் உண்டான்\" - இத்தொடரில் பொங்கல் என்பது எதனை உணர்த்துவதால் தொழிலாகு பெயர் ஆயிற்று?",
+    "ta": "\"பொங்கல் உண்டான்\" - இத்தொடரில் பொங்கல் என்பது எதனை உணர்த்துவதால் தொழிலாகு பெயர் ஆயிற்று?",
+    "optionsEn": ["பொங்கல் திருநாளைக் குறிப்பதால்", "பொங்குதல் என்னும் தொழிற்பெயர் அத்தொழிலால் உருவான உணவினைக் குறிப்பதால்", "பொங்கல் வைக்கும் முறையைக் குறிப்பதால்", "பொங்கல் பொங்கும் காலத்தைக் குறிப்பதால்"],
+    "optionsTa": ["பொங்கல் திருநாளைக் குறிப்பதால்", "பொங்குதல் என்னும் தொழிற்பெயர் அத்தொழிலால் உருவான உணவினைக் குறிப்பதால்", "பொங்கல் வைக்கும் முறையைக் குறிப்பதால்", "பொங்கல் பொங்கும் காலத்தைக் குறிப்பதால்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "இரட்டைக்கிளவி பற்றிய கீழ்க்கண்ட கூற்றுகளில் தவறானது எது?",
+    "ta": "இரட்டைக்கிளவி பற்றிய கீழ்க்கண்ட கூற்றுகளில் தவறானது எது?",
+    "optionsEn": ["சொற்கள் இரட்டையாக இணைந்து வரும்.", "பிரித்துப் பார்த்தால் தனித்தனியே பொருள் தரும்.", "பிரித்தால் பொருள் தராது.", "வினைக்கு அடைமொழியாகக் குறிப்புப் பொருளில் வரும்."],
+    "optionsTa": ["சொற்கள் இரட்டையாக இணைந்து வரும்.", "பிரித்துப் பார்த்தால் தனித்தனியே பொருள் தரும்.", "பிரித்தால் பொருள் தராது.", "வினைக்கு அடைமொழியாகக் குறிப்புப் பொருளில் வரும்."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "அடுக்குத்தொடர் எத்தகைய காரணங்களால் ஒரு சொல் ஒன்றுக்கு மேற்பட்ட முறை தொடர்ந்து வரும்?",
+    "ta": "அடுக்குத்தொடர் எத்தகைய காரணங்களால் ஒரு சொல் ஒன்றுக்கு மேற்பட்ட முறை தொடர்ந்து வரும்?",
+    "optionsEn": ["வியப்பு, மகிழ்ச்சி, அமைதி", "அச்சம், விரைவு, சினம்", "சோகம், பெருமை, இரக்கம்", "உயர்வு, தாழ்வு, நடுநிலை"],
+    "optionsTa": ["வியப்பு, மகிழ்ச்சி, அமைதி", "அச்சம், விரைவு, சினம்", "சோகம், பெருமை, இரக்கம்", "உயர்வு, தாழ்வு, நடுநிலை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "அடுக்குத்தொடருக்கும் இரட்டைக்கிளவிக்கும் இடையேயான வேறுபாடுகளில் சரியான இணைக் கூற்று எது?",
+    "ta": "அடுக்குத்தொடருக்கும் இரட்டைக்கிளவிக்கும் இடையேயான வேறுபாடுகளில் சரியான இணைக் கூற்று எது?",
+    "optionsEn": ["அடுக்குத்தொடரைப் பிரித்தால் பொருள் தராது; இரட்டைக்கிளவி பொருள் தரும்.", "அடுக்குத்தொடரில் ஒரே சொல் இரண்டு முறை மட்டுமே வரும்; இரட்டைக்கிளவியில் பலமுறை வரும்.", "அடுக்குத்தொடரில் சொற்கள் தனித்தனியே நிற்கும்; இரட்டைக்கிளவியின் சொற்கள் இணைந்தே நிற்கும்.", "இரட்டைக்கிளவி அச்சம், வெகுளி, உவகை காரணமாக வரும்; அடுக்குத்தொடர் வினைக்கு அடைமொழியாக வரும்."],
+    "optionsTa": ["அடுக்குத்தொடரைப் பிரித்தால் பொருள் தராது; இரட்டைக்கிளவி பொருள் தரும்.", "அடுக்குத்தொடரில் ஒரே சொல் இரண்டு முறை மட்டுமே வரும்; இரட்டைக்கிளவியில் பலமுறை வரும்.", "அடுக்குத்தொடரில் சொற்கள் தனித்தனியே நிற்கும்; இரட்டைக்கிளவியின் சொற்கள் இணைந்தே நிற்கும்.", "இரட்டைக்கிளவி அச்சம், வெகுளி, உவகை காரணமாக வரும்; அடுக்குத்தொடர் வினைக்கு அடைமொழியாக வரும்."],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "\"மழை சடசடவெனப் பெய்தது\" - இத்தொடரில் அடிக்கோடிட்ட சொல் எவ்வகையைச் சார்ந்தது?",
+    "ta": "\"மழை சடசடவெனப் பெய்தது\" - இத்தொடரில் அடிக்கோடிட்ட சொல் எவ்வகையைச் சார்ந்தது?",
+    "optionsEn": ["அடுக்குத்தொடர்", "இரட்டைக்கிளவி", "தொழிலாகு பெயர்", "பண்பாகுபெயர்"],
+    "optionsTa": ["அடுக்குத்தொடர்", "இரட்டைக்கிளவி", "தொழிலாகு பெயர்", "பண்பாகுபெயர்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "அடுக்குத்தொடரில் ஒரே சொல் அதிகபட்சமாக எத்தனை முறை வரை அடுக்கி வரும்?",
+    "ta": "அடுக்குத்தொடரில் ஒரே சொல் அதிகபட்சமாக எத்தனை முறை வரை அடுக்கி வரும்?",
+    "optionsEn": ["இரண்டு முறை", "மூன்று முறை", "நான்கு முறை", "ஐந்து முறை"],
+    "optionsTa": ["இரண்டு முறை", "மூன்று முறை", "நான்கு முறை", "ஐந்து முறை"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "உருவக அணி பற்றிய கீழ்க்கண்ட கூற்றுகளில் சரியானதைத் தேர்ந்தெடு:",
+    "ta": "உருவக அணி பற்றிய கீழ்க்கண்ட கூற்றுகளில் சரியானதைத் தேர்ந்தெடு:",
+    "optionsEn": ["உவமை வேறு, உவமிக்கப்படும் பொருள் வேறு என்று இல்லாமல் இரண்டும் வெவ்வேறாகக் கூறுவது உருவக அணியாகும்.", "உவமை வேறு, உவமிக்கப்படும் பொருள் வேறு என்று இல்லாமல் இரண்டும் ஒன்றே என்பது தோன்றும்படி கூறுவது உருவக அணியாகும்.", "உருவக அணியில் உவமை முன்னும், உவமிக்கப்படும் பொருள் பின்னுமாக அமையும்.", "உவமைக்கும் உவமேயத்திற்கும் இடையே 'போன்ற', 'போல' போன்ற உவம உருபுகள் வெளிப்படையாக வரும்."],
+    "optionsTa": ["உவமை வேறு, உவமிக்கப்படும் பொருள் வேறு என்று இல்லாமல் இரண்டும் வெவ்வேறாகக் கூறுவது உருவக அணியாகும்.", "உவமை வேறு, உவமிக்கப்படும் பொருள் வேறு என்று இல்லாமல் இரண்டும் ஒன்றே என்பது தோன்றும்படி கூறுவது உருவக அணியாகும்.", "உருவக அணியில் உவமை முன்னும், உவமிக்கப்படும் பொருள் பின்னுமாக அமையும்.", "உவமைக்கும் உவமேயத்திற்கும் இடையே 'போன்ற', 'போல' போன்ற உவம உருபுகள் வெளிப்படையாக வரும்."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "'தமிழ்த்தேன்', 'இன்ப வெள்ளம்', 'துன்பக்கடல்' ஆகிய சொற்கள் எவ்வகை அணியை விளக்குகின்றன?",
+    "ta": "'தமிழ்த்தேன்', 'இன்ப வெள்ளம்', 'துன்பக்கடல்' ஆகிய சொற்கள் எவ்வகை அணியை விளக்குகின்றன?",
+    "optionsEn": ["உவமை அணி", "எடுத்துக்காட்டு உவமை அணி", "உருவக அணி", "ஏகதேச உருவக அணி"],
+    "optionsTa": ["உவமை அணி", "எடுத்துக்காட்டு உவமை அணி", "உருவக அணி", "ஏகதேச உருவக அணி"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "\"வையம் தகளியா வார்கடலே நெய்யாக வெய்ய கதிரோன் விளக்காக...\" - இப்பாடலில் பூமி, கடல் மற்றும் கதிரவன் எவ்வாறு உருவகப்படுத்தப்பட்டுள்ளனர்?",
+    "ta": "\"வையம் தகளியா வார்கடலே நெய்யாக வெய்ய கதிரோன் விளக்காக...\" - இப்பாடலில் பூமி, கடல் மற்றும் கதிரவன் எவ்வாறு உருவகப்படுத்தப்பட்டுள்ளனர்?",
+    "optionsEn": ["பூமி விளக்காகவும், கடல் நெய்யாகவும், கதிரவன் சுடராகவும் உருவகப்படுத்தப்பட்டுள்ளன.", "பூமி அகல்விளக்காகவும், கடல் நெய்யாகவும், கதிரவன் சுடராகவும் (விளக்காகவும்) உருவகப்படுத்தப்பட்டுள்ளன.", "பூமி நெய்யாகவும், கடல் விளக்காகவும், கதிரவன் அகல்விளக்காகவும் உருவகப்படுத்தப்பட்டுள்ளன.", "பூமி சுடராகவும், கடல் அகல்விளக்காகவும், கதிரவன் நெய்யாகவும் உருவகப்படுத்தப்பட்டுள்ளன."],
+    "optionsTa": ["பூமி விளக்காகவும், கடல் நெய்யாகவும், கதிரவன் சுடராகவும் உருவகப்படுத்தப்பட்டுள்ளன.", "பூமி அகல்விளக்காகவும், கடல் நெய்யாகவும், கதிரவன் சுடராகவும் (விளக்காகவும்) உருவகப்படுத்தப்பட்டுள்ளன.", "பூமி நெய்யாகவும், கடல் விளக்காகவும், கதிரவன் அகல்விளக்காகவும் உருவகப்படுத்தப்பட்டுள்ளன.", "பூமி சுடராகவும், கடல் அகல்விளக்காகவும், கதிரவன் நெய்யாகவும் உருவகப்படுத்தப்பட்டுள்ளன."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "ஏகதேச உருவக அணியின் இலக்கணக் கூற்றுப்படி சரியானதை அடையாளங்காண்க:",
+    "ta": "ஏகதேச உருவக அணியின் இலக்கணக் கூற்றுப்படி சரியானதை அடையாளங்காண்க:",
+    "optionsEn": ["கூறப்படும் இரு பொருள்களில் இரண்டையுமே உருவகப்படுத்துவது ஏகதேச உருவக அணியாகும்.", "கூறப்படும் இரு பொருள்களில் இரண்டையுமே உருவகப்படுத்தாமல் விடுவது ஏகதேச உருவக அணியாகும்.", "கூறப்படும் இரு பொருள்களில் ஒன்றை மட்டும் உருவகப்படுத்தி, மற்றொன்றை உருவகப்படுத்தாமல் விடுவது ஏகதேச உருவக அணியாகும்.", "உவமை மட்டும் மறைந்து வருவது ஏகதேச உருவக அணியாகும்."],
+    "optionsTa": ["கூறப்படும் இரு பொருள்களில் இரண்டையுமே உருவகப்படுத்துவது ஏகதேச உருவக அணியாகும்.", "கூறப்படும் இரு பொருள்களில் இரண்டையுமே உருவகப்படுத்தாமல் விடுவது ஏகதேச உருவக அணியாகும்.", "கூறப்படும் இரு பொருள்களில் ஒன்றை மட்டும் உருவகப்படுத்தி, மற்றொன்றை உருவகப்படுத்தாமல் விடுவது ஏகதேச உருவக அணியாகும்.", "உவமை மட்டும் மறைந்து வருவது ஏகதேச உருவக அணியாகும்."],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "'ஏகதேசம்' என்னும் சொல்லின் பொருள் என்ன?",
+    "ta": "'ஏகதேசம்' என்னும் சொல்லின் பொருள் என்ன?",
+    "optionsEn": ["முழுமை", "ஒரு பகுதி", "பல பகுதிகள்", "முடிவு."],
+    "optionsTa": ["முழுமை", "ஒரு பகுதி", "பல பகுதிகள்", "முடிவு."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "\"பெருமைக்கும் ஏனைச் சிறுமைக்கும் தத்தம் கருமமே கட்டளைக் கல்.\" - இக்குறளில் வள்ளுவர் கையாண்டுள்ள அணி மற்றும் அதன் விளக்கத்திற்கேற்பப் பொருத்தமான கூற்று எது?",
+    "ta": "\"பெருமைக்கும் ஏனைச் சிறுமைக்கும் தத்தம் கருமமே கட்டளைக் கல்.\" - இக்குறளில் வள்ளுவர் கையாண்டுள்ள அணி மற்றும் அதன் விளக்கத்திற்கேற்பப் பொருத்தமான கூற்று எது?",
+    "optionsEn": ["உருவக அணி - மக்களின் செயல்களை உரைகல்லாகவும், உயர்தாழ்வுகளைப் பொன்னாகவும் முழுமையாக உருவகம் செய்துள்ளார்.", "ஏகதேச உருவக அணி - மக்களின் செயல்களைப் பொன்னின் தரத்தை அறிய உதவும் உரைகல்லாக உருவகம் செய்துவிட்டு, மக்களது உயர்வையும் தாழ்வையும் பொன்னாக உருவகம் செய்யவில்லை.", "உவமை அணி - 'கட்டளைக்கல்' என்பது உவம உருபுடன் வெளிப்படையாக வந்துள்ளது.", "இல்பொருள் உவமை அணி - உலகில் இல்லாத கட்டளைக்கல்லை உவமையாகக் கூறியுள்ளனர்."],
+    "optionsTa": ["உருவக அணி - மக்களின் செயல்களை உரைகல்லாகவும், உயர்தாழ்வுகளைப் பொன்னாகவும் முழுமையாக உருவகம் செய்துள்ளார்.", "ஏகதேச உருவக அணி - மக்களின் செயல்களைப் பொன்னின் தரத்தை அறிய உதவும் உரைகல்லாக உருவகம் செய்துவிட்டு, மக்களது உயர்வையும் தாழ்வையும் பொன்னாக உருவகம் செய்யவில்லை.", "உவமை அணி - 'கட்டளைக்கல்' என்பது உவம உருபுடன் வெளிப்படையாக வந்துள்ளது.", "இல்பொருள் உவமை அணி - உலகில் இல்லாத கட்டளைக்கல்லை உவமையாகக் கூறியுள்ளனர்."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "\"அறிவு என்னும் விளக்கைக் கொண்டு அறியாமையை நீக்க வேண்டும்\" - இத்தொடர் எவ்வகை அணியை வெளிப்படுத்துகிறது மற்றும் அதற்கான காரணம் என்ன?",
+    "ta": "\"அறிவு என்னும் விளக்கைக் கொண்டு அறியாமையை நீக்க வேண்டும்\" - இத்தொடர் எவ்வகை அணியை வெளிப்படுத்துகிறது மற்றும் அதற்கான காரணம் என்ன?",
+    "optionsEn": ["உருவக அணி - அறிவு விளக்காகவும் அறியாமை இருளாகவும் முழுமையாக உருவகப்படுத்தப்பட்டுள்ளது.", "ஏகதேச உருவக அணி - அறிவு விளக்காக உருவகப்படுத்தப்பட்டு, அறியாமை இருளாக உருவகப்படுத்தப்படவில்லை.", "உவமை அணி - அறிவுக்கும் விளக்குக்கும் இடையே உவம உருபு மறைந்து வந்துள்ளது.", "எடுத்துக்காட்டு உவமை அணி - தனித்தனித் தொடர்களாக வந்துள்ளது."],
+    "optionsTa": ["உருவக அணி - அறிவு விளக்காகவும் அறியாமை இருளாகவும் முழுமையாக உருவகப்படுத்தப்பட்டுள்ளது.", "ஏகதேச உருவக அணி - அறிவு விளக்காக உருவகப்படுத்தப்பட்டு, அறியாமை இருளாக உருவகப்படுத்தப்படவில்லை.", "உவமை அணி - அறிவுக்கும் விளக்குக்கும் இடையே உவம உருபு மறைந்து வந்துள்ளது.", "எடுத்துக்காட்டு உவமை அணி - தனித்தனித் தொடர்களாக வந்துள்ளது."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "உவமை அணி பற்றிய கூற்றுகளில் சரியானதைத் தேர்ந்தெடு:",
+    "ta": "உவமை அணி பற்றிய கூற்றுகளில் சரியானதைத் தேர்ந்தெடு:",
+    "optionsEn": ["உவமையும் உவமேயமும் வந்து உவம உருபு மறைந்து வருவது உவமை அணியாகும்.", "உவமையும் உவமேயமும் தனித்தனித் தொடர்களாக வந்து உவம உருபு மறைந்து வருவது எடுத்துக்காட்டு உவமை அணியாகும்.", "உலகில் இல்லாத ஒரு பொருளை உவமையாகக் கூறுவது உவமை அணி எனப்படும்.", "உவமையும் உவமேயமும் வந்து உவம உருபு வெளிப்படையாக வருவது உவமை அணியாகும்."],
+    "optionsTa": ["உவமையும் உவமேயமும் வந்து உவம உருபு மறைந்து வருவது உவமை அணியாகும்.", "உவமையும் உவமேயமும் தனித்தனித் தொடர்களாக வந்து உவம உருபு மறைந்து வருவது எடுத்துக்காட்டு உவமை அணியாகும்.", "உலகில் இல்லாத ஒரு பொருளை உவமையாகக் கூறுவது உவமை அணி எனப்படும்.", "உவமையும் உவமேயமும் வந்து உவம உருபு வெளிப்படையாக வருவது உவமை அணியாகும்."],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "கீழ்க்கண்டவற்றுள் 'எடுத்துக்காட்டு உவமை அணி'க்குக் கொடுக்கப்பட்டுள்ள திருக்குறள் மற்றும் அதன் அமைப்பைக் குறிக்கும் சரியான கூற்று எது?",
+    "ta": "கீழ்க்கண்டவற்றுள் 'எடுத்துக்காட்டு உவமை அணி'க்குக் கொடுக்கப்பட்டுள்ள திருக்குறள் மற்றும் அதன் அமைப்பைக் குறிக்கும் சரியான கூற்று எது?",
+    "optionsEn": ["\"அகழ்வாரைத் தாங்கும் நிலம்போல...\" - இதில் 'போல' என்னும் உவம உருபு வெளிப்படையாக வந்துள்ளது.", "\"தொட்டனைத்து ஊறும் மணற்கேணி...\" - இதில் 'அதுபோல்' என்னும் உவம உருபு மறைந்து வந்துள்ளது.", "\"தொட்டனைத்து ஊறும் மணற்கேணி...\" - இதில் உவமை ஒரு தொடராகவும் உவமேயம் ஒரு தொடராகவும் வந்து உவம உருபு வெளிப்படையாக வந்துள்ளது.", "\"அகழ்வாரைத் தாங்கும் நிலம்போல...\" - இதில் உவம உருபு மறைந்து வந்துள்ளது."],
+    "optionsTa": ["\"அகழ்வாரைத் தாங்கும் நிலம்போல...\" - இதில் 'போல' என்னும் உவம உருபு வெளிப்படையாக வந்துள்ளது.", "\"தொட்டனைத்து ஊறும் மணற்கேணி...\" - இதில் 'அதுபோல்' என்னும் உவம உருபு மறைந்து வந்துள்ளது.", "\"தொட்டனைத்து ஊறும் மணற்கேணி...\" - இதில் உவமை ஒரு தொடராகவும் உவமேயம் ஒரு தொடராகவும் வந்து உவம உருபு வெளிப்படையாக வந்துள்ளது.", "\"அகழ்வாரைத் தாங்கும் நிலம்போல...\" - இதில் உவம உருபு மறைந்து வந்துள்ளது."],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "'கொம்பு முளைத்த குதிரை போலப் பாய்ந்து வந்தது' - இத்தொடர் எந்த அணியின் கீழ் வரும் மற்றும் அதற்கான காரணம் என்ன?",
+    "ta": "'கொம்பு முளைத்த குதிரை போலப் பாய்ந்து வந்தது' - இத்தொடர் எந்த அணியின் கீழ் வரும் மற்றும் அதற்கான காரணம் என்ன?",
+    "optionsEn": ["உவமை அணி - உலகில் உள்ள குதிரைக்கு கொம்பு முளைத்துள்ளதை உவமைப்படுத்தியுள்ளது.", "எடுத்துக்காட்டு உவமை அணி - உவம உருபு மறைந்து வந்துள்ளது.", "இல்பொருள் உவமை அணி - உலகில் கொம்பு முளைத்த குதிரை என்னும் ஒன்று இல்லாததால் அதனை உவமையாகக் கூறியுள்ளனர்.", "உவமை அணி - உவமைக்கும் உவமேயத்திற்கும் இடையே உருபு வெளிப்படையாக வந்துள்ளது."],
+    "optionsTa": ["உவமை அணி - உலகில் உள்ள குதிரைக்கு கொம்பு முளைத்துள்ளதை உவமைப்படுத்தியுள்ளது.", "எடுத்துக்காட்டு உவமை அணி - உவம உருபு மறைந்து வந்துள்ளது.", "இல்பொருள் உவமை அணி - உலகில் கொம்பு முளைத்த குதிரை என்னும் ஒன்று இல்லாததால் அதனை உவமையாகக் கூறியுள்ளனர்.", "உவமை அணி - உவமைக்கும் உவமேயத்திற்கும் இடையே உருபு வெளிப்படையாக வந்துள்ளது."],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "\"மாலை வெயிலில் மழைத்தூறல் பொன்மழை பொழிந்ததுபோல் தோன்றியது\" - இத்தொடரில் பயின்றுவரும் அணி எதன் அடிப்படையில் விளக்கப்பட்டுள்ளது?",
+    "ta": "\"மாலை வெயிலில் மழைத்தூறல் பொன்மழை பொழிந்ததுபோல் தோன்றியது\" - இத்தொடரில் பயின்றுவரும் அணி எதன் அடிப்படையில் விளக்கப்பட்டுள்ளது?",
+    "optionsEn": ["உவம உருபு வெளிப்படையாக வருதல்", "உலகில் இல்லாத பொன்மழை பொழிவதை உவமையாகக் கூறுதல்", "உவமையும் உவமேயமும் ஒரே தொடரில் அமைதல்", "உவம உருபு மறைந்து வருதல்"],
+    "optionsTa": ["உவம உருபு வெளிப்படையாக வருதல்", "உலகில் இல்லாத பொன்மழை பொழிவதை உவமையாகக் கூறுதல்", "உவமையும் உவமேயமும் ஒரே தொடரில் அமைதல்", "உவம உருபு மறைந்து வருதல்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "திருக்குறள் கருத்துகளின் அடிப்படையில் உவமை மற்றும் உவமேயப் பொருத்தத்தைக் கண்டறிக:",
+    "ta": "திருக்குறள் கருத்துகளின் அடிப்படையில் உவமை மற்றும் உவமேயப் பொருத்தத்தைக் கண்டறிக:",
+    "optionsEn": ["உவமை: பூமி தன்னைத் தோண்டுபவரைப் பொறுத்துக் கொள்ளுதல் | உவமேயம்: நாம் நம்மை இகழ்ந்து பேசுபவரைப் பொறுத்துக்கொள்ள வேண்டும்", "உவமை: மனிதர்கள் கற்கும் அளவிற்கு ஏற்ப அறிவு பெருக்குதல் | உவமேயம்: மணற்கேணியில் தோண்டிய அளவிற்கு நீர் ஊறும்", "உவமை: நாம் நம்மை இகழ்ந்து பேசுபவரைப் பொறுத்துக்கொள்ள வேண்டும் | உவமேயம்: பூமி தன்னைத் தோண்டுபவரைப் பொறுத்துக் கொள்ளுதல்", "உவமை: மணற்கேணியில் நீர் ஊறுவது | உவமேயம்: நிலம் தாங்குவது"],
+    "optionsTa": ["உவமை: பூமி தன்னைத் தோண்டுபவரைப் பொறுத்துக் கொள்ளுதல் | உவமேயம்: நாம் நம்மை இகழ்ந்து பேசுபவரைப் பொறுத்துக்கொள்ள வேண்டும்", "உவமை: மனிதர்கள் கற்கும் அளவிற்கு ஏற்ப அறிவு பெருக்குதல் | உவமேயம்: மணற்கேணியில் தோண்டிய அளவிற்கு நீர் ஊறும்", "உவமை: நாம் நம்மை இகழ்ந்து பேசுபவரைப் பொறுத்துக்கொள்ள வேண்டும் | உவமேயம்: பூமி தன்னைத் தோண்டுபவரைப் பொறுத்துக் கொள்ளுதல்", "உவமை: மணற்கேணியில் நீர் ஊறுவது | உவமேயம்: நிலம் தாங்குவது"],
+    "answer": 0
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false; isSubmitted = false;
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">
+                <span class="option-letter">${String.fromCharCode(65+i)}.</span>
+                <span class="option-text">${opt}</span>
+            </div>`;
+        });
+        let clearBtnHtml = "";
+        if (sel !== null && sel !== undefined) {
+            clearBtnHtml = `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;">
+                <button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button>
+            </div>`;
+        }
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+                ${sel !== null && sel !== undefined ? `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;"><button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button></div>` : ``}
+            </div>
+        `;
+        updateNavButtons(); updatePalette();
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) {
+            userAnswers[currentIndex] = null;
+        } else {
+            userAnswers[currentIndex] = optIndex;
+        }
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+
+    function clearSelection() {
+        if (isSubmitted) return;
+        userAnswers[currentIndex] = null;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    let currentReviewIndex = 0;
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let cssClass = "option-item";
+                let markerHtml = "";
+                if (idx === corr) { cssClass += " correct"; markerHtml = "<div class='marker'>✔</div>"; }
+                else if (u === idx && idx !== corr) { cssClass += " wrong"; markerHtml = "<div class='marker'>✖</div>"; }
+                optsHtml += `<div class="${cssClass}"><span>${String.fromCharCode(65+idx)}. ${optsArray[idx]}</span>${markerHtml}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" id="review-card-${i}" style="display: none;">
+                        <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div class="your-answer">Your Answer: ${userAns}</div>
+                        <div class="correct-answer">Correct Answer: ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        ${optsHtml}
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+        currentReviewIndex = 0;
+        showReviewCard(currentReviewIndex);
+    }
+    function showReviewCard(index) {
+        const cards = document.querySelectorAll(".review-card");
+        if (cards.length === 0) return;
+        cards.forEach(c => c.style.display = "none");
+        cards[index].style.display = "block";
+        document.getElementById("reviewPageText").innerText = `${index + 1} / ${cards.length}`;
+        document.getElementById("prevReviewBtn").disabled = (index === 0);
+        document.getElementById("nextReviewBtn").disabled = (index === cards.length - 1);
+        document.getElementById("reviewPagination").style.display = "flex";
+        window.scrollTo(0, 0);
+    }
+    function navigateReview(direction) {
+        const cards = document.querySelectorAll(".review-card");
+        currentReviewIndex += direction;
+        if (currentReviewIndex >= 0 && currentReviewIndex < cards.length) {
+            showReviewCard(currentReviewIndex);
+        }
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
+            await new Promise(r => setTimeout(r, 600));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+                if (btn) btn.innerText = "✅ Select Save as PDF";
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+        } finally {
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 3000);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        history.replaceState({ resultPage: true }, "", "#result");
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.addEventListener("popstate", function(e) {
+        if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+            history.pushState({ resultPage: true }, "", "#result");
+            confirmLeaveResult();
+        }
+    });
+    function confirmLeaveResult() {
+        if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
+            window.AndroidBridge.exitResultPage();
+        } else {
+            history.back();
+        }
+    }
+    window.checkForReview = function() {
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
+            }
+        }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
