@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-13T06:41:01.765Z",
+  "version": "2026-11-13T06:42:27.184Z",
   "categories": [
     {
       "id": "BANK",
@@ -2261,6 +2261,20 @@
       "releaseTimestamp": 1794556800000,
       "language": "en",
       "createdAt": 1794552061765
+    },
+    {
+      "testId": "UGE-104",
+      "examId": "UG-ENG",
+      "name": "THE CHETAN BHAGAT- THE THREE MISTAKES OF MY LIFE (FICTION) UGE-104",
+      "topic": "THE CHETAN BHAGAT- THE THREE MISTAKES OF MY LIFE (FICTION)",
+      "durationMinutes": 15,
+      "order": 104,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGE-104.html",
+      "releaseTimestamp": 1794556800000,
+      "language": "en",
+      "createdAt": 1794552147184
     }
   ]
 }
