@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-13T06:50:58.201Z",
+  "version": "2026-11-13T06:54:58.451Z",
   "categories": [
     {
       "id": "BANK",
@@ -2303,6 +2303,20 @@
       "releaseTimestamp": 1794556800000,
       "language": "both",
       "createdAt": 1794552658201
+    },
+    {
+      "testId": "SPT-PY-2",
+      "examId": "SPL-PSYCHOLOGY",
+      "name": "UNIT 2–THEORIES OF DEVELOPMENT SPT-PY-2",
+      "topic": "UNIT 2–THEORIES OF DEVELOPMENT",
+      "durationMinutes": 15,
+      "order": 2,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-PY-2.html",
+      "releaseTimestamp": 1794556800000,
+      "language": "both",
+      "createdAt": 1794552898451
     }
   ]
 }
