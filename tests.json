@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-13T06:44:36.464Z",
+  "version": "2026-11-13T06:50:58.201Z",
   "categories": [
     {
       "id": "BANK",
@@ -2289,6 +2289,20 @@
       "releaseTimestamp": 1794556800000,
       "language": "en",
       "createdAt": 1794552276464
+    },
+    {
+      "testId": "TET-PY-7",
+      "examId": "TET-PSYCHOLOGY",
+      "name": "UNIT 2–THEORIES OF DEVELOPMENT TET-PY-2",
+      "topic": "UNIT 2–THEORIES OF DEVELOPMENT",
+      "durationMinutes": 15,
+      "order": 7,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-PY-7.html",
+      "releaseTimestamp": 1794556800000,
+      "language": "both",
+      "createdAt": 1794552658201
     }
   ]
 }
