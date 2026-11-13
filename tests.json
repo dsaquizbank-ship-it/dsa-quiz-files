@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-13T01:36:46.375Z",
+  "version": "2026-11-13T01:39:42.599Z",
   "categories": [
     {
       "id": "BANK",
@@ -2163,6 +2163,20 @@
       "releaseTimestamp": 1794556800000,
       "language": "en",
       "createdAt": 1794533806375
+    },
+    {
+      "testId": "SEG-2",
+      "examId": "SSC-EG",
+      "name": "COLZE TEST SEG-2 (Set-1)",
+      "topic": "COLZE TEST SEG-2",
+      "durationMinutes": 30,
+      "order": 2,
+      "questionCount": 30,
+      "negativeMark": 0.5,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SEG-2.html",
+      "releaseTimestamp": 1794556800000,
+      "language": "en",
+      "createdAt": 1794533982599
     }
   ]
 }
