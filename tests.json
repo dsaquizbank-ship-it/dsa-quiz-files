@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-13T17:12:34.187Z",
+  "version": "2026-11-13T17:13:53.408Z",
   "categories": [
     {
       "id": "BANK",
@@ -2155,8 +2155,8 @@
     {
       "testId": "BEG-2",
       "examId": "BANK-ENG",
-      "name": "COLZE TEST BEG-2 (Set-1)",
-      "topic": "COLZE TEST BEG-2",
+      "name": "COLZE TEST (SET-2)",
+      "topic": "COLZE TEST",
       "durationMinutes": 30,
       "order": 2,
       "questionCount": 30,
