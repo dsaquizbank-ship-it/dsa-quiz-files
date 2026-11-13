@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-12T08:38:33.600Z",
+  "version": "2026-11-13T01:36:46.375Z",
   "categories": [
     {
       "id": "BANK",
@@ -2149,6 +2149,20 @@
       "releaseTimestamp": 0,
       "language": "both",
       "createdAt": 1794471142718
+    },
+    {
+      "testId": "BEG-2",
+      "examId": "BANK-ENG",
+      "name": "COLZE TEST BEG-2 (Set-1)",
+      "topic": "COLZE TEST BEG-2",
+      "durationMinutes": 30,
+      "order": 2,
+      "questionCount": 30,
+      "negativeMark": 0.25,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BEG-2.html",
+      "releaseTimestamp": 1794556800000,
+      "language": "en",
+      "createdAt": 1794533806375
     }
   ]
 }
