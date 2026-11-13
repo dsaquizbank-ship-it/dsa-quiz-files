@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-13T16:41:08.955Z",
+  "version": "2026-11-13T17:09:16.580Z",
   "categories": [
     {
       "id": "BANK",
@@ -2238,7 +2238,7 @@
     {
       "testId": "BCA-2",
       "examId": "BANK-CA",
-      "name": "NOVEMBER 1-9 BCA-2",
+      "name": "NOVEMBER 1-9 (SET-1)",
       "topic": "NOVEMBER 1-9",
       "durationMinutes": 10,
       "order": 2,
