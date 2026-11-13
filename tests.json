@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-13T07:01:39.571Z",
+  "version": "2026-11-13T07:42:03.052Z",
   "categories": [
     {
       "id": "BANK",
@@ -2331,6 +2331,20 @@
       "releaseTimestamp": 1794556800000,
       "language": "both",
       "createdAt": 1794553299571
+    },
+    {
+      "testId": "TCA-2",
+      "examId": "TNPSC-CA",
+      "name": "AUGUST TCA-2",
+      "topic": "AUGUST",
+      "durationMinutes": 20,
+      "order": 2,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TCA-2.html",
+      "releaseTimestamp": 1794556800000,
+      "language": "both",
+      "createdAt": 1794555723052
     }
   ]
 }
