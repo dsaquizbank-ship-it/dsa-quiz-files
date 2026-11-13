@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-13T07:42:03.052Z",
+  "version": "2026-11-13T16:41:08.955Z",
   "categories": [
     {
       "id": "BANK",
@@ -1341,7 +1341,7 @@
     {
       "testId": "BCA-1",
       "examId": "BANK-CA",
-      "name": "OCTOBER FULL MONTH BCA-1",
+      "name": "OCTOBER FULL MONTH (SET-1)",
       "topic": "OCTOBER FULL MONTH",
       "durationMinutes": 30,
       "order": 1,
@@ -1349,7 +1349,8 @@
       "negativeMark": 0.25,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BCA-1.html",
       "releaseTimestamp": 1793952000000,
-      "language": "en"
+      "language": "en",
+      "createdAt": 1794588068955
     },
     {
       "testId": "RCA-1",
