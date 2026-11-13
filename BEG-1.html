@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-    <title>BEG-1 - READING COMPREHENSION BEG-1</title>
+    <title>BEG-1 - READING COMPREHENSION (SET-1)</title>
     <script>
         window.MathJax = {
             tex: {
@@ -779,12 +779,19 @@ let QUESTIONS = [
                 <span class="option-text">${opt}</span>
             </div>`;
         });
+        let clearBtnHtml = "";
+        if (sel !== null && sel !== undefined) {
+            clearBtnHtml = `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;">
+                <button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button>
+            </div>`;
+        }
         document.getElementById("questionArea").innerHTML = `
             ${passageHtml}
             <div style="padding: 0 16px 20px 16px;">
                 ${imageHtml}
                 <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
                 <div>${optsHtml}</div>
+                ${sel !== null && sel !== undefined ? `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;"><button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button></div>` : ``}
             </div>
         `;
         updateNavButtons(); updatePalette();
@@ -793,8 +800,17 @@ let QUESTIONS = [
     }
     function selectOption(optIndex) {
         if (isSubmitted) return;
-        if (userAnswers[currentIndex] === optIndex) return;
-        userAnswers[currentIndex] = optIndex;
+        if (userAnswers[currentIndex] === optIndex) {
+            userAnswers[currentIndex] = null;
+        } else {
+            userAnswers[currentIndex] = optIndex;
+        }
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+
+    function clearSelection() {
+        if (isSubmitted) return;
+        userAnswers[currentIndex] = null;
         renderQuestion(); updatePalette(); autoSaveState();
     }
     function updateNavButtons() {
