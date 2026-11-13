@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-13T17:13:53.408Z",
+  "version": "2026-11-13T17:26:26.516Z",
   "categories": [
     {
       "id": "BANK",
@@ -677,15 +677,16 @@
     {
       "testId": "BQA-1",
       "examId": "BANK-QA",
-      "name": "SIMPLIFICATION (Set-1)",
+      "name": "SIMPLIFICATION (SET-1)",
       "topic": "SIMPLIFICATION",
-      "durationMinutes": 25,
+      "durationMinutes": 30,
       "order": 1,
-      "questionCount": 25,
+      "questionCount": 30,
       "negativeMark": 0.25,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BQA-1.html",
-      "releaseTimestamp": 1793606400000,
-      "language": "en"
+      "releaseTimestamp": 1794556800000,
+      "language": "en",
+      "createdAt": 1794590786516
     },
     {
       "testId": "RQA-01",
