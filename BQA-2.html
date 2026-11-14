@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-    <title>BQA-2 - APPROXIMATION BQA-2</title>
+    <title>BQA-2 - APPROXIMATION (SET-1)</title>
     <script>
         window.MathJax = {
             tex: {
@@ -541,7 +541,7 @@ let QUESTIONS = [
                 ${imageHtml}
                 <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
                 <div>${optsHtml}</div>
-                ${clearBtnHtml}
+                ${sel !== null && sel !== undefined ? `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;"><button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button></div>` : ``}
             </div>
         `;
         updateNavButtons(); updatePalette();
