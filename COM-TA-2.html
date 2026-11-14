@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>COM-TA-2 - 10 TH IYAL 5 (SET-1)</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                linebreaks: { automatic: true, width: "container" }
+            },
+            options: { ignoreHtmlClass: "no-mathjax" },
+            chtml: {
+                displayAlign: "left",
+                displayIndent: "0",
+                mtextInheritFont: true
+            },
+            svg: {
+                scale: 0.9,
+                minScale: 0.5,
+                mtextInheritFont: true,
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; color: #10b981; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; white-space: normal; word-wrap: break-word; padding-bottom: 20px; max-width: 100%; overflow-x: auto; }
+        mjx-container { display: inline !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; }
+        .question-text::-webkit-scrollbar { display: none; }
+        .question-text { -ms-overflow-style: none; scrollbar-width: none; }
+        .option-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; word-wrap: break-word; }
+        .option-letter { font-weight: 800; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+        .option-text { flex-grow: 1; min-width: 0; word-wrap: break-word; overflow-wrap: break-word; }
+        .option-text mjx-container { display: inline-block !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; overflow-x: visible !important; }
+        .option-text mjx-container[jax="CHTML"][display="true"] { margin: 0 !important; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
+        .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
+        .review-card .question-text { overflow-x: hidden !important; white-space: normal !important; word-wrap: break-word !important; }
+        .review-card strong { color: var(--text-primary); font-size: 16px; }
+        .review-card .option-item { background-color: var(--rc-bg); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: rgba(40, 167, 69, 0.1); border: 1px solid #28a745; color: #28a745; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; color: #dc3545; }
+        .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
+        .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
+        .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
+        .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px 0; border-top: 1px solid var(--border-light); }
+        .review-nav-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .review-nav-btn:disabled { background: var(--border-light); color: var(--text-primary); opacity: 0.5; cursor: not-allowed; }
+        .review-nav-text { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+        .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { 
+            html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } 
+            .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } 
+            #startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard { display: none !important; } 
+            #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } 
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; } 
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; margin-bottom: 20px !important; display: block !important; } 
+            .review-card .option-item { border: 1px solid #ccc !important; background: white !important; color: black !important; } 
+            .review-card .option-item.correct { background: #e6ffe6 !important; border-color: #28a745 !important; color: black !important; } 
+            .review-card .option-item.wrong { background: #ffe6e6 !important; border-color: #dc3545 !important; color: black !important; } 
+            @page { size: A4; margin: 1.5cm; } 
+        }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">15:00</div>
+            <div class="top-buttons">
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="display: none;">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div id="printHeader" style="display: none;">
+            <h1>DR SAHITHA IAS ACADEMY</h1>
+            <h3>ANSWER KEY & DETAILED REVIEW</h3>
+            <p><strong>Test:</strong> COM-TA-2 - 10TH STD</p>
+        </div>
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+            <div id="reviewPagination" class="review-nav-container" style="display: none;">
+                <button class="review-nav-btn" id="prevReviewBtn" onclick="navigateReview(-1)">◀ PREV</button>
+                <span class="review-nav-text" id="reviewPageText">1 / 25</span>
+                <button class="review-nav-btn" id="nextReviewBtn" onclick="navigateReview(1)">NEXT ▶</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "ta";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "10TH STD",
+        testNo: "COM-TA-2",
+        date: "13/11/2026",
+        subject: "10TH STD",
+        topic: "10 TH IYAL 5",
+        duration: "15",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "தான் விடை அறிந்திருந்தும், அவ்விடை பிறருக்குத் தெரியுமா என்பதை அறியும் பொருட்டு வினவும் வினா வகை எது?",
+    "ta": "தான் விடை அறிந்திருந்தும், அவ்விடை பிறருக்குத் தெரியுமா என்பதை அறியும் பொருட்டு வினவும் வினா வகை எது?",
+    "optionsEn": ["அறியா வினா", "அறிவினா", "ஐய வினா", "கொளல் வினா"],
+    "optionsTa": ["அறியா வினா", "அறிவினா", "ஐய வினா", "கொளல் வினா"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "தான் ஒரு பொருளை வாங்கிக் கொள்ளும் பொருட்டு வினவும் வினா எது?",
+    "ta": "தான் ஒரு பொருளை வாங்கிக் கொள்ளும் பொருட்டு வினவும் வினா எது?",
+    "optionsEn": ["கொடை வினா", "ஏவல் வினா", "கொளல் வினா", "ஐய வினா"],
+    "optionsTa": ["கொடை வினா", "ஏவல் வினா", "கொளல் வினா", "ஐய வினா"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "\"ஜெயகாந்தன் சிறுகதைகள் இருக்கிறதா?\" என்று நூலகரிடம் வினவுவது எந்த வினா வகையைச் சார்ந்தது?",
+    "ta": "\"ஜெயகாந்தன் சிறுகதைகள் இருக்கிறதா?\" என்று நூலகரிடம் வினவுவது எந்த வினா வகையைச் சார்ந்தது?",
+    "optionsEn": ["அறியா வினா", "கொளல் வினா", "கொடை வினா", "ஏவல் வினா"],
+    "optionsTa": ["அறியா வினா", "கொளல் வினா", "கொடை வினா", "ஏவல் வினா"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "விடை வகைகளில் முதல் மூன்று வகைகளும் நேரடி விடைகளாக இருப்பதால் எவ்வாறு அழைக்கப்படுகின்றன?",
+    "ta": "விடை வகைகளில் முதல் மூன்று வகைகளும் நேரடி விடைகளாக இருப்பதால் எவ்வாறு அழைக்கப்படுகின்றன?",
+    "optionsEn": ["குறிப்பு விடைகள்", "வெளிப்படை விடைகள்", "வினா விடைகள்", "இனமொழி விடைகள்"],
+    "optionsTa": ["குறிப்பு விடைகள்", "வெளிப்படை விடைகள்", "வினா விடைகள்", "இனமொழி விடைகள்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "'கடைக்குப் போவாயா?' என்ற கேள்விக்கு 'போகமாட்டேன்' என மறுத்துக் கூறுவது எந்த விடை வகையாகும்?",
+    "ta": "'கடைக்குப் போவாயா?' என்ற கேள்விக்கு 'போகமாட்டேன்' என மறுத்துக் கூறுவது எந்த விடை வகையாகும்?",
+    "optionsEn": ["நேர் விடை", "மறை விடை", "சுட்டு விடை", "ஏவல் விடை"],
+    "optionsTa": ["நேர் விடை", "மறை விடை", "சுட்டு விடை", "ஏவல் விடை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "\"இது செய்வாயா?\" என்று வினவியபோது \"நீயே செய்\" என்று ஏவிக் கூறுவது எத்தகைய விடை?",
+    "ta": "\"இது செய்வாயா?\" என்று வினவியபோது \"நீயே செய்\" என்று ஏவிக் கூறுவது எத்தகைய விடை?",
+    "optionsEn": ["வினா எதிர் வினாதல் விடை", "ஏவல் விடை", "உற்றது உரைத்தல் விடை", "உறுவது கூறல் விடை"],
+    "optionsTa": ["வினா எதிர் வினாதல் விடை", "ஏவல் விடை", "உற்றது உரைத்தல் விடை", "உறுவது கூறல் விடை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "\"உனக்குக் கதை எழுதத் தெரியுமா?\" என்ற வினாவிற்கு \"கட்டுரை எழுதத் தெரியும்\" என்று விடையளிப்பது எந்த விடை வகையைக் குறிக்கும்?",
+    "ta": "\"உனக்குக் கதை எழுதத் தெரியுமா?\" என்ற வினாவிற்கு \"கட்டுரை எழுதத் தெரியும்\" என்று விடையளிப்பது எந்த விடை வகையைக் குறிக்கும்?",
+    "optionsEn": ["இனமொழி விடை", "உறுவது கூறல் விடை", "உற்றது உரைத்தல் விடை", "நேர் விடை"],
+    "optionsTa": ["இனமொழி விடை", "உறுவது கூறல் விடை", "உற்றது உரைத்தல் விடை", "நேர் விடை"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "செய்யுளில் சொற்களைப் பொருளுக்கு ஏற்றவாறு சேர்த்தோ மாற்றியோ பொருள் கொள்ளும் முறைக்கு என்ன பெயர்?",
+    "ta": "செய்யுளில் சொற்களைப் பொருளுக்கு ஏற்றவாறு சேர்த்தோ மாற்றியோ பொருள் கொள்ளும் முறைக்கு என்ன பெயர்?",
+    "optionsEn": ["தொடை", "அணி", "பொருள்கோள்", "யாப்பு"],
+    "optionsTa": ["தொடை", "அணி", "பொருள்கோள்", "யாப்பு"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "ஒரு செய்யுளில் சொற்கள் முறை பிறழாமல் நிரல்நிறையாக (வரிசையாக) அமைந்து வருவது என்ன எனப்படும்?",
+    "ta": "ஒரு செய்யுளில் சொற்கள் முறை பிறழாமல் நிரல்நிறையாக (வரிசையாக) அமைந்து வருவது என்ன எனப்படும்?",
+    "optionsEn": ["நிரல்நிறைப் பொருள்கோள்", "ஆற்றுநீர்ப் பொருள்கோள்", "கொண்டுகூட்டுப் பொருள்கோள்", "அடிமறிமாற்றுப் பொருள்கோள்"],
+    "optionsTa": ["நிரல்நிறைப் பொருள்கோள்", "ஆற்றுநீர்ப் பொருள்கோள்", "கொண்டுகூட்டுப் பொருள்கோள்", "அடிமறிமாற்றுப் பொருள்கோள்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "ஒரு செய்யுளில் பல அடிகளில் சிதறிக்கிடக்கும் சொற்களைப் பொருளுக்கு ஏற்றவாறு ஒன்றோடொன்று கூட்டிப் பொருள்கொள்வது எது?",
+    "ta": "ஒரு செய்யுளில் பல அடிகளில் சிதறிக்கிடக்கும் சொற்களைப் பொருளுக்கு ஏற்றவாறு ஒன்றோடொன்று கூட்டிப் பொருள்கொள்வது எது?",
+    "optionsEn": ["முறை நிரல்நிறைப் பொருள்கோள்", "எதிர் நிரல்நிறைப் பொருள்கோள்", "கொண்டுகூட்டுப் பொருள்கோள்", "ஆற்றுநீர்ப் பொருள்கோள்"],
+    "optionsTa": ["முறை நிரல்நிறைப் பொருள்கோள்", "எதிர் நிரல்நிறைப் பொருள்கோள்", "கொண்டுகூட்டுப் பொருள்கோள்", "ஆற்றுநீர்ப் பொருள்கோள்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "\"விலங்கொடு மக்கள் அனையர் இலங்குநூல் / கற்றாரோடு ஏனை யவர்\" - இக்குறளில் பயின்றுவரும் பொருள்கோள் முறை யாது?",
+    "ta": "\"விலங்கொடு மக்கள் அனையர் இலங்குநூல் / கற்றாரோடு ஏனை யவர்\" - இக்குறளில் பயின்றுவரும் பொருள்கோள் முறை யாது?",
+    "optionsEn": ["முறை நிரல்நிறைப் பொருள்கோள்", "எதிர் நிரல்நிறைப் பொருள்கோள்", "ஆற்றுநீர்ப் பொருள்கோள்", "கொண்டுகூட்டுப் பொருள்கோள்"],
+    "optionsTa": ["முறை நிரல்நிறைப் பொருள்கோள்", "எதிர் நிரல்நிறைப் பொருள்கோள்", "ஆற்றுநீர்ப் பொருள்கோள்", "கொண்டுகூட்டுப் பொருள்கோள்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "\"அன்பும் அறனும் உடைத்தாயின் இல்வாழ்க்கை / பண்பும் பயனும் அது\" - இக்குறளில் அமைந்துள்ள பொருள்கோள் வகை எது?",
+    "ta": "\"அன்பும் அறனும் உடைத்தாயின் இல்வாழ்க்கை / பண்பும் பயனும் அது\" - இக்குறளில் அமைந்துள்ள பொருள்கோள் வகை எது?",
+    "optionsEn": ["முறை நிரல்நிறைப் பொருள்கோள்", "எதிர் நிரல்நிறைப் பொருள்கோள்", "ஆற்றுநீர்ப் பொருள்கோள்", "கொண்டுகூட்டுப் பொருள்கோள்"],
+    "optionsTa": ["முறை நிரல்நிறைப் பொருள்கோள்", "எதிர் நிரல்நிறைப் பொருள்கோள்", "ஆற்றுநீர்ப் பொருள்கோள்", "கொண்டுகூட்டுப் பொருள்கோள்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "\"ஒரு மொழியில் வளம்பெறவும் உலகத்துடனும்றவு கொள்ளவும் மொழிபெயர்ப்பு இன்றியமையாததாகும்\" எனக் கூறியவர் யார்?",
+    "ta": "\"ஒரு மொழியில் வளம்பெறவும் உலகத்துடனும்றவு கொள்ளவும் மொழிபெயர்ப்பு இன்றியமையாததாகும்\" எனக் கூறியவர் யார்?",
+    "optionsEn": ["மணவை முஸ்தபா", "மு.கு. ஜகந்நாத ராஜா", "குலோத்துங்கன்", "ராகுல் சாங்கிருத்யாயன்"],
+    "optionsTa": ["மணவை முஸ்தபா", "மு.கு. ஜகந்நாத ராஜா", "குலோத்துங்கன்", "ராகுல் சாங்கிருத்யாயன்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "தொல்காப்பியர் 'மொழிபெயர்த்தல்' என்னும் தொடரை எந்த இயலில் குறிப்பிட்டுள்ளார்?",
+    "ta": "தொல்காப்பியர் 'மொழிபெயர்த்தல்' என்னும் தொடரை எந்த இயலில் குறிப்பிட்டுள்ளார்?",
+    "optionsEn": ["எழுத்து அதிகாரம்", "சொல்லதிகாரம்", "மரபியல்", "பொருளதிகாரம்"],
+    "optionsTa": ["எழுத்து அதிகாரம்", "சொல்லதிகாரம்", "மரபியல்", "பொருளதிகாரம்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "சங்ககாலத்திலேயே தமிழில் மொழிபெயர்ப்பு மேற்கொள்ளப்பட்டதை உணர்த்தும் செப்பேட்டுக் குறிப்பு எது?",
+    "ta": "சங்ககாலத்திலேயே தமிழில் மொழிபெயர்ப்பு மேற்கொள்ளப்பட்டதை உணர்த்தும் செப்பேட்டுக் குறிப்பு எது?",
+    "optionsEn": ["சின்னமனூர்ச் செப்பேடு", "வேள்விக்குடிச் செப்பேடு", "தளவாய்புரம் செப்பேடு", "சின்னமனூர்ச் செப்பேட்டுக் குறிப்பு"],
+    "optionsTa": ["சின்னமனூர்ச் செப்பேடு", "வேள்விக்குடிச் செப்பேடு", "தளவாய்புரம் செப்பேடு", "சின்னமனூர்ச் செப்பேட்டுக் குறிப்பு"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "உலகப் போரின் போது அமெரிக்கா ஜப்பானுக்கு அனுப்பிய செய்திக்குப் பொருள் தெரியாமல் ஹீரோஷிமாவில் குண்டுவீசக் காரணமான ஜப்பானியச் சொற்றொடர் எது?",
+    "ta": "உலகப் போரின் போது அமெரிக்கா ஜப்பானுக்கு அனுப்பிய செய்திக்குப் பொருள் தெரியாமல் ஹீரோஷிமாவில் குண்டுவீசக் காரணமான ஜப்பானியச் சொற்றொடர் எது?",
+    "optionsEn": ["மொகு சாஸ்ட்டு", "ஹஜிராபாக்", "ராய்ச்சு", "காசிகா"],
+    "optionsTa": ["மொகு சாஸ்ட்டு", "ஹஜிராபாக்", "ராய்ச்சு", "காசிகா"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "பிரான்சு தேசிய நூற்கூடத்தில் (Bibliothèque Nationale) ஏறக்குறைய எத்தனை பழைய தமிழ் ஏடுகளும் கையெழுத்துப் பிரதிகளும் உள்ளன?",
+    "ta": "பிரான்சு தேசிய நூற்கூடத்தில் (Bibliothèque Nationale) ஏறக்குறைய எத்தனை பழைய தமிழ் ஏடுகளும் கையெழுத்துப் பிரதிகளும் உள்ளன?",
+    "optionsEn": ["ஐந்நூறு", "எழுநூறு", "ஆயிரம்", "ஆயிரத்து ஐந்நூறு"],
+    "optionsTa": ["ஐந்நூறு", "எழுநூறு", "ஆயிரம்", "ஆயிரத்து ஐந்நூறு"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "இடைக்காடன் பிணக்குத் தீர்த்த படலம் திருவிளையாடற்புராணத்தில் எத்தனையாவது படலமாகும்?",
+    "ta": "இடைக்காடன் பிணக்குத் தீர்த்த படலம் திருவிளையாடற்புராணத்தில் எத்தனையாவது படலமாகும்?",
+    "optionsEn": ["26", "56", "64", "3"],
+    "optionsTa": ["26", "56", "64", "3"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "அமெரிக்க கறுப்பினப் பெண்மணி மேரி மெக்லியோட் பெத்யூனின் வாழ்க்கையை மையமாகக் கொண்டு எழுதப்பட்ட நூல் எது?",
+    "ta": "அமெரிக்க கறுப்பினப் பெண்மணி மேரி மெக்லியோட் பெத்யூனின் வாழ்க்கையை மையமாகக் கொண்டு எழுதப்பட்ட நூல் எது?",
+    "optionsEn": ["குட்டி இளவரசன்", "உனக்குப் படிக்கத் தெரியாது", "வால்காவிலிருந்து கங்கை வரை", "ஆசிரியரின் டைரி"],
+    "optionsTa": ["குட்டி இளவரசன்", "உனக்குப் படிக்கத் தெரியாது", "வால்காவிலிருந்து கங்கை வரை", "ஆசிரியரின் டைரி"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "\"ஒரு மொழியில் உணர்த்தப்பட்டதை வேறொரு மொழியில் வெளியிடுவது மொழிபெயர்ப்பு\" எனக் கூறியவர் யார்?",
+    "ta": "\"ஒரு மொழியில் உணர்த்தப்பட்டதை வேறொரு மொழியில் வெளியிடுவது மொழிபெயர்ப்பு\" எனக் கூறியவர் யார்?",
+    "optionsEn": ["மு.கு. ஜகந்நாத ராஜா", "மணவை முஸ்தபா", "தொல்காப்பியர்", "ராகுல் சாங்கிருத்யாயன்"],
+    "optionsTa": ["மு.கு. ஜகந்நாத ராஜா", "மணவை முஸ்தபா", "தொல்காப்பியர்", "ராகுல் சாங்கிருத்யாயன்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "\"வால்காவிலிருந்து கங்கை வரை\" என்ற நூலை இந்தி மொழியிலிருந்து தமிழில் மொழிபெயர்த்து வெளியிட்டவர் யார்?",
+    "ta": "\"வால்காவிலிருந்து கங்கை வரை\" என்ற நூலை இந்தி மொழியிலிருந்து தமிழில் மொழிபெயர்த்து வெளியிட்டவர் யார்?",
+    "optionsEn": ["டாக்டர் என்.ஸ்ரீதர்", "முத்து மீனாட்சி", "கணமுத்தையா", "யூமா வாசுகி"],
+    "optionsTa": ["டாக்டர் என்.ஸ்ரீதர்", "முத்து மீனாட்சி", "கணமுத்தையா", "யூமா வாசுகி"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "கீழ்க்கண்டவற்றுள் பிரஞ்சு, ஜெர்மன் போன்ற வெளிநாட்டு நூல்களைத் தமிழில் மொழிபெயர்ப்பது எத்தகைய மொழிபெயர்ப்பாகக் குறிப்பிடப்படுகிறது?",
+    "ta": "கீழ்க்கண்டவற்றுள் பிரஞ்சு, ஜெர்மன் போன்ற வெளிநாட்டு நூல்களைத் தமிழில் மொழிபெயர்ப்பது எத்தகைய மொழிபெயர்ப்பாகக் குறிப்பிடப்படுகிறது?",
+    "optionsEn": ["மறைமுக மொழிபெயர்ப்பு", "நேரடி மொழிபெயர்ப்பு", "தழுவல் மொழிபெயர்ப்பு", "குறிப்பு மொழிபெயர்ப்பு"],
+    "optionsTa": ["மறைமுக மொழிபெயர்ப்பு", "நேரடி மொழிபெயர்ப்பு", "தழுவல் மொழிபெயர்ப்பு", "குறிப்பு மொழிபெயர்ப்பு"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "\"அருளைப் பெருக்கி அறிவைத் திருத்தி / மருளை அகற்றி மதிக்கும் தெருளை\" - என்ற நீதிவெண்பாப் பாடலில் குறிப்பிடப்படும் கருத்து எதனைப் போற்றுகிறது?",
+    "ta": "\"அருளைப் பெருக்கி அறிவைத் திருத்தி / மருளை அகற்றி மதிக்கும் தெருளை\" - என்ற நீதிவெண்பாப் பாடலில் குறிப்பிடப்படும் கருத்து எதனைப் போற்றுகிறது?",
+    "optionsEn": ["ஒழுக்கம்", "கல்வி", "நட்பு", "வீரம்"],
+    "optionsTa": ["ஒழுக்கம்", "கல்வி", "நட்பு", "வீரம்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "திருவிளையாடற்புராணத்தில் 'இடைக்காடன் பிணக்குத் தீர்த்த படலம்' எப்பேரலாவில் (காண்டம்) இடம்பெற்றுள்ளது?",
+    "ta": "திருவிளையாடற்புராணத்தில் 'இடைக்காடன் பிணக்குத் தீர்த்த படலம்' எப்பேரலாவில் (காண்டம்) இடம்பெற்றுள்ளது?",
+    "optionsEn": ["மதுரைக் காண்டம்", "கூடற் காண்டம்", "திருவாலவாய்க் காண்டம்", "வஞ்சிக் காண்டம்"],
+    "optionsTa": ["மதுரைக் காண்டம்", "கூடற் காண்டம்", "திருவாலவாய்க் காண்டம்", "வஞ்சிக் காண்டம்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "\"ஊசி காதில் வட நுழையாது\" என்னும் வேற்றுமொழித் தொடரில் 'வடம்' என்ற சொல்லின் சரியான பொருள் என்ன?",
+    "ta": "\"ஊசி காதில் வட நுழையாது\" என்னும் வேற்றுமொழித் தொடரில் 'வடம்' என்ற சொல்லின் சரியான பொருள் என்ன?",
+    "optionsEn": ["ஒட்டகம்", "கயிறு", "ஊசி நூல்", "துணிமணி"],
+    "optionsTa": ["ஒட்டகம்", "கயிறு", "ஊசி நூல்", "துணிமணி"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "மேரி மெக்லியோட் பெத்யூன் அவர்களின் வாழ்க்கையை அடிப்படையாகக் கொண்டு \"உனக்குப் படிக்கத் தெரியாது\" என்ற நூலை எழுதிய கமலாலயனின் இயற்பெயர் என்ன?",
+    "ta": "மேரி மெக்லியோட் பெத்யூன் அவர்களின் வாழ்க்கையை அடிப்படையாகக் கொண்டு \"உனக்குப் படிக்கத் தெரியாது\" என்ற நூலை எழுதிய கமலாலயனின் இயற்பெயர் என்ன?",
+    "optionsEn": ["வே. குணசேகரன்", "மு.கு. ஜகந்நாத ராஜா", "மணவை முஸ்தபா", "பரஞ்சோதி முனிவர்"],
+    "optionsTa": ["வே. குணசேகரன்", "மு.கு. ஜகந்நாத ராஜா", "மணவை முஸ்தபா", "பரஞ்சோதி முனிவர்"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "\"காசினியில் இன்று வரை அறிவின் மன்னர் / கண்டுள்ள கலைகளெல்லாம் தமிழில் எண்ணி / பேசி மகிழ் நிலை வேண்டும்\" - என்று பாடியவர் யார்?",
+    "ta": "\"காசினியில் இன்று வரை அறிவின் மன்னர் / கண்டுள்ள கலைகளெல்லாம் தமிழில் எண்ணி / பேசி மகிழ் நிலை வேண்டும்\" - என்று பாடியவர் யார்?",
+    "optionsEn": ["பாரதியார்", "குலோத்துங்கன்", "செய்குதம்பிப் பாவலர்", "பரஞ்சோதி முனிவர்"],
+    "optionsTa": ["பாரதியார்", "குலோத்துங்கன்", "செய்குதம்பிப் பாவலர்", "பரஞ்சோதி முனிவர்"],
+    "answer": 1
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false; isSubmitted = false;
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">
+                <span class="option-letter">${String.fromCharCode(65+i)}.</span>
+                <span class="option-text">${opt}</span>
+            </div>`;
+        });
+        let clearBtnHtml = "";
+        if (sel !== null && sel !== undefined) {
+            clearBtnHtml = `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;">
+                <button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button>
+            </div>`;
+        }
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+                ${sel !== null && sel !== undefined ? `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;"><button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button></div>` : ``}
+            </div>
+        `;
+        updateNavButtons(); updatePalette();
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) {
+            userAnswers[currentIndex] = null;
+        } else {
+            userAnswers[currentIndex] = optIndex;
+        }
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+
+    function clearSelection() {
+        if (isSubmitted) return;
+        userAnswers[currentIndex] = null;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    let currentReviewIndex = 0;
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let cssClass = "option-item";
+                let markerHtml = "";
+                if (idx === corr) { cssClass += " correct"; markerHtml = "<div class='marker'>✔</div>"; }
+                else if (u === idx && idx !== corr) { cssClass += " wrong"; markerHtml = "<div class='marker'>✖</div>"; }
+                optsHtml += `<div class="${cssClass}"><span>${String.fromCharCode(65+idx)}. ${optsArray[idx]}</span>${markerHtml}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" id="review-card-${i}" style="display: none;">
+                        <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div class="your-answer">Your Answer: ${userAns}</div>
+                        <div class="correct-answer">Correct Answer: ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        ${optsHtml}
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+        currentReviewIndex = 0;
+        showReviewCard(currentReviewIndex);
+    }
+    function showReviewCard(index) {
+        const cards = document.querySelectorAll(".review-card");
+        if (cards.length === 0) return;
+        cards.forEach(c => c.style.display = "none");
+        cards[index].style.display = "block";
+        document.getElementById("reviewPageText").innerText = `${index + 1} / ${cards.length}`;
+        document.getElementById("prevReviewBtn").disabled = (index === 0);
+        document.getElementById("nextReviewBtn").disabled = (index === cards.length - 1);
+        document.getElementById("reviewPagination").style.display = "flex";
+        window.scrollTo(0, 0);
+    }
+    function navigateReview(direction) {
+        const cards = document.querySelectorAll(".review-card");
+        currentReviewIndex += direction;
+        if (currentReviewIndex >= 0 && currentReviewIndex < cards.length) {
+            showReviewCard(currentReviewIndex);
+        }
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
+            await new Promise(r => setTimeout(r, 600));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+                if (btn) btn.innerText = "✅ Select Save as PDF";
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+        } finally {
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 3000);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        history.replaceState({ resultPage: true }, "", "#result");
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.addEventListener("popstate", function(e) {
+        if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+            history.pushState({ resultPage: true }, "", "#result");
+            confirmLeaveResult();
+        }
+    });
+    function confirmLeaveResult() {
+        if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
+            window.AndroidBridge.exitResultPage();
+        } else {
+            history.back();
+        }
+    }
+    window.checkForReview = function() {
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
+            }
+        }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
