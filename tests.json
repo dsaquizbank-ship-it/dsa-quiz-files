@@ -388,14 +388,14 @@
       "language": "both"
     },
     {
-      "testId": "PGCS-12",
+      "testId": "PGCS-1",
       "examId": "PG-CS",
-      "name": "PGCS – 12 UNIT 10 CYBER SECURITY TECHNIQUES",
+      "name": "UNIT 10 CYBER SECURITY TECHNIQUES",
       "durationMinutes": 15,
       "order": 12,
       "questionCount": 25,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGCS-12.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGCS-1.html",
       "releaseTimestamp": 0
     },
     {
@@ -1577,15 +1577,15 @@
       "language": "ta"
     },
     {
-      "testId": "COM-TA-5",
+      "testId": "COM-TA-2",
       "examId": "COM-TAM",
-      "name": "10 TH IYAL 5 COM-TA-5",
+      "name": "10 TH IYAL 5 COM-TA-2",
       "topic": "10 TH IYAL 5",
       "durationMinutes": 15,
       "order": 5,
       "questionCount": 25,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/COM-TA-5.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/COM-TA-2.html",
       "releaseTimestamp": 1794556800000,
       "language": "ta"
     },
