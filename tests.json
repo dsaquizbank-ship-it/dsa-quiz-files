@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-14T04:25:17.532Z",
+  "version": "2026-11-14T04:27:14.111Z",
   "categories": [
     {
       "id": "BANK",
@@ -1669,7 +1669,7 @@
     {
       "testId": "BQA-2",
       "examId": "BANK-QA",
-      "name": "APPROXIMATION BQA-2 (Set-1)",
+      "name": "APPROXIMATION (SET-1)",
       "topic": "APPROXIMATION",
       "durationMinutes": 25,
       "order": 2,
@@ -1677,7 +1677,8 @@
       "negativeMark": 0.25,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BQA-2.html",
       "releaseTimestamp": 1794211200000,
-      "language": "en"
+      "language": "en",
+      "createdAt": 1794630434111
     },
     {
       "testId": "SQA-2",
