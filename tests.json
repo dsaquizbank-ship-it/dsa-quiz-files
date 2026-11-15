@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-15T05:45:11.364Z",
+  "version": "2026-11-15T05:57:06.942Z",
   "categories": [
     {
       "id": "BANK",
@@ -2360,6 +2360,20 @@
       "releaseTimestamp": 0,
       "language": "both",
       "createdAt": 1794714597177
+    },
+    {
+      "testId": "PGH-1",
+      "examId": "PG-HIS",
+      "name": "ROWLATT ACT AND JALLIANWALA BAGH MASSACRE, GANDHIAN ERA – NON-COOPERATION MOVEMENT AND CHAURI CHAURA, SWARAJ PARTY AND SIMON COMMISSION, REVOLUTIONARY MOVEMENTS",
+      "topic": "ROWLATT ACT AND JALLIANWALA BAGH MASSACRE, GANDHIAN ERA – NON-COOPERATION MOVEMENT AND CHAURI CHAURA, SWARAJ PARTY AND SIMON COMMISSION, REVOLUTIONARY MOVEMENTS",
+      "durationMinutes": 30,
+      "order": 1,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGH-1.html",
+      "releaseTimestamp": 0,
+      "language": "both",
+      "createdAt": 1794722226942
     }
   ]
 }
