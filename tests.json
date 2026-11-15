@@ -451,14 +451,14 @@
       "language": "both"
     },
     {
-      "testId": "NTE-TAM-50",
+      "testId": "NTE-TAM-1",
       "examId": "TET-TAMIL",
       "name": "NTE-TAMIL-50 IYAL 5,6 ILAKKANAM",
       "durationMinutes": 20,
-      "order": 50,
+      "order": 1,
       "questionCount": 30,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTE-TAM-50.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTE-TAM-1.html",
       "releaseTimestamp": 1792395000000
     },
     {
@@ -1002,15 +1002,15 @@
       "language": "en"
     },
     {
-      "testId": "TET-EG-54",
+      "testId": "TET-EG-1",
       "examId": "TET-ENGLISH",
-      "name": "8th STD 5-8 Units TET-EG-54",
+      "name": "8th STD 5-8 Units (Set-1)",
       "topic": "8th STD 5-8 Units",
       "durationMinutes": 15,
-      "order": 54,
+      "order": 1,
       "questionCount": 25,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-EG-54.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-EG-1.html",
       "releaseTimestamp": 1793779200000,
       "language": "both"
     },
@@ -1448,15 +1448,15 @@
       "language": "en"
     },
     {
-      "testId": "TET-EG-57",
+      "testId": "TET-EG-2",
       "examId": "TET-ENGLISH",
-      "name": "6th STD  1 TERM UNIT 1- SEA TURTLES-THE FRIENDSHIP TET-EG-55",
+      "name": "6th STD  1 TERM UNIT 1- SEA TURTLES-THE FRIENDSHIP (Set-1)",
       "topic": "6th STD  1 TERM UNIT 1- SEA TURTLES-THE FRIENDSHIP",
       "durationMinutes": 15,
-      "order": 57,
+      "order": 2,
       "questionCount": 25,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-EG-57.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-EG-2.html",
       "releaseTimestamp": 1794384000000,
       "language": "en"
     },
