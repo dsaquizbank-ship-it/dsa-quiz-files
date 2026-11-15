@@ -378,15 +378,15 @@
       "language": "both"
     },
     {
-      "testId": "UGM-91",
+      "testId": "UGM-1",
       "examId": "UG-MAT",
-      "name": "UGM-91 UNIT 8 WORK ENERGY AND POWER",
-      "topic": "LINEAR PROGRAMMING",
+      "name": "UNIT-8 WORK ENERGY AND POWER (Set-1)",
+      "topic": "UNIT-8 WORK ENERGY AND POWER",
       "durationMinutes": 30,
-      "order": 91,
+      "order": 1,
       "questionCount": 25,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-91.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-1.html",
       "releaseTimestamp": 1792395000000,
       "language": "both"
     },
