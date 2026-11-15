@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-15T03:49:57.177Z",
+  "version": "2026-11-15T03:53:58.718Z",
   "categories": [
     {
       "id": "BANK",
@@ -433,17 +433,6 @@
       "questionCount": 25,
       "negativeMark": 0.33,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SSR-51.html",
-      "releaseTimestamp": 0
-    },
-    {
-      "testId": "PGE-47",
-      "examId": "PG-ENG",
-      "name": "PGE-47 TED HUGHES – THE THOUGHT FOX",
-      "durationMinutes": 15,
-      "order": 47,
-      "questionCount": 25,
-      "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGE-47.html",
       "releaseTimestamp": 0
     },
     {
