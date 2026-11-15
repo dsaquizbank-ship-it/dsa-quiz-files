@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-15T03:54:59.345Z",
+  "version": "2026-11-15T05:45:11.364Z",
   "categories": [
     {
       "id": "BANK",
@@ -2111,8 +2111,8 @@
     },
     {
       "testId": "SPT-SS-9",
-      "examId": "UG-MAT",
-      "name": "6TH TERM 2 GEOGRAPHY LESSON 1, CIVICS LESSON 1, LESSON 2, ECONOMICS LESSON 1 SPT-SS-9",
+      "examId": "SPL-SOCIALSCIENCE",
+      "name": "6TH TERM 2 GEOGRAPHY LESSON 1, CIVICS LESSON 1, LESSON 2, ECONOMICS LESSON 1",
       "topic": "6TH TERM 2 GEOGRAPHY LESSON 1, CIVICS LESSON 1, LESSON 2, ECONOMICS LESSON 1",
       "durationMinutes": 30,
       "order": 9,
