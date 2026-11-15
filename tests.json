@@ -1692,15 +1692,15 @@
       "language": "both"
     },
     {
-      "testId": "UGP-73",
+      "testId": "UGP-1",
       "examId": "UG-PHY",
-      "name": "Barton's radiation correction-focal length of concave and convex lens by contact - galvanometer - conversion of galvanometer into ammeter and voltmeter. calibration of low range ammeter and voltmeter-ballistic galvanometer- figure of merit. UGP-73",
-      "topic": "Barton's radiation correction-focal length of concave and convex lens by contact - galvanometer - conversion of galvanometer into ammeter and voltmeter. calibration of low range ammeter and voltmeter-ballistic galvanometer- figure of merit.",
+      "name": "UNIT 10-Barton's radiation correction-focal length of concave and convex lens by contact - galvanometer - conversion of galvanometer into ammeter and voltmeter. calibration of low range ammeter and voltmeter-ballistic galvanometer- figure of merit (Set-1)",
+      "topic": "UNIT 10-Barton's radiation correction-focal length of concave and convex lens by contact - galvanometer - conversion of galvanometer into ammeter and voltmeter. calibration of low range ammeter and voltmeter-ballistic galvanometer- figure of merit.",
       "durationMinutes": 20,
-      "order": 73,
+      "order": 1,
       "questionCount": 25,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGP-73.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGP-1.html",
       "releaseTimestamp": 1794211200000,
       "language": "en"
     },
@@ -2018,15 +2018,15 @@
       "language": "both"
     },
     {
-      "testId": "UGP-74",
+      "testId": "UGP-2",
       "examId": "UG-PHY",
-      "name": "OHM METER-MULTIMETER-TANGENT-GALVANOMETER-MAGNETOMETER-METER BRIDGE-POTENTIOMETER-LCR CIRCUIT-REGISTERS & COUNTERS UGP-74",
-      "topic": "OHM METER-MULTIMETER-TANGENT-GALVANOMETER-MAGNETOMETER-METER BRIDGE-POTENTIOMETER-LCR CIRCUIT-REGISTERS & COUNTERS",
+      "name": "UNIT 10-OHM METER-MULTIMETER-TANGENT-GALVANOMETER-MAGNETOMETER-METER BRIDGE-POTENTIOMETER-LCR CIRCUIT-REGISTERS & COUNTERS (Set-2)",
+      "topic": "UNIT 10-OHM METER-MULTIMETER-TANGENT-GALVANOMETER-MAGNETOMETER-METER BRIDGE-POTENTIOMETER-LCR CIRCUIT-REGISTERS & COUNTERS",
       "durationMinutes": 25,
-      "order": 74,
+      "order": 2,
       "questionCount": 25,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGP-74.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGP-2.html",
       "releaseTimestamp": 1794384000000,
       "language": "en"
     },
