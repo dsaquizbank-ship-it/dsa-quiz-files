@@ -813,19 +813,6 @@
       "language": "both"
     },
     {
-      "testId": "PGH-44",
-      "examId": "PG-HIS",
-      "name": "Rowlatt Act and Jallianwala Bagh massacre, Gandhian Era – Non-Cooperation Movement and Chauri Chaura, Swaraj Party and Simon Commission, Revolutionary Movements PGH-44",
-      "topic": "Rowlatt Act and Jallianwala Bagh massacre, Gandhian Era – Non-Cooperation Movement and Chauri Chaura, Swaraj Party and Simon Commission, Revolutionary Movements",
-      "durationMinutes": 15,
-      "order": 44,
-      "questionCount": 25,
-      "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGH-44.html",
-      "releaseTimestamp": 1793606400000,
-      "language": "en"
-    },
-    {
       "testId": "UGE-99",
       "examId": "UG-ENG",
       "name": "GIRISH KORNAD – NAGAMANDALA(DRAMA) UGE-99",
@@ -1215,19 +1202,6 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGMI-94.html",
       "releaseTimestamp": 1793865600000,
       "language": "en"
-    },
-    {
-      "testId": "PGH-45",
-      "examId": "PG-HIS",
-      "name": "CIVIL DISOBEDIENCE PGH-45",
-      "topic": "CIVIL DISOBEDIENCE",
-      "durationMinutes": 15,
-      "order": 45,
-      "questionCount": 25,
-      "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGH-45.html",
-      "releaseTimestamp": 1793952000000,
-      "language": "both"
     },
     {
       "testId": "PGCS-4",
