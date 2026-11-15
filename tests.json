@@ -1823,15 +1823,15 @@
       "createdAt": 1794651792237
     },
     {
-      "testId": "UGM-98",
+      "testId": "UGM-8",
       "examId": "UG-MAT",
-      "name": "PERT AND CPM – PROJECT NETWORK DIAGRAAM, CRITICAL PATH AND PERT COMPUTATIONS UGM-98",
+      "name": "UNIT 9-PERT AND CPM – PROJECT NETWORK DIAGRAAM, CRITICAL PATH AND PERT COMPUTATIONS (Set-4)",
       "topic": "PERT AND CPM – PROJECT NETWORK DIAGRAAM, CRITICAL PATH AND PERT COMPUTATIONS",
       "durationMinutes": 30,
-      "order": 98,
+      "order": 8,
       "questionCount": 25,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-98.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-8.html",
       "releaseTimestamp": 1794384000000,
       "language": "en"
     },
@@ -2073,15 +2073,15 @@
       "createdAt": 1794469264793
     },
     {
-      "testId": "UGM-99",
+      "testId": "UGM-9",
       "examId": "UG-MAT",
-      "name": "PERT AND CPM – INVENTORY MODELS-EOQ MODELS,CLASSICAL NEWSPAPER BOY PROBLEM UGM-99",
-      "topic": "PERT AND CPM – INVENTORY MODELS-EOQ MODELS,CLASSICAL NEWSPAPER BOY PROBLEM",
+      "name": "UNIT 9-PERT AND CPM – INVENTORY MODELS-EOQ MODELS,CLASSICAL NEWSPAPER BOY PROBLEM (Set-5)",
+      "topic": "UNIT 9-PERT AND CPM – INVENTORY MODELS-EOQ MODELS,CLASSICAL NEWSPAPER BOY PROBLEM",
       "durationMinutes": 30,
-      "order": 99,
+      "order": 9,
       "questionCount": 25,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-99.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-9.html",
       "releaseTimestamp": 1794556800000,
       "language": "en",
       "createdAt": 1794470092305
