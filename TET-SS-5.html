@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>TET-SS-5 - 6TH TERM 2-NATIONAL SYMBOLS (SET-1)</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                linebreaks: { automatic: true, width: "container" }
+            },
+            options: { ignoreHtmlClass: "no-mathjax" },
+            chtml: {
+                displayAlign: "left",
+                displayIndent: "0",
+                mtextInheritFont: true
+            },
+            svg: {
+                scale: 0.9,
+                minScale: 0.5,
+                mtextInheritFont: true,
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; color: #10b981; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; white-space: normal; word-wrap: break-word; padding-bottom: 20px; max-width: 100%; overflow-x: auto; }
+        mjx-container { display: inline !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; }
+        .question-text::-webkit-scrollbar { display: none; }
+        .question-text { -ms-overflow-style: none; scrollbar-width: none; }
+        .option-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; word-wrap: break-word; }
+        .option-letter { font-weight: 800; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+        .option-text { flex-grow: 1; min-width: 0; word-wrap: break-word; overflow-wrap: break-word; }
+        .option-text mjx-container { display: inline-block !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; overflow-x: visible !important; }
+        .option-text mjx-container[jax="CHTML"][display="true"] { margin: 0 !important; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
+        .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
+        .review-card .question-text { overflow-x: hidden !important; white-space: normal !important; word-wrap: break-word !important; }
+        .review-card strong { color: var(--text-primary); font-size: 16px; }
+        .review-card .option-item { background-color: var(--rc-bg); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: rgba(40, 167, 69, 0.1); border: 1px solid #28a745; color: #28a745; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; color: #dc3545; }
+        .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
+        .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
+        .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
+        .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px 0; border-top: 1px solid var(--border-light); }
+        .review-nav-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .review-nav-btn:disabled { background: var(--border-light); color: var(--text-primary); opacity: 0.5; cursor: not-allowed; }
+        .review-nav-text { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+        .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { 
+            html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } 
+            .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } 
+            #startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard { display: none !important; } 
+            #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } 
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; } 
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; margin-bottom: 20px !important; display: block !important; } 
+            .review-card .option-item { border: 1px solid #ccc !important; background: white !important; color: black !important; } 
+            .review-card .option-item.correct { background: #e6ffe6 !important; border-color: #28a745 !important; color: black !important; } 
+            .review-card .option-item.wrong { background: #ffe6e6 !important; border-color: #dc3545 !important; color: black !important; } 
+            @page { size: A4; margin: 1.5cm; } 
+        }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">15:00</div>
+            <div class="top-buttons">
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div id="printHeader" style="display: none;">
+            <h1>DR SAHITHA IAS ACADEMY</h1>
+            <h3>ANSWER KEY & DETAILED REVIEW</h3>
+            <p><strong>Test:</strong> TET-SS-5 - TET SOCIAL SCIENCE</p>
+        </div>
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+            <div id="reviewPagination" class="review-nav-container" style="display: none;">
+                <button class="review-nav-btn" id="prevReviewBtn" onclick="navigateReview(-1)">◀ PREV</button>
+                <span class="review-nav-text" id="reviewPageText">1 / 25</span>
+                <button class="review-nav-btn" id="nextReviewBtn" onclick="navigateReview(1)">NEXT ▶</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "TET SOCIAL SCIENCE",
+        testNo: "TET-SS-5",
+        date: "16/11/2026",
+        subject: "TET SOCIAL SCIENCE",
+        topic: "6TH TERM 2-NATIONAL SYMBOLS",
+        duration: "15",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "From 15th August 1947 until 26th January 1950, prior to India declaring itself a Republic and the President assuming the role of the first citizen, who was recognized as the honorary head of India?",
+    "ta": "1947 ஆகஸ்ட் 15 முதல் 1950 ஜனவரி 26 வரை, இந்தியா குடியரசாக அறிவிக்கப்பட்டு குடியரசுத் தலைவர் முதல் குடிமகனாகப் பொறுப்பேற்பதற்கு முன்பு, இந்தியாவின் கௌரவத் தலைவராக யார் அங்கீகரிக்கப்பட்டார்?",
+    "optionsEn": ["The Governor-General of India", "The Queen of Britain", "The Prime Minister of India", "The President of the Constituent Assembly"],
+    "optionsTa": ["இந்தியாவின் கவர்னர் ஜெனரல்", "பிரிட்டன் ராணி", "இந்தியப் பிரதமர்", "அரசியலமைப்புச் சபைத் தலைவர்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "The first National Flag hoisted by Pandit Jawaharlal Nehru on 15th August 1947 at the Red Fort in Delhi was woven in Tamil Nadu. In which specific town was this flag woven, and where is it currently preserved as an exhibit?",
+    "ta": "1947 ஆகஸ்ட் 15 அன்று டெல்லியின் செங்கோட்டையில் பண்டிட் ஜவஹர்லால் நேருவால் ஏற்றப்பட்ட முதல் தேசியக் கொடி தமிழ்நாட்டில் நெய்யப்பட்டது. இந்தக் கொடி எந்தக் குறிப்பிட்ட நகரத்தில் நெய்யப்பட்டது, தற்போது அது எங்கு கண்காட்சிப் பொருளாகப் பாதுகாக்கப்படுகிறது?",
+    "optionsEn": ["Woven at Chennimalai (Erode) and preserved in the National Museum, New Delhi", "Woven at Gudiyatham (Vellore) and preserved in St. George's Fort Museum, Chennai", "Woven at Tirupur and preserved in the Chennai Government Museum", "Woven at Walajapet (Ranipet) and preserved in the Indian Museum, Kolkata"],
+    "optionsTa": ["சென்னிமலையில் (ஈரோடு) நெய்யப்பட்டு, புது டெல்லியின் தேசிய அருங்காட்சியகத்தில் பாதுகாக்கப்படுகிறது", "குடியாத்தத்தில் (வேலூர்) நெய்யப்பட்டு, சென்னையின் புனித ஜார்ஜ் கோட்டை அருங்காட்சியகத்தில் பாதுகாக்கப்படுகிறது", "திருப்பூரில் நெய்யப்பட்டு, சென்னை அரசு அருங்காட்சியகத்தில் பாதுகாக்கப்படுகிறது", "வாலாஜாபேட்டையில் (ராணிப்பேட்டை) நெய்யப்பட்டு, கொல்கத்தாவின் இந்திய அருங்காட்சியகத்தில் பாதுகாக்கப்படுகிறது"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "While the National Anthem 'Jana Gana Mana' was sung for the first time on 27th December 1911 at the Kolkata session of the Indian National Congress, the National Song 'Vande Mataram' was first sung by Rabindranath Tagore at which session of the Indian National Congress?",
+    "ta": "தேசிய கீதம் 'ஜன கண மன' 1911 டிசம்பர் 27 அன்று இந்திய தேசிய காங்கிரஸின் கொல்கத்தா மாநாட்டில் முதன்முதலில் பாடப்பட்டது, அதேசமயம் தேசிய பாடல் 'வந்தே மாதரம்' ரவீந்திரநாத் தாகூரால் இந்திய தேசிய காங்கிரஸின் எந்த மாநாட்டில் முதன்முதலில் பாடப்பட்டது?",
+    "optionsEn": ["1885 Bombay session", "1896 Kolkata session", "1906 Calcutta session", "1920 Nagpur session"],
+    "optionsTa": ["1885 பம்பாய் மாநாடு", "1896 கொல்கத்தா மாநாடு", "1906 கல்கத்தா மாநாடு", "1920 நாக்பூர் மாநாடு"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "The National Calendar of India is based on the Saka Era initiated during the reign of Emperor Kanishka. On which date was this calendar officially accepted following the recommendations of the Calendar Reformation Committee headed by Meghnad Saha?",
+    "ta": "இந்தியாவின் தேசிய நாட்காட்டி பேரரசர் கனிஷ்கரின் ஆட்சியின் போது தொடங்கப்பட்ட சக ஆண்டை அடிப்படையாகக் கொண்டது. மேக்நாத் சாஹா தலைமையிலான நாட்காட்டி சீர்திருத்தக் குழுவின் பரிந்துரைகளைத் தொடர்ந்து இந்த நாட்காட்டி எந்தத் தேதியில் அதிகாரப்பூர்வமாக ஏற்கப்பட்டது?",
+    "optionsEn": ["22nd July 1947", "24th January 1950", "22nd March 1957", "26th January 1950"],
+    "optionsTa": ["ஜூலை 22, 1947", "ஜனவரி 24, 1950", "மார்ச் 22, 1957", "ஜனவரி 26, 1950"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Tirupur Kumaran, honoured with the illustrious title 'Kodi Kaatha Kumaran', sacrificed his life holding aloft the tricolour flag in 1932 during violent police action. What was the historical cause of the nationwide demonstration in which he participated?",
+    "ta": "'கொடி காத்த குமரன்' என்ற புகழ்பெற்ற பட்டத்துடன் கௌரவிக்கப்பட்ட திருப்பூர் குமரன், 1932 இல் காவல்துறையின் வன்முறை நடவடிக்கையின் போது மூவர்ணக் கொடியை உயர்த்திப் பிடித்தவாறு தனது உயிரைத் தியாகம் செய்தார். அவர் பங்கேற்ற தேசிய அளவிலான ஆர்ப்பாட்டத்தின் வரலாற்றுக் காரணம் என்ன?",
+    "optionsEn": ["Protest against the arrival of the Simon Commission", "Protest demanding the release of Mahatma Gandhi following his arrest", "Protest against the imposition of the Rowlatt Act", "Demonstration supporting the Non-Cooperation Movement"],
+    "optionsTa": ["சைமன் கமிஷனின் வருகைக்கு எதிரான போராட்டம்", "மகாத்மா காந்தி கைது செய்யப்பட்டதைத் தொடர்ந்து அவரது விடுதலைக்குக் கோரிய போராட்டம்", "ரவுலத் சட்டத்தின் மீதான எதிர்ப்புப் போராட்டம்", "ஒத்துழையாமை இயக்கத்தை ஆதரிக்கும் ஆர்ப்பாட்டம்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following pairs indicating a National Symbol and its official year of adoption by the Government of India is correctly matched?",
+    "ta": "தேசிய அடையாளம் மற்றும் இந்திய அரசால் அதிகாரப்பூர்வமாக ஏற்கப்பட்ட ஆண்டைக் குறிக்கும் பின்வரும் எந்த இணை சரியாகப் பொருந்துகிறது?",
+    "optionsEn": ["National River (Ganges) — 2010", "National Aquatic Animal (Ganges River Dolphin) — 2008", "National Microorganism (Lactobacillus delbrueckii) — 2012", "National Animal (Tiger) — 1963"],
+    "optionsTa": ["தேசிய ஆறு (கங்கை) — 2010", "தேசிய நீர்வாழ் உயிரினம் (கங்கை ஆற்று டால்பின்) — 2008", "தேசிய நுண்ணுயிரி (லாக்டோபாசிலஸ் டெல்ப்ரூகி) — 2012", "தேசிய விலங்கு (புலி) — 1963"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "In the lower circular pedestal of the National Emblem of India, four animals are carved with the 'Wheel of righteousness' placed between them. Which of the following pairs correctly pairs the animal with the specific virtue it represents?",
+    "ta": "இந்தியாவின் தேசிய சின்னத்தின் கீழ் வட்ட மேடையில், நான்கு விலங்குகள் செதுக்கப்பட்டு அவற்றுக்கு இடையே 'தர்ம சக்கரம்' வைக்கப்பட்டுள்ளது. பின்வரும் எந்த இணை விலங்கை அது குறிக்கும் குறிப்பிட்ட நல்லொழுக்கத்துடன் சரியாக இணைக்கிறது?",
+    "optionsEn": ["Bull — Speed", "Horse — Hard work", "Elephant — Energy", "Lion — Speed"],
+    "optionsTa": ["காளை — வேகம்", "குதிரை — கடின உழைப்பு", "யானை — ஆற்றல்", "சிங்கம் — வேகம்"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following pairs linking a national creation or symbol with its respective author or designer is INCORRECTLY matched?",
+    "ta": "தேசிய படைப்பு அல்லது அடையாளத்தை அதன் சம்பந்தப்பட்ட ஆசிரியர் அல்லது வடிவமைப்பாளருடன் இணைக்கும் பின்வரும் எந்த இணை தவறாகப் பொருந்துகிறது?",
+    "optionsEn": ["National Flag — Pingali Venkayya (Andhra Pradesh)", "National Pledge — Pydimarri Venkata Subba Rao (Telugu)", "Indian Rupee Symbol (₹) — D. Udhayakumar (Tamil Nadu)", "National Song ('Vande Mataram') — Rabindranath Tagore (Bengali)"],
+    "optionsTa": ["தேசியக் கொடி — பிங்கலி வெங்கையா (ஆந்திரப் பிரதேசம்)", "தேசிய உறுதிமொழி — பைடிமர்ரி வெங்கட சுப்பா ராவ் (தெலுங்கு)", "இந்திய ரூபாய் சின்னம் (₹) — டி. உதயகுமார் (தமிழ்நாடு)", "தேசிய பாடல் ('வந்தே மாதரம்') — ரவீந்திரநாத் தாகூர் (வங்காளம்)"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following pairs of Tamil Nadu State Natural Symbols is correctly matched?",
+    "ta": "தமிழ்நாடு மாநில இயற்கை அடையாளங்களின் பின்வரும் எந்த இணை சரியாகப் பொருந்துகிறது?",
+    "optionsEn": ["State Tree — Gloriosa superba", "State Bird — Emerald dove", "State Flower — Palmyrah tree", "State Animal — Bengal tiger"],
+    "optionsTa": ["மாநில மரம் — குளோரியோசா சூப்பர்பா", "மாநிலப் பறவை — மரகதப் புறா", "மாநில மலர் — பனை மரம்", "மாநில விலங்கு — வங்காளப் புலி"],
+    "answer": 1
+  },
+  {
+    "type": "match",
+    "en": "Match the Natural National Symbols in Column A with their respective years of adoption by the Government of India in Column B.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>Column A</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>Column B</b></td></tr><tr><td style='padding:6px 0;'>a. Banyan tree</td><td></td><td style='padding:6px 0;'>1. 1973</td></tr><tr><td style='padding:6px 0;'>b. Peacock</td><td></td><td style='padding:6px 0;'>2. 2010</td></tr><tr><td style='padding:6px 0;'>c. Tiger</td><td></td><td style='padding:6px 0;'>3. 1950</td></tr><tr><td style='padding:6px 0;'>d. Elephant</td><td></td><td style='padding:6px 0;'>4. 1963</td></tr></table>",
+    "ta": "நெடுவரிசை A இல் உள்ள இயற்கை தேசிய அடையாளங்களை நெடுவரிசை B இல் உள்ள இந்திய அரசால் ஏற்கப்பட்ட அந்தந்த ஆண்டுகளுடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>நெடுவரிசை A</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>நெடுவரிசை B</b></td></tr><tr><td style='padding:6px 0;'>a. ஆலமரம்</td><td></td><td style='padding:6px 0;'>1. 1973</td></tr><tr><td style='padding:6px 0;'>b. மயில்</td><td></td><td style='padding:6px 0;'>2. 2010</td></tr><tr><td style='padding:6px 0;'>c. புலி</td><td></td><td style='padding:6px 0;'>3. 1950</td></tr><tr><td style='padding:6px 0;'>d. யானை</td><td></td><td style='padding:6px 0;'>4. 1963</td></tr></table>",
+    "optionsEn": ["a-3, b-4, c-1, d-2", "a-3, b-1, c-4, d-2", "a-4, b-3, c-1, d-2", "a-1, b-4, c-3, d-2"],
+    "optionsTa": ["a-3, b-4, c-1, d-2", "a-3, b-1, c-4, d-2", "a-4, b-3, c-1, d-2", "a-1, b-4, c-3, d-2"],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "Match the colours and components of the Indian National Flag in Column A with what they symbolize in Column B.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>Column A</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>Column B</b></td></tr><tr><td style='padding:6px 0;'>a. Saffron</td><td></td><td style='padding:6px 0;'>1. Fertility and prosperity</td></tr><tr><td style='padding:6px 0;'>b. White</td><td></td><td style='padding:6px 0;'>2. Truth and peace</td></tr><tr><td style='padding:6px 0;'>c. Green</td><td></td><td style='padding:6px 0;'>3. Valour and sacrifice</td></tr><tr><td style='padding:6px 0;'>d. Ashoka Chakra</td><td></td><td style='padding:6px 0;'>4. Honesty, peace, and purity</td></tr></table>",
+    "ta": "நெடுவரிசை A இல் உள்ள இந்திய தேசியக் கொடியின் நிறங்கள் மற்றும் கூறுகளை நெடுவரிசை B இல் அவை குறிக்கும் அம்சங்களுடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>நெடுவரிசை A</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>நெடுவரிசை B</b></td></tr><tr><td style='padding:6px 0;'>a. காவி</td><td></td><td style='padding:6px 0;'>1. வளம் மற்றும் செழிப்பு</td></tr><tr><td style='padding:6px 0;'>b. வெள்ளை</td><td></td><td style='padding:6px 0;'>2. உண்மை மற்றும் அமைதி</td></tr><tr><td style='padding:6px 0;'>c. பச்சை</td><td></td><td style='padding:6px 0;'>3. வீரம் மற்றும் தியாகம்</td></tr><tr><td style='padding:6px 0;'>d. அசோக சக்கரம்</td><td></td><td style='padding:6px 0;'>4. நேர்மை, அமைதி மற்றும் தூய்மை</td></tr></table>",
+    "optionsEn": ["a-3, b-1, c-4, d-2", "a-3, b-4, c-1, d-2", "a-1, b-4, c-3, d-2", "a-2, b-4, c-1, d-3"],
+    "optionsTa": ["a-3, b-1, c-4, d-2", "a-3, b-4, c-1, d-2", "a-1, b-4, c-3, d-2", "a-2, b-4, c-1, d-3"],
+    "answer": 1
+  },
+  {
+    "type": "match",
+    "en": "Match the symbols in Column A with their unique ecological and biological characteristics described in the textbook in Column B.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>Column A</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>Column B</b></td></tr><tr><td style='padding:6px 0;'>a. Ganges River Dolphin</td><td></td><td style='padding:6px 0;'>1. Only reptile that builds a cone-shaped nest of dried leaves</td></tr><tr><td style='padding:6px 0;'>b. King Cobra</td><td></td><td style='padding:6px 0;'>2. Uses ultrasound waves to navigate and catch prey as it is essentially blind</td></tr><tr><td style='padding:6px 0;'>c. Mango</td><td></td><td style='padding:6px 0;'>3. Constitutes (70%) of the global population in India</td></tr><tr><td style='padding:6px 0;'>d. Tiger</td><td></td><td style='padding:6px 0;'>4. Rich source of Vitamins A, C, and D, historically grown as 'Imam pasand'</td></tr></table>",
+    "ta": "நெடுவரிசை A இல் உள்ள அடையாளங்களை நெடுவரிசை B இல் பாடப்புத்தகத்தில் விவரிக்கப்பட்டுள்ள அவற்றின் தனித்துவமான சூழலியல் மற்றும் உயிரியல் பண்புகளுடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>நெடுவரிசை A</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>நெடுவரிசை B</b></td></tr><tr><td style='padding:6px 0;'>a. கங்கை ஆற்று டால்பின்</td><td></td><td style='padding:6px 0;'>1. உலர்ந்த இலைகளால் கூம்பு வடிவ கூடு கட்டும் ஒரே ஊர்வன</td></tr><tr><td style='padding:6px 0;'>b. ராஜ நாகம்</td><td></td><td style='padding:6px 0;'>2. முற்றிலும் பார்வையற்றது என்பதால் வழிசெலுத்தவும் இரையைப் பிடிக்கவும் அல்ட்ராசவுண்ட் அலைகளைப் பயன்படுத்துகிறது</td></tr><tr><td style='padding:6px 0;'>c. மாம்பழம்</td><td></td><td style='padding:6px 0;'>3. உலக மக்கள்தொகையில் (70%) இந்தியாவில் உள்ளது</td></tr><tr><td style='padding:6px 0;'>d. புலி</td><td></td><td style='padding:6px 0;'>4. வைட்டமின் A, C மற்றும் D இன் செறிவூட்டப்பட்ட ஆதாரம், வரலாற்று ரீதியாக 'இமாம் பசந்த்' என்று வளர்க்கப்பட்டது</td></tr></table>",
+    "optionsEn": ["a-2, b-1, c-3, d-4", "a-2, b-1, c-4, d-3", "a-1, b-2, c-4, d-3", "a-2, b-4, c-1, d-3"],
+    "optionsTa": ["a-2, b-1, c-3, d-4", "a-2, b-1, c-4, d-3", "a-1, b-2, c-4, d-3", "a-2, b-4, c-1, d-3"],
+    "answer": 1
+  },
+  {
+    "type": "match",
+    "en": "Match the significant constitutional dates in Column A with their corresponding historical milestones in Column B.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>Column A</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>Column B</b></td></tr><tr><td style='padding:6px 0;'>a. 22nd July 1947</td><td></td><td style='padding:6px 0;'>1. Constituent Assembly accepted 'Jana Gana Mana' as National Anthem</td></tr><tr><td style='padding:6px 0;'>b. 24th January 1950</td><td></td><td style='padding:6px 0;'>2. Annual Beating Retreat ceremony ending Republic Day celebrations</td></tr><tr><td style='padding:6px 0;'>c. 26th January 1950</td><td></td><td style='padding:6px 0;'>3. Constituent Assembly adopted the Tricolour as the National Flag</td></tr><tr><td style='padding:6px 0;'>d. 29th January</td><td></td><td style='padding:6px 0;'>4. Official adoption of the Sarnath Lion Capital as the National Emblem</td></tr></table>",
+    "ta": "நெடுவரிசை A இல் உள்ள முக்கிய அரசியலமைப்புத் தேதிகளை நெடுவரிசை B இல் உள்ள அவற்றின் தொடர்புடைய வரலாற்று மைல்கற்களுடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>நெடுவரிசை A</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>நெடுவரிசை B</b></td></tr><tr><td style='padding:6px 0;'>a. ஜூலை 22, 1947</td><td></td><td style='padding:6px 0;'>1. அரசியலமைப்புச் சபை 'ஜன கண மன'வை தேசிய கீதமாக ஏற்றுக்கொண்டது</td></tr><tr><td style='padding:6px 0;'>b. ஜனவரி 24, 1950</td><td></td><td style='padding:6px 0;'>2. குடியரசு தினக் கொண்டாட்டங்களை நிறைவு செய்யும் ஆண்டு பீட்டிங் ரிட்ரீட் விழா</td></tr><tr><td style='padding:6px 0;'>c. ஜனவரி 26, 1950</td><td></td><td style='padding:6px 0;'>3. அரசியலமைப்புச் சபை மூவர்ணக் கொடியை தேசியக் கொடியாக ஏற்றுக்கொண்டது</td></tr><tr><td style='padding:6px 0;'>d. ஜனவரி 29</td><td></td><td style='padding:6px 0;'>4. சாரநாத் சிங்க முகப்பை தேசிய சின்னமாக அதிகாரப்பூர்வமாக ஏற்றுக்கொண்டது</td></tr></table>",
+    "optionsEn": ["a-3, b-1, c-4, d-2", "a-1, b-3, c-4, d-2", "a-3, b-4, c-1, d-2", "a-4, b-1, c-3, d-2"],
+    "optionsTa": ["a-3, b-1, c-4, d-2", "a-1, b-3, c-4, d-2", "a-3, b-4, c-1, d-2", "a-4, b-1, c-3, d-2"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Identify the odd one out among the following animals based on their depiction on the circular pedestal (lower part) of the Indian National Emblem:",
+    "ta": "இந்திய தேசிய சின்னத்தின் வட்ட மேடையில் (கீழ்ப் பகுதி) அவற்றின் சித்தரிப்பின் அடிப்படையில் பின்வரும் விலங்குகளில் பொருந்தாததை அடையாளம் காண்க:",
+    "optionsEn": ["Elephant", "Horse", "Cow", "Bull"],
+    "optionsTa": ["யானை", "குதிரை", "பசு", "காளை"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Find the odd one out among the following based on the year of official adoption as a Natural National Symbol by the Government of India:",
+    "ta": "இந்திய அரசால் இயற்கை தேசிய அடையாளமாக அதிகாரப்பூர்வமாக ஏற்கப்பட்ட ஆண்டின் அடிப்படையில் பின்வருவனவற்றுள் பொருந்தாததைக் கண்டறிக:",
+    "optionsEn": ["Banyan tree", "Lotus", "Mango", "Peacock"],
+    "optionsTa": ["ஆலமரம்", "தாமரை", "மாமரம்", "மயில்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Identify the odd one out from the following list of symbols:",
+    "ta": "பின்வரும் அடையாளங்களின் பட்டியலிலிருந்து பொருந்தாததை அடையாளம் காண்க:",
+    "optionsEn": ["Nilgiri Tahr", "Emerald dove", "Gloriosa superba", "Ganges River Dolphin"],
+    "optionsTa": ["நீலகிரி வரையாடு", "மரகதப் புறா", "குளோரியோசா சூப்பர்பா", "கங்கை ஆற்று டால்பின்"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Find the odd one out among the following statements regarding the rivers and aquatic details mentioned in the textbook:",
+    "ta": "பாடப்புத்தகத்தில் குறிப்பிடப்பட்டுள்ள ஆறுகள் மற்றும் நீர்வாழ் விவரங்கள் தொடர்பான பின்வரும் கூற்றுகளில் பொருந்தாததைக் கண்டறிக:",
+    "optionsEn": ["River Ganges — ($2,525$ km) long perennial river", "River Brahmaputra — ($2,900$ km) long river", "River Ganges — Longest river flowing across India", "River Brahmaputra — Longest river flowing completely across India"],
+    "optionsTa": ["கங்கை நதி — ($2,525$ கி.மீ) நீளமுள்ள வற்றாத ஆறு", "பிரம்மபுத்திரா நதி — ($2,900$ கி.மீ) நீளமுள்ள ஆறு", "கங்கை நதி — இந்தியா முழுவதும் பாயும் மிக நீளமான ஆறு", "பிரம்மபுத்திரா நதி — இந்தியா முழுவதும் முழுமையாகப் பாயும் மிக நீளமான ஆறு"],
+    "answer": 3
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): The Gangetic river dolphin relies on ultrasound waves rather than sight to catch its prey.<br><br>Reason (R): River dolphins are essentially blind and live in river waters where they use echolocation to navigate.",
+    "ta": "Assertion (A): கங்கை ஆற்று டால்பின் தனது இரையைப் பிடிக்க பார்வையை விட அல்ட்ராசவுண்ட் அலைகளை நம்பியிருக்கிறது.<br><br>Reason (R): ஆற்று டால்பின்கள் அடிப்படையில் பார்வையற்றவை மற்றும் வழிசெலுத்த எக்கோலொகேஷனைப் பயன்படுத்தும் ஆற்று நீரில் வாழ்கின்றன.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, மேலும் R என்பது A-விற்கான சரியான விளக்கம்.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-விற்கான சரியான விளக்கம் அல்ல.",
+      "A சரி, ஆனால் R தவறு.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): In the official Indian National Emblem, only three lions are visible from any single viewing angle.<br><br>Reason (R): The National Emblem consists of four lions mounted back-to-back facing North, South, East, and West on a circular pedestal.",
+    "ta": "Assertion (A): அதிகாரப்பூர்வ இந்திய தேசிய சின்னத்தில், எந்த ஒரு பார்க்கும் கோணத்திலிருந்தும் மூன்று சிங்கங்கள் மட்டுமே தெரியும்.<br><br>Reason (R): தேசிய சின்னம் வடக்கு, தெற்கு, கிழக்கு மற்றும் மேற்கு நோக்கி முதுகுக்கு முதுகு பின்னால் பொருத்தப்பட்ட நான்கு சிங்கங்களைக் கொண்ட ஒரு வட்ட மேடையைக் கொண்டுள்ளது.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, மேலும் R என்பது A-விற்கான சரியான விளக்கம்.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-விற்கான சரியான விளக்கம் அல்ல.",
+      "A சரி, ஆனால் R தவறு.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): The King Cobra (Ophiophagus hannah) is unique among all reptilian species in the world in its nesting behaviour.<br><br>Reason (R): King Cobra is the only reptile that constructs a nest of its own using dried leaves to lay eggs and reproduce.",
+    "ta": "Assertion (A): ராஜ நாகம் (ஆபியோபாகஸ் ஹன்னா) உலகின் அனைத்து ஊர்வன இனங்களிடையேயும் அதன் கூடு கட்டும் நடத்தையில் தனித்துவமானது.<br><br>Reason (R): ராஜ நாகம் முட்டையிட மற்றும் இனப்பெருக்கம் செய்ய உலர்ந்த இலைகளைப் பயன்படுத்தி தனது சொந்த கூடைக் கட்டும் ஒரே ஊர்வன.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, மேலும் R என்பது A-விற்கான சரியான விளக்கம்.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-விற்கான சரியான விளக்கம் அல்ல.",
+      "A சரி, ஆனால் R தவறு.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): 'Vande Mataram' enjoys equal status with the National Anthem 'Jana Gana Mana' in the Republic of India.<br><br>Reason (R): 'Vande Mataram' was originally composed by Rabindranath Tagore in Bengali as part of his collection Gitanjali.",
+    "ta": "Assertion (A): 'வந்தே மாதரம்' இந்தியக் குடியரசில் தேசிய கீதமான 'ஜன கண மன'வுடன் சம அந்தஸ்தைப் பெறுகிறது.<br><br>Reason (R): 'வந்தே மாதரம்' முதலில் ரவீந்திரநாத் தாகூரால் வங்காள மொழியில் அவரது கீதாஞ்சலி தொகுப்பின் ஒரு பகுதியாக இயற்றப்பட்டது.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, மேலும் R என்பது A-விற்கான சரியான விளக்கம்.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-விற்கான சரியான விளக்கம் அல்ல.",
+      "A சரி, ஆனால் R தவறு.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements regarding the National Anthem of India:<br><br>I. It has to be sung at a duration of 52 seconds.<br>II. It was originally written by Rabindranath Tagore in Bengali and transcripted in Hindi.<br>III. Everyone should stand erect while singing the National Anthem and understand its meaning.<br>IV. It was accepted by the Constituent Assembly on 26th January 1950.<br><br>Which of the above statements are correct?",
+    "ta": "இந்தியாவின் தேசிய கீதம் தொடர்பான பின்வரும் கூற்றுகளை ஆராய்க:<br><br>I. இது 52 வினாடிகள் கால அளவில் பாடப்பட வேண்டும்.<br>II. இது முதலில் ரவீந்திரநாத் தாகூரால் வங்காளத்தில் எழுதப்பட்டு இந்தியில் எழுத்துப்பெயர்க்கப்பட்டது.<br>III. தேசிய கீதம் பாடும் போது அனைவரும் நிமிர்ந்து நிற்க வேண்டும் மற்றும் அதன் பொருளைப் புரிந்து கொள்ள வேண்டும்.<br>IV. இது ஜனவரி 26, 1950 அன்று அரசியலமைப்புச் சபையால் ஏற்கப்பட்டது.<br><br>மேற்கூறிய கூற்றுகளில் எவை சரியானவை?",
+    "optionsEn": ["I and III only", "I, II, and III only", "II, III, and IV only", "I, II, III, and IV"],
+    "optionsTa": ["I மற்றும் III மட்டும்", "I, II மற்றும் III மட்டும்", "II, III மற்றும் IV மட்டும்", "I, II, III மற்றும் IV"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statements regarding the Indian National Flag and national observances is INCORRECT?",
+    "ta": "இந்திய தேசியக் கொடி மற்றும் தேசிய விழாக்கள் தொடர்பான பின்வரும் கூற்றுகளில் எது தவறானது?",
+    "optionsEn": ["The length and width proportion of the National Flag is ($3:2$) respectively.", "The Ashoka Chakra contains 24 spokes and is navy blue in colour.", "On Republic Day, the Prime Minister of India unfurls the National Flag at the Red Fort, New Delhi.", "The saffron colour represents valour and sacrifice, while green represents fertility and prosperity."],
+    "optionsTa": ["தேசியக் கொடியின் நீளம் மற்றும் அகல விகிதம் முறையே ($3:2$) ஆகும்.", "அசோக சக்கரத்தில் 24 கதிர்கள் உள்ளன மற்றும் இது கடற்படை நீல நிறத்தில் உள்ளது.", "குடியரசு தினத்தன்று, இந்தியப் பிரதமர் புது டெல்லியின் செங்கோட்டையில் தேசியக் கொடியை ஏற்றுகிறார்.", "காவி நிறம் வீரம் மற்றும் தியாகத்தைக் குறிக்கிறது, அதேசமயம் பச்சை நிறம் வளம் மற்றும் செழிப்பைக் குறிக்கிறது."],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements:<br><br>1. Lactobacillus delbrueckii was accepted as the national microorganism of India in the year 2012.<br>2. The Indian Rupee symbol (₹) was designed by D. Udhayakumar from Tamil Nadu in the year 2010.<br>3. During a leap year, the Indian National Calendar begins on March 22nd.<br>4. The currency released by Sher Shah Suri in the sixteenth century was called 'Rupiya'.<br><br>Which of the above statements are TRUE?",
+    "ta": "பின்வரும் கூற்றுகளை ஆராய்க:<br><br>1. லாக்டோபாசிலஸ் டெல்ப்ரூகி 2012 ஆம் ஆண்டில் இந்தியாவின் தேசிய நுண்ணுயிரியாக ஏற்கப்பட்டது.<br>2. இந்திய ரூபாய் சின்னம் (₹) 2010 ஆம் ஆண்டில் தமிழ்நாட்டைச் சேர்ந்த டி. உதயகுமாரால் வடிவமைக்கப்பட்டது.<br>3. ஒரு நெட்டாண்டின் போது, இந்திய தேசிய நாட்காட்டி மார்ச் 22 அன்று தொடங்குகிறது.<br>4. பதினாறாம் நூற்றாண்டில் ஷேர் ஷா சூரி வெளியிட்ட நாணயம் 'ரூபியா' என்று அழைக்கப்பட்டது.<br><br>மேற்கூறிய கூற்றுகளில் எவை சரியானவை?",
+    "optionsEn": ["1, 2, and 3 only", "1, 2, and 4 only", "2, 3, and 4 only", "1, 3, and 4 only"],
+    "optionsTa": ["1, 2 மற்றும் 3 மட்டும்", "1, 2 மற்றும் 4 மட்டும்", "2, 3 மற்றும் 4 மட்டும்", "1, 3 மற்றும் 4 மட்டும்"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Read the following statements concerning the 'Beating Retreat' ceremony:<br><br>Statement I: The ceremony is performed on January 29, the third day of Republic Day celebrations.<br>Statement II: It is jointly performed by the bands of the Indian Army, Navy, and Air Force.<br>Statement III: The Prime Minister of India is the chief guest of this day, and the Red Fort is illuminated at 6:00 pm.<br><br>Which of the statement(s) is/are correct?",
+    "ta": "'பீட்டிங் ரிட்ரீட்' விழா தொடர்பான பின்வரும் கூற்றுகளைப் படிக்கவும்:<br><br>கூற்று I: இந்த விழா குடியரசு தினக் கொண்டாட்டங்களின் மூன்றாம் நாளான ஜனவரி 29 அன்று நிகழ்த்தப்படுகிறது.<br>கூற்று II: இது இந்திய இராணுவம், கடற்படை மற்றும் விமானப்படையின் இசைக்குழுக்களால் கூட்டாக நிகழ்த்தப்படுகிறது.<br>கூற்று III: இந்தியப் பிரதமர் இந்த நாளின் தலைமை விருந்தினர், மேலும் செங்கோட்டை மாலை 6:00 மணிக்கு ஒளிரும்.<br><br>எந்தக் கூற்று(கள்) சரியானது/சரியானவை?",
+    "optionsEn": ["Statement I only", "Statements I and II only", "Statements I, II, and III", "Statement III only"],
+    "optionsTa": ["கூற்று I மட்டும்", "கூற்று I மற்றும் II மட்டும்", "கூற்று I, II மற்றும் III", "கூற்று III மட்டும்"],
+    "answer": 1
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false; isSubmitted = false;
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">
+                <span class="option-letter">${String.fromCharCode(65+i)}.</span>
+                <span class="option-text">${opt}</span>
+            </div>`;
+        });
+        let clearBtnHtml = "";
+        if (sel !== null && sel !== undefined) {
+            clearBtnHtml = `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;">
+                <button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button>
+            </div>`;
+        }
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+                ${sel !== null && sel !== undefined ? `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;"><button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button></div>` : ``}
+            </div>
+        `;
+        updateNavButtons(); updatePalette();
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) {
+            userAnswers[currentIndex] = null;
+        } else {
+            userAnswers[currentIndex] = optIndex;
+        }
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+
+    function clearSelection() {
+        if (isSubmitted) return;
+        userAnswers[currentIndex] = null;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    let currentReviewIndex = 0;
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let cssClass = "option-item";
+                let markerHtml = "";
+                if (idx === corr) { cssClass += " correct"; markerHtml = "<div class='marker'>✔</div>"; }
+                else if (u === idx && idx !== corr) { cssClass += " wrong"; markerHtml = "<div class='marker'>✖</div>"; }
+                optsHtml += `<div class="${cssClass}"><span>${String.fromCharCode(65+idx)}. ${optsArray[idx]}</span>${markerHtml}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" id="review-card-${i}" style="display: none;">
+                        <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div class="your-answer">Your Answer: ${userAns}</div>
+                        <div class="correct-answer">Correct Answer: ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        ${optsHtml}
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+        currentReviewIndex = 0;
+        showReviewCard(currentReviewIndex);
+    }
+    function showReviewCard(index) {
+        const cards = document.querySelectorAll(".review-card");
+        if (cards.length === 0) return;
+        cards.forEach(c => c.style.display = "none");
+        cards[index].style.display = "block";
+        document.getElementById("reviewPageText").innerText = `${index + 1} / ${cards.length}`;
+        document.getElementById("prevReviewBtn").disabled = (index === 0);
+        document.getElementById("nextReviewBtn").disabled = (index === cards.length - 1);
+        document.getElementById("reviewPagination").style.display = "flex";
+        window.scrollTo(0, 0);
+    }
+    function navigateReview(direction) {
+        const cards = document.querySelectorAll(".review-card");
+        currentReviewIndex += direction;
+        if (currentReviewIndex >= 0 && currentReviewIndex < cards.length) {
+            showReviewCard(currentReviewIndex);
+        }
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
+            await new Promise(r => setTimeout(r, 600));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+                if (btn) btn.innerText = "✅ Select Save as PDF";
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+        } finally {
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 3000);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        history.replaceState({ resultPage: true }, "", "#result");
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.addEventListener("popstate", function(e) {
+        if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+            history.pushState({ resultPage: true }, "", "#result");
+            confirmLeaveResult();
+        }
+    });
+    function confirmLeaveResult() {
+        if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
+            window.AndroidBridge.exitResultPage();
+        } else {
+            history.back();
+        }
+    }
+    window.checkForReview = function() {
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
+            }
+        }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
