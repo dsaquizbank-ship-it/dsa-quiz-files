@@ -1145,15 +1145,15 @@
       "language": "en"
     },
     {
-      "testId": "TET-SC-54",
+      "testId": "TET-SC-1",
       "examId": "TET-SCIENCE",
-      "name": "7TH TERM 3 LIGHT TET-SC-54",
+      "name": "7TH TERM 3 LIGHT (Set-1)",
       "topic": "7TH TERM 3 LIGHT",
       "durationMinutes": 15,
-      "order": 54,
+      "order": 1,
       "questionCount": 25,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-SC-54.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-SC-1.html",
       "releaseTimestamp": 1793779200000,
       "language": "both"
     },
