@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-16T08:58:05.705Z",
+  "version": "2026-11-16T09:13:28.902Z",
   "categories": [
     {
       "id": "BANK",
@@ -2632,7 +2632,7 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGP-3.html",
-      "releaseTimestamp": 1794816000000,
+      "releaseTimestamp": 1794902400000,
       "language": "en",
       "createdAt": 1794819485705
     }
