@@ -1617,15 +1617,15 @@
       "language": "both"
     },
     {
-      "testId": "SPT-TA-6",
+      "testId": "SPT-TA-1",
       "examId": "SPL-TAMIL",
-      "name": "6TH TERM 3 – 7TH TERM 1 SPT-TA-6",
+      "name": "6TH TERM 3 – 7TH TERM 1 (Set-1)",
       "topic": "6TH TERM 3 – 7TH TERM 1",
       "durationMinutes": 30,
-      "order": 6,
+      "order": 1,
       "questionCount": 50,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-TA-6.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-TA-1.html",
       "releaseTimestamp": 1794211200000,
       "language": "ta"
     },
@@ -2161,15 +2161,15 @@
       "createdAt": 1794534131318
     },
     {
-      "testId": "SPT-TA-7",
+      "testId": "SPT-TA-2",
       "examId": "SPL-TAMIL",
-      "name": "7TH TERM 2 – TERM 3 SPT-TA-7",
-      "topic": "7TH TERM 2 – TERM 3",
+      "name": "7TH TERM 2 – 7TH TERM 3 (Set-1)",
+      "topic": "7TH TERM 2 – 7TH TERM 3",
       "durationMinutes": 30,
-      "order": 7,
+      "order": 2,
       "questionCount": 50,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-TA-7.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-TA-2.html",
       "releaseTimestamp": 1794556800000,
       "language": "ta",
       "createdAt": 1794551016570
