@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-16T07:12:29.334Z",
+  "version": "2026-11-16T07:15:51.497Z",
   "categories": [
     {
       "id": "BANK",
@@ -2425,6 +2425,20 @@
       "releaseTimestamp": 1794816000000,
       "language": "both",
       "createdAt": 1794813149334
+    },
+    {
+      "testId": "TIH-5",
+      "examId": "TNPSC-IH",
+      "name": "MUGHALS (SET-1)",
+      "topic": "MUGHALS",
+      "durationMinutes": 15,
+      "order": 5,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIH-5.html",
+      "releaseTimestamp": 1794816000000,
+      "language": "both",
+      "createdAt": 1794813351497
     }
   ]
 }
