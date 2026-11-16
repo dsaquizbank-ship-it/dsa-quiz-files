@@ -794,15 +794,15 @@
       "language": "both"
     },
     {
-      "testId": "TET-MS-53",
+      "testId": "TET-MS-2",
       "examId": "TET-MATHS",
-      "name": "7th TERM 1 DIRECT AND INVERSE PROPORTION TET-MS-53",
+      "name": "7th TERM 1 DIRECT AND INVERSE PROPORTION (Set-1)",
       "topic": "7th TERM 1 DIRECT AND INVERSE PROPORTION",
       "durationMinutes": 20,
-      "order": 53,
+      "order": 2,
       "questionCount": 25,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-MS-53.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-MS-2.html",
       "releaseTimestamp": 1793606400000,
       "language": "both"
     },
@@ -846,15 +846,15 @@
       "language": "en"
     },
     {
-      "testId": "TET-MS-01",
+      "testId": "TET-MS-1",
       "examId": "TET-MATHS",
-      "name": "6TH TERM-1 TET-MS-01",
+      "name": "6TH TERM-1 (Set-1)",
       "topic": "6TH TERM-1",
       "durationMinutes": 30,
       "order": 1,
       "questionCount": 50,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-MS-01.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-MS-1.html",
       "releaseTimestamp": 1793687400000,
       "language": "both"
     },
