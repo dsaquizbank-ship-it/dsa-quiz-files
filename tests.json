@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-16T07:39:23.947Z",
+  "version": "2026-11-16T08:02:01.424Z",
   "categories": [
     {
       "id": "BANK",
@@ -2579,6 +2579,20 @@
       "releaseTimestamp": 1794816000000,
       "language": "both",
       "createdAt": 1794814763947
+    },
+    {
+      "testId": "BQA-3",
+      "examId": "BANK-QA",
+      "name": "PERCENTAGES (SET-1)",
+      "topic": "PERCENTAGES",
+      "durationMinutes": 30,
+      "order": 3,
+      "questionCount": 25,
+      "negativeMark": 0.25,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BQA-3.html",
+      "releaseTimestamp": 1794816000000,
+      "language": "both",
+      "createdAt": 1794816121424
     }
   ]
 }
