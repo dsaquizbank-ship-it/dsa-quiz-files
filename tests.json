@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-16T06:55:39.032Z",
+  "version": "2026-11-16T07:07:34.164Z",
   "categories": [
     {
       "id": "BANK",
@@ -2383,6 +2383,20 @@
       "releaseTimestamp": 1794816000000,
       "language": "both",
       "createdAt": 1794812139032
+    },
+    {
+      "testId": "RGA-5",
+      "examId": "RRB-GA",
+      "name": "MEDIEVAL INDIA - DELHI SULTANATE (SET-1)",
+      "topic": "MEDIEVAL INDIA - DELHI SULTANATE",
+      "durationMinutes": 15,
+      "order": 5,
+      "questionCount": 25,
+      "negativeMark": 0.5,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGA-5.html",
+      "releaseTimestamp": 1794816000000,
+      "language": "both",
+      "createdAt": 1794812854164
     }
   ]
 }
