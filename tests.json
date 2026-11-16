@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-16T07:25:44.342Z",
+  "version": "2026-11-16T07:28:24.371Z",
   "categories": [
     {
       "id": "BANK",
@@ -2509,6 +2509,20 @@
       "releaseTimestamp": 1794816000000,
       "language": "both",
       "createdAt": 1794813862513
+    },
+    {
+      "testId": "TET-TA-3",
+      "examId": "TET-TAMIL",
+      "name": "6TH TERM 1 IYAL 1 (SET-1)",
+      "topic": "6TH TERM 1 IYAL 1",
+      "durationMinutes": 15,
+      "order": 3,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-TA-3.html",
+      "releaseTimestamp": 1794816000000,
+      "language": "ta",
+      "createdAt": 1794814104371
     }
   ]
 }
