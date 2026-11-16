@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-16T07:10:17.876Z",
+  "version": "2026-11-16T07:12:29.334Z",
   "categories": [
     {
       "id": "BANK",
@@ -2411,6 +2411,20 @@
       "releaseTimestamp": 1794816000000,
       "language": "both",
       "createdAt": 1794813017876
+    },
+    {
+      "testId": "TET-SS-5",
+      "examId": "TET-SOCIALSCIENCE",
+      "name": "6TH TERM 2-NATIONAL SYMBOLS (SET-1)",
+      "topic": "6TH TERM 2-NATIONAL SYMBOLS",
+      "durationMinutes": 15,
+      "order": 5,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-SS-5.html",
+      "releaseTimestamp": 1794816000000,
+      "language": "both",
+      "createdAt": 1794813149334
     }
   ]
 }
