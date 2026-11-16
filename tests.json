@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-16T07:07:34.164Z",
+  "version": "2026-11-16T07:10:17.876Z",
   "categories": [
     {
       "id": "BANK",
@@ -2397,6 +2397,20 @@
       "releaseTimestamp": 1794816000000,
       "language": "both",
       "createdAt": 1794812854164
+    },
+    {
+      "testId": "SGT-SS-5",
+      "examId": "SGT-SOCIALSCIENCE",
+      "name": "9TH-EARLY TAMIL SOCIETY AND CULTURE (SET-1)",
+      "topic": "9TH-EARLY TAMIL SOCIETY AND CULTURE",
+      "durationMinutes": 15,
+      "order": 5,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGT-SS-5.html",
+      "releaseTimestamp": 1794816000000,
+      "language": "both",
+      "createdAt": 1794813017876
     }
   ]
 }
