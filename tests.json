@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-16T07:20:14.106Z",
+  "version": "2026-11-16T07:22:54.613Z",
   "categories": [
     {
       "id": "BANK",
@@ -2481,6 +2481,20 @@
       "releaseTimestamp": 1794816000000,
       "language": "en",
       "createdAt": 1794813614106
+    },
+    {
+      "testId": "RGS-7",
+      "examId": "RRB-GS",
+      "name": "PHYSICS - FORCES (SET-1)",
+      "topic": "PHYSICS - FORCES",
+      "durationMinutes": 15,
+      "order": 7,
+      "questionCount": 25,
+      "negativeMark": 0.33,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGS-7.html",
+      "releaseTimestamp": 1794816000000,
+      "language": "en",
+      "createdAt": 1794813774613
     }
   ]
 }
