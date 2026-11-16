@@ -1879,15 +1879,15 @@
       "language": "en"
     },
     {
-      "testId": "TET-SC-57",
+      "testId": "TET-SC-2",
       "examId": "TET-SCIENCE",
-      "name": "7TH TERM 3 UNIT 2 UNIVERSE AND SPACE TET-SC-57",
+      "name": "7TH TERM 3 UNIVERSE AND SPACE (Set-1)",
       "topic": "7TH TERM 3 UNIT 2 UNIVERSE AND SPACE",
       "durationMinutes": 15,
-      "order": 57,
+      "order": 2,
       "questionCount": 25,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-SC-57.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-SC-2.html",
       "releaseTimestamp": 1794384000000,
       "language": "both"
     },
