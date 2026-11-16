@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-16T07:15:51.497Z",
+  "version": "2026-11-16T07:17:20.618Z",
   "categories": [
     {
       "id": "BANK",
@@ -2439,6 +2439,20 @@
       "releaseTimestamp": 1794816000000,
       "language": "both",
       "createdAt": 1794813351497
+    },
+    {
+      "testId": "TIH-6",
+      "examId": "TNPSC-IH",
+      "name": "MARATHAS (SET-1)",
+      "topic": "MUGHALS",
+      "durationMinutes": 15,
+      "order": 6,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIH-6.html",
+      "releaseTimestamp": 1794816000000,
+      "language": "both",
+      "createdAt": 1794813440618
     }
   ]
 }
