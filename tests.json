@@ -1683,15 +1683,15 @@
       "language": "en"
     },
     {
-      "testId": "TET-MS-56",
+      "testId": "TET-MS-3",
       "examId": "TET-MATHS",
-      "name": "7TH TERM 1 GEOMETRY TET-MS-56",
+      "name": "7TH TERM 1 GEOMETRY (Set-1)",
       "topic": "7TH TERM 1 GEOMETRY",
       "durationMinutes": 25,
-      "order": 56,
+      "order": 3,
       "questionCount": 25,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-MS-56.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-MS-3.html",
       "releaseTimestamp": 1794211200000,
       "language": "both"
     },
