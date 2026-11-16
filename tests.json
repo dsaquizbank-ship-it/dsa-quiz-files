@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-16T07:37:56.016Z",
+  "version": "2026-11-16T07:39:23.947Z",
   "categories": [
     {
       "id": "BANK",
@@ -2565,6 +2565,20 @@
       "releaseTimestamp": 1794816000000,
       "language": "both",
       "createdAt": 1794814676016
+    },
+    {
+      "testId": "PGCS-7",
+      "examId": "PG-CS",
+      "name": "UNIT 5-DATA COMMUNICATION (SET-1)",
+      "topic": "UNIT 5-DATA COMMUNICATION",
+      "durationMinutes": 15,
+      "order": 7,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGCS-7.html",
+      "releaseTimestamp": 1794816000000,
+      "language": "both",
+      "createdAt": 1794814763947
     }
   ]
 }
