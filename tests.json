@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-15T05:59:11.362Z",
+  "version": "2026-11-16T06:34:05.581Z",
   "categories": [
     {
       "id": "BANK",
@@ -2163,14 +2163,14 @@
     {
       "testId": "SPT-TA-2",
       "examId": "SPL-TAMIL",
-      "name": "7TH TERM 2 – 7TH TERM 3 (Set-1)",
+      "name": "7TH TERM 2 – 7TH TERM 3 (SET-1)",
       "topic": "7TH TERM 2 – 7TH TERM 3",
       "durationMinutes": 30,
       "order": 2,
       "questionCount": 50,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-TA-2.html",
-      "releaseTimestamp": 1794556800000,
+      "releaseTimestamp": 1794816000000,
       "language": "ta",
       "createdAt": 1794551016570
     },
