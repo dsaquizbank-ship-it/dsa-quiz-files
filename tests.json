@@ -605,25 +605,25 @@
       "releaseTimestamp": 1793779200000
     },
     {
-      "testId": "TAP-01",
+      "testId": "TAP-1",
       "examId": "TNPSC-AP",
-      "name": "TAP-01 SIMPLIFICATION (Set-1)",
+      "name": "SIMPLIFICATION (Set-1)",
       "durationMinutes": 20,
       "order": 1,
       "questionCount": 20,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TAP-01.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TAP-1.html",
       "releaseTimestamp": 1793865600000
     },
     {
-      "testId": "TAP-02",
+      "testId": "TAP-2",
       "examId": "TNPSC-AP",
-      "name": "TAP-02 PERCENTAGE (Set-1)",
+      "name": "PERCENTAGE (Set-1)",
       "durationMinutes": 20,
       "order": 2,
       "questionCount": 20,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TAP-02.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TAP-2.html",
       "releaseTimestamp": 1793865600000
     },
     {
