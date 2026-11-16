@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-16T07:30:03.583Z",
+  "version": "2026-11-16T07:35:45.162Z",
   "categories": [
     {
       "id": "BANK",
@@ -2537,6 +2537,20 @@
       "releaseTimestamp": 1794816000000,
       "language": "en",
       "createdAt": 1794814203583
+    },
+    {
+      "testId": "UGM-10",
+      "examId": "UG-MAT",
+      "name": "UNIT 9-OPERATIONS RESEARCH (SET-1)",
+      "topic": "UNIT 9-OPERATIONS RESEARCH",
+      "durationMinutes": 30,
+      "order": 10,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-10.html",
+      "releaseTimestamp": 1794816000000,
+      "language": "en",
+      "createdAt": 1794814545162
     }
   ]
 }
