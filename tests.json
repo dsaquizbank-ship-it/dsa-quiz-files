@@ -976,15 +976,15 @@
       "language": "both"
     },
     {
-      "testId": "SGA-02",
+      "testId": "SGA-1",
       "examId": "SSC-GA",
-      "name": "CONSTITUITION OF INDIA SGA-02",
+      "name": "CONSTITUITION OF INDIA (Set-1)",
       "topic": "CONSTITUITION OF INDIA",
       "durationMinutes": 10,
-      "order": 2,
+      "order": 1,
       "questionCount": 20,
       "negativeMark": 0.33,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGA-02.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGA-1.html",
       "releaseTimestamp": 1793779200000,
       "language": "both"
     },
@@ -1591,15 +1591,15 @@
       "language": "both"
     },
     {
-      "testId": "SGA-4",
+      "testId": "SGA-2",
       "examId": "SSC-GA",
-      "name": "GUPTAS SGA-4",
+      "name": "GUPTAS (Set-1)",
       "topic": "GUPTAS",
       "durationMinutes": 10,
-      "order": 4,
+      "order": 2,
       "questionCount": 20,
       "negativeMark": 0.5,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGA-4.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGA-2.html",
       "releaseTimestamp": 1794211200000,
       "language": "both"
     },
@@ -1918,15 +1918,15 @@
       "language": "en"
     },
     {
-      "testId": "SGA-5",
+      "testId": "SGA-3",
       "examId": "SSC-GA",
-      "name": "PREAMBLE TO THE CONSTITUTION SGA-5",
+      "name": "PREAMBLE TO THE CONSTITUTION (Set-3)",
       "topic": "PREAMBLE TO THE CONSTITUTION",
       "durationMinutes": 10,
-      "order": 5,
+      "order": 3,
       "questionCount": 20,
       "negativeMark": 0.5,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGA-5.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGA-3.html",
       "releaseTimestamp": 1794384000000,
       "language": "both"
     },
