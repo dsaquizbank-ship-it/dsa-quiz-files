@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-16T08:02:01.424Z",
+  "version": "2026-11-16T08:03:17.680Z",
   "categories": [
     {
       "id": "BANK",
@@ -2593,6 +2593,20 @@
       "releaseTimestamp": 1794816000000,
       "language": "both",
       "createdAt": 1794816121424
+    },
+    {
+      "testId": "SQA-3",
+      "examId": "SSC-QA",
+      "name": "PERCENTAGES (SET-1)",
+      "topic": "PERCENTAGES",
+      "durationMinutes": 30,
+      "order": 3,
+      "questionCount": 25,
+      "negativeMark": 0.5,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SQA-3.html",
+      "releaseTimestamp": 1794816000000,
+      "language": "both",
+      "createdAt": 1794816197680
     }
   ]
 }
