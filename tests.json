@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-16T08:03:17.680Z",
+  "version": "2026-11-16T08:04:23.277Z",
   "categories": [
     {
       "id": "BANK",
@@ -2607,6 +2607,20 @@
       "releaseTimestamp": 1794816000000,
       "language": "both",
       "createdAt": 1794816197680
+    },
+    {
+      "testId": "RQA-3",
+      "examId": "RRB-QA",
+      "name": "PERCENTAGES (SET-1)",
+      "topic": "PERCENTAGES",
+      "durationMinutes": 30,
+      "order": 3,
+      "questionCount": 25,
+      "negativeMark": 0.33,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RQA-3.html",
+      "releaseTimestamp": 1794816000000,
+      "language": "en",
+      "createdAt": 1794816263277
     }
   ]
 }
