@@ -558,9 +558,10 @@
     {
       "testId": "TET-PY-2",
       "examId": "TET-PSYCHOLOGY",
-      "name": "PERSONALITY (Set-1)",
+      "name": "UNIT 6-PERSONALITY (Set-1)",
+      "topic": "UNIT 6-PERSONALITY",
       "durationMinutes": 20,
-      "order": 6,
+      "order": 2,
       "questionCount": 30,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-PY-2.html",
@@ -2259,15 +2260,15 @@
       "createdAt": 1794552276464
     },
     {
-      "testId": "TET-PY-7",
+      "testId": "TET-PY-3",
       "examId": "TET-PSYCHOLOGY",
-      "name": "UNIT 2–THEORIES OF DEVELOPMENT TET-PY-2",
+      "name": "UNIT 2–THEORIES OF DEVELOPMENT (Set-1)",
       "topic": "UNIT 2–THEORIES OF DEVELOPMENT",
       "durationMinutes": 15,
-      "order": 7,
+      "order": 3,
       "questionCount": 25,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-PY-7.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-PY-3.html",
       "releaseTimestamp": 1794556800000,
       "language": "both",
       "createdAt": 1794552658201
