@@ -556,14 +556,14 @@
       "releaseTimestamp": 1792742400000
     },
     {
-      "testId": "TET-PY-6",
+      "testId": "TET-PY-2",
       "examId": "TET-PSYCHOLOGY",
-      "name": "TET-PY-6 PERSONALITY (Set-1)",
+      "name": "PERSONALITY (Set-1)",
       "durationMinutes": 20,
       "order": 6,
       "questionCount": 30,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTE-PY-52.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-PY-2.html",
       "releaseTimestamp": 1792742400000
     },
     {
@@ -1424,7 +1424,7 @@
     {
       "testId": "TET-PY-1",
       "examId": "TET-PSYCHOLOGY",
-      "name": "UNIT-1: GROWTH AND DEVELOPMENT TET-PY-1",
+      "name": "UNIT-1: GROWTH AND DEVELOPMENT (Set-1)",
       "topic": "UNIT-1: GROWTH AND DEVELOPMENT",
       "durationMinutes": 15,
       "order": 1,
