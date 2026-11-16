@@ -663,15 +663,15 @@
       "language": "both"
     },
     {
-      "testId": "RGA-1",
+      "testId": "RGA-2",
       "examId": "RRB-GA",
-      "name": "INDUS VALLEY CIVILIZATION RGA-1",
+      "name": "INDUS VALLEY CIVILIZATION (Set-1)",
       "topic": "INDUS VALLEY CIVILIZATION",
       "durationMinutes": 10,
-      "order": 1,
+      "order": 2,
       "questionCount": 20,
       "negativeMark": 0.33,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGA-1.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGA-2.html",
       "releaseTimestamp": 1793606400000,
       "language": "both"
     },
@@ -963,15 +963,15 @@
       "language": "both"
     },
     {
-      "testId": "RGA-02",
+      "testId": "RGA-1",
       "examId": "RRB-GA",
-      "name": "CONSTITUITION OF INDIA RGA-02",
+      "name": "CONSTITUITION OF INDIA (Set-1)",
       "topic": "CONSTITUITION OF INDIA",
       "durationMinutes": 10,
-      "order": 2,
+      "order": 1,
       "questionCount": 20,
       "negativeMark": 0.33,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGA-02.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGA-1.html",
       "releaseTimestamp": 1793779200000,
       "language": "both"
     },
@@ -1604,15 +1604,15 @@
       "language": "both"
     },
     {
-      "testId": "RGA-4",
+      "testId": "RGA-3",
       "examId": "RRB-GA",
-      "name": "GUPTAS RGA-4",
+      "name": "GUPTAS (Set-1)",
       "topic": "GUPTAS",
       "durationMinutes": 10,
-      "order": 4,
+      "order": 3,
       "questionCount": 20,
       "negativeMark": 0.33,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGA-4.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGA-3.html",
       "releaseTimestamp": 1794211200000,
       "language": "both"
     },
@@ -1931,15 +1931,15 @@
       "language": "both"
     },
     {
-      "testId": "RGA-5",
+      "testId": "RGA-4",
       "examId": "RRB-GA",
-      "name": "PREAMBLE TO THE CONSTITUTION RGA-5",
+      "name": "PREAMBLE TO THE CONSTITUTION (Set-1)",
       "topic": "PREAMBLE TO THE CONSTITUTION",
       "durationMinutes": 10,
-      "order": 5,
+      "order": 4,
       "questionCount": 20,
       "negativeMark": 0.33,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGA-5.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGA-4.html",
       "releaseTimestamp": 1794384000000,
       "language": "both"
     },
