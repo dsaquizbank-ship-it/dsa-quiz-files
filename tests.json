@@ -1875,15 +1875,15 @@
       "language": "both"
     },
     {
-      "testId": "TNS-3",
+      "testId": "TNS-4",
       "examId": "TNPSC-TS",
-      "name": "TAMIL LITERATURE FROM SANGAM AGE TILL CONTEMPORARY TIMES TNS-3",
+      "name": "TAMIL LITERATURE FROM SANGAM AGE TILL CONTEMPORARY TIMES (Set-1)",
       "topic": "TAMIL LITERATURE FROM SANGAM AGE TILL CONTEMPORARY TIMES",
       "durationMinutes": 15,
-      "order": 3,
+      "order": 4,
       "questionCount": 25,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TNS-3.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TNS-4.html",
       "releaseTimestamp": 1794384000000,
       "language": "both"
     },
