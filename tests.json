@@ -651,7 +651,7 @@
     {
       "testId": "SGS-1",
       "examId": "SSC-GS",
-      "name": "PHYSICS-UNITS, DIMENSIONS & FORMULAS SGS-1",
+      "name": "PHYSICS-UNITS, DIMENSIONS & FORMULAS (Set-1)",
       "topic": "PHYSICS-UNITS, DIMENSIONS & FORMULAS",
       "durationMinutes": 10,
       "order": 1,
@@ -948,15 +948,15 @@
       "language": "both"
     },
     {
-      "testId": "SGS-02",
+      "testId": "SGS-2",
       "examId": "SSC-GS",
-      "name": "CHEMISTRY-ASIC CONCEPTS OF CHEMISTRY SGS-02",
+      "name": "CHEMISTRY-ASIC CONCEPTS OF CHEMISTRY (Set-1)",
       "topic": "CHEMISTRY-BASIC CONCEPTS OF CHEMISTRY",
       "durationMinutes": 10,
-      "order": 1,
+      "order": 2,
       "questionCount": 20,
       "negativeMark": 0.5,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGS-02.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGS-2.html",
       "releaseTimestamp": 1793779200000,
       "language": "en"
     },
@@ -1198,8 +1198,8 @@
     {
       "testId": "SGS-3",
       "examId": "SSC-GS",
-      "name": "CELL, GENETICS & EVOLUTION SGS-3",
-      "topic": "CELL, GENETICS & EVOLUTION",
+      "name": "BIOLOGY-CELL, GENETICS & EVOLUTION (Set-1)",
+      "topic": "BIOLOGY-CELL, GENETICS & EVOLUTION",
       "durationMinutes": 10,
       "order": 3,
       "questionCount": 20,
@@ -1448,8 +1448,8 @@
     {
       "testId": "SGS-4",
       "examId": "SSC-GS",
-      "name": "MOTION SGS-4",
-      "topic": "MOTION",
+      "name": "PHYSICS-MOTION (Set-1)",
+      "topic": "PHYSICS-MOTION",
       "durationMinutes": 15,
       "order": 4,
       "questionCount": 25,
@@ -1696,8 +1696,8 @@
     {
       "testId": "SGS-5",
       "examId": "SSC-GS",
-      "name": "ATOMS AND MOLECULES SGS-5",
-      "topic": "ATOMS AND MOLECULES",
+      "name": "CHEMISTRY-ATOMS AND MOLECULES (Set-1)",
+      "topic": "CHEMISTRY-ATOMS AND MOLECULES",
       "durationMinutes": 15,
       "order": 5,
       "questionCount": 25,
@@ -1957,7 +1957,7 @@
     {
       "testId": "SGS-6",
       "examId": "SSC-GS",
-      "name": "BIOLOGY-TISSUE SGS-6",
+      "name": "BIOLOGY-TISSUE (Set-1)",
       "topic": "BIOLOGY-TISSUE",
       "durationMinutes": 15,
       "order": 6,
@@ -2419,8 +2419,8 @@
     {
       "testId": "SGS-7",
       "examId": "SSC-GS",
-      "name": "PHYSICS - FORCES (SET-1)",
-      "topic": "PHYSICS - FORCES",
+      "name": "PHYSICS-FORCES (SET-1)",
+      "topic": "PHYSICS-FORCES",
       "durationMinutes": 15,
       "order": 7,
       "questionCount": 25,
