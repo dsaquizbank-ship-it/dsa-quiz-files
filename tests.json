@@ -618,15 +618,15 @@
       "language": "en"
     },
     {
-      "testId": "SQA-01",
+      "testId": "SQA-1",
       "examId": "SSC-QA",
-      "name": "SQA-01 SIMPLIFICATION (Set-1)",
+      "name": "SIMPLIFICATION (Set-1)",
       "topic": "SIMPLIFICATION",
       "durationMinutes": 25,
       "order": 1,
       "questionCount": 25,
       "negativeMark": 0.25,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SQA-01.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SQA-1.html",
       "releaseTimestamp": 1793606400000,
       "language": "en"
     },
@@ -1008,15 +1008,15 @@
       "language": "en"
     },
     {
-      "testId": "SRE-01",
+      "testId": "SRE-1",
       "examId": "SSC-RE",
-      "name": "SYLLOGISM SRE-01",
+      "name": "SYLLOGISM (Set-1)",
       "topic": "SYLLOGISM",
       "durationMinutes": 50,
       "order": 1,
       "questionCount": 50,
       "negativeMark": 0.5,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SRE-01.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SRE-1.html",
       "releaseTimestamp": 1793779200000,
       "language": "en"
     },
@@ -1561,7 +1561,7 @@
     {
       "testId": "SQA-2",
       "examId": "SSC-QA",
-      "name": "APPROXIMATION SQA-2 (Set-1)",
+      "name": "APPROXIMATION (Set-1)",
       "topic": "APPROXIMATION",
       "durationMinutes": 25,
       "order": 2,
@@ -1809,7 +1809,7 @@
     {
       "testId": "SRE-2",
       "examId": "SSC-RE",
-      "name": "INPUT/OUTPUT SRE-2",
+      "name": "INPUT/OUTPUT (Set-1)",
       "topic": "INPUT/OUTPUT",
       "durationMinutes": 30,
       "order": 2,
