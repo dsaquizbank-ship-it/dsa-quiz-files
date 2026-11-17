@@ -1699,15 +1699,15 @@
       "language": "en"
     },
     {
-      "testId": "SPT-MS-7",
+      "testId": "SPT-MS-2",
       "examId": "SPL-MATHS",
-      "name": "6TH TERM 2 SPT-MS-7",
+      "name": "6TH TERM 2 (Set-1)",
       "topic": "6TH TERM 2",
       "durationMinutes": 30,
-      "order": 7,
+      "order": 2,
       "questionCount": 50,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-MS-7.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-MS-2.html",
       "releaseTimestamp": 1794297600000,
       "language": "both"
     },
