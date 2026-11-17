@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-17T07:48:16.566Z",
+  "version": "2026-11-17T07:50:07.991Z",
   "categories": [
     {
       "id": "BANK",
@@ -2709,6 +2709,20 @@
       "releaseTimestamp": 1794902400000,
       "language": "both",
       "createdAt": 1794901696566
+    },
+    {
+      "testId": "TIP-12",
+      "examId": "TNPSC-IP",
+      "name": "STATE EXECUTIVE (SET-1)",
+      "topic": "STATE EXECUTIVE",
+      "durationMinutes": 15,
+      "order": 12,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-12.html",
+      "releaseTimestamp": 1794902400000,
+      "language": "both",
+      "createdAt": 1794901807991
     }
   ]
 }
