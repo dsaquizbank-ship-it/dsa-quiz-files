@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-17T07:50:07.991Z",
+  "version": "2026-11-17T07:54:53.560Z",
   "categories": [
     {
       "id": "BANK",
@@ -2650,7 +2650,7 @@
       "questionCount": 50,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-SS-5.html",
-      "releaseTimestamp": 1794900600000,
+      "releaseTimestamp": 1794902400000,
       "language": "both",
       "createdAt": 1794898921837
     },
