@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-17T16:17:27.250Z",
+  "version": "2026-11-17T16:22:08.485Z",
   "categories": [
     {
       "id": "BANK",
@@ -2747,6 +2747,20 @@
       "releaseTimestamp": 1794988800000,
       "language": "both",
       "createdAt": 1794932247250
+    },
+    {
+      "testId": "TNS-4",
+      "examId": "TNPSC-TS",
+      "name": "THIRUKURAL (SET-1)",
+      "topic": "THIRUKURAL",
+      "durationMinutes": 15,
+      "order": 4,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TNS-4.html",
+      "releaseTimestamp": 1794988800000,
+      "language": "both",
+      "createdAt": 1794932528485
     }
   ]
 }
