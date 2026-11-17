@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>TTA-2 - UNIT-2 TTA-2</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                linebreaks: { automatic: true, width: "container" }
+            },
+            options: { ignoreHtmlClass: "no-mathjax" },
+            chtml: {
+                displayAlign: "left",
+                displayIndent: "0",
+                mtextInheritFont: true
+            },
+            svg: {
+                scale: 0.9,
+                minScale: 0.5,
+                mtextInheritFont: true,
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; color: #10b981; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; white-space: normal; word-wrap: break-word; padding-bottom: 20px; max-width: 100%; overflow-x: auto; }
+        mjx-container { display: inline !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; }
+        .question-text::-webkit-scrollbar { display: none; }
+        .question-text { -ms-overflow-style: none; scrollbar-width: none; }
+        .option-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; word-wrap: break-word; }
+        .option-letter { font-weight: 800; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+        .option-text { flex-grow: 1; min-width: 0; word-wrap: break-word; overflow-wrap: break-word; }
+        .option-text mjx-container { display: inline-block !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; overflow-x: visible !important; }
+        .option-text mjx-container[jax="CHTML"][display="true"] { margin: 0 !important; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
+        .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
+        .review-card .question-text { overflow-x: hidden !important; white-space: normal !important; word-wrap: break-word !important; }
+        .review-card strong { color: var(--text-primary); font-size: 16px; }
+        .review-card .option-item { background-color: var(--rc-bg); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: rgba(40, 167, 69, 0.1); border: 1px solid #28a745; color: #28a745; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; color: #dc3545; }
+        .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
+        .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
+        .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
+        .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px 0; border-top: 1px solid var(--border-light); }
+        .review-nav-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .review-nav-btn:disabled { background: var(--border-light); color: var(--text-primary); opacity: 0.5; cursor: not-allowed; }
+        .review-nav-text { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+        .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { 
+            html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } 
+            .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } 
+            #startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard { display: none !important; } 
+            #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } 
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; } 
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; margin-bottom: 20px !important; display: block !important; } 
+            .review-card .option-item { border: 1px solid #ccc !important; background: white !important; color: black !important; } 
+            .review-card .option-item.correct { background: #e6ffe6 !important; border-color: #28a745 !important; color: black !important; } 
+            .review-card .option-item.wrong { background: #ffe6e6 !important; border-color: #dc3545 !important; color: black !important; } 
+            @page { size: A4; margin: 1.5cm; } 
+        }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">30:00</div>
+            <div class="top-buttons">
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div id="printHeader" style="display: none;">
+            <h1>DR SAHITHA IAS ACADEMY</h1>
+            <h3>ANSWER KEY & DETAILED REVIEW</h3>
+            <p><strong>Test:</strong> TTA-2 - TAMIL</p>
+        </div>
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+            <div id="reviewPagination" class="review-nav-container" style="display: none;">
+                <button class="review-nav-btn" id="prevReviewBtn" onclick="navigateReview(-1)">◀ PREV</button>
+                <span class="review-nav-text" id="reviewPageText">1 / 25</span>
+                <button class="review-nav-btn" id="nextReviewBtn" onclick="navigateReview(1)">NEXT ▶</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "TAMIL",
+        testNo: "TTA-2",
+        date: new Date().toLocaleDateString("en-GB"),
+        subject: "TAMIL",
+        topic: "UNIT-2",
+        duration: "30",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "திங்கள் - இரு பொருள் தருக.",
+    "ta": "",
+    "optionsEn": ["நிலவு, துன்பம்", "நிலவு, மாதம்", "கிழமை, ஆகாயம்", "மாதம், வாரம்"],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "match",
+    "en": "ஊர்ப்பெயரையும் மரூஉவையும் பொருத்துக:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List-I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>List-II</b></td></tr><tr><td style='padding:6px 0;'>a. தஞ்சாவூர்</td><td></td><td style='padding:6px 0;'>1. குடந்தை</td></tr><tr><td style='padding:6px 0;'>b. திருநெல்வேலி</td><td></td><td style='padding:6px 0;'>2. தஞ்சை</td></tr><tr><td style='padding:6px 0;'>c. கோயம்புத்தூர்</td><td></td><td style='padding:6px 0;'>3. நெல்லை</td></tr><tr><td style='padding:6px 0;'>d. கும்பகோணம்</td><td></td><td style='padding:6px 0;'>4. கோவை</td></tr></table><br>குறியீடுகள்:",
+    "ta": "",
+    "optionsEn": ["2, 3, 4, 1", "1, 2, 4, 3", "3, 1, 4, 2", "3, 4, 2, 1"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "ஊர்ப்பெயரின் மரூஉவை தெரிவு செய்க - நாகப்பட்டினம்",
+    "ta": "",
+    "optionsEn": ["நாகப்பட்டனம்", "நாகைப்பட்டினம்", "நாகப்பட்டிணம்", "நாகை"],
+    "optionsTa": [],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "பேச்சு வழக்கிற்கு ஏற்ற எழுத்து வழக்குத் தொடரைக் காண்க: \"அவனெ கூட்டிக்கிட்டு வர்றேன்\"",
+    "ta": "",
+    "optionsEn": ["அவனைக் கூட்டிக்கொண்டு வருகிறேன்.", "அவனை கூட்டிட்டு வர்றேன்.", "அவனைக் கூட்டிகினு வாரேன்.", "அவனைக் கூப்பிட்டு வருகிறேன்."],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "\"வண்டியைத் தூக்கி மாட்டு வண்டியில வச்சுட்டு வாங்க\" - இத்தொடருக்கு இணையான எழுத்து வழக்கைத் தேர்க.",
+    "ta": "",
+    "optionsEn": ["வண்டியத் தூக்கி மாட்டு வண்டியில வச்சுட்டு வாருங்கள்.", "வண்டியத் தூக்கி மாட்டு வண்டியில் வச்சுட்டு வாங்க.", "வண்டியைத் தூக்கி மாட்டு வண்டியில் வச்சுகிட்டு வாருங்கள்.", "வண்டியைத் தூக்கி மாட்டு வண்டியில் வைத்துக்கொண்டு வாருங்கள்."],
+    "optionsTa": [],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "ஊர்ப்பெயரின் மரூஉவை எழுதுக - புதுக்கோட்டை",
+    "ta": "",
+    "optionsEn": ["புதுவை", "புதுக்கை", "புதுகை", "புதூர்"],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "match",
+    "en": "சொல்லையும் பொருளையும் பொருத்துக:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List-I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>List-II</b></td></tr><tr><td style='padding:6px 0;'>a. தூசு</td><td></td><td style='padding:6px 0;'>1. பவளம்</td></tr><tr><td style='padding:6px 0;'>b. துகிர்</td><td></td><td style='padding:6px 0;'>2. பட்டு</td></tr><tr><td style='padding:6px 0;'>c. வெறுக்கை</td><td></td><td style='padding:6px 0;'>3. விலை</td></tr><tr><td style='padding:6px 0;'>d. நொடை</td><td></td><td style='padding:6px 0;'>4. செல்வம்</td></tr></table><br>குறியீடுகள்:",
+    "ta": "",
+    "optionsEn": ["3, 4, 2, 1", "1, 2, 3, 4", "4, 3, 2, 1", "2, 1, 4, 3"],
+    "optionsTa": [],
+    "answer": 3
+  },
+  {
+    "type": "assertion",
+    "en": "கூற்று : ஓர் எழுத்தே பொருள் தரும் சொல்லாக அமைவதை ஓரெழுத்து ஒருமொழி என்பர்.<br><br>காரணம் : 'மீ' என்ற ஓரெழுத்து ஒரு மொழி மேகம் என்ற பொருளைத் தரும்.<br><br>Choose the correct option:",
+    "ta": "",
+    "optionsEn": [
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is NOT the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true"
+    ],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "ஊர்ப்பெயரின் மரூஉவை எழுதுக - திருச்சிராப்பள்ளி",
+    "ta": "",
+    "optionsEn": ["திருப்பள்ளி", "திருவைப்பள்ளி", "திருச்சீர்", "திருச்சி"],
+    "optionsTa": [],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "மீ என்னும் ஓரெழுத்து ஒரு மொழிக்கு உரிய பொருள் யாது?",
+    "ta": "",
+    "optionsEn": ["முகர்தல்", "முன்னிலை ஒருமை", "மேலே", "மாமரம்"],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "ஐ - ஓரெழுத்து ஒரு மொழிக்கு உரிய பொருළைக் கண்டறிக.",
+    "ta": "",
+    "optionsEn": ["அரசன்", "வீரன்", "ஒற்றன்", "தலைவன்"],
+    "optionsTa": [],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "சரியான பொருள் தரும் ஓரெழுத்து ஒரு மொழியைக் காண்க.",
+    "ta": "",
+    "optionsEn": ["தே - தேடுதல்", "மீ - வான்", "ஏ - ஏற்றம்", "நா - நாள்"],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "match",
+    "en": "ஓரெழுத்து ஒரு மொழிக்குரிய சரியான பொருளைப் பொருத்துக:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List-I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>List-II</b></td></tr><tr><td style='padding:6px 0;'>a. பை</td><td></td><td style='padding:6px 0;'>1. உண்</td></tr><tr><td style='padding:6px 0;'>b. மே</td><td></td><td style='padding:6px 0;'>2. புல்</td></tr><tr><td style='padding:6px 0;'>c. வை</td><td></td><td style='padding:6px 0;'>3. அன்பு</td></tr><tr><td style='padding:6px 0;'>d. து</td><td></td><td style='padding:6px 0;'>4. இளமை</td></tr></table><br>குறியீடுகள்:",
+    "ta": "",
+    "optionsEn": ["1, 3, 4, 2", "3, 4, 1, 2", "1, 2, 3, 4", "4, 3, 2, 1"],
+    "optionsTa": [],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "கை - ஓரெழுத்து ஒரு மொழியின் பொருளைக் காண்க.",
+    "ta": "",
+    "optionsEn": ["கையூட்டு", "புழுக்கம்", "இழுக்கம்", "ஒழுக்கம்"],
+    "optionsTa": [],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "வெய்யோன் என்பதன் தவறான பொருளைத் தேர்ந்தெடுக்கவும்.",
+    "ta": "",
+    "optionsEn": ["பகலவன்", "ஆதவன்", "ஞாயிறு", "திங்கள்"],
+    "optionsTa": [],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "கோ - இருபொருள் தருக.",
+    "ta": "",
+    "optionsEn": ["மதி - நிலவு", "வனம் - காடு", "வேந்தன் - மாடு", "அரசன் - பசு"],
+    "optionsTa": [],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "பார் - இரு பொருள் தருக.",
+    "ta": "",
+    "optionsEn": ["உலகம், கடல்", "நோக்கு, மேதினி", "ஆர்கலி உலகம்", "கடல், பார்த்தல்"],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "சொல்லுதல் - இரு பொருள் தருக.",
+    "ta": "",
+    "optionsEn": ["மொழிதல், வாசித்தல்", "செப்புதல், கூறுதல்", "உரைத்தல், கேட்டல்", "விளம்புதல், கவனித்தல்"],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "செய் - இருபொருள் தருக.",
+    "ta": "",
+    "optionsEn": ["நன்றே செய், இன்றே செய்", "நன்செய், புன்செய்", "செயலைச் செய், வயல்", "நஞ்சை நிலம், புஞ்சை நிலம்"],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "வரி - இரு பொருள் தருக.",
+    "ta": "",
+    "optionsEn": ["வரிசை, எழுதுதல்", "அரசுக்குச் செலுத்துவது, வரிசை", "அரசுக்குச் செலுத்துவது, எழுதுதல்", "வடிவம், வரிசை"],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "ஒரு பொருள் தரும் பல சொற்களை எழுதுக - மலை",
+    "ta": "",
+    "optionsEn": ["வெற்பு, சிலம்பு", "வனப்பு, பொருப்பு", "பொருப்பு, உயரம்", "மலைத்தல், பக்க மலை"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "தாமம் - இரு பொருள் தருக.",
+    "ta": "",
+    "optionsEn": ["குணம், தகுதி", "அழுதுல், பின்னுதல்", "கயிறு, பூமாலை", "கீற்று, கயிறு"],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "பரவை - இரு பொருள் தருக.",
+    "ta": "",
+    "optionsEn": ["வேழம், கடல்", "ஞானம், இசை", "ஊர், ஆழி", "இசை, கடல்"],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "ஒரு சொல்லால் தொடரின் இரு இடங்களை நிரப்புக.<br>எனக்கு ............... பங்கு பிரித்துக் கொடு.<br>ஈரம் பார்த்து உன் ............... வை.",
+    "ta": "",
+    "optionsEn": ["கை", "கால்", "அகல்", "அலை"],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "துய்ப்பது - இரு பொருள் தருக.",
+    "ta": "",
+    "optionsEn": ["உண்பது, தூய்மை", "கற்பது, தருதல்", "நுகர்வது, தூய்மை", "தூய்மை, தருதல்"],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "பொருந்தா இணையைக் கண்டறிக.",
+    "ta": "",
+    "optionsEn": ["நாற்று நடுதல்", "நீர் பாய்ச்சுதல்", "கதிர் - அறுத்தல்", "களை - அடித்தல்"],
+    "optionsTa": [],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "பொருந்தாச் சொல்லைக் கண்டறிக.",
+    "ta": "",
+    "optionsEn": ["திங்கள் - மாதம்", "பகலவன் - கதிரவன்", "மெய் - உண்மை", "பொய்மை - மெய்ம்மை"],
+    "optionsTa": [],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "பொருந்தா இணையைக் கண்டறிக.",
+    "ta": "",
+    "optionsEn": ["திங்கள் - மாதம்", "ஓடு - மேற்கூரை", "நகை - மெய்ப்பாடு", "அரம் - ஆயுதம்"],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "பொருந்தா இணையைக் கண்டறிக.",
+    "ta": "",
+    "optionsEn": ["தகளி - அகல் விளக்கு", "இடர் ஆழி - துன்பக் கடல்", "சுடர் ஆழியான் - சிவபெருமான்", "வெய்ய கதிரோன் - வெப்பக் கதிர் வீசும் சூரியன்"],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "பொருந்தா இணையைக் கண்டறிக.",
+    "ta": "",
+    "optionsEn": ["செங்காந்தள் - உம்மைத்தொகை", "வீசு தென்றல் - வினைத்தொகை", "மலர்க்கை - உவமைத்தொகை", "சாரைப் பாம்பு - இருபெயரொட்டுப் பண்புத்தொகை"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "பொருந்தாத இணையைக் கண்டறிக.",
+    "ta": "",
+    "optionsEn": ["வடக்கு - வாடைக்காற்று", "தெற்கு - தென்றல்காற்று", "மேற்கு - கோடைக்காற்று", "கிழக்கு – கோடைக்காற்று"],
+    "optionsTa": [],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "பொருந்தாத ஒன்றைத் தேர்க.",
+    "ta": "",
+    "optionsEn": ["விறுவிறு", "கலகல", "மளமள", "பிடிபிடி"],
+    "optionsTa": [],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "கீழ்க்கண்டவற்றில் பொருந்தாத இணையைத் தேர்க.",
+    "ta": "",
+    "optionsEn": ["குறிஞ்சி", "காஞ்சி", "முல்லை", "மருதம்"],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "பொருந்தாத இணையைக் காண்க.",
+    "ta": "",
+    "optionsEn": ["சேலம் - மாங்கனி நகரம்", "சிவகாசி - முத்து நகரம்", "திருவண்ணாமலை - தீப நகரம்", "மதுரை - தூங்கா நகரம்"],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "தவறாகப் பொருந்தியுள்ள இணையைத் தேர்க.",
+    "ta": "",
+    "optionsEn": ["அப்துல் கலாம் பிறந்தநாள் - ஆசிரியர் தினம்", "விவேகானந்தர் பிறந்தநாள் - தேசிய இளைஞர் தினம்", "காமராசர் பிறந்தநாள் - கல்வி வளர்ச்சி தினம்", "ஜவஹர்லால் நேரு பிறந்தநாள் - குழந்தைகள் தினம்"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "பொருந்தா இணையைக் கண்டறிக.",
+    "ta": "",
+    "optionsEn": ["தாய்தந்தை - உம்மைத்தொகை", "பொற்றொடி வந்தாள் - உவமைத்தொகை", "பனைமரம் - இருபெயரொட்டுப் பண்புத்தொகை", "வளர்தமிழ் - வினைத்தொகை"],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "பொருந்தாச் சொல்லைக் கண்டறிக.",
+    "ta": "",
+    "optionsEn": ["ஆண்பால்", "பெண்பால்", "பலவின்பால்", "பலர்பால்"],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "கொழுந்து வகையில் பொருத்தமற்றதைத் தேர்ந்தெடுக்கவும்.",
+    "ta": "",
+    "optionsEn": ["கீரைத்தண்டு", "வேப்பங் கொழுந்து", "பனங்குருத்து", "நெல் துளிர்"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "கீழ்க்கண்டவற்றில் பொருந்தாத ஒன்றைத் தேர்க.",
+    "ta": "",
+    "optionsEn": ["தரிசு", "இலஞ்சி", "சுவல்", "அவல்"],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "பொருந்தாதச் சொல்லைக் காண்க.",
+    "ta": "",
+    "optionsEn": ["உம்", "ஏ", "மற்று", "மா"],
+    "optionsTa": [],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "பொருந்தாச் சொல்லைக் கண்டறிக.",
+    "ta": "",
+    "optionsEn": ["போற்றார் - பகைவர்", "கிளை - உறவினர்", "அலந்தவர் – வறியவர்", "பேதையார் - அறிவுடையார்"],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "பேச்சு வழக்குத் தொடரை எழுத்து வழக்குத் தொடராக மாற்றுக. \"சிரட்டையில் நீத்துப்பாகத்தை வடித்து நீட்டினான்.\"",
+    "ta": "",
+    "optionsEn": ["கொட்டாங்குஞ்சியில் சோற்றை வடித்து நீட்டினான்.", "சிரட்டையில் மேல்கஞ்சியை வடித்து நீட்டினான்.", "அகப்பையில் நீத்துப்பாகத்தை வடித்து நீட்டினான்.", "கரண்டியில் நீந்துப்பாகத்தை வடித்து நீட்டினான்."],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "எழுத்து வழக்குத் தொடரைக் கண்டறிக.",
+    "ta": "",
+    "optionsEn": ["சோலைக்குள் சத்தமில்லாமல் தென்றலு வீசியது.", "சோலைக்குள் சத்தமில்லாமல் தென்றல் வீசியது.", "சோலைக்குள்ளே சத்தமில்லாம தென்றல் வீசியது.", "சோலையில் சத்தமில்லாம தென்றலு அடித்தது."],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "match",
+    "en": "பேச்சு வழக்கிற்கு ஏற்ற எழுத்து வழக்குச் சொற்களைப் பொருத்துக:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List-I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>List-II</b></td></tr><tr><td style='padding:6px 0;'>a. வெளச்சல்</td><td></td><td style='padding:6px 0;'>1. விலை</td></tr><tr><td style='padding:6px 0;'>b. புடிவாதம்</td><td></td><td style='padding:6px 0;'>2. விளைச்சல்</td></tr><tr><td style='padding:6px 0;'>c. வெல</td><td></td><td style='padding:6px 0;'>3. அமாவாசை</td></tr><tr><td style='padding:6px 0;'>d. அம்மாசி</td><td></td><td style='padding:6px 0;'>4. பிடிவாதம்</td></tr></table><br>குறியீடுகள்:",
+    "ta": "",
+    "optionsEn": ["2, 4, 3, 1", "2, 4, 1, 3", "3, 1, 4, 2", "4, 1, 3, 2"],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "\"ஒருத்தன் ஒண்டியாயப் போனால் அது ஊர்கோலமா?\" இத்தொடரை எழுத்து வழக்காக மாற்றுக.",
+    "ta": "",
+    "optionsEn": ["ஒருவன் தனியாகப் போனால் அது ஊர்வலமா?", "ஒருத்தன் தனியாகப் போனால் அது ஊர்வலமா?", "ஒருவன் ஒண்டியாயப் போனால் அது ஊர்வலமா?", "ஒருத்தன் தனியாகப் போனால் அது ஊர்கோலமா?"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "பேச்சு வழக்கு சொற்களற்ற பழமொழியைத் தேர்க.",
+    "ta": "",
+    "optionsEn": ["அது விட்டாலும் கெதி இல்ல, அப்பால போனாலும் விதி இல்ல.", "அள்ளுறவன் பக்கத்தில் இருந்தாலும் கிள்ளுறவன் பக்கத்தில் இருக்கக் கூடாது.", "அம்மாசி இருட்டில பெருச்சாளிக்குப் போன இடமெல்லாம் வழிதான்.", "அகழியில் விழுந்த முதலைக்கு அதுவே சொர்க்கம்."],
+    "optionsTa": [],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "பேச்சு வழக்கிற்கு இணையான எழுத்து வழக்கு அமைந்துள்ள இணையைத் தேர்க.",
+    "ta": "",
+    "optionsEn": ["உங்கூருக்கே - உங்க ஊருக்கே", "வெரசா - விரைவா", "மூணு வயசு - மூன்று வயது", "இருக்குது - இருக்கு"],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "சரியான எழுத்து வழக்கைக் கண்டறிக: \"ரவைக்கு சித்தப்பன காவலுக்குப் போகச் சொல்\"",
+    "ta": "",
+    "optionsEn": ["ரவைக்கு சித்தப்பாவை காவலுக்குப் போகச் சொல்.", "ராத்திரிக்கு சிறிய தந்தையைக் காவலுக்குப் போகுமாறு சொல்.", "இரவுக்கு சிறிய தந்தையைக் காவலுக்குப் போகுமாறு சொல்.", "ராவுக்கு சின்ன அப்பாவை காவலுக்கு போகுமாறு சொல்."],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "சரியான எழுத்து வழக்குத் தொடரைக் கண்டறிக.",
+    "ta": "",
+    "optionsEn": ["பாவக்கா வத்தல் வாங்கிட்டு வந்தேன்.", "பாகற்காய் வற்றல் வாங்கி வந்தேன்.", "பாகற்காய் வத்தல் வாங்கி வந்தேன்.", "பாவக்காய் வற்றல் வாங்கி வந்தேன்."],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "பேச்சு வழக்கு அல்லாத தொடரைக் கண்டறிக.",
+    "ta": "",
+    "optionsEn": ["அவம் பாட்டியோட வெளியூர் போயிருக்கான்.", "அவன் பாட்டியுடன் வெளியூர் போயிருக்கான்.", "அவன் பாட்டியோட வெளியூர் போயிருக்கான்.", "அவன் பாட்டியோடு வெளியூர் போயிருக்கான்."],
+    "optionsTa": [],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "நிலையான செல்வம் என்ற பொருளைத் தரும் சொல்லைத் தேர்ந்தெடுக்கவும்.",
+    "ta": "",
+    "optionsEn": ["தங்கம்", "பணம்", "ஊக்கம்", "ஏக்கம்"],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "பொருத்தமான பொருளைத் தெரிவு செய்க - அழுக்காறு",
+    "ta": "",
+    "optionsEn": ["பொறாமை", "தூய்மை செய்", "கோபம்", "பொறுமை"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "காஞ்சி என்பதன் சரியான பொருளைத் தெரிவு செய்க.",
+    "ta": "",
+    "optionsEn": ["வெகுளாமை", "கல்லாமை", "நிலையாமை", "பொய்யாமை"],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "match",
+    "en": "சொல் - பொருள் பொருத்துக:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List-I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>List-II</b></td></tr><tr><td style='padding:6px 0;'>a. கான்</td><td></td><td style='padding:6px 0;'>1. கரடி</td></tr><tr><td style='padding:6px 0;'>b. உழுவை</td><td></td><td style='padding:6px 0;'>2. சிங்கம்</td></tr><tr><td style='padding:6px 0;'>c. மடங்கல்</td><td></td><td style='padding:6px 0;'>3. புலி</td></tr><tr><td style='padding:6px 0;'>d. எண்கு</td><td></td><td style='padding:6px 0;'>4. காடு</td></tr></table><br>குறியீடுகள்:",
+    "ta": "",
+    "optionsEn": ["4, 3, 2, 1", "4, 2, 3, 1", "3, 2, 1, 4", "1, 3, 2, 4"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "பொச்சாப்பு - சரியான பொருளைக் காண்க.",
+    "ta": "",
+    "optionsEn": ["தற்சார்பு", "சோர்வு", "பொறாமை", "பொறுமை"],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "match",
+    "en": "சொல்லையும் பொருளையும் பொருத்துக:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List-I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>List-II</b></td></tr><tr><td style='padding:6px 0;'>a. தேசம்</td><td></td><td style='padding:6px 0;'>1. வழி</td></tr><tr><td style='padding:6px 0;'>b. நெறி</td><td></td><td style='padding:6px 0;'>2. நாடு</td></tr><tr><td style='padding:6px 0;'>c. மாசற</td><td></td><td style='padding:6px 0;'>3. அறிஞர்கள்</td></tr><tr><td style='padding:6px 0;'>d. மேதைகள்</td><td></td><td style='padding:6px 0;'>4. குற்றம் இல்லாமல்</td></tr></table><br>குறியீடுகள்:",
+    "ta": "",
+    "optionsEn": ["2, 1, 4, 3", "4, 3, 2, 1", "3, 1, 4, 2", "1, 3, 2, 4"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "சொல்:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List-I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>List-II</b></td></tr><tr><td style='padding:6px 0;'>a. களித்திட</td><td></td><td style='padding:6px 0;'>1. காடு</td></tr><tr><td style='padding:6px 0;'>b. நச்சரவம்</td><td></td><td style='padding:6px 0;'>2. தங்கும் இடம்</td></tr><tr><td style='padding:6px 0;'>c. விடுதி</td><td></td><td style='padding:6px 0;'>3. விடமுள்ள பாம்பு</td></tr><tr><td style='padding:6px 0;'>d. கானகம்</td><td></td><td style='padding:6px 0;'>4. மகிழ்ந்திட</td></tr></table><br>குறியீடுகள்:",
+    "ta": "",
+    "optionsEn": ["4, 3, 2, 1", "3, 4, 1, 2", "2, 3, 4, 1", "1, 4, 3, 2"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "பொருத்துக:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List-I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>List-II</b></td></tr><tr><td style='padding:6px 0;'>a. முத்துச்சுடர் போல</td><td></td><td style='padding:6px 0;'>1. மாடங்கள்</td></tr><tr><td style='padding:6px 0;'>b. தூய நிறத்தில்</td><td></td><td style='padding:6px 0;'>2. தென்றல்</td></tr><tr><td style='padding:6px 0;'>c. சித்தம் மகிழ்ந்திட</td><td></td><td style='padding:6px 0;'>3. நிலா ஒளி</td></tr><tr><td style='padding:6px 0;'>d. கத்தும் குயிலோசை</td><td></td><td style='padding:6px 0;'>4. காதில் கேட்டல்</td></tr></table><br>குறியீடுகள்:",
+    "ta": "",
+    "optionsEn": ["3, 1, 2, 4", "4, 3, 1, 2", "1, 2, 3, 4", "3, 1, 4, 2"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "பொருத்துக:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List-I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>List-II</b></td></tr><tr><td style='padding:6px 0;'>a. நெடி</td><td></td><td style='padding:6px 0;'>1. மகிழ்ச்சி</td></tr><tr><td style='padding:6px 0;'>b. மழலை</td><td></td><td style='padding:6px 0;'>2. நாற்றம்</td></tr><tr><td style='padding:6px 0;'>c. வனப்பு</td><td></td><td style='padding:6px 0;'>3. குழந்தை</td></tr><tr><td style='padding:6px 0;'>d. பூரிப்பு</td><td></td><td style='padding:6px 0;'>4. அழகு</td></tr></table><br>குறியீடுகள்:",
+    "ta": "",
+    "optionsEn": ["3, 1, 2, 4", "1, 2, 3, 4", "2, 1, 4, 3", "4, 3, 2, 1"],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "சரியான இணைப்புச் சொல்லைத் தேர்க. நான் ஏற்கனவே சென்ற இடம்தான். ... இல்லை.",
+    "ta": "",
+    "optionsEn": ["ஆதலால்", "ஆனால்", "ஆயினும்", "ஏனெனில்"],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "சரியான இணைப்புச் சொல்லை நிரப்புக. எமது மக்கள் இந்தப் பூமியை எப்பொழுதும் மறப்பதேயில்லை. ... இதுவே எமக்குத் தாயாகும்.",
+    "ta": "",
+    "optionsEn": ["ஏனெனில்", "அதனால்", "ஆகையால்", "எனவே"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "அடைப்புக்குள் உள்ள சொல்லைத் தகுந்த இடத்தில் சேர்க்கவும். (அவர்)",
+    "ta": "",
+    "optionsEn": ["வந்தவர் - தான்", "வந்தவன் - தான்", "வந்தது - தான்", "வருகின்றவை - தாம்"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "அடைப்புக்குள் உள்ள சொல்லைத் தகுந்த இடத்தில் சேர்க்கவும். (அழகுகன்)",
+    "ta": "",
+    "optionsEn": ["தம்மை முதலிய எட்டினைப் பெற்றுள்ளாய்", "நும்மை முதலிய எட்டினைப் பெற்றுள்ளாய்", "அம்மை முதலிய எட்டினைப் பெற்றுள்ளாய்", "எம்மை முதலிய எட்டினைப் பெற்றுள்ளாய்"],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "அடைப்புக்குள் உள்ள சொல்லைத் தகுந்த இடத்தில் சேர்க்க தேர்க. (படித்தல்)",
+    "ta": "",
+    "optionsEn": ["நூலின் பயன் ... ஆகும்", "கல்வியின் பயன் ... ஆகும்", "பள்ளியின் பயன் ... ஆகும்", "வாழ்வின் பயன் ... ஆகும்"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "அடைப்புக்குள் உள்ள சொல்லைத் தகுந்த இடத்தில் சேர்க்கவும். (பிப்ரவரி 2)",
+    "ta": "",
+    "optionsEn": ["உலக ஈரநில நாள்", "உலக இயற்கை நாள்", "உலக ஓசோன் நாள்", "உலக வனவிலங்கு நாள்"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "பொருத்தமான இணைப்புச் சொல் அமைந்தத் தொடரைத் தேர்க. தமிழ்மொழிதான் மிகப் பழைமையான மொழி. ... தமிழ்மொழியை நாட்டின் ஆட்சி மொழியாக அறிவிக்க வேண்டும்.",
+    "ta": "",
+    "optionsEn": ["எனவே", "ஆனால்", "அதுபோல", "ஏனெனில்"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "சரியான இணைப்புச் சொல்லைத் தேர்வு செய்க. 'இந்த ஓவியத்தில் அமைதி எங்கே இருக்கிறது?' என்றார் அரசர். ஓவியர், 'மன்னா! பிரச்சனையும் போராட்டமும் ஆரவாரமும் இல்லாத இடத்தில் இருப்பது அமைதி அன்று' என்றார். ...",
+    "ta": "",
+    "optionsEn": ["அவ்வாறு", "அப்படி", "அதனால்", "அதற்கு"],
+    "optionsTa": [],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "அடைப்புக்குள் உள்ள சொல்லைத் தகுந்த இடத்தில் சேர்க்கவும். (இயற்கையோடு)",
+    "ta": "",
+    "optionsEn": ["வாகனங்கள் ... தொடர்புடையவை", "விலங்குகள் ... தொடர்புடையவை", "நெகிழிகள் ... தொடர்புடையவை", "வீட்டு உபயோகப் பொருள்கள் ... தொடர்புடையவை"],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "அடைப்புக்குள் உள்ள சொல்லைத் தகுந்த இடத்தில் சேர்க்கவும். (நடித்தல்)",
+    "ta": "",
+    "optionsEn": ["... அவரை மிஞ்ச ஆள் கிடையாது", "பொதுவாழ்வில் ... கூடாது", "உழவர்கள் நாற்று ... நடுவதற்கு வயலுக்குச் செல்வர்", "ஒரு ... நடிகை நாடகம் பார்க்கிறாள்"],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "பொருத்தமான இணைப்புச் சொல்லைத் தேர்க. நான் என் உயிரைக் கொடுப்பதற்குக் கொஞ்சமும் கவலைப்படவில்லை. ... நான் கடவுளுக்கு எதிராக ஒன்றும் செய்யவில்லை.",
+    "ta": "",
+    "optionsEn": ["எனவே", "ஆகவே", "அதனால்", "ஏனெனில்"],
+    "optionsTa": [],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "ஊர்ப்பெயரின் மரூஉவை எழுதுக - புதுச்சேரி",
+    "ta": "",
+    "optionsEn": ["பாண்டிச்சேரி", "பாண்டி", "புதுகை", "புதுவை"],
+    "optionsTa": [],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "ஊர்ப்பெயரின் மரூஉவை அறிந்து பொருந்தா இணையைக் காண்க.",
+    "ta": "",
+    "optionsEn": ["புதுச்சேரி - புதுவை", "புதுக்கோட்டை - புதுமை", "கும்பகோணம் - குடந்தை", "நாகப்பட்டினம் - நாகை"],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "பிழை நீக்கி எழுதுக: \"அந்தப் புஞ்சை ரோட்டோரத்தில் இருந்தது.\"",
+    "ta": "",
+    "optionsEn": ["அந்தப் புன்செய் சாலையோரத்தில் இருந்தது.", "அந்தப் புஞ்சை சாலையோரத்தில் இருந்தது.", "அந்தப் புன்செய் ரோட்டோரத்தில் இருந்தது.", "அந்தப் புஞ்சை ரோட்டோரத்தில் இருந்தது."],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "சரியான ஊர்ப்பெய மரூஉ எது?",
+    "ta": "",
+    "optionsEn": ["புதுச்சேரி - புதுகை", "புதுக்கோட்டை - புதுவை", "உதகமண்டலம் - உதகை", "கும்பகோணம் - கும்பை"],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "தில்லை என்று அழைக்கப்படும் ஊர் எது?",
+    "ta": "",
+    "optionsEn": ["திருநெல்வேலி", "சிதம்பரம்", "சீர்காழி", "கன்னியாகுமரி"],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "தொடரில் உள்ள பிழைகளைத் திருத்தி எழுதுக:<br>A. வாழைப்பலம் உடலுக்கு மிகவும் நல்ளது.<br>B. வாழைப்பழம் உடலுக்கு மிகவும் நல்லது.<br>C. வாழைப்பலம் உடலுக்கு மிகவும் நல்லது.<br>D. வாழைப்பழம் உடலுக்கு மிகவும் நள்ளது.",
+    "ta": "",
+    "optionsEn": ["வாழைப்பலம் உடலுக்கு மிகவும் நல்ளது.", "வாழைப்பழம் உடலுக்கு மிகவும் நல்லது.", "வாழைப்பலம் உடலுக்கு மிகவும் நல்லது.", "வாழைப்பழம் உடலுக்கு மிகவும் நள்ளது."],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "பிழையற்ற தொடரைத் தேர்க:",
+    "ta": "",
+    "optionsEn": ["ஆயிசா பூக்களைப் பரிக்க முயற்சித்தாள்", "ஆயிசா பூக்களைப் பறிக்க முயற்சித்தாள்", "ஆயிசா பூக்களைப் பறிக்க முயன்றாள்", "ஆயிசா பூக்களைப் பரிக்க முயன்றாள்"],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "ஊர்ப்பெயரின் மரூஉவை எழுதுக - தேவகோட்டை",
+    "ta": "",
+    "optionsEn": ["தேவர் கோட்டை", "தேவோட்டை", "தேவர்புரம்", "தேவரம்"],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "பிழையற்ற தொடரைக் காண்க:",
+    "ta": "",
+    "optionsEn": ["அவன் நேற்று திரைப்படத்தைப் பார்த்தான்", "அவன் நேற்று திரைப்படத்தைப் பார்ப்பான்", "அவன் நேற்று திரைப்படத்தைப் பார்க்கிறான்", "அவன் நேற்று திரைப்படத்தைப் பார்க்கின்றான்"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "நாயக்கர்கள் ஆண்ட நிலப்பகுதி எவ்வாறு அழைக்கப்பட்டது?",
+    "ta": "",
+    "optionsEn": ["பாளையம்", "நாடு", "பட்டினம்", "பாக்கம்"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "பழங்காலத்தில் கடற்கரைகளில் உருவான பேரூர்கள் எவ்வாறு வழங்கப்பட்டன?",
+    "ta": "",
+    "optionsEn": ["பட்டினம்", "பாக்கம்", "குப்பம்", "கீழக்கரை"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "சால்பு என்பதன் பொருள் யாது?",
+    "ta": "",
+    "optionsEn": ["பேராண்மை", "மேலாண்மை", "சான்றாண்மை", "வேளாண்மை"],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "match",
+    "en": "பொருத்துக:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List-I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>List-II</b></td></tr><tr><td style='padding:6px 0;'>a. அறுவை வீதி</td><td></td><td style='padding:6px 0;'>1. அந்தணர் வீதி</td></tr><tr><td style='padding:6px 0;'>b. கூல வீதி</td><td></td><td style='padding:6px 0;'>2. பொற்கடை வீதி</td></tr><tr><td style='padding:6px 0;'>c. பொன் வீதி</td><td></td><td style='padding:6px 0;'>3. ஆடைகள் விற்கும் வீதி</td></tr><tr><td style='padding:6px 0;'>d. மறையவர் வீதி</td><td></td><td style='padding:6px 0;'>4. தானியக்கடை வீதி</td></tr></table><br>குறியீடுகள்:",
+    "ta": "",
+    "optionsEn": ["4, 3, 2, 1", "3, 4, 2, 1", "1, 3, 2, 4", "2, 1, 3, 4"],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "match",
+    "en": "சொல்லையும் பொருளையும் பொருத்துக:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List-I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>List-II</b></td></tr><tr><td style='padding:6px 0;'>a. பண்</td><td></td><td style='padding:6px 0;'>1. பதித்து</td></tr><tr><td style='padding:6px 0;'>b. இழைத்து</td><td></td><td style='padding:6px 0;'>2. இசை</td></tr><tr><td style='padding:6px 0;'>c. பார்</td><td></td><td style='padding:6px 0;'>3. பூஞ்சோலை</td></tr><tr><td style='padding:6px 0;'>d. நந்தவனம்</td><td></td><td style='padding:6px 0;'>4. உலகம்</td></tr></table><br>குறியீடுகள்:",
+    "ta": "",
+    "optionsEn": ["3, 4, 2, 1", "1, 2, 3, 4", "4, 3, 2, 1", "2, 1, 4, 3"],
+    "optionsTa": [],
+    "answer": 3
+  },
+  {
+    "type": "match",
+    "en": "சொல்லையும் பொருளையும் பொருத்துக:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List-I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>List-II</b></td></tr><tr><td style='padding:6px 0;'>a. நமன்</td><td></td><td style='padding:6px 0;'>1. ஈடேறுங்கள்</td></tr><tr><td style='padding:6px 0;'>b. நம்பர்</td><td></td><td style='padding:6px 0;'>2. எமன்</td></tr><tr><td style='padding:6px 0;'>c. நாணாமே</td><td></td><td style='padding:6px 0;'>3. அடியார்</td></tr><tr><td style='padding:6px 0;'>d. உய்ம்மின்</td><td></td><td style='padding:6px 0;'>4. கூசாமல்</td></tr></table><br>குறியீடுகள்:",
+    "ta": "",
+    "optionsEn": ["2, 3, 4, 1", "4, 3, 2, 1", "2, 1, 3, 4", "4, 2, 1, 3"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "பொருத்துக:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List-I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>List-II</b></td></tr><tr><td style='padding:6px 0;'>a. எத்தனிக்கும்</td><td></td><td style='padding:6px 0;'>1. சமம்</td></tr><tr><td style='padding:6px 0;'>b. வெற்பு</td><td></td><td style='padding:6px 0;'>2. வயல்</td></tr><tr><td style='padding:6px 0;'>c. கழனி</td><td></td><td style='padding:6px 0;'>3. மலை</td></tr><tr><td style='padding:6px 0;'>d. நிகர்</td><td></td><td style='padding:6px 0;'>4. முயலும்</td></tr></table><br>குறியீடுகள்:",
+    "ta": "",
+    "optionsEn": ["4, 3, 2, 1", "1, 2, 4, 3", "3, 1, 2, 4", "4, 1, 3, 2"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "மருங்கு என்பதன் பொருள் யாது?",
+    "ta": "",
+    "optionsEn": ["பக்கம்", "சுற்றம்", "ஒழுங்கு", "செல்வம்"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "கீழ்க்கண்டவற்றில் தவறான பொருளைத் தரும் இணை எது?",
+    "ta": "",
+    "optionsEn": ["மிடிமை - வறுமை", "வதைவை - திருமணம்", "அழல் - நெருப்பு", "நறை - வெண்மை"],
+    "optionsTa": [],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "கீழ்க்கண்டவற்றில் துன்னலர் என்ற சொல்லின் பொருளைக் குறிப்பது எது?<br>1. பகைவர்<br>2. கல்லாதோர்<br>3. அழகிய மலர்<br>4. அறிவிலார்<br>சரியான விடையளி:",
+    "ta": "",
+    "optionsEn": ["1 மற்றும் 2", "1 மற்றும் 3", "2 மற்றும் 4", "3 மற்றும் 4"],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "match",
+    "en": "சொல்லையும் பொருளையும் பொருத்துக:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List-I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>List-II</b></td></tr><tr><td style='padding:6px 0;'>a. நேமி</td><td></td><td style='padding:6px 0;'>1. நற்சொல்</td></tr><tr><td style='padding:6px 0;'>b. தூஉய்</td><td></td><td style='padding:6px 0;'>2. தோள்</td></tr><tr><td style='padding:6px 0;'>c. விரிச்சி</td><td></td><td style='padding:6px 0;'>3. சக்கரம்</td></tr><tr><td style='padding:6px 0;'>d. சுவல்</td><td></td><td style='padding:6px 0;'>4. (தூவுதல் / தூவி)</td></tr></table><br>குறியீடுகள்:",
+    "ta": "",
+    "optionsEn": ["2, 4, 3, 1", "3, 4, 1, 2", "4, 2, 1, 3", "3, 1, 2, 4"],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "match",
+    "en": "சொல்லையும் பொருளையும் பொருத்துக:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List-I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>List-II</b></td></tr><tr><td style='padding:6px 0;'>a. கெடிகலங்கி</td><td></td><td style='padding:6px 0;'>1. கூட்டம்</td></tr><tr><td style='padding:6px 0;'>b. சேகரம்</td><td></td><td style='padding:6px 0;'>2. மிக வருந்தி</td></tr><tr><td style='padding:6px 0;'>c. வாகு</td><td></td><td style='padding:6px 0;'>3. மிகவும்</td></tr><tr><td style='padding:6px 0;'>d. மெத்த</td><td></td><td style='padding:6px 0;'>4. சரியாக (அல்லது தோள்)</td></tr></table><br>குறியீடுகள்:",
+    "ta": "",
+    "optionsEn": ["3, 1, 2, 4", "2, 1, 4, 3", "4, 1, 3, 2", "2, 4, 1, 3"],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "ஒரு பொருள் தரும் பல சொற்கள்: சரியான இணையைத் தேர்ந்தெடு.",
+    "ta": "",
+    "optionsEn": ["நாவாய் - வங்கம்", "ஆழி - சுழி", "அழி - ஆழி", "கப்பல் - அலை"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "ஆழி, முந்நீர், பௌவம் ஆகிய சொற்கள் கீழ்க்கண்டவற்றில் எதைக் குறிக்கிறது?",
+    "ta": "",
+    "optionsEn": ["சக்கரம்", "மூன்று", "கடல்", "வெந்நீர்"],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "ஒரு பொருள் தரும் பல சொற்கள்: தாள், தண்டு, கோல், தூறு, தட்டு ஆகிய சொற்கள் தாவரத்தின் எப்பகுதியைக் குறிக்கின்றன?",
+    "ta": "",
+    "optionsEn": ["அடிப்பகுதி", "கிளை", "இலை", "இளம்பயிர்"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "இரு பொருள் கொண்ட ஒரு சொல்: \"அன்னை, தந்தையின் கைப்பிடித்துக் குழந்தை நடக்கும். அறிஞர் அண்ணாவின் சிறப்பு அவரது அடுக்கு மொழி நடை.\"",
+    "ta": "",
+    "optionsEn": ["வழக்கு", "அழகு", "நடை", "நயம்"],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "ஒரு பொருள் தரும் பல சொற்கள்: வடு, மூசு, குரும்பை, கச்சல் ஆகிய சொற்கள் எதனைக் குறிக்கின்றன?",
+    "ta": "",
+    "optionsEn": ["பிஞ்சு வகை", "காய் வகை", "கனி வகை", "குலை வகை"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "ஒரு பொருள் தரும் பல சொற்கள் - வயல்",
+    "ta": "",
+    "optionsEn": ["பழனம், செய்", "காணி, கனல்", "தரிசு, தீ", "சுடர், கழனி"],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "கடை என்பதன் சரியான இரு பொருள் தருக.",
+    "ta": "",
+    "optionsEn": ["காண்க - கருவி", "கொடுமை - கடினம்", "முடிவு - அங்காடி", "உடுக்கை - உடை"],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "இரு பொருள் தரக்கூடிய சொல்லைத் தேர்ந்தெடுக்கவும்: \"ஆடை தைக்க உதவுவது ... மூதுரை அறநூல்\"",
+    "ta": "",
+    "optionsEn": ["பஞ்சு", "நூல்", "ஊசி", "தையல்"],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "ஒரு பொருள் தரும் பல சொற்கள்: பிள்ளை, குட்டி, மடலி, வடலி, கன்று ஆகிய சொற்கள் எதனைக் குறிக்கின்றன?",
+    "ta": "",
+    "optionsEn": ["இளம் விலங்கினம்", "தென்னை ஓலை", "இலைகள்", "இளம் பயிர் வகை"],
+    "optionsTa": [],
+    "answer": 3
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false; isSubmitted = false;
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">
+                <span class="option-letter">${String.fromCharCode(65+i)}.</span>
+                <span class="option-text">${opt}</span>
+            </div>`;
+        });
+        let clearBtnHtml = "";
+        if (sel !== null && sel !== undefined) {
+            clearBtnHtml = `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;">
+                <button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button>
+            </div>`;
+        }
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+                ${sel !== null && sel !== undefined ? `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;"><button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button></div>` : ``}
+            </div>
+        `;
+        updateNavButtons(); updatePalette();
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) {
+            userAnswers[currentIndex] = null;
+        } else {
+            userAnswers[currentIndex] = optIndex;
+        }
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+
+    function clearSelection() {
+        if (isSubmitted) return;
+        userAnswers[currentIndex] = null;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    let currentReviewIndex = 0;
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let cssClass = "option-item";
+                let markerHtml = "";
+                if (idx === corr) { cssClass += " correct"; markerHtml = "<div class='marker'>✔</div>"; }
+                else if (u === idx && idx !== corr) { cssClass += " wrong"; markerHtml = "<div class='marker'>✖</div>"; }
+                optsHtml += `<div class="${cssClass}"><span>${String.fromCharCode(65+idx)}. ${optsArray[idx]}</span>${markerHtml}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" id="review-card-${i}" style="display: none;">
+                        <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div class="your-answer">Your Answer: ${userAns}</div>
+                        <div class="correct-answer">Correct Answer: ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        ${optsHtml}
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+        currentReviewIndex = 0;
+        showReviewCard(currentReviewIndex);
+    }
+    function showReviewCard(index) {
+        const cards = document.querySelectorAll(".review-card");
+        if (cards.length === 0) return;
+        cards.forEach(c => c.style.display = "none");
+        cards[index].style.display = "block";
+        document.getElementById("reviewPageText").innerText = `${index + 1} / ${cards.length}`;
+        document.getElementById("prevReviewBtn").disabled = (index === 0);
+        document.getElementById("nextReviewBtn").disabled = (index === cards.length - 1);
+        document.getElementById("reviewPagination").style.display = "flex";
+        window.scrollTo(0, 0);
+    }
+    function navigateReview(direction) {
+        const cards = document.querySelectorAll(".review-card");
+        currentReviewIndex += direction;
+        if (currentReviewIndex >= 0 && currentReviewIndex < cards.length) {
+            showReviewCard(currentReviewIndex);
+        }
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
+            await new Promise(r => setTimeout(r, 600));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+                if (btn) btn.innerText = "✅ Select Save as PDF";
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+        } finally {
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 3000);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        history.replaceState({ resultPage: true }, "", "#result");
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.addEventListener("popstate", function(e) {
+        if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+            history.pushState({ resultPage: true }, "", "#result");
+            confirmLeaveResult();
+        }
+    });
+    function confirmLeaveResult() {
+        if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
+            window.AndroidBridge.exitResultPage();
+        } else {
+            history.back();
+        }
+    }
+    window.checkForReview = function() {
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
+            }
+        }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
