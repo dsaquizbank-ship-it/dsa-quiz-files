@@ -451,53 +451,6 @@
       "language": "both"
     },
     {
-      "testId": "NTE-TAM-1",
-      "examId": "TET-TAMIL",
-      "name": "NTE-TAMIL-50 IYAL 5,6 ILAKKANAM",
-      "durationMinutes": 20,
-      "order": 1,
-      "questionCount": 30,
-      "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTE-TAM-1.html",
-      "releaseTimestamp": 1792395000000
-    },
-    {
-      "testId": "NTE-SC-1",
-      "examId": "TET-SCIENCE",
-      "name": "7TH TERM-2 ELECTRICITY (Set-1)",
-      "topic": "7TH TERM-2 ELECTRICITY",
-      "durationMinutes": 15,
-      "order": 1,
-      "questionCount": 25,
-      "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTE-SC-1.html",
-      "releaseTimestamp": 0
-    },
-    {
-      "testId": "NTE-SS-2",
-      "examId": "TET-SOCIALSCIENCE",
-      "name": "8TH GEO- MAP READING (Set-2)",
-      "topic": "8TH GEO- MAP READING",
-      "durationMinutes": 15,
-      "order": 2,
-      "questionCount": 25,
-      "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTE-SS-2.html",
-      "releaseTimestamp": 0
-    },
-    {
-      "testId": "NTE-SS-1",
-      "examId": "TET-SOCIALSCIENCE",
-      "name": "8TH HUMAN RIGHTS AND UNO (Set-1)",
-      "topic": "8TH HUMAN RIGHTS AND UNO",
-      "durationMinutes": 15,
-      "order": 1,
-      "questionCount": 25,
-      "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTE-SS-1.html",
-      "releaseTimestamp": 0
-    },
-    {
       "testId": "SGT-TA-34",
       "examId": "SGT-TAMIL",
       "name": "SGT-TA-34 TAMIL IYAL 3",
