@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-17T07:54:53.560Z",
+  "version": "2026-11-17T08:56:23.721Z",
   "categories": [
     {
       "id": "BANK",
@@ -2723,6 +2723,20 @@
       "releaseTimestamp": 1794902400000,
       "language": "both",
       "createdAt": 1794901807991
+    },
+    {
+      "testId": "TTA-2",
+      "examId": "TNPSC-TA",
+      "name": "UNIT-2 TTA-2",
+      "topic": "UNIT-2",
+      "durationMinutes": 30,
+      "order": 2,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TTA-2.html",
+      "releaseTimestamp": 0,
+      "language": "both",
+      "createdAt": 1794905783721
     }
   ]
 }
