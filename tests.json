@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-17T07:02:01.837Z",
+  "version": "2026-11-17T07:11:25.918Z",
   "categories": [
     {
       "id": "BANK",
@@ -2653,6 +2653,20 @@
       "releaseTimestamp": 1794900600000,
       "language": "both",
       "createdAt": 1794898921837
+    },
+    {
+      "testId": "TIP-9",
+      "examId": "TNPSC-IP",
+      "name": "STATE LEGISLATURE (SET-1)",
+      "topic": "STATE LEGISLATURE",
+      "durationMinutes": 15,
+      "order": 9,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-9.html",
+      "releaseTimestamp": 1794900600000,
+      "language": "both",
+      "createdAt": 1794899485918
     }
   ]
 }
