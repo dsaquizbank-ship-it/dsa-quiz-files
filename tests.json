@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-17T15:56:44.257Z",
+  "version": "2026-11-17T16:00:06.309Z",
   "categories": [
     {
       "id": "BANK",
@@ -2705,6 +2705,20 @@
       "releaseTimestamp": 1794988800000,
       "language": "en",
       "createdAt": 1794931004257
+    },
+    {
+      "testId": "TET-SS-6",
+      "examId": "TET-SOCIALSCIENCE",
+      "name": "6TH TERM 2-THE CONSTITUTION OF INDIA (SET-1)",
+      "topic": "6TH TERM 2-THE CONSTITUTION OF INDIA",
+      "durationMinutes": 15,
+      "order": 6,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-SS-6.html",
+      "releaseTimestamp": 1794988800000,
+      "language": "both",
+      "createdAt": 1794931206309
     }
   ]
 }
