@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>TIP-11 - UNION EXECUTIVE (SET-1)</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                linebreaks: { automatic: true, width: "container" }
+            },
+            options: { ignoreHtmlClass: "no-mathjax" },
+            chtml: {
+                displayAlign: "left",
+                displayIndent: "0",
+                mtextInheritFont: true
+            },
+            svg: {
+                scale: 0.9,
+                minScale: 0.5,
+                mtextInheritFont: true,
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; color: #10b981; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; white-space: normal; word-wrap: break-word; padding-bottom: 20px; max-width: 100%; overflow-x: auto; }
+        mjx-container { display: inline !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; }
+        .question-text::-webkit-scrollbar { display: none; }
+        .question-text { -ms-overflow-style: none; scrollbar-width: none; }
+        .option-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; word-wrap: break-word; }
+        .option-letter { font-weight: 800; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+        .option-text { flex-grow: 1; min-width: 0; word-wrap: break-word; overflow-wrap: break-word; }
+        .option-text mjx-container { display: inline-block !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; overflow-x: visible !important; }
+        .option-text mjx-container[jax="CHTML"][display="true"] { margin: 0 !important; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
+        .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
+        .review-card .question-text { overflow-x: hidden !important; white-space: normal !important; word-wrap: break-word !important; }
+        .review-card strong { color: var(--text-primary); font-size: 16px; }
+        .review-card .option-item { background-color: var(--rc-bg); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: rgba(40, 167, 69, 0.1); border: 1px solid #28a745; color: #28a745; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; color: #dc3545; }
+        .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
+        .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
+        .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
+        .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px 0; border-top: 1px solid var(--border-light); }
+        .review-nav-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .review-nav-btn:disabled { background: var(--border-light); color: var(--text-primary); opacity: 0.5; cursor: not-allowed; }
+        .review-nav-text { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+        .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { 
+            html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } 
+            .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } 
+            #startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard { display: none !important; } 
+            #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } 
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; } 
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; margin-bottom: 20px !important; display: block !important; } 
+            .review-card .option-item { border: 1px solid #ccc !important; background: white !important; color: black !important; } 
+            .review-card .option-item.correct { background: #e6ffe6 !important; border-color: #28a745 !important; color: black !important; } 
+            .review-card .option-item.wrong { background: #ffe6e6 !important; border-color: #dc3545 !important; color: black !important; } 
+            @page { size: A4; margin: 1.5cm; } 
+        }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">15:00</div>
+            <div class="top-buttons">
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div id="printHeader" style="display: none;">
+            <h1>DR SAHITHA IAS ACADEMY</h1>
+            <h3>ANSWER KEY & DETAILED REVIEW</h3>
+            <p><strong>Test:</strong> TIP-11 - POLITY</p>
+        </div>
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+            <div id="reviewPagination" class="review-nav-container" style="display: none;">
+                <button class="review-nav-btn" id="prevReviewBtn" onclick="navigateReview(-1)">◀ PREV</button>
+                <span class="review-nav-text" id="reviewPageText">1 / 25</span>
+                <button class="review-nav-btn" id="nextReviewBtn" onclick="navigateReview(1)">NEXT ▶</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "POLITY",
+        testNo: "TIP-11",
+        date: "17/11/2026",
+        subject: "POLITY",
+        topic: "UNION EXECUTIVE",
+        duration: "15",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "How many days before the notice of impeachment motion against the President has to be given to the President of India?",
+    "ta": "இந்தியக் குடியரசுத் தலைவருக்கு எதிரான கண்டனத் தீர்மான (impeachment) முன்னறிவிப்பு எத்தனை நாட்களுக்கு முன்பு கொடுக்கப்பட வேண்டும்?",
+    "optionsEn": [
+      "1 month",
+      "10 days",
+      "14 days",
+      "21 days",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "1 மாதம்",
+      "10 நாட்கள்",
+      "14 நாட்கள்",
+      "21 நாட்கள்",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statements is/are correct?<br>I. The President of India is the head of the State.<br>II. All executive powers of the Union are vested in the President.",
+    "ta": "பின்வரும் கூற்றுகளில் எது/எவை சரியானவை?<br>I. இந்தியாவின் குடியரசுத் தலைவர் நாட்டின் தலைவர் ஆவார்.<br>II. ஒன்றியத்தின் அனைத்து நிர்வாக அதிகாரங்களும் குடியரசுத் தலைவரிடம் vested செய்யப்பட்டுள்ளன.",
+    "optionsEn": [
+      "I and II both",
+      "II only",
+      "only I",
+      "I and II both are incorrect",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "I மற்றும் II இரண்டும்",
+      "II மட்டும்",
+      "I மட்டும்",
+      "I மற்றும் II இரண்டும் தவறு",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which two Presidents of India used the pocket veto?",
+    "ta": "இந்தியாவின் எந்த இரு குடியரசுத் தலைவர்கள் பாக்கெட் வீட்டோவைப் (pocket veto) பயன்படுத்தினர்?",
+    "optionsEn": [
+      "V.V. Giri and Zail Singh",
+      "Abdul Kalam and Pratibha Patil",
+      "Dr. Rajendra Prasad and R. Venkataraman",
+      "Shankar Dayal Sharma and Pranab Mukherjee",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "வி.வி. கிரி மற்றும் ஜெயில் சிங்",
+      "அப்துல் கலாம் மற்றும் பிரதிபா பாட்டீல்",
+      "டாக்டர் ராஜேந்திர பிரசாத் மற்றும் ஆர். வெங்கட்ராமன்",
+      "சங்கர் தயாள் சர்மா மற்றும் பிரணாப் முகர்ஜி",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Who is the Head of State in India?",
+    "ta": "இந்தியாவின் நாட்டின் தலைவர் (Head of State) யார்?",
+    "optionsEn": [
+      "Prime Minister",
+      "Chief Minister",
+      "Home Minister",
+      "None of the above",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "பிரதமர்",
+      "முதலமைச்சர்",
+      "உள்துறை அமைச்சர்",
+      "மேற்கண்ட কেউইமில்லை",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the wrong statements:<br>1. President is the head of the Government.<br>2. Prime Minister is the Real Executive.<br>3. Proportional Representation is associated with Prime Ministerial election.<br>4. The executive power of the Union is vested with the President but he is only a nominal head.",
+    "ta": "தவறான கூற்றுகளைத் தேர்ந்தெடுக்கவும்:<br>1. குடியரசுத் தலைவர் அரசாங்கத்தின் தலைவர் ஆவார்.<br>2. பிரதமர் உண்மையான நிர்வாகி ஆவார்.<br>3. விகிதாச்சார பிரதிநிதித்துவம் பிரதமர் தேர்தலுடன் தொடர்புடையது.<br>4. ஒன்றியத்தின் நிர்வாக அதிகாரம் குடியரசுத் தலைவரிடம் உள்ளது ஆனால் அவர் பெயரளவிலான தலைவர் மட்டுமே.",
+    "optionsEn": [
+      "1 and 3 only",
+      "2 and 3 only",
+      "4 and 2 only",
+      "1 and 2 only",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "1 மற்றும் 3 மட்டும்",
+      "2 மற்றும் 3 மட்டும்",
+      "4 மற்றும் 2 மட்டும்",
+      "1 மற்றும் 2 மட்டும்",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following articles provide for the impeachment of the President?",
+    "ta": "குடியரசுத் தலைவரின் கண்டனத் தீர்மானம் (impeachment) பற்றிக் கூறும் பிரிவு எது?",
+    "optionsEn": [
+      "Art 52 and 61",
+      "Art 53 and 61",
+      "Articles 56(1)(b) and 61",
+      "Article 58 and 61",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "பிரிவு 52 மற்றும் 61",
+      "பிரிவு 53 மற்றும் 61",
+      "பிரிவுகள் 56(1)(b) மற்றும் 61",
+      "பிரிவு 58 மற்றும் 61",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements and choose the incorrect answer:<br>a) The President is a constituent part of Parliament.<br>b) He may sit or participate in the discussion in either of the two Houses.<br>c) The President cannot promulgate an ordinance having the same force and effect as a law passed by Parliament.<br>d) When both the Houses of Parliament are not in session, the President can promulgate an ordinance.",
+    "ta": "பின்வரும் கூற்றுகளைக் கவனித்து தவறான விடையைத் தேர்ந்தெடுக்கவும்:<br>a) குடியரசுத் தலைவர் நாடாளுமன்றத்தின் ஒரு அங்கமாவார்.<br>b) அவர் நாடாளுமன்றத்தின் இரு அவைகளிலும் அமரலாம் அல்லது விவாதங்களில் பங்கேற்கலாம்.<br>c) நாடாளுமன்றம் இயற்றும் சட்டத்திற்கு இணையான மற்றும் அதே விளைவைக் கொண்ட அவசரச் சட்டத்தைப் குடியரசுத் தலைவரால் பிறப்பிக்க முடியாது.<br>d) நாடாளுமன்றத்தின் இரு அவைகளும் கூட்டத்தொடரில் இல்லாதபோது, குடியரசுத் தலைவர் அவசரச் சட்டத்தைப் பிறப்பிக்கலாம்.",
+    "optionsEn": [
+      "(b) and (c) only",
+      "(c) and (d) only",
+      "(a) and (c) only",
+      "(a) and (d) only",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "(b) மற்றும் (c) மட்டும்",
+      "(c) மற்றும் (d) மட்டும்",
+      "(a) மற்றும் (c) மட்டும்",
+      "(a) மற்றும் (d) மட்டும்",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the incorrect statement given below:<br>I. Vice-President must be eligible for election as a member of Rajya Sabha.<br>II. While acting as President, the Vice-President gets salary, allowances, emoluments etc. payable to the Vice-President only.<br>III. The President determines the strength of judges in the High Court.<br>IV. Contingency Fund of India is operated under the President’s execution.",
+    "ta": "கீழே கொடுக்கப்பட்டுள்ளவற்றில் தவறான கூற்றைத் தேர்ந்தெடுக்கவும்:<br>I. துணைத் தலைவர் மாநிலங்களவை உறுப்பினராகத் தேர்ந்தெடுக்கப்படுவதற்கான தகுதியைப் பெற்றிருக்க வேண்டும்.<br>II. குடியரசுத் தலைவராகச் செயல்படும் போது, துணைத் தலைவர் துணைத் தலைவருக்குரிய சம்பளம், படிகள் மற்றும் ஊதியங்களை மட்டுமே பெறுவார்.<br>III. உயர் நீதிமன்ற நீதிபதிகளின் எண்ணிக்கையைக் குடியரசுத் தலைவர் தீர்மானிக்கிறார்.<br>IV. இந்தியாவின் அவசர நிதியம் (Contingency Fund) குடியரசுத் தலைவரின் செயலாட்சியின் கீழ் இயக்கப்படுகிறது.",
+    "optionsEn": [
+      "I only",
+      "II only",
+      "III only",
+      "IV only",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "I மட்டும்",
+      "II மட்டும்",
+      "III மட்டும்",
+      "IV மட்டும்",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "I. The President of India is elected by the system of direct elections.<br>II. The President of India is the Nominal Head of the State.<br>Which of the above statements are true?",
+    "ta": "I. இந்தியாவின் குடியரசுத் தலைவர் நேரடி தேர்தல் முறை மூலம் தேர்ந்தெடுக்கப்படுகிறார்.<br>II. இந்தியாவின் குடியரசுத் தலைவர் நாட்டின் பெயரளவிலான தலைவர் ஆவார்.<br>மேற்கண்ட கூற்றுகளில் எவை சரியானவை?",
+    "optionsEn": [
+      "I only",
+      "Both I and II",
+      "II only",
+      "None of the above",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "I மட்டும்",
+      "I மற்றும் II இரண்டும்",
+      "II மட்டும்",
+      "மேற்கண்ட எதுவுமில்லை",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Identify the statement that is not correct with regard to the President of India.",
+    "ta": "இந்தியக் குடியரசுத் தலைவர் சம்பந்தமாகச் சரியானதல்லாத கூற்றைக் கண்டறிக.",
+    "optionsEn": [
+      "President can resign from his office at any time",
+      "President cannot hold office beyond his term of five years",
+      "President can be removed from his office by an impeachment process",
+      "No President of India has so far been impeached",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "குடியரசுத் தலைவர் எப்போது வேண்டுமானாலும் தனது பதவியிலிருந்து விலகல் கடிதம் அளிக்கலாம்",
+      "குடியரசுத் தலைவர் தனது ஐந்தாண்டு காலத்திற்கு மேல் பதவியில் இருக்க முடியாது",
+      "குடியரசுத் தலைவர் கண்டனத் தீர்மானத்தின் மூலம் பதவியிலிருந்து நீக்கப்படலாம்",
+      "இதுவரை எந்த இந்தியக் குடியரசுத் தலைவரும் கண்டனத் தீர்மானம் மூலம் நீக்கப்படவில்லை",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements about the Electoral College of Presidential Election. Which among the following statements is correct?",
+    "ta": "குடியரசுத் தலைவர் தேர்தல் வாக்காளர் குழு (Electoral College) குறித்த பின்வரும் கூற்றுகளில் எது சரியானது?",
+    "optionsEn": [
+      "The nominated members of Lok Sabha",
+      "The nominated members of Legislative Councils of States",
+      "The elected members of both Houses of Parliament and elected members of the State Legislatures and Union Territories",
+      "The nominated members of the House of States",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "மக்களவையின் நியமன உறுப்பினர்கள்",
+      "மாநிலங்களின் சட்டமன்ற மேலவைகளின் நியமன உறுப்பினர்கள்",
+      "நாடாளுமன்றத்தின் இரு அவைகளின் தேர்ந்தெடுக்கப்பட்ட உறுப்பினர்கள் மற்றும் மாநில சட்டமன்றங்கள் மற்றும் யூனியன் பிரதேசங்களின் தேர்ந்தெடுக்கப்பட்ட உறுப்பினர்கள்",
+      "மாநிலங்களவையின் நியமன உறுப்பினர்கள்",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "The President shall not be a member of either House of Parliament or of a House of any State Legislature is a condition for the President’s office under",
+    "ta": "குடியரசுத் தலைவர் நாடாளுமன்றத்தின் எந்த அவையிலும் அல்லது மாநில சட்டமன்றத்தின் எந்த அவையிலும் உறுப்பினராக இருக்கக் கூடாது என்பது எந்தப் பிரிவின் கீழ் குடியரசுத் தலைவர் அலுவலகத்திற்கான நிபந்தனையாகும்?",
+    "optionsEn": [
+      "Article 56",
+      "Article 57",
+      "Article 58",
+      "Article 59",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "பிரிவு 56",
+      "பிரிவு 57",
+      "பிரிவு 58",
+      "பிரிவு 59",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "When the office of the President of India falls vacant, who could act as the President?<br>(i) The Vice President<br>(ii) The Chief Justice of India<br>(iii) The Prime Minister<br>(iv) The senior-most Judge of the Supreme Court",
+    "ta": "இந்தியக் குடியரசுத் தலைவர் பதவி காலியாகும்போது, யார் குடியரசுத் தலைவராகச் செயல்பட முடியும்?<br>(i) துணைத் தலைவர்<br>(ii) இந்தியாவின் தலைமை நீதிபதி<br>(iii) பிரதமர்<br>(iv) உச்ச நீதிமன்றத்தின் மூத்த நீதிபதி",
+    "optionsEn": [
+      "(i) only",
+      "(iii) only",
+      "(i) and (iv) only",
+      "(i) and (ii) only",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "(i) மட்டும்",
+      "(iii) மட்டும்",
+      "(i) மற்றும் (iv) மட்டும்",
+      "(i) மற்றும் (ii) மட்டும்",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the False Statement with respect to the qualification for the election of the Indian President.",
+    "ta": "இந்தியக் குடியரசுத் தலைவர் தேர்தலில் போட்டியிடுவதற்கான தகுதிகள் தொடர்பான தவறான கூற்றைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "He/She should be a citizen of India",
+      "He/She must have completed the age of forty years",
+      "He/She must not hold any office of Profit under the Union, State or Local Government",
+      "He/She should have the other qualifications required to become a member of the Lok Sabha",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "அவர் இந்தியாவின் குடிமகனாக இருக்க வேண்டும்",
+      "அவர் நாற்பது வயது பூர்த்தியடைந்திருக்க வேண்டும்",
+      "அவர் மத்திய, மாநில அல்லது உள்ளாட்சி அரசாங்கத்தின் கீழ் எந்த லாபம் தரும் பதவிகளையும் வகிக்கக் கூடாது",
+      "அவர் மக்களவை உறுப்பினராவதற்கான பிற தகுதிகளைப் பெற்றிருக்க வேண்டும்",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "The body that elects the Indian President is",
+    "ta": "இந்தியக் குடியரசுத் தலைவரைத் தேர்ந்தெடுக்கும் அமைப்பு",
+    "optionsEn": [
+      "Parliament",
+      "Judiciary",
+      "Electoral College",
+      "Legislative Assembly",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "நாடாளுமன்றம்",
+      "நீதித்துறை",
+      "தேர்தல் வாக்காளர் குழு (Electoral College)",
+      "சட்டமன்றம்",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Who is selected as the 14th President of India?",
+    "ta": "இந்தியாவின் 14-வது குடியரசுத் தலைவராகத் தேர்ந்தெடுக்கப்பட்டவர் யார்?",
+    "optionsEn": [
+      "A.P.J. Abdul Kalam",
+      "Pratibha Patil",
+      "Pranab Mukherjee",
+      "Ram Nath Kovind",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "ஏ.பி.ஜே. அப்துல் கலாம்",
+      "பிரதிபா பாட்டீல்",
+      "பிரணாப் முகர்ஜி",
+      "ராம்நாத் கோவிந்த்",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which one of the following Presidents of India was elected unopposed?",
+    "ta": "இந்தியாவின் பின்வரும் குடியரசுத் தலைவர்களில் போட்டியின்றித் தேர்ந்தெடுக்கப்பட்டவர் யார்?",
+    "optionsEn": [
+      "Dr. Rajendra Prasad",
+      "Dr. Radhakrishnan",
+      "Neelam Sanjeeva Reddy",
+      "K.R. Narayanan",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "டாக்டர் ராஜேந்திர பிரசாத்",
+      "டாக்டர் ராதாகிருஷ்ணன்",
+      "நீலம் சஞ்சீவ ரெட்டி",
+      "கே.ஆர். நாராயணன்",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "match",
+    "en": "Match the following:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>Column 1</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>Column 2</b></td></tr><tr><td style='padding:6px 0;'>a. Fakhruddin Ali Ahmed</td><td></td><td style='padding:6px 0;'>1. 24.8.1969 – 24.08.1974</td></tr><tr><td style='padding:6px 0;'>b. V.V. Giri</td><td></td><td style='padding:6px 0;'>2. 25.7.1977 – 25.7.1982</td></tr><tr><td style='padding:6px 0;'>c. Neelam Sanjeeva Reddy</td><td></td><td style='padding:6px 0;'>3. 24.08.1974 – 11.2.1977</td></tr><tr><td style='padding:6px 0;'>d. Zakir Hussain</td><td></td><td style='padding:6px 0;'>4. 13.05.1967 – 3.05.1969</td></tr></table>",
+    "ta": "பொருத்துக:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் 1</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் 2</b></td></tr><tr><td style='padding:6px 0;'>a. புகருதீன் அலி அகமது</td><td></td><td style='padding:6px 0;'>1. 24.8.1969 – 24.08.1974</td></tr><tr><td style='padding:6px 0;'>b. வி.வி. கிரி</td><td></td><td style='padding:6px 0;'>2. 25.7.1977 – 25.7.1982</td></tr><tr><td style='padding:6px 0;'>c. நீலம் சஞ்சீவ ரெட்டி</td><td></td><td style='padding:6px 0;'>3. 24.08.1974 – 11.2.1977</td></tr><tr><td style='padding:6px 0;'>d. சாகிர் உசேன்</td><td></td><td style='padding:6px 0;'>4. 13.05.1967 – 3.05.1969</td></tr></table>",
+    "optionsEn": [
+      "a-3, b-1, c-2, d-4",
+      "a-4, b-3, c-2, d-1",
+      "a-1, b-2, c-3, d-4",
+      "a-1, b-3, c-4, d-2",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "a-3, b-1, c-2, d-4",
+      "a-4, b-3, c-2, d-1",
+      "a-1, b-2, c-3, d-4",
+      "a-1, b-3, c-4, d-2",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Arrange the following Presidents of India in chronological order:<br>1. K.R. Narayanan<br>2. Dr. A.P.J. Abdul Kalam<br>3. Dr. Shankar Dayal Sharma<br>4. R. Venkataraman",
+    "ta": "இந்தியாவின் பின்வரும் குடியரசுத் தலைவர்களை காலவரிசைப்படி ஒழுங்குபடுத்துக:<br>1. கே.ஆர். நாராயணன்<br>2. டாக்டர் ஏ.பி.ஜே. அப்துல் கலாம்<br>3. டாக்டர் சங்கர் தயாள் சர்மா<br>4. ஆர். வெங்கட்ராமன்",
+    "optionsEn": [
+      "2, 4, 1, 3",
+      "3, 2, 1, 4",
+      "4, 3, 1, 2",
+      "1, 3, 4, 2",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "2, 4, 1, 3",
+      "3, 2, 1, 4",
+      "4, 3, 1, 2",
+      "1, 3, 4, 2",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "match",
+    "en": "Match the following:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>Column 1</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>Column 2</b></td></tr><tr><td style='padding:6px 0;'>a. Fakhruddin Ali Ahmed</td><td></td><td style='padding:6px 0;'>1. Fourth President of India</td></tr><tr><td style='padding:6px 0;'>b. V.V. Giri</td><td></td><td style='padding:6px 0;'>2. Sixth President of India</td></tr><tr><td style='padding:6px 0;'>c. Zakir Husain</td><td></td><td style='padding:6px 0;'>3. Fifth President of India</td></tr><tr><td style='padding:6px 0;'>d. Neelam Sanjiva Reddy</td><td></td><td style='padding:6px 0;'>4. Third President of India</td></tr></table>",
+    "ta": "பொருத்துக:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் 1</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் 2</b></td></tr><tr><td style='padding:6px 0;'>a. புகருதீன் அலி அகமது</td><td></td><td style='padding:6px 0;'>1. இந்தியாவின் நான்காவது குடியரசுத் தலைவர்</td></tr><tr><td style='padding:6px 0;'>b. வி.வி. கிரி</td><td></td><td style='padding:6px 0;'>2. இந்தியாவின் ஆறாவது குடியரசுத் தலைவர்</td></tr><tr><td style='padding:6px 0;'>c. சாகிர் உசேன்</td><td></td><td style='padding:6px 0;'>3. இந்தியாவின் ஐந்தாவது குடியரசுத் தலைவர்</td></tr><tr><td style='padding:6px 0;'>d. நீலம் சஞ்சீவ ரெட்டி</td><td></td><td style='padding:6px 0;'>4. இந்தியாவின் மூன்றாவது குடியரசுத் தலைவர்</td></tr></table>",
+    "optionsEn": [
+      "a-1, b-4, c-3, d-2",
+      "a-3, b-1, c-4, d-2",
+      "a-4, b-1, c-2, d-3",
+      "a-3, b-4, c-1, d-2",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "a-1, b-4, c-3, d-2",
+      "a-3, b-1, c-4, d-2",
+      "a-4, b-1, c-2, d-3",
+      "a-3, b-4, c-1, d-2",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the incorrect pair who held the offices of the President and Vice-President side by side:<br>1. K.R. Narayanan - Krishnakant<br>2. S. Radhakrishnan - Zakir Husain<br>3. R. Venkataraman - Shankar Dayal Sharma<br>4. Giani Zail Singh - K.R. Narayanan",
+    "ta": "குடியரசுத் தலைவர் மற்றும் துணைத் தலைவர் பதவிகளை ஒரே நேரத்தில் வகித்தவர்களில் தவறான இணையைத் தேர்ந்தெடுக்கவும்:<br>1. கே.ஆர். நாராயணன் - கிருஷ்ணகாந்த்<br>2. எஸ். ராதாகிருஷ்ணன் - சாகிர் உசேன்<br>3. ஆர். வெங்கட்ராமன் - சங்கர் தயாள் சர்மா<br>4. கியானி ஜெயில் சிங் - கே.ஆர். நாராயணன்",
+    "optionsEn": [
+      "3 is incorrect",
+      "4 is incorrect",
+      "1 and 2 are incorrect",
+      "2 is incorrect",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "3 தவறானது",
+      "4 தவறானது",
+      "1 மற்றும் 2 தவறானவை",
+      "2 தவறானது",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Name the Chief Justice of India who acted as President of India when the offices of President and Vice-President fell vacant.",
+    "ta": "குடியரசுத் தலைவர் மற்றும் துணைத் தலைவர் பதவிகள் காலியாக இருந்தபோது இந்தியாவின் குடியரசுத் தலைவராகச் செயல்பட்ட உச்ச நீதிமன்றத் தலைமை நீதிபதி யார்?",
+    "optionsEn": [
+      "Justice M. Hidayatullah",
+      "Justice K.N. Wanchoo",
+      "Justice Y.V. Chandrachud",
+      "Justice B.P. Sinha",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "நீதிபதி எம். ஹிதயத்துல்லா",
+      "நீதிபதி கே.என். வஞ்சூ",
+      "நீதிபதி ஒய்.வி. சந்திரசூட்",
+      "நீதிபதி பி.பி. சின்ஹா",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair:<br>Name of the President - Elected Year<br>1. Dr. S. Radhakrishnan - 1961<br>2. Dr. Zakir Hussain - 1966<br>3. Fakhruddin Ali Ahmed - 1974<br>4. N. Sanjeeva Reddy - 1977",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்:<br>குடியரசுத் தலைவரின் பெயர் - தேர்ந்தெடுக்கப்பட்ட ஆண்டு<br>1. டாக்டர் எஸ். ராதாகிருஷ்ணன் - 1961<br>2. டாக்டர் சாகிர் உசேன் - 1966<br>3. புகருதீன் அலி அகமது - 1974<br>4. என். சஞ்சீவ ரெட்டி - 1977",
+    "optionsEn": [
+      "1 and 2 are correct",
+      "2 and 3 are correct",
+      "3 and 4 are correct",
+      "1 and 4 are correct",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "1 மற்றும் 2 சரி",
+      "2 மற்றும் 3 சரி",
+      "3 மற்றும் 4 சரி",
+      "1 மற்றும் 4 சரி",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "match",
+    "en": "Match the Presidents listed below with the distinguished guests who attended the Republic Day celebrations held under their leadership.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>Column 1</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>Column 2</b></td></tr><tr><td style='padding:6px 0;'>a. Droupadi Murmu</td><td></td><td style='padding:6px 0;'>1. Cyril Ramaphosa</td></tr><tr><td style='padding:6px 0;'>b. A.P.J. Abdul Kalam</td><td></td><td style='padding:6px 0;'>2. Prabowo Subianto</td></tr><tr><td style='padding:6px 0;'>c. Pranab Mukherjee</td><td></td><td style='padding:6px 0;'>3. Vladimir Putin</td></tr><tr><td style='padding:6px 0;'>d. Ram Nath Kovind</td><td></td><td style='padding:6px 0;'>4. Barack Obama</td></tr></table>",
+    "ta": "கீழே பட்டியலிடப்பட்டுள்ள குடியரசுத் தலைவர்களையும், அவர்களின் தலைமையில் நடைபெற்ற குடியரசு தின விழாக்களில் கலந்துகொண்ட சிறப்பு விருந்தினர்களையும் பொருத்துக:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் 1</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் 2</b></td></tr><tr><td style='padding:6px 0;'>a. திரௌபதி முர்மு</td><td></td><td style='padding:6px 0;'>1. சிரில் ராமபோசா</td></tr><tr><td style='padding:6px 0;'>b. ஏ.பி.ஜே. அப்துல் கலாம்</td><td></td><td style='padding:6px 0;'>2. பிரபோவோ சுபியாந்தோ</td></tr><tr><td style='padding:6px 0;'>c. பிரணாப் முகர்ஜி</td><td></td><td style='padding:6px 0;'>3. விளாடிமிர் புத்தின்</td></tr><tr><td style='padding:6px 0;'>d. ராம்நாத் கோவிந்த்</td><td></td><td style='padding:6px 0;'>4. பராக் ஒபாமா</td></tr></table>",
+    "optionsEn": [
+      "a-1, b-4, c-3, d-2",
+      "a-2, b-3, c-4, d-1",
+      "a-3, b-4, c-1, d-2",
+      "a-4, b-2, c-3, d-1",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "a-1, b-4, c-3, d-2",
+      "a-2, b-3, c-4, d-1",
+      "a-3, b-4, c-1, d-2",
+      "a-4, b-2, c-3, d-1",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Arrange in chronological order the terms of the Presidents of India:<br>(i) N. Sanjeeva Reddy<br>(ii) Dr. Zakir Hussain<br>(iii) Fakhruddin Ali Ahmed<br>(iv) V.V. Giri",
+    "ta": "இந்தியக் குடியரசுத் தலைவர்களின் பதவிக் காலங்களைக் காலவரிசைப்படி ஒழுங்குபடுத்துக:<br>(i) என். சஞ்சீவ ரெட்டி<br>(ii) டாக்டர் சாகிர் உசேன்<br>(iii) புகருதீன் அலி அகமது<br>(iv) வி.வி. கிரி",
+    "optionsEn": [
+      "(i), (iv), (ii), (iii)",
+      "(ii), (iii), (i), (iv)",
+      "(ii), (iv), (iii), (i)",
+      "(iii), (ii), (i), (iv)",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "(i), (iv), (ii), (iii)",
+      "(ii), (iii), (i), (iv)",
+      "(ii), (iv), (iii), (i)",
+      "(iii), (ii), (i), (iv)",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 2
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false; isSubmitted = false;
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">
+                <span class="option-letter">${String.fromCharCode(65+i)}.</span>
+                <span class="option-text">${opt}</span>
+            </div>`;
+        });
+        let clearBtnHtml = "";
+        if (sel !== null && sel !== undefined) {
+            clearBtnHtml = `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;">
+                <button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button>
+            </div>`;
+        }
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+                ${sel !== null && sel !== undefined ? `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;"><button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button></div>` : ``}
+            </div>
+        `;
+        updateNavButtons(); updatePalette();
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) {
+            userAnswers[currentIndex] = null;
+        } else {
+            userAnswers[currentIndex] = optIndex;
+        }
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+
+    function clearSelection() {
+        if (isSubmitted) return;
+        userAnswers[currentIndex] = null;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    let currentReviewIndex = 0;
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let cssClass = "option-item";
+                let markerHtml = "";
+                if (idx === corr) { cssClass += " correct"; markerHtml = "<div class='marker'>✔</div>"; }
+                else if (u === idx && idx !== corr) { cssClass += " wrong"; markerHtml = "<div class='marker'>✖</div>"; }
+                optsHtml += `<div class="${cssClass}"><span>${String.fromCharCode(65+idx)}. ${optsArray[idx]}</span>${markerHtml}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" id="review-card-${i}" style="display: none;">
+                        <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div class="your-answer">Your Answer: ${userAns}</div>
+                        <div class="correct-answer">Correct Answer: ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        ${optsHtml}
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+        currentReviewIndex = 0;
+        showReviewCard(currentReviewIndex);
+    }
+    function showReviewCard(index) {
+        const cards = document.querySelectorAll(".review-card");
+        if (cards.length === 0) return;
+        cards.forEach(c => c.style.display = "none");
+        cards[index].style.display = "block";
+        document.getElementById("reviewPageText").innerText = `${index + 1} / ${cards.length}`;
+        document.getElementById("prevReviewBtn").disabled = (index === 0);
+        document.getElementById("nextReviewBtn").disabled = (index === cards.length - 1);
+        document.getElementById("reviewPagination").style.display = "flex";
+        window.scrollTo(0, 0);
+    }
+    function navigateReview(direction) {
+        const cards = document.querySelectorAll(".review-card");
+        currentReviewIndex += direction;
+        if (currentReviewIndex >= 0 && currentReviewIndex < cards.length) {
+            showReviewCard(currentReviewIndex);
+        }
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
+            await new Promise(r => setTimeout(r, 600));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+                if (btn) btn.innerText = "✅ Select Save as PDF";
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+        } finally {
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 3000);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        history.replaceState({ resultPage: true }, "", "#result");
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.addEventListener("popstate", function(e) {
+        if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+            history.pushState({ resultPage: true }, "", "#result");
+            confirmLeaveResult();
+        }
+    });
+    function confirmLeaveResult() {
+        if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
+            window.AndroidBridge.exitResultPage();
+        } else {
+            history.back();
+        }
+    }
+    window.checkForReview = function() {
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
+            }
+        }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
