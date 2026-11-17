@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-17T08:56:23.721Z",
+  "version": "2026-11-17T09:07:57.034Z",
   "categories": [
     {
       "id": "BANK",
@@ -2737,6 +2737,20 @@
       "releaseTimestamp": 0,
       "language": "both",
       "createdAt": 1794905783721
+    },
+    {
+      "testId": "TET-MS-4",
+      "examId": "TET-MATHS",
+      "name": "7TH TERM 1 ALGEBRA (SET-1)",
+      "topic": "7TH TERM 1 ALGEBRA",
+      "durationMinutes": 20,
+      "order": 4,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-MS-4.html",
+      "releaseTimestamp": 0,
+      "language": "both",
+      "createdAt": 1794906477034
     }
   ]
 }
