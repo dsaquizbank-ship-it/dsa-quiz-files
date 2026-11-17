@@ -90,12 +90,6 @@
       "order": 1
     },
     {
-      "id": "SSR-GS",
-      "name": "GENERAL SCIENCE",
-      "categoryId": "SSC",
-      "order": 30
-    },
-    {
       "id": "TET-SOCIALSCIENCE",
       "name": "TET SOCIAL SCIENCE",
       "categoryId": "TNTET",
@@ -427,14 +421,15 @@
       "releaseTimestamp": 1792567800000
     },
     {
-      "testId": "SSR-51",
-      "examId": "SSR-GS",
-      "name": "SSR-51 FORCE AND LAWS OF MOTION",
+      "testId": "SGS-8",
+      "examId": "SSC-GS",
+      "name": "PHYSICS-FORCE AND LAWS OF MOTION (Set-1)",
+      "topic": "PHYSICS-FORCE AND LAWS OF MOTION",
       "durationMinutes": 20,
-      "order": 51,
+      "order": 8,
       "questionCount": 25,
       "negativeMark": 0.33,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SSR-51.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGS-8.html",
       "releaseTimestamp": 0
     },
     {
