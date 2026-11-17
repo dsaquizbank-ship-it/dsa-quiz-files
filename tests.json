@@ -1790,15 +1790,15 @@
       "language": "both"
     },
     {
-      "testId": "TIP-9",
+      "testId": "TIP-5",
       "examId": "TNPSC-IP",
-      "name": "CITIZENSHIP TIP-5",
+      "name": "CITIZENSHIP (Set-1)",
       "topic": "CITIZENSHIP",
       "durationMinutes": 10,
       "order": 5,
       "questionCount": 20,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-9.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-5.html",
       "releaseTimestamp": 1794297600000,
       "language": "both"
     },
