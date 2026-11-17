@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-17T07:27:10.130Z",
+  "version": "2026-11-17T07:43:48.160Z",
   "categories": [
     {
       "id": "BANK",
@@ -2681,6 +2681,20 @@
       "releaseTimestamp": 1794816000000,
       "language": "ta",
       "createdAt": 1794900430130
+    },
+    {
+      "testId": "TIP-10",
+      "examId": "TNPSC-IP",
+      "name": "UNION LEGISLATURE (SET-1)",
+      "topic": "UNION LEGISLATURE",
+      "durationMinutes": 15,
+      "order": 10,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-10.html",
+      "releaseTimestamp": 1794902400000,
+      "language": "both",
+      "createdAt": 1794901428160
     }
   ]
 }
