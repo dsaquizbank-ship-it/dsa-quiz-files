@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-16T09:42:13.164Z",
+  "version": "2026-11-17T02:10:59.406Z",
   "categories": [
     {
       "id": "BANK",
@@ -2625,6 +2625,20 @@
       "releaseTimestamp": 1794902400000,
       "language": "en",
       "createdAt": 1794819485705
+    },
+    {
+      "testId": "SPT-MS-3",
+      "examId": "SPL-MATHS",
+      "name": "6TH TERM 3 (SET-1)",
+      "topic": "6TH TERM 3",
+      "durationMinutes": 30,
+      "order": 3,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-MS-3.html",
+      "releaseTimestamp": 1794038400000,
+      "language": "both",
+      "createdAt": 1794881459406
     }
   ]
 }
