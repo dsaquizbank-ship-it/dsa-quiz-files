@@ -462,18 +462,6 @@
       "releaseTimestamp": 1792395000000
     },
     {
-      "testId": "NTE-MS-1",
-      "examId": "TET-MATHS",
-      "name": "UNIT 7 TERM 1 ALGEBRA (Set-1)",
-      "topic": "UNIT 7 TERM 1 ALGEBRA",
-      "durationMinutes": 20,
-      "order": 1,
-      "questionCount": 25,
-      "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/NTE-MS-1.html",
-      "releaseTimestamp": 1792395000000
-    },
-    {
       "testId": "NTE-SC-1",
       "examId": "TET-SCIENCE",
       "name": "7TH TERM-2 ELECTRICITY (Set-1)",
