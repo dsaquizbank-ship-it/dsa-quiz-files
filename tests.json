@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-18T01:33:14.621Z",
+  "version": "2026-11-18T01:34:53.186Z",
   "categories": [
     {
       "id": "BANK",
@@ -2784,7 +2784,7 @@
       "durationMinutes": 30,
       "order": 3,
       "questionCount": 25,
-      "negativeMark": 0.25,
+      "negativeMark": 0.5,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SRE-3.html",
       "releaseTimestamp": 1794988800000,
       "language": "en",
