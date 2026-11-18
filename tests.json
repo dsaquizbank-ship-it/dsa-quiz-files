@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-17T16:22:08.485Z",
+  "version": "2026-11-18T01:31:52.971Z",
   "categories": [
     {
       "id": "BANK",
@@ -2761,6 +2761,20 @@
       "releaseTimestamp": 1794988800000,
       "language": "both",
       "createdAt": 1794932528485
+    },
+    {
+      "testId": "BRE-3",
+      "examId": "BANK-RE",
+      "name": "BLOOD RELATION BRE-3",
+      "topic": "BLOOD RELATION",
+      "durationMinutes": 30,
+      "order": 3,
+      "questionCount": 25,
+      "negativeMark": 0.25,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BRE-3.html",
+      "releaseTimestamp": 1794988800000,
+      "language": "en",
+      "createdAt": 1794965512971
     }
   ]
 }
