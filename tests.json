@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-18T06:29:44.416Z",
+  "version": "2026-11-18T06:33:50.710Z",
   "categories": [
     {
       "id": "BANK",
@@ -2845,6 +2845,20 @@
       "releaseTimestamp": 1794988800000,
       "language": "both",
       "createdAt": 1794983384416
+    },
+    {
+      "testId": "SGT-SS-6",
+      "examId": "SGT-SOCIALSCIENCE",
+      "name": "9TH INTELLECTUAL AWAKENING AND SOCIO POLITICAL CHANGES (SET-1)",
+      "topic": "9TH INTELLECTUAL AWAKENING AND SOCIO POLITICAL CHANGES",
+      "durationMinutes": 15,
+      "order": 6,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGT-SS-6.html",
+      "releaseTimestamp": 1794988800000,
+      "language": "both",
+      "createdAt": 1794983630710
     }
   ]
 }
