@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-18T06:21:51.991Z",
+  "version": "2026-11-18T06:24:58.662Z",
   "categories": [
     {
       "id": "BANK",
@@ -2817,6 +2817,20 @@
       "releaseTimestamp": 1794988800000,
       "language": "both",
       "createdAt": 1794982911991
+    },
+    {
+      "testId": "RGS-8",
+      "examId": "RRB-GS",
+      "name": "CHEMISTRY-PROPERTIES OF ELEMENTS AND COMPOUNDS (SET-1)",
+      "topic": "CHEMISTRY-PROPERTIES OF ELEMENTS AND COMPOUNDS",
+      "durationMinutes": 15,
+      "order": 8,
+      "questionCount": 25,
+      "negativeMark": 0.33,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGS-8.html",
+      "releaseTimestamp": 1794988800000,
+      "language": "both",
+      "createdAt": 1794983098662
     }
   ]
 }
