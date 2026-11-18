@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-18T06:51:27.054Z",
+  "version": "2026-11-18T06:56:25.936Z",
   "categories": [
     {
       "id": "BANK",
@@ -2835,8 +2835,8 @@
     {
       "testId": "UGM-11",
       "examId": "UG-MAT",
-      "name": "CHEMISTRY-PROPERTIES OF ELEMENTS AND COMPOUNDS (SET-1)",
-      "topic": "CHEMISTRY-PROPERTIES OF ELEMENTS AND COMPOUNDS",
+      "name": "UNIT 9-OPERATIONS RESEARCH (SET-2)",
+      "topic": "UNIT 9-OPERATIONS RESEARCH",
       "durationMinutes": 15,
       "order": 11,
       "questionCount": 25,
