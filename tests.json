@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-18T06:49:03.250Z",
+  "version": "2026-11-18T06:51:27.054Z",
   "categories": [
     {
       "id": "BANK",
@@ -2887,6 +2887,20 @@
       "releaseTimestamp": 1794988800000,
       "language": "both",
       "createdAt": 1794984543250
+    },
+    {
+      "testId": "TAP-4",
+      "examId": "TNPSC-AP",
+      "name": "RATIO AND PROPORTION (SET-1)",
+      "topic": "RATIO AND PROPORTION",
+      "durationMinutes": 30,
+      "order": 4,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TAP-4.html",
+      "releaseTimestamp": 1795075200000,
+      "language": "both",
+      "createdAt": 1794984687054
     }
   ]
 }
