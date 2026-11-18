@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-18T06:24:58.662Z",
+  "version": "2026-11-18T06:29:44.416Z",
   "categories": [
     {
       "id": "BANK",
@@ -2831,6 +2831,20 @@
       "releaseTimestamp": 1794988800000,
       "language": "both",
       "createdAt": 1794983098662
+    },
+    {
+      "testId": "UGM-11",
+      "examId": "UG-MAT",
+      "name": "CHEMISTRY-PROPERTIES OF ELEMENTS AND COMPOUNDS (SET-1)",
+      "topic": "CHEMISTRY-PROPERTIES OF ELEMENTS AND COMPOUNDS",
+      "durationMinutes": 15,
+      "order": 11,
+      "questionCount": 25,
+      "negativeMark": 0.33,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-11.html",
+      "releaseTimestamp": 1794988800000,
+      "language": "both",
+      "createdAt": 1794983384416
     }
   ]
 }
