@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-18T06:38:45.007Z",
+  "version": "2026-11-18T06:49:03.250Z",
   "categories": [
     {
       "id": "BANK",
@@ -2873,6 +2873,20 @@
       "releaseTimestamp": 1794988800000,
       "language": "en",
       "createdAt": 1794983925007
+    },
+    {
+      "testId": "TET-SC-3",
+      "examId": "TET-SCIENCE",
+      "name": "8TH MEASUREMENT (SET-1)",
+      "topic": "8TH MEASUREMENT",
+      "durationMinutes": 30,
+      "order": 3,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-SC-3.html",
+      "releaseTimestamp": 1794988800000,
+      "language": "both",
+      "createdAt": 1794984543250
     }
   ]
 }
