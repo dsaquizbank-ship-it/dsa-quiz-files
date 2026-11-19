@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-19T15:34:11.086Z",
+  "version": "2026-11-19T15:42:22.274Z",
   "categories": [
     {
       "id": "BANK",
@@ -2987,6 +2987,20 @@
       "releaseTimestamp": 1795161600000,
       "language": "ta",
       "createdAt": 1795102451086
+    },
+    {
+      "testId": "BCA-3",
+      "examId": "BANK-CA",
+      "name": "SEPTEMBER (SET-1)",
+      "topic": "SEPTEMBER",
+      "durationMinutes": 30,
+      "order": 3,
+      "questionCount": 50,
+      "negativeMark": 0.25,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BCA-3.html",
+      "releaseTimestamp": 1795161600000,
+      "language": "en",
+      "createdAt": 1795102942274
     }
   ]
 }
