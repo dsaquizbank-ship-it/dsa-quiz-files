@@ -605,15 +605,15 @@
       "createdAt": 1794590786516
     },
     {
-      "testId": "RQA-01",
+      "testId": "RQA-1",
       "examId": "RRB-QA",
-      "name": "RQA-01 SIMPLIFICATION (Set-1)",
+      "name": "SIMPLIFICATION (Set-1)",
       "topic": "SIMPLIFICATION",
       "durationMinutes": 25,
       "order": 1,
       "questionCount": 25,
       "negativeMark": 0.33,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RQA-01.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RQA-1.html",
       "releaseTimestamp": 1793606400000,
       "language": "en"
     },
@@ -660,7 +660,7 @@
     {
       "testId": "RGS-1",
       "examId": "RRB-GS",
-      "name": "PHYSICS-UNITS, DIMENSIONS & FORMULAS RGS-1",
+      "name": "PHYSICS-UNITS, DIMENSIONS & FORMULAS (Set-1)",
       "topic": "PHYSICS-UNITS, DIMENSIONS & FORMULAS",
       "durationMinutes": 10,
       "order": 1,
@@ -931,15 +931,15 @@
       "language": "both"
     },
     {
-      "testId": "RGS-02",
+      "testId": "RGS-2",
       "examId": "RRB-GS",
-      "name": "CHEMISTRY-BASIC CONCEPTS OF CHEMISTRY RGS-02",
+      "name": "CHEMISTRY-BASIC CONCEPTS OF CHEMISTRY (Set-1)",
       "topic": "CHEMISTRY-BASIC CONCEPTS OF CHEMISTRY",
       "durationMinutes": 10,
       "order": 2,
       "questionCount": 20,
       "negativeMark": 0.33,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGS-02.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGS-2.html",
       "releaseTimestamp": 1793779200000,
       "language": "both"
     },
@@ -1235,7 +1235,7 @@
     {
       "testId": "RCA-1",
       "examId": "RRB-CA",
-      "name": "OCTOBER FULL MONTH RCA-3",
+      "name": "OCTOBER FULL MONTH",
       "topic": "OCTOBER FULL MONTH",
       "durationMinutes": 30,
       "order": 1,
@@ -1248,7 +1248,7 @@
     {
       "testId": "SCA-1",
       "examId": "SSC-CA",
-      "name": "OCTOBER FULL MONTH RCA-3",
+      "name": "OCTOBER FULL MONTH",
       "topic": "OCTOBER FULL MONTH",
       "durationMinutes": 30,
       "order": 1,
@@ -1261,7 +1261,7 @@
     {
       "testId": "RGS-3",
       "examId": "RRB-GS",
-      "name": "CELL, GENETICS & EVOLUTION RGS-3",
+      "name": "CELL, GENETICS & EVOLUTION (Set-1)",
       "topic": "CELL, GENETICS & EVOLUTION",
       "durationMinutes": 10,
       "order": 3,
@@ -1314,7 +1314,7 @@
     {
       "testId": "REG-1",
       "examId": "RRB-EG",
-      "name": "READING COMPREHENSION REG-1",
+      "name": "READING COMPREHENSION (Set-1)",
       "topic": "READING COMPREHENSION",
       "durationMinutes": 30,
       "order": 1,
@@ -1431,7 +1431,7 @@
     {
       "testId": "RGS-4",
       "examId": "RRB-GS",
-      "name": "MOTION RGS-4",
+      "name": "MOTION (Set-1)",
       "topic": "MOTION",
       "durationMinutes": 15,
       "order": 4,
@@ -1575,13 +1575,13 @@
     {
       "testId": "RQA-2",
       "examId": "RRB-QA",
-      "name": "APPROXIMATION RQA-2 (Set-1)",
+      "name": "APPROXIMATION (Set-1)",
       "topic": "APPROXIMATION",
       "durationMinutes": 25,
       "order": 2,
       "questionCount": 25,
       "negativeMark": 0.5,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RQA-2.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RQA-1.html",
       "releaseTimestamp": 1794211200000,
       "language": "en"
     },
@@ -1705,7 +1705,7 @@
     {
       "testId": "RGS-5",
       "examId": "RRB-GS",
-      "name": "RGS-5 ATOMS AND MOLECULES",
+      "name": "ATOMS AND MOLECULES (Set-1)",
       "topic": "ATOMS AND MOLECULES",
       "durationMinutes": 15,
       "order": 5,
@@ -1967,7 +1967,7 @@
     {
       "testId": "RGS-6",
       "examId": "RRB-GS",
-      "name": "BIOLOGY-TISSUE SGS-6",
+      "name": "BIOLOGY-TISSUE (Set-1)",
       "topic": "BIOLOGY-TISSUE",
       "durationMinutes": 15,
       "order": 6,
@@ -2065,8 +2065,8 @@
     {
       "testId": "REG-2",
       "examId": "RRB-EG",
-      "name": "CLOZE TEST REG-2 (Set-1)",
-      "topic": "COLZE TEST REG-2",
+      "name": "CLOZE TEST (Set-1)",
+      "topic": "COLZE TEST",
       "durationMinutes": 30,
       "order": 2,
       "questionCount": 30,
@@ -2107,7 +2107,7 @@
     {
       "testId": "RCA-2",
       "examId": "RRB-CA",
-      "name": "NOVEMBER 1-9 RCA-2",
+      "name": "NOVEMBER 1-9",
       "topic": "NOVEMBER 1-9",
       "durationMinutes": 10,
       "order": 2,
@@ -2525,7 +2525,7 @@
       "createdAt": 1794816197680
     },
     {
-      "testId": "RQA-3",
+      "testId": "RQA-1",
       "examId": "RRB-QA",
       "name": "PERCENTAGES (SET-1)",
       "topic": "PERCENTAGES",
@@ -2533,7 +2533,7 @@
       "order": 3,
       "questionCount": 25,
       "negativeMark": 0.33,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RQA-3.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RQA-1.html",
       "releaseTimestamp": 1794816000000,
       "language": "en",
       "createdAt": 1794816263277
