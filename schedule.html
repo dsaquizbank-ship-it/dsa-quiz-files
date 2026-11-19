@@ -35,112 +35,126 @@
     <div class="date-selector-wrapper" id="dateSelector"></div>
     <div id="scheduleContainer"><div class="loading">Loading…</div></div>
 
-    <script>
-        // This URL points to the file your Admin Panel creates
-        const SCHEDULE_JSON_URL = 'https://dsaquizbank-ship-it.github.io/dsa-quiz-files/schedule.json';
+ <script>
+    const SCHEDULE_JSON_URL = 'https://dsaquizbank-ship-it.github.io/dsa-quiz-files/schedule.json';
+    const BASE_TEST_URL = 'https://dsaquizbank-ship-it.github.io/dsa-quiz-files/';
 
-        const dateSelector = document.getElementById("dateSelector");
-        const container = document.getElementById("scheduleContainer");
-        let ALL_ENTRIES = [];
+    const dateSelector = document.getElementById("dateSelector");
+    const container = document.getElementById("scheduleContainer");
+    let ALL_ENTRIES = [];
 
-        async function loadSchedule() {
-            container.innerHTML = '<div class="loading">Loading…</div>';
-            try {
-                // Fetch the JSON, adding a timestamp so the browser doesn't cache it
-                const res = await fetch(SCHEDULE_JSON_URL + '?v=' + Date.now());
-                if (!res.ok) throw new Error('HTTP ' + res.status);
-                const data = await res.json();
-                ALL_ENTRIES = Array.isArray(data.entries) ? data.entries : [];
-                renderDateSelector();
-            } catch (e) {
-                container.innerHTML = '<div class="empty-state">⚠️ Could not load schedule.<br><small style="opacity:.7">' + e.message + '</small></div>';
-            }
+    async function loadSchedule() {
+        container.innerHTML = '<div class="loading">Loading…</div>';
+        try {
+            const res = await fetch(SCHEDULE_JSON_URL + '?v=' + Date.now());
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            const data = await res.json();
+            ALL_ENTRIES = Array.isArray(data.entries) ? data.entries : [];
+            renderDateSelector();
+        } catch (e) {
+            container.innerHTML = '<div class="empty-state">⚠️ Could not load schedule.<br><small style="opacity:.7">' + e.message + '</small></div>';
         }
+    }
 
-        function groupByDate(entries) {
-            // 🛑 HIDE PAST DATES 🛑
-            // Get today's date in YYYY-MM-DD format
-            const today = new Date();
-            const todayStr = today.getFullYear() + '-' + 
-                String(today.getMonth() + 1).padStart(2, '0') + '-' + 
-                String(today.getDate()).padStart(2, '0');
+    function groupByDate(entries) {
+        // 🛑 HIDE PAST DATES — timezone-safe comparison
+        const today = new Date();
+        const todayStr = today.getFullYear() + '-' + 
+            String(today.getMonth() + 1).padStart(2, '0') + '-' + 
+            String(today.getDate()).padStart(2, '0');
 
-            const map = {};
-            entries.forEach(e => {
-                // Skip entries whose date is older than today
-                if (e.date && e.date < todayStr) return;
+        const map = {};
+        entries.forEach(e => {
+            if (e.date && e.date < todayStr) return;
+            if (!map[e.date]) map[e.date] = [];
+            map[e.date].push(e);
+        });
+        
+        return Object.keys(map).sort().map(date => ({
+            date,
+            weekday: new Date(date.split('-').map(Number)).toLocaleDateString('en-GB', { weekday: 'short' }),
+            entries: map[date]
+        }));
+    }
 
-                if (!map[e.date]) map[e.date] = [];
-                map[e.date].push(e);
-            });
-            
-            // Sort dates chronologically
-            return Object.keys(map).sort().map(date => ({
-                date,
-                weekday: new Date(date + 'T00:00:00').toLocaleDateString('en-GB', { weekday: 'short' }),
-                entries: map[date]
-            }));
+    function renderDateSelector() {
+        const grouped = groupByDate(ALL_ENTRIES);
+        dateSelector.innerHTML = '';
+        if (grouped.length === 0) {
+            container.innerHTML = '<div class="empty-state">No upcoming exams scheduled yet.</div>';
+            return;
         }
+        grouped.forEach((g, index) => {
+            const btn = document.createElement('button');
+            btn.className = 'date-btn' + (index === 0 ? ' active' : '');
+            const parts = g.date.split('-');
+            const shortDate = parts[2] + '/' + parts[1];
+            btn.innerHTML = `<span class="day">${shortDate}</span><span class="weekday">${g.weekday}</span>`;
+            btn.onclick = () => {
+                document.querySelectorAll('.date-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderForDate(g);
+            };
+            dateSelector.appendChild(btn);
+        });
+        renderForDate(grouped[0]);
+    }
 
-        function renderDateSelector() {
-            const grouped = groupByDate(ALL_ENTRIES);
-            dateSelector.innerHTML = '';
-            if (grouped.length === 0) {
-                container.innerHTML = '<div class="empty-state">No upcoming exams scheduled yet.</div>';
-                return;
-            }
-            grouped.forEach((g, index) => {
-                const btn = document.createElement('button');
-                btn.className = 'date-btn' + (index === 0 ? ' active' : '');
-                const parts = g.date.split('-'); // YYYY-MM-DD
-                const shortDate = parts[2] + '/' + parts[1];
-                btn.innerHTML = `<span class="day">${shortDate}</span><span class="weekday">${g.weekday}</span>`;
-                btn.onclick = () => {
-                    document.querySelectorAll('.date-btn').forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    renderForDate(g);
+    function renderForDate(group) {
+        container.innerHTML = '';
+        const byCourse = {};
+        
+        // ✅ FIX: Group by courseId but DISPLAY subject name as the card title
+        group.entries.forEach(e => {
+            const key = e.courseId || 'UNKNOWN';
+            if (!byCourse[key]) {
+                byCourse[key] = { 
+                    courseName: e.courseName, 
+                    subject: e.subject || e.courseName, // ✅ Use subject for display
+                    items: [] 
                 };
-                dateSelector.appendChild(btn);
-            });
-            renderForDate(grouped[0]);
-        }
+            }
+            byCourse[key].items.push(e);
+        });
 
-        function renderForDate(group) {
-            container.innerHTML = '';
-            const byCourse = {};
+        Object.keys(byCourse).forEach(courseId => {
+            const course = byCourse[courseId];
+            const card = document.createElement('div');
+            card.className = 'card';
             
-            // Group by Course (e.g., TNPSC)
-            group.entries.forEach(e => {
-                if (!byCourse[e.courseId]) byCourse[e.courseId] = { courseName: e.courseName, items: [] };
-                byCourse[e.courseId].items.push(e);
-            });
-
-            Object.keys(byCourse).forEach(courseId => {
-                const course = byCourse[courseId];
-                const card = document.createElement('div');
-                card.className = 'card';
-                let html = `<div class="exam-title">${escapeHtml(course.courseName)}</div>`;
+            // ✅ FIX: Show SUBJECT as the main title, course as subtitle
+            let html = `<div class="exam-title">${escapeHtml(course.subject)}</div>
+                        <div style="font-size:12px;color:#A8C8E1;margin-bottom:10px;">${escapeHtml(course.courseName)}</div>`;
+            
+            course.items.forEach(e => {
+                // ✅ FIX: Make Test ID clickable
+                const testLink = e.testId 
+                    ? `<a href="${BASE_TEST_URL}${encodeURIComponent(e.testId)}.html" target="_blank" 
+                         style="color:#F5B700;text-decoration:none;font-weight:bold;"
+                         onmouseover="this.style.textDecoration='underline'"
+                         onmouseout="this.style.textDecoration='none'">
+                         ${escapeHtml(e.testId)} ↗
+                       </a>`
+                    : escapeHtml(e.testId || 'N/A');
                 
-                course.items.forEach(e => {
-                    html += `<div class="test-item">
-                        <div class="subject">${escapeHtml(course.courseName)}</div>
-                        <div class="topic">${escapeHtml(e.topicName)}</div>
-                        ${e.testId ? `<div class="test-no">Test ID: ${escapeHtml(e.testId)}</div>` : ''}
-                    </div>`;
-                });
-                card.innerHTML = html;
-                container.appendChild(card);
+                html += `<div class="test-item">
+                    <div class="subject">${escapeHtml(e.topicName)}</div>
+                    <div class="topic" style="margin-top:4px;">📝 Topic: ${escapeHtml(e.topicName)}</div>
+                    <div class="test-no">Test ID: ${testLink}</div>
+                </div>`;
             });
-        }
+            card.innerHTML = html;
+            container.appendChild(card);
+        });
+    }
 
-        function escapeHtml(s) {
-            return String(s || '').replace(/[&<>"']/g, m => ({
-                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-            }[m]));
-        }
+    function escapeHtml(s) {
+        return String(s || '').replace(/[&<>"']/g, m => ({
+            '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+        }[m]));
+    }
 
-        // Load immediately when the page opens
-        loadSchedule();
-    </script>
+    loadSchedule();
+</script>
 </body>
 </html>
