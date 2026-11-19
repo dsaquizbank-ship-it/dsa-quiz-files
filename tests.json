@@ -723,15 +723,15 @@
       "language": "both"
     },
     {
-      "testId": "SGT-9-35",
+      "testId": "SGT-9-1",
       "examId": "SGT-SCIENCE",
-      "name": "PHYSICS-MEASUREMENT SGT-9-35",
-      "topic": "PHYSICS MEASUREMENT",
+      "name": "PHYSICS-MEASUREMENT (Set-1)",
+      "topic": "PHYSICS-MEASUREMENT",
       "durationMinutes": 15,
       "order": 35,
       "questionCount": 25,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGT-9-35.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGT-9-1.html",
       "releaseTimestamp": 1793606400000,
       "language": "both"
     },
@@ -1074,15 +1074,15 @@
       "language": "both"
     },
     {
-      "testId": "SGT-SS-36",
+      "testId": "SGT-SS-2",
       "examId": "SGT-SOCIALSCIENCE",
-      "name": "HISTORY: INDUSTRIAL REVOLUTION, COLONIALISM IN ASIA AND AFRICA SGT-SS-36",
+      "name": "HISTORY: INDUSTRIAL REVOLUTION, COLONIALISM IN ASIA AND AFRICA (Set-1)",
       "topic": "HISTORY: INDUSTRIAL REVOLUTION, COLONIALISM IN ASIA AND AFRICA",
       "durationMinutes": 15,
-      "order": 36,
+      "order": 2,
       "questionCount": 25,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGT-SS-36.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGT-SS-2.html",
       "releaseTimestamp": 0,
       "language": "both"
     },
@@ -1888,7 +1888,7 @@
     {
       "testId": "SGT-SS-1",
       "examId": "SGT-SOCIALSCIENCE",
-      "name": "9TH EVOLUTION OF HUMANS AND SOCIETY - PREHISTORIC PERIOD SGT-SS-1",
+      "name": "9TH EVOLUTION OF HUMANS AND SOCIETY - PREHISTORIC PERIOD (Set-1)",
       "topic": "9TH EVOLUTION OF HUMANS AND SOCIETY - PREHISTORIC PERIOD",
       "durationMinutes": 15,
       "order": 1,
@@ -2161,15 +2161,15 @@
       "createdAt": 1794552147184
     },
     {
-      "testId": "SGT-SS-37",
+      "testId": "SGT-SS-3",
       "examId": "SGT-SOCIALSCIENCE",
-      "name": "9TH ANCIENT CIVILIZATION SGT-SS-37",
+      "name": "9TH ANCIENT CIVILIZATION SGT-SS-3",
       "topic": "9TH ANCIENT CIVILIZATION",
       "durationMinutes": 15,
-      "order": 37,
+      "order": 3,
       "questionCount": 25,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGT-SS-37.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGT-SS-3.html",
       "releaseTimestamp": 1794556800000,
       "language": "en",
       "createdAt": 1794552276464
@@ -2203,15 +2203,15 @@
       "createdAt": 1794552898451
     },
     {
-      "testId": "SGT-SS-38",
+      "testId": "SGT-SS-4",
       "examId": "SGT-SOCIALSCIENCE",
-      "name": "9TH ANCIENT CIVILIZATION SGT-SS-38",
+      "name": "9TH ANCIENT CIVILIZATION (Set-1)",
       "topic": "9TH ANCIENT CIVILIZATION",
       "durationMinutes": 15,
-      "order": 38,
+      "order": 4,
       "questionCount": 25,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGT-SS-38.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGT-SS-4.html",
       "releaseTimestamp": 1794556800000,
       "language": "both",
       "createdAt": 1794553299571
