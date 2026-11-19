@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-19T15:53:42.583Z",
+  "version": "2026-11-19T15:59:45.012Z",
   "categories": [
     {
       "id": "BANK",
@@ -2900,7 +2900,7 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-12.html",
-      "releaseTimestamp": 1795075200000,
+      "releaseTimestamp": 1795161600000,
       "language": "en",
       "createdAt": 1795076049597
     },
