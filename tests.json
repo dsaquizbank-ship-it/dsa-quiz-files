@@ -554,7 +554,7 @@
     {
       "testId": "SPT-6-1",
       "examId": "SPL-6",
-      "name": "TAMIL TERM 1 - 2 SPT-6-1",
+      "name": "TAMIL TERM 1 - 2",
       "topic": "TAMIL TERM 1 - 2",
       "durationMinutes": 30,
       "order": 1,
@@ -905,15 +905,15 @@
       "language": "both"
     },
     {
-      "testId": "SPT-EG-03",
+      "testId": "SPT-EG-1",
       "examId": "SPL-ENGLISH",
-      "name": "6TH TERM 1 - 2 SPT-EG-03",
+      "name": "6TH TERM 1 - 2 (Set-1)",
       "topic": "6TH TERM 1 - 2",
       "durationMinutes": 30,
-      "order": 3,
+      "order": 1,
       "questionCount": 50,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-EG-03.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-EG-1.html",
       "releaseTimestamp": 1793779200000,
       "language": "en"
     },
@@ -1327,7 +1327,7 @@
     {
       "testId": "SPT-PY-1",
       "examId": "SPL-PSYCHOLOGY",
-      "name": "UNIT-1: GROWTH AND DEVELOPMENT SPT-PY-1",
+      "name": "UNIT-1: GROWTH AND DEVELOPMENT (Set-1)",
       "topic": "UNIT-1: GROWTH AND DEVELOPMENT",
       "durationMinutes": 15,
       "order": 1,
@@ -1925,15 +1925,15 @@
       "language": "both"
     },
     {
-      "testId": "SPT-EG-8",
+      "testId": "SPT-EG-2",
       "examId": "SPL-ENGLISH",
-      "name": "6TH TERM 3 – 7TH TERM 1 SPT-EG-8",
+      "name": "6TH TERM 3 – 7TH TERM 1 (Set-1)",
       "topic": "6TH TERM 3 – 7TH TERM 1",
       "durationMinutes": 30,
-      "order": 8,
+      "order": 2,
       "questionCount": 50,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-EG-8.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-EG-2.html",
       "releaseTimestamp": 1794384000000,
       "language": "both"
     },
