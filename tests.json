@@ -446,14 +446,14 @@
       "language": "both"
     },
     {
-      "testId": "SGT-TA-34",
+      "testId": "SGT-TA-1",
       "examId": "SGT-TAMIL",
-      "name": "SGT-TA-34 TAMIL IYAL 3",
+      "name": "SGT-TA-1 TAMIL IYAL 3",
       "durationMinutes": 20,
-      "order": 34,
+      "order": 1,
       "questionCount": 25,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGT-TA-34.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGT-TA-1.html",
       "releaseTimestamp": 1792742400000
     },
     {
