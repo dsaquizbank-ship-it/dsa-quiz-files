@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-19T08:19:49.345Z",
+  "version": "2026-11-19T15:09:07.720Z",
   "categories": [
     {
       "id": "BANK",
@@ -420,7 +420,6 @@
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGE-7.html",
       "releaseTimestamp": 1792567800000
     },
-
     {
       "testId": "DEMO",
       "examId": "DEMO",
@@ -2946,6 +2945,20 @@
       "releaseTimestamp": 1795075200000,
       "language": "both",
       "createdAt": 1795076389345
+    },
+    {
+      "testId": "SGS-9",
+      "examId": "SSC-GS",
+      "name": "BIOMOLECULES (SET-1)",
+      "topic": "BIOMOLECULES",
+      "durationMinutes": 15,
+      "order": 9,
+      "questionCount": 25,
+      "negativeMark": 0.5,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGS-9.html",
+      "releaseTimestamp": 1795075200000,
+      "language": "both",
+      "createdAt": 1795100947720
     }
   ]
 }
