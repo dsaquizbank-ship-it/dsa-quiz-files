@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-19T15:09:07.720Z",
+  "version": "2026-11-19T15:10:49.557Z",
   "categories": [
     {
       "id": "BANK",
@@ -2959,6 +2959,20 @@
       "releaseTimestamp": 1795075200000,
       "language": "both",
       "createdAt": 1795100947720
+    },
+    {
+      "testId": "RGS-9",
+      "examId": "RRB-GS",
+      "name": "BIOMOLECULES (SET-1)",
+      "topic": "BIOMOLECULES",
+      "durationMinutes": 15,
+      "order": 9,
+      "questionCount": 25,
+      "negativeMark": 0.33,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGS-9.html",
+      "releaseTimestamp": 1795161600000,
+      "language": "both",
+      "createdAt": 1795101049557
     }
   ]
 }
