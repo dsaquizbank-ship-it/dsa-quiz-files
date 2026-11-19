@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>SPT-SS-6 - 6TH TERM 3 GEOGRAPHY AND CIVICS (SET-1)</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                linebreaks: { automatic: true, width: "container" }
+            },
+            options: { ignoreHtmlClass: "no-mathjax" },
+            chtml: {
+                displayAlign: "left",
+                displayIndent: "0",
+                mtextInheritFont: true
+            },
+            svg: {
+                scale: 0.9,
+                minScale: 0.5,
+                mtextInheritFont: true,
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; color: #10b981; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; align-items: center; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; white-space: normal; word-wrap: break-word; padding-bottom: 20px; max-width: 100%; overflow-x: auto; }
+        mjx-container { display: inline !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; }
+        .question-text::-webkit-scrollbar { display: none; }
+        .question-text { -ms-overflow-style: none; scrollbar-width: none; }
+        .option-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; word-wrap: break-word; }
+        .option-letter { font-weight: 800; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+        .option-text { flex-grow: 1; min-width: 0; word-wrap: break-word; overflow-wrap: break-word; }
+        .option-text mjx-container { display: inline-block !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; overflow-x: visible !important; }
+        .option-text mjx-container[jax="CHTML"][display="true"] { margin: 0 !important; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
+        .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
+        .review-card .question-text { overflow-x: hidden !important; white-space: normal !important; word-wrap: break-word !important; }
+        .review-card strong { color: var(--text-primary); font-size: 16px; }
+        .review-card .option-item { background-color: var(--rc-bg); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: rgba(40, 167, 69, 0.1); border: 1px solid #28a745; color: #28a745; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; color: #dc3545; }
+        .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
+        .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
+        .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
+        .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px 0; border-top: 1px solid var(--border-light); }
+        .review-nav-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .review-nav-btn:disabled { background: var(--border-light); color: var(--text-primary); opacity: 0.5; cursor: not-allowed; }
+        .review-nav-text { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+        .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { 
+            html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } 
+            .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } 
+            #startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard { display: none !important; } 
+            #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } 
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; } 
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; margin-bottom: 20px !important; display: block !important; } 
+            .review-card .option-item { border: 1px solid #ccc !important; background: white !important; color: black !important; } 
+            .review-card .option-item.correct { background: #e6ffe6 !important; border-color: #28a745 !important; color: black !important; } 
+            .review-card .option-item.wrong { background: #ffe6e6 !important; border-color: #dc3545 !important; color: black !important; } 
+            @page { size: A4; margin: 1.5cm; } 
+        }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">30:00</div>
+            <div class="top-buttons">
+                <div id="topClearBtnContainer"></div>
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div id="printHeader" style="display: none;">
+            <h1>DR SAHITHA IAS ACADEMY</h1>
+            <h3>ANSWER KEY & DETAILED REVIEW</h3>
+            <p><strong>Test:</strong> SPT-SS-6 - SOCIAL SCIENCE</p>
+        </div>
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+            <div id="reviewPagination" class="review-nav-container" style="display: none;">
+                <button class="review-nav-btn" id="prevReviewBtn" onclick="navigateReview(-1)">◀ PREV</button>
+                <span class="review-nav-text" id="reviewPageText">1 / 25</span>
+                <button class="review-nav-btn" id="nextReviewBtn" onclick="navigateReview(1)">NEXT ▶</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "SOCIAL SCIENCE",
+        testNo: "SPT-SS-6",
+        date: "19/11/2026",
+        subject: "SOCIAL SCIENCE",
+        topic: "6TH TERM 3 GEOGRAPHY AND CIVICS",
+        duration: "30",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "Who defined democracy as “Government of the people, by the people, for the people”?",
+    "ta": "“மக்களால் மக்களுக்காக மக்களே நடத்தும் ஆட்சி” என மக்களாட்சிக்கு இலக்கணம் வகுத்தவர் யார்?",
+    "optionsEn": [
+      "Mahatma Gandhi",
+      "Abraham Lincoln",
+      "Dr. B.R. Ambedkar",
+      "Jawaharlal Nehru"
+    ],
+    "optionsTa": [
+      "மகாத்மா காந்தி",
+      "ஆபிரகாம் லிங்கன்",
+      "டாக்டர் பி.ஆர். அம்பேத்கர்",
+      "ஜவஹர்லால் நேரு"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which country is cited in the textbook as having a long history of successful direct democracy?",
+    "ta": "வெற்றிகரமான நேரடி மக்களாட்சியின் நீண்ட வரலாற்றைக் கொண்ட நாடாகப் பாடப்புத்தகத்தில் குறிப்பிடப்பட்டுள்ள நாடு எது?",
+    "optionsEn": [
+      "India",
+      "USA",
+      "England",
+      "Switzerland"
+    ],
+    "optionsTa": [
+      "இந்தியா",
+      "அமெரிக்கா",
+      "இங்கிலாந்து",
+      "சுவிட்சர்லாந்து"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "The Indian Constitution was drafted by the Drafting Committee of the Constituent Assembly headed by:",
+    "ta": "அரசியலமைப்பு நிர்ணய சபையின் வரைவுக்குழு யாருடைய தலைமையில் இந்திய அரசியலமைப்பை உருவாக்கியது?",
+    "optionsEn": [
+      "Dr. Rajendra Prasad",
+      "Sardar Vallabhbhai Patel",
+      "Dr. B.R. Ambedkar",
+      "C. Rajagopalachari"
+    ],
+    "optionsTa": [
+      "டாக்டர் ராஜேந்திர பிரசாத்",
+      "சர்தார் வல்லபாய் படேல்",
+      "டாக்டர் பி.ஆர். அம்பேத்கர்",
+      "சி. ராஜகோபாலாச்சாரி"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "In which year did the UN General Assembly resolve to observe September 15 as the International Day of Democracy?",
+    "ta": "செப்டம்பர் 15-ஆம் நாளைச் சர்வதேச மக்களாட்சி தினமாகக் கடைப்பிடிக்க ஐ.நா. பொதுச் சபை எந்த ஆண்டில் தீர்மானித்தது?",
+    "optionsEn": [
+      "2005",
+      "2007",
+      "2006",
+      "2008"
+    ],
+    "optionsTa": [
+      "2005",
+      "2007",
+      "2006",
+      "2008"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which was the first country in the world to allow women to vote?",
+    "ta": "பெண்களுக்கு வாக்குரிமை வழங்கிய உலகின் முதல் நாடு எது?",
+    "optionsEn": [
+      "United Kingdom",
+      "United States of America",
+      "New Zealand",
+      "India"
+    ],
+    "optionsTa": [
+      "ஐக்கிய ராஜ்ஜியம்",
+      "அமெரிக்க ஐக்கிய நாடுகள்",
+      "நியூசிலாந்து",
+      "இந்தியா"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "The Chennai Corporation, which is the oldest local body in India, was founded in:",
+    "ta": "இந்தியாவின் மிகப் பழமையான உள்ளாட்சி அமைப்பான சென்னை மாநகராட்சி எப்போது நிறுவப்பட்டது?",
+    "optionsEn": [
+      "1688",
+      "1788",
+      "1888",
+      "1588"
+    ],
+    "optionsTa": [
+      "1688",
+      "1788",
+      "1888",
+      "1588"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is the first Municipality in Tamil Nadu?",
+    "ta": "பின்வருவனவற்றுள் தமிழ்நாட்டின் முதல் நகராட்சி எது?",
+    "optionsEn": [
+      "Chennai",
+      "Walajahpet",
+      "Salem",
+      "Madurai"
+    ],
+    "optionsTa": [
+      "சென்னை",
+      "வாலாஜாப்பேட்டை",
+      "சேலம்",
+      "மதுரை"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Tamil Nadu was the first state in the whole of India to introduce:",
+    "ta": "இந்தியாவிலேயே முதன்முதலில் எதை அறிமுகப்படுத்திய மாநிலம் தமிழ்நாடு ஆகும்?",
+    "optionsEn": [
+      "Village Panchayat",
+      "District Panchayat",
+      "Town Panchayat",
+      "Municipal Corporation"
+    ],
+    "optionsTa": [
+      "கிராம ஊராட்சி",
+      "மாவட்ட ஊராட்சி",
+      "பேரூராட்சி",
+      "மாநகராட்சி"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "The administrative head of a City Municipal Corporation is the:",
+    "ta": "மாநகராட்சியின் நிர்வாகத் தலைவர் யார்?",
+    "optionsEn": [
+      "Mayor",
+      "Commissioner",
+      "Executive Officer",
+      "Chairperson"
+    ],
+    "optionsTa": [
+      "மேயர்",
+      "ஆணையர்",
+      "செயல் அலுவலர்",
+      "தலைவர்"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "The administrative officer of a Municipality is called:",
+    "ta": "நகராட்சியின் நிர்வாக அதிகாரி எவ்வாறு அழைக்கப்படுகிறார்?",
+    "optionsEn": [
+      "Executive Officer (EO)",
+      "Mayor",
+      "Commissioner",
+      "Block Development Officer"
+    ],
+    "optionsTa": [
+      "செயல் அலுவலர் (EO)",
+      "மேயர்",
+      "ஆணையர்",
+      "வட்டார வளர்ச்சி அலுவலர்"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "A Town Panchayat generally has a population of about:",
+    "ta": "ஒரு பேரூராட்சி பொதுவாக எவ்வளவு மக்கள்தொகையைக் கொண்டிருக்கும்?",
+    "optionsEn": [
+      "1,000",
+      "5,000",
+      "10,000",
+      "50,000"
+    ],
+    "optionsTa": [
+      "1,000",
+      "5,000",
+      "10,000",
+      "50,000"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Grama Sabha meetings in a Village Panchayat are conducted:",
+    "ta": "கிராம ஊராட்சியில் கிராம சபைக் கூட்டங்கள் எத்தனை முறை நடத்தப்படுகின்றன?",
+    "optionsEn": [
+      "Two times a year",
+      "Four times a year",
+      "Six times a year",
+      "Every month"
+    ],
+    "optionsTa": [
+      "ஆண்டுக்கு இரண்டு முறை",
+      "ஆண்டுக்கு நான்கு முறை",
+      "ஆண்டுக்கு ஆறு முறை",
+      "ஒவ்வொரு மாதமும்"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "The 73rd Constitutional Amendment Act, which gave constitutional status to Panchayati Raj institutions, came into force on:",
+    "ta": "பஞ்சாயத்து ராஜ் அமைப்புகளுக்கு அரசியலமைப்பு அந்தஸ்து வழங்கிய 73-வது அரசியலமைப்புத் திருத்தச் சட்டம் நடைமுறைக்கு வந்த நாள்:",
+    "optionsEn": [
+      "April 24, 1991",
+      "April 24, 1992",
+      "April 24, 1993",
+      "April 24, 1994"
+    ],
+    "optionsTa": [
+      "ஏப்ரல் 24, 1991",
+      "ஏப்ரல் 24, 1992",
+      "ஏப்ரல் 24, 1993",
+      "ஏப்ரல் 24, 1994"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "As per the Tamil Nadu Panchayats (Amendment) Act, 2016, the reservation for women in Panchayat Raj institutions is:",
+    "ta": "தமிழ்நாடு பஞ்சாயத்துகள் (திருத்தச்) சட்டம், 2016-ன் படி பஞ்சாயத்து ராஜ் அமைப்புகளில் பெண்களுக்கான இடஒதுக்கீடு:",
+    "optionsEn": [
+      "25%",
+      "33%",
+      "40%",
+      "50%"
+    ],
+    "optionsTa": [
+      "25%",
+      "33%",
+      "40%",
+      "50%"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "The tenure for the representatives of local self-government is:",
+    "ta": "உள்ளாட்சி அமைப்புகளின் பிரதிநிதிகளின் பதவிக்காலம்:",
+    "optionsEn": [
+      "3 years",
+      "4 years",
+      "5 years",
+      "6 years"
+    ],
+    "optionsTa": [
+      "3 ஆண்டுகள்",
+      "4 ஆண்டுகள்",
+      "5 ஆண்டுகள்",
+      "6 ஆண்டுகள்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following traffic signs is generally circular in shape?",
+    "ta": "பின்வரும் போக்குவரத்துக் குறியீடுகளில் பொதுவாக வட்ட வடிவில் இருப்பது எது?",
+    "optionsEn": [
+      "Cautionary road signs",
+      "Mandatory road signs",
+      "Informatory road signs",
+      "Warning road signs"
+    ],
+    "optionsTa": [
+      "எச்சரிக்கை சாலைக் குறியீடுகள்",
+      "கட்டாய சாலைக் குறியீடுகள்",
+      "தகவல் சாலைக் குறியீடுகள்",
+      "அபாய சாலைக் குறியீடுகள்"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "The first Zebra crossing was introduced in Britain in:",
+    "ta": "பிரிட்டனில் முதல் பாதசாரி கடக்கும் கோடுகள் (Zebra crossing) அறிமுகப்படுத்தப்பட்ட ஆண்டு:",
+    "optionsEn": [
+      "1934",
+      "1944",
+      "1951",
+      "1964"
+    ],
+    "optionsTa": [
+      "1934",
+      "1944",
+      "1951",
+      "1964"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Asia covers approximately what percentage of the world’s land area?",
+    "ta": "ஆசியா உலகின் நிலப்பரப்பில் தோராயமாக எத்தனை சதவீதத்தைக் கொண்டுள்ளது?",
+    "optionsEn": [
+      "30%",
+      "25%",
+      "20%",
+      "35%"
+    ],
+    "optionsTa": [
+      "30%",
+      "25%",
+      "20%",
+      "35%"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which is the longest river in Asia?",
+    "ta": "ஆசியாவின் மிக நீளமான ஆறு எது?",
+    "optionsEn": [
+      "Ganges",
+      "Brahmaputra",
+      "Yangtze",
+      "Mekong"
+    ],
+    "optionsTa": [
+      "கங்கை",
+      "பிரம்மபுத்திரா",
+      "யாங்சே",
+      "மீகாங்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "The highest peak in Europe is:",
+    "ta": "ஐரோப்பாவின் மிக உயர்ந்த சிகரம்:",
+    "optionsEn": [
+      "Mont Blanc",
+      "Mt. Elburz",
+      "Mt. Everest",
+      "Mt. Vesuvius"
+    ],
+    "optionsTa": [
+      "மவுண்ட் பிளாங்க்",
+      "மவுண்ட் எல்பிரஸ்",
+      "மவுண்ட் எவரெஸ்ட்",
+      "மவுண்ட் விசுவியஸ்"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "The Prime Meridian ($0^{\\circ}$ longitude) passes through:",
+    "ta": "முதன்மை தீர்க்கரேகை ($0^{\\circ}$ தீர்க்கரேகை) எதன் வழியாகச் செல்கிறது?",
+    "optionsEn": [
+      "Paris",
+      "Washington DC",
+      "Greenwich",
+      "Geneva"
+    ],
+    "optionsTa": [
+      "பாரிஸ்",
+      "வாஷிங்டன் டி.சி.",
+      "கிரீன்விச்",
+      "ஜெனீவா"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "The Indian Standard Time is calculated based on which line of longitude?",
+    "ta": "இந்திய திட்ட நேரம் எந்தத் தீர்க்கரேகையின் அடிப்படையில் கணக்கிடப்படுகிறது?",
+    "optionsEn": [
+      "$80^{\\circ}$E",
+      "$82\\frac{1}{2}^{\\circ}$E",
+      "$85^{\\circ}$E",
+      "$90^{\\circ}$E"
+    ],
+    "optionsTa": [
+      "$80^{\\circ}$ கிழக்கு",
+      "$82\\frac{1}{2}^{\\circ}$ கிழக்கு",
+      "$85^{\\circ}$ கிழக்கு",
+      "$90^{\\circ}$ கிழக்கு"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "The International Date Line is drawn approximately along:",
+    "ta": "சர்வதேச தேதிக்கோடு தோராயமாக எந்தத் தீர்க்கரேகையின் வழியாக வரையப்பட்டுள்ளது?",
+    "optionsEn": [
+      "$0^{\\circ}$ longitude",
+      "$90^{\\circ}$ longitude",
+      "$360^{\\circ}$ longitude",
+      "$180^{\\circ}$ longitude"
+    ],
+    "optionsTa": [
+      "$0^{\\circ}$ தீர்க்கரேகை",
+      "$90^{\\circ}$ தீர்க்கரேகை",
+      "$360^{\\circ}$ தீர்க்கரேகை",
+      "$180^{\\circ}$ தீர்க்கரேகை"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is a man-made disaster?",
+    "ta": "பின்வருவனவற்றுள் மனிதனால் உருவாக்கப்பட்ட பேரிடர் எது?",
+    "optionsEn": [
+      "Earthquake",
+      "Tsunami",
+      "Terrorism",
+      "Cyclone"
+    ],
+    "optionsTa": [
+      "நிலநடுக்கம்",
+      "சுனாமி",
+      "பயங்கரவாதம்",
+      "சூறாவளி"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "The killer Tsunami that hit Southeast Asian countries occurred on:",
+    "ta": "தென்கிழக்கு ஆசிய நாடுகளைத் தாக்கிய கொடிய சுனாமி ஏற்பட்ட நாள்:",
+    "optionsEn": [
+      "December 26, 2003",
+      "December 26, 2004",
+      "December 26, 2005",
+      "December 26, 2006"
+    ],
+    "optionsTa": [
+      "டிசம்பர் 26, 2003",
+      "டிசம்பர் 26, 2004",
+      "டிசம்பர் 26, 2005",
+      "டிசம்பர் 26, 2006"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair.",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Direct Democracy – India",
+      "Parliamentary Democracy – USA",
+      "Presidential Democracy – Canada",
+      "Presidential Democracy – USA"
+    ],
+    "optionsTa": [
+      "நேரடி மக்களாட்சி – இந்தியா",
+      "நாடாளுமன்ற மக்களாட்சி – அமெரிக்கா",
+      "அதிபர் மக்களாட்சி – கனடா",
+      "அதிபர் மக்களாட்சி – அமெரிக்கா"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair.",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Greek Democracy – Origin of democracy",
+      "British Democracy – Presidential system",
+      "US Democracy – Parliamentary system",
+      "San Marino – Modern military dictatorship"
+    ],
+    "optionsTa": [
+      "கிரேக்க மக்களாட்சி – மக்களாட்சியின் பிறப்பிடம்",
+      "பிரிட்டிஷ் மக்களாட்சி – அதிபர் முறை",
+      "அமெரிக்க மக்களாட்சி – நாடாளுமன்ற முறை",
+      "சான் மரினோ – நவீன இராணுவ சர்வாதிகாரம்"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair regarding local self-government.",
+    "ta": "உள்ளாட்சி அமைப்பு தொடர்பான சரியான இணையைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Village Panchayat – Mayor",
+      "City Municipal Corporation – Mayor",
+      "Municipality – Governor",
+      "Panchayat Union – President of India"
+    ],
+    "optionsTa": [
+      "கிராம ஊராட்சி – மேயர்",
+      "மாநகராட்சி – மேயர்",
+      "நகராட்சி – ஆளுநர்",
+      "ஊராட்சி ஒன்றியம் – இந்தியக் குடியரசுத் தலைவர்"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்",
+    "optionsEn": [
+      "Yangtze River — Bay of Bengal",
+      "Ganges — Arabian Sea",
+      "Danube River — North Sea",
+      "Volga River — Caspian Sea"
+    ],
+    "optionsTa": [
+      "யாங்சே ஆறு — வங்காள விரிகுடா",
+      "கங்கை — அரபிக்கடல்",
+      "டானூப் ஆறு — வட கடல்",
+      "வோல்கா ஆறு — காஸ்பியன் கடல்"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair regarding climate and vegetation.",
+    "ta": "காலநிலை மற்றும் தாவரங்கள் தொடர்பான சரியான இணையைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Hot and wet throughout the year – Thorny shrubs",
+      "Hot and dry summer, mild and rainy winter – Figs, olives and citrus fruits",
+      "Extremely cold climate – Coconut trees",
+      "Desert climate – Evergreen rainforests"
+    ],
+    "optionsTa": [
+      "ஆண்டு முழுவதும் வெப்பம் மற்றும் ஈரப்பதம் – முட்புதர்கள்",
+      "வெப்பமான மற்றும் வறண்ட கோடை, மிதமான மற்றும் மழை பெய்யும் குளிர்காலம் – அத்தி, ஆலிவ் மற்றும் சிட்ரஸ் பழங்கள்",
+      "மிகக் குளிரான காலநிலை – தென்னை மரங்கள்",
+      "பாலைவனக் காலநிலை – பசுமைமாறா மழைக்காடுகள்"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "match",
+    "en": "Match the local bodies with their administrative officers.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>Local bodies</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>Administrative officers</b></td></tr><tr><td style='padding:6px 0;'>a. Village Panchayat</td><td></td><td style='padding:6px 0;'>1. Commissioner</td></tr><tr><td style='padding:6px 0;'>b. Municipality</td><td></td><td style='padding:6px 0;'>2. Executive Officer</td></tr><tr><td style='padding:6px 0;'>c. City Municipal Corporation</td><td></td><td style='padding:6px 0;'>3. Panchayat Secretary</td></tr><tr><td style='padding:6px 0;'>d. Panchayat Union</td><td></td><td style='padding:6px 0;'>4. Block Development Officer</td></tr></table>",
+    "ta": "உள்ளாட்சி அமைப்புகளை அவற்றின் நிர்வாக அதிகாரிகளுடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>உள்ளாட்சி அமைப்புகள்</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>நிர்வாக அதிகாரிகள்</b></td></tr><tr><td style='padding:6px 0;'>a. கிராம ஊராட்சி</td><td></td><td style='padding:6px 0;'>1. ஆணையர்</td></tr><tr><td style='padding:6px 0;'>b. நகராட்சி</td><td></td><td style='padding:6px 0;'>2. செயல் அலுவலர்</td></tr><tr><td style='padding:6px 0;'>c. மாநகராட்சி</td><td></td><td style='padding:6px 0;'>3. ஊராட்சி செயலாளர்</td></tr><tr><td style='padding:6px 0;'>d. ஊராட்சி ஒன்றியம்</td><td></td><td style='padding:6px 0;'>4. வட்டார வளர்ச்சி அலுவலர்</td></tr></table>",
+    "optionsEn": [
+      "A-1, B-2, C-3, D-4",
+      "A-3, B-2, C-1, D-4",
+      "A-3, B-1, C-2, D-4",
+      "A-4, B-2, C-1, D-3"
+    ],
+    "optionsTa": [
+      "A-1, B-2, C-3, D-4",
+      "A-3, B-2, C-1, D-4",
+      "A-3, B-1, C-2, D-4",
+      "A-4, B-2, C-1, D-3"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "match",
+    "en": "Match the rivers with their outflow.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>Rivers</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>Outflow</b></td></tr><tr><td style='padding:6px 0;'>a. Yangtze</td><td></td><td style='padding:6px 0;'>1. Caspian Sea</td></tr><tr><td style='padding:6px 0;'>b. Volga</td><td></td><td style='padding:6px 0;'>2. East China Sea</td></tr><tr><td style='padding:6px 0;'>c. Danube</td><td></td><td style='padding:6px 0;'>3. Black Sea</td></tr><tr><td style='padding:6px 0;'>d. Rhine</td><td></td><td style='padding:6px 0;'>4. North Sea</td></tr></table>",
+    "ta": "ஆறுகளை அவை கலக்கும் கடல்களுடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>ஆறுகள்</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>கலக்கும் கடல்</b></td></tr><tr><td style='padding:6px 0;'>a. யாங்சே</td><td></td><td style='padding:6px 0;'>1. காஸ்பியன் கடல்</td></tr><tr><td style='padding:6px 0;'>b. வோல்கா</td><td></td><td style='padding:6px 0;'>2. கிழக்கு சீனக் கடல்</td></tr><tr><td style='padding:6px 0;'>c. டானூப்</td><td></td><td style='padding:6px 0;'>3. கருங்கடல்</td></tr><tr><td style='padding:6px 0;'>d. ரைன்</td><td></td><td style='padding:6px 0;'>4. வட கடல்</td></tr></table>",
+    "optionsEn": [
+      "A-2, B-1, C-3, D-4",
+      "A-2, B-1, C-4, D-3",
+      "A-1, B-2, C-3, D-4",
+      "A-3, B-1, C-2, D-4"
+    ],
+    "optionsTa": [
+      "A-2, B-1, C-3, D-4",
+      "A-2, B-1, C-4, D-3",
+      "A-1, B-2, C-3, D-4",
+      "A-3, B-1, C-2, D-4"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "Match the following climatic zones with their locations.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>Climatic zones</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>Locations</b></td></tr><tr><td style='padding:6px 0;'>a. Torrid Zone</td><td></td><td style='padding:6px 0;'>1. Between Arctic Circle and North Pole</td></tr><tr><td style='padding:6px 0;'>b. Temperate Zone</td><td></td><td style='padding:6px 0;'>2. Between Equator and Tropic of Cancer</td></tr><tr><td style='padding:6px 0;'>c. Frigid Zone</td><td></td><td style='padding:6px 0;'>3. Between Tropic of Cancer and Arctic Circle</td></tr><tr><td style='padding:6px 0;'>d. Prime Meridian</td><td></td><td style='padding:6px 0;'>4. $0^{\\circ}$ longitude</td></tr></table>",
+    "ta": "பின்வரும் காலநிலை மண்டலங்களை அவற்றின் அமைவிடங்களுடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>காலநிலை மண்டலங்கள்</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>அமைவிடங்கள்</b></td></tr><tr><td style='padding:6px 0;'>a. வெப்ப மண்டலம்</td><td></td><td style='padding:6px 0;'>1. ஆர்க்டிக் வட்டத்திற்கும் வட துருவத்திற்கும் இடையே</td></tr><tr><td style='padding:6px 0;'>b. மிதவெப்ப மண்டலம்</td><td></td><td style='padding:6px 0;'>2. பூமத்திய ரேகைக்கும் கடக ரேகைக்கும் இடையே</td></tr><tr><td style='padding:6px 0;'>c. குளிர் மண்டலம்</td><td></td><td style='padding:6px 0;'>3. கடக ரேகைக்கும் ஆர்க்டிக் வட்டத்திற்கும் இடையே</td></tr><tr><td style='padding:6px 0;'>d. முதன்மை தீர்க்கரேகை</td><td></td><td style='padding:6px 0;'>4. $0^{\\circ}$ தீர்க்கரேகை</td></tr></table>",
+    "optionsEn": [
+      "A-1, B-2, C-3, D-4",
+      "A-2, B-3, C-1, D-4",
+      "A-3, B-2, C-1, D-4",
+      "A-2, B-1, C-3, D-4"
+    ],
+    "optionsTa": [
+      "A-1, B-2, C-3, D-4",
+      "A-2, B-3, C-1, D-4",
+      "A-3, B-2, C-1, D-4",
+      "A-2, B-1, C-3, D-4"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "match",
+    "en": "Match the disasters with their descriptions.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>Disasters</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>Descriptions</b></td></tr><tr><td style='padding:6px 0;'>a. Earthquake</td><td></td><td style='padding:6px 0;'>1. Waves generated by underwater disturbances</td></tr><tr><td style='padding:6px 0;'>b. Tsunami</td><td></td><td style='padding:6px 0;'>2. Sudden shaking of the Earth's surface</td></tr><tr><td style='padding:6px 0;'>c. Cyclone</td><td></td><td style='padding:6px 0;'>3. Large amounts of ice and snow moving down a mountain</td></tr><tr><td style='padding:6px 0;'>d. Avalanche</td><td></td><td style='padding:6px 0;'>4. A rotating low-pressure system with strong winds</td></tr></table>",
+    "ta": "பேரிடர்களை அவற்றின் விளக்கங்களுடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பேரிடர்கள்</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>விளக்கங்கள்</b></td></tr><tr><td style='padding:6px 0;'>a. நிலநடுக்கம்</td><td></td><td style='padding:6px 0;'>1. கடலுக்கடியில் ஏற்படும் மாற்றங்களால் உருவாகும் அலைகள்</td></tr><tr><td style='padding:6px 0;'>b. சுனாமி</td><td></td><td style='padding:6px 0;'>2. புவியின் மேற்பரப்பில் ஏற்படும் திடீர் அதிர்வு</td></tr><tr><td style='padding:6px 0;'>c. சூறாவளி</td><td></td><td style='padding:6px 0;'>3. மலையிலிருந்து கீழே நகரும் அதிக அளவிலான பனி மற்றும் உறைபனி</td></tr><tr><td style='padding:6px 0;'>d. பனிச்சரிவு</td><td></td><td style='padding:6px 0;'>4. வலுவான காற்றுடன் கூடிய சுழலும் குறைந்த காற்றழுத்த மண்டலம்</td></tr></table>",
+    "optionsEn": [
+      "A-2, B-1, C-4, D-3",
+      "A-1, B-2, C-3, D-4",
+      "A-2, B-1, C-3, D-4",
+      "A-1, B-2, C-4, D-3"
+    ],
+    "optionsTa": [
+      "A-2, B-1, C-4, D-3",
+      "A-1, B-2, C-3, D-4",
+      "A-2, B-1, C-3, D-4",
+      "A-1, B-2, C-4, D-3"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Find the odd one out.",
+    "ta": "பொருந்தாத ஒன்றைக் கண்டறிக.",
+    "optionsEn": [
+      "Water supply",
+      "Street lighting",
+      "Maintenance of roads",
+      "Conducting national elections"
+    ],
+    "optionsTa": [
+      "குடிநீர் வழங்கல்",
+      "தெரு விளக்குகள்",
+      "சாலை பராமரிப்பு",
+      "தேசியத் தேர்தல்களை நடத்துதல்"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Find the odd one out",
+    "ta": "பொருந்தாத ஒன்றைக் கண்டறிக",
+    "optionsEn": [
+      "Red means STOP",
+      "Amber means CAUTION",
+      "Green means GO",
+      "Blue means SLOW"
+    ],
+    "optionsTa": [
+      "சிவப்பு என்றால் நிறுத்து",
+      "மஞ்சள் என்றால் கவனம்",
+      "பச்சை என்றால் செல்",
+      "நீலம் என்றால் மெதுவாகச் செல்"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Find the odd one out",
+    "ta": "பொருந்தாத ஒன்றைக் கண்டறிக",
+    "optionsEn": [
+      "Danube",
+      "Yenisey",
+      "Lena",
+      "Ob"
+    ],
+    "optionsTa": [
+      "டானூப்",
+      "யெனிசி",
+      "லீனா",
+      "ஓப்"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Find the odd one out.",
+    "ta": "பொருந்தாத ஒன்றைக் கண்டறிக.",
+    "optionsEn": [
+      "Tundra",
+      "Taiga",
+      "Mediterranean vegetation",
+      "Sahara Desert"
+    ],
+    "optionsTa": [
+      "துருவப் பகுதி (Tundra)",
+      "தைகா (Taiga)",
+      "மத்தியதரைக் கடல் தாவரங்கள்",
+      "சஹாரா பாலைவனம்"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Find the odd one out.",
+    "ta": "பொருந்தாத ஒன்றைக் கண்டறிக.",
+    "optionsEn": [
+      "Earthquake",
+      "Volcano",
+      "Tsunami",
+      "Industrial accident"
+    ],
+    "optionsTa": [
+      "நிலநடுக்கம்",
+      "எரிமலை",
+      "சுனாமி",
+      "தொழிற்சாலை விபத்து"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): In a Direct Democracy, citizens directly participate in making important decisions and laws.<br><br>Reason (R): Citizens exercise political power directly instead of electing representatives to make all decisions on their behalf.",
+    "ta": "Assertion (A): நேரடி மக்களாட்சியில், குடிமக்கள் முக்கிய முடிவுகள் மற்றும் சட்டங்களை உருவாக்குவதில் நேரடியாகப் பங்கேற்கின்றனர்.<br><br>Reason (R): தங்களுக்குப் பதிலாக அனைத்து முடிவுகளையும் எடுப்பதற்குப் பிரதிநிதிகளைத் தேர்ந்தெடுப்பதற்குப் பதிலாக, குடிமக்கள் நேரடியாக அரசியல் அதிகாரத்தைச் செலுத்துகின்றனர்.",
+    "optionsEn": [
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is NOT the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true"
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் உண்மை மற்றும் R என்பது A-க்கான சரியான விளக்கமாகும்",
+      "A மற்றும் R இரண்டும் உண்மை ஆனால் R என்பது A-க்கான சரியான விளக்கமல்ல",
+      "A உண்மை ஆனால் R தவறு",
+      "A தவறு ஆனால் R உண்மை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): The Indian Constitution is the longest written constitution in the world.<br><br>Reason (R): It was drafted by the Drafting Committee of the Constituent Assembly headed by Dr. B.R. Ambedkar.",
+    "ta": "Assertion (A): இந்திய அரசியலமைப்பு உலகின் மிக நீளமான எழுதப்பட்ட அரசியலமைப்பாகும்.<br><br>Reason (R): இது டாக்டர் பி.ஆர். அம்பேத்கர் தலைமையிலான அரசியலமைப்பு நிர்ணய சபையின் வரைவுக்குழுவால் உருவாக்கப்பட்டது.",
+    "optionsEn": [
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is NOT the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true"
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் உண்மை மற்றும் R என்பது A-க்கான சரியான விளக்கமாகும்",
+      "A மற்றும் R இரண்டும் உண்மை ஆனால் R என்பது A-க்கான சரியான விளக்கமல்ல",
+      "A உண்மை ஆனால் R தவறு",
+      "A தவறு ஆனால் R உண்மை"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): A Grama Sabha is formed in every Village Panchayat.<br><br>Reason (R): Grama Sabha meetings are held only in large villages.",
+    "ta": "Assertion (A): ஒவ்வொரு கிராம ஊராட்சியிலும் கிராம சபை அமைக்கப்படுகிறது.<br><br>Reason (R): கிராம சபைக் கூட்டங்கள் பெரிய கிராமங்களில் மட்டுமே நடத்தப்படுகின்றன.",
+    "optionsEn": [
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is NOT the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true"
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் உண்மை மற்றும் R என்பது A-க்கான சரியான விளக்கமாகும்",
+      "A மற்றும் R இரண்டும் உண்மை ஆனால் R என்பது A-க்கான சரியான விளக்கமல்ல",
+      "A உண்மை ஆனால் R தவறு",
+      "A தவறு ஆனால் R உண்மை"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): Asia is called the ‘Land of Contrasts’.<br><br>Reason (R): Asia has different types of land features, climatic conditions, and many races, languages, religions, and cultures.",
+    "ta": "Assertion (A): ஆசியா 'மாறுபாடுகளின் நிலம்' என்று அழைக்கப்படுகிறது.<br><br>Reason (R): ஆசியாவில் பல்வேறு வகையான நிலத்தோற்றங்கள், காலநிலை நிலைகள் மற்றும் பல இனங்கள், மொழிகள், மதங்கள் மற்றும் கலாச்சாரங்கள் உள்ளன.",
+    "optionsEn": [
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is NOT the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true"
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் உண்மை மற்றும் R என்பது A-க்கான சரியான விளக்கமாகும்",
+      "A மற்றும் R இரண்டும் உண்மை ஆனால் R என்பது A-க்கான சரியான விளக்கமல்ல",
+      "A உண்மை ஆனால் R தவறு",
+      "A தவறு ஆனால் R உண்மை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): The International Date Line runs in a zigzag manner.<br><br>Reason (R): If the line is drawn straight, two places in the same country would have different dates.",
+    "ta": "Assertion (A): சர்வதேச தேதிக்கோடு வளைந்து நெளிந்து செல்கிறது.<br><br>Reason (R): கோடு நேராக வரையப்பட்டால், ஒரே நாட்டில் உள்ள இரண்டு இடங்களுக்கு வெவ்வேறு தேதிகள் இருக்கும்.",
+    "optionsEn": [
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is NOT the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true"
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் உண்மை மற்றும் R என்பது A-க்கான சரியான விளக்கமாகும்",
+      "A மற்றும் R இரண்டும் உண்மை ஆனால் R என்பது A-க்கான சரியான விளக்கமல்ல",
+      "A உண்மை ஆனால் R தவறு",
+      "A தவறு ஆனால் R உண்மை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Statement I: The word Democracy is derived from the Greek words Demos, meaning people, and Kratos, meaning power or rule.<br><br>Statement II: Ancient Greece, particularly Athens, is regarded as the birthplace of democracy.",
+    "ta": "கூற்று I: மக்களாட்சி (Democracy) என்ற சொல் 'டெமோஸ்' (Demos - மக்கள்) மற்றும் 'கிராட்டோஸ்' (Kratos - அதிகாரம் அல்லது ஆட்சி) ஆகிய கிரேக்கச் சொற்களிலிருந்து உருவானது.<br><br>கூற்று II: பண்டைய கிரேக்கம், குறிப்பாக ஏதென்ஸ், மக்களாட்சியின் பிறப்பிடமாகக் கருதப்படுகிறது.",
+    "optionsEn": [
+      "Statement I is correct; Statement II is wrong.",
+      "Statement I is wrong; Statement II is correct.",
+      "Both statements are correct.",
+      "Both statements are wrong."
+    ],
+    "optionsTa": [
+      "கூற்று I சரி; கூற்று II தவறு.",
+      "கூற்று I தவறு; கூற்று II சரி.",
+      "இரு கூற்றுகளும் சரி.",
+      "இரு கூற்றுகளும் தவறு."
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Statement I: The revenue of a Village Panchayat includes house tax, professional tax, and tax on shops.<br><br>Statement II: The revenue of a City Municipal Corporation includes house tax, water tax, and professional tax.",
+    "ta": "கூற்று I: கிராம ஊராட்சியின் வருவாயில் வீட்டு வரி, தொழில் வரி மற்றும் கடைகள் மீதான வரி ஆகியவை அடங்கும்.<br><br>கூற்று II: மாநகராட்சியின் வருவாயில் வீட்டு வரி, குடிநீர் வரி மற்றும் தொழில் வரி ஆகியவை அடங்கும்.",
+    "optionsEn": [
+      "Statement I is correct; Statement II is wrong.",
+      "Statement I is wrong; Statement II is correct.",
+      "Both statements are correct.",
+      "Both statements are wrong."
+    ],
+    "optionsTa": [
+      "கூற்று I சரி; கூற்று II தவறு.",
+      "கூற்று I தவறு; கூற்று II சரி.",
+      "இரு கூற்றுகளும் சரி.",
+      "இரு கூற்றுகளும் தவறு."
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Statement I: The Trans-Siberian Railway connects Moscow and Vladivostok.<br><br>Statement II: The Asian Highway 1 connects Tokyo with the Turkey–Bulgaria border.",
+    "ta": "கூற்று I: டிரான்ஸ்-சைபீரியன் ரயில் பாதை மாஸ்கோ மற்றும் விளாடிவோஸ்டாக்கை இணைக்கிறது.<br><br>கூற்று II: ஆசிய நெடுஞ்சாலை 1 டோக்கியோவை துருக்கி–பல்கேரியா எல்லையுடன் இணைக்கிறது.",
+    "optionsEn": [
+      "Both statements are correct.",
+      "Statement I is wrong; Statement II is correct.",
+      "Statement I is correct; Statement II is wrong.",
+      "Both statements are wrong."
+    ],
+    "optionsTa": [
+      "இரு கூற்றுகளும் சரி.",
+      "கூற்று I தவறு; கூற்று II சரி.",
+      "கூற்று I சரி; கூற்று II தவறு.",
+      "இரு கூற்றுகளும் தவறு."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Statement I: Lines of latitude are imaginary lines drawn horizontally on Earth from East to West.<br><br>Statement II: Lines of longitude are imaginary lines drawn vertically connecting the North Pole and South Pole.",
+    "ta": "கூற்று I: அட்சரேகைகள் புவியில் கிழக்கிலிருந்து மேற்காகக் கிடைமட்டமாக வரையப்பட்ட கற்பனைக் கோடுகள் ஆகும்.<br><br>கூற்று II: தீர்க்கரேகைகள் வட துருவத்தையும் தென் துருவத்தையும் இணைக்கும் செங்குத்தான கற்பனைக் கோடுகள் ஆகும்.",
+    "optionsEn": [
+      "Statement I is correct; Statement II is wrong.",
+      "Statement I is wrong; Statement II is correct.",
+      "Both statements are correct.",
+      "Both statements are wrong."
+    ],
+    "optionsTa": [
+      "கூற்று I சரி; கூற்று II தவறு.",
+      "கூற்று I தவறு; கூற்று II சரி.",
+      "இரு கூற்றுகளும் சரி.",
+      "இரு கூற்றுகளும் தவறு."
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Statement I: Natural disasters include earthquakes, volcanic eruptions, tsunamis and cyclones.<br><br>Statement II: Man-made disasters include human-caused fires, industrial accidents and destruction caused by human activities.",
+    "ta": "கூற்று I: இயற்கைப் பேரிடர்களில் நிலநடுக்கம், எரிமலை வெடிப்பு, சுனாமி மற்றும் சூறாவளி ஆகியவை அடங்கும்.<br><br>கூற்று II: மனிதனால் உருவாக்கப்பட்ட பேரிடர்களில் மனிதர்களால் ஏற்படும் தீ விபத்துகள், தொழிற்சாலை விபத்துகள் மற்றும் மனித நடவடிக்கைகளால் ஏற்படும் அழிவுகள் ஆகியவை அடங்கும்.",
+    "optionsEn": [
+      "Statement I is correct; Statement II is wrong.",
+      "Statement I is wrong; Statement II is correct.",
+      "Both statements are wrong.",
+      "Both statements are correct."
+    ],
+    "optionsTa": [
+      "கூற்று I சரி; கூற்று II தவறு.",
+      "கூற்று I தவறு; கூற்று II சரி.",
+      "இரு கூற்றுகளும் தவறு.",
+      "இரு கூற்றுகளும் சரி."
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Statement I: The Alps influence the distribution of Mediterranean and colder northern European climatic conditions.<br><br>Statement II: The North Atlantic Drift is a warm ocean current that brings warmth to Western Europe.",
+    "ta": "கூற்று I: ஆல்ப்ஸ் மலைத்தொடர் மத்தியதரைக் கடல் மற்றும் குளிரான வட ஐரோப்பிய காலநிலைகளின் பரவலில் தாக்கத்தை ஏற்படுத்துகிறது.<br><br>கூற்று II: வட அட்லாண்டிக் நீரோட்டம் என்பது மேற்கு ஐரோப்பாவிற்கு வெப்பத்தைக் கொண்டு வரும் ஒரு வெப்ப நீரோட்டமாகும்.",
+    "optionsEn": [
+      "Both statements are correct.",
+      "Statement I is wrong; Statement II is correct.",
+      "Statement I is correct; Statement II is wrong.",
+      "Both statements are wrong."
+    ],
+    "optionsTa": [
+      "இரு கூற்றுகளும் சரி.",
+      "கூற்று I தவறு; கூற்று II சரி.",
+      "கூற்று I சரி; கூற்று II தவறு.",
+      "இரு கூற்றுகளும் தவறு."
+    ],
+    "answer": 0
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false; isSubmitted = false;
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">
+                <span class="option-letter">${String.fromCharCode(65+i)}.</span>
+                <span class="option-text">${opt}</span>
+            </div>`;
+        });
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+            </div>
+        `;
+        updateTopClearButton();
+        updateNavButtons(); updatePalette();
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+    }
+    function updateTopClearButton() {
+        const container = document.getElementById("topClearBtnContainer");
+        if (!container) return;
+        const sel = userAnswers[currentIndex];
+        if (sel !== null && sel !== undefined) {
+            container.innerHTML = `<button class="btn btn-danger" style="padding: 6px 14px; font-size: 0.8rem; min-height: auto; opacity: 0.9; border-radius: 40px;" onclick="clearSelection()">✖ Clear Selection</button>`;
+        } else {
+            container.innerHTML = "";
+        }
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) {
+            userAnswers[currentIndex] = null;
+        } else {
+            userAnswers[currentIndex] = optIndex;
+        }
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+
+    function clearSelection() {
+        if (isSubmitted) return;
+        userAnswers[currentIndex] = null;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    let currentReviewIndex = 0;
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let cssClass = "option-item";
+                let markerHtml = "";
+                if (idx === corr) { cssClass += " correct"; markerHtml = "<div class='marker'>✔</div>"; }
+                else if (u === idx && idx !== corr) { cssClass += " wrong"; markerHtml = "<div class='marker'>✖</div>"; }
+                optsHtml += `<div class="${cssClass}"><span>${String.fromCharCode(65+idx)}. ${optsArray[idx]}</span>${markerHtml}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" id="review-card-${i}" style="display: none;">
+                        <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div class="your-answer">Your Answer: ${userAns}</div>
+                        <div class="correct-answer">Correct Answer: ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        ${optsHtml}
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+        currentReviewIndex = 0;
+        showReviewCard(currentReviewIndex);
+    }
+    function showReviewCard(index) {
+        const cards = document.querySelectorAll(".review-card");
+        if (cards.length === 0) return;
+        cards.forEach(c => c.style.display = "none");
+        cards[index].style.display = "block";
+        document.getElementById("reviewPageText").innerText = `${index + 1} / ${cards.length}`;
+        document.getElementById("prevReviewBtn").disabled = (index === 0);
+        document.getElementById("nextReviewBtn").disabled = (index === cards.length - 1);
+        document.getElementById("reviewPagination").style.display = "flex";
+        window.scrollTo(0, 0);
+    }
+    function navigateReview(direction) {
+        const cards = document.querySelectorAll(".review-card");
+        currentReviewIndex += direction;
+        if (currentReviewIndex >= 0 && currentReviewIndex < cards.length) {
+            showReviewCard(currentReviewIndex);
+        }
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
+            await new Promise(r => setTimeout(r, 600));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+                if (btn) btn.innerText = "✅ Select Save as PDF";
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+        } finally {
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 3000);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        history.replaceState({ resultPage: true }, "", "#result");
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.addEventListener("popstate", function(e) {
+        if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+            history.pushState({ resultPage: true }, "", "#result");
+            confirmLeaveResult();
+        }
+    });
+    function confirmLeaveResult() {
+        if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
+            window.AndroidBridge.exitResultPage();
+        } else {
+            history.back();
+        }
+    }
+    window.checkForReview = function() {
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
+            }
+        }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
