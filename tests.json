@@ -1022,15 +1022,15 @@
       "language": "en"
     },
     {
-      "testId": "RRE-01",
+      "testId": "RRE-1",
       "examId": "RRB-RE",
-      "name": "SYLLOGISM RRE-01",
+      "name": "SYLLOGISM (Set-1)",
       "topic": "SYLLOGISM",
       "durationMinutes": 50,
       "order": 1,
       "questionCount": 50,
       "negativeMark": 0.3,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RRE-01.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RRE-1.html",
       "releaseTimestamp": 1793779200000,
       "language": "en"
     },
@@ -1823,7 +1823,7 @@
     {
       "testId": "RRE-2",
       "examId": "RRB-RE",
-      "name": "INPUT/OUTPUT RRE-2",
+      "name": "INPUT/OUTPUT (Set-1)",
       "topic": "INPUT/OUTPUT",
       "durationMinutes": 30,
       "order": 2,
@@ -2793,7 +2793,7 @@
     {
       "testId": "RRE-3",
       "examId": "RRB-RE",
-      "name": "BLOOD RELATION BRE-3",
+      "name": "BLOOD RELATION (Set-1)",
       "topic": "BLOOD RELATION",
       "durationMinutes": 30,
       "order": 3,
