@@ -1260,15 +1260,15 @@
       "language": "both"
     },
     {
-      "testId": "COM-TA-1",
+      "testId": "COM-TA-4",
       "examId": "COM-TAM",
       "name": "10 TH IYAL 4 (SET-1)",
       "topic": "10 TH IYAL 4",
       "durationMinutes": 20,
-      "order": 1,
+      "order": 4,
       "questionCount": 25,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/COM-TA-1.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/COM-TA-4.html",
       "releaseTimestamp": 1793952000000,
       "language": "both",
       "createdAt": 1794651907900
@@ -1456,15 +1456,15 @@
       "language": "ta"
     },
     {
-      "testId": "COM-TA-2",
+      "testId": "COM-TA-5",
       "examId": "COM-TAM",
-      "name": "10 TH IYAL 5 COM-TA-2",
+      "name": "10 TH IYAL 5",
       "topic": "10 TH IYAL 5",
       "durationMinutes": 15,
       "order": 5,
       "questionCount": 25,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/COM-TA-2.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/COM-TA-5.html",
       "releaseTimestamp": 1794556800000,
       "language": "ta"
     },
