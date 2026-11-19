@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-14T11:09:14.480Z",
+  "version": "2026-11-19T09:18:25.530Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -10798,44 +10798,44 @@
       "courseName": "TNTET",
       "topics": [
         {
-          "topicId": "TNTET-T072",
-          "topicName": "Child Development and Pedagogy | Unit I - Growth and Development"
+          "topicId": "TNTET-T240",
+          "topicName": "PSYCHOLOGY | Unit I - Growth and Development"
         },
         {
-          "topicId": "TNTET-T073",
-          "topicName": "Child Development and Pedagogy | Unit II - Theories of Child Development"
+          "topicId": "TNTET-T241",
+          "topicName": "PSYCHOLOGY | Unit II - Theories of Child Development"
         },
         {
-          "topicId": "TNTET-T074",
-          "topicName": "Child Development and Pedagogy | Unit III - Attention, Perception and Memory"
+          "topicId": "TNTET-T242",
+          "topicName": "PSYCHOLOGY | Unit III - Attention, Perception and Memory"
         },
         {
-          "topicId": "TNTET-T075",
-          "topicName": "Child Development and Pedagogy | Unit IV - Motivation and Learning"
+          "topicId": "TNTET-T243",
+          "topicName": "PSYCHOLOGY | Unit IV - Motivation and Learning"
         },
         {
-          "topicId": "TNTET-T076",
-          "topicName": "Child Development and Pedagogy | Unit V - Intelligence and Creativity"
+          "topicId": "TNTET-T244",
+          "topicName": "PSYCHOLOGY | Unit V - Intelligence and Creativity"
         },
         {
-          "topicId": "TNTET-T077",
-          "topicName": "Child Development and Pedagogy | Unit VI - Personality"
+          "topicId": "TNTET-T245",
+          "topicName": "PSYCHOLOGY | Unit VI - Personality"
         },
         {
-          "topicId": "TNTET-T078",
-          "topicName": "Child Development and Pedagogy | Unit VII - Socializing Agencies of Child Development"
+          "topicId": "TNTET-T246",
+          "topicName": "PSYCHOLOGY | Unit VII - Socializing Agencies of Child Development"
         },
         {
-          "topicId": "TNTET-T079",
-          "topicName": "Child Development and Pedagogy | Unit VIII - Pedagogical Concerns (Part I)"
+          "topicId": "TNTET-T247",
+          "topicName": "PSYCHOLOGY | Unit VIII - Pedagogical Concerns (Part I)"
         },
         {
-          "topicId": "TNTET-T080",
-          "topicName": "Child Development and Pedagogy | Unit IX - Pedagogical Concerns (Part II)"
+          "topicId": "TNTET-T248",
+          "topicName": "PSYCHOLOGY | Unit IX - Pedagogical Concerns (Part II)"
         },
         {
-          "topicId": "TNTET-T081",
-          "topicName": "Child Development and Pedagogy | Unit X - Pedagogical Concerns (Part III)"
+          "topicId": "TNTET-T249",
+          "topicName": "PSYCHOLOGY | Unit X - Pedagogical Concerns (Part III)"
         },
         {
           "topicId": "TNTET-T082",
