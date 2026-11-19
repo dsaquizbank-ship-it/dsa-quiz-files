@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-19T15:59:45.012Z",
+  "version": "2026-11-19T17:24:19.198Z",
   "categories": [
     {
       "id": "BANK",
@@ -3029,6 +3029,20 @@
       "releaseTimestamp": 1795161600000,
       "language": "both",
       "createdAt": 1795103622583
+    },
+    {
+      "testId": "BEG-3",
+      "examId": "BANK-ENG",
+      "name": "WORD REPLACEMENT (SET-1)",
+      "topic": "WORD REPLACEMENT",
+      "durationMinutes": 25,
+      "order": 3,
+      "questionCount": 25,
+      "negativeMark": 0.25,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BEG-3.html",
+      "releaseTimestamp": 1795161600000,
+      "language": "en",
+      "createdAt": 1795109059198
     }
   ]
 }
