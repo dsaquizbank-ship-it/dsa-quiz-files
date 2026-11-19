@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-13T07:03:12.295Z",
+  "version": "2026-11-19T06:58:45.159Z",
   "entries": [
     {
       "id": "SCH-1794038030683-992",
@@ -1903,17 +1903,6 @@
       "date": "2026-11-20",
       "testId": "UGZ-81",
       "createdAt": "2026-10-31T13:35:22.639Z"
-    },
-    {
-      "id": "SCH-1793452727063-451",
-      "courseId": "TNTET",
-      "courseName": "TNTET",
-      "subject": "Child Development and Pedagogy",
-      "topicId": "REV-1793452727063",
-      "topicName": "Revision: Unit II - Theories of Child Development",
-      "date": "2026-11-20",
-      "testId": "TET-PY-2",
-      "createdAt": "2026-10-31T13:18:47.063Z"
     },
     {
       "id": "SCH-1793449599848-397",
