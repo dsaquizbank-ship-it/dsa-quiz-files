@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-19T15:42:22.274Z",
+  "version": "2026-11-19T15:49:14.455Z",
   "categories": [
     {
       "id": "BANK",
@@ -3001,6 +3001,20 @@
       "releaseTimestamp": 1795161600000,
       "language": "en",
       "createdAt": 1795102942274
+    },
+    {
+      "testId": "SPT-PY-3",
+      "examId": "SPL-PSYCHOLOGY",
+      "name": "UNIT 3-ATTENTION, PERCEPTION AND MEMORY (SET-1)",
+      "topic": "UNIT 3-ATTENTION, PERCEPTION AND MEMORY",
+      "durationMinutes": 15,
+      "order": 3,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-PY-3.html",
+      "releaseTimestamp": 1795161600000,
+      "language": "both",
+      "createdAt": 1795103354455
     }
   ]
 }
