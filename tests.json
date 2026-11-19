@@ -1087,22 +1087,22 @@
       "language": "both"
     },
     {
-      "testId": "SPT-SS-04",
+      "testId": "SPT-SS-4",
       "examId": "SPL-SOCIALSCIENCE",
-      "name": "6TH TERM 1 GEOGRAPHY AND CIVICS SPL-SS-04",
+      "name": "6TH TERM 1 GEOGRAPHY AND CIVICS",
       "topic": "6TH TERM 1 GEOGRAPHY AND CIVICS",
       "durationMinutes": 30,
       "order": 4,
       "questionCount": 50,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-SS-04.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-SS-4.html",
       "releaseTimestamp": 1793865600000,
       "language": "both"
     },
     {
       "testId": "SPT-SC-1",
       "examId": "SPL-SCIENCE",
-      "name": "6TH TERM 1 FULL SPT-SC-1",
+      "name": "6TH TERM 1 FULL",
       "topic": "6TH TERM 1 FULL",
       "durationMinutes": 30,
       "order": 1,
@@ -1638,15 +1638,15 @@
       "language": "both"
     },
     {
-      "testId": "SPT-SS-7",
+      "testId": "SPT-SS-3",
       "examId": "SPL-SOCIALSCIENCE",
-      "name": "6TH TERM 2 HISTORY FULL SPT-SS-7",
+      "name": "6TH TERM 2 HISTORY FULL",
       "topic": "6TH TERM 2 HISTORY FULL",
       "durationMinutes": 30,
-      "order": 7,
+      "order": 3,
       "questionCount": 50,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-SS-7.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-SS-3.html",
       "releaseTimestamp": 1794297600000,
       "language": "both"
     },
@@ -2007,15 +2007,15 @@
       "createdAt": 1794470092305
     },
     {
-      "testId": "SPT-SS-9",
+      "testId": "SPT-SS-1",
       "examId": "SPL-SOCIALSCIENCE",
       "name": "6TH TERM 2 GEOGRAPHY LESSON 1, CIVICS LESSON 1, LESSON 2, ECONOMICS LESSON 1",
       "topic": "6TH TERM 2 GEOGRAPHY LESSON 1, CIVICS LESSON 1, LESSON 2, ECONOMICS LESSON 1",
       "durationMinutes": 30,
-      "order": 9,
+      "order": 1,
       "questionCount": 50,
       "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-SS-9.html",
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-SS-1.html",
       "releaseTimestamp": 1794556800000,
       "language": "both",
       "createdAt": 1794470697828
@@ -2023,7 +2023,7 @@
     {
       "testId": "SPT-SC-2",
       "examId": "SPL-SCIENCE",
-      "name": "6TH TERM 2 FULL SPT-SC-2",
+      "name": "6TH TERM 2 FULL",
       "topic": "6TH TERM 2 FULL",
       "durationMinutes": 30,
       "order": 2,
@@ -2191,7 +2191,7 @@
     {
       "testId": "SPT-PY-2",
       "examId": "SPL-PSYCHOLOGY",
-      "name": "UNIT 2–THEORIES OF DEVELOPMENT SPT-PY-2",
+      "name": "UNIT 2–THEORIES OF DEVELOPMENT (Set-2)",
       "topic": "UNIT 2–THEORIES OF DEVELOPMENT",
       "durationMinutes": 15,
       "order": 2,
