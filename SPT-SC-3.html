@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>SPT-SC-3 - 6TH TERM 3 (SET-2)</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                linebreaks: { automatic: true, width: "container" }
+            },
+            options: { ignoreHtmlClass: "no-mathjax" },
+            chtml: {
+                displayAlign: "left",
+                displayIndent: "0",
+                mtextInheritFont: true
+            },
+            svg: {
+                scale: 0.9,
+                minScale: 0.5,
+                mtextInheritFont: true,
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; color: #10b981; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; align-items: center; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; white-space: normal; word-wrap: break-word; padding-bottom: 20px; max-width: 100%; overflow-x: auto; }
+        mjx-container { display: inline !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; }
+        .question-text::-webkit-scrollbar { display: none; }
+        .question-text { -ms-overflow-style: none; scrollbar-width: none; }
+        .option-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; word-wrap: break-word; }
+        .option-letter { font-weight: 800; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+        .option-text { flex-grow: 1; min-width: 0; word-wrap: break-word; overflow-wrap: break-word; }
+        .option-text mjx-container { display: inline-block !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; overflow-x: visible !important; }
+        .option-text mjx-container[jax="CHTML"][display="true"] { margin: 0 !important; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
+        .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
+        .review-card .question-text { overflow-x: hidden !important; white-space: normal !important; word-wrap: break-word !important; }
+        .review-card strong { color: var(--text-primary); font-size: 16px; }
+        .review-card .option-item { background-color: var(--rc-bg); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: rgba(40, 167, 69, 0.1); border: 1px solid #28a745; color: #28a745; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; color: #dc3545; }
+        .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
+        .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
+        .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
+        .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px 0; border-top: 1px solid var(--border-light); }
+        .review-nav-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .review-nav-btn:disabled { background: var(--border-light); color: var(--text-primary); opacity: 0.5; cursor: not-allowed; }
+        .review-nav-text { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+        .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { 
+            html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } 
+            .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } 
+            #startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard { display: none !important; } 
+            #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } 
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; } 
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; margin-bottom: 20px !important; display: block !important; } 
+            .review-card .option-item { border: 1px solid #ccc !important; background: white !important; color: black !important; } 
+            .review-card .option-item.correct { background: #e6ffe6 !important; border-color: #28a745 !important; color: black !important; } 
+            .review-card .option-item.wrong { background: #ffe6e6 !important; border-color: #dc3545 !important; color: black !important; } 
+            @page { size: A4; margin: 1.5cm; } 
+        }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">30:00</div>
+            <div class="top-buttons">
+                <div id="topClearBtnContainer"></div>
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div id="printHeader" style="display: none;">
+            <h1>DR SAHITHA IAS ACADEMY</h1>
+            <h3>ANSWER KEY & DETAILED REVIEW</h3>
+            <p><strong>Test:</strong> SPT-SC-3 - SCIENCE</p>
+        </div>
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+            <div id="reviewPagination" class="review-nav-container" style="display: none;">
+                <button class="review-nav-btn" id="prevReviewBtn" onclick="navigateReview(-1)">◀ PREV</button>
+                <span class="review-nav-text" id="reviewPageText">1 / 25</span>
+                <button class="review-nav-btn" id="nextReviewBtn" onclick="navigateReview(1)">NEXT ▶</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "SCIENCE",
+        testNo: "SPT-SC-3",
+        date: "19/11/2026",
+        subject: "SCIENCE",
+        topic: "6TH TERM 3",
+        duration: "30",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "The ore with attracting property found in Magnesia is called:",
+    "ta": "மக்னீசியாவில் (Magnesia) காணப்படும் ஈர்க்கும் பண்பைக் கொண்ட தாது எவ்வாறு அழைக்கப்படுகிறது?",
+    "optionsEn": [
+      "Magnetite",
+      "Hematite",
+      "Bauxite",
+      "Galena"
+    ],
+    "optionsTa": [
+      "மேக்னடைட்",
+      "ஹேமடைட்",
+      "பாக்சைட்",
+      "கலீனா"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is a non-magnetic substance?",
+    "ta": "பின்வருவனவற்றுள் காந்தத்தன்மையற்ற பொருள் எது?",
+    "optionsEn": [
+      "Iron",
+      "Cobalt",
+      "Nickel",
+      "Plastic"
+    ],
+    "optionsTa": [
+      "இரும்பு",
+      "கோபால்ட்",
+      "நிக்கல்",
+      "பிளாஸ்டிக்"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "A freely suspended magnet always comes to rest in the:",
+    "ta": "தடையின்றித் தொங்கவிடப்பட்ட காந்தம் எப்போதும் எந்த திசையில் ஓய்வு நிலைக்கு வரும்?",
+    "optionsEn": [
+      "East-West direction",
+      "North-South direction",
+      "North-East direction",
+      "South-West direction"
+    ],
+    "optionsTa": [
+      "கிழக்கு-மேற்கு திசை",
+      "வடக்கு-தெற்கு திசை",
+      "வடகிழக்கு திசை",
+      "தென்மேற்கு திசை"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is an example of an artificial magnet?",
+    "ta": "பின்வருவனவற்றுள் செயற்கைக் காந்தத்திற்கு உதாரணம் எது?",
+    "optionsEn": [
+      "Lodestone",
+      "Magnetite",
+      "Horseshoe magnet",
+      "Leading stone"
+    ],
+    "optionsTa": [
+      "லோட்ஸ்டோன்",
+      "மேக்னடைட்",
+      "லாட வடிவக் காந்தம்",
+      "வழிகாட்டும் கல்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Approximately what percentage of the total water on Earth is saline water?",
+    "ta": "புவியில் உள்ள மொத்த நீரில் தோராயமாக எத்தனை சதவீதம் உப்பு நீர் ஆகும்?",
+    "optionsEn": [
+      "$3\\%$",
+      "$30\\%$",
+      "$68\\%$",
+      "$97\\%$"
+    ],
+    "optionsTa": [
+      "$3\\%$",
+      "$30\\%$",
+      "$68\\%$",
+      "$97\\%$"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "The molecular formula of water is:",
+    "ta": "நீரின் மூலக்கூறு வாய்ப்பாடு:",
+    "optionsEn": [
+      "$H_2O$",
+      "$HO_2$",
+      "$H_2O_2$",
+      "$OH$"
+    ],
+    "optionsTa": [
+      "$H_2O$",
+      "$HO_2$",
+      "$H_2O_2$",
+      "$OH$"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "The process of loss of water from the aerial parts of a plant in vapour form is called:",
+    "ta": "தாவரங்களின் வான்பகுதிகளிலிருந்து நீராவியாக நீர் வெளியேறும் நிகழ்ச்சி எவ்வாறு அழைக்கப்படுகிறது?",
+    "optionsEn": [
+      "Evaporation",
+      "Condensation",
+      "Transpiration",
+      "Precipitation"
+    ],
+    "optionsTa": [
+      "ஆவியாதல்",
+      "ஆவி சுருங்குதல்",
+      "நீராவிப்போக்கு",
+      "மழைப்பொழிவு"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "World Water Day is observed on:",
+    "ta": "உலக நீர் தினம் அனுசரிக்கப்படும் நாள்:",
+    "optionsEn": [
+      "22nd March",
+      "5th June",
+      "16th October",
+      "14th November"
+    ],
+    "optionsTa": [
+      "மார்ச் 22",
+      "ஜூன் 5",
+      "அக்டோபர் 16",
+      "நவம்பர் 14"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "The chemical name of gypsum is:",
+    "ta": "ஜிப்சத்தின் வேதிப் பெயர்:",
+    "optionsEn": [
+      "Calcium carbonate",
+      "Calcium sulphate dihydrate",
+      "Calcium sulphate hemihydrate",
+      "Magnesium sulphate hepta hydrate"
+    ],
+    "optionsTa": [
+      "கால்சியம் கார்பனேட்",
+      "கால்சியம் சல்பேட் டைஹைட்ரேட்",
+      "கால்சியம் சல்பேட் ஹெமிஹைட்ரேட்",
+      "மெக்னீசியம் சல்பேட் ஹெப்டா ஹைட்ரேட்"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is an example of an organic fertilizer?",
+    "ta": "பின்வருவனவற்றுள் இயற்கை உரத்திற்கு உதாரணம் எது?",
+    "optionsEn": [
+      "Urea",
+      "Super phosphate",
+      "Vermicompost",
+      "Potassium nitrate"
+    ],
+    "optionsTa": [
+      "யூரியா",
+      "சூப்பர் பாஸ்பேட்",
+      "மண்புழு உரம்",
+      "பொட்டாசியம் நைட்ரேட்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair.",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Epsom salt – Magnesium sulphate hepta hydrate",
+      "Plaster of Paris – Calcium carbonate",
+      "Phenol – Strong base",
+      "Gypsum – Calcium sulphate hemihydrate"
+    ],
+    "optionsTa": [
+      "எப்சம் உப்பு – மெக்னீசியம் சல்பேட் ஹெப்டா ஹைட்ரேட்",
+      "பாரிஸ் சாந்து – கால்சியம் கார்பனேட்",
+      "பீனால் – வலிமையான காரம்",
+      "ஜிப்சம் – கால்சியம் சல்பேட் ஹெமிஹைட்ரேட்"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair regarding chemical formulas.",
+    "ta": "வேதி வாய்ப்பாடுகள் தொடர்பான சரியான இணையைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Plaster of Paris – $CaSO_4 \\cdot \\frac{1}{2}H_2O$",
+      "Gypsum – $CaSO_4 \\cdot \\frac{1}{2}H_2O$",
+      "Epsom salt – $MgSO_4 \\cdot H_2O$",
+      "Water – $HO_2$"
+    ],
+    "optionsTa": [
+      "பாரிஸ் சாந்து – $CaSO_4 \\cdot \\frac{1}{2}H_2O$",
+      "ஜிப்சம் – $CaSO_4 \\cdot \\frac{1}{2}H_2O$",
+      "எப்சம் உப்பு – $MgSO_4 \\cdot H_2O$",
+      "நீர் – $HO_2$"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair regarding materials and their properties.",
+    "ta": "பொருட்கள் மற்றும் அவற்றின் பண்புகள் தொடர்பான சரியான இணையைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Phenol – Carbolic acid",
+      "Urea – Phosphorus fertilizer",
+      "Turmeric – Synthetic indicator",
+      "Cotton – Stem fibre"
+    ],
+    "optionsTa": [
+      "பீனால் – கார்பாலிக் அமிலம்",
+      "யூரியா – பாஸ்பரஸ் உரம்",
+      "மஞ்சள் – செயற்கை நிறங்காட்டி",
+      "பருத்தி – தண்டு நார்"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair regarding waste types.",
+    "ta": "கழிவு வகைகள் தொடர்பான சரியான இணையைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Biodegradable waste – Vegetable peels",
+      "Non-biodegradable waste – Dead leaves",
+      "Domestic hazardous waste – Banana peel",
+      "Compost – Plastic bottles"
+    ],
+    "optionsTa": [
+      "மக்கும் கழிவு – காய்கறித் தோல்கள்",
+      "மக்காத கழிவு – உலர்ந்த இலைகள்",
+      "வீட்டு அபாயகரமான கழிவு – வாழைப்பழத் தோல்",
+      "மட்கிய உரம் – பிளாஸ்டிக் பாட்டில்கள்"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair regarding scientific concepts.",
+    "ta": "அறிவியல் கருத்துகள் தொடர்பான சரியான இணையைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Maglev train – Magnetic Levitation",
+      "Aquatic ecosystem – Desert",
+      "Primary consumer – Tiger",
+      "Softwood – Teak"
+    ],
+    "optionsTa": [
+      "மேக்லெவ் ரயில் – காந்த மிதவை",
+      "நீர்வாழ் சூழல் மண்டலம் – பாலைவனம்",
+      "முதல்நிலை நுகர்வோர் – புலி",
+      "மென்மரம் – தேக்கு"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "Match the following types of magnets with their shapes.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>Types of magnets</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>Shapes</b></td></tr><tr><td style='padding:6px 0;'>a. Bar magnet</td><td></td><td style='padding:6px 0;'>1. Ring-shaped</td></tr><tr><td style='padding:6px 0;'>b. Horseshoe magnet</td><td></td><td style='padding:6px 0;'>2. Rectangular bar</td></tr><tr><td style='padding:6px 0;'>c. Ring magnet</td><td></td><td style='padding:6px 0;'>3. U-shaped</td></tr><tr><td style='padding:6px 0;'>d. Needle magnet</td><td></td><td style='padding:6px 0;'>4. Thin and pointed</td></tr></table>",
+    "ta": "பின்வரும் காந்த வகைகளை அவற்றின் வடிவங்களுடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>காந்த வகைகள்</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>வடிவங்கள்</b></td></tr><tr><td style='padding:6px 0;'>a. சட்டக் காந்தம்</td><td></td><td style='padding:6px 0;'>1. வளைய வடிவம்</td></tr><tr><td style='padding:6px 0;'>b. லாட வடிவக் காந்தம்</td><td></td><td style='padding:6px 0;'>2. செவ்வக வடிவச் சட்டம்</td></tr><tr><td style='padding:6px 0;'>c. வளையக் காந்தம்</td><td></td><td style='padding:6px 0;'>3. U-வடிவம்</td></tr><tr><td style='padding:6px 0;'>d. காந்த ஊசி</td><td></td><td style='padding:6px 0;'>4. மெல்லிய மற்றும் கூர்மையான</td></tr></table>",
+    "optionsEn": [
+      "A-2, B-3, C-1, D-4",
+      "A-1, B-2, C-3, D-4",
+      "A-2, B-1, C-4, D-3",
+      "A-3, B-2, C-1, D-4"
+    ],
+    "optionsTa": [
+      "A-2, B-3, C-1, D-4",
+      "A-1, B-2, C-3, D-4",
+      "A-2, B-1, C-4, D-3",
+      "A-3, B-2, C-1, D-4"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "Match the following forms of water with their examples.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>Forms of water</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>Examples</b></td></tr><tr><td style='padding:6px 0;'>a. Solid form</td><td></td><td style='padding:6px 0;'>1. Water vapour in the air</td></tr><tr><td style='padding:6px 0;'>b. Liquid form</td><td></td><td style='padding:6px 0;'>2. Polar ice caps and glaciers</td></tr><tr><td style='padding:6px 0;'>c. Gaseous form</td><td></td><td style='padding:6px 0;'>3. Oceans, seas, and rivers</td></tr></table>",
+    "ta": "பின்வரும் நீரின் நிலைகளை அவற்றின் உதாரணங்களுடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>நீரின் நிலைகள்</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>உதாரணங்கள்</b></td></tr><tr><td style='padding:6px 0;'>a. திட நிலை</td><td></td><td style='padding:6px 0;'>1. காற்றில் உள்ள நீராவி</td></tr><tr><td style='padding:6px 0;'>b. திரவ நிலை</td><td></td><td style='padding:6px 0;'>2. துருவப் பனிப்பாறைகள் மற்றும் பனியாறுகள்</td></tr><tr><td style='padding:6px 0;'>c. வாயு நிலை</td><td></td><td style='padding:6px 0;'>3. பெருங்கடல்கள், கடல்கள் மற்றும் ஆறுகள்</td></tr></table>",
+    "optionsEn": [
+      "A-2, B-3, C-1",
+      "A-1, B-2, C-3",
+      "A-3, B-1, C-2",
+      "A-2, B-1, C-3"
+    ],
+    "optionsTa": [
+      "A-2, B-3, C-1",
+      "A-1, B-2, C-3",
+      "A-3, B-1, C-2",
+      "A-2, B-1, C-3"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "Match the following inorganic fertilizers with their principal nutrient.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>Inorganic fertilizers</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>Principal nutrient</b></td></tr><tr><td style='padding:6px 0;'>a. Urea</td><td></td><td style='padding:6px 0;'>1. Phosphorus</td></tr><tr><td style='padding:6px 0;'>b. Super phosphate</td><td></td><td style='padding:6px 0;'>2. Nitrogen</td></tr><tr><td style='padding:6px 0;'>c. Potassium nitrate</td><td></td><td style='padding:6px 0;'>3. Potassium</td></tr></table>",
+    "ta": "பின்வரும் கனிம உரங்களை அவற்றின் முக்கிய ஊட்டச்சத்துடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>கனிம உரங்கள்</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>முக்கிய ஊட்டச்சத்து</b></td></tr><tr><td style='padding:6px 0;'>a. யூரியா</td><td></td><td style='padding:6px 0;'>1. பாஸ்பரஸ்</td></tr><tr><td style='padding:6px 0;'>b. சூப்பர் பாஸ்பேட்</td><td></td><td style='padding:6px 0;'>2. நைட்ரஜன்</td></tr><tr><td style='padding:6px 0;'>c. பொட்டாசியம் நைட்ரேட்</td><td></td><td style='padding:6px 0;'>3. பொட்டாசியம்</td></tr></table>",
+    "optionsEn": [
+      "A-2, B-1, C-3",
+      "A-1, B-2, C-3",
+      "A-3, B-1, C-2",
+      "A-2, B-3, C-1"
+    ],
+    "optionsTa": [
+      "A-2, B-1, C-3",
+      "A-1, B-2, C-3",
+      "A-3, B-1, C-2",
+      "A-2, B-3, C-1"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "Match the following types of pollution with their primary causes.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>Types of pollution</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>Primary causes</b></td></tr><tr><td style='padding:6px 0;'>a. Air pollution</td><td></td><td style='padding:6px 0;'>1. Dumping of industrial effluents</td></tr><tr><td style='padding:6px 0;'>b. Water pollution</td><td></td><td style='padding:6px 0;'>2. Excessive use of chemical pesticides</td></tr><tr><td style='padding:6px 0;'>c. Land pollution</td><td></td><td style='padding:6px 0;'>3. Burning of fossil fuels</td></tr><tr><td style='padding:6px 0;'>d. Noise pollution</td><td></td><td style='padding:6px 0;'>4. Loud music and honking</td></tr></table>",
+    "ta": "பின்வரும் மாசுபாடு வகைகளை அவற்றின் முதன்மைக் காரணங்களுடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>மாசுபாடு வகைகள்</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>முதன்மைக் காரணங்கள்</b></td></tr><tr><td style='padding:6px 0;'>a. காற்று மாசுபாடு</td><td></td><td style='padding:6px 0;'>1. தொழிற்சாலைக் கழிவுகளை வெளியேற்றுதல்</td></tr><tr><td style='padding:6px 0;'>b. நீர் மாசுபாடு</td><td></td><td style='padding:6px 0;'>2. ரசாயன பூச்சிக்கொல்லிகளை அதிகமாகப் பயன்படுத்துதல்</td></tr><tr><td style='padding:6px 0;'>c. நில மாசுபாடு</td><td></td><td style='padding:6px 0;'>3. புதைபடிவ எரிபொருட்களை எரித்தல்</td></tr><tr><td style='padding:6px 0;'>d. ஒலி மாசுபாடு</td><td></td><td style='padding:6px 0;'>4. உரத்த இசை மற்றும் ஒலிப்பான்கள்</td></tr></table>",
+    "optionsEn": [
+      "A-3, B-1, C-2, D-4",
+      "A-1, B-3, C-4, D-2",
+      "A-3, B-2, C-1, D-4",
+      "A-4, B-1, C-2, D-3"
+    ],
+    "optionsTa": [
+      "A-3, B-1, C-2, D-4",
+      "A-1, B-3, C-4, D-2",
+      "A-3, B-2, C-1, D-4",
+      "A-4, B-1, C-2, D-3"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "Match the following plant parts used as food with their examples.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>Plant parts</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>Examples</b></td></tr><tr><td style='padding:6px 0;'>a. Root</td><td></td><td style='padding:6px 0;'>1. Potato</td></tr><tr><td style='padding:6px 0;'>b. Stem</td><td></td><td style='padding:6px 0;'>2. Cabbage</td></tr><tr><td style='padding:6px 0;'>c. Leaf</td><td></td><td style='padding:6px 0;'>3. Carrot</td></tr><tr><td style='padding:6px 0;'>d. Fruit</td><td></td><td style='padding:6px 0;'>4. Guava</td></tr></table>",
+    "ta": "உணவாகப் பயன்படும் தாவர பாகங்களை அவற்றின் உதாரணங்களுடன் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>தாவர பாகங்கள்</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>உதாரணங்கள்</b></td></tr><tr><td style='padding:6px 0;'>a. வேர்</td><td></td><td style='padding:6px 0;'>1. உருளைக்கிழங்கு</td></tr><tr><td style='padding:6px 0;'>b. தண்டு</td><td></td><td style='padding:6px 0;'>2. முட்டைக்கோஸ்</td></tr><tr><td style='padding:6px 0;'>c. இலை</td><td></td><td style='padding:6px 0;'>3. கேரட்</td></tr><tr><td style='padding:6px 0;'>d. கனி</td><td></td><td style='padding:6px 0;'>4. கொய்யா</td></tr></table>",
+    "optionsEn": [
+      "A-3, B-1, C-2, D-4",
+      "A-1, B-3, C-4, D-2",
+      "A-3, B-2, C-1, D-4",
+      "A-4, B-1, C-2, D-3"
+    ],
+    "optionsTa": [
+      "A-3, B-1, C-2, D-4",
+      "A-1, B-3, C-4, D-2",
+      "A-3, B-2, C-1, D-4",
+      "A-4, B-1, C-2, D-3"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Find the odd one out.",
+    "ta": "பொருந்தாத ஒன்றைக் கண்டறிக.",
+    "optionsEn": [
+      "Iron",
+      "Cobalt",
+      "Nickel",
+      "Plastic"
+    ],
+    "optionsTa": [
+      "இரும்பு",
+      "கோபால்ட்",
+      "நிக்கல்",
+      "பிளாஸ்டிக்"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Find the odd one out.",
+    "ta": "பொருந்தாத ஒன்றைக் கண்டறிக.",
+    "optionsEn": [
+      "Fermentation",
+      "Condensation",
+      "Precipitation",
+      "Evaporation"
+    ],
+    "optionsTa": [
+      "நொதித்தல்",
+      "ஆவி சுருங்குதல்",
+      "மழைப்பொழிவு",
+      "ஆவியாதல்"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Find the odd one out.",
+    "ta": "பொருந்தாத ஒன்றைக் கண்டறிக.",
+    "optionsEn": [
+      "Urea",
+      "Super phosphate",
+      "Vermicompost",
+      "Potassium nitrate"
+    ],
+    "optionsTa": [
+      "யூரியா",
+      "சூப்பர் பாஸ்பேட்",
+      "மண்புழு உரம்",
+      "பொட்டாசியம் நைட்ரேட்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Find the odd one out.",
+    "ta": "பொருந்தாத ஒன்றைக் கண்டறிக.",
+    "optionsEn": [
+      "Banana peel",
+      "Plastic bottle",
+      "Dead leaf",
+      "Garden waste"
+    ],
+    "optionsTa": [
+      "வாழைப்பழத் தோல்",
+      "பிளாஸ்டிக் பாட்டில்",
+      "உலர்ந்த இலை",
+      "தோட்டக் கழிவு"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Find the odd one out.",
+    "ta": "பொருந்தாத ஒன்றைக் கண்டறிக.",
+    "optionsEn": [
+      "Teak",
+      "Jackfruit",
+      "Pine",
+      "Rosewood"
+    ],
+    "optionsTa": [
+      "தேக்கு",
+      "பலா",
+      "பைன்",
+      "ரோஸ்வுட்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): A freely suspended magnet always comes to rest in the north-south direction.<br><br>Reason (R): The Earth behaves like a huge magnet.",
+    "ta": "Assertion (A): தடையின்றித் தொங்கவிடப்பட்ட காந்தம் எப்போதும் வடக்கு-தெற்கு திசையில் ஓய்வு நிலைக்கு வரும்.<br><br>Reason (R): பூமி ஒரு மிகப்பெரிய காந்தமாகச் செயல்படுகிறது.",
+    "optionsEn": [
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is NOT the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true"
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் உண்மை மற்றும் R என்பது A-க்கான சரியான விளக்கமாகும்",
+      "A மற்றும் R இரண்டும் உண்மை ஆனால் R என்பது A-க்கான சரியான விளக்கமல்ல",
+      "A உண்மை ஆனால் R தவறு",
+      "A தவறு ஆனால் R உண்மை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): Magnets lose their properties when heated.<br><br>Reason (R): Heating is one of the methods by which magnets lose their magnetic properties.",
+    "ta": "Assertion (A): வெப்பப்படுத்தும்போது காந்தங்கள் தமது பண்புகளை இழக்கின்றன.<br><br>Reason (R): வெப்பப்படுத்துதல் என்பது காந்தங்கள் தமது காந்தப் பண்புகளை இழக்கும் முறைகளில் ஒன்றாகும்.",
+    "optionsEn": [
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is NOT the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true"
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் உண்மை மற்றும் R என்பது A-க்கான சரியான விளக்கமாகும்",
+      "A மற்றும் R இரண்டும் உண்மை ஆனால் R என்பது A-க்கான சரியான விளக்கமல்ல",
+      "A உண்மை ஆனால் R தவறு",
+      "A தவறு ஆனால் R உண்மை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): Water is a chemical compound.<br><br>Reason (R): It is composed of two atoms of hydrogen combined with one atom of oxygen.",
+    "ta": "Assertion (A): நீர் ஒரு வேதிச் சேர்மமாகும்.<br><br>Reason (R): இது இரண்டு ஹைட்ரஜன் அணுக்களும் ஒரு ஆக்சிஜன் அணுவும் இணைந்து உருவானது.",
+    "optionsEn": [
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is NOT the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true"
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் உண்மை மற்றும் R என்பது A-க்கான சரியான விளக்கமாகும்",
+      "A மற்றும் R இரண்டும் உண்மை ஆனால் R என்பது A-க்கான சரியான விளக்கமல்ல",
+      "A உண்மை ஆனால் R தவறு",
+      "A தவறு ஆனால் R உண்மை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): Transpiration is a part of the natural water cycle.<br><br>Reason (R): It is the process of loss of water from the aerial parts of a plant in vapour form.",
+    "ta": "Assertion (A): நீராவிப்போக்கு என்பது இயற்கை நீர் சுழற்சியின் ஒரு பகுதியாகும்.<br><br>Reason (R): இது தாவரங்களின் வான்பகுதிகளிலிருந்து நீராவியாக நீர் வெளியேறும் நிகழ்ச்சியாகும்.",
+    "optionsEn": [
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is NOT the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true"
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் உண்மை மற்றும் R என்பது A-க்கான சரியான விளக்கமாகும்",
+      "A மற்றும் R இரண்டும் உண்மை ஆனால் R என்பது A-க்கான சரியான விளக்கமல்ல",
+      "A உண்மை ஆனால் R தவறு",
+      "A தவறு ஆனால் R உண்மை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): Biodegradable waste can be easily decomposed by natural agents.<br><br>Reason (R): Non-biodegradable waste consists of plastic materials and metal scraps.",
+    "ta": "Assertion (A): மக்கக்கூடிய கழிவுகளை இயற்கை காரணிகளால் எளிதில் சிதைக்க முடியும்.<br><br>Reason (R): மக்காத கழிவுகளில் பிளாஸ்டிக் பொருட்கள் மற்றும் உலோகத் துகள்கள் அடங்கும்.",
+    "optionsEn": [
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is NOT the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true"
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் உண்மை மற்றும் R என்பது A-க்கான சரியான விளக்கமாகும்",
+      "A மற்றும் R இரண்டும் உண்மை ஆனால் R என்பது A-க்கான சரியான விளக்கமல்ல",
+      "A உண்மை ஆனால் R தவறு",
+      "A தவறு ஆனால் R உண்மை"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): Maglev trains use the property of magnetic repulsion to levitate.<br><br>Reason (R): Like poles of a magnet repel each other.",
+    "ta": "Assertion (A): மேக்லெவ் ரயில்கள் மிதப்பதற்கு காந்த விலக்குப் பண்பைப் பயன்படுத்துகின்றன.<br><br>Reason (R): காந்தத்தின் ஒத்த துருவங்கள் ஒன்றையொன்று விலக்கும்.",
+    "optionsEn": [
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is NOT the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true"
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் உண்மை மற்றும் R என்பது A-க்கான சரியான விளக்கமாகும்",
+      "A மற்றும் R இரண்டும் உண்மை ஆனால் R என்பது A-க்கான சரியான விளக்கமல்ல",
+      "A உண்மை ஆனால் R தவறு",
+      "A தவறு ஆனால் R உண்மை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): Gypsum is added during the cement manufacturing process.<br><br>Reason (R): It controls the rate of hardening of the cement.",
+    "ta": "Assertion (A): சிமெண்ட் தயாரிப்புச் செயல்பாட்டின் போது ஜிப்சம் சேர்க்கப்படுகிறது.<br><br>Reason (R): இது சிமெண்ட் கெட்டியாகும் வேகத்தைக் கட்டுப்படுத்துகிறது.",
+    "optionsEn": [
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is NOT the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true"
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் உண்மை மற்றும் R என்பது A-க்கான சரியான விளக்கமாகும்",
+      "A மற்றும் R இரண்டும் உண்மை ஆனால் R என்பது A-க்கான சரியான விளக்கமல்ல",
+      "A உண்மை ஆனால் R தவறு",
+      "A தவறு ஆனால் R உண்மை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): Phenol is used as a disinfectant in household cleaners.<br><br>Reason (R): Phenol is a strong base.",
+    "ta": "Assertion (A): வீட்டுச் சுத்திகரிப்பான்களில் பீனால் கிருமி நாசினியாகப் பயன்படுத்தப்படுகிறது.<br><br>Reason (R): பீனால் ஒரு வலிமையான காரமாகும்.",
+    "optionsEn": [
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is NOT the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true"
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் உண்மை மற்றும் R என்பது A-க்கான சரியான விளக்கமாகும்",
+      "A மற்றும் R இரண்டும் உண்மை ஆனால் R என்பது A-க்கான சரியான விளக்கமல்ல",
+      "A உண்மை ஆனால் R தவறு",
+      "A தவறு ஆனால் R உண்மை"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): The 3R’s of waste management are Reduce, Reuse, and Recycle.<br><br>Reason (R): Recycling is the process of converting waste materials into new products.",
+    "ta": "Assertion (A): கழிவு மேலாண்மையின் 3R-கள் குறைத்தல் (Reduce), மறுபயன்பாடு (Reuse) மற்றும் மறுசுழற்சி (Recycle) ஆகும்.<br><br>Reason (R): மறுசுழற்சி என்பது கழிவுப் பொருட்களைப் புதிய பொருட்களாக மாற்றும் செயல்முறையாகும்.",
+    "optionsEn": [
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is NOT the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true"
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் உண்மை மற்றும் R என்பது A-க்கான சரியான விளக்கமாகும்",
+      "A மற்றும் R இரண்டும் உண்மை ஆனால் R என்பது A-க்கான சரியான விளக்கமல்ல",
+      "A உண்மை ஆனால் R தவறு",
+      "A தவறு ஆனால் R உண்மை"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): Earthworms are known as farmer’s friends.<br><br>Reason (R): They produce compost castings that improve soil health and plant growth.",
+    "ta": "Assertion (A): மண்புழுக்கள் உழவனின் நண்பர்கள் என்று அழைக்கப்படுகின்றன.<br><br>Reason (R): அவை மண் வளம் மற்றும் தாவர வளர்ச்சியை மேம்படுத்தும் உரக் கழிவுகளை உருவாக்குகின்றன.",
+    "optionsEn": [
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is NOT the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true"
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் உண்மை மற்றும் R என்பது A-க்கான சரியான விளக்கமாகும்",
+      "A மற்றும் R இரண்டும் உண்மை ஆனால் R என்பது A-க்கான சரியான விளக்கமல்ல",
+      "A உண்மை ஆனால் R தவறு",
+      "A தவறு ஆனால் R உண்மை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement.",
+    "ta": "சரியான கூற்றைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Magnetite is a natural magnet.",
+      "Man-made magnets are called natural magnets.",
+      "Unlike poles of a magnet repel each other.",
+      "A compass is used to measure temperature."
+    ],
+    "optionsTa": [
+      "மேக்னடைட் ஒரு இயற்கைக் காந்தமாகும்.",
+      "மனிதனால் உருவாக்கப்பட்ட காந்தங்கள் இயற்கைக் காந்தங்கள் என அழைக்கப்படுகின்றன.",
+      "காந்தத்தின் மாறுபட்ட துருவங்கள் ஒன்றையொன்று விலக்கும்.",
+      "திசைகாட்டி வெப்பநிலையை அளவிடப் பயன்படுகிறது."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement regarding water availability.",
+    "ta": "நீர் இருப்பு தொடர்பான சரியான கூற்றைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Groundwater constitutes $68.7\\%$ of all fresh water.",
+      "Only $3\\%$ of the water is saline, and $97\\%$ is fresh water.",
+      "$97\\%$ of the total water on Earth is saline water.",
+      "Surface water constitutes $30.1\\%$ of all fresh water."
+    ],
+    "optionsTa": [
+      "நிலத்தடி நீர் அனைத்து நன்னீரிலும் $68.7\\%$ ஆகும்.",
+      "$3\\%$ நீர் மட்டுமே உப்பு நீர், $97\\%$ நன்னீர் ஆகும்.",
+      "புவியில் உள்ள மொத்த நீரில் $97\\%$ உப்பு நீர் ஆகும்.",
+      "மேற்பரப்பு நீர் அனைத்து நன்னீரிலும் $30.1\\%$ ஆகும்."
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement regarding cleaning agents.",
+    "ta": "சுத்திகரிப்பான்கள் தொடர்பான சரியான கூற்றைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Detergent molecules have a water-loving and a water-hating side.",
+      "Soap molecules only have a water-loving side.",
+      "Detergents do not work in hard water.",
+      "Soap is more effective than detergent in removing strong stains."
+    ],
+    "optionsTa": [
+      "டிடர்ஜென்ட் மூலக்கூறுகளில் நீரை விரும்பும் மற்றும் நீரை வெறுக்கும் பகுதிகள் உள்ளன.",
+      "சோப்பு மூலக்கூறுகளில் நீரை விரும்பும் பகுதி மட்டுமே உள்ளது.",
+      "டிடர்ஜென்ட்கள் கடின நீரில் செயல்படுவதில்லை.",
+      "கடுமையான கறைகளை நீக்குவதில் டிடர்ஜென்ட்டை விட சோப்பு மிகவும் பயனுள்ளதாக இருக்கும்."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement regarding chemical compounds.",
+    "ta": "வேதிச் சேர்மங்கள் தொடர்பான சரியான கூற்றைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Phenol is a strong acid used in fertilizers.",
+      "Gypsum is prepared by heating Plaster of Paris.",
+      "Epsom salt is chemically known as calcium sulphate.",
+      "Plaster of Paris is prepared by heating gypsum."
+    ],
+    "optionsTa": [
+      "பீனால் என்பது உரங்களில் பயன்படுத்தப்படும் ஒரு வலிமையான அமிலமாகும்.",
+      "பாரிஸ் சாந்தை வெப்பப்படுத்துவதன் மூலம் ஜிப்சம் தயாரிக்கப்படுகிறது.",
+      "எப்சம் உப்பு வேதியியல் ரீதியாக கால்சியம் சல்பேட் என அழைக்கப்படுகிறது.",
+      "ஜிப்சத்தை வெப்பப்படுத்துவதன் மூலம் பாரிஸ் சாந்து தயாரிக்கப்படுகிறது."
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement regarding ecosystems.",
+    "ta": "சூழல் மண்டலங்கள் தொடர்பான சரியான கூற்றைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "A food chain shows the sequence of who eats whom in an ecosystem.",
+      "Producers are organisms that cannot produce their own food.",
+      "Decomposers are the primary consumers in a food chain.",
+      "A food web consists of only one single food chain."
+    ],
+    "optionsTa": [
+      "சூழல் மண்டலத்தில் எதை எது உண்கிறது என்ற வரிசையை உணவுச் சங்கிலி காட்டுகிறது.",
+      "உற்பத்தியாளர்கள் தமக்கான உணவைத் தாங்களே உற்பத்தி செய்ய முடியாத உயிரினங்களாகும்.",
+      "உணவுச் சங்கிலியில் சிதைப்பவர்கள் முதல்நிலை நுகர்வோர்கள் ஆவர்.",
+      "உணவு வலை ஒரே ஒரு உணவுச் சங்கிலியை மட்டுமே கொண்டுள்ளது."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement regarding waste management.",
+    "ta": "கழிவு மேலாண்மை தொடர்பான சரியான கூற்றைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Biodegradable waste cannot be decomposed by natural agents.",
+      "Incineration is the process of burying waste under soil.",
+      "Landfilling is the burning of solid waste in an incinerator.",
+      "Composting is the process of degradation of organic wastes into manure by microorganisms."
+    ],
+    "optionsTa": [
+      "மக்கக்கூடிய கழிவுகளை இயற்கை காரணிகளால் சிதைக்க முடியாது.",
+      "எரித்துச் சாம்பலாக்குதல் என்பது கழிவுகளை மண்ணுக்கு அடியில் புதைக்கும் செயல்முறையாகும்.",
+      "நிலத்தில் நிரப்புதல் என்பது திடக்கழிவுகளை எரிஉலையில் எரிப்பதாகும்.",
+      "நுண்ணுயிரிகள் மூலம் கரிமக் கழிவுகளை உரமாகச் சிதைக்கும் செயல்முறை உரமாக்குதல் (Composting) ஆகும்."
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement regarding everyday chemistry.",
+    "ta": "அன்றாட வாழ்வியல் வேதியியல் தொடர்பான சரியான கூற்றைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Turmeric powder turns blue in a basic medium.",
+      "Turmeric powder acts as a natural indicator.",
+      "Urea is an organic fertilizer derived from plant materials.",
+      "Adhesives are substances that repel components from binding together."
+    ],
+    "optionsTa": [
+      "கார ஊடகத்தில் மஞ்சள் தூள் நீல நிறமாக மாறும்.",
+      "மஞ்சள் தூள் ஒரு இயற்கை நிறங்காட்டியாகச் செயல்படுகிறது.",
+      "யூரியா என்பது தாவரப் பொருட்களிலிருந்து பெறப்படும் கரிம உரமாகும்.",
+      "ஒட்டும் பொருட்கள் கூறுகளை ஒன்றாக இணைவதைத் தடுக்கும் பொருட்களாகும்."
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement regarding chemical formulas.",
+    "ta": "வேதி வாய்ப்பாடுகள் தொடர்பான சரியான கூற்றைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "The molecular formula of Epsom salt is $MgSO_4 \\cdot 7H_2O$.",
+      "The molecular formula of Epsom salt is $MgSO_4 \\cdot H_2O$.",
+      "The molecular formula of gypsum is $CaSO_4 \\cdot \\frac{1}{2}H_2O$.",
+      "The molecular formula of phenol is $C_6H_{12}O_6$."
+    ],
+    "optionsTa": [
+      "எப்சம் உப்பின் மூலக்கூறு வாய்ப்பாடு $MgSO_4 \\cdot 7H_2O$ ஆகும்.",
+      "எப்சம் உப்பின் மூலக்கூறு வாய்ப்பாடு $MgSO_4 \\cdot H_2O$ ஆகும்.",
+      "ஜிப்சத்தின் மூலக்கூறு வாய்ப்பாடு $CaSO_4 \\cdot \\frac{1}{2}H_2O$ ஆகும்.",
+      "பீனாலின் மூலக்கூறு வாய்ப்பாடு $C_6H_{12}O_6$ ஆகும்."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement regarding pollution.",
+    "ta": "மாசுபாடு தொடர்பான சரியான கூற்றைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Water pollution improves the quality of soil for agriculture.",
+      "Air pollution is primarily caused by planting more trees.",
+      "Noise pollution can cause hearing loss and high blood pressure.",
+      "Land pollution is beneficial for aquatic animals."
+    ],
+    "optionsTa": [
+      "நீர் மாசுபாடு விவசாயத்திற்கான மண்ணின் தரத்தை மேம்படுத்துகிறது.",
+      "அதிக மரங்களை நடுவதால் காற்று மாசுபாடு முதன்மையாக ஏற்படுகிறது.",
+      "ஒலி மாசுபாடு செவித்திறன் இழப்பு மற்றும் உயர் இரத்த அழுத்தத்தை ஏற்படுத்தக்கூடும்.",
+      "நில மாசுபாடு நீர்வாழ் விலங்குகளுக்கு நன்மை பயக்கும்."
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement regarding plant fibres.",
+    "ta": "தாவர நார்கள் தொடர்பான சரியான கூற்றைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Silk cotton is a cordage fibre.",
+      "Jute is a leaf fibre.",
+      "Coconut fibre is used for making cloth.",
+      "Cotton is a textile fibre obtained from seed hairs."
+    ],
+    "optionsTa": [
+      "இலவம் பஞ்சு ஒரு கயிறு நாராகும்.",
+      "சணல் ஒரு இலை நாராகும்.",
+      "தேங்காய் நார் துணி தயாரிக்கப் பயன்படுகிறது.",
+      "பருத்தி என்பது விதை இழைகளிலிருந்து பெறப்படும் ஒரு ஜவுளி நாராகும்."
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement regarding timber.",
+    "ta": "மரம் தொடர்பான சரியான கூற்றைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Hardwoods come from angiosperms (flowering plants).",
+      "Softwoods come exclusively from angiosperms.",
+      "Teak and Jackfruit are examples of softwoods.",
+      "Pine is an example of a hardwood."
+    ],
+    "optionsTa": [
+      "கடின மரங்கள் ஆஞ்சியோஸ்பெர்ம்களிலிருந்து (பூக்கும் தாவரங்கள்) கிடைக்கின்றன.",
+      "மென் மரங்கள் பிரத்தியேகமாக ஆஞ்சியோஸ்பெர்ம்களிலிருந்து கிடைக்கின்றன.",
+      "தேக்கு மற்றும் பலா ஆகியவை மென் மரங்களுக்கு உதாரணங்களாகும்.",
+      "பைன் ஒரு கடின மரத்திற்கு உதாரணமாகும்."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement regarding plant-animal interrelationships.",
+    "ta": "தாவர-விலங்கு இடைத்தொடர்புகள் தொடர்பான சரியான கூற்றைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Bright colours of flowers repel insects.",
+      "Animals rely on plants only for shelter, not for food.",
+      "Hummingbirds and bees are important pollinators.",
+      "Plants do not benefit from animal interactions."
+    ],
+    "optionsTa": [
+      "பூக்களின் பிரகாசமான நிறங்கள் பூச்சிகளை விரட்டுகின்றன.",
+      "விலங்குகள் உணவுக்கு அல்லாமல் தங்குமிடத்திற்கு மட்டுமே தாவரங்களைச் சார்ந்துள்ளன.",
+      "ரீங்காரச் சிட்டுகள் மற்றும் தேனீக்கள் முக்கிய மகரந்தச் சேர்க்கையாளர்கள் ஆகும்.",
+      "விலங்குகளுடனான தொடர்புகளால் தாவரங்களுக்கு எந்தப் பயனும் இல்லை."
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement regarding other uses of plants.",
+    "ta": "தாவரங்களின் பிற பயன்கள் தொடர்பான சரியான கூற்றைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Neem oil-coated urea releases nitrogen rapidly, harming the environment.",
+      "Jatropha is a plant grown for the sake of bio-fuels.",
+      "Rubber is a non-biodegradable synthetic plastic.",
+      "Plants increase soil erosion by exposing the top layer of soil."
+    ],
+    "optionsTa": [
+      "வேப்பெண்ணெய் பூசப்பட்ட யூரியா நைட்ரஜனை வேகமாக வெளியிட்டு சுற்றுச்சூழலுக்குத் தீங்கு விளைவிக்கிறது.",
+      "ஜட்ரோபா (Jatropha) என்பது உயிரி எரிபொருட்களுக்காக வளர்க்கப்படும் ஒரு தாவரமாகும்.",
+      "ரப்பர் ஒரு மக்காத செயற்கை பிளாஸ்டிக் ஆகும்.",
+      "தாவரங்கள் மேல் மண்ணை வெளிப்படுத்துவதன் மூலம் மண் அரிப்பை அதிகரிக்கின்றன."
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement regarding water conservation.",
+    "ta": "நீர் பாதுகாப்பு தொடர்பான சரியான கூற்றைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Drip irrigation wastes more water than traditional flood irrigation.",
+      "Water management involves maximizing the use of chemical fertilizers.",
+      "Deforestation helps in controlling the decline of the groundwater table.",
+      "Rainwater harvesting can be done by collecting water from rooftops."
+    ],
+    "optionsTa": [
+      "பாரம்பரிய வெள்ளப் பாசனத்தை விட சொட்டுநீர்ப் பாசனம் அதிக நீரை வீணாக்குகிறது.",
+      "நீர் மேலாண்மை என்பது ரசாயன உரங்களின் பயன்பாட்டை அதிகரிப்பதை உள்ளடக்கியது.",
+      "காடழிப்பு நிலத்தடி நீர் மட்டம் குறைவதைக் கட்டுப்படுத்த உதவுகிறது.",
+      "கூரைகளிலிருந்து நீரைச் சேகரிப்பதன் மூலம் மழைநீர் சேகரிப்பைச் செய்யலாம்."
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct statement regarding the environment.",
+    "ta": "சுற்றுச்சூழல் தொடர்பான சரியான கூற்றைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "An ecosystem consists of both biotic and abiotic components.",
+      "Abiotic factors include plants, animals, and bacteria.",
+      "Biotic factors include sunlight, air, water, and minerals.",
+      "Artificial ecosystems are more complex than natural ecosystems."
+    ],
+    "optionsTa": [
+      "ஒரு சூழல் மண்டலம் உயிருள்ள மற்றும் உயிரற்ற கூறுகளைக் கொண்டுள்ளது.",
+      "உயிரற்ற காரணிகளில் தாவரங்கள், விலங்குகள் மற்றும் பாக்டீரியாக்கள் அடங்கும்.",
+      "உயிருள்ள காரணிகளில் சூரிய ஒளி, காற்று, நீர் மற்றும் தாதுக்கள் அடங்கும்.",
+      "செயற்கை சூழல் மண்டலங்கள் இயற்கை சூழல் மண்டலங்களை விட மிகவும் சிக்கலானவை."
+    ],
+    "answer": 0
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false; isSubmitted = false;
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">
+                <span class="option-letter">${String.fromCharCode(65+i)}.</span>
+                <span class="option-text">${opt}</span>
+            </div>`;
+        });
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+            </div>
+        `;
+        updateTopClearButton();
+        updateNavButtons(); updatePalette();
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+    }
+    function updateTopClearButton() {
+        const container = document.getElementById("topClearBtnContainer");
+        if (!container) return;
+        const sel = userAnswers[currentIndex];
+        if (sel !== null && sel !== undefined) {
+            container.innerHTML = `<button class="btn btn-danger" style="padding: 6px 14px; font-size: 0.8rem; min-height: auto; opacity: 0.9; border-radius: 40px;" onclick="clearSelection()">✖ Clear Selection</button>`;
+        } else {
+            container.innerHTML = "";
+        }
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) {
+            userAnswers[currentIndex] = null;
+        } else {
+            userAnswers[currentIndex] = optIndex;
+        }
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+
+    function clearSelection() {
+        if (isSubmitted) return;
+        userAnswers[currentIndex] = null;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    let currentReviewIndex = 0;
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let cssClass = "option-item";
+                let markerHtml = "";
+                if (idx === corr) { cssClass += " correct"; markerHtml = "<div class='marker'>✔</div>"; }
+                else if (u === idx && idx !== corr) { cssClass += " wrong"; markerHtml = "<div class='marker'>✖</div>"; }
+                optsHtml += `<div class="${cssClass}"><span>${String.fromCharCode(65+idx)}. ${optsArray[idx]}</span>${markerHtml}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" id="review-card-${i}" style="display: none;">
+                        <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div class="your-answer">Your Answer: ${userAns}</div>
+                        <div class="correct-answer">Correct Answer: ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        ${optsHtml}
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+        currentReviewIndex = 0;
+        showReviewCard(currentReviewIndex);
+    }
+    function showReviewCard(index) {
+        const cards = document.querySelectorAll(".review-card");
+        if (cards.length === 0) return;
+        cards.forEach(c => c.style.display = "none");
+        cards[index].style.display = "block";
+        document.getElementById("reviewPageText").innerText = `${index + 1} / ${cards.length}`;
+        document.getElementById("prevReviewBtn").disabled = (index === 0);
+        document.getElementById("nextReviewBtn").disabled = (index === cards.length - 1);
+        document.getElementById("reviewPagination").style.display = "flex";
+        window.scrollTo(0, 0);
+    }
+    function navigateReview(direction) {
+        const cards = document.querySelectorAll(".review-card");
+        currentReviewIndex += direction;
+        if (currentReviewIndex >= 0 && currentReviewIndex < cards.length) {
+            showReviewCard(currentReviewIndex);
+        }
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
+            await new Promise(r => setTimeout(r, 600));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+                if (btn) btn.innerText = "✅ Select Save as PDF";
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+        } finally {
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 3000);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        history.replaceState({ resultPage: true }, "", "#result");
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.addEventListener("popstate", function(e) {
+        if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+            history.pushState({ resultPage: true }, "", "#result");
+            confirmLeaveResult();
+        }
+    });
+    function confirmLeaveResult() {
+        if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
+            window.AndroidBridge.exitResultPage();
+        } else {
+            history.back();
+        }
+    }
+    window.checkForReview = function() {
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
+            }
+        }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
