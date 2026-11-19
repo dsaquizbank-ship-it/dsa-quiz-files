@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-19T17:24:57.668Z",
+  "version": "2026-11-19T17:25:36.562Z",
   "categories": [
     {
       "id": "BANK",
@@ -3057,6 +3057,20 @@
       "releaseTimestamp": 1795161600000,
       "language": "en",
       "createdAt": 1795109097668
+    },
+    {
+      "testId": "REG-3",
+      "examId": "RRB-EG",
+      "name": "WORD REPLACEMENT (SET-1)",
+      "topic": "WORD REPLACEMENT",
+      "durationMinutes": 25,
+      "order": 3,
+      "questionCount": 25,
+      "negativeMark": 0.33,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/REG-3.html",
+      "releaseTimestamp": 1795161600000,
+      "language": "en",
+      "createdAt": 1795109136562
     }
   ]
 }
