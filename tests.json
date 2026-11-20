@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-20T06:59:49.159Z",
+  "version": "2026-11-20T07:02:27.292Z",
   "categories": [
     {
       "id": "BANK",
@@ -3127,6 +3127,20 @@
       "releaseTimestamp": 1795161600000,
       "language": "en",
       "createdAt": 1795157989159
+    },
+    {
+      "testId": "RGS-10",
+      "examId": "RRB-GS",
+      "name": "PHYSICS-WORK, ENERGY AND POWER (SET-1)",
+      "topic": "PHYSICS-WORK, ENERGY AND POWER",
+      "durationMinutes": 10,
+      "order": 10,
+      "questionCount": 25,
+      "negativeMark": 0.33,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RGS-10.html",
+      "releaseTimestamp": 1795420800000,
+      "language": "both",
+      "createdAt": 1795158147292
     }
   ]
 }
