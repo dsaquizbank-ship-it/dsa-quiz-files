@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-20T07:02:27.292Z",
+  "version": "2026-11-20T07:03:52.538Z",
   "categories": [
     {
       "id": "BANK",
@@ -3141,6 +3141,20 @@
       "releaseTimestamp": 1795420800000,
       "language": "both",
       "createdAt": 1795158147292
+    },
+    {
+      "testId": "SGS-10",
+      "examId": "SSC-GS",
+      "name": "PHYSICS-WORK, ENERGY AND POWER (SET-1)",
+      "topic": "PHYSICS-WORK, ENERGY AND POWER",
+      "durationMinutes": 10,
+      "order": 10,
+      "questionCount": 25,
+      "negativeMark": 0.33,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGS-10.html",
+      "releaseTimestamp": 1795420800000,
+      "language": "both",
+      "createdAt": 1795158232538
     }
   ]
 }
