@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-19T14:53:54.394Z",
+  "version": "2026-11-20T02:40:12.695Z",
   "entries": [
     {
       "id": "SCH-1794038030683-992",
@@ -2442,17 +2442,6 @@
       "date": "2026-11-27",
       "testId": "REG-4",
       "createdAt": "2026-11-12T17:54:14.785Z"
-    },
-    {
-      "id": "SCH-1794476460061-1143",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "English",
-      "topicId": "BANK-T037",
-      "topicName": "Error Spotting",
-      "date": "2026-11-27",
-      "testId": "BEG-4",
-      "createdAt": "2026-11-12T09:41:00.061Z"
     },
     {
       "id": "SCH-1794218443327-361",
