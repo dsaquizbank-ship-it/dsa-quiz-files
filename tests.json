@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-20T06:49:32.319Z",
+  "version": "2026-11-20T06:54:25.266Z",
   "categories": [
     {
       "id": "BANK",
@@ -3082,7 +3082,7 @@
       "questionCount": 50,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-TA-3.html",
-      "releaseTimestamp": 1795161600000,
+      "releaseTimestamp": 1795420800000,
       "language": "ta",
       "createdAt": 1795157372319
     }
