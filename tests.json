@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-20T06:57:52.431Z",
+  "version": "2026-11-20T06:59:08.565Z",
   "categories": [
     {
       "id": "BANK",
@@ -3099,6 +3099,20 @@
       "releaseTimestamp": 1795161600000,
       "language": "en",
       "createdAt": 1795157872431
+    },
+    {
+      "testId": "RCA-3",
+      "examId": "RRB-CA",
+      "name": "NOVEMBER 10-16 (SET-1)",
+      "topic": "NOVEMBER 10-16",
+      "durationMinutes": 10,
+      "order": 3,
+      "questionCount": 25,
+      "negativeMark": 0.3,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RCA-3.html",
+      "releaseTimestamp": 1795161600000,
+      "language": "en",
+      "createdAt": 1795157948565
     }
   ]
 }
