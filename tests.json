@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-20T06:59:08.565Z",
+  "version": "2026-11-20T06:59:49.159Z",
   "categories": [
     {
       "id": "BANK",
@@ -3113,6 +3113,20 @@
       "releaseTimestamp": 1795161600000,
       "language": "en",
       "createdAt": 1795157948565
+    },
+    {
+      "testId": "SCA-3",
+      "examId": "SSC-CA",
+      "name": "NOVEMBER 10-16 (SET-1)",
+      "topic": "NOVEMBER 10-16",
+      "durationMinutes": 10,
+      "order": 3,
+      "questionCount": 25,
+      "negativeMark": 0.52,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SCA-3.html",
+      "releaseTimestamp": 1795161600000,
+      "language": "en",
+      "createdAt": 1795157989159
     }
   ]
 }
