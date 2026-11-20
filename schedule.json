@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-20T02:53:36.742Z",
+  "version": "2026-11-20T02:55:54.339Z",
   "entries": [
     {
       "id": "SCH-1794038030683-992",
@@ -2563,17 +2563,6 @@
       "date": "2026-11-27",
       "testId": "PGE-60",
       "createdAt": "2026-10-31T04:43:21.913Z"
-    },
-    {
-      "id": "SCH-1795143212758-7875",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "subject": "BANK",
-      "topicId": "BANK-T041",
-      "topicName": "Para Jumble",
-      "date": "2026-11-28",
-      "testId": "BEG-5",
-      "createdAt": "2026-11-20T02:53:32.758Z"
     },
     {
       "id": "SCH-1794504929053-577",
