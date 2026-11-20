@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-20T06:54:25.266Z",
+  "version": "2026-11-20T06:57:52.431Z",
   "categories": [
     {
       "id": "BANK",
@@ -3085,6 +3085,20 @@
       "releaseTimestamp": 1795420800000,
       "language": "ta",
       "createdAt": 1795157372319
+    },
+    {
+      "testId": "BCA-4",
+      "examId": "BANK-CA",
+      "name": "NOVEMBER 10-16 (SET-1)",
+      "topic": "NOVEMBER 10-16",
+      "durationMinutes": 10,
+      "order": 4,
+      "questionCount": 25,
+      "negativeMark": 0.25,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BCA-4.html",
+      "releaseTimestamp": 1795161600000,
+      "language": "en",
+      "createdAt": 1795157872431
     }
   ]
 }
