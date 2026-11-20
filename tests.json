@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-20T08:08:31.299Z",
+  "version": "2026-11-20T08:11:28.171Z",
   "categories": [
     {
       "id": "BANK",
@@ -3183,6 +3183,20 @@
       "releaseTimestamp": 1795161600000,
       "language": "en",
       "createdAt": 1795162111299
+    },
+    {
+      "testId": "SGT-SS-7",
+      "examId": "SGT-SOCIALSCIENCE",
+      "name": "9TH HISTORY – THE CLASSICAL WORLD (SET-1)",
+      "topic": "9TH HISTORY – THE CLASSICAL WORLD",
+      "durationMinutes": 15,
+      "order": 7,
+      "questionCount": 25,
+      "negativeMark": 0.5,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGT-SS-7.html",
+      "releaseTimestamp": 1795161600000,
+      "language": "both",
+      "createdAt": 1795162288171
     }
   ]
 }
