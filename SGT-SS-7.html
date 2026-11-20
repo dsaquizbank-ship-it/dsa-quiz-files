@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>SGT-SS-7 - 9TH HISTORY – THE CLASSICAL WORLD (SET-1)</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                linebreaks: { automatic: true, width: "container" }
+            },
+            options: { ignoreHtmlClass: "no-mathjax" },
+            chtml: {
+                displayAlign: "left",
+                displayIndent: "0",
+                mtextInheritFont: true
+            },
+            svg: {
+                scale: 0.9,
+                minScale: 0.5,
+                mtextInheritFont: true,
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; color: #10b981; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; align-items: center; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; white-space: normal; word-wrap: break-word; padding-bottom: 20px; max-width: 100%; overflow-x: auto; }
+        mjx-container { display: inline !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; }
+        .question-text::-webkit-scrollbar { display: none; }
+        .question-text { -ms-overflow-style: none; scrollbar-width: none; }
+        .option-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; word-wrap: break-word; }
+        .option-letter { font-weight: 800; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+        .option-text { flex-grow: 1; min-width: 0; word-wrap: break-word; overflow-wrap: break-word; }
+        .option-text mjx-container { display: inline-block !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; overflow-x: visible !important; }
+        .option-text mjx-container[jax="CHTML"][display="true"] { margin: 0 !important; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
+        .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
+        .review-card .question-text { overflow-x: hidden !important; white-space: normal !important; word-wrap: break-word !important; }
+        .review-card strong { color: var(--text-primary); font-size: 16px; }
+        .review-card .option-item { background-color: var(--rc-bg); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: rgba(40, 167, 69, 0.1); border: 1px solid #28a745; color: #28a745; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; color: #dc3545; }
+        .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
+        .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
+        .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
+        .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px 0; border-top: 1px solid var(--border-light); }
+        .review-nav-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .review-nav-btn:disabled { background: var(--border-light); color: var(--text-primary); opacity: 0.5; cursor: not-allowed; }
+        .review-nav-text { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+        .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { 
+            html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } 
+            .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } 
+            #startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard { display: none !important; } 
+            #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } 
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; } 
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; margin-bottom: 20px !important; display: block !important; } 
+            .review-card .option-item { border: 1px solid #ccc !important; background: white !important; color: black !important; } 
+            .review-card .option-item.correct { background: #e6ffe6 !important; border-color: #28a745 !important; color: black !important; } 
+            .review-card .option-item.wrong { background: #ffe6e6 !important; border-color: #dc3545 !important; color: black !important; } 
+            @page { size: A4; margin: 1.5cm; } 
+        }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">15:00</div>
+            <div class="top-buttons">
+                <div id="topClearBtnContainer"></div>
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div id="printHeader" style="display: none;">
+            <h1>DR SAHITHA IAS ACADEMY</h1>
+            <h3>ANSWER KEY & DETAILED REVIEW</h3>
+            <p><strong>Test:</strong> SGT-SS-7 - SOCIAL SCIENCE</p>
+        </div>
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+            <div id="reviewPagination" class="review-nav-container" style="display: none;">
+                <button class="review-nav-btn" id="prevReviewBtn" onclick="navigateReview(-1)">◀ PREV</button>
+                <span class="review-nav-text" id="reviewPageText">1 / 25</span>
+                <button class="review-nav-btn" id="nextReviewBtn" onclick="navigateReview(1)">NEXT ▶</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "SOCIAL SCIENCE",
+        testNo: "SGT-SS-7",
+        date: "20/11/2026",
+        subject: "SOCIAL SCIENCE",
+        topic: "9TH HISTORY – THE CLASSICAL WORLD",
+        duration: "15",
+        totalMarks: "0",
+        negativeMark: 0.5,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "Which of the following was NOT among the common elements that fostered unity among ancient Greek city-states?",
+    "ta": "பண்டைய கிரேக்க நகர அரசுகளுக்கிடையே ஒற்றுமையை ஏற்படுத்திய பொதுவான கூறுகளின் தொகுப்பில் இடம்பெறாதது எது?",
+    "optionsEn": [
+      "Common script/writing system",
+      "Similar religious practices",
+      "Olympic games",
+      "Direct rule of a single central government"
+    ],
+    "optionsTa": [
+      "பொதுவான எழுத்துமுறை",
+      "ஒரே மாதிரியான மத நடைமுறைகள்",
+      "ஒலிம்பிக் விளையாட்டுப் போட்டிகள்",
+      "ஒரே மைய அரசாங்கத்தின் நேரடி ஆட்சி"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "What does the textbook cite as the main reasons for the failure of the first Persian invasion of Greece?",
+    "ta": "கிரேக்கத்தின் மீது பாரசீகர்கள் மேற்கொண்ட முதல் படையெடுப்பு தோல்வியடைந்ததற்கான முக்கியக் காரணங்களாகப் பாடநூல் குறிப்பிடுவது எவை?",
+    "optionsEn": [
+      "Food shortage and outbreak of diseases",
+      "Lack of navy and shortage of weapons",
+      "Civil war among Greek cities and trade embargo",
+      "Internal rebellion in Sparta and political turmoil"
+    ],
+    "optionsTa": [
+      "உணவுப் பற்றாக்குறையும் நோய்களின் தாக்குதலும்",
+      "கடற்படை இல்லாமையும் ஆயுதப் பற்றாக்குறையும்",
+      "கிரேக்க நகரங்களின் உள்நாட்டுப் போரும் வணிகத் தடையும்",
+      "ஸ்பார்ட்டாவின் உள்நாட்டுக் கிளர்ச்சியும் அரசியல் குழப்பமும்"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "How were judges and lower officials selected in Athenian democracy?",
+    "ta": "ஏதென்ஸ் மக்களாட்சியில் நீதிபதிகளும் கீழ்நிலை அதிகாரிகளும் எவ்வாறு தேர்ந்தெடுக்கப்பட்டனர்?",
+    "optionsEn": [
+      "By heredity",
+      "On the basis of wealth",
+      "By lottery",
+      "On the basis of military merit"
+    ],
+    "optionsTa": [
+      "பரம்பரை அடிப்படையில்",
+      "செல்வத்தின் அடிப்படையில்",
+      "குலுக்கல் முறையில்",
+      "இராணுவத் தகுதியின் அடிப்படையில்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Select the correctly matched pair.",
+    "ta": "சரியாகப் பொருந்திய இணையைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Euclid – Trigonometry",
+      "Eratosthenes – Calculated the diameter of the Earth",
+      "Hipparchus – Systematised the fundamentals of geometry",
+      "Ptolemy – Wrote the history of the Punic Wars"
+    ],
+    "optionsTa": [
+      "யூகிளிட் – முக்கோணவியல்",
+      "எரட்டோஸ்தனிஸ் – பூமியின் விட்டத்தைக் கணக்கிட்டவர்",
+      "ஹிப்பார்கஸ் – வடிவியலின் அடிப்படைக் கோட்பாடுகளை முறைப்படுத்தியவர்",
+      "டாலமி – பியூனிக் போர்களின் வரலாற்றை எழுதியவர்"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "match",
+    "en": "Match the following.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:35%; padding:6px 0;'>a. Marathon</td><td style='width:65%; padding:6px 0;'>1. Place where Greeks defeated Persians in 490 BC</td></tr><tr><td style='padding:6px 0;'>b. Salamis</td><td style='padding:6px 0;'>2. Place where Persian warships were sunk</td></tr><tr><td style='padding:6px 0;'>c. Acropolis</td><td style='padding:6px 0;'>3. Fortified hill in the city of Athens</td></tr><tr><td style='padding:6px 0;'>d. Olympic</td><td style='padding:6px 0;'>4. Games that expressed unity among Greek city-states</td></tr></table>",
+    "ta": "கீழ்க்கண்டவற்றைப் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:35%; padding:6px 0;'>a. மராத்தான்</td><td style='width:65%; padding:6px 0;'>1. கி.மு. 490இல் கிரேக்கர்கள் பாரசீகர்களைத் தோற்கடித்த இடம்</td></tr><tr><td style='padding:6px 0;'>b. சலாமிஸ்</td><td style='padding:6px 0;'>2. பாரசீகப் போர்க்கப்பல்கள் மூழ்கடிக்கப்பட்ட இடம்</td></tr><tr><td style='padding:6px 0;'>c. அக்ரோபொலிஸ்</td><td style='padding:6px 0;'>3. ஏதென்ஸ் நகரின் குன்றின்மீது அமைந்த கோட்டை</td></tr><tr><td style='padding:6px 0;'>d. ஒலிம்பிக்</td><td style='padding:6px 0;'>4. கிரேக்க நகர அரசுகளின் ஒற்றுமையை வெளிப்படுத்திய விளையாட்டுப் போட்டி</td></tr></table>",
+    "optionsEn": [
+      "a–1, b–2, c–3, d–4",
+      "a–2, b–1, c–4, d–3",
+      "a–3, b–4, c–1, d–2",
+      "a–4, b–3, c–2, d–1"
+    ],
+    "optionsTa": [
+      "a–1, b–2, c–3, d–4",
+      "a–2, b–1, c–4, d–3",
+      "a–3, b–4, c–1, d–2",
+      "a–4, b–3, c–2, d–1"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which is the correct pair regarding the two main classes of Roman society?",
+    "ta": "ரோமானியச் சமூகத்தின் இரு முக்கிய வர்க்கங்கள் குறித்த சரியான இணை எது?",
+    "optionsEn": [
+      "Patricians – Common people; Plebeians – Landlords",
+      "Patricians – Wealthy landlords; Plebeians – Common people",
+      "Patricians – Slaves; Plebeians – Merchants",
+      "Patricians – Soldiers; Plebeians – Emperors"
+    ],
+    "optionsTa": [
+      "பாட்ரீசியன்கள் – சாதாரண மக்கள்; பிளபியன்கள் – நிலப்பிரபுக்கள்",
+      "பாட்ரீசியன்கள் – பணம்படைத்த நிலப்பிரபுக்கள்; பிளபியன்கள் – சாதாரண மக்கள்",
+      "பாட்ரீசியன்கள் – அடிமைகள்; பிளபியன்கள் – வணிகர்கள்",
+      "பாட்ரீசியன்கள் – படைவீரர்கள்; பிளபியன்கள் – பேரரசர்கள்"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Select the correctly matched pair.",
+    "ta": "சரியாகப் பொருந்திய இணையைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Spartacus – Slave rebellion",
+      "Hannibal – Leader of Greek democracy",
+      "Augustus – Ruler of Athens",
+      "Socrates – First emperor of the Roman Republic"
+    ],
+    "optionsTa": [
+      "ஸ்பார்டகஸ் – அடிமைகளின் கிளர்ச்சி",
+      "ஹன்னிபால் – கிரேக்க மக்களாட்சியின் தலைவர்",
+      "அகஸ்டஸ் – ஏதென்ஸ் நகரின் ஆட்சியாளர்",
+      "சாக்ரடீஸ் – ரோமானியக் குடியரசின் முதல் பேரரசர்"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "Match the following.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:35%; padding:6px 0;'>a. Tiberius Gracchus</td><td style='width:65%; padding:6px 0;'>1. Spoke in favour of poor peasants</td></tr><tr><td style='padding:6px 0;'>b. Spartacus</td><td style='padding:6px 0;'>2. Led the slave rebellion</td></tr><tr><td style='padding:6px 0;'>c. Augustus</td><td style='padding:6px 0;'>3. Established monarchy in 27 BC</td></tr><tr><td style='padding:6px 0;'>d. Hannibal</td><td style='padding:6px 0;'>4. Famous general of Carthage</td></tr></table>",
+    "ta": "கீழ்க்கண்டவற்றைப் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:35%; padding:6px 0;'>a. டைபீரியஸ் கிராக்கஸ்</td><td style='width:65%; padding:6px 0;'>1. ஏழை விவசாயிகளுக்கு ஆதரவாகக் கருத்துத் தெரிவித்தவர்</td></tr><tr><td style='padding:6px 0;'>b. ஸ்பார்டகஸ்</td><td style='padding:6px 0;'>2. அடிமைகளின் கிளர்ச்சிக்குத் தலைமை தாங்கியவர்</td></tr><tr><td style='padding:6px 0;'>c. அகஸ்டஸ்</td><td style='padding:6px 0;'>3. கி.மு. 27இல் மன்னராட்சியை நிறுவியவர்</td></tr><tr><td style='padding:6px 0;'>d. ஹன்னிபால்</td><td style='padding:6px 0;'>4. கார்த்தேஜின் புகழ்பெற்ற தளபதி</td></tr></table>",
+    "optionsEn": [
+      "a–1, b–2, c–3, d–4",
+      "a–2, b–1, c–4, d–3",
+      "a–3, b–4, c–1, d–2",
+      "a–4, b–3, c–2, d–1"
+    ],
+    "optionsTa": [
+      "a–1, b–2, c–3, d–4",
+      "a–2, b–1, c–4, d–3",
+      "a–3, b–4, c–1, d–2",
+      "a–4, b–3, c–2, d–1"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Select the correctly matched pair.",
+    "ta": "சரியாகப் பொருந்திய இணையைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Constantinople – Capital of the Byzantine Empire",
+      "Delos – Democratic assembly of Greece",
+      "Carthage – Capital of the Roman Empire",
+      "Alexandria – Capital of China"
+    ],
+    "optionsTa": [
+      "கான்ஸ்டான்டிநோபிள் – பைசாண்டியப் பேரரசின் தலைநகரம்",
+      "டெலாஸ் – கிரேக்கத்தின் மக்களாட்சி மன்றம்",
+      "கார்த்தேஜ் – ரோமப் பேரரசின் தலைநகரம்",
+      "அலெக்ஸாண்டிரியா – சீனாவின் தலைநகரம்"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Find the odd one out<br><br>Who is NOT among the groups excluded from voting rights and political participation in Athenian democracy?",
+    "ta": "ஒற்றையைக் கண்டறிக<br><br>ஏதென்ஸ் மக்களாட்சியில் வாக்குரிமை மற்றும் அரசியல் பங்கேற்பிலிருந்து விலக்கப்பட்ட குழுக்களில் சேராதவர் யார்?",
+    "optionsEn": [
+      "Slaves",
+      "Women",
+      "Metics",
+      "Free adult male citizens"
+    ],
+    "optionsTa": [
+      "அடிமைகள்",
+      "பெண்கள்",
+      "மெடிக்ஸ்",
+      "சுதந்திர ஆண் குடிமக்கள்"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is NOT among the invading groups responsible for the fall of the Roman Empire?",
+    "ta": "ரோமானியப் பேரரசின் வீழ்ச்சிக்குக் காரணமான படையெடுப்புக் குழுக்களில் சேராதது எது?",
+    "optionsEn": [
+      "Franks",
+      "Goths",
+      "Vandals",
+      "Macedonians"
+    ],
+    "optionsTa": [
+      "பிராங்குகள்",
+      "கோத்துகள்",
+      "வாண்டல்கள்",
+      "மாசிடோனியர்கள்"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "match",
+    "en": "Match the following.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:35%; padding:6px 0;'>a. Patricians</td><td style='width:65%; padding:6px 0;'>1. Wealthy landlords</td></tr><tr><td style='padding:6px 0;'>b. Plebeians</td><td style='padding:6px 0;'>2. Common people</td></tr><tr><td style='padding:6px 0;'>c. Delos</td><td style='padding:6px 0;'>3. Largest slave market</td></tr><tr><td style='padding:6px 0;'>d. Colosseum</td><td style='padding:6px 0;'>4. Amphitheatre where gladiator fights took place</td></tr></table>",
+    "ta": "கீழ்க்கண்டவற்றைப் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:35%; padding:6px 0;'>a. பாட்ரீசியன்கள்</td><td style='width:65%; padding:6px 0;'>1. பணம்படைத்த நிலப்பிரபுக்கள்</td></tr><tr><td style='padding:6px 0;'>b. பிளபியன்கள்</td><td style='padding:6px 0;'>2. சாதாரண மக்கள்</td></tr><tr><td style='padding:6px 0;'>c. டெலாஸ்</td><td style='padding:6px 0;'>3. மிகப்பெரிய அடிமைச் சந்தை</td></tr><tr><td style='padding:6px 0;'>d. கொலோசியம்</td><td style='padding:6px 0;'>4. கிளாடியேட்டர் சண்டைகள் நடைபெற்ற வட்டரங்கு</td></tr></table>",
+    "optionsEn": [
+      "a–1, b–2, c–3, d–4",
+      "a–2, b–1, c–4, d–3",
+      "a–3, b–4, c–1, d–2",
+      "a–4, b–3, c–2, d–1"
+    ],
+    "optionsTa": [
+      "a–1, b–2, c–3, d–4",
+      "a–2, b–1, c–4, d–3",
+      "a–3, b–4, c–1, d–2",
+      "a–4, b–3, c–2, d–1"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): The democratic system in Athens lasted for about 200 years.<br><br>Reason (R): Among Greek city-states, Athens alone sustained democracy continuously.",
+    "ta": "கூற்று: ஏதென்ஸ் நகரில் மக்களாட்சி முறை சுமார் 200 ஆண்டுகள் நீடித்தது.<br><br>காரணம்: கிரேக்க நகர அரசுகளில் ஏதென்ஸ் மட்டும் மக்களாட்சியைத் தொடர்ந்து நிலைநிறுத்தியது.",
+    "optionsEn": [
+      "Both A and R are true; R is the correct explanation of A.",
+      "Both A and R are true; but R is not the correct explanation of A.",
+      "A is true; R is false.",
+      "A is false; R is true."
+    ],
+    "optionsTa": [
+      "கூற்றும் காரணமும் சரி; காரணம் கூற்றிற்கான சரியான விளக்கம்.",
+      "கூற்றும் காரணமும் சரி; ஆனால் காரணம் கூற்றிற்கான சரியான விளக்கம் அல்ல.",
+      "கூற்று சரி; காரணம் தவறு.",
+      "கூற்று தவறு; காரணம் சரி."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): Socrates was subjected to the death penalty.<br><br>Reason (R): He was accused of refusing to accept state-recognized gods and leading youths into wrong thinking.",
+    "ta": "கூற்று: சாக்ரடீஸ் மரண தண்டனைக்கு உட்படுத்தப்பட்டார்.<br><br>காரணம்: அரசால் அங்கீகரிக்கப்பட்ட கடவுள்களை அவர் ஏற்க மறுத்தார் என்றும் இளைஞர்களைத் தவறான சிந்தனைக்கு இட்டுச் சென்றார் என்றும் குற்றம் சாட்டப்பட்டது.",
+    "optionsEn": [
+      "Both A and R are true; R is the correct explanation of A.",
+      "Both A and R are true; but R is not the correct explanation of A.",
+      "A is true; R is false.",
+      "A is false; R is true."
+    ],
+    "optionsTa": [
+      "கூற்றும் காரணமும் சரி; காரணம் கூற்றிற்கான சரியான விளக்கம்.",
+      "கூற்றும் காரணமும் சரி; ஆனால் காரணம் கூற்றிற்கான சரியான விளக்கம் அல்ல.",
+      "கூற்று சரி; காரணம் தவறு.",
+      "கூற்று தவறு; காரணம் சரி."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): The sacrifice of the Gracchus brothers played a major role in the transformation of the Roman Republic into the Roman Empire.<br><br>Reason (R): Senators killed them because they voiced ideas in support of poor peasants.",
+    "ta": "கூற்று: கிராக்கஸ் சகோதரர்களின் உயிர்த்தியாகம் ரோமக் குடியரசு ரோமப் பேரரசாக மாறியதில் முக்கியப் பங்கு வகித்தது.<br><br>காரணம்: ஏழை விவசாயிகளுக்கு ஆதரவாக அவர்கள் கருத்துகளை முன்வைத்ததால் செனட்டர்கள் அவர்களைக் கொலை செய்தனர்.",
+    "optionsEn": [
+      "Both A and R are true; R is the correct explanation of A.",
+      "Both A and R are true; but R is not the correct explanation of A.",
+      "A is true; R is false.",
+      "A is false; R is true."
+    ],
+    "optionsTa": [
+      "கூற்றும் காரணமும் சரி; காரணம் கூற்றிற்கான சரியான விளக்கம்.",
+      "கூற்றும் காரணமும் சரி; ஆனால் காரணம் கூற்றிற்கான சரியான விளக்கம் அல்ல.",
+      "கூற்று சரி; காரணம் தவறு.",
+      "கூற்று தவறு; காரணம் சரி."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): The Punic Wars were fought between Rome and Carthage.<br><br>Reason (R): Carthage's capture of Sicily posed a threat to Rome.",
+    "ta": "கூற்று: பியூனிக் போர்கள் ரோம் மற்றும் கார்த்தேஜ் ஆகியவற்றுக்கிடையே நடைபெற்றன.<br><br>காரணம்: கார்த்தேஜ் சிசிலியைக் கைப்பற்றியது ரோமுக்கு அச்சுறுத்தலாக அமைந்தது.",
+    "optionsEn": [
+      "Both A and R are true; R is the correct explanation of A.",
+      "Both A and R are true; but R is not the correct explanation of A.",
+      "A is true; R is false.",
+      "A is false; R is true."
+    ],
+    "optionsTa": [
+      "கூற்றும் காரணமும் சரி; காரணம் கூற்றிற்கான சரியான விளக்கம்.",
+      "கூற்றும் காரணமும் சரி; ஆனால் காரணம் கூற்றிற்கான சரியான விளக்கம் அல்ல.",
+      "கூற்று சரி; காரணம் தவறு.",
+      "கூற்று தவறு; காரணம் சரி."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements regarding Greek democracy.<br><br>1. The power to make laws in Athens lay with the popular assembly.<br>2. Slaves and women participated in the democratic process.<br>3. Judges and lower officials were selected by lottery.<br>4. Those called Metics were also excluded from political participation.",
+    "ta": "கிரேக்க மக்களாட்சி தொடர்பான கூற்றுகளைக் கவனிக்கவும்.<br><br>1. ஏதென்ஸ் நகரில் சட்டம் இயற்றும் அதிகாரம் மக்கள் மன்றத்திடம் இருந்தது.<br>2. அடிமைகளும் பெண்களும் மக்களாட்சி நடைமுறையில் பங்கேற்றனர்.<br>3. நீதிபதிகளும் கீழ்நிலை அதிகாரிகளும் குலுக்கல் முறையில் தேர்ந்தெடுக்கப்பட்டனர்.<br>4. மெடிக்ஸ் என அழைக்கப்பட்டவர்களும் அரசியல் பங்கேற்பிலிருந்து விலக்கப்பட்டிருந்தனர்.",
+    "optionsEn": [
+      "1 and 2 only",
+      "1, 3 and 4 only",
+      "2, 3 and 4 only",
+      "1, 2, 3 and 4"
+    ],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "1, 3 மற்றும் 4 மட்டும்",
+      "2, 3 மற்றும் 4 மட்டும்",
+      "1, 2, 3 மற்றும் 4"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements regarding the Roman Republic.<br><br>1. Roman society was divided into two classes: Patricians and Plebeians.<br>2. Slave trade brought great revenue to Rome.<br>3. Delos served as the largest slave market.<br>4. All free people became wealthy through the labour of slaves.",
+    "ta": "ரோமானியக் குடியரசு தொடர்பான கூற்றுகளைக் கவனிக்கவும்.<br><br>1. ரோமானியச் சமூகம் பாட்ரீசியன்கள் மற்றும் பிளபியன்கள் என இரு வர்க்கங்களாகப் பிரிந்திருந்தது.<br>2. அடிமை வியாபாரம் ரோமுக்கு அதிக வருவாயை ஈட்டித் தந்தது.<br>3. டெலாஸ் மிகப்பெரிய அடிமைச் சந்தையாக விளங்கியது.<br>4. அடிமைகளின் உழைப்பால் சுதந்திர மக்கள் அனைவரும் செல்வந்தர்களாக மாறினர்.",
+    "optionsEn": [
+      "1, 2 and 3 only",
+      "1 and 4 only",
+      "2, 3 and 4 only",
+      "1, 2, 3 and 4"
+    ],
+    "optionsTa": [
+      "1, 2 மற்றும் 3 மட்டும்",
+      "1 மற்றும் 4 மட்டும்",
+      "2, 3 மற்றும் 4 மட்டும்",
+      "1, 2, 3 மற்றும் 4"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "match",
+    "en": "Match the following.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:35%; padding:6px 0;'>a. Euclid</td><td style='width:65%; padding:6px 0;'>1. Systematised the basic principles of geometry</td></tr><tr><td style='padding:6px 0;'>b. Eratosthenes</td><td style='padding:6px 0;'>2. Calculated the diameter of the Earth</td></tr><tr><td style='padding:6px 0;'>c. Hipparchus</td><td style='padding:6px 0;'>3. Discovered trigonometry</td></tr><tr><td style='padding:6px 0;'>d. Ptolemy</td><td style='padding:6px 0;'>4. Created a model of the motion of planets and stars</td></tr></table>",
+    "ta": "கீழ்க்கண்டவற்றைப் பொருத்துக.<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:35%; padding:6px 0;'>a. யூகிளிட்</td><td style='width:65%; padding:6px 0;'>1. வடிவியல் அடிப்படைக் கோட்பாடுகளை முறைப்படுத்தியவர்</td></tr><tr><td style='padding:6px 0;'>b. எரட்டோஸ்தனிஸ்</td><td style='padding:6px 0;'>2. பூமியின் விட்டத்தைக் கணக்கிட்டவர்</td></tr><tr><td style='padding:6px 0;'>c. ஹிப்பார்கஸ்</td><td style='padding:6px 0;'>3. முக்கோணவியலைக் கண்டுபிடித்தவர்</td></tr><tr><td style='padding:6px 0;'>d. டாலமி</td><td style='padding:6px 0;'>4. கோள்கள் மற்றும் நட்சத்திரங்களின் இயக்க மாதிரியை உருவாக்கியவர்</td></tr></table>",
+    "optionsEn": [
+      "a–1, b–2, c–3, d–4",
+      "a–2, b–1, c–4, d–3",
+      "a–3, b–4, c–1, d–2",
+      "a–4, b–3, c–2, d–1"
+    ],
+    "optionsTa": [
+      "a–1, b–2, c–3, d–4",
+      "a–2, b–1, c–4, d–3",
+      "a–3, b–4, c–1, d–2",
+      "a–4, b–3, c–2, d–1"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements regarding Hellenistic civilisation.<br><br>1. Hellenistic civilisation developed after the death of Alexander the Great.<br>2. The year 323 BC is marked as the beginning of this civilisation.<br>3. Alexandria served as a major centre of scientific and mathematical development.<br>4. Hellenistic civilisation developed solely in China.",
+    "ta": "ஹெலனிஸ்டிக் நாகரிகம் தொடர்பான கூற்றுகளைக் கவனிக்கவும்.<br><br>1. மகா அலெக்ஸாண்டரின் இறப்பிற்குப் பின்னர் ஹெலனிஸ்டிக் நாகரிகம் வளர்ச்சியடைந்தது.<br>2. இந்நாகரிகத்தின் தொடக்கமாகக் கி.மு. 323ஆம் ஆண்டு குறிப்பிடப்படுகிறது.<br>3. அலெக்ஸாண்டிரியா அறிவியல் மற்றும் கணித வளர்ச்சியின் முக்கிய மையமாக விளங்கியது.<br>4. ஹெலனிஸ்டிக் நாகரிகம் சீனாவில் மட்டுமே வளர்ச்சி பெற்றது.",
+    "optionsEn": [
+      "1 and 2 only",
+      "1, 2 and 3 only",
+      "2, 3 and 4 only",
+      "1, 2, 3 and 4"
+    ],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "1, 2 மற்றும் 3 மட்டும்",
+      "2, 3 மற்றும் 4 மட்டும்",
+      "1, 2, 3 மற்றும் 4"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements regarding the Punic Wars.<br><br>1. Three wars were fought between Rome and Carthage.<br>2. Hannibal was the general of Carthage.<br>3. Carthage was destroyed in the Third Punic War.<br>4. After the Punic Wars, Carthage became the greatest power in the Western world.",
+    "ta": "பியூனிக் போர்கள் தொடர்பான கூற்றுகளைக் கவனிக்கவும்.<br><br>1. ரோம் மற்றும் கார்த்தேஜ் இடையே மூன்று போர்கள் நடைபெற்றன.<br>2. கார்த்தேஜின் தளபதி ஹன்னிபால் ஆவார்.<br>3. மூன்றாவது பியூனிக் போரில் கார்த்தேஜ் அழிக்கப்பட்டது.<br>4. பியூனிக் போர்களுக்குப் பின்னர் கார்த்தேஜ் மேலை உலகின் மிகப்பெரிய சக்தியாக மாறியது.",
+    "optionsEn": [
+      "1, 2 and 3 only",
+      "1 and 4 only",
+      "2, 3 and 4 only",
+      "1, 2, 3 and 4"
+    ],
+    "optionsTa": [
+      "1, 2 மற்றும் 3 மட்டும்",
+      "1 மற்றும் 4 மட்டும்",
+      "2, 3 மற்றும் 4 மட்டும்",
+      "1, 2, 3 மற்றும் 4"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Select the correctly matched pair.",
+    "ta": "சரியாகப் பொருந்திய இணையைத் தேர்ந்தெடுக்கவும்.",
+    "optionsEn": [
+      "Hannibal – Defeated the Romans at the Battle of Zama",
+      "Fabius – Faced Hannibal and defeated him at the Battle of Zama",
+      "Spartacus – Led the Punic Wars",
+      "Marius – Founded the Byzantine Empire"
+    ],
+    "optionsTa": [
+      "ஹன்னிபால் – ஜாமா போர்க்களத்தில் ரோமானியர்களைத் தோற்கடித்தவர்",
+      "பாபியஸ் – ஹன்னிபாலை எதிர்கொண்டு ஜாமா போர்க்களத்தில் தோற்கடித்தவர்",
+      "ஸ்பார்டகஸ் – பியூனிக் போர்களுக்குத் தலைமை தாங்கியவர்",
+      "மாரியஸ் – பைசாண்டியப் பேரரசை நிறுவியவர்"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements regarding the Classical Age of China.<br><br>1. Shi Huangdi ended the wars among the Chinese warring states.<br>2. He was known as the first emperor of China.<br>3. Han rulers faced difficulties in controlling powerful landlords.<br>4. The Silk Road connected China with Western lands.",
+    "ta": "சீனாவின் செவ்வியல் காலம் தொடர்பான கூற்றுகளைக் கவனிக்கவும்.<br><br>1. ஷி ஹுவாங்டி சீனச் சிற்றரசுகளுக்கிடையிலான போர்களை முடிவுக்குக் கொண்டுவந்தார்.<br>2. அவர் சீனாவின் முதல் பேரரசராக அறியப்பட்டார்.<br>3. ஹான் வம்ச அரசர்கள் மிகப்பெரிய நிலப்பிரபுக்களைக் கட்டுப்படுத்துவதில் சிரமங்களை எதிர்கொண்டனர்.<br>4. பட்டுப்பாதை சீனாவை மேலை நாடுகளுடன் இணைத்தது.",
+    "optionsEn": [
+      "1 and 2 only",
+      "1, 2 and 3 only",
+      "1, 2, 3 and 4",
+      "2 and 4 only"
+    ],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "1, 2 மற்றும் 3 மட்டும்",
+      "1, 2, 3 மற்றும் 4",
+      "2 மற்றும் 4 மட்டும்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): Roman civilisation continued to flourish in the eastern part of the Roman Empire.<br><br>Reason (R): The eastern part with Constantinople as its capital came to be called the Byzantine civilisation.",
+    "ta": "கூற்று: ரோமப் பேரரசின் கிழக்குப் பகுதியில் ரோமானிய நாகரிகம் தொடர்ந்து வளர்ச்சியடைந்தது.<br><br>காரணம்: கான்ஸ்டான்டிநோபிளைத் தலைநகராகக் கொண்ட கிழக்குப் பகுதி பைசாண்டிய நாகரிகம் என அழைக்கப்பட்டது.",
+    "optionsEn": [
+      "Both A and R are true; R is the correct explanation of A.",
+      "Both A and R are true; but R is not the correct explanation of A.",
+      "A is true; R is false.",
+      "A is false; R is true."
+    ],
+    "optionsTa": [
+      "கூற்றும் காரணமும் சரி; காரணம் கூற்றிற்கான சரியான விளக்கம்.",
+      "கூற்றும் காரணமும் சரி; ஆனால் காரணம் கூற்றிற்கான சரியான விளக்கம் அல்ல.",
+      "கூற்று சரி; காரணம் தவறு.",
+      "கூற்று தவறு; காரணம் சரி."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements regarding the spread of Christianity.<br><br>1. After Jesus Christ was crucified, Saint Paul spread Christian teachings.<br>2. Romans gradually accepted Christianity.<br>3. Christians refusing to pay homage to the emperor's statue was considered treason.<br>4. After Christianity became the state religion of Byzantium, it also began spreading across Europe.",
+    "ta": "கிறித்தவ மதத்தின் பரவல் தொடர்பான கூற்றுகளைக் கவனிக்கவும்.<br><br>1. ஏசு கிறிஸ்து சிலுவையில் அறையப்பட்ட பின்னர் புனித பால் கிறித்தவக் கொள்கைகளைப் பரப்பினார்.<br>2. ரோமானியர்கள் படிப்படியாகக் கிறித்தவ மதத்தை ஏற்றுக்கொண்டனர்.<br>3. கிறித்தவர்கள் பேரரசரின் உருவச்சிலைக்கு மரியாதை செலுத்த மறுத்தது அரச துரோகமாகக் கருதப்பட்டது.<br>4. கிறித்தவம் பைசாண்டியத்தின் அரசு மதமாக ஆன பின்னர் ஐரோப்பாவிலும் பரவத் தொடங்கியது.",
+    "optionsEn": [
+      "1 and 2 only",
+      "1, 2 and 3 only",
+      "2, 3 and 4 only",
+      "1, 2, 3 and 4"
+    ],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "1, 2 மற்றும் 3 மட்டும்",
+      "2, 3 மற்றும் 4 மட்டும்",
+      "1, 2, 3 மற்றும் 4"
+    ],
+    "answer": 3
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false; isSubmitted = false;
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">
+                <span class="option-letter">${String.fromCharCode(65+i)}.</span>
+                <span class="option-text">${opt}</span>
+            </div>`;
+        });
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+            </div>
+        `;
+        updateTopClearButton();
+        updateNavButtons(); updatePalette();
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+    }
+    function updateTopClearButton() {
+        const container = document.getElementById("topClearBtnContainer");
+        if (!container) return;
+        const sel = userAnswers[currentIndex];
+        if (sel !== null && sel !== undefined) {
+            container.innerHTML = `<button class="btn btn-danger" style="padding: 6px 14px; font-size: 0.8rem; min-height: auto; opacity: 0.9; border-radius: 40px;" onclick="clearSelection()">✖ Clear Selection</button>`;
+        } else {
+            container.innerHTML = "";
+        }
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) {
+            userAnswers[currentIndex] = null;
+        } else {
+            userAnswers[currentIndex] = optIndex;
+        }
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+
+    function clearSelection() {
+        if (isSubmitted) return;
+        userAnswers[currentIndex] = null;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    let currentReviewIndex = 0;
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let cssClass = "option-item";
+                let markerHtml = "";
+                if (idx === corr) { cssClass += " correct"; markerHtml = "<div class='marker'>✔</div>"; }
+                else if (u === idx && idx !== corr) { cssClass += " wrong"; markerHtml = "<div class='marker'>✖</div>"; }
+                optsHtml += `<div class="${cssClass}"><span>${String.fromCharCode(65+idx)}. ${optsArray[idx]}</span>${markerHtml}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" id="review-card-${i}" style="display: none;">
+                        <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div class="your-answer">Your Answer: ${userAns}</div>
+                        <div class="correct-answer">Correct Answer: ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        ${optsHtml}
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+        currentReviewIndex = 0;
+        showReviewCard(currentReviewIndex);
+    }
+    function showReviewCard(index) {
+        const cards = document.querySelectorAll(".review-card");
+        if (cards.length === 0) return;
+        cards.forEach(c => c.style.display = "none");
+        cards[index].style.display = "block";
+        document.getElementById("reviewPageText").innerText = `${index + 1} / ${cards.length}`;
+        document.getElementById("prevReviewBtn").disabled = (index === 0);
+        document.getElementById("nextReviewBtn").disabled = (index === cards.length - 1);
+        document.getElementById("reviewPagination").style.display = "flex";
+        window.scrollTo(0, 0);
+    }
+    function navigateReview(direction) {
+        const cards = document.querySelectorAll(".review-card");
+        currentReviewIndex += direction;
+        if (currentReviewIndex >= 0 && currentReviewIndex < cards.length) {
+            showReviewCard(currentReviewIndex);
+        }
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
+            await new Promise(r => setTimeout(r, 600));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+                if (btn) btn.innerText = "✅ Select Save as PDF";
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+        } finally {
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 3000);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        history.replaceState({ resultPage: true }, "", "#result");
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.addEventListener("popstate", function(e) {
+        if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+            history.pushState({ resultPage: true }, "", "#result");
+            confirmLeaveResult();
+        }
+    });
+    function confirmLeaveResult() {
+        if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
+            window.AndroidBridge.exitResultPage();
+        } else {
+            history.back();
+        }
+    }
+    window.checkForReview = function() {
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
+            }
+        }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
