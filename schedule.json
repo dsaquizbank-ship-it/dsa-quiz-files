@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-21T00:05:23.956Z",
+  "version": "2026-11-21T00:12:41.799Z",
   "entries": [
     {
       "id": "SCH-1794038030683-992",
@@ -2586,18 +2586,6 @@
       "date": "2026-11-28",
       "testId": "BEG-5",
       "createdAt": "2026-11-20T22:23:05.440Z"
-    },
-    {
-      "id": "SCH-1795219515145-8914",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "title": "BANK",
-      "subject": "English",
-      "topicId": "BANK-T042",
-      "topicName": "Column Based Questions",
-      "date": "2026-11-29",
-      "testId": "BEG-7",
-      "createdAt": "2026-11-21T00:05:15.145Z"
     },
     {
       "id": "SCH-1794504929053-577",
