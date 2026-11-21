@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-21T00:40:43.530Z",
+  "version": "2026-11-21T00:43:24.553Z",
   "entries": [
     {
       "id": "SCH-1794038030683-992",
@@ -2598,18 +2598,6 @@
       "date": "2026-11-28",
       "testId": "BEG-5",
       "createdAt": "2026-11-20T22:23:05.440Z"
-    },
-    {
-      "id": "SCH-1795221638973-2131",
-      "courseId": "BANK",
-      "courseName": "BANK",
-      "title": "BANK",
-      "subject": "Banking Awareness",
-      "topicId": "BANK-T056",
-      "topicName": "Capital Market (BSE, NSE, IPO, FPO, ASBA, DEMAT)",
-      "date": "2026-11-29",
-      "testId": "BBA-1",
-      "createdAt": "2026-11-21T00:40:38.973Z"
     },
     {
       "id": "SCH-1795219969693-3680",
