@@ -5,156 +5,194 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mock Test Schedule</title>
     <style>
-        body { font-family: "Segoe UI", system-ui, sans-serif; background: #0D1B2A; color: #FFF; padding: 16px; }
-        h2 { color: #F5B700; text-align: center; margin-bottom: 20px; }
+        body { font-family: "Segoe UI", system-ui, sans-serif; background: #0D1B2A; color: #FFF; padding: 16px; margin: 0; }
+        h2 { color: #F5B700; text-align: center; margin-bottom: 20px; font-size: 1.5rem; }
         .date-selector-wrapper { display: flex; overflow-x: auto; gap: 10px; padding-bottom: 10px; margin-bottom: 20px; scrollbar-width: thin; }
         .date-selector-wrapper::-webkit-scrollbar { height: 6px; }
         .date-selector-wrapper::-webkit-scrollbar-thumb { background: #2E4374; border-radius: 4px; }
-        .date-btn { background: #1A2A5E; border: 2px solid #2E4374; color: #A8C8E1; padding: 10px 16px; border-radius: 10px; cursor: pointer; text-align: center; min-width: 100px; flex-shrink: 0; transition: 0.2s; }
+        .date-btn { background: #1A2A5E; border: 2px solid #2E4374; color: #A8C8E1; padding: 10px 16px; border-radius: 10px; cursor: pointer; text-align: center; min-width: 90px; flex-shrink: 0; transition: 0.2s; }
         .date-btn:hover { background: #2E4374; }
         .date-btn.active { background: #F5B700; border-color: #F5B700; color: #0D1B2A; }
         .date-btn .day { font-size: 18px; font-weight: bold; display: block; }
         .date-btn .weekday { font-size: 12px; opacity: 0.8; display: block; margin-top: 2px; }
         .card { background: #1A2A5E; border-radius: 12px; padding: 16px; margin-bottom: 16px; border-left: 4px solid #10b981; animation: fadeIn 0.3s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-        .exam-title { color: #F5B700; font-size: 20px; font-weight: bold; margin-bottom: 12px; border-bottom: 1px solid #2E4374; padding-bottom: 8px; }
+        .exam-title { color: #F5B700; font-size: 20px; font-weight: bold; margin-bottom: 4px; }
+        .course-subtitle { font-size: 13px; color: #A8C8E1; margin-bottom: 12px; border-bottom: 1px solid #2E4374; padding-bottom: 8px; }
         .test-item { background: #0F1B3D; padding: 12px; border-radius: 8px; margin-top: 8px; border-left: 3px solid #3b82f6; }
-        .subject { color: #34d399; font-weight: bold; font-size: 14px; }
-        .topic { font-size: 15px; margin-top: 4px; color: #e2e8f0; }
-        .test-no { display: inline-block; background: #10b981; color: white; padding: 3px 10px; border-radius: 4px; font-size: 12px; margin-top: 8px; font-weight: bold; }
-        .empty-state { text-align: center; color: #A8C8E1; font-style: italic; padding: 20px; }
-        .refresh-btn { display: block; margin: 0 auto 16px; background: #0284c7; color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+        .topic-name { font-size: 15px; font-weight: 600; color: #e2e8f0; margin-bottom: 6px; }
+        .test-no { display: inline-block; background: #10b981; color: #0D1B2A; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: bold; text-decoration: none; }
+        .test-no:hover { background: #34d399; }
+        .empty-state { text-align: center; color: #A8C8E1; font-style: italic; padding: 40px 20px; }
+        .refresh-btn { display: block; margin: 0 auto 16px; background: #0284c7; color: white; border: none; padding: 10px 24px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 14px; }
+        .refresh-btn:active { transform: scale(0.98); }
         .loading { text-align: center; padding: 40px; color: #A8C8E1; }
     </style>
 </head>
 <body>
     <h2>📅 Mock Test Schedule</h2>
-    
     <button class="refresh-btn" onclick="loadSchedule()">🔄 Refresh</button>
     
     <div class="date-selector-wrapper" id="dateSelector"></div>
-    <div id="scheduleContainer"><div class="loading">Loading…</div></div>
+    <div id="scheduleContainer"><div class="loading">Loading schedule…</div></div>
 
- <script>
-    const SCHEDULE_JSON_URL = 'https://dsaquizbank-ship-it.github.io/dsa-quiz-files/schedule.json';
-    const BASE_TEST_URL = 'https://dsaquizbank-ship-it.github.io/dsa-quiz-files/';
+    <script>
+        const SCHEDULE_JSON_URL = 'https://dsaquizbank-ship-it.github.io/dsa-quiz-files/schedule.json';
+        const TOPICS_JSON_URL = 'https://dsaquizbank-ship-it.github.io/dsa-quiz-files/topics.json';
+        const BASE_TEST_URL = 'https://dsaquizbank-ship-it.github.io/dsa-quiz-files/';
 
-    const dateSelector = document.getElementById("dateSelector");
-    const container = document.getElementById("scheduleContainer");
-    let ALL_ENTRIES = [];
+        const dateSelector = document.getElementById("dateSelector");
+        const container = document.getElementById("scheduleContainer");
+        let ALL_ENTRIES = [];
+        let TOPICS_COURSES = [];
 
-    async function loadSchedule() {
-        container.innerHTML = '<div class="loading">Loading…</div>';
-        try {
-            const res = await fetch(SCHEDULE_JSON_URL + '?v=' + Date.now());
-            if (!res.ok) throw new Error('HTTP ' + res.status);
-            const data = await res.json();
-            ALL_ENTRIES = Array.isArray(data.entries) ? data.entries : [];
-            renderDateSelector();
-        } catch (e) {
-            container.innerHTML = '<div class="empty-state">⚠️ Could not load schedule.<br><small style="opacity:.7">' + e.message + '</small></div>';
-        }
-    }
-
-    function groupByDate(entries) {
-        // 🛑 HIDE PAST DATES — timezone-safe comparison
-        const today = new Date();
-        const todayStr = today.getFullYear() + '-' + 
-            String(today.getMonth() + 1).padStart(2, '0') + '-' + 
-            String(today.getDate()).padStart(2, '0');
-
-        const map = {};
-        entries.forEach(e => {
-            if (e.date && e.date < todayStr) return;
-            if (!map[e.date]) map[e.date] = [];
-            map[e.date].push(e);
-        });
-        
-        return Object.keys(map).sort().map(date => ({
-            date,
-            weekday: new Date(date.split('-').map(Number)).toLocaleDateString('en-GB', { weekday: 'short' }),
-            entries: map[date]
-        }));
-    }
-
-    function renderDateSelector() {
-        const grouped = groupByDate(ALL_ENTRIES);
-        dateSelector.innerHTML = '';
-        if (grouped.length === 0) {
-            container.innerHTML = '<div class="empty-state">No upcoming exams scheduled yet.</div>';
-            return;
-        }
-        grouped.forEach((g, index) => {
-            const btn = document.createElement('button');
-            btn.className = 'date-btn' + (index === 0 ? ' active' : '');
-            const parts = g.date.split('-');
-            const shortDate = parts[2] + '/' + parts[1];
-            btn.innerHTML = `<span class="day">${shortDate}</span><span class="weekday">${g.weekday}</span>`;
-            btn.onclick = () => {
-                document.querySelectorAll('.date-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                renderForDate(g);
-            };
-            dateSelector.appendChild(btn);
-        });
-        renderForDate(grouped[0]);
-    }
-
-    function renderForDate(group) {
-        container.innerHTML = '';
-        const byCourse = {};
-        
-        // ✅ FIX: Group by courseId but DISPLAY subject name as the card title
-        group.entries.forEach(e => {
-            const key = e.courseId || 'UNKNOWN';
-            if (!byCourse[key]) {
-                byCourse[key] = { 
-                    courseName: e.courseName, 
-                    subject: e.subject || e.courseName, // ✅ Use subject for display
-                    items: [] 
-                };
-            }
-            byCourse[key].items.push(e);
-        });
-
-        Object.keys(byCourse).forEach(courseId => {
-            const course = byCourse[courseId];
-            const card = document.createElement('div');
-            card.className = 'card';
-            
-            // ✅ FIX: Show SUBJECT as the main title, course as subtitle
-            let html = `<div class="exam-title">${escapeHtml(course.subject)}</div>
-                        <div style="font-size:12px;color:#A8C8E1;margin-bottom:10px;">${escapeHtml(course.courseName)}</div>`;
-            
-            course.items.forEach(e => {
-                // ✅ FIX: Make Test ID clickable
-                const testLink = e.testId 
-                    ? `<a href="${BASE_TEST_URL}${encodeURIComponent(e.testId)}.html" target="_blank" 
-                         style="color:#F5B700;text-decoration:none;font-weight:bold;"
-                         onmouseover="this.style.textDecoration='underline'"
-                         onmouseout="this.style.textDecoration='none'">
-                         ${escapeHtml(e.testId)} ↗
-                       </a>`
-                    : escapeHtml(e.testId || 'N/A');
+        async function loadSchedule() {
+            container.innerHTML = '<div class="loading">Loading schedule…</div>';
+            try {
+                // Fetch both schedule and topics to ensure we can derive the correct subject
+                const [scheduleRes, topicsRes] = await Promise.all([
+                    fetch(SCHEDULE_JSON_URL + '?v=' + Date.now()),
+                    fetch(TOPICS_JSON_URL + '?v=' + Date.now()).catch(() => ({ ok: false }))
+                ]);
                 
-                html += `<div class="test-item">
-                    <div class="subject">${escapeHtml(e.topicName)}</div>
-                    <div class="topic" style="margin-top:4px;">📝 Topic: ${escapeHtml(e.topicName)}</div>
-                    <div class="test-no">Test ID: ${testLink}</div>
-                </div>`;
+                if (!scheduleRes.ok) throw new Error('HTTP ' + scheduleRes.status);
+                const scheduleData = await scheduleRes.json();
+                ALL_ENTRIES = Array.isArray(scheduleData.entries) ? scheduleData.entries : [];
+                
+                if (topicsRes.ok) {
+                    const topicsData = await topicsRes.json();
+                    TOPICS_COURSES = Array.isArray(topicsData.courses) ? topicsData.courses : [];
+                }
+
+                renderDateSelector();
+            } catch (e) {
+                container.innerHTML = '<div class="empty-state">⚠️ Could not load schedule.<br><small style="opacity:.7">' + e.message + '</small></div>';
+            }
+        }
+
+        // 🧠 Smartly derives the real subject, even for old data that saved "BANK" as the subject
+        function deriveSubject(entry) {
+            if (entry.subject && entry.subject.trim().toLowerCase() !== (entry.courseName || '').trim().toLowerCase()) {
+                return entry.subject.trim();
+            }
+            const course = TOPICS_COURSES.find(c => c.courseId === entry.courseId || c.courseName === entry.courseName);
+            if (course && Array.isArray(course.topics)) {
+                let topic = course.topics.find(t => t.topicId === entry.topicId);
+                if (!topic && entry.topicName && entry.topicName.startsWith('Revision:')) {
+                    const names = entry.topicName.replace(/^Revision:\s*/i, '').split(',').map(s => s.trim().toLowerCase());
+                    for (const name of names) {
+                        topic = course.topics.find(t => {
+                            const parts = String(t.topicName || '').split('|');
+                            return parts.length >= 2 && parts[1].trim().toLowerCase() === name;
+                        });
+                        if (topic) break;
+                    }
+                }
+                if (topic) {
+                    const parts = String(topic.topicName || '').split('|');
+                    if (parts.length >= 2) return parts[0].trim();
+                }
+            }
+            return (entry.subject || entry.courseName || 'General').trim();
+        }
+
+        function groupByDate(entries) {
+            const today = new Date();
+            const todayStr = today.getFullYear() + '-' + 
+                String(today.getMonth() + 1).padStart(2, '0') + '-' + 
+                String(today.getDate()).padStart(2, '0');
+
+            const map = {};
+            entries.forEach(e => {
+                if (e.date && e.date < todayStr) return; // Hide past dates
+                if (!map[e.date]) map[e.date] = [];
+                map[e.date].push(e);
             });
-            card.innerHTML = html;
-            container.appendChild(card);
-        });
-    }
+            
+            return Object.keys(map).sort().map(date => {
+                const d = new Date(date.split('-').map(Number));
+                const userTimezoneOffset = d.getTimezoneOffset() * 60000;
+                const adjustedDate = new Date(d.getTime() + userTimezoneOffset);
+                return {
+                    date,
+                    weekday: adjustedDate.toLocaleDateString('en-GB', { weekday: 'short' }),
+                    entries: map[date]
+                };
+            });
+        }
 
-    function escapeHtml(s) {
-        return String(s || '').replace(/[&<>"']/g, m => ({
-            '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-        }[m]));
-    }
+        function renderDateSelector() {
+            const grouped = groupByDate(ALL_ENTRIES);
+            dateSelector.innerHTML = '';
+            if (grouped.length === 0) {
+                container.innerHTML = '<div class="empty-state">No upcoming exams scheduled yet.</div>';
+                return;
+            }
+            grouped.forEach((g, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'date-btn' + (index === 0 ? ' active' : '');
+                const parts = g.date.split('-');
+                const shortDate = parts[2] + '/' + parts[1];
+                btn.innerHTML = `<span class="day">${shortDate}</span><span class="weekday">${g.weekday}</span>`;
+                btn.onclick = () => {
+                    document.querySelectorAll('.date-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    renderForDate(g);
+                };
+                dateSelector.appendChild(btn);
+            });
+            renderForDate(grouped[0]);
+        }
 
-    loadSchedule();
-</script>
+        function renderForDate(group) {
+            container.innerHTML = '';
+            const byCourse = {};
+            
+            group.entries.forEach(e => {
+                const key = e.courseId || e.courseName || 'UNKNOWN';
+                if (!byCourse[key]) {
+                    byCourse[key] = { 
+                        courseName: e.courseName || key,
+                        subject: deriveSubject(e), // ✅ Smartly derive the correct subject
+                        items: [] 
+                    };
+                }
+                byCourse[key].items.push(e);
+            });
+
+            Object.keys(byCourse).forEach(courseId => {
+                const course = byCourse[courseId];
+                const card = document.createElement('div');
+                card.className = 'card';
+                
+                // ✅ Display SUBJECT as the main title, Course Name as subtitle
+                let html = `<div class="exam-title">${escapeHtml(course.subject)}</div>
+                            <div class="course-subtitle">${escapeHtml(course.courseName)}</div>`;
+                
+                course.items.forEach(e => {
+                    const testLink = e.testId 
+                        ? `<a href="${BASE_TEST_URL}${encodeURIComponent(e.testId)}.html" target="_blank" class="test-no">
+                             ${escapeHtml(e.testId)} ↗
+                           </a>`
+                        : `<span class="test-no" style="background:#555;color:#ccc;">N/A</span>`;
+                    
+                    html += `<div class="test-item">
+                        <div class="topic-name">${escapeHtml(e.topicName)}</div>
+                        <div>${testLink}</div>
+                    </div>`;
+                });
+                card.innerHTML = html;
+                container.appendChild(card);
+            });
+        }
+
+        function escapeHtml(s) {
+            return String(s || '').replace(/[&<>"']/g, m => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            }[m]));
+        }
+
+        loadSchedule();
+    </script>
 </body>
 </html>
