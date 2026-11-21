@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mock Test Schedule</title>
-    <style>
-        body { font-family: "Segoe UI", system-ui, sans-serif; background: #0D1B2A; color: #FFF; padding: 16px; margin: 0; }
-        h2 { color: #F5B700; text-align: center; margin-bottom: 20px; font-size: 1.5rem; }
-        .date-selector-wrapper { display: flex; overflow-x: auto; gap: 10px; padding-bottom: 10px; margin-bottom: 20px; scrollbar-width: thin; }
-        .date-selector-wrapper::-webkit-scrollbar { height: 6px; }
-        .date-selector-wrapper::-webkit-scrollbar-thumb { background: #2E4374; border-radius: 4px; }
-        .date-btn { background: #1A2A5E; border: 2px solid #2E4374; color: #A8C8E1; padding: 10px 16px; border-radius: 10px; cursor: pointer; text-align: center; min-width: 90px; flex-shrink: 0; transition: 0.2s; }
-        .date-btn:hover { background: #2E4374; }
-        .date-btn.active { background: #F5B700; border-color: #F5B700; color: #0D1B2A; }
-        .date-btn .day { font-size: 18px; font-weight: bold; display: block; }
-        .date-btn .weekday { font-size: 12px; opacity: 0.8; display: block; margin-top: 2px; }
-        .card { background: #1A2A5E; border-radius: 12px; padding: 16px; margin-bottom: 16px; border-left: 4px solid #10b981; animation: fadeIn 0.3s ease-in-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-        .exam-title { color: #F5B700; font-size: 20px; font-weight: bold; margin-bottom: 4px; }
-        .course-subtitle { font-size: 13px; color: #A8C8E1; margin-bottom: 12px; border-bottom: 1px solid #2E4374; padding-bottom: 8px; }
-        .test-item { background: #0F1B3D; padding: 12px; border-radius: 8px; margin-top: 8px; border-left: 3px solid #3b82f6; }
-        .topic-name { font-size: 15px; font-weight: 600; color: #e2e8f0; margin-bottom: 6px; }
-        .test-no { display: inline-block; background: #10b981; color: #0D1B2A; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: bold; text-decoration: none; }
-        .test-no:hover { background: #34d399; }
-        .empty-state { text-align: center; color: #A8C8E1; font-style: italic; padding: 40px 20px; }
-        .refresh-btn { display: block; margin: 0 auto 16px; background: #0284c7; color: white; border: none; padding: 10px 24px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 14px; }
-        .refresh-btn:active { transform: scale(0.98); }
-        .loading { text-align: center; padding: 40px; color: #A8C8E1; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mock Test Schedule</title>
+<style>
+    body { font-family: "Segoe UI", system-ui, sans-serif; background: #0D1B2A; color: #FFF; padding: 16px; margin: 0; }
+    h2 { color: #F5B700; text-align: center; margin-bottom: 20px; font-size: 1.5rem; }
+    .date-selector-wrapper { display: flex; overflow-x: auto; gap: 10px; padding-bottom: 10px; margin-bottom: 20px; scrollbar-width: thin; }
+    .date-selector-wrapper::-webkit-scrollbar { height: 6px; }
+    .date-selector-wrapper::-webkit-scrollbar-thumb { background: #2E4374; border-radius: 4px; }
+    .date-btn { background: #1A2A5E; border: 2px solid #2E4374; color: #A8C8E1; padding: 10px 16px; border-radius: 10px; cursor: pointer; text-align: center; min-width: 90px; flex-shrink: 0; transition: 0.2s; }
+    .date-btn:hover { background: #2E4374; }
+    .date-btn.active { background: #F5B700; border-color: #F5B700; color: #0D1B2A; }
+    .date-btn .day { font-size: 18px; font-weight: bold; display: block; }
+    .date-btn .weekday { font-size: 12px; opacity: 0.8; display: block; margin-top: 2px; }
+    .card { background: #1A2A5E; border-radius: 12px; padding: 16px; margin-bottom: 16px; border-left: 4px solid #10b981; animation: fadeIn 0.3s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    .exam-title { color: #F5B700; font-size: 20px; font-weight: bold; margin-bottom: 4px; }
+    .course-subtitle { font-size: 13px; color: #A8C8E1; margin-bottom: 12px; border-bottom: 1px solid #2E4374; padding-bottom: 8px; }
+    .test-item { background: #0F1B3D; padding: 12px; border-radius: 8px; margin-top: 8px; border-left: 3px solid #3b82f6; }
+    .topic-name { font-size: 15px; font-weight: 600; color: #e2e8f0; margin-bottom: 6px; }
+    .test-no { display: inline-block; background: #10b981; color: #0D1B2A; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: bold; text-decoration: none; }
+    .test-no:hover { background: #34d399; }
+    .empty-state { text-align: center; color: #A8C8E1; font-style: italic; padding: 40px 20px; }
+    .refresh-btn { display: block; margin: 0 auto 16px; background: #0284c7; color: white; border: none; padding: 10px 24px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 14px; }
+    .refresh-btn:active { transform: scale(0.98); }
+    .loading { text-align: center; padding: 40px; color: #A8C8E1; }
+</style>
 </head>
 <body>
     <h2>📅 Mock Test Schedule</h2>
     <button class="refresh-btn" onclick="loadSchedule()">🔄 Refresh</button>
+    
     <div class="date-selector-wrapper" id="dateSelector"></div>
     <div id="scheduleContainer"><div class="loading">Loading schedule…</div></div>
 
@@ -92,13 +93,9 @@
         }
 
         function groupByDate(entries) {
-            const today = new Date();
-            const todayStr = today.getFullYear() + '-' +
-                String(today.getMonth() + 1).padStart(2, '0') + '-' +
-                String(today.getDate()).padStart(2, '0');
             const map = {};
             entries.forEach(e => {
-                if (e.date && e.date < todayStr) return;
+                if (!e.date) return;
                 if (!map[e.date]) map[e.date] = [];
                 map[e.date].push(e);
             });
@@ -118,14 +115,41 @@
             const grouped = groupByDate(ALL_ENTRIES);
             dateSelector.innerHTML = '';
             if (grouped.length === 0) {
-                container.innerHTML = '<div class="empty-state">No upcoming exams scheduled yet.</div>';
+                container.innerHTML = '<div class="empty-state">No exams scheduled yet.</div>';
                 return;
             }
+
+            const today = new Date();
+            const todayStr = today.getFullYear() + '-' + 
+                String(today.getMonth() + 1).padStart(2, '0') + '-' + 
+                String(today.getDate()).padStart(2, '0');
+
+            // Find the best default index: first date >= today, or the last date if all are in the past
+            let defaultIndex = 0;
+            let foundTodayOrFuture = false;
+            for (let i = 0; i < grouped.length; i++) {
+                if (grouped[i].date >= todayStr) {
+                    defaultIndex = i;
+                    foundTodayOrFuture = true;
+                    break;
+                }
+            }
+            if (!foundTodayOrFuture) {
+                defaultIndex = grouped.length - 1; // Most recent past date
+            }
+
             grouped.forEach((g, index) => {
                 const btn = document.createElement('button');
-                btn.className = 'date-btn' + (index === 0 ? ' active' : '');
+                btn.className = 'date-btn' + (index === defaultIndex ? ' active' : '');
                 const parts = g.date.split('-');
-                btn.innerHTML = `<span class="day">${parts[2]}/${parts[1]}</span><span class="weekday">${g.weekday}</span>`;
+                const shortDate = parts[2] + '/' + parts[1];
+                
+                // Add a subtle "TODAY" badge for easy identification
+                const isToday = g.date === todayStr;
+                const todayBadge = isToday ? ' <span style="font-size:10px; background:#10b981; color:#fff; padding:1px 5px; border-radius:4px; margin-left:4px; vertical-align: middle;">TODAY</span>' : '';
+                
+                btn.innerHTML = `<span class="day">${shortDate}${todayBadge}</span><span class="weekday">${g.weekday}</span>`;
+                
                 btn.onclick = () => {
                     document.querySelectorAll('.date-btn').forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
@@ -133,12 +157,21 @@
                 };
                 dateSelector.appendChild(btn);
             });
-            renderForDate(grouped[0]);
+
+            // Auto-scroll to the active (today's) date button
+            setTimeout(() => {
+                const activeBtn = dateSelector.querySelector('.date-btn.active');
+                if (activeBtn) {
+                    activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                }
+            }, 100);
+
+            renderForDate(grouped[defaultIndex]);
         }
 
         function renderForDate(group) {
             container.innerHTML = '';
-            // ✅ Group by COURSE + SUBJECT so each card is coherent
+            // Group by COURSE + SUBJECT so each card is coherent
             const cards = {};
             group.entries.forEach(e => {
                 const course = (e.title || e.courseName || e.courseId || 'General').trim();
@@ -152,7 +185,7 @@
                 const g = cards[key];
                 const card = document.createElement('div');
                 card.className = 'card';
-                // ✅ COURSE = big yellow title, SUBJECT = small grey line
+                // COURSE = big yellow title, SUBJECT = small grey line
                 let html = `<div class="exam-title">${escapeHtml(g.course)}</div>
                             <div class="course-subtitle">${escapeHtml(g.subject)}</div>`;
                 g.items.forEach(e => {
