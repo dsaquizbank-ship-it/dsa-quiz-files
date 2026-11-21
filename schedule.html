@@ -92,24 +92,21 @@
             return subj || courseName || 'General';
         }
 
-        function groupByDate(entries) {
-            const map = {};
-            entries.forEach(e => {
-                if (!e.date) return;
-                if (!map[e.date]) map[e.date] = [];
-                map[e.date].push(e);
-            });
-            return Object.keys(map).sort().map(date => {
-                const d = new Date(date.split('-').map(Number));
-                const userTz = d.getTimezoneOffset() * 60000;
-                const adjusted = new Date(d.getTime() + userTz);
-                return {
-                    date,
-                    weekday: adjusted.toLocaleDateString('en-GB', { weekday: 'short' }),
-                    entries: map[date]
-                };
-            });
-        }
+function groupByDate(entries) {
+    const map = {};
+    entries.forEach(e => {
+        if (!e.date) return;
+        if (!map[e.date]) map[e.date] = [];
+        map[e.date].push(e);
+    });
+    return Object.keys(map).sort().map(date => {
+        // 'T00:00:00' (no Z) = parsed as LOCAL midnight → correct weekday
+        const weekday = new Date(date + 'T00:00:00')
+            .toLocaleDateString('en-GB', { weekday: 'short' });
+        return { date, weekday, entries: map[date] };
+    });
+}
+        
 
         function renderDateSelector() {
             const grouped = groupByDate(ALL_ENTRIES);
