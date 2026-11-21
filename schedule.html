@@ -32,7 +32,6 @@
 <body>
     <h2>📅 Mock Test Schedule</h2>
     <button class="refresh-btn" onclick="loadSchedule()">🔄 Refresh</button>
-    
     <div class="date-selector-wrapper" id="dateSelector"></div>
     <div id="scheduleContainer"><div class="loading">Loading schedule…</div></div>
 
@@ -49,73 +48,67 @@
         async function loadSchedule() {
             container.innerHTML = '<div class="loading">Loading schedule…</div>';
             try {
-                // Fetch both schedule and topics to ensure we can derive the correct subject
                 const [scheduleRes, topicsRes] = await Promise.all([
                     fetch(SCHEDULE_JSON_URL + '?v=' + Date.now()),
                     fetch(TOPICS_JSON_URL + '?v=' + Date.now()).catch(() => ({ ok: false }))
                 ]);
-                
                 if (!scheduleRes.ok) throw new Error('HTTP ' + scheduleRes.status);
                 const scheduleData = await scheduleRes.json();
                 ALL_ENTRIES = Array.isArray(scheduleData.entries) ? scheduleData.entries : [];
-                
                 if (topicsRes.ok) {
                     const topicsData = await topicsRes.json();
                     TOPICS_COURSES = Array.isArray(topicsData.courses) ? topicsData.courses : [];
                 }
-
                 renderDateSelector();
             } catch (e) {
                 container.innerHTML = '<div class="empty-state">⚠️ Could not load schedule.<br><small style="opacity:.7">' + e.message + '</small></div>';
             }
         }
 
-        // 🧠 Smartly derives the real subject, even for old data that saved "BANK" as the subject
+        // 🧠 Recover the real subject even for old entries that saved the course name as subject
         function deriveSubject(entry) {
-            if (entry.subject && entry.subject.trim().toLowerCase() !== (entry.courseName || '').trim().toLowerCase()) {
-                return entry.subject.trim();
-            }
-            const course = TOPICS_COURSES.find(c => c.courseId === entry.courseId || c.courseName === entry.courseName);
+            const courseName = (entry.title || entry.courseName || entry.courseId || '').trim();
+            const subj = (entry.subject || '').trim();
+            if (subj && subj.toLowerCase() !== courseName.toLowerCase()) return subj;
+            const course = TOPICS_COURSES.find(c => c.courseId === entry.courseId || c.courseName === courseName);
             if (course && Array.isArray(course.topics)) {
                 let topic = course.topics.find(t => t.topicId === entry.topicId);
-                if (!topic && entry.topicName && entry.topicName.startsWith('Revision:')) {
+                if (!topic && entry.topicName && /^Revision:/i.test(entry.topicName)) {
                     const names = entry.topicName.replace(/^Revision:\s*/i, '').split(',').map(s => s.trim().toLowerCase());
-                    for (const name of names) {
+                    for (const n of names) {
                         topic = course.topics.find(t => {
-                            const parts = String(t.topicName || '').split('|');
-                            return parts.length >= 2 && parts[1].trim().toLowerCase() === name;
+                            const p = String(t.topicName || '').split('|');
+                            return p.length >= 2 && p[1].trim().toLowerCase() === n;
                         });
                         if (topic) break;
                     }
                 }
                 if (topic) {
-                    const parts = String(topic.topicName || '').split('|');
-                    if (parts.length >= 2) return parts[0].trim();
+                    const p = String(topic.topicName || '').split('|');
+                    if (p.length >= 2) return p[0].trim();
                 }
             }
-            return (entry.subject || entry.courseName || 'General').trim();
+            return subj || courseName || 'General';
         }
 
         function groupByDate(entries) {
             const today = new Date();
-            const todayStr = today.getFullYear() + '-' + 
-                String(today.getMonth() + 1).padStart(2, '0') + '-' + 
+            const todayStr = today.getFullYear() + '-' +
+                String(today.getMonth() + 1).padStart(2, '0') + '-' +
                 String(today.getDate()).padStart(2, '0');
-
             const map = {};
             entries.forEach(e => {
-                if (e.date && e.date < todayStr) return; // Hide past dates
+                if (e.date && e.date < todayStr) return;
                 if (!map[e.date]) map[e.date] = [];
                 map[e.date].push(e);
             });
-            
             return Object.keys(map).sort().map(date => {
                 const d = new Date(date.split('-').map(Number));
-                const userTimezoneOffset = d.getTimezoneOffset() * 60000;
-                const adjustedDate = new Date(d.getTime() + userTimezoneOffset);
+                const userTz = d.getTimezoneOffset() * 60000;
+                const adjusted = new Date(d.getTime() + userTz);
                 return {
                     date,
-                    weekday: adjustedDate.toLocaleDateString('en-GB', { weekday: 'short' }),
+                    weekday: adjusted.toLocaleDateString('en-GB', { weekday: 'short' }),
                     entries: map[date]
                 };
             });
@@ -132,8 +125,7 @@
                 const btn = document.createElement('button');
                 btn.className = 'date-btn' + (index === 0 ? ' active' : '');
                 const parts = g.date.split('-');
-                const shortDate = parts[2] + '/' + parts[1];
-                btn.innerHTML = `<span class="day">${shortDate}</span><span class="weekday">${g.weekday}</span>`;
+                btn.innerHTML = `<span class="day">${parts[2]}/${parts[1]}</span><span class="weekday">${g.weekday}</span>`;
                 btn.onclick = () => {
                     document.querySelectorAll('.date-btn').forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
@@ -146,40 +138,31 @@
 
         function renderForDate(group) {
             container.innerHTML = '';
-            const byCourse = {};
-            
+            // ✅ Group by COURSE + SUBJECT so each card is coherent
+            const cards = {};
             group.entries.forEach(e => {
-                const key = e.courseId || e.courseName || 'UNKNOWN';
-                if (!byCourse[key]) {
-                    byCourse[key] = { 
-                        courseName: e.courseName || key,
-                        subject: deriveSubject(e), // ✅ Smartly derive the correct subject
-                        items: [] 
-                    };
-                }
-                byCourse[key].items.push(e);
+                const course = (e.title || e.courseName || e.courseId || 'General').trim();
+                const subject = deriveSubject(e);
+                const key = course.toLowerCase() + '||' + subject.toLowerCase();
+                if (!cards[key]) cards[key] = { course, subject, items: [] };
+                cards[key].items.push(e);
             });
 
-            Object.keys(byCourse).forEach(courseId => {
-                const course = byCourse[courseId];
+            Object.keys(cards).forEach(key => {
+                const g = cards[key];
                 const card = document.createElement('div');
                 card.className = 'card';
-                
-                // ✅ Display SUBJECT as the main title, Course Name as subtitle
-                let html = `<div class="exam-title">${escapeHtml(course.subject)}</div>
-                            <div class="course-subtitle">${escapeHtml(course.courseName)}</div>`;
-                
-                course.items.forEach(e => {
-                    const testLink = e.testId 
-                        ? `<a href="${BASE_TEST_URL}${encodeURIComponent(e.testId)}.html" target="_blank" class="test-no">
-                             ${escapeHtml(e.testId)} ↗
-                           </a>`
+                // ✅ COURSE = big yellow title, SUBJECT = small grey line
+                let html = `<div class="exam-title">${escapeHtml(g.course)}</div>
+                            <div class="course-subtitle">${escapeHtml(g.subject)}</div>`;
+                g.items.forEach(e => {
+                    const testLink = e.testId
+                        ? `<a href="${BASE_TEST_URL}${encodeURIComponent(e.testId)}.html" target="_blank" class="test-no">${escapeHtml(e.testId)} ↗</a>`
                         : `<span class="test-no" style="background:#555;color:#ccc;">N/A</span>`;
-                    
                     html += `<div class="test-item">
-                        <div class="topic-name">${escapeHtml(e.topicName)}</div>
-                        <div>${testLink}</div>
-                    </div>`;
+                                <div class="topic-name">${escapeHtml(e.topicName)}</div>
+                                <div>${testLink}</div>
+                             </div>`;
                 });
                 card.innerHTML = html;
                 container.appendChild(card);
@@ -187,9 +170,7 @@
         }
 
         function escapeHtml(s) {
-            return String(s || '').replace(/[&<>"']/g, m => ({
-                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-            }[m]));
+            return String(s || '').replace(/[&<>"']/g, m => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));
         }
 
         loadSchedule();
