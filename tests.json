@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-22T15:34:38.013Z",
+  "version": "2026-11-22T15:37:14.438Z",
   "categories": [
     {
       "id": "BANK",
@@ -3239,6 +3239,20 @@
       "releaseTimestamp": 1795420800000,
       "language": "ta",
       "createdAt": 1795361678013
+    },
+    {
+      "testId": "UGZ-7",
+      "examId": "UG-ZOO",
+      "name": "UGTRB ZOOLOGY-UNIT-VIII ENVIRONMENTAL BIOLOGY (SET-1)",
+      "topic": "UNIT-VIII ENVIRONMENTAL BIOLOGY",
+      "durationMinutes": 30,
+      "order": 7,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGZ-7.html",
+      "releaseTimestamp": 1795593600000,
+      "language": "both",
+      "createdAt": 1795361834438
     }
   ]
 }
