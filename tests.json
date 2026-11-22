@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-22T15:40:54.149Z",
+  "version": "2026-11-22T15:46:37.491Z",
   "categories": [
     {
       "id": "BANK",
@@ -3253,6 +3253,20 @@
       "releaseTimestamp": 1795420800000,
       "language": "both",
       "createdAt": 1795361834438
+    },
+    {
+      "testId": "UGZ-8",
+      "examId": "UG-ZOO",
+      "name": "UGTRB ZOOLOGY-ECOLOGY SCOPE TO SUBSTRATUM (SET-1)",
+      "topic": "ECOLOGY SCOPE TO SUBSTRATUM",
+      "durationMinutes": 30,
+      "order": 8,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGZ-8.html",
+      "releaseTimestamp": 1795593600000,
+      "language": "both",
+      "createdAt": 1795362397491
     }
   ]
 }
