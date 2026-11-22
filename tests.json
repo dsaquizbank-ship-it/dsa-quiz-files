@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-22T15:46:37.491Z",
+  "version": "2026-11-22T16:50:53.559Z",
   "categories": [
     {
       "id": "BANK",
@@ -3267,6 +3267,20 @@
       "releaseTimestamp": 1795593600000,
       "language": "both",
       "createdAt": 1795362397491
+    },
+    {
+      "testId": "BQA-4",
+      "examId": "BANK-QA",
+      "name": "QUANTITATIVE APTITUDE-RATIO AND PROPORTION (SET-1)",
+      "topic": "RATIO AND PROPORTION",
+      "durationMinutes": 30,
+      "order": 4,
+      "questionCount": 25,
+      "negativeMark": 0.25,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BQA-4.html",
+      "releaseTimestamp": 1795420800000,
+      "language": "en",
+      "createdAt": 1795366253559
     }
   ]
 }
