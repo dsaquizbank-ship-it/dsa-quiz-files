@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-22T16:53:20.503Z",
+  "version": "2026-11-22T17:02:36.296Z",
   "categories": [
     {
       "id": "BANK",
@@ -3309,6 +3309,20 @@
       "releaseTimestamp": 1795420800000,
       "language": "en",
       "createdAt": 1795366400503
+    },
+    {
+      "testId": "BRE-4",
+      "examId": "BANK-RE",
+      "name": "REASONING-INEQUALITY (SET-1)",
+      "topic": "INEQUALITY",
+      "durationMinutes": 30,
+      "order": 4,
+      "questionCount": 25,
+      "negativeMark": 0.25,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BRE-4.html",
+      "releaseTimestamp": 1795593600000,
+      "language": "en",
+      "createdAt": 1795366956296
     }
   ]
 }
