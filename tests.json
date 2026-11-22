@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-22T16:50:53.559Z",
+  "version": "2026-11-22T16:52:28.391Z",
   "categories": [
     {
       "id": "BANK",
@@ -3281,6 +3281,20 @@
       "releaseTimestamp": 1795420800000,
       "language": "en",
       "createdAt": 1795366253559
+    },
+    {
+      "testId": "RQA-3",
+      "examId": "RRB-QA",
+      "name": "QUANTITATIVE APTITUDE-RATIO AND PROPORTION (SET-1)",
+      "topic": "RATIO AND PROPORTION",
+      "durationMinutes": 30,
+      "order": 3,
+      "questionCount": 25,
+      "negativeMark": 0.33,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/RQA-3.html",
+      "releaseTimestamp": 1795420800000,
+      "language": "en",
+      "createdAt": 1795366348391
     }
   ]
 }
