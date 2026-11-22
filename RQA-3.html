@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-    <title>RQA-3 - PERCENTAGES (SET-1)</title>
+    <title>RQA-3 - QUANTITATIVE APTITUDE-RATIO AND PROPORTION (SET-1)</title>
     <script>
         window.MathJax = {
             tex: {
@@ -38,7 +38,7 @@
         .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
         .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
         .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
-        .top-buttons { display: flex; gap: 8px; }
+        .top-buttons { display: flex; gap: 8px; align-items: center; }
         .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
         .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
         .language-toggle { background: var(--accent-dark); color: white; border: none; }
@@ -132,6 +132,7 @@
             <div class="candidate-badge" id="quizCandidateName">Candidate</div>
             <div class="timer-box" id="timerDisplay">30:00</div>
             <div class="top-buttons">
+                <div id="topClearBtnContainer"></div>
                 <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="display: none;">தமிழ்</button>
             </div>
         </div>
@@ -208,9 +209,9 @@
     let dashboard = {
         examTitle: "QUANTITATIVE APTITUDE",
         testNo: "RQA-3",
-        date: "16/11/2026",
+        date: "23/11/2026",
         subject: "QUANTITATIVE APTITUDE",
-        topic: "PERCENTAGES",
+        topic: "RATIO AND PROPORTION",
         duration: "30",
         totalMarks: "0",
         negativeMark: 0.33,
@@ -218,201 +219,330 @@
 let QUESTIONS = [
   {
     "type": "mcq",
-    "en": "If A is 28% more than B and C is 25% less than the sum of A and B, then by what percent will C be more than A (correct to one decimal place)?",
+    "en": "If $a : b : c = 3 : 4 : 7$, then the ratio $(a + b + c) : c$ is equal to",
     "ta": "",
-    "optionsEn": ["32.2%", "28%", "43%", "33.6%"],
+    "optionsEn": [
+      "$2 : 1$",
+      "$14 : 3$",
+      "$7 : 2$",
+      "$1 : 2$"
+    ],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "The number of students in $3$ classes is in the ratio $2 : 3 : 4$. If $12$ students are increased in each class this ratio changes to $8 : 11 : 14$. The total number of students in the three classes in the beginning was",
+    "ta": "",
+    "optionsEn": [
+      "$162$",
+      "$108$",
+      "$96$",
+      "$54$"
+    ],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "A box has $210$ coins of denominations one-rupee and fifty paise only. The ratio of their respective values is $13 : 11$. The number of one-rupee coin is",
+    "ta": "",
+    "optionsEn": [
+      "$65$",
+      "$66$",
+      "$77$",
+      "$78$"
+    ],
     "optionsTa": [],
     "answer": 3
   },
   {
     "type": "mcq",
-    "en": "If the radius of a right circular cylinder is decreased by 20% while its height is increased by 40%, then the percentage change in its volume will be?",
+    "en": "If $\\frac{2}{3}$rd of $A = 75\\%$ of $B = 0.6$ of $C$, then $A : B : C$ is",
     "ta": "",
-    "optionsEn": ["1.04 % increase", "10.4 % decrease", "No increase or decrease", "10.4 % increase"],
-    "optionsTa": [],
-    "answer": 1
-  },
-  {
-    "type": "mcq",
-    "en": "Raghav spends 80% of his income. If his income increases by 12% and the savings decrease by 10%, then what will be the percentage increase in his expenditure?",
-    "ta": "",
-    "optionsEn": ["20.5", "16", "17.5", "22"],
-    "optionsTa": [],
-    "answer": 2
-  },
-  {
-    "type": "mcq",
-    "en": "A number is first increased by 16% and then increased by 14 %. The number, so obtained, is now decreased by 30%. What is the net increase or decrease percent in the original number (nearest to an integer)?",
-    "ta": "",
-    "optionsEn": ["6% increase", "7% decrease", "No increase or decrease", "9% decrease"],
-    "optionsTa": [],
-    "answer": 1
-  },
-  {
-    "type": "mcq",
-    "en": "When the price of an item was reduced by 25%, then its sale was increased by x %. If there is an increase of 20% in the receipt of the revenue, then the value of x will be?",
-    "ta": "",
-    "optionsEn": ["50", "60", "45", "75"],
-    "optionsTa": [],
-    "answer": 1
-  },
-  {
-    "type": "mcq",
-    "en": "When a number is increased by 24, it becomes 115% of itself. What is the number?",
-    "ta": "",
-    "optionsEn": ["160", "250", "100", "200"],
-    "optionsTa": [],
-    "answer": 0
-  },
-  {
-    "type": "mcq",
-    "en": "If 60% of a number is 120 more than 20% of the number, then 28% of the number is less than $33\\frac{1}{3}\\%$ of the number by?",
-    "ta": "",
-    "optionsEn": ["14", "12", "16", "15"],
-    "optionsTa": [],
-    "answer": 2
-  },
-  {
-    "type": "mcq",
-    "en": "A is 25% more than B and B is 40% less than C. If C is 30% more than D, then by what percent is A less than D?",
-    "ta": "",
-    "optionsEn": ["1.5", "2.5", "4", "5"],
-    "optionsTa": [],
-    "answer": 1
-  },
-  {
-    "type": "mcq",
-    "en": "In a class, $83\\frac{1}{3}\\%$ of the number of students are girls and the rest are boys. If 60% of the number of boys and 80% of the number of girls are present, then what percentage of the total number of students in the class is absent?",
-    "ta": "",
-    "optionsEn": ["$26\\frac{2}{3}$", "$22\\frac{2}{3}$", "$23\\frac{1}{3}$", "$12\\frac{1}{3}$"],
-    "optionsTa": [],
-    "answer": 2
-  },
-  {
-    "type": "mcq",
-    "en": "A spends 65% of his income. His income is increased by 20.1% and his expenditure is increased by 25%. His savings?",
-    "ta": "",
-    "optionsEn": ["Increase by 11%", "Increase by 5%", "Decrease by 5%", "Decrease by 11%"],
-    "optionsTa": [],
-    "answer": 0
-  },
-  {
-    "type": "mcq",
-    "en": "If the diameter of the base of a right circular cylinder is reduced by $33\\frac{1}{3}\\%$ and its height is doubled, then the volume of the cylinder will?",
-    "ta": "",
-    "optionsEn": ["Increase by $1\\frac{1}{9}\\%$", "remain unchanged", "Increase by $11\\frac{1}{9}\\%$", "Decrease by $11\\frac{1}{9}\\%$"],
+    "optionsEn": [
+      "$2 : 3 : 3$",
+      "$3 : 4 : 5$",
+      "$4 : 5 : 6$",
+      "$9 : 8 : 10$"
+    ],
     "optionsTa": [],
     "answer": 3
   },
   {
     "type": "mcq",
-    "en": "If the price of petrol increases by 19% and Sunitha intends to spend only an additional 12% on petrol, by what percent should she reduce the quantity of petrol purchased (nearest to an integer)?",
+    "en": "If $A$ and $B$ are in the ratio $3 : 4$, and $B$ and $C$ in the ratio $12 : 13$, then $A$ and $C$ will be in the ratio",
     "ta": "",
-    "optionsEn": ["7", "6", "5", "8"],
+    "optionsEn": [
+      "$3 : 13$",
+      "$9 : 13$",
+      "$36 : 13$",
+      "$13 : 9$"
+    ],
     "optionsTa": [],
     "answer": 1
   },
   {
     "type": "mcq",
-    "en": "Monika spends 72% of her income. If her income increases by 20% and savings increase by 15%, then her expenditure increases by: (correct to 1 decimal place)",
+    "en": "The salaries of $A$, $B$ and $C$ are in the ratio $1 : 3 : 4$. If the salaries are increased by $5\\%$, $10\\%$ and $15\\%$ respectively, then the increased salaries will be in the ratio",
     "ta": "",
-    "optionsEn": ["20.8%", "20.2%", "21.9%", "19.8%"],
+    "optionsEn": [
+      "$20 : 66 : 95$",
+      "$21 : 66 : 96$",
+      "$21 : 66 : 92$",
+      "$19 : 66 : 92$"
+    ],
     "optionsTa": [],
     "answer": 2
   },
   {
     "type": "mcq",
-    "en": "The price of oil is increased by 20%. However, its consumption decreased by $8\\frac{1}{3}\\%$. What is the percentage increase or decrease in the expenditure on it?",
+    "en": "If $A : B = 2 : 3$ and $B : C = 4 : 5$ then $A : B : C$ is",
     "ta": "",
-    "optionsEn": ["Increase by 10%", "Increase by 5%", "Decrease by 10%", "Decrease by 5%"],
-    "optionsTa": [],
-    "answer": 0
-  },
-  {
-    "type": "mcq",
-    "en": "Basir's working hours per day were increased by 15% and his wages per hour were increased by 20%. By how much per cent did his daily earnings increase?",
-    "ta": "",
-    "optionsEn": ["40", "38", "35", "36"],
-    "optionsTa": [],
-    "answer": 1
-  },
-  {
-    "type": "mcq",
-    "en": "If 25% of half of x is equal to 2.5 times the value of 30% of one-fourth of y, then x is what per cent more or less than y?",
-    "ta": "",
-    "optionsEn": ["$33\\frac{1}{3}\\%$ more", "50% more", "$33\\frac{1}{3}\\%$ less", "50% less"],
-    "optionsTa": [],
-    "answer": 1
-  },
-  {
-    "type": "mcq",
-    "en": "0.08% of 120% of 50,000 is equal to ______.",
-    "ta": "",
-    "optionsEn": ["480", "48", "4800", "4.8"],
-    "optionsTa": [],
-    "answer": 1
-  },
-  {
-    "type": "mcq",
-    "en": "0.02% of 150% of 600 is:",
-    "ta": "",
-    "optionsEn": ["0.18", "1.8", "18", "0.018"],
-    "optionsTa": [],
-    "answer": 0
-  },
-  {
-    "type": "mcq",
-    "en": "When a number is increased by 40, it becomes 125% of itself. What is the number?",
-    "ta": "",
-    "optionsEn": ["200", "60", "160", "100"],
+    "optionsEn": [
+      "$2 : 3 : 5$",
+      "$5 : 4 : 6$",
+      "$8 : 12 : 15$",
+      "$6 : 4 : 5$"
+    ],
     "optionsTa": [],
     "answer": 2
   },
   {
     "type": "mcq",
-    "en": "In an exam of 300 marks a student gets 75 marks. If she had scored 6 more marks she would have attained passing percentage. What is the passing percentage?",
+    "en": "If two times $A$ is equal to three times of $B$ and also equal to four times of $C$, then $A : B : C$ is",
     "ta": "",
-    "optionsEn": ["25", "27", "35", "30"],
+    "optionsEn": [
+      "$2 : 3 : 4$",
+      "$3 : 4 : 2$",
+      "$4 : 6 : 3$",
+      "$6 : 4 : 3$"
+    ],
     "optionsTa": [],
     "answer": 3
   },
   {
     "type": "mcq",
-    "en": "A man's annual income has increased by Rs. 2 lakh but the tax on income that he has to pay has reduced from 20% to 16%. He now pays the same amount of tax as before. What is his increased income (in Rs lakhs)?",
+    "en": "In a school having roll strength $286$, the ratio of boys and girls is $8 : 5$. If $22$ more girls get admitted into the school, the ratio of boys and girls becomes",
     "ta": "",
-    "optionsEn": ["8", "10", "12", "6"],
-    "optionsTa": [],
-    "answer": 1
-  },
-  {
-    "type": "mcq",
-    "en": "150% of 0.05% of x is 75. Find x.",
-    "ta": "",
-    "optionsEn": ["100000", "75000", "125000", "150000"],
-    "optionsTa": [],
-    "answer": 0
-  },
-  {
-    "type": "mcq",
-    "en": "A student multiplied a number by $4/5$ instead of $5/4$. What is the percentage error in the calculation?",
-    "ta": "",
-    "optionsEn": ["16", "25", "36", "20"],
-    "optionsTa": [],
-    "answer": 2
-  },
-  {
-    "type": "mcq",
-    "en": "Elections were held in a society to elect a chairman. There were only two candidates A and B. Candidate B got 25% less votes than candidate A. The number of members who did not cast the vote was same as the number of votes that candidate B got. By how many votes did A win if the society had 20000 members?",
-    "ta": "",
-    "optionsEn": ["6000", "4000", "8000", "2000"],
+    "optionsEn": [
+      "$12 : 7$",
+      "$10 : 7$",
+      "$8 : 7$",
+      "$4 : 3$"
+    ],
     "optionsTa": [],
     "answer": 3
   },
   {
     "type": "mcq",
-    "en": "250% of a = b, then b% of 250 is the same as a% of ______.",
+    "en": "Two numbers are in ratio $4 : 5$ and their LCM is $180$. The smaller number is",
     "ta": "",
-    "optionsEn": ["625", "10000", "100", "6250"],
+    "optionsEn": [
+      "$9$",
+      "$15$",
+      "$36$",
+      "$45$"
+    ],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "If $A : B = 2 : 3$, $B : C = 4 : 5$ and $C : D = 5 : 9$ then $A : D$ is equal to:",
+    "ta": "",
+    "optionsEn": [
+      "$11 : 17$",
+      "$8 : 27$",
+      "$5 : 9$",
+      "$2 : 9$"
+    ],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "In a class, the number of girls is $20\\%$ more than that of the boys. The strength of the class is $66$. If $4$ more girls are admitted to the class, the ratio of the number of boys to that of the girls is",
+    "ta": "",
+    "optionsEn": [
+      "$1 : 2$",
+      "$3 : 4$",
+      "$1 : 4$",
+      "$3 : 5$"
+    ],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "What must be added to each term of the ratio $7 : 11$, So as to make it equal to $3 : 4$?",
+    "ta": "",
+    "optionsEn": [
+      "$8$",
+      "$7.5$",
+      "$6.5$",
+      "$5$"
+    ],
+    "optionsTa": [],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Two numbers are in ratio $7 : 11$. If $7$ is added to each of the numbers, the ratio becomes $2 : 3$. The smaller number is",
+    "ta": "",
+    "optionsEn": [
+      "$39$",
+      "$49$",
+      "$66$",
+      "$77$"
+    ],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "The ratio of water and milk in a $30$ liter mixture is $7 : 3$. Find the quantity of water to be added to the mixture in order to make this ratio $6 : 1$.",
+    "ta": "",
+    "optionsEn": [
+      "$30$",
+      "$32$",
+      "$33$",
+      "$35$"
+    ],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "The incomes of $A$ and $B$ are in the ratio $3 : 2$ and their expenditure are in ratio $5 : 3$. If each saves Rs. $1000$, then, $A$'s income can be:",
+    "ta": "",
+    "optionsEn": [
+      "Rs. $3000$",
+      "Rs. $4000$",
+      "Rs. $6000$",
+      "Rs. $9000$",
+      "Rs. $4500$"
+    ],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "The difference between two positive numbers is $10$ and the ratio between them is $5 : 3$. Find the product of the two numbers.",
+    "ta": "",
+    "optionsEn": [
+      "$375$",
+      "$175$",
+      "$275$",
+      "$125$",
+      "$250$"
+    ],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "The present ratio of ages of $A$ and $B$ is $4 : 5$. $18$ years ago, this ratio was $11 : 16$. Find the sum total of their present ages.",
+    "ta": "",
+    "optionsEn": [
+      "$90$ years",
+      "$105$ years",
+      "$110$ years",
+      "$80$ years",
+      "$95$ years"
+    ],
+    "optionsTa": [],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "The number of oranges in three basket are in the ratio $3 : 4 : 5$. In which ratio the no. of oranges in first two basket must be increased so that the new ratio becomes $5 : 4 : 3$ ?",
+    "ta": "",
+    "optionsEn": [
+      "$3 : 4$",
+      "$2 : 3$",
+      "$1 : 3$",
+      "$2 : 1$",
+      "None of these"
+    ],
+    "optionsTa": [],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "A bag contains an equal number of one rupee, $50$ paise and $25$ paise coins. If the total value is Rs. $35$, how many coins of each type are there?",
+    "ta": "",
+    "optionsEn": [
+      "$15$",
+      "$18$",
+      "$20$",
+      "$27$"
+    ],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "If $x : y = 5 : 2$, then $(8x + 9y) : (8x + 2y)$ is :",
+    "ta": "",
+    "optionsEn": [
+      "$22 : 29$",
+      "$26 : 61$",
+      "$29 : 22$",
+      "$61 : 26$"
+    ],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "The sum of three numbers is $98$. If the ratio of the first to second is $2 : 3$ and that of the second to the third is $5 : 8$, then the second number is:",
+    "ta": "",
+    "optionsEn": [
+      "$20$",
+      "$30$",
+      "$48$",
+      "$58$"
+    ],
+    "optionsTa": [],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Salaries of Ravi and Sumit are in the ratio $2 : 3$. If the salary of each is increased by Rs. $4000$, the new ratio becomes $40 : 57$. What is Sumit's salary?",
+    "ta": "",
+    "optionsEn": [
+      "Rs. $17,000$",
+      "Rs. $20,000$",
+      "Rs. $25,500$",
+      "Rs. $38,000$"
+    ],
+    "optionsTa": [],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "The ratio of the number of boys and girls in a college is $7 : 8$. If the percentage increase in the number of boys and girls be $20\\%$ and $10\\%$ respectively, what will be the new ratio?",
+    "ta": "",
+    "optionsEn": [
+      "$8 : 9$",
+      "$17 : 18$",
+      "$21 : 22$",
+      "Cannot be determined"
+    ],
+    "optionsTa": [],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Seats for Mathematics, Physics and Biology in a school are in the ratio $5 : 7 : 8$. There is a proposal to increase these seats by $40\\%$, $50\\%$ and $75\\%$ respectively. What will be the ratio of increased seats?",
+    "ta": "",
+    "optionsEn": [
+      "$2 : 3 : 4$",
+      "$6 : 7 : 8$",
+      "$6 : 8 : 9$",
+      "None of these"
+    ],
     "optionsTa": [],
     "answer": 0
   }
@@ -529,24 +659,28 @@ let QUESTIONS = [
                 <span class="option-text">${opt}</span>
             </div>`;
         });
-        let clearBtnHtml = "";
-        if (sel !== null && sel !== undefined) {
-            clearBtnHtml = `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;">
-                <button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button>
-            </div>`;
-        }
         document.getElementById("questionArea").innerHTML = `
             ${passageHtml}
             <div style="padding: 0 16px 20px 16px;">
                 ${imageHtml}
                 <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
                 <div>${optsHtml}</div>
-                ${sel !== null && sel !== undefined ? `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;"><button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button></div>` : ``}
             </div>
         `;
+        updateTopClearButton();
         updateNavButtons(); updatePalette();
         if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
         initImageZoom();
+    }
+    function updateTopClearButton() {
+        const container = document.getElementById("topClearBtnContainer");
+        if (!container) return;
+        const sel = userAnswers[currentIndex];
+        if (sel !== null && sel !== undefined) {
+            container.innerHTML = `<button class="btn btn-danger" style="padding: 6px 14px; font-size: 0.8rem; min-height: auto; opacity: 0.9; border-radius: 40px;" onclick="clearSelection()">✖ Clear Selection</button>`;
+        } else {
+            container.innerHTML = "";
+        }
     }
     function selectOption(optIndex) {
         if (isSubmitted) return;
