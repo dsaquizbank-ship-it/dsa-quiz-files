@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-23T07:50:42.893Z",
+  "version": "2026-11-23T07:51:39.579Z",
   "categories": [
     {
       "id": "BANK",
@@ -3385,6 +3385,20 @@
       "releaseTimestamp": 1795420800000,
       "language": "both",
       "createdAt": 1795420138195
+    },
+    {
+      "testId": "TIN-3",
+      "examId": "TNPSC-IN",
+      "name": "INDIAN NATIONAL CONGRESS (SET-1)",
+      "topic": "INDIAN NATIONAL CONGRESS",
+      "durationMinutes": 15,
+      "order": 3,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIN-3.html",
+      "releaseTimestamp": 1795420800000,
+      "language": "both",
+      "createdAt": 1795420299579
     }
   ]
 }
