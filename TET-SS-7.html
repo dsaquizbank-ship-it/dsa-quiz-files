@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>TET-SS-7 - 6TH TERM 3 – CIVICS: DEMOCRACY (SET-1)</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                linebreaks: { automatic: true, width: "container" }
+            },
+            options: { ignoreHtmlClass: "no-mathjax" },
+            chtml: {
+                displayAlign: "left",
+                displayIndent: "0",
+                mtextInheritFont: true
+            },
+            svg: {
+                scale: 0.9,
+                minScale: 0.5,
+                mtextInheritFont: true,
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; color: #10b981; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; align-items: center; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; white-space: normal; word-wrap: break-word; padding-bottom: 20px; max-width: 100%; overflow-x: auto; }
+        mjx-container { display: inline !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; }
+        .question-text::-webkit-scrollbar { display: none; }
+        .question-text { -ms-overflow-style: none; scrollbar-width: none; }
+        .option-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; word-wrap: break-word; }
+        .option-letter { font-weight: 800; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+        .option-text { flex-grow: 1; min-width: 0; word-wrap: break-word; overflow-wrap: break-word; }
+        .option-text mjx-container { display: inline-block !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; overflow-x: visible !important; }
+        .option-text mjx-container[jax="CHTML"][display="true"] { margin: 0 !important; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
+        .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
+        .review-card .question-text { overflow-x: hidden !important; white-space: normal !important; word-wrap: break-word !important; }
+        .review-card strong { color: var(--text-primary); font-size: 16px; }
+        .review-card .option-item { background-color: var(--rc-bg); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: rgba(40, 167, 69, 0.1); border: 1px solid #28a745; color: #28a745; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; color: #dc3545; }
+        .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
+        .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
+        .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
+        .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px 0; border-top: 1px solid var(--border-light); }
+        .review-nav-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .review-nav-btn:disabled { background: var(--border-light); color: var(--text-primary); opacity: 0.5; cursor: not-allowed; }
+        .review-nav-text { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+        .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { 
+            html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } 
+            .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } 
+            #startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard { display: none !important; } 
+            #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } 
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; } 
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; margin-bottom: 20px !important; display: block !important; } 
+            .review-card .option-item { border: 1px solid #ccc !important; background: white !important; color: black !important; } 
+            .review-card .option-item.correct { background: #e6ffe6 !important; border-color: #28a745 !important; color: black !important; } 
+            .review-card .option-item.wrong { background: #ffe6e6 !important; border-color: #dc3545 !important; color: black !important; } 
+            @page { size: A4; margin: 1.5cm; } 
+        }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">15:00</div>
+            <div class="top-buttons">
+                <div id="topClearBtnContainer"></div>
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div id="printHeader" style="display: none;">
+            <h1>DR SAHITHA IAS ACADEMY</h1>
+            <h3>ANSWER KEY & DETAILED REVIEW</h3>
+            <p><strong>Test:</strong> TET-SS-7 - TET SOCIAL SCIENCE</p>
+        </div>
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+            <div id="reviewPagination" class="review-nav-container" style="display: none;">
+                <button class="review-nav-btn" id="prevReviewBtn" onclick="navigateReview(-1)">◀ PREV</button>
+                <span class="review-nav-text" id="reviewPageText">1 / 25</span>
+                <button class="review-nav-btn" id="nextReviewBtn" onclick="navigateReview(1)">NEXT ▶</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "TET SOCIAL SCIENCE",
+        testNo: "TET-SS-7",
+        date: "23/11/2026",
+        subject: "TET SOCIAL SCIENCE",
+        topic: "6TH TERM 3 – CIVICS: DEMOCRACY",
+        duration: "15",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "Which statement most accurately explains the distribution of power in a democratic government?",
+    "ta": "ஒரு மக்களாட்சி அரசாங்கத்தில் அதிகாரப் பகிர்வை மிகத் துல்லியமாக விளக்கும் கூற்று எது?",
+    "optionsEn": [
+      "Power is concentrated in the hands of a hereditary ruler.",
+      "Power is vested in the people, who exercise it directly or through elected representatives.",
+      "Power is exercised exclusively by the administrative officials.",
+      "Power is transferred through military succession."
+    ],
+    "optionsTa": [
+      "பரம்பரை ஆட்சியாளரின் கையில் அதிகாரம் குவிந்துள்ளது.",
+      "அதிகாரம் மக்களிடம் உள்ளது; அவர்கள் அதை நேரடியாகவோ அல்லது தேர்ந்தெடுக்கப்பட்ட பிரதிநிதிகள் மூலமாகவோ பயன்படுத்துகின்றனர்.",
+      "நிர்வாக அதிகாரிகளால் மட்டுமே அதிகாரம் பயன்படுத்தப்படுகிறது.",
+      "இராணுவ வாரிசுரிமை மூலம் அதிகாரம் மாற்றப்படுகிறது."
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "The term ‘Democracy’ is derived from which combination of Greek words and meanings?",
+    "ta": "‘மக்களாட்சி’ (Democracy) என்ற சொல் எந்தக் கிரேக்கச் சொற்கள் மற்றும் பொருள்களின் கலவையிலிருந்து பெறப்பட்டது?",
+    "optionsEn": [
+      "Demos – Power; Cratia – People",
+      "Demos – Citizens; Cratia – Justice",
+      "Demos – Government; Cratia – Equality",
+      "Demos – People; Cratia – Rule or Power"
+    ],
+    "optionsTa": [
+      "டெமோஸ் – அதிகாரம்; கிரேட்டியா – மக்கள்",
+      "டெமோஸ் – குடிமக்கள்; கிரேட்டியா – நீதி",
+      "டெமோஸ் – அரசாங்கம்; கிரேட்டியா – சமத்துவம்",
+      "டெமோஸ் – மக்கள்; கிரேட்டியா – ஆட்சி அல்லது அதிகாரம்"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following best distinguishes direct democracy from representative democracy?",
+    "ta": "நேரடி மக்களாட்சியையும் பிரதிநிதித்துவ மக்களாட்சியையும் சிறப்பாக வேறுபடுத்திக் காட்டுவது எது?",
+    "optionsEn": [
+      "In direct democracy, citizens elect representatives to make all laws.",
+      "In representative democracy, citizens personally frame every law.",
+      "In direct democracy, citizens participate directly in law-making; in representative democracy, elected representatives act on their behalf.",
+      "Both systems exclude citizens from decision-making."
+    ],
+    "optionsTa": [
+      "நேரடி மக்களாட்சியில், அனைத்துச் சட்டங்களையும் இயற்றக் குடிமக்கள் பிரதிநிதிகளைத் தேர்ந்தெடுக்கின்றனர்.",
+      "பிரதிநிதித்துவ மக்களாட்சியில், குடிமக்கள் ஒவ்வொரு சட்டத்தையும் தனிப்பட்ட முறையில் உருவாக்குகின்றனர்.",
+      "நேரடி மக்களாட்சியில் குடிமக்கள் சட்டமியற்றுவதில் நேரடியாகப் பங்கேற்கின்றனர்; பிரதிநிதித்துவ மக்களாட்சியில் தேர்ந்தெடுக்கப்பட்ட பிரதிநிதிகள் அவர்களின் சார்பாகச் செயல்படுகின்றனர்.",
+      "இரண்டு அமைப்புகளும் முடிவெடுப்பதிலிருந்து குடிமக்களை விலக்குகின்றன."
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which pair correctly identifies the countries associated with the two major forms of democracy discussed in the textbook?",
+    "ta": "பாடப்புத்தகத்தில் விவாதிக்கப்பட்டுள்ள மக்களாட்சியின் இரண்டு முக்கிய வடிவங்களுடன் தொடர்புடைய நாடுகளைச் சரியாகக் குறிப்பிடும் இணை எது?",
+    "optionsEn": [
+      "Direct Democracy – India; Representative Democracy – Switzerland",
+      "Direct Democracy – Switzerland; Representative Democracy – India",
+      "Direct Democracy – USA; Representative Democracy – Greece",
+      "Direct Democracy – England; Representative Democracy – Switzerland"
+    ],
+    "optionsTa": [
+      "நேரடி மக்களாட்சி – இந்தியா; பிரதிநிதித்துவ மக்களாட்சி – சுவிட்சர்லாந்து",
+      "நேரடி மக்களாட்சி – சுவிட்சர்லாந்து; பிரதிநிதித்துவ மக்களாட்சி – இந்தியா",
+      "நேரடி மக்களாட்சி – அமெரிக்கா; பிரதிநிதித்துவ மக்களாட்சி – கிரீஸ்",
+      "நேரடி மக்களாட்சி – இங்கிலாந்து; பிரதிநிதித்துவ மக்களாட்சி – சுவிட்சர்லாந்து"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Identify the correctly matched pair.",
+    "ta": "சரியாகப் பொருந்தியுள்ள இணையைக் கண்டறிக.",
+    "optionsEn": [
+      "Dr. B.R. Ambedkar – Drafting Committee Chairman",
+      "Abraham Lincoln – Chief Architect of the Indian Constitution",
+      "Mahatma Gandhi – First President of the Constituent Assembly",
+      "Rajasekaran – Author of the Indian Constitution"
+    ],
+    "optionsTa": [
+      "டாக்டர் பி.ஆர். அம்பேத்கர் – வரைவுக்குழுத் தலைவர்",
+      "ஆபிரகாம் லிங்கன் – இந்திய அரசியலமைப்பின் முதன்மைச் சிற்பி",
+      "மகாத்மா காந்தி – அரசியலமைப்பு நிர்ணய சபையின் முதல் தலைவர்",
+      "ராஜசேகரன் – இந்திய அரசியலமைப்பின் ஆசிரியர்"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which pair is correctly associated with the forms of representative democracy?",
+    "ta": "பிரதிநிதித்துவ மக்களாட்சியின் வடிவங்களுடன் சரியாகத் தொடர்புடைய இணை எது?",
+    "optionsEn": [
+      "Parliamentary Democracy – USA; Presidential Democracy – India",
+      "Parliamentary Democracy – India; Presidential Democracy – USA",
+      "Parliamentary Democracy – Switzerland; Presidential Democracy – England",
+      "Parliamentary Democracy – Greece; Presidential Democracy – India"
+    ],
+    "optionsTa": [
+      "நாடாளுமன்ற மக்களாட்சி – அமெரிக்கா; அதிபர் மக்களாட்சி – இந்தியா",
+      "நாடாளுமன்ற மக்களாட்சி – இந்தியா; அதிபர் மக்களாட்சி – அமெரிக்கா",
+      "நாடாளுமன்ற மக்களாட்சி – சுவிட்சர்லாந்து; அதிபர் மக்களாட்சி – இங்கிலாந்து",
+      "நாடாளுமன்ற மக்களாட்சி – கிரீஸ்; அதிபர் மக்களாட்சி – இந்தியா"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Identify the correctly matched pair from the history of democracy.",
+    "ta": "மக்களாட்சியின் வரலாற்றிலிருந்து சரியாகப் பொருந்தியுள்ள இணையைக் கண்டறிக.",
+    "optionsEn": [
+      "New Zealand – First country to allow women to vote in 1893",
+      "United Kingdom – Women received voting rights in 1893",
+      "USA – Women received voting rights in 1918",
+      "India – Universal Adult Franchise introduced in 1920"
+    ],
+    "optionsTa": [
+      "நியூசிலாந்து – 1893 இல் பெண்களுக்கு வாக்குரிமை அளித்த முதல் நாடு",
+      "ஐக்கிய இராச்சியம் – 1893 இல் பெண்களுக்கு வாக்குரிமை கிடைத்தது",
+      "அமெரிக்கா – 1918 இல் பெண்களுக்கு வாக்குரிமை கிடைத்தது",
+      "இந்தியா – 1920 இல் அனைவருக்கும் வயது வந்தோர் வாக்குரிமை அறிமுகப்படுத்தப்பட்டது"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Match the following democratic concepts with their appropriate descriptions.<br><br>a. Direct Democracy – 1. Citizens participate directly in making laws<br>b. Representative Democracy – 2. Elected representatives act on behalf of citizens<br>c. Universal Adult Franchise – 3. Voting rights for all eligible adults<br>d. Democratic Decision Making – 4. Decisions taken after open discussions and consensus",
+    "ta": "பின்வரும் மக்களாட்சிக் கருத்துகளை அவற்றின் பொருத்தமான விளக்கங்களுடன் பொருத்துக.<br><br>a. நேரடி மக்களாட்சி – 1. குடிமக்கள் சட்டமியற்றுவதில் நேரடியாகப் பங்கேற்கின்றனர்<br>b. பிரதிநிதித்துவ மக்களாட்சி – 2. தேர்ந்தெடுக்கப்பட்ட பிரதிநிதிகள் குடிமக்களின் சார்பாகச் செயல்படுகின்றனர்<br>c. அனைவருக்கும் வயது வந்தோர் வாக்குரிமை – 3. தகுதியுள்ள அனைத்து வயது வந்தோருக்கும் வாக்குரிமை<br>d. மக்களாட்சி முடிவு எடுத்தல் – 4. வெளிப்படையான விவாதங்கள் மற்றும் ஒருமித்த கருத்துக்குப் பிறகு எடுக்கப்படும் முடிவுகள்",
+    "optionsEn": [
+      "a–4, b–3, c–2, d–1",
+      "a–2, b–1, c–4, d–3",
+      "a–3, b–4, c–1, d–2",
+      "a–1, b–2, c–3, d–4"
+    ],
+    "optionsTa": [
+      "a–4, b–3, c–2, d–1",
+      "a–2, b–1, c–4, d–3",
+      "a–3, b–4, c–1, d–2",
+      "a–1, b–2, c–3, d–4"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Match the oldest democracies with their respective historical periods.<br><br>a. Greek Democracy – 1. 5th Century BCE<br>b. San Marino Democracy – 2. 301 CE<br>c. Iceland Democracy – 3. 930 CE<br>d. Isle of Man’s Democracy – 4. 927 CE",
+    "ta": "மிகப் பழமையான மக்களாட்சிகளை அவற்றின் வரலாற்றுக் காலகட்டங்களுடன் பொருத்துக.<br><br>a. கிரேக்க மக்களாட்சி – 1. பொ.ஆ.மு. 5-ஆம் நூற்றாண்டு<br>b. சான் மரினோ மக்களாட்சி – 2. பொ.ஆ. 301<br>c. ஐஸ்லாந்து மக்களாட்சி – 3. பொ.ஆ. 930<br>d. ஐல் ஆஃப் மேன் மக்களாட்சி – 4. பொ.ஆ. 927",
+    "optionsEn": [
+      "a–2, b–1, c–4, d–3",
+      "a–1, b–2, c–3, d–4",
+      "a–3, b–4, c–1, d–2",
+      "a–4, b–3, c–2, d–1"
+    ],
+    "optionsTa": [
+      "a–2, b–1, c–4, d–3",
+      "a–1, b–2, c–3, d–4",
+      "a–3, b–4, c–1, d–2",
+      "a–4, b–3, c–2, d–1"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Match the constitutional features with their corresponding descriptions.<br><br>a. Fundamental Rights – 1. Rights ensured to citizens<br>b. Fundamental Duties – 2. Responsibilities of citizens<br>c. Directive Principles – 3. Principles guiding the State<br>d. Constitution – 4. Framework of government institutions and their powers",
+    "ta": "அரசியலமைப்பு அம்சங்களை அவற்றின் தொடர்புடைய விளக்கங்களுடன் பொருத்துக.<br><br>a. அடிப்படை உரிமைகள் – 1. குடிமக்களுக்கு உறுதிசெய்யப்பட்ட உரிமைகள்<br>b. அடிப்படைக் கடமைகள் – 2. குடிமக்களின் பொறுப்புகள்<br>c. அரசு நெறிமுறைக் கோட்பாடுகள் – 3. அரசை வழிநடத்தும் கோட்பாடுகள்<br>d. அரசியலமைப்பு – 4. அரசு நிறுவனங்கள் மற்றும் அவற்றின் அதிகாரங்களின் கட்டமைப்பு",
+    "optionsEn": [
+      "a–1, b–2, c–3, d–4",
+      "a–2, b–1, c–4, d–3",
+      "a–3, b–4, c–2, d–1",
+      "a–4, b–3, c–1, d–2"
+    ],
+    "optionsTa": [
+      "a–1, b–2, c–3, d–4",
+      "a–2, b–1, c–4, d–3",
+      "a–3, b–4, c–2, d–1",
+      "a–4, b–3, c–1, d–2"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Identify the odd one out based on the countries associated with direct and representative democracy.",
+    "ta": "நேரடி மற்றும் பிரதிநிதித்துவ மக்களாட்சியுடன் தொடர்புடைய நாடுகளின் அடிப்படையில் பொருந்தாத ஒன்றைக் கண்டறிக.",
+    "optionsEn": [
+      "Switzerland",
+      "India",
+      "Direct Democracy",
+      "Direct participation of citizens"
+    ],
+    "optionsTa": [
+      "சுவிட்சர்லாந்து",
+      "இந்தியா",
+      "நேரடி மக்களாட்சி",
+      "குடிமக்களின் நேரடிப் பங்கேற்பு"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Identify the odd one out based on the features of the Indian Constitution.",
+    "ta": "இந்திய அரசியலமைப்பின் அம்சங்களின் அடிப்படையில் பொருந்தாத ஒன்றைக் கண்டறிக.",
+    "optionsEn": [
+      "Freedom",
+      "Equality",
+      "Justice",
+      "Hereditary monarchy"
+    ],
+    "optionsTa": [
+      "சுதந்திரம்",
+      "சமத்துவம்",
+      "நீதி",
+      "பரம்பரை முடியாட்சி"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Identify the odd one out from the following historical democratic developments.",
+    "ta": "பின்வரும் வரலாற்று மக்களாட்சி வளர்ச்சிகளிலிருந்து பொருந்தாத ஒன்றைக் கண்டறிக.",
+    "optionsEn": [
+      "Greek Democracy",
+      "Universal Adult Franchise in India",
+      "Iceland Democracy",
+      "San Marino Democracy"
+    ],
+    "optionsTa": [
+      "கிரேக்க மக்களாட்சி",
+      "இந்தியாவில் அனைவருக்கும் வயது வந்தோர் வாக்குரிமை",
+      "ஐஸ்லாந்து மக்களாட்சி",
+      "சான் மரினோ மக்களாட்சி"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "<b>Assertion:</b> Representative democracy is suitable for a highly populated country like India.<br><b>Reason:</b> It may not be practical for all citizens to gather together and participate directly in every decision.",
+    "ta": "<b>கூற்று:</b> இந்தியா போன்ற அதிக மக்கள்தொகை கொண்ட நாட்டிற்குப் பிரதிநிதித்துவ மக்களாட்சி பொருத்தமானது.<br><b>காரணம்:</b> அனைத்துக் குடிமக்களும் ஒன்றாகக் கூடி ஒவ்வொரு முடிவிலும் நேரடியாகப் பங்கேற்பது நடைமுறைக்குச் சாத்தியமில்லாமல் இருக்கலாம்.",
+    "optionsEn": [
+      "Both Assertion and Reason are true, and Reason is the correct explanation of Assertion.",
+      "Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion.",
+      "Assertion is true, but Reason is false.",
+      "Assertion is false, but Reason is true."
+    ],
+    "optionsTa": [
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; மேலும் காரணம் கூற்றின் சரியான விளக்கமாகும்.",
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; ஆனால் காரணம் கூற்றின் சரியான விளக்கம் அல்ல.",
+      "கூற்று சரி, ஆனால் காரணம் தவறு.",
+      "கூற்று தவறு, ஆனால் காரணம் சரி."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "<b>Assertion:</b> The Indian Constitution plays an important role in maintaining law and order.<br><b>Reason:</b> The Constitution defines the structure, powers and responsibilities of government institutions and establishes citizens’ rights and duties.",
+    "ta": "<b>கூற்று:</b> சட்டம் மற்றும் ஒழுங்கைப் பராமரிப்பதில் இந்திய அரசியலமைப்பு முக்கியப் பங்கு வகிக்கிறது.<br><b>காரணம்:</b> அரசியலமைப்பு அரசு நிறுவனங்களின் கட்டமைப்பு, அதிகாரங்கள் மற்றும் பொறுப்புகளை வரையறுத்து, குடிமக்களின் உரிமைகள் மற்றும் கடமைகளை நிறுவுகிறது.",
+    "optionsEn": [
+      "Assertion is false, but Reason is true.",
+      "Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion.",
+      "Assertion is true, but Reason is false.",
+      "Both Assertion and Reason are true, and Reason is the correct explanation of Assertion."
+    ],
+    "optionsTa": [
+      "கூற்று தவறு, ஆனால் காரணம் சரி.",
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; ஆனால் காரணம் கூற்றின் சரியான விளக்கம் அல்ல.",
+      "கூற்று சரி, ஆனால் காரணம் தவறு.",
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; மேலும் காரணம் கூற்றின் சரியான விளக்கமாகும்."
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "<b>Assertion:</b> Switzerland is associated with direct democracy.<br><b>Reason:</b> In direct democracy, elected representatives alone have the authority to frame laws.",
+    "ta": "<b>கூற்று:</b> சுவிட்சர்லாந்து நேரடி மக்களாட்சியுடன் தொடர்புடையது.<br><b>காரணம்:</b> நேரடி மக்களாட்சியில், தேர்ந்தெடுக்கப்பட்ட பிரதிநிதிகளுக்கு மட்டுமே சட்டங்களை இயற்றும் அதிகாரம் உள்ளது.",
+    "optionsEn": [
+      "Both Assertion and Reason are true, and Reason is the correct explanation of Assertion.",
+      "Assertion is false, but Reason is true.",
+      "Assertion is true, but Reason is false.",
+      "Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion."
+    ],
+    "optionsTa": [
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; மேலும் காரணம் கூற்றின் சரியான விளக்கமாகும்.",
+      "கூற்று தவறு, ஆனால் காரணம் சரி.",
+      "கூற்று சரி, ஆனால் காரணம் தவறு.",
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; ஆனால் காரணம் கூற்றின் சரியான விளக்கம் அல்ல."
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "<b>Assertion:</b> Universal Adult Franchise in India provides voting rights to all citizens above 18 years of age.<br><b>Reason:</b> In the earlier period described in the textbook, voting rights in India were available only to wealthy people.",
+    "ta": "<b>கூற்று:</b> இந்தியாவில் அனைவருக்கும் வயது வந்தோர் வாக்குரிமை 18 வயதுக்கு மேற்பட்ட அனைத்துக் குடிமக்களுக்கும் வாக்குரிமையை வழங்குகிறது.<br><b>காரணம்:</b> பாடப்புத்தகத்தில் விவரிக்கப்பட்டுள்ள முந்தைய காலத்தில், இந்தியாவில் வாக்குரிமை செல்வந்தர்களுக்கு மட்டுமே கிடைத்தது.",
+    "optionsEn": [
+      "Both Assertion and Reason are true, and Reason is the correct explanation of Assertion.",
+      "Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion.",
+      "Assertion is true, but Reason is false.",
+      "Assertion is false, but Reason is true."
+    ],
+    "optionsTa": [
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; மேலும் காரணம் கூற்றின் சரியான விளக்கமாகும்.",
+      "கூற்று மற்றும் காரணம் இரண்டும் சரி; ஆனால் காரணம் கூற்றின் சரியான விளக்கம் அல்ல.",
+      "கூற்று சரி, ஆனால் காரணம் தவறு.",
+      "கூற்று தவறு, ஆனால் காரணம் சரி."
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements about democracy.<br><br>1. Democracy means government of the people, by the people and for the people.<br>2. In a democracy, people have no role in political decision-making.<br>3. Citizens select their representatives through elections.<br>4. Democratic government places considerable power in the hands of the people.",
+    "ta": "மக்களாட்சி குறித்த பின்வரும் கூற்றுகளைக் கவனிக்கவும்.<br><br>1. மக்களாட்சி என்பது மக்களால், மக்களுக்காக, மக்களே நடத்தும் அரசாங்கமாகும்.<br>2. மக்களாட்சியில், அரசியல் முடிவுகளை எடுப்பதில் மக்களுக்கு எந்தப் பங்கும் இல்லை.<br>3. குடிமக்கள் தேர்தல்கள் மூலம் தங்கள் பிரதிநிதிகளைத் தேர்ந்தெடுக்கின்றனர்.<br>4. மக்களாட்சி அரசாங்கம் மக்களின் கைகளில் கணிசமான அதிகாரத்தை வைக்கிறது.",
+    "optionsEn": [
+      "1 and 2 only",
+      "2 and 3 only",
+      "1, 3 and 4 only",
+      "1, 2, 3 and 4"
+    ],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "2 மற்றும் 3 மட்டும்",
+      "1, 3 மற்றும் 4 மட்டும்",
+      "1, 2, 3 மற்றும் 4"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements about direct democracy.<br><br>1. Citizens have the power to frame laws.<br>2. Citizens can discuss and amend laws and rules.<br>3. Only elected representatives can approve changes in laws.<br>4. Switzerland has a long history of successful direct democracy.",
+    "ta": "நேரடி மக்களாட்சி குறித்த பின்வரும் கூற்றுகளைக் கவனிக்கவும்.<br><br>1. சட்டங்களை இயற்றும் அதிகாரம் குடிமக்களுக்கு உள்ளது.<br>2. சட்டங்கள் மற்றும் விதிகளைக் குடிமக்கள் விவாதிக்கவும் திருத்தவும் முடியும்.<br>3. தேர்ந்தெடுக்கப்பட்ட பிரதிநிதிகள் மட்டுமே சட்டங்களில் உள்ள மாற்றங்களுக்கு ஒப்புதல் அளிக்க முடியும்.<br>4. சுவிட்சர்லாந்து வெற்றிகரமான நேரடி மக்களாட்சியின் நீண்ட வரலாற்றைக் கொண்டுள்ளது.",
+    "optionsEn": [
+      "1, 2 and 4 only",
+      "1 and 3 only",
+      "2, 3 and 4 only",
+      "1, 2, 3 and 4"
+    ],
+    "optionsTa": [
+      "1, 2 மற்றும் 4 மட்டும்",
+      "1 மற்றும் 3 மட்டும்",
+      "2, 3 மற்றும் 4 மட்டும்",
+      "1, 2, 3 மற்றும் 4"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statements about the Indian Constitution is/are correct?<br><br>1. It is the longest written constitution in the world.<br>2. It was drafted by the Drafting Committee of the Constituent Assembly.<br>3. Dr. B.R. Ambedkar headed the Drafting Committee.<br>4. It does not define the powers and responsibilities of government institutions.",
+    "ta": "இந்திய அரசியலமைப்பு குறித்த பின்வரும் கூற்றுகளில் எது/எவை சரியானது?<br><br>1. இது உலகின் மிக நீளமான எழுதப்பட்ட அரசியலமைப்பாகும்.<br>2. இது அரசியலமைப்பு நிர்ணய சபையின் வரைவுக்குழுவால் உருவாக்கப்பட்டது.<br>3. டாக்டர் பி.ஆர். அம்பேத்கர் வரைவுக்குழுவின் தலைவராக இருந்தார்.<br>4. இது அரசு நிறுவனங்களின் அதிகாரங்கள் மற்றும் பொறுப்புகளை வரையறுப்பதில்லை.",
+    "optionsEn": [
+      "1 and 2 only",
+      "1, 2 and 3 only",
+      "2, 3 and 4 only",
+      "1, 2, 3 and 4"
+    ],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "1, 2 மற்றும் 3 மட்டும்",
+      "2, 3 மற்றும் 4 மட்டும்",
+      "1, 2, 3 மற்றும் 4"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements regarding the history of democracy.<br><br>1. The birthplace of democracy is Greece.<br>2. Democracy is derived from two Greek words.<br>3. San Marino has an earliest written constitution still in effect, according to the textbook.<br>4. The Iceland Democracy is associated with the oldest and longest functioning parliament in the world.",
+    "ta": "மக்களாட்சியின் வரலாறு தொடர்பான பின்வரும் கூற்றுகளைக் கவனிக்கவும்.<br><br>1. மக்களாட்சியின் பிறப்பிடம் கிரீஸ் ஆகும்.<br>2. மக்களாட்சி என்ற சொல் இரண்டு கிரேக்கச் சொற்களிலிருந்து பெறப்பட்டது.<br>3. பாடப்புத்தகத்தின்படி, இன்றும் நடைமுறையில் உள்ள மிகப் பழமையான எழுதப்பட்ட அரசியலமைப்பைச் சான் மரினோ கொண்டுள்ளது.<br>4. ஐஸ்லாந்து மக்களாட்சி உலகின் மிகப் பழமையான மற்றும் நீண்ட காலம் செயல்படும் நாடாளுமன்றத்துடன் தொடர்புடையது.",
+    "optionsEn": [
+      "1 and 2 only",
+      "2 and 3 only",
+      "1, 2, 3 and 4",
+      "1, 3 and 4 only"
+    ],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "2 மற்றும் 3 மட்டும்",
+      "1, 2, 3 மற்றும் 4",
+      "1, 3 மற்றும் 4 மட்டும்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statements about women's voting rights is correct according to the textbook?",
+    "ta": "பெண்களின் வாக்குரிமை குறித்த பின்வரும் கூற்றுகளில் பாடப்புத்தகத்தின்படி எது சரியானது?",
+    "optionsEn": [
+      "New Zealand allowed women to vote in 1893.",
+      "The United Kingdom granted voting rights to women in 1893.",
+      "The USA granted voting rights to women in 1918.",
+      "India introduced Universal Adult Franchise before New Zealand."
+    ],
+    "optionsTa": [
+      "நியூசிலாந்து 1893 இல் பெண்களுக்கு வாக்களிக்க அனுமதித்தது.",
+      "ஐக்கிய இராச்சியம் 1893 இல் பெண்களுக்கு வாக்குரிமை வழங்கியது.",
+      "அமெரிக்கா 1918 இல் பெண்களுக்கு வாக்குரிமை வழங்கியது.",
+      "நியூசிலாந்துக்கு முன்பே இந்தியா அனைவருக்கும் வயது வந்தோர் வாக்குரிமையை அறிமுகப்படுத்தியது."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "A country allows citizens to elect representatives who make laws and take decisions on their behalf. Which form of democracy does this country practise?",
+    "ta": "ஒரு நாடு குடிமக்களைப் பிரதிநிதிகளைத் தேர்ந்தெடுக்க அனுமதிக்கிறது; அவர்கள் தங்கள் சார்பாகச் சட்டங்களை இயற்றி முடிவுகளை எடுக்கின்றனர். இந்த நாடு எந்த மக்களாட்சி வடிவத்தைப் பின்பற்றுகிறது?",
+    "optionsEn": [
+      "Direct Democracy",
+      "Representative Democracy",
+      "Monarchy",
+      "Dictatorship"
+    ],
+    "optionsTa": [
+      "நேரடி மக்களாட்சி",
+      "பிரதிநிதித்துவ மக்களாட்சி",
+      "முடியாட்சி",
+      "சர்வாதிகாரம்"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "In a democratic organisation, members discuss different opinions openly and take a final decision only when everyone is convinced. Which democratic principle is illustrated?",
+    "ta": "ஒரு மக்களாட்சி அமைப்பில், உறுப்பினர்கள் வெவ்வேறு கருத்துகளை வெளிப்படையாக விவாதித்து, அனைவரும் சமாதானமடைந்த பிறகே இறுதி முடிவை எடுக்கின்றனர். இது எந்த மக்களாட்சிக் கோட்பாட்டை விளக்குகிறது?",
+    "optionsEn": [
+      "Hereditary succession",
+      "Military administration",
+      "Democratic decision making",
+      "Absolute authority of the leader"
+    ],
+    "optionsTa": [
+      "பரம்பரை வாரிசுரிமை",
+      "இராணுவ நிர்வாகம்",
+      "மக்களாட்சி முடிவு எடுத்தல்",
+      "தலைவரின் முழுமையான அதிகாரம்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which sequence correctly represents the development of democratic governance?",
+    "ta": "மக்களாட்சி ஆட்சியின் வளர்ச்சியைச் சரியாகக் குறிக்கும் வரிசை எது?",
+    "optionsEn": [
+      "Empires → Tribes → Kingdoms → Monarchy",
+      "Tribes → Kingdoms → Empires → Monarchy",
+      "Tribes → Kingdoms → Empires → British Rule → Independence and adoption of democracy",
+      "Monarchy → Tribes → British Rule → Empires"
+    ],
+    "optionsTa": [
+      "பேரரசுகள் → பழங்குடியினர் → இராச்சியங்கள் → முடியாட்சி",
+      "பழங்குடியினர் → இராச்சியங்கள் → பேரரசுகள் → முடியாட்சி",
+      "பழங்குடியினர் → இராச்சியங்கள் → பேரரசுகள் → பிரிட்டிஷ் ஆட்சி → சுதந்திரம் மற்றும் மக்களாட்சியை ஏற்றல்",
+      "முடியாட்சி → பழங்குடியினர் → பிரிட்டிஷ் ஆட்சி → பேரரசுகள்"
+    ],
+    "answer": 2
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false; isSubmitted = false;
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">
+                <span class="option-letter">${String.fromCharCode(65+i)}.</span>
+                <span class="option-text">${opt}</span>
+            </div>`;
+        });
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+            </div>
+        `;
+        updateTopClearButton();
+        updateNavButtons(); updatePalette();
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+    }
+    function updateTopClearButton() {
+        const container = document.getElementById("topClearBtnContainer");
+        if (!container) return;
+        const sel = userAnswers[currentIndex];
+        if (sel !== null && sel !== undefined) {
+            container.innerHTML = `<button class="btn btn-danger" style="padding: 6px 14px; font-size: 0.8rem; min-height: auto; opacity: 0.9; border-radius: 40px;" onclick="clearSelection()">✖ Clear Selection</button>`;
+        } else {
+            container.innerHTML = "";
+        }
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) {
+            userAnswers[currentIndex] = null;
+        } else {
+            userAnswers[currentIndex] = optIndex;
+        }
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+
+    function clearSelection() {
+        if (isSubmitted) return;
+        userAnswers[currentIndex] = null;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    let currentReviewIndex = 0;
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let cssClass = "option-item";
+                let markerHtml = "";
+                if (idx === corr) { cssClass += " correct"; markerHtml = "<div class='marker'>✔</div>"; }
+                else if (u === idx && idx !== corr) { cssClass += " wrong"; markerHtml = "<div class='marker'>✖</div>"; }
+                optsHtml += `<div class="${cssClass}"><span>${String.fromCharCode(65+idx)}. ${optsArray[idx]}</span>${markerHtml}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" id="review-card-${i}" style="display: none;">
+                        <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div class="your-answer">Your Answer: ${userAns}</div>
+                        <div class="correct-answer">Correct Answer: ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        ${optsHtml}
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+        currentReviewIndex = 0;
+        showReviewCard(currentReviewIndex);
+    }
+    function showReviewCard(index) {
+        const cards = document.querySelectorAll(".review-card");
+        if (cards.length === 0) return;
+        cards.forEach(c => c.style.display = "none");
+        cards[index].style.display = "block";
+        document.getElementById("reviewPageText").innerText = `${index + 1} / ${cards.length}`;
+        document.getElementById("prevReviewBtn").disabled = (index === 0);
+        document.getElementById("nextReviewBtn").disabled = (index === cards.length - 1);
+        document.getElementById("reviewPagination").style.display = "flex";
+        window.scrollTo(0, 0);
+    }
+    function navigateReview(direction) {
+        const cards = document.querySelectorAll(".review-card");
+        currentReviewIndex += direction;
+        if (currentReviewIndex >= 0 && currentReviewIndex < cards.length) {
+            showReviewCard(currentReviewIndex);
+        }
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
+            await new Promise(r => setTimeout(r, 600));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+                if (btn) btn.innerText = "✅ Select Save as PDF";
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+        } finally {
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 3000);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        history.replaceState({ resultPage: true }, "", "#result");
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.addEventListener("popstate", function(e) {
+        if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+            history.pushState({ resultPage: true }, "", "#result");
+            confirmLeaveResult();
+        }
+    });
+    function confirmLeaveResult() {
+        if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
+            window.AndroidBridge.exitResultPage();
+        } else {
+            history.back();
+        }
+    }
+    window.checkForReview = function() {
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
+            }
+        }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
