@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-22T17:04:03.719Z",
+  "version": "2026-11-23T07:46:08.310Z",
   "categories": [
     {
       "id": "BANK",
@@ -328,6 +328,12 @@
       "name": "UGTRB PHYSICS",
       "categoryId": "UGTRB",
       "order": 1
+    },
+    {
+      "id": "TNPSC-IN",
+      "name": "INM",
+      "categoryId": "TNPSC",
+      "order": 8
     }
   ],
   "tests": [
@@ -3351,6 +3357,20 @@
       "releaseTimestamp": 1795593600000,
       "language": "en",
       "createdAt": 1795367043719
+    },
+    {
+      "testId": "TIN-1",
+      "examId": "TNPSC-IN",
+      "name": "NATIONAL RENAISSANCE (SET-1)",
+      "topic": "NATIONAL RENAISSANCE",
+      "durationMinutes": 15,
+      "order": 1,
+      "questionCount": 30,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIN-1.html",
+      "releaseTimestamp": 1795420800000,
+      "language": "both",
+      "createdAt": 1795419968310
     }
   ]
 }
