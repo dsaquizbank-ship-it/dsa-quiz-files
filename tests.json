@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-23T08:04:30.325Z",
+  "version": "2026-11-23T08:05:12.534Z",
   "categories": [
     {
       "id": "BANK",
@@ -3291,7 +3291,7 @@
     {
       "testId": "RQA-3",
       "examId": "RRB-QA",
-      "name": "QUANTITATIVE APTITUDE-RATIO AND PROPORTION (SET-1)",
+      "name": "RATIO AND PROPORTION (SET-1)",
       "topic": "RATIO AND PROPORTION",
       "durationMinutes": 30,
       "order": 3,
