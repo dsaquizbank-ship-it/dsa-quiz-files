@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-23T08:01:00.778Z",
+  "version": "2026-11-23T08:03:42.910Z",
   "categories": [
     {
       "id": "BANK",
@@ -3277,7 +3277,7 @@
     {
       "testId": "BQA-4",
       "examId": "BANK-QA",
-      "name": "QUANTITATIVE APTITUDE-RATIO AND PROPORTION (SET-1)",
+      "name": "RATIO AND PROPORTION (SET-1)",
       "topic": "RATIO AND PROPORTION",
       "durationMinutes": 30,
       "order": 4,
