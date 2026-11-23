@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-23T07:46:08.310Z",
+  "version": "2026-11-23T07:48:58.195Z",
   "categories": [
     {
       "id": "BANK",
@@ -3371,6 +3371,20 @@
       "releaseTimestamp": 1795420800000,
       "language": "both",
       "createdAt": 1795419968310
+    },
+    {
+      "testId": "TIN-2",
+      "examId": "TNPSC-IN",
+      "name": "EARLY UPRISING AGAINST BRITISH RULE (SET-1)",
+      "topic": "EARLY UPRISING AGAINST BRITISH RULE",
+      "durationMinutes": 15,
+      "order": 2,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIN-2.html",
+      "releaseTimestamp": 1795420800000,
+      "language": "both",
+      "createdAt": 1795420138195
     }
   ]
 }
