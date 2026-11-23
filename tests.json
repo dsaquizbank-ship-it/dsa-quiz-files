@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-23T07:57:59.131Z",
+  "version": "2026-11-23T08:01:00.778Z",
   "categories": [
     {
       "id": "BANK",
@@ -3441,6 +3441,20 @@
       "releaseTimestamp": 1795420800000,
       "language": "both",
       "createdAt": 1795420679131
+    },
+    {
+      "testId": "SGT-SS-8",
+      "examId": "SGT-SOCIALSCIENCE",
+      "name": "9TH HISTORY THE MIDDLE AGES (SET-1)",
+      "topic": "9TH HISTORY THE MIDDLE AGES",
+      "durationMinutes": 15,
+      "order": 8,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGT-SS-8.html",
+      "releaseTimestamp": 1795420800000,
+      "language": "ta",
+      "createdAt": 1795420860778
     }
   ]
 }
