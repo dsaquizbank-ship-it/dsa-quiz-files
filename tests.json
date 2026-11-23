@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-23T08:03:42.910Z",
+  "version": "2026-11-23T08:04:30.325Z",
   "categories": [
     {
       "id": "BANK",
@@ -3305,7 +3305,7 @@
     {
       "testId": "SQA-4",
       "examId": "SSC-QA",
-      "name": "QUANTITATIVE APTITUDE-RATIO AND PROPORTION (SET-1)",
+      "name": "RATIO AND PROPORTION (SET-1)",
       "topic": "RATIO AND PROPORTION",
       "durationMinutes": 30,
       "order": 4,
