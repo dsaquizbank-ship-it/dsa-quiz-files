@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-23T07:56:00.036Z",
+  "version": "2026-11-23T07:57:59.131Z",
   "categories": [
     {
       "id": "BANK",
@@ -3427,6 +3427,20 @@
       "releaseTimestamp": 1795420800000,
       "language": "en",
       "createdAt": 1795420560036
+    },
+    {
+      "testId": "TET-SS-7",
+      "examId": "TET-SOCIALSCIENCE",
+      "name": "6TH TERM 3 – CIVICS: DEMOCRACY (SET-1)",
+      "topic": "6TH TERM 3 – CIVICS: DEMOCRACY",
+      "durationMinutes": 15,
+      "order": 7,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-SS-7.html",
+      "releaseTimestamp": 1795420800000,
+      "language": "both",
+      "createdAt": 1795420679131
     }
   ]
 }
