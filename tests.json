@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-24T08:06:59.877Z",
+  "version": "2026-11-24T08:08:12.639Z",
   "categories": [
     {
       "id": "BANK",
@@ -3553,6 +3553,20 @@
       "releaseTimestamp": 1795507200000,
       "language": "both",
       "createdAt": 1795507548105
+    },
+    {
+      "testId": "TIP-14",
+      "examId": "TNPSC-IP",
+      "name": "SPIRIT OF FEDERALISM: UNION – STATE RELATIONSHIPS (SET-1)",
+      "topic": "SPIRIT OF FEDERALISM: UNION – STATE RELATIONSHIPS",
+      "durationMinutes": 15,
+      "order": 14,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-14.html",
+      "releaseTimestamp": 1795507200000,
+      "language": "both",
+      "createdAt": 1795507692639
     }
   ]
 }
