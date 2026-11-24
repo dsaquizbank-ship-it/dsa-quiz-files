@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-12T14:55:22.905Z",
+  "version": "2026-11-24T11:36:30.891Z",
   "timetable": [
     {
       "date": "2026-11-11",
@@ -224,6 +224,55 @@
     {
       "date": "2026-11-25",
       "classes": [
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "Unit IV - Indian Polity: Local Governments, Panchayat Raj",
+          "batch": "TNPSC",
+          "faculty": "DR SAHITHA",
+          "room": "DR SAHITHA"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability",
+          "batch": "SSC",
+          "faculty": "MR ABIN",
+          "room": "MR ABIN"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability",
+          "batch": "BANK",
+          "faculty": "MR ABIN",
+          "room": "MR ABIN"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "Reasoning Ability",
+          "batch": "RRB",
+          "faculty": "MR ABIN",
+          "room": "MR ABIN"
+        },
+        {
+          "time": "10:00 AM - 11:30 AM",
+          "subject": "PSYCHOLOGY: Unit III - Attention, Perception and Memory",
+          "batch": "TNTET",
+          "faculty": "DR SAHITHA",
+          "room": "DR SAHITHA"
+        },
+        {
+          "time": "02:30 PM - 03:30 PM",
+          "subject": "Unit V - Data Communication and Computer Networks: Data Encoding and Modulation Techniques",
+          "batch": "PGTRB COMPUTER SCIENCE",
+          "faculty": "DR SAHITHA",
+          "room": "DR SAHITHA"
+        },
+        {
+          "time": "11:30 AM - 01:00 PM",
+          "subject": "Unit II - Real Analysis",
+          "batch": "PGTRB MATHS",
+          "faculty": "MRS REKHA",
+          "room": "MRS REKHA"
+        },
         {
           "time": "10:00 AM - 11:30 AM",
           "subject": "Reasoning Ability: Directions",
