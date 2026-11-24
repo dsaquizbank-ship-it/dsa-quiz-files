@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-24T07:57:05.207Z",
+  "version": "2026-11-24T07:59:54.322Z",
   "categories": [
     {
       "id": "BANK",
@@ -3511,6 +3511,20 @@
       "releaseTimestamp": 1795507200000,
       "language": "both",
       "createdAt": 1795506794197
+    },
+    {
+      "testId": "SGS-11",
+      "examId": "SSC-GS",
+      "name": "CHEMISTRY - PERIODIC TABLE (SET-2)",
+      "topic": "CHEMISTRY - PERIODIC TABLE",
+      "durationMinutes": 15,
+      "order": 11,
+      "questionCount": 25,
+      "negativeMark": 0.5,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGS-11.html",
+      "releaseTimestamp": 1795420800000,
+      "language": "both",
+      "createdAt": 1795507194322
     }
   ]
 }
