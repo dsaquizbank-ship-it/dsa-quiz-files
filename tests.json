@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-24T08:09:56.781Z",
+  "version": "2026-11-24T08:13:33.784Z",
   "categories": [
     {
       "id": "BANK",
@@ -3581,6 +3581,20 @@
       "releaseTimestamp": 1795507200000,
       "language": "en",
       "createdAt": 1795507796781
+    },
+    {
+      "testId": "UGM-14",
+      "examId": "UG-MAT",
+      "name": "STATISTICS AND PROBABILITY (REVISION: THEORY OF PROBABILITY — SAMPLE SPACE AND AXIOMS) (SET-1)",
+      "topic": "STATISTICS AND PROBABILITY (REVISION: THEORY OF PROBABILITY — SAMPLE SPACE AND AXIOMS)",
+      "durationMinutes": 30,
+      "order": 14,
+      "questionCount": 30,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-14.html",
+      "releaseTimestamp": 1795507200000,
+      "language": "en",
+      "createdAt": 1795508013784
     }
   ]
 }
