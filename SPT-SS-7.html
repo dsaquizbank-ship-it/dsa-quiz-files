@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>SPT-SS-7 - 7TH TERM 1 HISTORY AND ECONOMICS (SET-1)</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                linebreaks: { automatic: true, width: "container" }
+            },
+            options: { ignoreHtmlClass: "no-mathjax" },
+            chtml: {
+                displayAlign: "left",
+                displayIndent: "0",
+                mtextInheritFont: true
+            },
+            svg: {
+                scale: 0.9,
+                minScale: 0.5,
+                mtextInheritFont: true,
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; color: #10b981; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; align-items: center; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; white-space: normal; word-wrap: break-word; padding-bottom: 20px; max-width: 100%; overflow-x: auto; }
+        mjx-container { display: inline !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; }
+        .question-text::-webkit-scrollbar { display: none; }
+        .question-text { -ms-overflow-style: none; scrollbar-width: none; }
+        .option-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; word-wrap: break-word; }
+        .option-letter { font-weight: 800; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+        .option-text { flex-grow: 1; min-width: 0; word-wrap: break-word; overflow-wrap: break-word; }
+        .option-text mjx-container { display: inline-block !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; overflow-x: visible !important; }
+        .option-text mjx-container[jax="CHTML"][display="true"] { margin: 0 !important; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
+        .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
+        .review-card .question-text { overflow-x: hidden !important; white-space: normal !important; word-wrap: break-word !important; }
+        .review-card strong { color: var(--text-primary); font-size: 16px; }
+        .review-card .option-item { background-color: var(--rc-bg); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: rgba(40, 167, 69, 0.1); border: 1px solid #28a745; color: #28a745; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; color: #dc3545; }
+        .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
+        .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
+        .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
+        .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px 0; border-top: 1px solid var(--border-light); }
+        .review-nav-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .review-nav-btn:disabled { background: var(--border-light); color: var(--text-primary); opacity: 0.5; cursor: not-allowed; }
+        .review-nav-text { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+        .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { 
+            html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } 
+            .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } 
+            #startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard { display: none !important; } 
+            #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } 
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; } 
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; margin-bottom: 20px !important; display: block !important; } 
+            .review-card .option-item { border: 1px solid #ccc !important; background: white !important; color: black !important; } 
+            .review-card .option-item.correct { background: #e6ffe6 !important; border-color: #28a745 !important; color: black !important; } 
+            .review-card .option-item.wrong { background: #ffe6e6 !important; border-color: #dc3545 !important; color: black !important; } 
+            @page { size: A4; margin: 1.5cm; } 
+        }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">30:00</div>
+            <div class="top-buttons">
+                <div id="topClearBtnContainer"></div>
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div id="printHeader" style="display: none;">
+            <h1>DR SAHITHA IAS ACADEMY</h1>
+            <h3>ANSWER KEY & DETAILED REVIEW</h3>
+            <p><strong>Test:</strong> SPT-SS-7 - SOCIAL SCIENCE</p>
+        </div>
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+            <div id="reviewPagination" class="review-nav-container" style="display: none;">
+                <button class="review-nav-btn" id="prevReviewBtn" onclick="navigateReview(-1)">◀ PREV</button>
+                <span class="review-nav-text" id="reviewPageText">1 / 25</span>
+                <button class="review-nav-btn" id="nextReviewBtn" onclick="navigateReview(1)">NEXT ▶</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "SOCIAL SCIENCE",
+        testNo: "SPT-SS-7",
+        date: "24/11/2026",
+        subject: "SOCIAL SCIENCE",
+        topic: "7TH TERM 1 HISTORY AND ECONOMICS",
+        duration: "30",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "Which of the following pairs regarding land classifications in the Chola period is correctly matched?",
+    "ta": "சோழர் கால நில வகைப்பாடுகள் தொடர்பான பின்வரும் இணைகளில் எது சரியாகப் பொருந்தியுள்ளது?",
+    "optionsEn": [
+      "Vellanvagai - Land gifted to temples",
+      "Shalabhoga - Land for the maintenance of a school",
+      "Devadana - Land of non-Brahmin proprietors",
+      "Pallichchandam - Land gifted to Brahmins"
+    ],
+    "optionsTa": [
+      "வெள்ளன்வகை - கோவில்களுக்குத் தானமாக வழங்கப்பட்ட நிலம்",
+      "சாலபோகம் - பள்ளிப் பராமரிப்புக்கான நிலம்",
+      "தேவதானம் - பிராமணரல்லாத நிலச்சுவான்தார்களின் நிலம்",
+      "பள்ளிச்சந்தம் - பிராமணர்களுக்குத் தானமாக வழங்கப்பட்ட நிலம்"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Who among the following was the author of 'Tarikh-i-Firoz Shahi', dealing with the history of the Delhi Sultanate from Ghiyas-ud-din Balban to the early years of Firoz Shah Tughluq?",
+    "ta": "கியாசுதீன் பால்பன் முதல் ஃபெரோஸ் ஷா துக்ளக்கின் தொடக்க ஆண்டுகள் வரையிலான டெல்லி சுல்தானிய வரலாற்றைக் கூறும் 'தாரிக்-இ-ஃபெரோஸ் ஷாஹி' நூலின் ஆசிரியர் யார்?",
+    "optionsEn": [
+      "Zia-ud-din Barani",
+      "Minhaj-us-Siraj",
+      "Ferishta",
+      "Nizam-ud-din Ahmad"
+    ],
+    "optionsTa": [
+      "சியா-உத்-தின் பரணி",
+      "மின்ஹாஜ்-உஸ்-சிராஜ்",
+      "ஃபெரிஷ்டா",
+      "நிஜாமுதீன் அகமது"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which traveler recorded the incidents of sati and polygamy practiced by the kings, and hailed the Pandyan Kingdom as 'the richest and the most splendid province in the world'?",
+    "ta": "அரசர்கள் பின்பற்றிய சதி மற்றும் பலதார மண நிகழ்வுகளைப் பதிவு செய்து, பாண்டிய நாட்டை 'உலகின் மிக வளமான மற்றும் மிகச் சிறந்த மாகாணம்' என்று போற்றிய பயணி யார்?",
+    "optionsEn": [
+      "Al-Beruni",
+      "Ibn Battuta",
+      "Marco Polo",
+      "Domingo Paes"
+    ],
+    "optionsTa": [
+      "அல்-பெருனி",
+      "இபன் பதூதா",
+      "மார்க்கோ போலோ",
+      "டொமிங்கோ பயஸ்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "The term 'Chahalgani' or 'The Forty', organized by Iltutmish, was primarily aimed at:",
+    "ta": "இல்துமிஷால் அமைக்கப்பட்ட 'சஹல்கானி' அல்லது 'நாற்பதின்மர் குழு' முதன்மையாக எதை நோக்கமாகக் கொண்டிருந்தது?",
+    "optionsEn": [
+      "Establishing a department of spies.",
+      "Collecting revenue from the Doab region.",
+      "Managing the forced procurement of food grains.",
+      "Counteracting the possible attack of the Mongols by organizing Turkish nobility into a select group."
+    ],
+    "optionsTa": [
+      "ஒற்றர் துறையை நிறுவுதல்.",
+      "தோவாப் பகுதியிலிருந்து வருவாய் வசூலித்தல்.",
+      "உணவு தானியங்களைக் கட்டாயமாகக் கொள்முதல் செய்வதை நிர்வகித்தல்.",
+      "துருக்கியப் பிரபுக்களைத் தேர்ந்தெடுக்கப்பட்ட குழுவாக ஒழுங்கமைத்து மங்கோலியர்களின் சாத்தியமான தாக்குதலை எதிர்கொள்ளுதல்."
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following pairs regarding the meaning of historical terms is INCORRECTLY matched?",
+    "ta": "வரலாற்றுச் சொற்களின் பொருள் தொடர்பான பின்வரும் இணைகளில் எது தவறாகப் பொருந்தியுள்ளது?",
+    "optionsEn": [
+      "Tahquiq - Geography",
+      "Tuzk - Autobiography",
+      "Tarikh - History",
+      "Tabakat - Generations or centuries"
+    ],
+    "optionsTa": [
+      "தஹ்கிக் - புவியியல்",
+      "துஸ்க் - சுயசரிதை",
+      "தாரிக் - வரலாறு",
+      "தபாகத் - தலைமுறைகள் அல்லது நூற்றாண்டுகள்"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "The 'Uttiramerur inscriptions' provide detailed descriptions of the election process to the village sabha. What was the eligibility criterion for a candidate to contest?",
+    "ta": "'உத்திரமேரூர் கல்வெட்டுகள்' கிராம சபைக்கான தேர்தல் முறையை விரிவாக விவரிக்கின்றன. போட்டியிடும் வேட்பாளருக்கான தகுதி வரம்பு என்னவாக இருந்தது?",
+    "optionsEn": [
+      "Men in the age group of 30–60, well-versed in Vedic texts.",
+      "Men in the age group of 35–70, well-versed in Vedic texts and scriptures, owning land and a house.",
+      "Men and women in the age group of 35–70, owning land.",
+      "Men in the age group of 40–75, well-versed in Vedic texts and owning a house."
+    ],
+    "optionsTa": [
+      "30–60 வயதுக்குட்பட்ட, வேத நூல்களில் நன்கு தேர்ச்சி பெற்ற ஆண்கள்.",
+      "35–70 வயதுக்குட்பட்ட, வேத நூல்கள் மற்றும் சாத்திரங்களில் நன்கு தேர்ச்சி பெற்று, நிலமும் வீடும் வைத்திருக்கும் ஆண்கள்.",
+      "35–70 வயதுக்குட்பட்ட, நிலம் வைத்திருக்கும் ஆண்கள் மற்றும் பெண்கள்.",
+      "40–75 வயதுக்குட்பட்ட, வேத நூல்களில் தேர்ச்சி பெற்று வீடு வைத்திருக்கும் ஆண்கள்."
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Who was the founder of the Vikramashila Monastery, which became a great centre of Buddhist learning?",
+    "ta": "பௌத்தக் கல்வியின் மாபெரும் மையமாகத் திகழ்ந்த விக்ரமசீலா மடாலயத்தை நிறுவியவர் யார்?",
+    "optionsEn": [
+      "Gopala",
+      "Mahipala I",
+      "Devapala",
+      "Dharmapala"
+    ],
+    "optionsTa": [
+      "கோபாலர்",
+      "முதலாம் மகிபாலர்",
+      "தேவபாலர்",
+      "தர்மபாலர்"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following coins was introduced by Iltutmish, indicative of the coinage and economic prosperity of the time?",
+    "ta": "அக்கால நாணய அமைப்பு மற்றும் பொருளாதார வளத்தைக் காட்டும் வகையில் இல்துமிஷால் அறிமுகப்படுத்தப்பட்ட நாணயம் எது?",
+    "optionsEn": [
+      "Copper Jitals",
+      "Gold Mohur",
+      "Silver Tanka",
+      "Copper token currency"
+    ],
+    "optionsTa": [
+      "செப்பு ஜிட்டல்கள்",
+      "தங்க மோகூர்",
+      "வெள்ளி டங்கா",
+      "செப்பு அடையாள நாணயம்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "The 'Kudirai Chetties' were active in maritime trade during the Pandya period. What was their primary commodity of trade as recorded by Wassaff?",
+    "ta": "பாண்டியர் காலத்தில் 'குதிரைச் செட்டிகள்' கடல்வழி வணிகத்தில் சுறுசுறுப்பாக ஈடுபட்டனர். வஸ்ஸாஃப் பதிவு செய்துள்ளபடி அவர்களின் முதன்மை வணிகப் பொருள் எது?",
+    "optionsEn": [
+      "Pearls and gems",
+      "Horses",
+      "Cotton stuff with coloured silk threads",
+      "Sandalwood and ebony"
+    ],
+    "optionsTa": [
+      "முத்துக்கள் மற்றும் ரத்தினங்கள்",
+      "குதிரைகள்",
+      "வண்ணப் பட்டு நூல்களுடனான பருத்தி ஆடைகள்",
+      "சந்தன மரம் மற்றும் கருங்காலி"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which Rajput clan claimed descent from the Agnikula (Race of Fire God) origin and was known as Solankis?",
+    "ta": "அக்னிகுலம் (நெருப்புக் கடவுளின் குலம்) தோற்றத்திலிருந்து வந்ததாகக் கூறி, சோலங்கிகள் என அறியப்பட்ட ராஜபுத்திர வம்சம் எது?",
+    "optionsEn": [
+      "Pratiharas",
+      "Chauhans",
+      "Chalukyas",
+      "Paramaras"
+    ],
+    "optionsTa": [
+      "பிரதிகாரர்கள்",
+      "சௌகான்கள்",
+      "சாளுக்கியர்கள்",
+      "பரமாரர்கள்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Match the literary work with its author.<br><br>a. Tabakat-i-Nasiri – 1. Hasan Nizami<br>b. Taj-ul-Ma’asir – 2. Ferishta<br>c. Tarikh-i-Frishta – 3. Jahangir<br>d. Tuzk-i-Jahangiri – 4. Minhaj-us-Siraj",
+    "ta": "இலக்கிய நூலை அதன் ஆசிரியருடன் பொருத்துக.<br><br>a. தபாகத்-இ-நசிரி – 1. ஹசன் நிஜாமி<br>b. தாஜ்-உல்-மாசிர் – 2. ஃபெரிஷ்டா<br>c. தாரிக்-இ-ஃபெரிஷ்டா – 3. ஜஹாங்கீர்<br>d. துஸ்க்-இ-ஜஹாங்கிரி – 4. மின்ஹாஜ்-உஸ்-சிராஜ்",
+    "optionsEn": [
+      "a-4, b-1, c-2, d-3",
+      "a-1, b-2, c-3, d-4",
+      "a-2, b-3, c-4, d-1",
+      "a-3, b-4, c-1, d-2"
+    ],
+    "optionsTa": [
+      "a-4, b-1, c-2, d-3",
+      "a-1, b-2, c-3, d-4",
+      "a-2, b-3, c-4, d-1",
+      "a-3, b-4, c-1, d-2"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Match the traveler with their observation or association.<br><br>a. Al-Beruni – 1. Described Delhi as a vast and magnificent city during Muhammad bin Tughluq's capital transfer.<br>b. Ibn Battuta – 2. Visited Kayal twice and noted the import of thousands of horses.<br>c. Marco Polo – 3. Discussed Indian conditions, systems of knowledge, and social norms in Tahquiq-i-Hind.<br>d. Domingo Paes – 4. Portuguese traveller who visited Vijayanagar in 1522.",
+    "ta": "பயணியை அவர்களின் குறிப்பு அல்லது தொடர்புடன் பொருத்துக.<br><br>a. அல்-பெருனி – 1. முகமது பின் துக்ளக்கின் தலைநகர மாற்றத்தின்போது டெல்லியைப் பரந்த மற்றும் பிரம்மாண்டமான நகரமாக விவரித்தார்.<br>b. இபன் பதூதா – 2. காயலுக்கு இருமுறை வருகை தந்து ஆயிரக்கணக்கான குதிரைகள் இறக்குமதி செய்யப்பட்டதைக் குறிப்பிட்டார்.<br>c. மார்க்கோ போலோ – 3. தஹ்கிக்-இ-ஹிந்தில் இந்திய நிலைமைகள், அறிவு அமைப்புகள் மற்றும் சமூக நெறிகளைப் பற்றி விவாதித்தார்.<br>d. டொமிங்கோ பயஸ் – 4. 1522-இல் விஜயநகரத்திற்கு வருகை தந்த போர்த்துகீசியப் பயணி.",
+    "optionsEn": [
+      "a-4, b-1, c-2, d-3",
+      "a-1, b-2, c-3, d-4",
+      "a-2, b-3, c-4, d-1",
+      "a-3, b-1, c-2, d-4"
+    ],
+    "optionsTa": [
+      "a-4, b-1, c-2, d-3",
+      "a-1, b-2, c-3, d-4",
+      "a-2, b-3, c-4, d-1",
+      "a-3, b-1, c-2, d-4"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Match the administrative term of the Chola or Pandya period with its meaning.<br><br>a. Kanikadan – 1. Royal secretariat of the Pandya kingdom<br>b. Eluttu-mandapam – 2. Land tax in the Chola state<br>c. Vellanvagai – 3. Assembly of Nadu deciding disputes<br>d. Nattar – 4. Land of non-Brahmin proprietors",
+    "ta": "சோழ அல்லது பாண்டிய கால நிர்வாகச் சொல்லை அதன் பொருளுடன் பொருத்துக.<br><br>a. காணிக்கடன் – 1. பாண்டிய அரசின் அரச செயலகம்<br>b. எழுத்துமண்டபம் – 2. சோழ அரசின் நிலவரி<br>c. வெள்ளன்வகை – 3. சர்ச்சைகளைத் தீர்க்கும் நாட்டின் அவை<br>d. நாட்டார் – 4. பிராமணரல்லாத நிலச்சுவான்தார்களின் நிலம்",
+    "optionsEn": [
+      "a-2, b-1, c-4, d-3",
+      "a-1, b-2, c-3, d-4",
+      "a-3, b-4, c-1, d-2",
+      "a-4, b-3, c-2, d-1"
+    ],
+    "optionsTa": [
+      "a-2, b-1, c-4, d-3",
+      "a-1, b-2, c-3, d-4",
+      "a-3, b-4, c-1, d-2",
+      "a-4, b-3, c-2, d-1"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Match the Sultan with their specific contribution or event.<br><br>a. Qutb-ud-din-Aibak – 1. Issued token currency in copper which led to bankruptcy.<br>b. Iltutmish – 2. Abolished 'The Forty' and established a department of spies.<br>c. Muhammad-bin-Tughluq – 3. Laid the foundation of the Slave Dynasty and Quwwat-ul-Islam Masjid.<br>d. Ghiyas-ud-din Balban – 4. Organized Turkish nobility into 'Chahalgani' or 'The Forty'.",
+    "ta": "சுல்தானை அவர்களின் குறிப்பிட்ட பங்களிப்பு அல்லது நிகழ்வுடன் பொருத்துக.<br><br>a. குத்புதீன் ஐபக் – 1. செப்பு அடையாள நாணயத்தை வெளியிட்டார்; இது திவாலுக்கு வழிவகுத்தது.<br>b. இல்துமிஷ் – 2. 'நாற்பதின்மர் குழுவை' ஒழித்து, ஒற்றர் துறையை நிறுவினார்.<br>c. முகமது பின் துக்ளக் – 3. அடிமை வம்சத்திற்கும் குவ்வத்-உல்-இஸ்லாம் மசூதிக்கும் அடிக்கல் நாட்டினார்.<br>d. கியாசுதீன் பால்பன் – 4. துருக்கியப் பிரபுக்களை 'சஹல்கானி' அல்லது 'நாற்பதின்மர் குழுவாக' அமைத்தார்.",
+    "optionsEn": [
+      "a-2, b-3, c-4, d-1",
+      "a-1, b-2, c-3, d-4",
+      "a-3, b-4, c-1, d-2",
+      "a-4, b-1, c-2, d-3"
+    ],
+    "optionsTa": [
+      "a-2, b-3, c-4, d-1",
+      "a-1, b-2, c-3, d-4",
+      "a-3, b-4, c-1, d-2",
+      "a-4, b-1, c-2, d-3"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Match the temple or monument with its location or feature.<br><br>a. Dilwara Temple – 1. Mount Abu, Rajasthan<br>b. Khandarya Temple – 2. Madhya Pradesh<br>c. Virupaksha Temple – 3. Hampi, Vijayanagara<br>d. Brihadeshwara Temple – 4. Thanjavur, Tamil Nadu",
+    "ta": "கோவில் அல்லது நினைவுச்சின்னத்தை அதன் அமைவிடம் அல்லது சிறப்புடன் பொருத்துக.<br><br>a. தில்வாரா கோவில் – 1. மவுண்ட் அபு, ராஜஸ்தான்<br>b. கந்தாரியா கோவில் – 2. மத்தியப் பிரதேசம்<br>c. விருபாக்ஷா கோவில் – 3. ஹம்பி, விஜயநகரம்<br>d. பிரகதீஸ்வரர் கோவில் – 4. தஞ்சாவூர், தமிழ்நாடு",
+    "optionsEn": [
+      "a-2, b-1, c-4, d-3",
+      "a-1, b-2, c-3, d-4",
+      "a-3, b-4, c-1, d-2",
+      "a-4, b-3, c-2, d-1"
+    ],
+    "optionsTa": [
+      "a-2, b-1, c-4, d-3",
+      "a-1, b-2, c-3, d-4",
+      "a-3, b-4, c-1, d-2",
+      "a-4, b-3, c-2, d-1"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Match the historical term with its correct definition.<br><br>a. Bandagan – 1. Land granted to army officials in lieu of a regular wage.<br>b. Iqta – 2. Persian term used for slaves purchased for military service.<br>c. Jauhar – 3. A rite where women burn themselves on a pyre to avoid capture.<br>d. Swayamvara – 4. The bride choosing the bridegroom of her choice.",
+    "ta": "வரலாற்றுச் சொல்லை அதன் சரியான வரையறையுடன் பொருத்துக.<br><br>a. பந்தகன் – 1. வழக்கமான ஊதியத்திற்குப் பதிலாக இராணுவ அதிகாரிகளுக்கு வழங்கப்பட்ட நிலம்.<br>b. இக்தா – 2. இராணுவச் சேவைக்காக வாங்கப்பட்ட அடிமைகளைக் குறிக்கப் பயன்படுத்தப்படும் பாரசீகச் சொல்.<br>c. ஜௌகர் – 3. சிறைபிடிக்கப்படுவதைத் தவிர்க்கப் பெண்கள் தீக்குளிக்கும் சடங்கு.<br>d. சுயம்வரம் – 4. மணமகள் தனக்கு விருப்பமான மணமகனைத் தேர்ந்தெடுத்தல்.",
+    "optionsEn": [
+      "a-4, b-3, c-2, d-1",
+      "a-1, b-2, c-4, d-3",
+      "a-3, b-4, c-1, d-2",
+      "a-2, b-1, c-3, d-4"
+    ],
+    "optionsTa": [
+      "a-4, b-3, c-2, d-1",
+      "a-1, b-2, c-4, d-3",
+      "a-3, b-4, c-1, d-2",
+      "a-2, b-1, c-3, d-4"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Match the ruler or dynasty with their capital or significant city.<br><br>a. Chauhans – 1. Sakambari / Ajmer<br>b. Later Pandyas – 2. Madurai<br>c. Sikandar Lodi – 3. Agra<br>d. Vijayalaya Chola – 4. Thanjavur",
+    "ta": "ஆட்சியாளர் அல்லது வம்சத்தை அவர்களின் தலைநகரம் அல்லது முக்கிய நகரத்துடன் பொருத்துக.<br><br>a. சௌகான்கள் – 1. சாகம்பரி / அஜ்மீர்<br>b. பிற்காலப் பாண்டியர்கள் – 2. மதுரை<br>c. சிக்கந்தர் லோடி – 3. ஆக்ரா<br>d. விஜயாலய சோழன் – 4. தஞ்சாவூர்",
+    "optionsEn": [
+      "a-1, b-2, c-3, d-4",
+      "a-2, b-1, c-4, d-3",
+      "a-3, b-4, c-1, d-2",
+      "a-4, b-3, c-2, d-1"
+    ],
+    "optionsTa": [
+      "a-1, b-2, c-3, d-4",
+      "a-2, b-1, c-4, d-3",
+      "a-3, b-4, c-1, d-2",
+      "a-4, b-3, c-2, d-1"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Match the type of source with its example from the text.<br><br>a. Primary Source – 1. Travelogues and biographies<br>b. Secondary Source – 2. Inscriptions on rocks and temple walls<br>c. Secular Literature – 3. Madura Vijayam and Amuktamalyada<br>d. Religious Literature – 4. Nalayira Divyaprabhandham and Thiruvasagam",
+    "ta": "ஆதார வகையைப் பாடப்பகுதியில் உள்ள அதன் உதாரணத்துடன் பொருத்துக.<br><br>a. முதன்மை ஆதாரம் – 1. பயணக் குறிப்புகள் மற்றும் வாழ்க்கை வரலாறுகள்<br>b. இரண்டாம் நிலை ஆதாரம் – 2. பாறைகள் மற்றும் கோவில் சுவர்களில் உள்ள கல்வெட்டுகள்<br>c. சமயச்சார்பற்ற இலக்கியம் – 3. மதுரா விஜயம் மற்றும் ஆமுக்தமால்யதா<br>d. சமய இலக்கியம் – 4. நாலாயிர திவ்வியப் பிரபந்தம் மற்றும் திருவாசகம்",
+    "optionsEn": [
+      "a-4, b-3, c-2, d-1",
+      "a-1, b-2, c-4, d-3",
+      "a-3, b-4, c-1, d-2",
+      "a-2, b-1, c-3, d-4"
+    ],
+    "optionsTa": [
+      "a-4, b-3, c-2, d-1",
+      "a-1, b-2, c-4, d-3",
+      "a-3, b-4, c-1, d-2",
+      "a-2, b-1, c-3, d-4"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Match the battle or event with its year.<br><br>a. First Battle of Tarain – 1. 1191<br>b. Second Battle of Tarain – 2. 1192<br>c. Muhammad bin Qasim's invasion of Sind – 3. 712<br>d. Timur's invasion of Delhi – 4. 1398",
+    "ta": "போர் அல்லது நிகழ்வை அதன் ஆண்டுடன் பொருத்துக.<br><br>a. முதலாம் தரெய்ன் போர் – 1. 1191<br>b. இரண்டாம் தரெய்ன் போர் – 2. 1192<br>c. முகமது பின் காசிமின் சிந்து படையெடுப்பு – 3. 712<br>d. தைமூரின் டெல்லி படையெடுப்பு – 4. 1398",
+    "optionsEn": [
+      "a-3, b-4, c-1, d-2",
+      "a-2, b-1, c-4, d-3",
+      "a-1, b-2, c-3, d-4",
+      "a-4, b-3, c-2, d-1"
+    ],
+    "optionsTa": [
+      "a-3, b-4, c-1, d-2",
+      "a-2, b-1, c-4, d-3",
+      "a-1, b-2, c-3, d-4",
+      "a-4, b-3, c-2, d-1"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Match the Chola administrative unit with its description.<br><br>a. Mandalam – 1. Province<br>b. Naadu – 2. Sub-division of Mandalam<br>c. Kurram – 3. Groups of villages<br>d. Gramam – 4. Lowest unit (village)",
+    "ta": "சோழ நிர்வாகப் பிரிவை அதன் விளக்கத்துடன் பொருத்துக.<br><br>a. மண்டலம் – 1. மாகாணம்<br>b. நாடு – 2. மண்டலத்தின் உட்பிரிவு<br>c. கூற்றம் – 3. கிராமங்களின் தொகுப்பு<br>d. கிராமம் – 4. மிகக் கீழ்நிலை அலகு (கிராமம்)",
+    "optionsEn": [
+      "a-2, b-1, c-4, d-3",
+      "a-1, b-2, c-3, d-4",
+      "a-3, b-4, c-1, d-2",
+      "a-4, b-3, c-2, d-1"
+    ],
+    "optionsTa": [
+      "a-2, b-1, c-4, d-3",
+      "a-1, b-2, c-3, d-4",
+      "a-3, b-4, c-1, d-2",
+      "a-4, b-3, c-2, d-1"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Identify the odd one out regarding the sources of Medieval India.",
+    "ta": "இடைக்கால இந்தியாவின் ஆதாரங்கள் தொடர்பாகப் பொருந்தாத ஒன்றைக் கண்டறிக.",
+    "optionsEn": [
+      "Inscriptions",
+      "Monuments",
+      "Travelogues",
+      "Coins"
+    ],
+    "optionsTa": [
+      "கல்வெட்டுகள்",
+      "நினைவுச்சின்னங்கள்",
+      "பயணக் குறிப்புகள்",
+      "நாணயங்கள்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Identify the odd one out among the following rulers of the Mamluk (Slave) Dynasty.",
+    "ta": "மம்லூக் (அடிமை) வம்சத்தின் பின்வரும் ஆட்சியாளர்களில் பொருந்தாத ஒருவரைக் கண்டறிக.",
+    "optionsEn": [
+      "Qutb-ud-din-Aibak",
+      "Iltutmish",
+      "Razia Sultana",
+      "Jalal-ud-din Khalji"
+    ],
+    "optionsTa": [
+      "குத்புதீன் ஐபக்",
+      "இல்துமிஷ்",
+      "ரஸியா சுல்தானா",
+      "ஜலாலுதீன் கில்ஜி"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is NOT a characteristic of the Pala dynasty's contribution to culture?",
+    "ta": "கலாச்சாரத்திற்குப் பால வம்சத்தின் பங்களிப்பின் சிறப்பம்சம் அல்லாதது எது?",
+    "optionsEn": [
+      "Patronage of Buddhist temples and universities like Nalanda and Vikramashila.",
+      "Creation of a distinctive school of art called 'Rajasthani' painting.",
+      "Establishment of Buddhism in Tibet through missionaries.",
+      "Flourishing of bronze sculptures and palm-leaf paintings celebrating the Buddha."
+    ],
+    "optionsTa": [
+      "நாளந்தா மற்றும் விக்ரமசீலா போன்ற பௌத்தக் கோவில்கள் மற்றும் பல்கலைக்கழகங்களுக்கு ஆதரவளித்தல்.",
+      "'ராஜஸ்தானி' ஓவியம் என்ற தனித்துவமான கலைப் பள்ளியை உருவாக்குதல்.",
+      "சமயப் பரப்பாளர்கள் மூலம் திபெத்தில் பௌத்தத்தை நிறுவுதல்.",
+      "புத்தரைப் போற்றும் வெண்கலச் சிற்பங்கள் மற்றும் ஓலைச்சுவடி ஓவியங்களின் செழிப்பு."
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Identify the odd one out regarding the administrative divisions of the Pandya kingdom.",
+    "ta": "பாண்டிய அரசின் நிர்வாகப் பிரிவுகள் தொடர்பாகப் பொருந்தாத ஒன்றைக் கண்டறிக.",
+    "optionsEn": [
+      "Iqtas",
+      "Nadus",
+      "Kurrams",
+      "Vala-nadus"
+    ],
+    "optionsTa": [
+      "இக்தாக்கள்",
+      "நாடு",
+      "கூற்றம்",
+      "வளநாடு"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following literary works does NOT belong to the devotional (Bhakti) literature of the Chola period?",
+    "ta": "பின்வரும் இலக்கிய நூல்களில் எது சோழர் கால பக்தி இலக்கியத்தைச் சேர்ந்ததல்ல?",
+    "optionsEn": [
+      "Kamba Ramayanam",
+      "Periyapuranam",
+      "Prithiviraj Raso",
+      "Thiruvasagam"
+    ],
+    "optionsTa": [
+      "கம்பராமாயணம்",
+      "பெரியபுராணம்",
+      "பிரித்திவிராஜ் ராசோ",
+      "திருவாசகம்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Identify the odd one out among the following statements about Muhammad-bin-Tughluq.",
+    "ta": "முகமது பின் துக்ளக் பற்றிய பின்வரும் கூற்றுகளில் பொருந்தாத ஒன்றைக் கண்டறிக.",
+    "optionsEn": [
+      "He decreased the land tax in the Doab region to encourage cultivation.",
+      "He introduced a token currency in copper which led to counterfeiting.",
+      "He shifted his capital from Delhi to Devagiri (Daulatabad).",
+      "He ordered land revenue to be collected in money instead of grain."
+    ],
+    "optionsTa": [
+      "வேளாண்மையை ஊக்குவிக்க தோவாப் பகுதியில் நிலவரியைக் குறைத்தார்.",
+      "செப்பு அடையாள நாணயத்தை அறிமுகப்படுத்தினார்; இது கள்ள நாணயங்கள் அச்சடிக்க வழிவகுத்தது.",
+      "தன் தலைநகரை டெல்லியிலிருந்து தேவகிரிக்கு (தௌலதாபாத்) மாற்றினார்.",
+      "தானியத்திற்குப் பதிலாக நிலவரியைப் பணமாக வசூலிக்க உத்தரவிட்டார்."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following ports or cities was NOT prominently associated with the Pandya kingdom's maritime trade?",
+    "ta": "பாண்டிய அரசின் கடல்வழி வணிகத்துடன் முக்கியமாகத் தொடர்பு கொள்ளாத துறைமுகம் அல்லது நகரம் எது?",
+    "optionsEn": [
+      "Kayal",
+      "Kayal Pattinam",
+      "Korkai",
+      "Ayyavole"
+    ],
+    "optionsTa": [
+      "காயல்",
+      "காயல்பட்டினம்",
+      "கொற்கை",
+      "ஐயவோளே"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Identify the odd one out regarding the architectural features or monuments of the Rajputs.",
+    "ta": "ராஜபுத்திரர்களின் கட்டிடக்கலை அம்சங்கள் அல்லது நினைவுச்சின்னங்கள் தொடர்பாகப் பொருந்தாத ஒன்றைக் கண்டறிக.",
+    "optionsEn": [
+      "Fortresses of Chittorgarh and Kumbhalgarh",
+      "Qutb Minar and Alai-Darwaza",
+      "Temples in Khajuraho",
+      "Sun temple in Konark"
+    ],
+    "optionsTa": [
+      "சித்தோர்கார் மற்றும் கும்பல்கார் கோட்டைகள்",
+      "குதுப் மினார் மற்றும் அலை-தர்வாசா",
+      "கஜுராஹோ கோவில்கள்",
+      "கொனார்க் சூரியக் கோவில்"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is NOT a committee function or local governance body mentioned in the Chola administration?",
+    "ta": "சோழர் நிர்வாகத்தில் குறிப்பிடப்பட்டுள்ள குழுச் செயல்பாடு அல்லது உள்ளாட்சி அமைப்பு அல்லாதது எது?",
+    "optionsEn": [
+      "Urar",
+      "Sabhaiyar",
+      "Nagarattar",
+      "Chahalgani"
+    ],
+    "optionsTa": [
+      "ஊரார்",
+      "சபையார்",
+      "நகரத்தார்",
+      "சஹல்கானி"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Identify the odd one out among the following travelers and their origins.",
+    "ta": "பின்வரும் பயணிகள் மற்றும் அவர்களின் பின்புலம் தொடர்பாகப் பொருந்தாத ஒன்றைக் கண்டறிக.",
+    "optionsEn": [
+      "Nicolo Conti - Portuguese",
+      "Al-Beruni - Accompanied Mahmud of Ghazni",
+      "Ibn Battuta - Moroccan",
+      "Marco Polo – Venetian"
+    ],
+    "optionsTa": [
+      "நிக்கோலோ கோண்டி - போர்த்துகீசியர்",
+      "அல்-பெருனி - கஜினி முகமதுவுடன் வந்தவர்",
+      "இபன் பதூதா - மொராக்கோ நாட்டவர்",
+      "மார்க்கோ போலோ - வெனிஸ் நகரத்தவர்"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "<b>Assertion [A]:</b> The Pratihara, Rashtrakuta, and Pala dynasties were engaged in a prolonged tripartite struggle.<br><b>Reason [R]:</b> Each of these three powers wanted to establish their supremacy over the fertile region of Kanauj, which ultimately weakened all of them.",
+    "ta": "<b>கூற்று [A]:</b> பிரதிகார, ராஷ்டிரகூட மற்றும் பால வம்சங்கள் நீண்டகால முத்தரப்புப் போராட்டத்தில் ஈடுபட்டன.<br><b>காரணம் [R]:</b> இப்பெரும் சக்திகள் மூன்றும் வளமான கன்னோசி பிராந்தியத்தின் மீது தங்கள் மேலாதிக்கத்தை நிறுவ விரும்பின; இது இறுதியில் அவை அனைத்தையும் பலவீனப்படுத்தியது.",
+    "optionsEn": [
+      "A is true, but R is false.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A சரி, ஆனால் R தவறு.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-க்கான சரியான விளக்கம் அல்ல.",
+      "A மற்றும் R இரண்டும் சரி, மேலும் R என்பது A-க்கான சரியான விளக்கமாகும்.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "<b>Assertion [A]:</b> Muhammad-bin-Tughluq's introduction of token currency in copper was a highly successful economic reform.<br><b>Reason [R]:</b> The token currency prevented counterfeiting and stabilized the state's revenue system, leading to economic prosperity.",
+    "ta": "<b>கூற்று [A]:</b> முகமது பின் துக்ளக்கின் செப்பு அடையாள நாணய அறிமுகம் மிகவும் வெற்றிகரமான பொருளாதாரச் சீர்திருத்தமாகும்.<br><b>காரணம் [R]:</b> அடையாள நாணயம் கள்ள நாணயங்களைத் தடுத்து, அரசின் வருவாய் அமைப்பை உறுதிப்படுத்தி, பொருளாதார வளத்திற்கு வழிவகுத்தது.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are false.",
+      "A is true, but R is false.",
+      "Both A and R are true, but R is not the correct explanation of A."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, மேலும் R என்பது A-க்கான சரியான விளக்கமாகும்.",
+      "A மற்றும் R இரண்டும் தவறு.",
+      "A சரி, ஆனால் R தவறு.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-க்கான சரியான விளக்கம் அல்ல."
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "<b>Assertion [A]:</b> The Chola rulers gifted tax-free lands to royal officials, Brahmins, temples, and religious institutions.<br><b>Reason [R]:</b> Land granted to Jain institutions was called 'Devadana', while land gifted to temples was called 'Pallichchandam'.",
+    "ta": "<b>கூற்று [A]:</b> சோழ ஆட்சியாளர்கள் அரச அதிகாரிகள், பிராமணர்கள், கோவில்கள் மற்றும் சமய நிறுவனங்களுக்கு வரிவிலக்கு அளிக்கப்பட்ட நிலங்களைத் தானமாக வழங்கினர்.<br><b>காரணம் [R]:</b> சமண நிறுவனங்களுக்கு வழங்கப்பட்ட நிலம் 'தேவதானம்' என்றும், கோவில்களுக்குத் தானமாக வழங்கப்பட்ட நிலம் 'பள்ளிச்சந்தம்' என்றும் அழைக்கப்பட்டது.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, மேலும் R என்பது A-க்கான சரியான விளக்கமாகும்.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-க்கான சரியான விளக்கம் அல்ல.",
+      "A சரி, ஆனால் R தவறு.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "<b>Assertion [A]:</b> Iltutmish averted the impending danger of the Mongols under Chengiz Khan.<br><b>Reason [R]:</b> He provided shelter to the Khwarezm Shah Jalal-ud-din, who had been driven out by Chengiz Khan, thereby gaining an ally.",
+    "ta": "<b>கூற்று [A]:</b> செங்கிஸ்கான் தலைமையிலான மங்கோலியர்களின் உடனடி ஆபத்தை இல்துமிஷ் தவிர்த்தார்.<br><b>காரணம் [R]:</b> செங்கிஸ்கானால் விரட்டியடிக்கப்பட்ட குவாரெஸ்ம் ஷா ஜலாலுதீனுக்கு அவர் அடைக்கலம் கொடுத்து, இதன் மூலம் ஒரு நட்பு சக்தியைப் பெற்றார்.",
+    "optionsEn": [
+      "A is true, but R is false.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A சரி, ஆனால் R தவறு.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-க்கான சரியான விளக்கம் அல்ல.",
+      "A மற்றும் R இரண்டும் சரி, மேலும் R என்பது A-க்கான சரியான விளக்கமாகும்.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "<b>Assertion [A]:</b> The Arab conquest of Sind in 712 CE had a significant impact on the transfer of knowledge to the West.<br><b>Reason [R]:</b> Arab scholars translated many Sanskrit books on astronomy, mathematics, and medicine into Arabic, and learnt the numerals 0 to 9 from India.",
+    "ta": "<b>கூற்று [A]:</b> கி.பி. 712-இல் அரபியர்களின் சிந்து படையெடுப்பு மேற்கு நாடுகளுக்கு அறிவு பரிமாற்றம் செய்வதில் குறிப்பிடத்தக்க தாக்கத்தை ஏற்படுத்தியது.<br><b>காரணம் [R]:</b> அரபு அறிஞர்கள் வானியல், கணிதம் மற்றும் மருத்துவம் குறித்த பல சமஸ்கிருத நூல்களை அரபியில் மொழிபெயர்த்தனர்; மேலும் 0 முதல் 9 வரையிலான எண்களை இந்தியாவிலிருந்து கற்றனர்.",
+    "optionsEn": [
+      "A is false, but R is true.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "Both A and R are true, and R is the correct explanation of A."
+    ],
+    "optionsTa": [
+      "A தவறு, ஆனால் R சரி.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-க்கான சரியான விளக்கம் அல்ல.",
+      "A சரி, ஆனால் R தவறு.",
+      "A மற்றும் R இரண்டும் சரி, மேலும் R என்பது A-க்கான சரியான விளக்கமாகும்."
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "<b>Assertion [A]:</b> Ala-ud-din Khalji's administrative reforms included the forced procurement of food grains for Delhi and other garrison centres.<br><b>Reason [R]:</b> This measure was designed to enrich the local chiefs and rajas by giving them the privilege of collecting and storing the grain.",
+    "ta": "<b>கூற்று [A]:</b> அலாவுதீன் கில்ஜியின் நிர்வாகச் சீர்திருத்தங்களில் டெல்லி மற்றும் பிற இராணுவ முகாம் மையங்களுக்கு உணவு தானியங்களைக் கட்டாயமாகக் கொள்முதல் செய்வதும் அடங்கும்.<br><b>காரணம் [R]:</b> தானியங்களைச் சேகரித்துச் சேமிக்கும் சலுகையை உள்ளூர் தலைவர்கள் மற்றும் ராஜாக்களுக்கு வழங்கி அவர்களை வளப்படுத்துவதற்காக இந்நடவடிக்கை வடிவமைக்கப்பட்டது.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "A is true, but R is false.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, மேலும் R என்பது A-க்கான சரியான விளக்கமாகும்.",
+      "A சரி, ஆனால் R தவறு.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-க்கான சரியான விளக்கம் அல்ல.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "<b>Assertion [A]:</b> Firoz Shah Tughluq is considered a compassionate ruler who concentrated on the well-being of the people.<br><b>Reason [R]:</b> He banned inhuman punishments, abolished taxes not recognised by Muslim law, and constructed many canals for irrigation.",
+    "ta": "<b>கூற்று [A]:</b> ஃபெரோஸ் ஷா துக்ளக் மக்களின் நல்வாழ்வில் கவனம் செலுத்திய கருணையுள்ள ஆட்சியாளராகக் கருதப்படுகிறார்.<br><b>காரணம் [R]:</b> அவர் மனிதாபிமானமற்ற தண்டனைகளைத் தடை செய்தார், இஸ்லாமியச் சட்டத்தால் அங்கீகரிக்கப்படாத வரிகளை நீக்கினார், மேலும் பாசனத்திற்காகப் பல கால்வாய்களைக் கட்டினார்.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, மேலும் R என்பது A-க்கான சரியான விளக்கமாகும்.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-க்கான சரியான விளக்கம் அல்ல.",
+      "A சரி, ஆனால் R தவறு.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "<b>Assertion [A]:</b> The Uttiramerur inscriptions provide a detailed description of the democratic election process in the Chola village sabha.<br><b>Reason [R]:</b> The eligibility to contest was open to all men and women above the age of 18 who owned land.",
+    "ta": "<b>கூற்று [A]:</b> உத்திரமேரூர் கல்வெட்டுகள் சோழர் காலக் கிராம சபையின் ஜனநாயகத் தேர்தல் முறை பற்றிய விரிவான விளக்கத்தை வழங்குகின்றன.<br><b>காரணம் [R]:</b> நிலம் வைத்திருந்த 18 வயதுக்கு மேற்பட்ட அனைத்து ஆண்களும் பெண்களும் போட்டியிடும் தகுதி பெற்றிருந்தனர்.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, மேலும் R என்பது A-க்கான சரியான விளக்கமாகும்.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-க்கான சரியான விளக்கம் அல்ல.",
+      "A சரி, ஆனால் R தவறு.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "<b>Assertion [A]:</b> The Pandya kings maintained the existing temples rather than building new ones during the medieval and later periods.<br><b>Reason [R]:</b> They enlarged the existing temples by adding gopuras and mandapas, with monolithic mega-size ornamented pillars being a unique feature.",
+    "ta": "<b>கூற்று [A]:</b> பாண்டிய மன்னர்கள் இடைக்கால மற்றும் பிற்காலங்களில் புதிய கோவில்களைக் கட்டுவதற்குப் பதிலாக ஏற்கனவே இருந்த கோவில்களைப் பராமரித்தனர்.<br><b>காரணம் [R]:</b> அவர்கள் கோபுரங்களையும் மண்டபங்களையும் சேர்த்து ஏற்கனவே இருந்த கோவில்களை விரிவுபடுத்தினர்; ஒற்றைக் கல்லில் செதுக்கப்பட்ட மிகப்பெரிய அலங்காரத் தூண்கள் ஒரு தனித்துவமான அம்சமாகும்.",
+    "optionsEn": [
+      "A is false, but R is true.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "Both A and R are true, and R is the correct explanation of A."
+    ],
+    "optionsTa": [
+      "A தவறு, ஆனால் R சரி.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-க்கான சரியான விளக்கம் அல்ல.",
+      "A சரி, ஆனால் R தவறு.",
+      "A மற்றும் R இரண்டும் சரி, மேலும் R என்பது A-க்கான சரியான விளக்கமாகும்."
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "<b>Assertion [A]:</b> The first Muslim kingdom was firmly established in India at Ajmer after the Second Battle of Tarain.<br><b>Reason [R]:</b> Prithiviraj Chauhan defeated Muhammad Ghori in the Second Battle of Tarain in 1192, securing Rajput political prestige.",
+    "ta": "<b>கூற்று [A]:</b> இரண்டாம் தரெய்ன் போருக்குப் பிறகு இந்தியாவில் முதல் முஸ்லிம் அரசு அஜ்மீரில் உறுதியாக நிறுவப்பட்டது.<br><b>காரணம் [R]:</b> 1192-இல் நடைபெற்ற இரண்டாம் தரெய்ன் போரில் பிரித்திவிராஜ் சௌகான் முகமது கோரியைத் தோற்கடித்து, ராஜபுத்திரர்களின் அரசியல் பெருமையைப் பாதுகாத்தார்.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "A is true, but R is false.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, மேலும் R என்பது A-க்கான சரியான விளக்கம் ஆகும்.",
+      "A சரி, ஆனால் R தவறு.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-க்கான சரியான விளக்கம் அல்ல.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements regarding the sources of Medieval India:<br><br>1. Copper-plate grants were treated as legal documents and have significant source value.<br>2. The Islamic-Persian practices and the high cost of copper plates made palm leaf and paper cheaper alternatives from the 13th century onwards.<br>3. Stone inscriptions primarily focus on the receiver of the gift, elaborately describing both the giver and the receiver.<br><br>Which of the statements given above is/are correct?",
+    "ta": "இடைக்கால இந்தியாவின் ஆதாரங்கள் தொடர்பான பின்வரும் கூற்றுகளைக் கவனிக்கவும்:<br><br>1. செப்பேட்டுத் தானங்கள் சட்ட ஆவணங்களாகக் கருதப்பட்டன; மேலும் குறிப்பிடத்தக்க ஆதார மதிப்பைக் கொண்டுள்ளன.<br>2. இஸ்லாமிய-பாரசீக நடைமுறைகள் மற்றும் செப்பேடுகளின் அதிக விலை ஆகியவை 13-ஆம் நூற்றாண்டு முதல் ஓலைச்சுவடிகள் மற்றும் காகிதத்தை மலிவான மாற்றுகளாக மாற்றின.<br>3. கல்வெட்டுகள் முதன்மையாகத் தானம் பெறுபவரை மையமாகக் கொண்டு, வழங்குபவர் மற்றும் பெறுபவர் இருவரையும் விரிவாக விவரிக்கின்றன.<br><br>மேற்கண்ட கூற்றுகளில் எது/எவை சரியானது?",
+    "optionsEn": [
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 and 3 only",
+      "1, 2, and 3"
+    ],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "2 மற்றும் 3 மட்டும்",
+      "1 மற்றும் 3 மட்டும்",
+      "1, 2 மற்றும் 3"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements about the Later Cholas:<br><br>1. Rajendra Chola I proclaimed himself 'Gangaikondan' after his military expedition to northern India.<br>2. The Chola navy enabled Rajendra Chola to conquer the kingdom of Srivijaya in southern Sumatra.<br>3. The Chola dynasty ended in 1279 when King Maravarman Kulasekara Pandyan I defeated the last king, Rajendra Chola III.<br><br>Which of the statements given above is/are correct?",
+    "ta": "பிற்காலச் சோழர்கள் பற்றிய பின்வரும் கூற்றுகளைக் கவனிக்கவும்:<br><br>1. முதலாம் ராஜேந்திர சோழன் வட இந்தியாவிற்கு மேற்கொண்ட இராணுவப் படையெடுப்புக்குப் பிறகு தன்னை 'கங்கைகொண்டான்' என்று அறிவித்துக் கொண்டார்.<br>2. சோழ கடற்படை ராஜேந்திர சோழனுக்குத் தெற்கு சுமத்ராவில் உள்ள ஸ்ரீவிஜய அரசைக் கைப்பற்ற உதவியது.<br>3. கடைசி மன்னரான மூன்றாம் ராஜேந்திர சோழனை மாறவர்மன் குலசேகர பாண்டியன் 1279-இல் தோற்கடித்தபோது சோழ வம்சம் முடிவுக்கு வந்தது.<br><br>மேற்கண்ட கூற்றுகளில் எது/எவை சரியானது?",
+    "optionsEn": [
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 and 3 only",
+      "1, 2, and 3"
+    ],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "2 மற்றும் 3 மட்டும்",
+      "1 மற்றும் 3 மட்டும்",
+      "1, 2 மற்றும் 3"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statements about the Delhi Sultanate is/are correct?<br><br>1. Qutb-ud-din-Aibak died of injuries received during an accidental fall from a horse while playing polo.<br>2. Iltutmish introduced the 'Iqta' system, granting land to army officials in lieu of a regular wage.<br>3. Balban abolished 'The Forty' because it was hostile to him and established a department of spies.",
+    "ta": "டெல்லி சுல்தானியம் பற்றிய பின்வரும் கூற்றுகளில் எது/எவை சரியானது?<br><br>1. போலோ விளையாடும்போது குதிரையிலிருந்து தவறி விழுந்ததில் ஏற்பட்ட காயங்களால் குத்புதீன் ஐபக் உயிரிழந்தார்.<br>2. இல்துமிஷ் வழக்கமான ஊதியத்திற்குப் பதிலாக இராணுவ அதிகாரிகளுக்கு நிலம் வழங்கும் 'இக்தா' முறையை அறிமுகப்படுத்தினார்.<br>3. 'நாற்பதின்மர் குழு' தனக்கு விரோதமாக இருந்ததால் பால்பன் அதை ஒழித்து, ஒற்றர் துறையை நிறுவினார்.",
+    "optionsEn": [
+      "1 and 2 only",
+      "2 and 3 only",
+      "1, 2, and 3",
+      "1 and 3 only"
+    ],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "2 மற்றும் 3 மட்டும்",
+      "1, 2 மற்றும் 3",
+      "1 மற்றும் 3 மட்டும்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements regarding the Pandya kingdom:<br><br>1. Kadunkon recovered Pandya territory from the Kalabhras towards the close of the 6th century.<br>2. The royal secretariat of the Pandya kingdom was known as 'eluttu-mandapam'.<br>3. The communal assembly of the landowning group (Bumiputtirar or vellalar) was called 'Cittira Meli Periyanattar'.<br><br>Which of the statements given above is/are correct?",
+    "ta": "பாண்டிய அரசு தொடர்பான பின்வரும் கூற்றுகளைக் கவனிக்கவும்:<br><br>1. 6-ஆம் நூற்றாண்டின் இறுதியில் கடுங்கோன் களப்பிரர்களிடமிருந்து பாண்டியப் பகுதியை மீட்டார்.<br>2. பாண்டிய அரசின் அரச செயலகம் 'எழுத்துமண்டபம்' என்று அழைக்கப்பட்டது.<br>3. நிலவுடைமைக் குழுவின் (பூமிபுத்திரர் அல்லது வேளாளர்) பொது அவை 'சித்திர மேழிப் பெரியநாட்டார்' என்று அழைக்கப்பட்டது.<br><br>மேற்கண்ட கூற்றுகளில் எது/எவை சரியானது?",
+    "optionsEn": [
+      "1 and 2 only",
+      "1, 2, and 3",
+      "1 and 3 only",
+      "2 and 3 only"
+    ],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "1, 2 மற்றும் 3",
+      "1 மற்றும் 3 மட்டும்",
+      "2 மற்றும் 3 மட்டும்"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Identify the correct statement regarding the architectural contributions during the medieval period.",
+    "ta": "இடைக்காலத்தில் கட்டிடக்கலைப் பங்களிப்புகள் தொடர்பான சரியான கூற்றைக் கண்டறிக.",
+    "optionsEn": [
+      "The Sultans of Delhi introduced architecture with arches, domes, and minarets, known as Indo-Saracenic architecture.",
+      "The Rajputs built the Qutb Minar and Alai-Darwaza in the Rajasthani style.",
+      "The Palas were renowned for building the monolithic mega-size ornamented pillars in the Meenakshi temple.",
+      "The Cholas introduced the Persian shape with Indian decoration in their temple architecture."
+    ],
+    "optionsTa": [
+      "டெல்லி சுல்தான்கள் வளைவுகள், குவிமாடங்கள் மற்றும் மினாராக்களுடன் கூடிய கட்டிடக்கலையை அறிமுகப்படுத்தினர்; இது இந்தோ-சாரசனிக் கட்டிடக்கலை என அறியப்படுகிறது.",
+      "ராஜபுத்திரர்கள் குதுப் மினார் மற்றும் அலை-தர்வாசாவை ராஜஸ்தானி பாணியில் கட்டினர்.",
+      "மீனாட்சி அம்மன் கோவிலில் ஒற்றைக் கல்லில் செதுக்கப்பட்ட மிகப்பெரிய அலங்காரத் தூண்களைக் கட்டுவதில் பாலர்கள் புகழ்பெற்றிருந்தனர்.",
+      "சோழர்கள் தங்கள் கோவில் கட்டிடக்கலையில் இந்திய அலங்காரத்துடன் கூடிய பாரசீக வடிவத்தை அறிமுகப்படுத்தினர்."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements about the trade during the Chola and Pandya periods:<br><br>1. The 'anju-vannattar' and 'mani-gramattar' were guild-like groups engaged in trade during the Chola period.<br>2. The 'ai-nutruvar' guild operated maritime trade covering South-East Asian countries.<br>3. During the Pandya period, the horse trade was brisk, and traders in horses were called 'kudirai chetties'.<br><br>Which of the statements given above is/are correct?",
+    "ta": "சோழ மற்றும் பாண்டிய காலங்களில் நடைபெற்ற வணிகம் பற்றிய பின்வரும் கூற்றுகளைக் கவனிக்கவும்:<br><br>1. 'அஞ்சுவண்ணத்தார்' மற்றும் 'மணிக்கிராமத்தார்' ஆகியோர் சோழர் காலத்தில் வணிகத்தில் ஈடுபட்ட வணிகக் குழுக்கள் போன்ற அமைப்புகளாகும்.<br>2. 'ஐநூற்றுவர்' குழு தென்கிழக்கு ஆசிய நாடுகளை உள்ளடக்கிய கடல்வழி வணிகத்தை நடத்தியது.<br>3. பாண்டியர் காலத்தில் குதிரை வணிகம் சுறுசுறுப்பாக நடைபெற்றது; குதிரை வணிகர்கள் 'குதிரைச் செட்டிகள்' என அழைக்கப்பட்டனர்.<br><br>மேற்கண்ட கூற்றுகளில் எது/எவை சரியானது?",
+    "optionsEn": [
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 and 3 only",
+      "1, 2, and 3"
+    ],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "2 மற்றும் 3 மட்டும்",
+      "1 மற்றும் 3 மட்டும்",
+      "1, 2 மற்றும் 3"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following pairs regarding the meaning of historical terms and their languages is INCORRECTLY matched?",
+    "ta": "வரலாற்றுச் சொற்களின் பொருள் மற்றும் அவற்றின் மொழிகள் தொடர்பான பின்வரும் இணைகளில் எது தவறாகப் பொருந்தியுள்ளது?",
+    "optionsEn": [
+      "Tabakat - Arabic (Generations or centuries)",
+      "Tuzk - Persian (Autobiography)",
+      "Bandagan - Arabic (Slaves purchased for military service)",
+      "Tarikh - Arabic (History)"
+    ],
+    "optionsTa": [
+      "தபாகத் - அரபு (தலைமுறைகள் அல்லது நூற்றாண்டுகள்)",
+      "துஸ்க் - பாரசீகம் (சுயசரிதை)",
+      "பந்தகன் - அரபு (இராணுவச் சேவைக்காக வாங்கப்பட்ட அடிமைகள்)",
+      "தாரிக் - அரபு (வரலாறு)"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements about the battles and invasions:<br><br>1. Muhammad bin Qasim defeated Dahir, the ruler of Sind, and captured the capital Aror in 712 CE.<br>2. Mahmud of Ghazni sacked the famous temple of Somanath in 1024 CE.<br>3. Timur plundered Delhi in 1398 and took Indian artisans like carpenters and masons to Samarkand.<br><br>Which of the statements given above is/are correct?",
+    "ta": "போர்கள் மற்றும் படையெடுப்புகள் பற்றிய பின்வரும் கூற்றுகளைக் கவனிக்கவும்:<br><br>1. கி.பி. 712-இல் முகமது பின் காசிம் சிந்துவின் ஆட்சியாளரான தாஹிரைத் தோற்கடித்து, தலைநகரான அரோரைக் கைப்பற்றினார்.<br>2. கி.பி. 1024-இல் கஜினி முகமது புகழ்பெற்ற சோம்நாத் கோவிலைக் கொள்ளையடித்தார்.<br>3. 1398-இல் தைமூர் டெல்லியைக் கொள்ளையடித்து, தச்சர்கள் மற்றும் கொத்தனார்கள் போன்ற இந்தியக் கைவினைஞர்களைச் சமர்கண்டிற்கு அழைத்துச் சென்றார்.<br><br>மேற்கண்ட கூற்றுகளில் எது/எவை சரியானது?",
+    "optionsEn": [
+      "1 and 2 only",
+      "1, 2, and 3",
+      "1 and 3 only",
+      "2 and 3 only"
+    ],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "1, 2 மற்றும் 3",
+      "1 மற்றும் 3 மட்டும்",
+      "2 மற்றும் 3 மட்டும்"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statements about the local governance of the Cholas is/are correct?<br><br>1. The 'Urar' were landholders who acted as spokesmen in the 'Ur'.<br>2. The 'Nagarattar' administered the settlement of traders, though skilled artisans also lived in Nagaram.<br>3. The 'Nattar' functioned as an assembly of Nadu and decided all disputes pertaining to Nadu.",
+    "ta": "சோழர்களின் உள்ளாட்சி நிர்வாகம் பற்றிய பின்வரும் கூற்றுகளில் எது/எவை சரியானது?<br><br>1. 'ஊரார்' என்பவர்கள் 'ஊரில்' பேச்சாளர்களாகச் செயல்பட்ட நிலச்சுவான்தார்கள் ஆவர்.<br>2. 'நகரத்தார்' வணிகர்களின் குடியிருப்பை நிர்வகித்தனர்; இருப்பினும் திறமையான கைவினைஞர்களும் நகரத்தில் வசித்தனர்.<br>3. 'நாட்டார்' நாட்டின் அவையாகச் செயல்பட்டு, நாடு தொடர்பான அனைத்துச் சர்ச்சைகளையும் தீர்த்துவைத்தனர்.",
+    "optionsEn": [
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 and 3 only",
+      "1, 2, and 3"
+    ],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "2 மற்றும் 3 மட்டும்",
+      "1 மற்றும் 3 மட்டும்",
+      "1, 2 மற்றும் 3"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements regarding the decline of the Delhi Sultanate:<br><br>1. Timur's invasion in 1398 severely weakened the Sultanate, leading to its fragmentation.<br>2. Khizr Khan founded the Sayyid Dynasty in 1414 as a representative of Timur.<br>3. The Lodi Dynasty was established by Bahlol Lodi, and it ended when Ibrahim Lodi was defeated by Babur in 1526.<br><br>Which of the statements given above is/are correct?",
+    "ta": "டெல்லி சுல்தானியத்தின் வீழ்ச்சி தொடர்பான பின்வரும் கூற்றுகளைக் கவனிக்கவும்:<br><br>1. 1398-இல் தைமூரின் படையெடுப்பு சுல்தானியத்தைக் கடுமையாகப் பலவீனப்படுத்தி, அது சிதறுவதற்கு வழிவகுத்தது.<br>2. தைமூரின் பிரதிநிதியாக 1414-இல் கிசர்கான் சையத் வம்சத்தை நிறுவினார்.<br>3. லோடி வம்சம் பகலுல் லோடியால் நிறுவப்பட்டது; 1526-இல் பாபரால் இப்ராஹிம் லோடி தோற்கடிக்கப்பட்டபோது அது முடிவுக்கு வந்தது.<br><br>மேற்கண்ட கூற்றுகளில் எது/எவை சரியானது?",
+    "optionsEn": [
+      "1, 2, and 3",
+      "2 and 3 only",
+      "1 and 3 only",
+      "1 and 2 only"
+    ],
+    "optionsTa": [
+      "1, 2 மற்றும் 3",
+      "2 மற்றும் 3 மட்டும்",
+      "1 மற்றும் 3 மட்டும்",
+      "1 மற்றும் 2 மட்டும்"
+    ],
+    "answer": 0
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false; isSubmitted = false;
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">
+                <span class="option-letter">${String.fromCharCode(65+i)}.</span>
+                <span class="option-text">${opt}</span>
+            </div>`;
+        });
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+            </div>
+        `;
+        updateTopClearButton();
+        updateNavButtons(); updatePalette();
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+    }
+    function updateTopClearButton() {
+        const container = document.getElementById("topClearBtnContainer");
+        if (!container) return;
+        const sel = userAnswers[currentIndex];
+        if (sel !== null && sel !== undefined) {
+            container.innerHTML = `<button class="btn btn-danger" style="padding: 6px 14px; font-size: 0.8rem; min-height: auto; opacity: 0.9; border-radius: 40px;" onclick="clearSelection()">✖ Clear Selection</button>`;
+        } else {
+            container.innerHTML = "";
+        }
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) {
+            userAnswers[currentIndex] = null;
+        } else {
+            userAnswers[currentIndex] = optIndex;
+        }
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+
+    function clearSelection() {
+        if (isSubmitted) return;
+        userAnswers[currentIndex] = null;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    let currentReviewIndex = 0;
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let cssClass = "option-item";
+                let markerHtml = "";
+                if (idx === corr) { cssClass += " correct"; markerHtml = "<div class='marker'>✔</div>"; }
+                else if (u === idx && idx !== corr) { cssClass += " wrong"; markerHtml = "<div class='marker'>✖</div>"; }
+                optsHtml += `<div class="${cssClass}"><span>${String.fromCharCode(65+idx)}. ${optsArray[idx]}</span>${markerHtml}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" id="review-card-${i}" style="display: none;">
+                        <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div class="your-answer">Your Answer: ${userAns}</div>
+                        <div class="correct-answer">Correct Answer: ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        ${optsHtml}
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+        currentReviewIndex = 0;
+        showReviewCard(currentReviewIndex);
+    }
+    function showReviewCard(index) {
+        const cards = document.querySelectorAll(".review-card");
+        if (cards.length === 0) return;
+        cards.forEach(c => c.style.display = "none");
+        cards[index].style.display = "block";
+        document.getElementById("reviewPageText").innerText = `${index + 1} / ${cards.length}`;
+        document.getElementById("prevReviewBtn").disabled = (index === 0);
+        document.getElementById("nextReviewBtn").disabled = (index === cards.length - 1);
+        document.getElementById("reviewPagination").style.display = "flex";
+        window.scrollTo(0, 0);
+    }
+    function navigateReview(direction) {
+        const cards = document.querySelectorAll(".review-card");
+        currentReviewIndex += direction;
+        if (currentReviewIndex >= 0 && currentReviewIndex < cards.length) {
+            showReviewCard(currentReviewIndex);
+        }
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
+            await new Promise(r => setTimeout(r, 600));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+                if (btn) btn.innerText = "✅ Select Save as PDF";
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+        } finally {
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 3000);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        history.replaceState({ resultPage: true }, "", "#result");
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.addEventListener("popstate", function(e) {
+        if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+            history.pushState({ resultPage: true }, "", "#result");
+            confirmLeaveResult();
+        }
+    });
+    function confirmLeaveResult() {
+        if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
+            window.AndroidBridge.exitResultPage();
+        } else {
+            history.back();
+        }
+    }
+    window.checkForReview = function() {
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
+            }
+        }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
