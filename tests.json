@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-24T07:53:14.197Z",
+  "version": "2026-11-24T07:57:05.207Z",
   "categories": [
     {
       "id": "BANK",
@@ -3207,8 +3207,8 @@
     {
       "testId": "UGM-13",
       "examId": "UG-MAT",
-      "name": "UGTRB MATHS-UNIT 9-OPERATIONS RESEARCH (SET-3)",
-      "topic": "UNIT 9-OPERATIONS RESEARCH (SET-1)",
+      "name": "PURCHASE INVENTORY MODEL, GAME THEORY, GRAPHICAL METHODS AND INTEGER PROGRAMMING (SET-1)",
+      "topic": "PURCHASE INVENTORY MODEL, GAME THEORY, GRAPHICAL METHODS AND INTEGER PROGRAMMING",
       "durationMinutes": 35,
       "order": 13,
       "questionCount": 25,
