@@ -1,0 +1,1941 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>TTA-4 - UNIT-IV KALAI SORKKAL (SET-1)</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                linebreaks: { automatic: true, width: "container" }
+            },
+            options: { ignoreHtmlClass: "no-mathjax" },
+            chtml: {
+                displayAlign: "left",
+                displayIndent: "0",
+                mtextInheritFont: true
+            },
+            svg: {
+                scale: 0.9,
+                minScale: 0.5,
+                mtextInheritFont: true,
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; color: #10b981; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; align-items: center; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; white-space: normal; word-wrap: break-word; padding-bottom: 20px; max-width: 100%; overflow-x: auto; }
+        mjx-container { display: inline !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; }
+        .question-text::-webkit-scrollbar { display: none; }
+        .question-text { -ms-overflow-style: none; scrollbar-width: none; }
+        .option-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; word-wrap: break-word; }
+        .option-letter { font-weight: 800; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+        .option-text { flex-grow: 1; min-width: 0; word-wrap: break-word; overflow-wrap: break-word; }
+        .option-text mjx-container { display: inline-block !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; overflow-x: visible !important; }
+        .option-text mjx-container[jax="CHTML"][display="true"] { margin: 0 !important; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
+        .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
+        .review-card .question-text { overflow-x: hidden !important; white-space: normal !important; word-wrap: break-word !important; }
+        .review-card strong { color: var(--text-primary); font-size: 16px; }
+        .review-card .option-item { background-color: var(--rc-bg); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: rgba(40, 167, 69, 0.1); border: 1px solid #28a745; color: #28a745; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; color: #dc3545; }
+        .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
+        .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
+        .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
+        .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px 0; border-top: 1px solid var(--border-light); }
+        .review-nav-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .review-nav-btn:disabled { background: var(--border-light); color: var(--text-primary); opacity: 0.5; cursor: not-allowed; }
+        .review-nav-text { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+        .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { 
+            html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } 
+            .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } 
+            #startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard { display: none !important; } 
+            #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } 
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; } 
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; margin-bottom: 20px !important; display: block !important; } 
+            .review-card .option-item { border: 1px solid #ccc !important; background: white !important; color: black !important; } 
+            .review-card .option-item.correct { background: #e6ffe6 !important; border-color: #28a745 !important; color: black !important; } 
+            .review-card .option-item.wrong { background: #ffe6e6 !important; border-color: #dc3545 !important; color: black !important; } 
+            @page { size: A4; margin: 1.5cm; } 
+        }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">60:00</div>
+            <div class="top-buttons">
+                <div id="topClearBtnContainer"></div>
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="display: none;">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div id="printHeader" style="display: none;">
+            <h1>DR SAHITHA IAS ACADEMY</h1>
+            <h3>ANSWER KEY & DETAILED REVIEW</h3>
+            <p><strong>Test:</strong> TTA-4 - TAMIL</p>
+        </div>
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+            <div id="reviewPagination" class="review-nav-container" style="display: none;">
+                <button class="review-nav-btn" id="prevReviewBtn" onclick="navigateReview(-1)">◀ PREV</button>
+                <span class="review-nav-text" id="reviewPageText">1 / 25</span>
+                <button class="review-nav-btn" id="nextReviewBtn" onclick="navigateReview(1)">NEXT ▶</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "ta";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "TAMIL",
+        testNo: "TTA-4",
+        date: "27/11/2026",
+        subject: "TAMIL",
+        topic: "UNIT-IV KALAI SORKKAL",
+        duration: "60",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கீழ்க்காணும் புவியியல் கலைச்சொற்களில், கடலடிப் படிவுகள் (Pelagic deposit) மற்றும் ஆற்றுக் கவர்வு (Piracy of rivers) ஆகியவற்றைக் குறிக்கும் சரியான தமிழ் இணை எது?",
+    "optionsEn": [],
+    "optionsTa": [
+      "கடலடிப் படிவு – கூடலிடம் | கரை நோக்கிய – பாட்சால் மண்",
+      "கடலடிப் படிவு – ஆற்றுக் கவர்வு | கனிப்பொருட் படிவு – சிறைப் பிரிப்பு வடிகால்",
+      "பெனிப்பிளைன் – கரிம ஏரிகள் | உயிர் – மேல் உதைப்பு",
+      "சுவறல் – பாலைவனச் சோலை | பீடபூமி – குருட்டு ஆறு"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "நிலத்தோற்றம் மற்றும் பாறை அமைப்பு தொடர்பான பின்வரும் பொருத்தங்களில் தவறானது எது?<br><br>Periglacial features – பனிவரை இடத்தோற்ற அம்சங்கள்<br>Plunge-pool erosion – நீர் வீழ்ச்சிக் குடைவு<br>Pervious (rock) – கல்லாக மாறிய மரம்<br>Perched block – வேறிடமிருந்து வந்து தங்கிய கல்",
+    "optionsEn": [],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "2 மற்றும் 4 மட்டும்",
+      "அனைத்தும் சரி",
+      "3 மட்டும்"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "வானியல் மற்றும் வளிமண்டலம் சார்ந்த சொற்களைச் சரியாகப் பொருத்துக:<br><br>A. Perihelion — 1. புற நிழல்<br>B. Penumbra — 2. சூறாவளி உள்ளடங்கல்<br>C. Occlusion (of cyclone) — 3. ஞாயிற்றண்மை<br>D. Photosphere — 4. ஞாயிற்றைச் சுற்றி உள்ள ஒளி மண்டலம்",
+    "optionsEn": [],
+    "optionsTa": [
+      "A-3, B-1, C-2, D-4",
+      "A-1, B-3, C-4, D-2",
+      "A-3, B-2, C-1, D-4",
+      "A-4, B-1, C-2, D-3"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "பின்வரும் கூற்றுகளை ஆராய்க:<br><br>கூற்று 1: பட்டியலில் 'Oekumene' என்பது மக்கள் வசிக்கும் உலகப் பகுதியைக் குறிக்கிறது.<br>கூற்று 2: 'Optimum population' என்பது அளவு மீறிய மக்கள்தொகையைக் குறிக்கிறது.<br>கூற்று 3: 'Pedology' என்பது மண் இயலைக் குறிக்கிறது.",
+    "optionsEn": [],
+    "optionsTa": [
+      "கூற்று 1 மற்றும் 3 சரி; கூற்று 2 தவறு",
+      "கூற்று 1 மற்றும் 2 சரி; கூற்று 3 தவறு",
+      "கூற்று 2 மற்றும் 3 சரி; கூற்று 1 தவறு",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "வரைபடம் மற்றும் அளவீடு தொடர்பான சொற்களில் பொருந்தாத இணையைத் தேர்ந்தெடுக்க:",
+    "optionsEn": [],
+    "optionsTa": [
+      "Parallax – தோற்ற இடமாறும் வழுதி",
+      "Plumb line – தூக்கு நூல்",
+      "Pedograph (Pedometer) – நடையளவி / நடை மீட்டர்",
+      "Physiographical symbol – சித்திர விளக்கப்படம்"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கீழ்க்காணும் கலைச்சொற்களில், வடிநீர்க் கவர்ச்சி (Abstraction (stream)) மற்றும் காரமண் பொறை (Alkali pan) ஆகியவற்றைக் குறிக்கும் சரியான தமிழ் இணை எது?",
+    "optionsEn": [],
+    "optionsTa": [
+      "வடிநீர்க் கவர்ச்சி – காரமண் பொறை | ஆழ்கடல் சமவெளி – வண்டல் திட்டு",
+      "வடிநீர்க் கவர்ச்சி – ஒளி திருப்பும் திறன் | தனிவெப்பநிலை – தூசுப்படலம்",
+      "உட்கவர்தல் – ஊட்டம் | வளி முகம் – வயதுவாரிப் படம்",
+      "பரிபாலனப் பகுதி – வண்டல் மண் | ஏறுகாற்று – காரத்தன்மை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "வளிமண்டலம் மற்றும் காலநிலை சார்ந்த பின்வரும் பொருத்தங்களில் தவறானது எது?<br><br>Albedo – ஒளி திருப்பும் திறன்<br>Aerosol – தூசுப்படலம்<br>Adiabatic wind – வளி மண்டலக் குறுக்கு வெட்டுப் படம்<br>Acclimatisation – கால நிலைக்குப் பொருந்துதல்",
+    "optionsEn": [],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "3 மட்டும்",
+      "2 மற்றும் 4 மட்டும்",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "நிலத்தோற்றம் மற்றும் மண்வகைகள் சார்ந்த சொற்களைச் சரியாகப் பொருத்துக:<br><br>A. Aclimatic soil — 1. வண்டல் விசிறி, கூம்பு<br>B. Alluvial fan; cone — 2. சரிவு உயருதல்<br>C. Aggrading (of river channels) — 3. காலநிலையால் மாறுபடாத மண்<br>D. Adjusted profile — 4. பொருந்திய ஆற்றுப்படுகை",
+    "optionsEn": [],
+    "optionsTa": [
+      "A-3, B-1, C-2, D-4",
+      "A-1, B-3, C-4, D-2",
+      "A-3, B-2, C-1, D-4",
+      "A-4, B-1, C-2, D-3"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "பின்வரும் கூற்றுகளை ஆராய்க:<br><br>கூற்று 1: பட்டியலில் 'Agrarian geography' என்பது விளை நிலப் பூகோளத்தைக் குறிக்கிறது.<br>கூற்று 2: 'Age-pyramids (of population)' என்பது பாலின வயது பிரமிடைக் குறிக்கிறது.<br>கூற்று 3: 'Alluvium' என்பது வண்டல் மண்ணைக் குறிக்கிறது.",
+    "optionsEn": [],
+    "optionsTa": [
+      "கூற்று 1 மற்றும் 3 சரி; கூற்று 2 தவறு",
+      "கூற்று 1 மற்றும் 2 சரி; கூற்று 3 தவறு",
+      "கூற்று 2 மற்றும் 3 சரி; கூற்று 1 தவறு",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "வரைபடம் மற்றும் புவியியல் சொற்களில் பொருந்தாத இணையைத் தேர்ந்தெடுக்க:",
+    "optionsEn": [],
+    "optionsTa": [
+      "Agricultural maps – பயிர்முறை வரைபடம்",
+      "Accessibility Isopleth – அண்மை அளவுக்கோடு",
+      "Aborigine – ஆதிவாசி, முதல் குடி",
+      "Agglomerate – இடநிலைக் கேற்ற அமைவு"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கீழ்க்காணும் அரசியல் கலைச்சொற்களில், ஒப்படைப்புச் சட்டமியற்றலுக்கான குழு (Committee on Delegated Legislation) மற்றும் அதிகாரப் பகிர்வு (Division of powers) ஆகியவற்றைக் குறிக்கும் சரியான தமிழ் இணை எது?",
+    "optionsEn": [],
+    "optionsTa": [
+      "ஒப்படைப்புச் சட்டமியற்றலுக்கான குழு – அதிகாரப் பங்கீடு | கூட்டுப் பொறுப்பு – இரட்டையாட்சி",
+      "ஒப்படைப்புச் சட்டமியற்றலுக்கான குழு – அதிகாரப் பகிர்வு | பொதுக் கணக்குக் குழு – தொகுதி மறுவரையறை",
+      "உரிமைகள் குழு – தூதாண்மை | மதிப்பீட்டுக் குழு – சமுதாயவாதம்",
+      "விதிமுறைகளுக்கான குழு – வாழும் இடம் | தொழில் ஆலோசனை குழு – தகர்ப்பமைப்பு"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "பின்வரும் அரசியல் மற்றும் நிர்வாகக் கலைச்சொல் பொருத்தங்களில் தவறானது எது?<br><br>Collegiate executive – கூட்டு செயலாட்சி<br>Commutation – தண்டனையைக் குறைத்தல்<br>Distribution of Powers – அதிகாரப் பகிர்வு<br>Co-operative Federalism – கூட்டுறவுக் கூட்டாட்சி",
+    "optionsEn": [],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "2 மற்றும் 4 மட்டும்",
+      "அனைத்தும் சரி",
+      "3 மட்டும்"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "தேர்தல் மற்றும் குடியுரிமை சார்ந்த சொற்களைச் சரியாகப் பொருத்துக:<br><br>A. Electorate — 1. வாக்காளர்கள்<br>B. Electoral College — 2. இரு வாக்குச்சீட்டு வாக்காளர் முறைமை<br>C. Double ballot electoral system — 3. வாக்காளர் முறைமை<br>D. Electors — 4. வாக்காளர் தொகுதி முறைமை / வாக்காளர் குழுமம்",
+    "optionsEn": [],
+    "optionsTa": [
+      "A-3, B-4, C-2, D-1",
+      "A-4, B-3, C-1, D-2",
+      "A-3, B-2, C-4, D-1",
+      "A-1, B-4, C-2, D-3"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "பின்வரும் கூற்றுகளை ஆராய்க:<br><br>கூற்று 1: பட்டியலில் 'Deep Ecology' என்பது ஆழச்சூழலியலைக் குறிக்கிறது.<br>கூற்று 2: 'EcoFeminism' என்பது சுற்றுச்சூழல் சீர்கேட்டைக் குறிக்கிறது.<br>கூற்று 3: 'Consolidated Fund of India' என்பது இந்தியாவின் நிரந்தர தொகுப்பு நிதியைக் குறிக்கிறது.",
+    "optionsEn": [],
+    "optionsTa": [
+      "கூற்று 1 மற்றும் 3 சரி; கூற்று 2 தவறு",
+      "கூற்று 1 மற்றும் 2 சரி; கூற்று 3 தவறு",
+      "கூற்று 2 மற்றும் 3 சரி; கூற்று 1 தவறு",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "அரசியல் தத்துவம் மற்றும் அமைப்புகள் தொடர்பான சொற்களில் பொருந்தாத இணையைத் தேர்ந்தெடுக்க:",
+    "optionsEn": [],
+    "optionsTa": [
+      "Communitarianism – சமுதாயவாதம்",
+      "Concert of Europe – ஐரோப்பிய ஒப்பந்தக் கூட்டமைப்பு",
+      "Deconstruction – அதிகாரப்பரவல்",
+      "Defacto – நடைமுறை அதிகாரம் பெற்ற"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கீழ்க்காணும் மேலாண்மைக் கலைச்சொற்களில், தரவு காப்பு / காப்புப்பிரதி (Data Backup) மற்றும் குழு சிந்தனை (Brainstorming) ஆகியவற்றைக் குறிக்கும் சரியான தமிழ் இணை எது?",
+    "optionsEn": [],
+    "optionsTa": [
+      "தரவு காப்பு / காப்புப்பிரதி – குழு சிந்தனை | வாராக் கடன் – நிகழ்ச்சி நிரல்",
+      "தரவு காப்பு / காப்புப்பிரதி – குறிவிலக்கம் | பண்டமாற்று – உடை நெறி",
+      "சொத்து மேலாண்மை மென்பொருள் – தூய்மை | நடப்புக் கணக்குகள் – கோப்பிடல்",
+      "வணிகக் கூட்டம் – பாகுபாடற்ற பாலின மொழி | காசோலை புத்தகம் – நேரடி ஆட்சேர்ப்பு"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "அலுவலக அமைப்பு மற்றும் கோப்பிடல் தொடர்பான பின்வரும் பொருத்தங்களில் தவறானது எது?<br><br>Chronological Classification – காலவரிசை வகைப்பாடு<br>Horizontal or Flat Filing – படுகிடை கோப்பிடல்<br>Bound Book Index – அட்டை சுட்டகராதி<br>Ergonomics – பணிச்சூழலியல்",
+    "optionsEn": [],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "3 மட்டும்",
+      "2 மற்றும் 4 மட்டும்",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "வணிகம் மற்றும் பணியாளர் மேலாண்மை சார்ந்த சொற்களைச் சரியாகப் பொருத்துக:<br><br>A. Acquiree — 1. உங்கள் சொந்த சாதனத்தை கொண்டு வருதல்<br>B. Bring Your Own Device (BYOD) — 2. ஒருங்கிணைந்த தளங்கள்<br>C. Aggregators platforms — 3. கைப்பற்றப்பட்ட நிறுவனம்<br>D. Global in-house Centres (GIC) — 4. உலகளாவிய உள் மையங்கள்",
+    "optionsEn": [],
+    "optionsTa": [
+      "A-4, B-1, C-2, D-3",
+      "A-3, B-1, C-2, D-4",
+      "A-1, B-3, C-4, D-2",
+      "A-3, B-2, C-1, D-4"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "பின்வரும் கூற்றுகளை ஆராய்க:<br><br>கூற்று 1: பட்டியலில் 'Decoding' என்பது குறிவிலக்கத்தைக் குறிக்கிறது.<br>கூற்று 2: 'Departmentation' என்பது வாராக் கடனைக் குறிக்கிறது.<br>கூற்று 3: 'Direct Recruitment' என்பது நேரடி ஆட்சேர்ப்பைக் குறிக்கிறது.",
+    "optionsEn": [],
+    "optionsTa": [
+      "கூற்று 1 மற்றும் 3 சரி; கூற்று 2 தவறு",
+      "கூற்று 1 மற்றும் 2 சரி; கூற்று 3 தவறு",
+      "கூற்று 2 மற்றும் 3 சரி; கூற்று 1 தவறு",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "தொடர்பு மற்றும் அலுவலகச் செயல்பாடுகள் தொடர்பான சொற்களில் பொருந்தாத இணையைத் தேர்ந்தெடுக்க:",
+    "optionsEn": [],
+    "optionsTa": [
+      "Downword Communication – கீழ்நோக்கி தகவல் தொடர்பு",
+      "Gender Neutral Language – பாகுபாடற்ற பாலின மொழி",
+      "Trauma – நிறுவனத்தின் வணிக அடையாளம்",
+      "Agenda – நிகழ்ச்சி நிரல்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கீழ்க்காணும் உயிரியல் கலைச்சொற்களில், சேய்மை சுருள் நுண்குழல் (Distal Convoluted Tubule) மற்றும் மண்டையோட்டுப் பெருந்துளை (Foramen magnum) ஆகியவற்றைக் குறிக்கும் சரியான தமிழ் இணை எது?",
+    "optionsEn": [],
+    "optionsTa": [
+      "சேய்மை சுருள் நுண்குழல் – மண்டையோட்டுப் பெருந்துளை | பயனற்ற இடம் – மிதக்கும் விலா எலும்புகள்",
+      "சேய்மை சுருள் நுண்குழல் – சுடர்ச்செல்கள் | முடக்குச் சுரம் – நார்த்தசை நோய்",
+      "பிதுக்கம் – கருவுறுதல் | கண்புரை – செரிமான நொதிகள்",
+      "இதய சுழற்சி – நீளிழை இயக்கம் | இரட்டைச் சுற்று ஓட்டம் – கடத்திகள்"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "உடலியங்கியல் மற்றும் மருத்துவக் கலைச்சொல் பொருத்தங்களில் தவறானது எது?<br><br>Cardiac Arrhythmia – இதய இயலமின்மை<br>Catatonia – உடலியக்கமிலா நோய்<br>Diapause type of egg – நோய் ஆய்வுறுதி<br>Extra cellular fluid – செல்வெளித் திரவம்",
+    "optionsEn": [],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "3 மட்டும்",
+      "2 மற்றும் 4 மட்டும்",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "உடற்கூறு மற்றும் செயல்பாடுகள் சார்ந்த சொற்களைச் சரியாகப் பொருத்துக:<br><br>A. Flame cells — 1. அரிவாள் வடிவம்<br>B. Falciform ligament — 2. சுடர்ச்செல்கள்<br>C. Foregut — 3. இரத்தச் செல்கள்<br>D. Formed elements — 4. முன்உணவுப்பாதை",
+    "optionsEn": [],
+    "optionsTa": [
+      "A-1, B-2, C-3, D-4",
+      "A-2, B-1, C-4, D-3",
+      "A-2, B-4, C-1, D-3",
+      "A-4, B-1, C-2, D-3"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "பின்வரும் கூற்றுகளை ஆராய்க:<br><br>கூற்று 1: பட்டியலில் 'Drilospheres' என்பது மண்புழு ஏற்படுத்திய குழியைக் குறிக்கிறது.<br>கூற்று 2: 'Denaturing' என்பது புற்றுநோய்க் காரணிகளைக் குறிக்கிறது.<br>கூற்று 3: 'Facilitated transpot' என்பது பொருட்கள் வழி கடத்தலைக் குறிக்கிறது.",
+    "optionsEn": [],
+    "optionsTa": [
+      "கூற்று 1 மற்றும் 3 சரி; கூற்று 2 தவறு",
+      "கூற்று 1 மற்றும் 2 சரி; கூற்று 3 தவறு",
+      "கூற்று 2 மற்றும் 3 சரி; கூற்று 1 தவறு",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "சுழற்சி மற்றும் தசை அமைப்பு தொடர்பான சொற்களில் பொருந்தாத இணையைத் தேர்ந்தெடுக்க:",
+    "optionsEn": [],
+    "optionsTa": [
+      "Cardio Walk – நெஞ்சக நலநடை",
+      "Dark band – அடர்த்தி மிகு பட்டை",
+      "False ribs – போலி விலா எலும்புகள்",
+      "Depolarization – இரைப்பை மேல்பகுதி"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கீழ்க்காணும் கல்வி மற்றும் கற்பித்தலியல் கலைச்சொற்களில், சந்தர்ப்ப தலையீடு (Contextual interference) மற்றும் அகச்சுரப்பியியல் (Endocrinology) ஆகியவற்றைக் குறிக்கும் சரியான தமிழ் இணை எது?",
+    "optionsEn": [],
+    "optionsTa": [
+      "சந்தர்ப்ப தலையீடு – அகச்சுரப்பியியல் | கற்கை நெறிச்சாதனம் – கலைக்களஞ்சியம்",
+      "சந்தர்ப்ப தலையீடு – குறியாக்கம் | ஆக்கக் கோட்பாடு – தகைமைத் திரட்டு",
+      "இடைத்தொடர்பு – வாந்தியியல் | கூட்டுக் கற்கை – பட்டமளிப்பு",
+      "நிலைமைக்குரிய பதில்வினை – நீட்டிப்புக் கல்வி | மேலதிக பயிற்சி – சித்திரத் தையற்கலை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கற்பித்தல் மற்றும் மதிப்பீடு தொடர்பான பின்வரும் பொருத்தங்களில் தவறானது எது?<br><br>Computer-assisted instruction – கணினியுதவிப் போதனை<br>Constructed response – ஆக்கப் பதில்வினை<br>Excursion – பொருட்காட்சி/ கண்காட்சி<br>Experiential education – அனுபவக் கல்வி",
+    "optionsEn": [],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "3 மட்டும்",
+      "2 மற்றும் 4 மட்டும்",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "அறிவியல், ஆராய்ச்சி மற்றும் மொழி சார்ந்த சொற்களைச் சரியாகப் பொருத்துக:<br><br>A. Emetology — 1. புறமண்டிலவியல்<br>B. Exobiology — 2. வாந்தியியல்<br>C. Empirical Research — 3. சொல்வன்மை<br>D. Eloquence — 4. பட்டறிவு சார்ந்த ஆய்வு/ நம்பகமான ஆய்வு",
+    "optionsEn": [],
+    "optionsTa": [
+      "A-2, B-1, C-4, D-3",
+      "A-1, B-2, C-3, D-4",
+      "A-2, B-4, C-1, D-3",
+      "A-4, B-1, C-2, D-3"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "பின்வரும் கூற்றுகளை ஆராய்க:<br><br>கூற்று 1: பட்டியலில் 'Encoding' என்பது குறியாக்கத்தைக் குறிக்கிறது.<br>கூற்று 2: 'Embedding' என்பது தவிர்ப்பு, நீக்கத்தைக் குறிக்கிறது.<br>கூற்று 3: 'Express course' என்பது விரைவுநிலை வகுப்பைக் குறிக்கிறது.",
+    "optionsEn": [],
+    "optionsTa": [
+      "கூற்று 1 மற்றும் 3 சரி; கூற்று 2 தவறு",
+      "கூற்று 1 மற்றும் 2 சரி; கூற்று 3 தவறு",
+      "கூற்று 2 மற்றும் 3 சரி; கூற்று 1 தவறு",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கல்வி நிறுவனங்கள் மற்றும் கற்றல் முறைகள் தொடர்பான சொற்களில் பொருந்தாத இணையைத் தேர்ந்தெடுக்க:",
+    "optionsEn": [],
+    "optionsTa": [
+      "Expatriate teachers – வெளிநாட்டு ஆசிரியர்கள்",
+      "Engaging pedagogy – ஆர்வமூட்டும் கற்பித்தல் முறை (கற்பித்தலியல்)",
+      "Curriculum vitae resume – தகைமைத் திரட்டு",
+      "Exception – பரிமாற்ற மாணவர்"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கீழ்க்காணும் கலைச்சொற்களில், மூலச்சிற்றினங்கள் (Keystone species) மற்றும் தீர்வுநெறி (Algorithm) ஆகியவற்றைக் குறிக்கும் சரியான தமிழ் இணை எது?",
+    "optionsEn": [],
+    "optionsTa": [
+      "மூலச்சிற்றினங்கள் – தீர்வுநெறி | நரம்பு செல்திரள் – நச்செதிர்ப்பி",
+      "மூலச்சிற்றினங்கள் – அணுக்கம் | மரபணுக் குழுமம் – செயலுருபு",
+      "தன்நிலை காத்தல் – அசைவூட்டம் | திசுவியல் – எழுப்பு ஒலி",
+      "இழப்புமீட்டல்/மீளுருவாக்கம் – அணி | வெப்பச் சிதைவு – நேரமை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "உயிரியல் மற்றும் சூழலியல் சார்ந்த பின்வரும் பொருத்தங்களில் தவறானது எது?<br><br>Rheoreceptor – நீரோட்ட உணர்வி<br>Spawning – இனச்செல் வெளியேற்றம்<br>Menarche – பேறுகாலத்திற்குப்பின்<br>Worm castings – நாங்கூழ் கட்டிகள்",
+    "optionsEn": [],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "3 மட்டும்",
+      "2 மற்றும் 4 மட்டும்",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "உயிரியல் மற்றும் கணினித் தொழில்நுட்பச் சொற்களைச் சரியாகப் பொருத்துக:<br><br>A. Probe DNA — 1. பொய் அடுக்கினால் ஆன எபிதீலியம்<br>B. Pseudostratified epithelium — 2. துலக்கி டி.என்.ஏ<br>C. Alphanumeric — 3. தகவி /பொருத்தி<br>D. Adapter — 4. எழுத்தெண்வகை",
+    "optionsEn": [],
+    "optionsTa": [
+      "A-2, B-1, C-4, D-3",
+      "A-1, B-2, C-3, D-4",
+      "A-2, B-4, C-1, D-3",
+      "A-4, B-1, C-2, D-3"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "பின்வரும் கூற்றுகளை ஆராய்க:<br><br>கூற்று 1: பட்டியலில் 'Saltation' என்பது தாவுதலைக் குறிக்கிறது.<br>கூற்று 2: 'Molecular pharming' என்பது தண்டு வட மரப்பு நோயைக் குறிக்கிறது.<br>கூற்று 3: 'Hydrostatic skeleton' என்பது நீர்ம சட்டகத்தைக் குறிக்கிறது.",
+    "optionsEn": [],
+    "optionsTa": [
+      "கூற்று 1 மற்றும் 3 சரி; கூற்று 2 தவறு",
+      "கூற்று 1 மற்றும் 2 சரி; கூற்று 3 தவறு",
+      "கூற்று 2 மற்றும் 3 சரி; கூற்று 1 தவறு",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "உயிரியல் மற்றும் கணினித் தொழில்நுட்பம் தொடர்பான சொற்களில் பொருந்தாத இணையைத் தேர்ந்தெடுக்க:",
+    "optionsEn": [],
+    "optionsTa": [
+      "Gustatory receptor – சுவை உணர்வி",
+      "Withdrawal Symptoms – விலகல் அறிகுறிகள்",
+      "Application Package – பயன்பாட்டுத் தொகுப்பு",
+      "Pyrolysis – குடல் பிதுக்கங்கள்"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கீழ்க்காணும் தாவரவியல் கலைச்சொற்களில், கார்பன் ஒதுக்கமடைதல்/ கார்பன் ஒதுக்கம் (Carbon sequestration) மற்றும் மர வயதியல் (Dendrochronology) ஆகியவற்றைக் குறிக்கும் சரியான தமிழ் இணை எது?",
+    "optionsEn": [],
+    "optionsTa": [
+      "கார்பன் ஒதுக்கமடைதல்/ கார்பன் ஒதுக்கம் – மர வயதியல் | சாறேற்றம் – குறுக்கேற்றம்",
+      "கார்பன் ஒதுக்கமடைதல்/ கார்பன் ஒதுக்கம் – வேறுபாடு இழத்தல் | எதிர் குறியன்கள் – கலப்பின பிளாஸ்மிட்கள்",
+      "பலகை வேர் – பிளாஸ்மா சிதைவு மீட்சி | தாங்கல் கரைசல் – அமினோ நீக்கம்",
+      "தன்பன்மடியம் – குமிழாதல் | பிற்கலப்பு – திகத்திரள்"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "தாவர உடலியங்கியல் மற்றும் மரபியல் சார்ந்த பின்வரும் பொருத்தங்களில் தவறானது எது?<br><br>Apomixis – கருவுறா இனப்பெருக்கம்<br>Chemiosmotic theory – வேதி சவ்வூடு பரவல் கோட்பாடு<br>Brown heart disease – நுனி மூடுதல்<br>Autecology – சுய சூழ்நிலையியல்",
+    "optionsEn": [],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "2 மற்றும் 4 மட்டும்",
+      "3 மட்டும்",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "தாவர அமைப்பு மற்றும் வளர்சிதை மாற்றம் சார்ந்த சொற்களைச் சரியாகப் பொருத்துக:<br><br>A. Buttress root — 1. உறைகுளிர் வெப்பநிலை பேணல்/ உறைகுளிர்பாதுகாப்பு<br>B. Cryoconservation — 2. பலகை வேர்<br>C. Deamination — 3. சிதைவு மாற்றம் / சிதைக்கும் செயல்<br>D. Catabolic — 4. அமினோ நீக்கம்",
+    "optionsEn": [],
+    "optionsTa": [
+      "A-2, B-1, C-4, D-3",
+      "A-1, B-2, C-3, D-4",
+      "A-2, B-4, C-1, D-3",
+      "A-4, B-1, C-2, D-3"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "பின்வரும் கூற்றுகளை ஆராய்க:<br><br>கூற்று 1: பட்டியலில் 'Apical cell theory' என்பது நுனிசெல் கொள்கையைக் குறிக்கிறது.<br>கூற்று 2: 'Apospory' என்பது திகத்திரளைக் குறிக்கிறது.<br>கூற்று 3: 'Complementation test' என்பது இரப்பு சோதனையைக் குறிக்கிறது.",
+    "optionsEn": [],
+    "optionsTa": [
+      "கூற்று 1 மற்றும் 3 சரி; கூற்று 2 தவறு",
+      "கூற்று 1 மற்றும் 2 சரி; கூற்று 3 தவறு",
+      "கூற்று 2 மற்றும் 3 சரி; கூற்று 1 தவறு",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "தாவரவியல் கலைச்சொற்களில் பொருந்தாத இணையைத் தேர்ந்தெடுக்க:",
+    "optionsEn": [],
+    "optionsTa": [
+      "Cohesion – கூட்டிணைவு",
+      "Chemotaxonomy – வேதிமுறை வகைப்பாடு",
+      "Autoradiography – கதிரியக்க படமெடுப்பு",
+      "Deplasmolysis – பகலளவு சாராத் தாவரங்கள்"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கீழ்க்காணும் வேதியியல் கலைச்சொற்களில், கொடுக்கிணைப்பு ஈனி (Chelating ligand) மற்றும் மூலைவிட்டத் தொடர்பு (Diagonal relation) ஆகியவற்றைக் குறிக்கும் சரியான தமிழ் இணை எது?",
+    "optionsEn": [],
+    "optionsTa": [
+      "கொடுக்கிணைப்பு ஈனி – மூலைவிட்டத் தொடர்பு | புடமிடுதல் – கூழ்மபிரிப்பு",
+      "கொடுக்கிணைப்பு ஈனி – பரப்பு நீக்குதல் | சிலி வெடியுப்பு – மின்னிறக்க குழாய்",
+      "மின்முனைக் கவர்ச்சி – உறைநிலைத் தாழ்வு | கலமாறிலி – காய்ச்சி வடித்தல்",
+      "கொதிநிலைமாறாக்கலவை – ஈரியல்புத் தன்மை | அணைவு எண் – கம்பியாக இழுபடும் தன்மை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "வேதியியல் வினைகள் மற்றும் பண்புகள் சார்ந்த பின்வரும் பொருத்தங்களில் தவறானது எது?<br><br>Azeotropic mixture – கொதிநிலைமாறாக்கலவை<br>Catalytic Poison – வினைவேகமாற்றியின் நச்சு<br>Deliquescent – சிதைவு<br>Disproportionation – விகிதச் சிதைவு",
+    "optionsEn": [],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "3 மட்டும்",
+      "2 மற்றும் 4 மட்டும்",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "அணைவுச் சேர்மங்கள் மற்றும் இயற்பியல் வேதியியல் சொற்களைச் சரியாகப் பொருத்துக:<br><br>A. Coordination sphere — 1. சமஆற்றல் கொண்ட ஆர்பிட்டால்கள்<br>B. Degenerate orbitals — 2. அணைவுக் கோளம்<br>C. Concentration Cell — 3. இருமுனைத் திருப்புத்திறன்<br>D. Dipole moment — 4. செறிவு மின்கலன்",
+    "optionsEn": [],
+    "optionsTa": [
+      "A-2, B-1, C-4, D-3",
+      "A-1, B-2, C-3, D-4",
+      "A-2, B-4, C-1, D-3",
+      "A-4, B-1, C-2, D-3"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "பின்வரும் கூற்றுகளை ஆராய்க:<br><br>கூற்று 1: பட்டியலில் 'Colligative properties' என்பது தொகைசார் பண்புகளைக் குறிக்கிறது.<br>கூற்று 2: 'Chalcogens' என்பது போர்மேக்னடானைக் குறிக்கிறது.<br>கூற்று 3: 'Cupellation' என்பது புடமிடுதலைக் குறிக்கிறது.",
+    "optionsEn": [],
+    "optionsTa": [
+      "கூற்று 1 மற்றும் 3 சரி; கூற்று 2 தவறு",
+      "கூற்று 1 மற்றும் 2 சரி; கூற்று 3 தவறு",
+      "கூற்று 2 மற்றும் 3 சரி; கூற்று 1 தவறு",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "வேதியியல் கலைச்சொற்களில் பொருந்தாத இணையைத் தேர்ந்தெடுக்க:",
+    "optionsEn": [],
+    "optionsTa": [
+      "Antiferromagnetic – எதிர் பெர்ரோ காந்ததன்மை",
+      "Chemisorption – வேதிப்பரப்பு கவர்ச்சி",
+      "Electro metallurgy – மின்வேதி உலோகவியல்",
+      "Dehydrogenation – கார்பன் எதிரயணி"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கீழ்க்காணும் இயற்பியல் கலைச்சொற்களில், நீர்மநிலையியல் முரண்பாடு (Hydrostatic paradox) மற்றும் மோதல் காரணி (Impact parameter) ஆகியவற்றைக் குறிக்கும் சரியான தமிழ் இணை எது?",
+    "optionsEn": [],
+    "optionsTa": [
+      "நீர்மநிலையியல் முரண்பாடு – மோதல் காரணி | காந்தத் தயக்கம் – நிலைமக்குறிப்பாயம்",
+      "நீர்மநிலையியல் முரண்பாடு – புறவியலான | மீட்சி மோதல் – கணத்தாக்கு",
+      "சுழல் மின்னோட்டம் – தூரப்பார்வை | விடுபடு வேகம் – மாசு அணுக்கள்",
+      "இடப்பெயர்ச்சி மின்னோட்டம் – குவியத்தொலைவு | இழுப்பு திசைவேகம் – மின்தூண்டி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "மின்னியல் மற்றும் காந்தவியல் சார்ந்த பின்வரும் பொருத்தங்களில் தவறானது எது?<br><br>Donor energy level – கொடைஅணுஆற்றல்மட்டம்<br>Eddy current – சுழல் மின்னோட்டம்<br>Extrinsic – மீச்சிறு அணுகு தொலைவு<br>Hysteresis – காந்தத் தயக்கம்",
+    "optionsEn": [],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "3 மட்டும்",
+      "2 மற்றும் 4 மட்டும்",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "விசையியல் மற்றும் வெப்பவியல் சார்ந்த சொற்களைச் சரியாகப் பொருத்துக:<br><br>A. Extensive variables — 1. திணிக்கப்பட்ட அலைவுகள்<br>B. Forced Oscillation — 2. அளவுச் சார்புள்ள மாறி<br>C. Hydrostatic paradox — 3. காந்தச் சரிவுக்கோணம்<br>D. Inclination angle — 4. நீர்மநிலையியல் முரண்பாடு",
+    "optionsEn": [],
+    "optionsTa": [
+      "A-2, B-1, C-4, D-3",
+      "A-1, B-2, C-3, D-4",
+      "A-2, B-4, C-1, D-3",
+      "A-4, B-1, C-2, D-3"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "பின்வரும் கூற்றுகளை ஆராய்க:<br><br>கூற்று 1: பட்டியலில் 'Forward current gain' என்பது முன்னோக்கு மின்னோட்டப்பெருக்கத்தைக் குறிக்கிறது.<br>கூற்று 2: 'Dynamic resistance' என்பது நிலைமக்குறிப்பாயத்தைக் குறிக்கிறது.<br>கூற்று 3: 'Figure of merit of a galvanometer' என்பது கால்வானா மீட்டரின் தர ஒப்பீட்டு எண்ணைக் குறிக்கிறது.",
+    "optionsEn": [],
+    "optionsTa": [
+      "கூற்று 1 மற்றும் 3 சரி; கூற்று 2 தவறு",
+      "கூற்று 1 மற்றும் 2 சரி; கூற்று 3 தவறு",
+      "கூற்று 2 மற்றும் 3 சரி; கூற்று 1 தவறு",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "ஒளியியல் மற்றும் மின்னணுவியல் தொடர்பான சொற்களில் பொருந்தாத இணையைத் தேர்ந்தெடுக்க:",
+    "optionsEn": [],
+    "optionsTa": [
+      "Hypermetropia – தூரப்பார்வை",
+      "Fiber optic communication – ஒளி இழைத் தகவல் தொடர்பு",
+      "Field emission – புல உமிழ்வு",
+      "Flux leakage – இருமைப்பண்பு"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கீழ்க்காணும் கணினி மற்றும் தொழில்நுட்பக் கலைச்சொற்களில், முனையப் போன்மம் (Terminal emulation) மற்றும் நெருக்க இணைவு பன்மை முறைவழியாக்கம் (Tightly coupled multi processing) ஆகியவற்றைக் குறிக்கும் சரியான தமிழ் இணை எது?",
+    "optionsEn": [],
+    "optionsTa": [
+      "முனையப் போன்மம் – நெருக்க இணைவு பன்மை முறைவழியாக்கம் | நாடா வரம்புக் குறி – தொனிப்பு மை",
+      "முனையப் போன்மம் – தேற்றம் நிறுவல் | நாடாக் குறிமுறை – வில்லை வளையம்",
+      "கொள்பணி செலுத்தி – பொறுதி | இலக்கு அடைவு – வெப்ப அச்சுப்பொறி",
+      "ஒடர் இணைப்பு கணினி – சோதனையோட்டம் | முனையக் காப்பு – கருவிப் பொதி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "சேமிப்புச் சாதனங்கள் (Tape) மற்றும் முனையம் (Terminal) தொடர்பான பின்வரும் பொருத்தங்களில் தவறானது எது?<br><br>Tape cartridge – நாடாப் பொதியுறை<br>Tape reproducer – நாடாப் படியெடுப்பி<br>Terminal response mode – முனையப் பரிமாற்று வசதி<br>Task queue – கொள்பணி சாரை",
+    "optionsEn": [],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "3 மட்டும்",
+      "2 மற்றும் 4 மட்டும்",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "மென்பொருள், சோதனை மற்றும் இடைமுகம் சார்ந்த சொற்களைச் சரியாகப் பொருத்துக:<br><br>A. Toggle case — 1. தேற்றம் நிறுவல்<br>B. Theorem proving — 2. நிலைமாற்றி பெட்டி<br>C. Terminator — 3. வெளியேற்ற நேரம்<br>D. Timeout — 4. முடிப்பான்",
+    "optionsEn": [],
+    "optionsTa": [
+      "A-2, B-1, C-4, D-3",
+      "A-1, B-2, C-3, D-4",
+      "A-2, B-4, C-1, D-3",
+      "A-4, B-1, C-2, D-3"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "பின்வரும் கூற்றுகளை ஆராய்க:<br><br>கூற்று 1: பட்டியலில் 'Tandem computer' என்பது ஒடர் இணைப்பு கணினியைக் குறிக்கிறது.<br>கூற்று 2: 'Texture' என்பது வெப்ப அச்சுப்பொறியைக் குறிக்கிறது.<br>கூற்று 3: 'Target data set' என்பது இலக்கு தரவுக் கணத்தைக் குறிக்கிறது.",
+    "optionsEn": [],
+    "optionsTa": [
+      "கூற்று 1 மற்றும் 3 சரி; கூற்று 2 தவறு",
+      "கூற்று 1 மற்றும் 2 சரி; கூற்று 3 தவறு",
+      "கூற்று 2 மற்றும் 3 சரி; கூற்று 1 தவறு",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கணினித் தொழில்நுட்பக் கலைச்சொற்களில் பொருந்தாத இணையைத் தேர்ந்தெடுக்க:",
+    "optionsEn": [],
+    "optionsTa": [
+      "Tape punch – நாடா துளைக்கருவி",
+      "Tile – காட்சி வில்லை",
+      "Tolerance – பொறுதி",
+      "Task dispatcher – கொள்பணி பட்டை"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கீழ்க்காணும் கணினித் தொழில்நுட்பக் கலைச்சொற்களில், தன்னிலைச் சரிபார்ப்புக் குறிமுறை (Self-checking code) மற்றும் பகுதி தற்போக்கு பெறுவழி / அணுக்கம் (Semirandom access) ஆகியவற்றைக் குறிக்கும் சரியான தமிழ் இணை எது?",
+    "optionsEn": [],
+    "optionsTa": [
+      "தன்னிலைச் சரிபார்ப்புக் குறிமுறை – பகுதி தற்போக்கு பெறுவழி / அணுக்கம் | திரை ஆக்கி – அணுகல் குறிப்பு",
+      "தன்னிலைச் சரிபார்ப்புக் குறிமுறை – சொற்பொருளியல் | சுருள் பட்டி – காப்பான கரு",
+      "தேடல் பொறி – உணர்வி | துணை களஞ்சியம் – வரிசைமுறைச் சரிபார்ப்பு",
+      "எழுத்துரு – குறைகடத்தி | திரை காப்பி – வரிசைமுறைக் கட்டமைப்பு"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "நிரலாக்கம், பாதுகாப்பு மற்றும் சேமிப்பு தொடர்பான பின்வரும் பொருத்தங்களில் தவறானது எது?<br><br>Self-compiling compiler – தன்னிலைத் தொகுப்பி<br>Secure kernel – காப்பான கரு<br>Self-validating code – தன்னிலைத் திருத்துக் குறிமுறை<br>Secondary storage – துணை களஞ்சியம்/ தேக்ககம்",
+    "optionsEn": [],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "3 மட்டும்",
+      "2 மற்றும் 4 மட்டும்",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "திரை, தேடல் மற்றும் வன்பொருள் சார்ந்த சொற்களைச் சரியாகப் பொருத்துக:<br><br>A. Semaphores — 1. உணர்வி<br>B. Sense probe — 2. அணுகல் குறிப்பு<br>C. Search memory associative storage — 3. தேடி பதிலிடு<br>D. Search and replace — 4. தேடல் நினைவக தேக்ககம் / களஞ்சியம்",
+    "optionsEn": [],
+    "optionsTa": [
+      "A-2, B-1, C-4, D-3",
+      "A-1, B-2, C-3, D-4",
+      "A-2, B-4, C-1, D-3",
+      "A-4, B-1, C-2, D-3"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "பின்வரும் கூற்றுகளை ஆராய்க:<br><br>கூற்று 1: பட்டியலில் 'Semantics' என்பது சொற்பொருளியலைக் குறிக்கிறது.<br>கூற்று 2: 'Sector method' என்பது வரிசைமுறை அணுகலைக் குறிக்கிறது.<br>கூற்று 3: 'Scroll lock' என்பது திரை சுருள் பூட்டு/உருள் நிறுத்தியைக் குறிக்கிறது.",
+    "optionsEn": [],
+    "optionsTa": [
+      "கூற்று 1 மற்றும் 3 சரி; கூற்று 2 தவறு",
+      "கூற்று 1 மற்றும் 2 சரி; கூற்று 3 தவறு",
+      "கூற்று 2 மற்றும் 3 சரி; கூற்று 1 தவறு",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கணினித் தொழில்நுட்பக் கலைச்சொற்களில் பொருந்தாத இணையைத் தேர்ந்தெடுக்க:",
+    "optionsEn": [],
+    "optionsTa": [
+      "Semiconductor device – குறைகடத்திச் சாதனம்",
+      "Sequence structure – வரிசைமுறைக் கட்டமைப்பு",
+      "Screen saver – திரை காப்பி",
+      "Script – உணர்திறன்"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கீழ்க்காணும் கணினித் தொழில்நுட்பக் கலைச்சொற்களில், கட்ட நிலை மாற்றம் (Phased conversion) மற்றும் பலகட்ட வரிசையாக்கம் (Polyphase sort) ஆகியவற்றைக் குறிக்கும் சரியான தமிழ் இணை எது?",
+    "optionsEn": [],
+    "optionsTa": [
+      "கட்ட நிலை மாற்றம் – பலகட்ட வரிசையாக்கம் | ஒலியன் – போலந்துக் குறிமானம்",
+      "கட்ட நிலை மாற்றம் – தேவை தேங்கல் | கிழிதாள் – சமதளமானி",
+      "நின்று பிடித்தல் – பொது மடுவபகுதி | புறவட்டக் கருவிகள் – நினைவகத் தட்டு",
+      "ஒளி தடுப்பி – களவுப் புகுகை | படக்குழல் – அச்சு உருளை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "வன்பொருள், அச்சு மற்றும் வரைகலை தொடர்பான பின்வரும் பொருத்தங்களில் தவறானது எது?<br><br>Plainmeter – சமதளமானி<br>Plasma display panel – மின்மக் காட்சித் திரை<br>Photo resist – ஒளி அச்சுக்கோப்பு<br>Piggyback board – குட்டித்துணைப் பலகை",
+    "optionsEn": [],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "3 மட்டும்",
+      "2 மற்றும் 4 மட்டும்",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கணினி நிரலாக்கம், வலையமைப்பு மற்றும் அளவீடு சார்ந்த சொற்களைச் சரியாகப் பொருத்துக:<br><br>A. Polish notation — 1. தேவை தேங்கல்<br>B. Polling — 2. போலந்துக் குறிமானம்<br>C. Platter — 3. புரி அடர்த்தி<br>D. Pitch — 4. நினைவகத் தட்டு",
+    "optionsEn": [],
+    "optionsTa": [
+      "A-2, B-1, C-4, D-3",
+      "A-1, B-2, C-3, D-4",
+      "A-2, B-4, C-1, D-3",
+      "A-4, B-1, C-2, D-3"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "பின்வரும் கூற்றுகளை ஆராய்க:<br><br>கூற்று 1: பட்டியலில் 'Programmable Logic Array' என்பது செய்நிரலாக்கு தர்க்க/ஏரண அணியைக் குறிக்கிறது.<br>கூற்று 2: 'Perfs' என்பது நிரந்தரத் தேக்ககத்தைக் குறிக்கிறது.<br>கூற்று 3: 'Polarising filter' என்பது முனை நிலைவாக்க வடிப்பியைக் குறிக்கிறது.",
+    "optionsEn": [],
+    "optionsTa": [
+      "கூற்று 1 மற்றும் 3 சரி; கூற்று 2 தவறு",
+      "கூற்று 1 மற்றும் 2 சரி; கூற்று 3 தவறு",
+      "கூற்று 2 மற்றும் 3 சரி; கூற்று 1 தவறு",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கணினித் தொழில்நுட்பக் கலைச்சொற்களில் பொருந்தாத இணையைத் தேர்ந்தெடுக்க:",
+    "optionsEn": [],
+    "optionsTa": [
+      "Platen – அச்சு உருளை",
+      "Picking device – பொறுக்கு சாதனம்",
+      "Poaching – களவுப் புகுகை",
+      "Phoneme – பாய்ஸன் கொள்கை"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கீழ்க்காணும் கணினித் தொழில்நுட்பக் கலைச்சொற்களில், வழி விளைவுப் பகுப்பாய்வு (Means/ends analysis) மற்றும் நினைவக முகர்வு (Memory sniffing) ஆகியவற்றைக் குறிக்கும் சரியான தமிழ் இணை எது?",
+    "optionsEn": [],
+    "optionsTa": [
+      "வழி விளைவுப் பகுப்பாய்வு – நினைவக முகர்வு | தீய செய்நிரல் – கண்ணி வலையமைப்பு",
+      "வழி விளைவுப் பகுப்பாய்வு – நினைவகக் கொட்டல் | நகர் உரை – பொறிவழி மொழிபெயர்ப்பு",
+      "பேணுதிறன் – ஊடகம் அழிப்பி | மறைமுகம் – படலச் சாவிப் பலகை",
+      "அஞ்சல் ஒன்றிணைப்பு – பட்டி உருப்படி | முதன்மைக் கணினி – நினைவகச் சில்லு"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "நினைவகம் (Memory) மற்றும் மென்பொருள் பராமரிப்பு தொடர்பான பின்வரும் பொருத்தங்களில் தவறானது எது?<br><br>Memory dump – நினைவகக் கொட்டல்<br>Memory slot – நினைவகச் செருகிடம்<br>Maintenance routine – முதன்மை வரிசையாக்கச் சாவி<br>Main-line program – முதனிலை செய்நிரல்",
+    "optionsEn": [],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "3 மட்டும்",
+      "2 மற்றும் 4 மட்டும்",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கணினிச் செயல்பாடுகள் மற்றும் தரவு செயலாக்கம் சார்ந்த சொற்களைச் சரியாகப் பொருத்துக:<br><br>A. Marquee — 1. பெரும் துப்பரவாக்கம்<br>B. Master clear — 2. நகர் உரை<br>C. Mechanical translation — 3. இடைநிலை ஒருங்கிணைப்பு<br>D. Medium scale integration — 4. பொறிவழி மொழிபெயர்ப்பு",
+    "optionsEn": [],
+    "optionsTa": [
+      "A-2, B-1, C-4, D-3",
+      "A-1, B-2, C-3, D-4",
+      "A-2, B-4, C-1, D-3",
+      "A-4, B-1, C-2, D-3"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "பின்வரும் கூற்றுகளை ஆராய்க:<br><br>கூற்று 1: பட்டியலில் 'Membrane keyboard' என்பது படலச் சாவி / விசைப் பலகையைக் குறிக்கிறது.<br>கூற்று 2: 'Mark sensing' என்பது மனிதவலு ஏற்று விளக்கப்படத்தைக் குறிக்கிறது.<br>கூற்று 3: 'Mass storage device' என்பது திரள் தேக்கக/களஞ்சியச் சாதனத்தைக் குறிக்கிறது.",
+    "optionsEn": [],
+    "optionsTa": [
+      "கூற்று 1 மற்றும் 3 சரி; கூற்று 2 தவறு",
+      "கூற்று 1 மற்றும் 2 சரி; கூற்று 3 தவறு",
+      "கூற்று 2 மற்றும் 3 சரி; கூற்று 1 தவறு",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கணினித் தொழில்நுட்பக் கலைச்சொற்களில் பொருந்தாத இணையைத் தேர்ந்தெடுக்க:",
+    "optionsEn": [],
+    "optionsTa": [
+      "Malice program – தீய செய்நிரல்",
+      "Malfunction – செயலிழப்பு",
+      "Mail merge – அஞ்சல் ஒன்றிணைப்பு",
+      "Mask – கணித மாதிரியம்"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கீழ்க்காணும் கணினித் தொழில்நுட்பக் கலைச்சொற்களில், புலனாகா புதுக்கம் (Invisible refresh) மற்றும் தற்காப்பு முகவரியாக்கம் (Key-to-address) ஆகியவற்றைக் குறிக்கும் சரியான தமிழ் இணை எது?",
+    "optionsEn": [],
+    "optionsTa": [
+      "புலனாகா புதுக்கம் – தற்காப்பு முகவரியாக்கம் | பிசிறுகள் – ஒப்பேற்று",
+      "புலனாகா புதுக்கம் – நெருக்கல் | இடைமறிப்பு – இயக்கிசைபியல்",
+      "எதிர்மறை ஒளித்தோற்றம் – தவிர் பரப்பு | பணி ஓடை – அறிவுப்புலம்",
+      "தனிமைப்படுத்தல் – அறிவு ஈட்டல் | இயக்கப் பிடி – கடைபுகு முதல்விடு"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கணினிச் செயல்பாடுகள் மற்றும் நிரலாக்கம் தொடர்பான பின்வரும் பொருத்தங்களில் தவறானது எது?<br><br>Job turnaround time – பணிமுடிப்பு நேரம்<br>Kerning – நெருக்கல்<br>Jaggies – நிலைமாற்றுப்பிடி<br>Knowledge representation – அறிவுச் சித்திரிப்பு",
+    "optionsEn": [],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "3 மட்டும்",
+      "2 மற்றும் 4 மட்டும்",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கணினி, செயற்கை நுண்ணறிவு மற்றும் இயற்பியல் சார்ந்த சொற்களைச் சரியாகப் பொருத்துக:<br><br>A. Kludge — 1. இயக்கிசைபியல்<br>B. Kinematics — 2. ஒப்பேற்று<br>C. Keep-out area — 3. தாளிகை / ஆய்விதல்<br>D. Journal — 4. தவிர் பரப்பு",
+    "optionsEn": [],
+    "optionsTa": [
+      "A-2, B-1, C-4, D-3",
+      "A-1, B-2, C-3, D-4",
+      "A-2, B-4, C-1, D-3",
+      "A-4, B-1, C-2, D-3"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "பின்வரும் கூற்றுகளை ஆராய்க:<br><br>கூற்று 1: பட்டியலில் 'Intranet' என்பது இணைய அகத்தைக் குறிக்கிறது.<br>கூற்று 2: 'Joggle' என்பது இயக்கப் பிடியைக் குறிக்கிறது.<br>கூற்று 3: 'Keyword-in-context' என்பது இடம் சார் திறவுச் சொல்லைக் குறிக்கிறது.",
+    "optionsEn": [],
+    "optionsTa": [
+      "கூற்று 1 மற்றும் 3 சரி; கூற்று 2 தவறு",
+      "கூற்று 1 மற்றும் 2 சரி; கூற்று 3 தவறு",
+      "கூற்று 2 மற்றும் 3 சரி; கூற்று 1 தவறு",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கணினித் தொழில்நுட்பக் கலைச்சொற்களில் பொருந்தாத இணையைத் தேர்ந்தெடுக்க:",
+    "optionsEn": [],
+    "optionsTa": [
+      "Inverse video – எதிர்மறை ஒளித்தோற்றம்",
+      "Job oriented terminal – பணிமுக முனையம்",
+      "Knowledge engineering – அறிவுப் பொறியியல்",
+      "Keying-error rate – அடையாள முகப்பு இனங்காணி"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கீழ்க்காணும் கணினித் தொழில்நுட்பக் கலைச்சொற்களில், படிமத் தள கட்புல வழங்குகை (Image base visual serving) மற்றும் இணை தொடராக்கம் / இணை தொடராக்குகை (Hyphenation) ஆகியவற்றைக் குறிக்கும் சரியான தமிழ் இணை எது?",
+    "optionsEn": [],
+    "optionsTa": [
+      "படிமத் தள கட்புல வழங்குகை – இணை தொடராக்கம் / இணை தொடராக்குகை | வேக அழிதிரிபு – படவுரு",
+      "படிமத் தள கட்புல வழங்குகை – மீ இணை | ஹோலரித் அட்டை – புறக்கணி வரியுரு",
+      "பட்டை வரைபடம் – ஒளிஊட்டு | இல்லப் பேணுகை – உடனடி முகவரி",
+      "கிடை சுருளல் – ஏற்பிலா வரியுரு | அடிவீதம் – வழங்குநர் அடையாளம்"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கணினி வன்பொருள், வரைகலை மற்றும் செயலாக்கம் தொடர்பான பின்வரும் பொருத்தங்களில் தவறானது எது?<br><br>High Speed Printer (HSP) – உயர் வேக அச்சுப்பொறி<br>Holography – முப்பரிமாண படிமவியல்<br>Homunculus – வெப்ப மண்டலம்<br>Immediate access – உடனடிப் பெறுவழி / அணுகல்",
+    "optionsEn": [],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "3 மட்டும்",
+      "2 மற்றும் 4 மட்டும்",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "நிரலாக்கம், வலை மற்றும் படிமச் செயலாக்கம் சார்ந்த சொற்களைச் சரியாகப் பொருத்துக:<br><br>A. If-then-else — 1. படிம மேம்படுத்துகை<br>B. Image enhancement — 2. இருப்பின் இன்றேல்<br>C. High persistence phosphors — 3. அடிவீதம்<br>D. Hit rate — 4. உயர் நிலைபேற்றுப் பாஸ்பரஸ்",
+    "optionsEn": [],
+    "optionsTa": [
+      "A-2, B-1, C-4, D-3",
+      "A-1, B-2, C-3, D-4",
+      "A-2, B-4, C-1, D-3",
+      "A-4, B-1, C-2, D-3"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "பின்வரும் கூற்றுகளை ஆராய்க:<br><br>கூற்று 1: பட்டியலில் 'House keeping' என்பது இல்லப் பேணுகையைக் குறிக்கிறது.<br>கூற்று 2: 'Hysteresis' என்பது உயர் பிரிதிறன் வரையியைக் குறிக்கிறது.<br>கூற்று 3: 'Impact printer' என்பது தாக்க அழுத்த அச்சுப்பொறியைக் குறிக்கிறது.",
+    "optionsEn": [],
+    "optionsTa": [
+      "கூற்று 1 மற்றும் 3 சரி; கூற்று 2 தவறு",
+      "கூற்று 1 மற்றும் 2 சரி; கூற்று 3 தவறு",
+      "கூற்று 2 மற்றும் 3 சரி; கூற்று 1 தவறு",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கணினித் தொழில்நுட்பக் கலைச்சொற்களில் பொருந்தாத இணையைத் தேர்ந்தெடுக்க:",
+    "optionsEn": [],
+    "optionsTa": [
+      "Identification division – அடையாளப் பகுதி",
+      "Home grown software – இல்லற் செய் மென்பொருள்",
+      "Host computer – வைத்திருப்பு நேரம்",
+      "Hyper Text Transfer Protocol (HTTP) – மீ உரை பரிமாற்று செய்மை நடப்பொழுங்கு"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கீழ்க்காணும் கணினித் தொழில்நுட்பக் கலைச்சொற்களில், சிறுகூறு முறை (Finite element method) மற்றும் முன்னோக்கு பிணைப்பு (Forward chaining) ஆகியவற்றைக் குறிக்கும் சரியான தமிழ் இணை எது?",
+    "optionsEn": [],
+    "optionsTa": [
+      "சிறுகூறு முறை – முன்னோக்கு பிணைப்பு | நிலைபொருள் – பகுவியல்",
+      "சிறுகூறு முறை – அடிக்குறிப்பு | நெகிழ் வட்டு – வடிவூட்டி",
+      "ஏற்றம் இறக்கம் – முன்பணித்தல் | பாய்ச்சற்படம் – துண்டாக்கம்",
+      "தட்டைத் திரை – முறைசார் மொழி | முதல் தலைமுறைக் கணினிகள் – சட்டக தாங்ககம்"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கணினி வன்பொருள், காட்சி மற்றும் செயலாக்கம் தொடர்பான பின்வரும் பொருத்தங்களில் தவறானது எது?<br><br>Flatbed scanner – சமதளப்படுக்கை வருடி<br>Flight simulator – பறத்தல் (பறக்கை) பாவனமாக்கி/ஒப்பாக்கி<br>Flicker – அடிச்சுவடு<br>Formal language – முறைசார் மொழி",
+    "optionsEn": [],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "3 மட்டும்",
+      "2 மற்றும் 4 மட்டும்",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "நிரலாக்கம், தர்க்கம் மற்றும் வடிவமைப்பு சார்ந்த சொற்களைச் சரியாகப் பொருத்துக:<br><br>A. First order predicate logic — 1. துண்டாக்கம் / துண்டாடல்<br>B. Fragmentation — 2. முதற்படி பயனிலைத் தர்க்கம் / ஏரணம்<br>C. Forward pointer — 3. கட்டிலா வடிவம்<br>D. Free form — 4. முன்னோக்கு சுட்டி",
+    "optionsEn": [],
+    "optionsTa": [
+      "A-2, B-1, C-4, D-3",
+      "A-1, B-2, C-3, D-4",
+      "A-2, B-4, C-1, D-3",
+      "A-4, B-1, C-2, D-3"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "பின்வரும் கூற்றுகளை ஆராய்க:<br><br>கூற்று 1: பட்டியலில் 'Foreground processing' என்பது முன்புல முறைவழியாக்கம்/செயற்படுத்தத்தைக் குறிக்கிறது.<br>கூற்று 2: 'Fixed word length' என்பது எட்டில் நான்கு குறிமுறையைக் குறிக்கிறது.<br>கூற்று 3: 'Form Feed (FF)' என்பது படிவ ஊட்டல்/ படிவ ஊட்டியைக் குறிக்கிறது.",
+    "optionsEn": [],
+    "optionsTa": [
+      "கூற்று 1 மற்றும் 3 சரி; கூற்று 2 தவறு",
+      "கூற்று 1 மற்றும் 2 சரி; கூற்று 3 தவறு",
+      "கூற்று 2 மற்றும் 3 சரி; கூற்று 1 தவறு",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கணினித் தொழில்நுட்பக் கலைச்சொற்களில் பொருந்தாத இணையைத் தேர்ந்தெடுக்க:",
+    "optionsEn": [],
+    "optionsTa": [
+      "Flatbed plotter – சமதளப்படுகை வரைவி",
+      "Floppy disk controller – நெகிழ் வட்டுக் கட்டுப்படுத்தி",
+      "Formatted display – வடிவுறு காட்சி",
+      "Floating-point Arithmetic – குவித்தல்/குவிவு"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கீழ்க்காணும் கணினித் தொழில்நுட்பக் கலைச்சொற்களில், இலக்க ஒப்புமை மாற்றி (Digital to analog converter) மற்றும் வட்டுப் பிரதிபிம்பப்படுத்தல் (Disk mirroring) ஆகியவற்றைக் குறிக்கும் சரியான தமிழ் இணை எது?",
+    "optionsEn": [],
+    "optionsTa": [
+      "இலக்க ஒப்புமை மாற்றி – வட்டுப் பிரதிபிம்பப்படுத்தல் | இலக்கமாக்கி – பணி முன்னுரிமை",
+      "இலக்க ஒப்புமை மாற்றி – வட்டு கேடு | நேரடி முகவரி – வட்டு உறை",
+      "இலக்கமுறை சைகை – சிறுவட்டு | இருமுனையம் – வட்டு நூலகம்",
+      "இலக்க தாள் – விரைவேக வட்டு | இலக்க நிலைமாற்றி – வட்டுத் துண்டம்"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "வட்டு (Disk) சேமிப்பு மற்றும் இலக்கமுறைத் தொழில்நுட்பம் தொடர்பான பின்வரும் பொருத்தங்களில் தவறானது எது?<br><br>Disk cache – விரைவேக வட்டு<br>Disk crash – வட்டு கேடு<br>Dispersed intelligence – வட்டுச் செலுத்துக் கட்டுப்பாட்டாளர்<br>Diskette – சிறுவட்டு / செருகுவட்டு",
+    "optionsEn": [],
+    "optionsTa": [
+      "3 மட்டும்",
+      "1 மற்றும் 2 மட்டும்",
+      "2 மற்றும் 4 மட்டும்",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "தர்க்கம், நினைவகம் மற்றும் வட்டு அமைப்பு சார்ந்த சொற்களைச் சரியாகப் பொருத்துக:<br><br>A. Diode transistor logic — 1. வட்டு அடுக்கு / வட்டு தொகுப்பு<br>B. Disk pack — 2. இருமுனையத் திரிதடயத் தர்க்கம் / ஏரணம்<br>C. Direct connect modem — 3. பரிமாணப்படுத்துதல்<br>D. Dimensoning — 4. நேரடி இணைப்பு பண்பேற்றி",
+    "optionsEn": [],
+    "optionsTa": [
+      "A-1, B-2, C-3, D-4",
+      "A-2, B-4, C-1, D-3",
+      "A-4, B-1, C-2, D-3",
+      "A-2, B-1, C-4, D-3"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "பின்வரும் கூற்றுகளை ஆராய்க:<br><br>கூற்று 1: பட்டியலில் 'Digital optical recording' என்பது இலக்க ஒளிப்புதிகையைக் குறிக்கிறது.<br>கூற்று 2: 'Disk file' என்பது வட்டுப் பொதியுறையைக் குறிக்கிறது.<br>கூற்று 3: 'Dimensional storage, two' என்பது இரு பரிமாணக் தேக்ககம் / களஞ்சியத்தைக் குறிக்கிறது.",
+    "optionsEn": [],
+    "optionsTa": [
+      "கூற்று 1 மற்றும் 2 சரி; கூற்று 3 தவறு",
+      "கூற்று 1 மற்றும் 3 சரி; கூற்று 2 தவறு",
+      "கூற்று 2 மற்றும் 3 சரி; கூற்று 1 தவறு",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கணினித் தொழில்நுட்பக் கலைச்சொற்களில் பொருந்தாத இணையைத் தேர்ந்தெடுக்க:",
+    "optionsEn": [],
+    "optionsTa": [
+      "Discrete component – பிரிநிலை உறுப்பு /உதிரி உறுப்பு",
+      "Digital Video Interactive (DVI) – இலக்க ஒளித்தோற்ற ஊடாடி",
+      "Direct coupled transistor logic – இலக்கமுறை வரிசையாக்கம்",
+      "Disk partition – வட்டுப் பிரிவினை"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கீழ்க்காணும் தரவு மற்றும் கணினித் தொழில்நுட்பக் கலைச்சொற்களில், தரவு வாய்க்காற் பல்சேர்ப்பி (Data channel multiplexor) மற்றும் தரவுப் பரிமாற்றுப் படிவம் (Data Interchange Format (DIF)) ஆகியவற்றைக் குறிக்கும் சரியான தமிழ் இணை எது?",
+    "optionsEn": [],
+    "optionsTa": [
+      "தரவு வாய்க்காற் பல்சேர்ப்பி – தரவுப் பரிமாற்றுப் படிவம் | தரவுப் புல மறைப்பு – தரவுக் காப்பு",
+      "தரவு வாய்க்காற் பல்சேர்ப்பி – தரவுக் கசிவு | தரவுத் தடம் – தரவுப் புள்ளி",
+      "தரவுச் சங்கிலியாக்கல் – தரவுப் பதிதல் | தரவுப் பாட்டை – தரவு ஊடகம்",
+      "தரவுத் திரட்டல் – தரவுக் கோப்பு | தரவு வரையறை – தரவுப் பெயர்"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "தரவுத் தளம் (Database) மற்றும் தரவுப் பாதுகாப்பு தொடர்பான பின்வரும் பொருத்தங்களில் தவறானது எது?<br><br>Data dictionary – தரவு அகராதி<br>Data diddling – தரவு மாற்றியமைத்தல்<br>Data independence – தரவுக் கசிவு<br>Data privacy – தரவுக்கமுக்கம்",
+    "optionsEn": [],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "3 மட்டும்",
+      "2 மற்றும் 4 மட்டும்",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "தரவுச் செயலாக்கம் மற்றும் கட்டமைப்பு சார்ந்த சொற்களைச் சரியாகப் பொருத்துக:<br><br>A. Data chaining — 1. தரவுப் பொட்டலம்<br>B. Data packet — 2. தரவுச் சங்கிலியாக்கல்<br>C. Data matrix — 3. தரவுப் புள்ளி<br>D. Data point — 4. தரவு அமைவுரு /அணி",
+    "optionsEn": [],
+    "optionsTa": [
+      "A-2, B-1, C-4, D-3",
+      "A-1, B-2, C-3, D-4",
+      "A-2, B-4, C-1, D-3",
+      "A-4, B-1, C-2, D-3"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "பின்வரும் கூற்றுகளை ஆராய்க:<br><br>கூற்று 1: பட்டியலில் 'Data integrity' என்பது தரவு ஒழுங்கமைப்பைக் குறிக்கிறது.<br>கூற்று 2: 'Data compression' என்பது தரவு இறக்குமதியைக் குறிக்கிறது.<br>கூற்று 3: 'Data movement time' என்பது தரவு இடப் பெயர்ச்சி நேரத்தைக் குறிக்கிறது.",
+    "optionsEn": [],
+    "optionsTa": [
+      "கூற்று 1 மற்றும் 3 சரி; கூற்று 2 தவறு",
+      "கூற்று 1 மற்றும் 2 சரி; கூற்று 3 தவறு",
+      "கூற்று 2 மற்றும் 3 சரி; கூற்று 1 தவறு",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "தரவு மற்றும் கணினித் தொழில்நுட்பக் கலைச்சொற்களில் பொருந்தாத இணையைத் தேர்ந்தெடுக்க:",
+    "optionsEn": [],
+    "optionsTa": [
+      "Data bus – தரவுப் பாட்டை",
+      "Data directory – தரவு அடைவு",
+      "Data manipulation language – தரவு கையாளும் மொழி",
+      "Data origination – தரவு வரையி"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கீழ்க்காணும் கணினித் தொழில்நுட்பக் கலைச்சொற்களில், கணினி ஒருங்கிணைவு உற்பத்தி (Computer integrated manufactury) மற்றும் தொடர்பிலி வலையமைப்பு சேவை (Connection Less Network Service (CLNS)) ஆகியவற்றைக் குறிக்கும் சரியான தமிழ் இணை எது?",
+    "optionsEn": [],
+    "optionsTa": [
+      "கணினி ஒருங்கிணைவு உற்பத்தி – தொடர்பிலி வலையமைப்பு சேவை | கணினிப் பாவனை – நிபந்தனைக் கோவை",
+      "கணினி ஒருங்கிணைவு உற்பத்தி – கருத்துருக் கருவி | கணினி மோசடி – தொடர் அடைவு",
+      "கணினி இசை – தொடுப்பு வரைபு | கணினி அச்சம் – நம்பிக்கைக் காரணி",
+      "கணினிமயவாக்கம் – அமைவடிவப்படு | கணிப்பொறிக் கூடு – நிபந்தனைக் குறிமுறை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "நிரலாக்கம், வலையமைப்பு மற்றும் கணினிச் செயல்பாடுகள் தொடர்பான பின்வரும் பொருத்தங்களில் தவறானது எது?<br><br>Computer numerical control – கணினி எண்முறைக் கட்டுப்பாடு<br>Conditional paging – நிபந்தனைப் பக்கவாக்கம்<br>Computer nik – தொடர் அடைவு<br>Connection Oriented Network – தொடுப்புமுக வலையமைப்பு",
+    "optionsEn": [],
+    "optionsTa": [
+      "1 மற்றும் 2 மட்டும்",
+      "3 மட்டும்",
+      "2 மற்றும் 4 மட்டும்",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கணினித் தொழில்நுட்பச் சொற்களைச் சரியாகப் பொருத்துக:<br><br>A. Concentrator — 1. நிபந்தனை சேர்கிளை அறிவுறுத்தல் / கட்டளை<br>B. Conditional branch instruction — 2. ஒருமுகப்படுத்தி/ குவிமுகப்படுத்தி<br>C. Computer graphicist — 3. தொடுப்பு வடம்<br>D. Connecting cable — 4. கணினி வரையி",
+    "optionsEn": [],
+    "optionsTa": [
+      "A-2, B-1, C-4, D-3",
+      "A-1, B-2, C-3, D-4",
+      "A-2, B-4, C-1, D-3",
+      "A-4, B-1, C-2, D-3"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "பின்வரும் கூற்றுகளை ஆராய்க:<br><br>கூற்று 1: பட்டியலில் 'Concatenated key' என்பது கோர்த்த சாவி / விசையைக் குறிக்கிறது.<br>கூற்று 2: 'Computer literacy' என்பது கணினிப் பயனமைப்பைக் குறிக்கிறது.<br>கூற்று 3: 'Conditioning' என்பது பதனாக்கம் / பதனப்படுத்தலைக் குறிக்கிறது.",
+    "optionsEn": [],
+    "optionsTa": [
+      "கூற்று 1 மற்றும் 3 சரி; கூற்று 2 தவறு",
+      "கூற்று 1 மற்றும் 2 சரி; கூற்று 3 தவறு",
+      "கூற்று 2 மற்றும் 3 சரி; கூற்று 1 தவறு",
+      "அனைத்தும் சரி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "",
+    "ta": "கணினி மற்றும் தொழில்நுட்பக் கலைச்சொற்களில் பொருந்தாத இணையைத் தேர்ந்தெடுக்க:",
+    "optionsEn": [],
+    "optionsTa": [
+      "Computer jargon – கணினி குழுமொழி",
+      "Connection matrix – தொடுப்பு அமைவுரு /அணி",
+      "Conditional jump – நிபந்தனைசேர் பாய்ச்சல்/ தாவல்",
+      "Computer terminal remote – கோர்ப்பு /இணைப்பு"
+    ],
+    "answer": 3
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false; isSubmitted = false;
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">
+                <span class="option-letter">${String.fromCharCode(65+i)}.</span>
+                <span class="option-text">${opt}</span>
+            </div>`;
+        });
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+            </div>
+        `;
+        updateTopClearButton();
+        updateNavButtons(); updatePalette();
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+    }
+    function updateTopClearButton() {
+        const container = document.getElementById("topClearBtnContainer");
+        if (!container) return;
+        const sel = userAnswers[currentIndex];
+        if (sel !== null && sel !== undefined) {
+            container.innerHTML = `<button class="btn btn-danger" style="padding: 6px 14px; font-size: 0.8rem; min-height: auto; opacity: 0.9; border-radius: 40px;" onclick="clearSelection()">✖ Clear Selection</button>`;
+        } else {
+            container.innerHTML = "";
+        }
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) {
+            userAnswers[currentIndex] = null;
+        } else {
+            userAnswers[currentIndex] = optIndex;
+        }
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+
+    function clearSelection() {
+        if (isSubmitted) return;
+        userAnswers[currentIndex] = null;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    let currentReviewIndex = 0;
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let cssClass = "option-item";
+                let markerHtml = "";
+                if (idx === corr) { cssClass += " correct"; markerHtml = "<div class='marker'>✔</div>"; }
+                else if (u === idx && idx !== corr) { cssClass += " wrong"; markerHtml = "<div class='marker'>✖</div>"; }
+                optsHtml += `<div class="${cssClass}"><span>${String.fromCharCode(65+idx)}. ${optsArray[idx]}</span>${markerHtml}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" id="review-card-${i}" style="display: none;">
+                        <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div class="your-answer">Your Answer: ${userAns}</div>
+                        <div class="correct-answer">Correct Answer: ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        ${optsHtml}
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+        currentReviewIndex = 0;
+        showReviewCard(currentReviewIndex);
+    }
+    function showReviewCard(index) {
+        const cards = document.querySelectorAll(".review-card");
+        if (cards.length === 0) return;
+        cards.forEach(c => c.style.display = "none");
+        cards[index].style.display = "block";
+        document.getElementById("reviewPageText").innerText = `${index + 1} / ${cards.length}`;
+        document.getElementById("prevReviewBtn").disabled = (index === 0);
+        document.getElementById("nextReviewBtn").disabled = (index === cards.length - 1);
+        document.getElementById("reviewPagination").style.display = "flex";
+        window.scrollTo(0, 0);
+    }
+    function navigateReview(direction) {
+        const cards = document.querySelectorAll(".review-card");
+        currentReviewIndex += direction;
+        if (currentReviewIndex >= 0 && currentReviewIndex < cards.length) {
+            showReviewCard(currentReviewIndex);
+        }
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
+            await new Promise(r => setTimeout(r, 600));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+                if (btn) btn.innerText = "✅ Select Save as PDF";
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+        } finally {
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 3000);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        history.replaceState({ resultPage: true }, "", "#result");
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.addEventListener("popstate", function(e) {
+        if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+            history.pushState({ resultPage: true }, "", "#result");
+            confirmLeaveResult();
+        }
+    });
+    function confirmLeaveResult() {
+        if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
+            window.AndroidBridge.exitResultPage();
+        } else {
+            history.back();
+        }
+    }
+    window.checkForReview = function() {
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
+            }
+        }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
