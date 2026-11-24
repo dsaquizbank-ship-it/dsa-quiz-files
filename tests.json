@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-24T08:02:04.522Z",
+  "version": "2026-11-24T08:05:48.105Z",
   "categories": [
     {
       "id": "BANK",
@@ -3539,6 +3539,20 @@
       "releaseTimestamp": 1795507200000,
       "language": "both",
       "createdAt": 1795507324522
+    },
+    {
+      "testId": "TIP-13",
+      "examId": "TNPSC-IP",
+      "name": "LOCAL GOVERNMENT, PANCHAYAT RAJ (SET-1)",
+      "topic": "LOCAL GOVERNMENT, PANCHAYAT RAJ",
+      "durationMinutes": 15,
+      "order": 13,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TIP-13.html",
+      "releaseTimestamp": 1795507200000,
+      "language": "both",
+      "createdAt": 1795507548105
     }
   ]
 }
