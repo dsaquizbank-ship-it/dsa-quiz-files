@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-24T08:23:33.119Z",
+  "version": "2026-11-24T08:24:34.029Z",
   "categories": [
     {
       "id": "BANK",
@@ -3637,6 +3637,20 @@
       "releaseTimestamp": 1795507200000,
       "language": "both",
       "createdAt": 1795508550271
+    },
+    {
+      "testId": "BCA-6",
+      "examId": "BANK-CA",
+      "name": "IMPORTANT ID CODES (SET-1)",
+      "topic": "IMPORTANT ID CODES",
+      "durationMinutes": 5,
+      "order": 6,
+      "questionCount": 10,
+      "negativeMark": 0.25,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BCA-6.html",
+      "releaseTimestamp": 1795507200000,
+      "language": "both",
+      "createdAt": 1795508674029
     }
   ]
 }
