@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>TNS-6 - ROLE OF TAMIL NADU IN FREEDOM STRUGGLE (SET-2)</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                linebreaks: { automatic: true, width: "container" }
+            },
+            options: { ignoreHtmlClass: "no-mathjax" },
+            chtml: {
+                displayAlign: "left",
+                displayIndent: "0",
+                mtextInheritFont: true
+            },
+            svg: {
+                scale: 0.9,
+                minScale: 0.5,
+                mtextInheritFont: true,
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; color: #10b981; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; align-items: center; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; white-space: normal; word-wrap: break-word; padding-bottom: 20px; max-width: 100%; overflow-x: auto; }
+        mjx-container { display: inline !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; }
+        .question-text::-webkit-scrollbar { display: none; }
+        .question-text { -ms-overflow-style: none; scrollbar-width: none; }
+        .option-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; word-wrap: break-word; }
+        .option-letter { font-weight: 800; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+        .option-text { flex-grow: 1; min-width: 0; word-wrap: break-word; overflow-wrap: break-word; }
+        .option-text mjx-container { display: inline-block !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; overflow-x: visible !important; }
+        .option-text mjx-container[jax="CHTML"][display="true"] { margin: 0 !important; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
+        .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
+        .review-card .question-text { overflow-x: hidden !important; white-space: normal !important; word-wrap: break-word !important; }
+        .review-card strong { color: var(--text-primary); font-size: 16px; }
+        .review-card .option-item { background-color: var(--rc-bg); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: rgba(40, 167, 69, 0.1); border: 1px solid #28a745; color: #28a745; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; color: #dc3545; }
+        .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
+        .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
+        .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
+        .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px 0; border-top: 1px solid var(--border-light); }
+        .review-nav-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .review-nav-btn:disabled { background: var(--border-light); color: var(--text-primary); opacity: 0.5; cursor: not-allowed; }
+        .review-nav-text { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+        .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { 
+            html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } 
+            .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } 
+            #startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard { display: none !important; } 
+            #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } 
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; } 
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; margin-bottom: 20px !important; display: block !important; } 
+            .review-card .option-item { border: 1px solid #ccc !important; background: white !important; color: black !important; } 
+            .review-card .option-item.correct { background: #e6ffe6 !important; border-color: #28a745 !important; color: black !important; } 
+            .review-card .option-item.wrong { background: #ffe6e6 !important; border-color: #dc3545 !important; color: black !important; } 
+            @page { size: A4; margin: 1.5cm; } 
+        }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">15:00</div>
+            <div class="top-buttons">
+                <div id="topClearBtnContainer"></div>
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div id="printHeader" style="display: none;">
+            <h1>DR SAHITHA IAS ACADEMY</h1>
+            <h3>ANSWER KEY & DETAILED REVIEW</h3>
+            <p><strong>Test:</strong> TNS-6 - TAMILNADU SOCIETY</p>
+        </div>
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+            <div id="reviewPagination" class="review-nav-container" style="display: none;">
+                <button class="review-nav-btn" id="prevReviewBtn" onclick="navigateReview(-1)">◀ PREV</button>
+                <span class="review-nav-text" id="reviewPageText">1 / 25</span>
+                <button class="review-nav-btn" id="nextReviewBtn" onclick="navigateReview(1)">NEXT ▶</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "TAMILNADU SOCIETY",
+        testNo: "TNS-6",
+        date: "25/11/2026",
+        subject: "TAMILNADU SOCIETY",
+        topic: "ROLE OF TAMIL NADU IN FREEDOM STRUGGLE",
+        duration: "15",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "Which of the following statements are wrong about Home Rule Agitation in Tamil Nadu?<br><br>(a) Its first conference was held in Coimbatore under the Presidentship of V.P. Madhava Rao.<br>(b) In July 1916, students staged a massive demonstration in front of Egmore Railway Station.<br>(c) Governor Lord Pentland banned participation of students in the political activities of Home Rule League.<br>(d) Rajagopalachari plunged into the Home Rule agitation after the arrest of Annie Besant.",
+    "ta": "தமிழ்நாட்டில் நடைபெற்ற சுயராஜ்ய போராட்டம் தொடர்பாக பின்வரும் கூற்றுகளில் எவை தவறானவை?<br><br>(a) அதன் முதல் மாநாடு வி.பி. மாதவ ராவ் தலைமையில் கோயம்புத்தூரில் நடைபெற்றது.<br>(b) ஜூலை 1916 இல், மாணவர்கள் எழும்பூர் ரயில் நிலையத்தின் முன் பிரமாண்டமான ஆர்ப்பாட்டத்தை நடத்தினர்.<br>(c) ஆளுநர் பென்ட்லேண்ட் பிரபு, சுயராஜ்ய லீக்கின் அரசியல் நடவடிக்கைகளில் மாணவர்கள் பங்கேற்பதைத் தடை செய்தார்.<br>(d) அன்னி பெசன்ட் கைது செய்யப்பட்ட பிறகு ராஜகோபாலாச்சாரி சுயராஜ்ய போராட்டத்தில் இறங்கினார்.",
+    "optionsEn": ["(a) and (b)", "(b) and (c)", "(c) and (d)", "(a) and (d)", "Answer not known"],
+    "optionsTa": ["(a) மற்றும் (b)", "(b) மற்றும் (c)", "(c) மற்றும் (d)", "(a) மற்றும் (d)", "விடை தெரியவில்லை"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Who established the Tamilarasu Party in the year 1947 for the welfare of the Tamil people?",
+    "ta": "தமிழ் மக்களின் நலனுக்காக 1947 ஆம் ஆண்டில் தமிழரசு கட்சியை நிறுவியவர் யார்?",
+    "optionsEn": ["Ma. Pae. Sivagnanam", "S.B. Athithan", "E.V.K. Sampath", "Kannadasan", "Answer not known"],
+    "optionsTa": ["ம.பொ. சிவஞானம்", "எஸ்.பி. ஆதித்தன்", "இ.வி.கே. சம்பத்", "கண்ணதாசன்", "விடை தெரியவில்லை"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following was organised to educate by the Madras Mahajana Sabha in 1884?",
+    "ta": "1884 இல் சென்னை மகாஜன சபையால் கல்வி வழங்க எது ஏற்பாடு செய்யப்பட்டது?",
+    "optionsEn": ["Social Education", "Economic Education", "Political Education", "Cultural Education", "Answer not known"],
+    "optionsTa": ["சமூகக் கல்வி", "பொருளாதாரக் கல்வி", "அரசியல் கல்வி", "கலாச்சாரக் கல்வி", "விடை தெரியவில்லை"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct answer: The Madras Native Association was founded in the year",
+    "ta": "சரியான பதிலைத் தேர்ந்தெடுக்கவும்: சென்னை சொந்த மக்கள் சங்கம் எந்த ஆண்டு நிறுவப்பட்டது?",
+    "optionsEn": ["1845", "1852", "1862", "1875", "Answer not known"],
+    "optionsTa": ["1845", "1852", "1862", "1875", "விடை தெரியவில்லை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "________ hoisted the National Flag atop Fort St. George on 26th January, 1932.",
+    "ta": "________ 1932 ஜனவரி 26 அன்று புனித ஜார்ஜ் கோட்டையின் மீது தேசியக் கொடியை ஏற்றினார்.",
+    "optionsEn": ["Tiruppur Kumaran", "Arya (Bhashyam)", "T. Prakasam", "K. Nageswara Rao", "Answer not known"],
+    "optionsTa": ["திருப்பூர் குமரன்", "ஆர்யா (பாஷ்யம்)", "டி. பிரகாசம்", "கே. நாகேஸ்வர ராவ்", "விடை தெரியவில்லை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Namakkal Kavinger's song \"Without sword without blood one war has come\" was first sung during",
+    "ta": "நாமக்கல் கவிஞரின் \"வாளும் கேடயமும் இன்றி ஒரு போர் வந்து விட்டது\" என்ற பாடல் முதன்முதலில் எப்போது பாடப்பட்டது?",
+    "optionsEn": ["Non-Co-operation Movement", "Vedaranya Salt Satyagraha", "Gandhi's visit to Madurai in 1936", "Quit India Movement", "Answer not known"],
+    "optionsTa": ["ஒத்துழையாமை இயக்கம்", "வேதாரண்யம் உப்பு சத்தியாகிரகம்", "1936 இல் காந்தியின் மதுரை வருகை", "வெள்ளையனே வெளியேறு இயக்கம்", "விடை தெரியவில்லை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the right matches among type<br><br>(1) Thousand lights – Makkis Garden<br>(2) Badruddin Tyabji – The third session of the Indian National Congress<br>(3) G.A. Natesan – Revolutionary Nationalist<br>(4) Odisha – Malabar",
+    "ta": "பின்வருவனவற்றுள் சரியான இணைகளைத் தேர்ந்தெடுக்கவும்<br><br>(1) தவுசண்ட் லைட்ஸ் – மக்கிஸ் கார்டன்<br>(2) பத்ருதீன் தியாப்ஜி – இந்திய தேசிய காங்கிரஸின் மூன்றாவது அமர்வு<br>(3) ஜி.ஏ. நடேசன் – புரட்சிகர தேசியவாதி<br>(4) ஒடிசா – மலபார்",
+    "optionsEn": ["(1) and (3) are correct", "(1) and (2) are correct", "(2) and (3) are correct", "(3) and (4) are correct", "Answer not known"],
+    "optionsTa": ["(1) மற்றும் (3) சரி", "(1) மற்றும் (2) சரி", "(2) மற்றும் (3) சரி", "(3) மற்றும் (4) சரி", "விடை தெரியவில்லை"],
+    "answer": 1
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion [A]: Under the leadership of Rajaji, Congress decided to boycott Simon Commission in Chennai.<br><br>Reason [R]: The Simon Commission had only white men as members, that is, no Indians.",
+    "ta": "Assertion [A]: ராஜாஜியின் தலைமையில், காங்கிரஸ் சென்னையில் சைமன் கமிஷனைப் புறக்கணிக்க முடிவு செய்தது.<br><br>Reason [R]: சைமன் கமிஷனில் வெள்ளையர்கள் மட்டுமே உறுப்பினர்களாக இருந்தனர், அதாவது இந்தியர்கள் யாரும் இல்லை.",
+    "optionsEn": [
+      "[A] is true, [R] is false",
+      "Both [A] and [R] are true, and [R] is the correct explanation of [A]",
+      "[A] is false, [R] is true",
+      "Both [A] and [R] are true, and [R] is not the correct explanation of [A]",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "[A] சரி, [R] தவறு",
+      "[A] மற்றும் [R] இரண்டும் சரி, மேலும் [R] என்பது [A]-விற்கான சரியான விளக்கம்",
+      "[A] தவறு, [R] சரி",
+      "[A] மற்றும் [R] இரண்டும் சரி, ஆனால் [R] என்பது [A]-விற்கான சரியான விளக்கம் அல்ல",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Who among the following was the collector of Tanjore when Satyagrahis marched towards Tanjore, against the salt law?",
+    "ta": "உப்புச் சட்டத்திற்கு எதிராக சத்தியாகிரகிகள் தஞ்சாவூரை நோக்கி அணிவகுத்துச் சென்றபோது, பின்வருவனவற்றுள் யார் தஞ்சாவூரின் கலெக்டராக இருந்தார்?",
+    "optionsEn": ["K. Santanam", "A.J. Rajan", "G. Ramachandran", "Selvi Durgabai", "Answer not known"],
+    "optionsTa": ["கே. சாந்தனம்", "ஏ.ஜே. ராஜன்", "ஜி. ராமச்சந்திரன்", "செல்வி துர்காபாய்", "விடை தெரியவில்லை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Arrange the following events related to K. Kamaraj in their chronological order:<br><br>(1) K. Kamaraj was chosen to lead the struggle against the Neill statue after the arrest of other frontline leaders.<br>(2) He was arrested for enlisting volunteers for Salt Satyagraha.<br>(3) He was arrested at Guntur while he was on his way to Wardha.<br>(4) He was accused in an inter-provincial conspiracy case known as the 'Madras Conspiracy Case'.",
+    "ta": "கே. காமராஜர் தொடர்பான பின்வரும் நிகழ்வுகளை காலவரிசைப்படி வரிசைப்படுத்துக:<br><br>(1) மற்ற முன்னணி தலைவர்கள் கைது செய்யப்பட்ட பிறகு, நீல் சிலைக்கு எதிரான போராட்டத்தை வழிநடத்த கே. காமராஜர் தேர்ந்தெடுக்கப்பட்டார்.<br>(2) உப்பு சத்தியாகிரகத்திற்கு தொண்டர்களைச் சேர்த்ததற்காக அவர் கைது செய்யப்பட்டார்.<br>(3) வார்தாவுக்குச் செல்லும் வழியில் குண்டூரில் அவர் கைது செய்யப்பட்டார்.<br>(4) 'மெட்ராஸ் சதித்திட்ட வழக்கு' எனப்படும் மாநிலங்களுக்கு இடையேயான சதித்திட்ட வழக்கில் அவர் குற்றம் சாட்டப்பட்டார்.",
+    "optionsEn": ["(1), (2), (4), (3)", "(1), (3), (2), (4)", "(4), (3), (2), (1)", "(3), (1), (4), (2)", "Answer not known"],
+    "optionsTa": ["(1), (2), (4), (3)", "(1), (3), (2), (4)", "(4), (3), (2), (1)", "(3), (1), (4), (2)", "விடை தெரியவில்லை"],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Name the person who first delivered a speech in Tamil at the Third Session of the Indian National Congress held at Madras.",
+    "ta": "சென்னையில் நடைபெற்ற இந்திய தேசிய காங்கிரஸின் மூன்றாவது அமர்வில் முதன்முதலில் தமிழில் உரையாற்றிய நபரின் பெயரைக் கூறுக.",
+    "optionsEn": ["Thanjai R. Ramaswami Pillai", "G. Subramania Iyer", "M. Viraraghavachariar", "Rao Saheb Mukkananchari", "Answer not known"],
+    "optionsTa": ["தஞ்சை ஆர். ராமசாமி பிள்ளை", "ஜி. சுப்பிரமணிய ஐயர்", "எம். வீரராகவாச்சாரியார்", "ராவ் சாகிப் முக்கானஞ்சாரி", "விடை தெரியவில்லை"],
+    "answer": 3
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion [A]: Home Rule League's first conference was held in Cuddalore under the Presidentship of V.P. Madhavan.<br><br>Reason [R]: Annie Besant started on 8 Sep 1916 a Home Rule League in Madras.",
+    "ta": "Assertion [A]: சுயராஜ்ய லீக்கின் முதல் மாநாடு வி.பி. மாதவன் தலைமையில் கடலூரில் நடைபெற்றது.<br><br>Reason [R]: அன்னி பெசன்ட் 1916 செப்டம்பர் 8 அன்று சென்னையில் சுயராஜ்ய லீக்கைத் தொடங்கினார்.",
+    "optionsEn": [
+      "[A] is true, [R] is false",
+      "Both [A] and [R] are true, and [R] is the correct explanation of [A]",
+      "Both [A] and [R] are false",
+      "Both [A] and [R] are true, and [R] is not the correct explanation of [A]",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "[A] சரி, [R] தவறு",
+      "[A] மற்றும் [R] இரண்டும் சரி, மேலும் [R] என்பது [A]-விற்கான சரியான விளக்கம்",
+      "[A] மற்றும் [R] இரண்டும் தவறு",
+      "[A] மற்றும் [R] இரண்டும் சரி, ஆனால் [R] என்பது [A]-விற்கான சரியான விளக்கம் அல்ல",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "________ organised the Home Rule League at Madurai.",
+    "ta": "________ மதுரையில் சுயராஜ்ய லீக்கை ஏற்பாடு செய்தார்.",
+    "optionsEn": ["C. Rajaji", "Kasturirangan", "George Joseph", "V. Kalyana Sundaram", "Answer not known"],
+    "optionsTa": ["சி. ராஜாஜி", "கஸ்தூரிரங்கன்", "ஜார்ஜ் ஜோசப்", "வி. கல்யாணசுந்தரம்", "விடை தெரியவில்லை"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Name the person who established an ashram in Nandhi Hills after his political participation.",
+    "ta": "அரசியல் பங்கேற்பிற்குப் பிறகு நந்தி மலையில் ஆசிரமத்தை நிறுவியவர் யார்?",
+    "optionsEn": ["Sir Sankaran", "Nilakanda Brahmachari", "S.S. Chidambaram", "Sathiya Moorthi", "Answer not known"],
+    "optionsTa": ["சர் சங்கரன்", "நீலகண்ட பிரம்மச்சாரி", "எஸ்.எஸ். சிதம்பரம்", "சத்ய மூர்த்தி", "விடை தெரியவில்லை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following statements are true about V.O. Chidambaram Pillai?<br><br>(i) He was a follower of Gopalakrishna Gokhale.<br>(ii) He was known as Chekkiluththa Chemmal.<br>(iii) He founded the Servants of India Society.<br>(iv) He was a lawyer.",
+    "ta": "வி.ஓ. சிதம்பரம் பிள்ளை பற்றிய பின்வரும் கூற்றுகளில் எவை சரியானவை?<br><br>(i) அவர் கோபாலகிருஷ்ண கோகலேவின் பின்பற்றுபவர்.<br>(ii) அவர் செக்கிழுத்த செம்மல் என்று அழைக்கப்பட்டார்.<br>(iii) அவர் இந்திய சேவகர் சங்கத்தை நிறுவினார்.<br>(iv) அவர் ஒரு வழக்கறிஞர்.",
+    "optionsEn": ["(iii) and (iv) only", "(ii), (iii) and (iv) only", "(ii) and (iv) only", "(i), (ii) and (iv) only", "Answer not known"],
+    "optionsTa": ["(iii) மற்றும் (iv) மட்டும்", "(ii), (iii) மற்றும் (iv) மட்டும்", "(ii) மற்றும் (iv) மட்டும்", "(i), (ii) மற்றும் (iv) மட்டும்", "விடை தெரியவில்லை"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Who was the first accused in the Ashe murder case?",
+    "ta": "ஆஷே கொலை வழக்கில் முதல் குற்றவாளி யார்?",
+    "optionsEn": ["Sankara Krishnan", "Nilakanda Brahmachari", "Madasami", "Vanchinathan", "Answer not known"],
+    "optionsTa": ["சங்கர கிருஷ்ணன்", "நீலகண்ட பிரம்மச்சாரி", "மாடசாமி", "வாஞ்சிநாதன்", "விடை தெரியவில்லை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Who set up the Satyagraha Camp in Udayavanam near Madras?",
+    "ta": "சென்னைக்கு அருகிலுள்ள உதயவனத்தில் சத்தியாகிரக முகாமை அமைத்தவர் யார்?",
+    "optionsEn": ["K. Kamaraj", "C. Rajaji", "K. Santhanam", "T. Prakasam", "Answer not known"],
+    "optionsTa": ["கே. காமராஜர்", "சி. ராஜாஜி", "கே. சாந்தனம்", "டி. பிரகாசம்", "விடை தெரியவில்லை"],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Non-Co-operation Movement in Tamil Nadu was led by",
+    "ta": "தமிழ்நாட்டில் ஒத்துழையாமை இயக்கத்தை வழிநடத்தியவர் யார்?",
+    "optionsEn": ["V.O. Chidambaram", "Rajaji", "Subramaniya Siva", "Subbarayan", "Answer not known"],
+    "optionsTa": ["வி.ஓ. சிதம்பரம்", "ராஜாஜி", "சுப்பிரமணிய சிவா", "சுப்பராயன்", "விடை தெரியவில்லை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "The Swadeshi leaders in Tamil Nadu planned to celebrate the day of Bipin Chandra Pal's release as a __________ in Thirunelveli.",
+    "ta": "தமிழ்நாட்டில் உள்ள சுதேசி தலைவர்கள், பிபின் சந்திர பாலின் விடுதலை நாளை திருநெல்வேலியில் __________ ஆகக் கொண்டாடத் திட்டமிட்டனர்.",
+    "optionsEn": ["Labour Day", "Swarajya Day", "Victory Day", "Chennai Day", "Answer not known"],
+    "optionsTa": ["தொழிலாளர் தினம்", "சுயராஜ்ய தினம்", "வெற்றி தினம்", "சென்னை தினம்", "விடை தெரியவில்லை"],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following about Kamaraj are true?<br><br>(i) He was arrested under Section 74 of the Salt Act.<br>(ii) He was released on March 12, 1931.<br>(iii) He came to be closely associated with Rajaji during the election of 1926.",
+    "ta": "காமராஜர் பற்றிய பின்வருவனவற்றுள் எவை சரியானவை?<br><br>(i) உப்புச் சட்டத்தின் பிரிவு 74 இன் கீழ் அவர் கைது செய்யப்பட்டார்.<br>(ii) 1931 மார்ச் 12 அன்று அவர் விடுவிக்கப்பட்டார்.<br>(iii) 1926 தேர்தலின் போது அவர் ராஜாஜியுடன் நெருக்கமாக தொடர்பு கொண்டிருந்தார்.",
+    "optionsEn": ["(i) only", "(ii) and (iii)", "(i) and (ii)", "(i) and (iii)", "Answer not known"],
+    "optionsTa": ["(i) மட்டும்", "(ii) மற்றும் (iii)", "(i) மற்றும் (ii)", "(i) மற்றும் (iii)", "விடை தெரியவில்லை"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which one of the following statements is/are correct regarding Chenbagaraman Pillai?<br><br>1. He hailed from Kanyakumari district of Travancore State.<br>2. He started Bharatha Matha Valibar Sangam.<br>3. He married Laxmibai of Indian National Army in 1931.<br>4. He joined the German Army and fought against the English in World War I.",
+    "ta": "செம்பகரமண் பிள்ளை பற்றிய பின்வரும் கூற்றுகளில் எது/எவை சரியானவை?<br><br>1. அவர் திருவிதாங்கூர் சமஸ்தானத்தின் குமரி மாவட்டத்தைச் சேர்ந்தவர்.<br>2. அவர் பாரத மாதா வாலிபர் சங்கத்தைத் தொடங்கினார்.<br>3. 1931 இல் இந்திய தேசிய இராணுவத்தின் லக்ஷ்மிபாயை மணந்தார்.<br>4. அவர் ஜெர்மன் இராணுவத்தில் சேர்ந்து முதல் உலகப் போரில் ஆங்கிலேயர்களுக்கு எதிராகப் போராடினார்.",
+    "optionsEn": ["1, 2, 3 are correct, 4 is incorrect", "1, 2 are correct, 3, 4 are incorrect", "1, 3, 4 are correct, 2 is incorrect", "1, 2, 3, 4 are correct", "Answer not known"],
+    "optionsTa": ["1, 2, 3 சரி, 4 தவறு", "1, 2 சரி, 3, 4 தவறு", "1, 3, 4 சரி, 2 தவறு", "1, 2, 3, 4 சரி", "விடை தெரியவில்லை"],
+    "answer": 3
+  },
+  {
+    "type": "assertion",
+    "en": "Assertion (A): V.O. Chidambaram established a Swadeshi Steam Navigation Company.<br><br>Reason (R): He wanted to oppose the monopoly of the British in navigation through the coast.",
+    "ta": "Assertion (A): வி.ஓ. சிதம்பரம் ஒரு சுதேசி கப்பல் போக்குவரத்து நிறுவனத்தை நிறுவினார்.<br><br>Reason (R): கடற்கரை வழியாக போக்குவரத்தில் ஆங்கிலேயர்களின் ஏகபோகத்தை எதிர்க்க அவர் விரும்பினார்.",
+    "optionsEn": [
+      "Both (A) and (R) are true, and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true, and (R) is not the correct explanation of (A)",
+      "(A) is correct, and (R) is wrong",
+      "(A) is wrong, and (R) is correct",
+      "Answer not known"
+    ],
+    "optionsTa": [
+      "(A) மற்றும் (R) இரண்டும் சரி, மேலும் (R) என்பது (A)-விற்கான சரியான விளக்கம்",
+      "(A) மற்றும் (R) இரண்டும் சரி, ஆனால் (R) என்பது (A)-விற்கான சரியான விளக்கம் அல்ல",
+      "(A) சரி, (R) தவறு",
+      "(A) தவறு, (R) சரி",
+      "விடை தெரியவில்லை"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Who was the Congress President in Tamil Nadu during the time of Non-Co-operation Movement?",
+    "ta": "ஒத்துழையாமை இயக்கத்தின் போது தமிழ்நாட்டில் காங்கிரஸ் தலைவராக இருந்தவர் யார்?",
+    "optionsEn": ["Kamarajar", "Rajagobalachariyar", "E.V. Ramasamy", "Sathiyamoorthy", "Answer not known"],
+    "optionsTa": ["காமராஜர்", "ராஜகோபாலாச்சாரியார்", "இ.வி. ராமசாமி", "சத்யமூர்த்தி", "விடை தெரியவில்லை"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "In Tuticorin, Tamil Nadu, Subramaniya Siva campaigned for strike in 1908.",
+    "ta": "தமிழ்நாட்டின் தூத்துக்குடியில், சுப்பிரமணிய சிவா 1908 இல் வேலைநிறுத்தத்திற்காக பிரச்சாரம் செய்தார்.",
+    "optionsEn": ["March–April", "January–February", "February–March", "April–May", "Answer not known"],
+    "optionsTa": ["மார்ச்–ஏப்ரல்", "ஜனவரி–பிப்ரவரி", "பிப்ரவரி–மார்ச்", "ஏப்ரல்–மே", "விடை தெரியவில்லை"],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Identify the person who uttered that: \"Nothing can be done without shedding of blood. Japan was prepared to sacrifice 20,000 men and gained a victory over Russia. If 15 crores of Indians do the same, Swaraj will be obtained.\"",
+    "ta": "\"இரத்தம் சிந்தாமல் எதுவும் செய்ய முடியாது. ரஷ்யாவின் மீது வெற்றி பெற ஜப்பான் 20,000 பேரைத் தியாகம் செய்யத் தயாராக இருந்தது. 15 கோடி இந்தியர்கள் அதையே செய்தால், சுயராஜ்யம் கிடைக்கும்\" என்று கூறியவர் யார் என்பதை அடையாளம் காண்க.",
+    "optionsEn": ["V.O. Chidambaram Pillai", "Subramania Siva", "Subramania Bharathi", "Vanchi Aiyar", "Answer not known"],
+    "optionsTa": ["வி.ஓ. சிதம்பரம் பிள்ளை", "சுப்பிரமணிய சிவா", "சுப்பிரமணிய பாரதி", "வாஞ்சி ஐயர்", "விடை தெரியவில்லை"],
+    "answer": 1
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false; isSubmitted = false;
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">
+                <span class="option-letter">${String.fromCharCode(65+i)}.</span>
+                <span class="option-text">${opt}</span>
+            </div>`;
+        });
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+            </div>
+        `;
+        updateTopClearButton();
+        updateNavButtons(); updatePalette();
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+    }
+    function updateTopClearButton() {
+        const container = document.getElementById("topClearBtnContainer");
+        if (!container) return;
+        const sel = userAnswers[currentIndex];
+        if (sel !== null && sel !== undefined) {
+            container.innerHTML = `<button class="btn btn-danger" style="padding: 6px 14px; font-size: 0.8rem; min-height: auto; opacity: 0.9; border-radius: 40px;" onclick="clearSelection()">✖ Clear Selection</button>`;
+        } else {
+            container.innerHTML = "";
+        }
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) {
+            userAnswers[currentIndex] = null;
+        } else {
+            userAnswers[currentIndex] = optIndex;
+        }
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+
+    function clearSelection() {
+        if (isSubmitted) return;
+        userAnswers[currentIndex] = null;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    let currentReviewIndex = 0;
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let cssClass = "option-item";
+                let markerHtml = "";
+                if (idx === corr) { cssClass += " correct"; markerHtml = "<div class='marker'>✔</div>"; }
+                else if (u === idx && idx !== corr) { cssClass += " wrong"; markerHtml = "<div class='marker'>✖</div>"; }
+                optsHtml += `<div class="${cssClass}"><span>${String.fromCharCode(65+idx)}. ${optsArray[idx]}</span>${markerHtml}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" id="review-card-${i}" style="display: none;">
+                        <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div class="your-answer">Your Answer: ${userAns}</div>
+                        <div class="correct-answer">Correct Answer: ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        ${optsHtml}
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+        currentReviewIndex = 0;
+        showReviewCard(currentReviewIndex);
+    }
+    function showReviewCard(index) {
+        const cards = document.querySelectorAll(".review-card");
+        if (cards.length === 0) return;
+        cards.forEach(c => c.style.display = "none");
+        cards[index].style.display = "block";
+        document.getElementById("reviewPageText").innerText = `${index + 1} / ${cards.length}`;
+        document.getElementById("prevReviewBtn").disabled = (index === 0);
+        document.getElementById("nextReviewBtn").disabled = (index === cards.length - 1);
+        document.getElementById("reviewPagination").style.display = "flex";
+        window.scrollTo(0, 0);
+    }
+    function navigateReview(direction) {
+        const cards = document.querySelectorAll(".review-card");
+        currentReviewIndex += direction;
+        if (currentReviewIndex >= 0 && currentReviewIndex < cards.length) {
+            showReviewCard(currentReviewIndex);
+        }
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
+            await new Promise(r => setTimeout(r, 600));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+                if (btn) btn.innerText = "✅ Select Save as PDF";
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+        } finally {
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 3000);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        history.replaceState({ resultPage: true }, "", "#result");
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.addEventListener("popstate", function(e) {
+        if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+            history.pushState({ resultPage: true }, "", "#result");
+            confirmLeaveResult();
+        }
+    });
+    function confirmLeaveResult() {
+        if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
+            window.AndroidBridge.exitResultPage();
+        } else {
+            history.back();
+        }
+    }
+    window.checkForReview = function() {
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
+            }
+        }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
