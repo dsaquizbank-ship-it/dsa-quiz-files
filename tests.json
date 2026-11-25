@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-25T07:44:26.386Z",
+  "version": "2026-11-25T07:47:02.989Z",
   "categories": [
     {
       "id": "BANK",
@@ -3707,6 +3707,20 @@
       "releaseTimestamp": 1795593600000,
       "language": "en",
       "createdAt": 1795592666386
+    },
+    {
+      "testId": "TET-SS-8",
+      "examId": "TET-SOCIALSCIENCE",
+      "name": "6TH TERMS 3 CIVICS: LOCAL BODIES - RURAL AND URBAN (SET-1)",
+      "topic": "6TH TERMS 3 CIVICS: LOCAL BODIES - RURAL AND URBAN",
+      "durationMinutes": 15,
+      "order": 8,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-SS-8.html",
+      "releaseTimestamp": 1795593600000,
+      "language": "both",
+      "createdAt": 1795592822989
     }
   ]
 }
