@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-25T07:54:26.708Z",
+  "version": "2026-11-25T07:56:57.752Z",
   "categories": [
     {
       "id": "BANK",
@@ -3763,6 +3763,20 @@
       "releaseTimestamp": 1795766400000,
       "language": "both",
       "createdAt": 1795593266708
+    },
+    {
+      "testId": "TCA-4",
+      "examId": "TNPSC-CA",
+      "name": "JUNE (SET-1)",
+      "topic": "JUNE",
+      "durationMinutes": 20,
+      "order": 4,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TCA-4.html",
+      "releaseTimestamp": 1795680000000,
+      "language": "both",
+      "createdAt": 1795593417752
     }
   ]
 }
