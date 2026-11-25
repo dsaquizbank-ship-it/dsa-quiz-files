@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>RGS-12 - HUMAN BODY – NERVOUS SYSTEM (SET-1)</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                linebreaks: { automatic: true, width: "container" }
+            },
+            options: { ignoreHtmlClass: "no-mathjax" },
+            chtml: {
+                displayAlign: "left",
+                displayIndent: "0",
+                mtextInheritFont: true
+            },
+            svg: {
+                scale: 0.9,
+                minScale: 0.5,
+                mtextInheritFont: true,
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; color: #10b981; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; align-items: center; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; white-space: normal; word-wrap: break-word; padding-bottom: 20px; max-width: 100%; overflow-x: auto; }
+        mjx-container { display: inline !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; }
+        .question-text::-webkit-scrollbar { display: none; }
+        .question-text { -ms-overflow-style: none; scrollbar-width: none; }
+        .option-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; word-wrap: break-word; }
+        .option-letter { font-weight: 800; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+        .option-text { flex-grow: 1; min-width: 0; word-wrap: break-word; overflow-wrap: break-word; }
+        .option-text mjx-container { display: inline-block !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; overflow-x: visible !important; }
+        .option-text mjx-container[jax="CHTML"][display="true"] { margin: 0 !important; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
+        .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
+        .review-card .question-text { overflow-x: hidden !important; white-space: normal !important; word-wrap: break-word !important; }
+        .review-card strong { color: var(--text-primary); font-size: 16px; }
+        .review-card .option-item { background-color: var(--rc-bg); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: rgba(40, 167, 69, 0.1); border: 1px solid #28a745; color: #28a745; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; color: #dc3545; }
+        .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
+        .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
+        .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
+        .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px 0; border-top: 1px solid var(--border-light); }
+        .review-nav-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .review-nav-btn:disabled { background: var(--border-light); color: var(--text-primary); opacity: 0.5; cursor: not-allowed; }
+        .review-nav-text { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+        .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { 
+            html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } 
+            .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } 
+            #startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard { display: none !important; } 
+            #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } 
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; } 
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; margin-bottom: 20px !important; display: block !important; } 
+            .review-card .option-item { border: 1px solid #ccc !important; background: white !important; color: black !important; } 
+            .review-card .option-item.correct { background: #e6ffe6 !important; border-color: #28a745 !important; color: black !important; } 
+            .review-card .option-item.wrong { background: #ffe6e6 !important; border-color: #dc3545 !important; color: black !important; } 
+            @page { size: A4; margin: 1.5cm; } 
+        }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">15:00</div>
+            <div class="top-buttons">
+                <div id="topClearBtnContainer"></div>
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div id="printHeader" style="display: none;">
+            <h1>DR SAHITHA IAS ACADEMY</h1>
+            <h3>ANSWER KEY & DETAILED REVIEW</h3>
+            <p><strong>Test:</strong> RGS-12 - GENERAL SCIENCE</p>
+        </div>
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+            <div id="reviewPagination" class="review-nav-container" style="display: none;">
+                <button class="review-nav-btn" id="prevReviewBtn" onclick="navigateReview(-1)">◀ PREV</button>
+                <span class="review-nav-text" id="reviewPageText">1 / 25</span>
+                <button class="review-nav-btn" id="nextReviewBtn" onclick="navigateReview(1)">NEXT ▶</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "GENERAL SCIENCE",
+        testNo: "RGS-12",
+        date: "27/11/2026",
+        subject: "GENERAL SCIENCE",
+        topic: "HUMAN BODY – NERVOUS SYSTEM",
+        duration: "15",
+        totalMarks: "0",
+        negativeMark: 0.33,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "Which part of the neuron is responsible for acquiring information?",
+    "ta": "நியூரானின் எந்தப் பகுதி தகவல்களைப் பெறுவதற்குப் பொறுப்பாகும்?",
+    "optionsEn": [
+      "Dendritic tip",
+      "Axon",
+      "Cell body",
+      "Synapse"
+    ],
+    "optionsTa": [
+      "டென்ட்ரைட் முனை (Dendritic tip)",
+      "ஆக்சான் (Axon)",
+      "செல் உடலம் (Cell body)",
+      "சினாப்ஸ் (Synapse)"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Cranial nerves arising from the brain and spinal nerves arising from the spinal cord together constitute the:",
+    "ta": "மூளையிலிருந்து உருவாகும் கபால நரம்புகளும் தண்டுவடத்திலிருந்து உருவாகும் தண்டுவட நரம்புகளும் இணைந்து எதை உருவாக்குகின்றன?",
+    "optionsEn": [
+      "peripheral nervous system",
+      "autonomic nervous system",
+      "central nervous system",
+      "endocrine system"
+    ],
+    "optionsTa": [
+      "புற நரம்பு மண்டலம் (Peripheral nervous system)",
+      "தானியங்கு நரம்பு மண்டலம் (Autonomic nervous system)",
+      "மைய நரம்பு மண்டலம் (Central nervous system)",
+      "நாளமில்லா சுரப்பி மண்டலம் (Endocrine system)"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following controls bladder pressure?",
+    "ta": "பின்வருவனவற்றுள் சிறுநீர்ப்பை அழுத்தத்தைக் கட்டுப்படுத்துவது எது?",
+    "optionsEn": [
+      "Kidneys",
+      "Heart",
+      "Nervous system",
+      "Blood Pressure"
+    ],
+    "optionsTa": [
+      "சிறுநீரகங்கள்",
+      "இதயம்",
+      "நரம்பு மண்டலம்",
+      "இரத்த அழுத்தம்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "In our body, brain and spinal cord together constitute the:",
+    "ta": "நமது உடலில், மூளை மற்றும் தண்டுவடம் இணைந்து எதை உருவாக்குகின்றன?",
+    "optionsEn": [
+      "endocrine system",
+      "central nervous system",
+      "peripheral nervous system",
+      "autonomic nervous system"
+    ],
+    "optionsTa": [
+      "நாளமில்லா சுரப்பி மண்டலம்",
+      "மைய நரம்பு மண்டலம்",
+      "புற நரம்பு மண்டலம்",
+      "தானியங்கு நரம்பு மண்டலம்"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Reflex arcs are formed in which part of the nervous system?",
+    "ta": "நரம்பு மண்டலத்தின் எந்தப் பகுதியில் அனிச்சை விற்கள் (Reflex arcs) உருவாகின்றன?",
+    "optionsEn": [
+      "Medulla",
+      "Fore brain",
+      "Spinal cord",
+      "Cerebellum"
+    ],
+    "optionsTa": [
+      "முகுளம் (Medulla)",
+      "முன்மூளை (Fore brain)",
+      "தண்டுவடம் (Spinal cord)",
+      "சிறுமூளை (Cerebellum)"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "The central nervous system that receives information from all parts of the body and integrates it is constituted by:",
+    "ta": "உடலின் அனைத்துப் பகுதிகளிலிருந்தும் தகவல்களைப் பெற்று ஒருங்கிணைக்கும் மைய நரம்பு மண்டலம் எதனால் ஆனது?",
+    "optionsEn": [
+      "only the heart",
+      "only the brain",
+      "the brain and the spinal cord",
+      "only the spinal cord"
+    ],
+    "optionsTa": [
+      "இதயம் மட்டும்",
+      "மூளை மட்டும்",
+      "மூளை மற்றும் தண்டுவடம்",
+      "தண்டுவடம் மட்டும்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following are parts of the peripheral nervous system?",
+    "ta": "பின்வருவனவற்றுள் புற நரம்பு மண்டலத்தின் பகுதிகள் எவை?",
+    "optionsEn": [
+      "Both cranial and spinal nerves",
+      "Only spinal nerves",
+      "Only cranial nerves",
+      "Neither cranial nor spinal nerves"
+    ],
+    "optionsTa": [
+      "கபால மற்றும் தண்டுவட நரம்புகள் இரண்டும்",
+      "தண்டுவட நரம்புகள் மட்டும்",
+      "கபால நரம்புகள் மட்டும்",
+      "கபால நரம்புகளும் அல்ல, தண்டுவட நரம்புகளும் அல்ல"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following functions is NOT regulated by the medulla in the hind brain?",
+    "ta": "பின்மூளையில் உள்ள முகுளத்தால் (Medulla) பின்வரும் எந்தச் செயல்பாடு ஒழுங்குபடுத்தப்படுவதில்லை?",
+    "optionsEn": [
+      "Regulation of hearing",
+      "Vomiting control",
+      "Salivary regulation",
+      "Blood pressure regulation"
+    ],
+    "optionsTa": [
+      "கேட்டலை ஒழுங்குபடுத்துதல்",
+      "வாந்தியைக் கட்டுப்படுத்துதல்",
+      "உமிழ்நீர் சுரப்பை ஒழுங்குபடுத்துதல்",
+      "இரத்த அழுத்தத்தை ஒழுங்குபடுத்துதல்"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is a reflex action?",
+    "ta": "பின்வருவனவற்றுள் அனிச்சைச் செயல் (Reflex action) எது?",
+    "optionsEn": [
+      "Talking to a child",
+      "Pulling hand from the flame",
+      "Walking on the street",
+      "Dancing on the stage"
+    ],
+    "optionsTa": [
+      "குழந்தையுடன் பேசுதல்",
+      "தீச்சுடரிலிருந்து கையை உடனடியாக இழுத்தல்",
+      "தெருவில் நடத்தல்",
+      "மேடையில் நடனமாடுதல்"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "What is the function of the growth hormone secreted by the pituitary gland?",
+    "ta": "பிட்யூட்டரி சுரப்பியால் சுரக்கப்படும் வளர்ச்சி ஹார்மோனின் செயல்பாடு என்ன?",
+    "optionsEn": [
+      "It stimulates growth in all organs",
+      "It regulates the blood sugar level",
+      "It regulates the menstrual cycle",
+      "It regulates metabolism for body growth"
+    ],
+    "optionsTa": [
+      "இது அனைத்து உறுப்புகளிலும் வளர்ச்சியைத் தூண்டுகிறது",
+      "இது இரத்த சர்க்கரை அளவை ஒழுங்குபடுத்துகிறது",
+      "இது மாதவிடாய் சுழற்சியை ஒழுங்குபடுத்துகிறது",
+      "இது உடல் வளர்ச்சிக்கான வளர்சிதை மாற்றத்தை ஒழுங்குபடுத்துகிறது"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Involuntary actions including blood pressure, salivation and vomiting are controlled by:",
+    "ta": "இரத்த அழுத்தம், உமிழ்நீர் சுரத்தல் மற்றும் வாந்தி உள்ளிட்ட தன்னிச்சையற்ற செயல்கள் எதனால் கட்டுப்படுத்தப்படுகின்றன?",
+    "optionsEn": [
+      "the cerebellum in the fore-brain",
+      "the medulla in the hind-brain",
+      "only the heart",
+      "only the spinal cord"
+    ],
+    "optionsTa": [
+      "முன்மூளையில் உள்ள சிறுமூளை",
+      "பின்மூளையில் உள்ள முகுளம் (Medulla)",
+      "இதயம் மட்டும்",
+      "தண்டுவடம் மட்டும்"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Identify the INCORRECT statement related to neurons.",
+    "ta": "நியூரான்கள் தொடர்பான தவறான கூற்றைக் கண்டறியவும்.",
+    "optionsEn": [
+      "The cell body of a neuron has many nuclei.",
+      "Neurons typically have one long section called the axon.",
+      "Nervous tissue consists of cells known as neurons.",
+      "Each neuron has multiple short, branching sections called dendrites."
+    ],
+    "optionsTa": [
+      "ஒரு நியூரானின் செல் உடலத்தில் பல உட்கருக்கள் உள்ளன.",
+      "நியூரான்கள் பொதுவாக ஆக்சான் எனப்படும் ஒரு நீண்ட பகுதியைக் கொண்டுள்ளன.",
+      "நரம்புத் திசு நியூரான்கள் எனப்படும் செல்களைக் கொண்டுள்ளது.",
+      "ஒவ்வொரு நியூரானிலும் டென்ட்ரைட்டுகள் எனப்படும் பல குட்டையான, கிளைத்த பகுதிகள் உள்ளன."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Spinal cord is made up of which tissue?",
+    "ta": "தண்டுவடம் எந்தத் திசுவால் ஆனது?",
+    "optionsEn": [
+      "Nervous tissue",
+      "Connective tissue",
+      "Epithelial tissue",
+      "Muscular tissue"
+    ],
+    "optionsTa": [
+      "நரம்புத் திசு",
+      "இணைப்புத் திசு",
+      "எபிதீலியத் திசு",
+      "தசைத் திசு"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Iodine is necessary for which gland to make the thyroxine hormone?",
+    "ta": "தைராக்சின் ஹார்மோனை உற்பத்தி செய்ய எந்தச் சுரப்பிக்கு அயோடின் அவசியம்?",
+    "optionsEn": [
+      "Thymus",
+      "Pancreas",
+      "Pineal gland",
+      "Thyroid gland"
+    ],
+    "optionsTa": [
+      "தைமஸ் சுரப்பி",
+      "கணையம்",
+      "பீனியல் சுரப்பி",
+      "தைராய்டு சுரப்பி"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is specialised for conducting information via electrical impulses from one part of the body to another?",
+    "ta": "உடலின் ஒரு பகுதியிலிருந்து மற்றொரு பகுதிக்கு மின் தூண்டல்கள் வழியாகத் தகவல்களைக் கடத்துவதற்குச் சிறப்பாக அமைந்துள்ளவை எவை?",
+    "optionsEn": [
+      "Glomerulus",
+      "Alveoli",
+      "Neuron",
+      "Spinal cord"
+    ],
+    "optionsTa": [
+      "குளோமருலஸ் (Glomerulus)",
+      "காற்று நுண்ணறைகள் (Alveoli)",
+      "நியூரான் (Neuron)",
+      "தண்டுவடம் (Spinal cord)"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following does NOT have neurons?",
+    "ta": "பின்வருவனவற்றுள் எதில் நியூரான்கள் இல்லை?",
+    "optionsEn": [
+      "Nerves",
+      "Brain",
+      "Adipocyte",
+      "Spinal cord"
+    ],
+    "optionsTa": [
+      "நரம்புகள்",
+      "மூளை",
+      "கொழுப்பு செல் (Adipocyte)",
+      "தண்டுவடம்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following cells have dendrites and axons?",
+    "ta": "பின்வரும் எந்த செல்களில் டென்ட்ரைட்டுகள் மற்றும் ஆக்சான்கள் உள்ளன?",
+    "optionsEn": [
+      "Fibres",
+      "Nerve cells",
+      "White blood cells",
+      "Red blood cells"
+    ],
+    "optionsTa": [
+      "நார்கள்",
+      "நரம்பு செல்கள்",
+      "வெள்ளை இரத்த அணுக்கள்",
+      "சிவப்பு இரத்த அணுக்கள்"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is the main thinking part of the human brain?",
+    "ta": "பின்வருவனவற்றுள் மனித மூளையின் முக்கியச் சிந்திக்கும் பகுதி எது?",
+    "optionsEn": [
+      "Hind-brain",
+      "Cerebellum",
+      "Mid-brain",
+      "Fore-brain"
+    ],
+    "optionsTa": [
+      "பின்மூளை",
+      "சிறுமூளை",
+      "நடுமூளை",
+      "முன்மூளை"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Nodes of Ranvier are microscopic gaps found within:",
+    "ta": "ரேன்வியர் கணுக்கள் (Nodes of Ranvier) எதற்குள் காணப்படும் நுண்ணிய இடைவெளிகள் ஆகும்?",
+    "optionsEn": [
+      "Myelinated axons",
+      "Gland cells",
+      "Osteoblasts",
+      "Chondroblasts"
+    ],
+    "optionsTa": [
+      "மையலின் உறையுடைய ஆக்சான்கள் (Myelinated axons)",
+      "சுரப்பி செல்கள்",
+      "ஆஸ்டியோபிளாஸ்ட்கள்",
+      "காண்ட்ரோபிளாஸ்ட்கள்"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "The cerebellum is concerned with:",
+    "ta": "சிறுமூளை (Cerebellum) எதனுடன் தொடர்புடையது?",
+    "optionsEn": [
+      "Remembering and hunger",
+      "Coordination of muscular movement",
+      "All involuntary actions",
+      "Thinking"
+    ],
+    "optionsTa": [
+      "நினைவாற்றல் மற்றும் பசி",
+      "தசை இயக்கங்களின் ஒருங்கிணைப்பு",
+      "அனைத்து தன்னிச்சையற்ற செயல்கள்",
+      "சிந்தித்தல்"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is NOT correct for cerebellum?",
+    "ta": "சிறுமூளை (Cerebellum) குறித்துப் பின்வருவனவற்றுள் எது சரியானது அல்ல?",
+    "optionsEn": [
+      "It lies in the posterior region of the brain",
+      "It controls movements, speech, sight, smell, taste, hearing, intelligence etc.",
+      "It is a part of hind brain",
+      "It maintains equilibrium"
+    ],
+    "optionsTa": [
+      "இது மூளையின் பின்பகுதியில் அமைந்துள்ளது",
+      "இது இயக்கங்கள், பேச்சு, பார்வை, நுகர்வு, சுவை, கேட்டல், நுண்ணறிவு போன்றவற்றைக் கட்டுப்படுத்துகிறது.",
+      "இது பின்மூளையின் ஒரு பகுதியாகும்",
+      "இது உடல் சமநிலையைப் பராமரிக்கிறது"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "________ controls involuntary activities like coughing and sneezing.",
+    "ta": "இருமல் மற்றும் தும்மல் போன்ற தன்னிச்சையற்ற செயல்களை ________ கட்டுப்படுத்துகிறது.",
+    "optionsEn": [
+      "Medulla",
+      "Cerebrum",
+      "Pons",
+      "Cerebellum"
+    ],
+    "optionsTa": [
+      "முகுளம் (Medulla)",
+      "பெருமூளை (Cerebrum)",
+      "பான்ஸ் (Pons)",
+      "சிறுமூளை (Cerebellum)"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following is NOT correct about the cerebrum?",
+    "ta": "பெருமூளை (Cerebrum) குறித்துப் பின்வருவனவற்றுள் எது சரியானது அல்ல?",
+    "optionsEn": [
+      "It consists of two parts, which are called cerebral hemispheres.",
+      "It is the largest part of the brain, about 80%.",
+      "It forms the fore, apex and side of the brain",
+      "The cerebrum coordinates muscle activity."
+    ],
+    "optionsTa": [
+      "இது பெருமூளை அரைக்கோளங்கள் எனப்படும் இரண்டு பகுதிகளைக் கொண்டுள்ளது.",
+      "இது மூளையின் மிகப்பெரிய பகுதியாகும், சுமார் 80% ஆகும்.",
+      "இது மூளையின் முன், உச்சி மற்றும் பக்கவாட்டுப் பகுதிகளை உருவாக்குகிறது",
+      "பெருமூளை தசை செயல்பாடுகளை ஒருங்கிணைக்கிறது."
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Each neuron is made up of a cyton (cell body), from which many small branches emerge, which are called:",
+    "ta": "ஒவ்வொரு நியூரானும் சைட்டான் (செல் உடலம்) எனப்படும் பகுதியால் ஆனது, அதிலிருந்து பல சிறிய கிளைகள் வெளிவருகின்றன, அவை எவ்வாறு அழைக்கப்படுகின்றன?",
+    "optionsEn": [
+      "Axon",
+      "Sensory branches",
+      "Reflex action",
+      "Dendrite"
+    ],
+    "optionsTa": [
+      "ஆக்சான் (Axon)",
+      "உணர்ச்சி கிளைகள்",
+      "அனிச்சைச் செயல்",
+      "டென்ட்ரைட் (Dendrite)"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "________ is the main thinking part of the brain.",
+    "ta": "________ என்பது மூளையின் முக்கியச் சிந்திக்கும் பகுதியாகும்.",
+    "optionsEn": [
+      "Medulla",
+      "Forebrain",
+      "Spinal cord",
+      "Middle brain"
+    ],
+    "optionsTa": [
+      "முகுளம்",
+      "முன்மூளை (Forebrain)",
+      "தண்டுவடம்",
+      "நடுமூளை"
+    ],
+    "answer": 1
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false; isSubmitted = false;
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">
+                <span class="option-letter">${String.fromCharCode(65+i)}.</span>
+                <span class="option-text">${opt}</span>
+            </div>`;
+        });
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+            </div>
+        `;
+        updateTopClearButton();
+        updateNavButtons(); updatePalette();
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+    }
+    function updateTopClearButton() {
+        const container = document.getElementById("topClearBtnContainer");
+        if (!container) return;
+        const sel = userAnswers[currentIndex];
+        if (sel !== null && sel !== undefined) {
+            container.innerHTML = `<button class="btn btn-danger" style="padding: 6px 14px; font-size: 0.8rem; min-height: auto; opacity: 0.9; border-radius: 40px;" onclick="clearSelection()">✖ Clear Selection</button>`;
+        } else {
+            container.innerHTML = "";
+        }
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) {
+            userAnswers[currentIndex] = null;
+        } else {
+            userAnswers[currentIndex] = optIndex;
+        }
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+
+    function clearSelection() {
+        if (isSubmitted) return;
+        userAnswers[currentIndex] = null;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    let currentReviewIndex = 0;
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let cssClass = "option-item";
+                let markerHtml = "";
+                if (idx === corr) { cssClass += " correct"; markerHtml = "<div class='marker'>✔</div>"; }
+                else if (u === idx && idx !== corr) { cssClass += " wrong"; markerHtml = "<div class='marker'>✖</div>"; }
+                optsHtml += `<div class="${cssClass}"><span>${String.fromCharCode(65+idx)}. ${optsArray[idx]}</span>${markerHtml}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" id="review-card-${i}" style="display: none;">
+                        <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div class="your-answer">Your Answer: ${userAns}</div>
+                        <div class="correct-answer">Correct Answer: ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        ${optsHtml}
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+        currentReviewIndex = 0;
+        showReviewCard(currentReviewIndex);
+    }
+    function showReviewCard(index) {
+        const cards = document.querySelectorAll(".review-card");
+        if (cards.length === 0) return;
+        cards.forEach(c => c.style.display = "none");
+        cards[index].style.display = "block";
+        document.getElementById("reviewPageText").innerText = `${index + 1} / ${cards.length}`;
+        document.getElementById("prevReviewBtn").disabled = (index === 0);
+        document.getElementById("nextReviewBtn").disabled = (index === cards.length - 1);
+        document.getElementById("reviewPagination").style.display = "flex";
+        window.scrollTo(0, 0);
+    }
+    function navigateReview(direction) {
+        const cards = document.querySelectorAll(".review-card");
+        currentReviewIndex += direction;
+        if (currentReviewIndex >= 0 && currentReviewIndex < cards.length) {
+            showReviewCard(currentReviewIndex);
+        }
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
+            await new Promise(r => setTimeout(r, 600));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+                if (btn) btn.innerText = "✅ Select Save as PDF";
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+        } finally {
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 3000);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        history.replaceState({ resultPage: true }, "", "#result");
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.addEventListener("popstate", function(e) {
+        if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+            history.pushState({ resultPage: true }, "", "#result");
+            confirmLeaveResult();
+        }
+    });
+    function confirmLeaveResult() {
+        if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
+            window.AndroidBridge.exitResultPage();
+        } else {
+            history.back();
+        }
+    }
+    window.checkForReview = function() {
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
+            }
+        }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
