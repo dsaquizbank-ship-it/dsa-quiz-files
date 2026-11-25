@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-25T08:06:39.814Z",
+  "version": "2026-11-25T08:09:47.607Z",
   "categories": [
     {
       "id": "BANK",
@@ -3626,7 +3626,7 @@
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-EG-4.html",
-      "releaseTimestamp": 1795766400000,
+      "releaseTimestamp": 1795593600000,
       "language": "ta",
       "createdAt": 1795508363307
     },
