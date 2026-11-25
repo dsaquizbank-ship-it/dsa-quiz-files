@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-25T07:52:02.476Z",
+  "version": "2026-11-25T07:54:26.708Z",
   "categories": [
     {
       "id": "BANK",
@@ -3749,6 +3749,20 @@
       "releaseTimestamp": 1795593600000,
       "language": "en",
       "createdAt": 1795593122476
+    },
+    {
+      "testId": "UGZ-9",
+      "examId": "UG-ZOO",
+      "name": "BIOSPHERE TO BIOGEOCOENOSIS (SET-1)",
+      "topic": "BIOSPHERE TO BIOGEOCOENOSIS",
+      "durationMinutes": 30,
+      "order": 9,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGZ-9.html",
+      "releaseTimestamp": 1795766400000,
+      "language": "both",
+      "createdAt": 1795593266708
     }
   ]
 }
