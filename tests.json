@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-25T07:59:33.085Z",
+  "version": "2026-11-25T08:01:53.646Z",
   "categories": [
     {
       "id": "BANK",
@@ -3791,6 +3791,20 @@
       "releaseTimestamp": 1795766400000,
       "language": "both",
       "createdAt": 1795593573085
+    },
+    {
+      "testId": "SGS-12",
+      "examId": "SSC-GS",
+      "name": "HUMAN BODY – NERVOUS SYSTEM (SET-2)",
+      "topic": "HUMAN BODY – NERVOUS SYSTEM",
+      "durationMinutes": 15,
+      "order": 12,
+      "questionCount": 25,
+      "negativeMark": 0.5,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGS-12.html",
+      "releaseTimestamp": 1795766400000,
+      "language": "both",
+      "createdAt": 1795593713646
     }
   ]
 }
