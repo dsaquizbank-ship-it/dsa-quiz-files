@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-25T08:03:48.703Z",
+  "version": "2026-11-25T08:06:39.814Z",
   "categories": [
     {
       "id": "BANK",
@@ -3825,6 +3825,20 @@
       "releaseTimestamp": 1795593600000,
       "language": "en",
       "createdAt": 1795593828703
+    },
+    {
+      "testId": "PGCS-9",
+      "examId": "PG-CS",
+      "name": "DATA COMMUNICATION (SET-3)",
+      "topic": "DATA COMMUNICATION",
+      "durationMinutes": 15,
+      "order": 9,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGCS-9.html",
+      "releaseTimestamp": 1795593600000,
+      "language": "en",
+      "createdAt": 1795593999814
     }
   ]
 }
