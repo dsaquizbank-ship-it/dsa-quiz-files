@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-25T08:01:53.646Z",
+  "version": "2026-11-25T08:03:48.703Z",
   "categories": [
     {
       "id": "BANK",
@@ -334,6 +334,12 @@
       "name": "INM",
       "categoryId": "TNPSC",
       "order": 8
+    },
+    {
+      "id": "PG-MAT",
+      "name": "PGTRB MATHS",
+      "categoryId": "PGTRB",
+      "order": 4
     }
   ],
   "tests": [
@@ -3805,6 +3811,20 @@
       "releaseTimestamp": 1795766400000,
       "language": "both",
       "createdAt": 1795593713646
+    },
+    {
+      "testId": "PGM-1",
+      "examId": "PG-MAT",
+      "name": "ALGEBRA (GROUP THEORY) (SET-1)",
+      "topic": "ALGEBRA (GROUP THEORY)",
+      "durationMinutes": 30,
+      "order": 1,
+      "questionCount": 30,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGM-1.html",
+      "releaseTimestamp": 1795593600000,
+      "language": "en",
+      "createdAt": 1795593828703
     }
   ]
 }
