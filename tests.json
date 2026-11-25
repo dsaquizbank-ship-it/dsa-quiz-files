@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-25T07:40:15.955Z",
+  "version": "2026-11-25T07:42:27.071Z",
   "categories": [
     {
       "id": "BANK",
@@ -3679,6 +3679,20 @@
       "releaseTimestamp": 1795593600000,
       "language": "both",
       "createdAt": 1795592415955
+    },
+    {
+      "testId": "TNS-6",
+      "examId": "TNPSC-TS",
+      "name": "ROLE OF TAMIL NADU IN FREEDOM STRUGGLE (SET-2)",
+      "topic": "ROLE OF TAMIL NADU IN FREEDOM STRUGGLE",
+      "durationMinutes": 15,
+      "order": 6,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TNS-6.html",
+      "releaseTimestamp": 1795593600000,
+      "language": "both",
+      "createdAt": 1795592547071
     }
   ]
 }
