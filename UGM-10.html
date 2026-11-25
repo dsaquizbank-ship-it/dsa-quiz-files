@@ -38,7 +38,7 @@
         .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
         .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
         .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
-        .top-buttons { display: flex; gap: 8px; }
+        .top-buttons { display: flex; gap: 8px; align-items: center; }
         .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
         .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
         .language-toggle { background: var(--accent-dark); color: white; border: none; }
@@ -132,6 +132,7 @@
             <div class="candidate-badge" id="quizCandidateName">Candidate</div>
             <div class="timer-box" id="timerDisplay">30:00</div>
             <div class="top-buttons">
+                <div id="topClearBtnContainer"></div>
                 <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="display: none;">தமிழ்</button>
             </div>
         </div>
@@ -278,7 +279,7 @@ let QUESTIONS = [
     "ta": "",
     "optionsEn": ["Largest in its row and smallest in its column", "Largest in its row and largest in its column", "Smallest in its row and smallest in its column", "Smallest in its row and largest in its column"],
     "optionsTa": [],
-    "answer": 3
+    "answer": 2
   },
   {
     "type": "mcq",
@@ -529,24 +530,28 @@ let QUESTIONS = [
                 <span class="option-text">${opt}</span>
             </div>`;
         });
-        let clearBtnHtml = "";
-        if (sel !== null && sel !== undefined) {
-            clearBtnHtml = `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;">
-                <button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button>
-            </div>`;
-        }
         document.getElementById("questionArea").innerHTML = `
             ${passageHtml}
             <div style="padding: 0 16px 20px 16px;">
                 ${imageHtml}
                 <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
                 <div>${optsHtml}</div>
-                ${sel !== null && sel !== undefined ? `<div style="text-align: right; margin-top: 10px; margin-bottom: 20px;"><button class="btn btn-danger" style="padding: 8px 16px; font-size: 0.85rem; min-height: auto; opacity: 0.9;" onclick="clearSelection()">✖ Clear Selection</button></div>` : ``}
             </div>
         `;
+        updateTopClearButton();
         updateNavButtons(); updatePalette();
         if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
         initImageZoom();
+    }
+    function updateTopClearButton() {
+        const container = document.getElementById("topClearBtnContainer");
+        if (!container) return;
+        const sel = userAnswers[currentIndex];
+        if (sel !== null && sel !== undefined) {
+            container.innerHTML = `<button class="btn btn-danger" style="padding: 6px 14px; font-size: 0.8rem; min-height: auto; opacity: 0.9; border-radius: 40px;" onclick="clearSelection()">✖ Clear Selection</button>`;
+        } else {
+            container.innerHTML = "";
+        }
     }
     function selectOption(optIndex) {
         if (isSubmitted) return;
