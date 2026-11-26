@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-26T10:31:51.391Z",
+  "version": "2026-11-26T10:34:13.625Z",
   "categories": [
     {
       "id": "BANK",
@@ -3909,6 +3909,20 @@
       "releaseTimestamp": 1795766400000,
       "language": "both",
       "createdAt": 1795689111391
+    },
+    {
+      "testId": "SPT-PY-4",
+      "examId": "SPL-PSYCHOLOGY",
+      "name": "MOTIVATION AND LEARNING (SET-1)",
+      "topic": "MOTIVATION AND LEARNING",
+      "durationMinutes": 15,
+      "order": 4,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-PY-4.html",
+      "releaseTimestamp": 1795766400000,
+      "language": "both",
+      "createdAt": 1795689253625
     }
   ]
 }
