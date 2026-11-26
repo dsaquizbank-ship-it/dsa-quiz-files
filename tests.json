@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-26T10:20:50.657Z",
+  "version": "2026-11-26T10:25:19.642Z",
   "categories": [
     {
       "id": "BANK",
@@ -3867,6 +3867,20 @@
       "releaseTimestamp": 1795680000000,
       "language": "both",
       "createdAt": 1795688450657
+    },
+    {
+      "testId": "UGM-15",
+      "examId": "UG-MAT",
+      "name": "INDEPENDENT EVENTS & BOOLE'S INEQUALITY (SET-1)",
+      "topic": "INDEPENDENT EVENTS & BOOLE'S INEQUALITY",
+      "durationMinutes": 30,
+      "order": 15,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGM-15.html",
+      "releaseTimestamp": 1795766400000,
+      "language": "en",
+      "createdAt": 1795688719642
     }
   ]
 }
