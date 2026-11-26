@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-21T13:51:33.726Z",
+  "version": "2026-11-26T10:42:42.129Z",
   "entries": [
     {
       "id": "SCH-1794038030683-992",
@@ -2519,17 +2519,6 @@
       "date": "2026-11-27",
       "testId": "UGZ-84",
       "createdAt": "2026-10-31T13:37:32.207Z"
-    },
-    {
-      "id": "SCH-1793452752855-753",
-      "courseId": "TNTET",
-      "courseName": "TNTET",
-      "subject": "Child Development and Pedagogy",
-      "topicId": "REV-1793452752855",
-      "topicName": "Revision: Unit III - Attention, Perception and Memory",
-      "date": "2026-11-27",
-      "testId": "TET-PY-3",
-      "createdAt": "2026-10-31T13:19:12.855Z"
     },
     {
       "id": "SCH-1793449732048-750",
