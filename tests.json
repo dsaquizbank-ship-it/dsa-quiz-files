@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-26T10:25:19.642Z",
+  "version": "2026-11-26T10:28:42.109Z",
   "categories": [
     {
       "id": "BANK",
@@ -3881,6 +3881,20 @@
       "releaseTimestamp": 1795766400000,
       "language": "en",
       "createdAt": 1795688719642
+    },
+    {
+      "testId": "PGM-2",
+      "examId": "PG-MAT",
+      "name": "RINGS, INTEGRAL DOMAIN (SET-1)",
+      "topic": "RINGS, INTEGRAL DOMAIN",
+      "durationMinutes": 30,
+      "order": 2,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/PGM-2.html",
+      "releaseTimestamp": 1795766400000,
+      "language": "en",
+      "createdAt": 1795688922109
     }
   ]
 }
