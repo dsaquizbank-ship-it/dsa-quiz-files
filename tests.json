@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-25T10:29:25.597Z",
+  "version": "2026-11-26T10:20:50.657Z",
   "categories": [
     {
       "id": "BANK",
@@ -3853,6 +3853,20 @@
       "releaseTimestamp": 1795588200000,
       "language": "both",
       "createdAt": 1795602565597
+    },
+    {
+      "testId": "SPT-SC-4",
+      "examId": "SPL-SCIENCE",
+      "name": "7TH TERM 1 (SET-2)",
+      "topic": "7TH TERM 1",
+      "durationMinutes": 30,
+      "order": 4,
+      "questionCount": 50,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SPT-SC-4.html",
+      "releaseTimestamp": 1795680000000,
+      "language": "both",
+      "createdAt": 1795688450657
     }
   ]
 }
