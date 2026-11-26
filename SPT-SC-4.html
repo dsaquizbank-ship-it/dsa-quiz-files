@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>SPT-SC-4 - 7TH TERM 1 (SET-2)</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                linebreaks: { automatic: true, width: "container" }
+            },
+            options: { ignoreHtmlClass: "no-mathjax" },
+            chtml: {
+                displayAlign: "left",
+                displayIndent: "0",
+                mtextInheritFont: true
+            },
+            svg: {
+                scale: 0.9,
+                minScale: 0.5,
+                mtextInheritFont: true,
+                fontCache: "global"
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        :root { --bg-gradient: linear-gradient(135deg, #022c22, #064e3b); --card-bg: #0f2b1f; --text-primary: #d1fae5; --border-light: #2d6a4f; --accent: #34d399; --accent-dark: #10b981; --timer-bg: #451a03; --timer-text: #fcd34d; --palette-btn: #1e3a2f; --shadow: 0 10px 25px -5px rgba(0,0,0,0.4); --correct-color: #f87171; --modal-overlay: rgba(0,0,0,0.7); --rc-bg: #1e293b; --rc-border: #60a5fa; --puzzle-bg: #451a03; --puzzle-border: #fbbf24; }
+        body { font-family: "Segoe UI", system-ui, "Inter", sans-serif; background: var(--bg-gradient); color: var(--text-primary); padding: 12px; min-height: 100vh; }
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+        .institute-name { font-family: "Playfair Display", serif; font-weight: 900; font-size: 1.8rem; color: #10b981; }
+        .quiz-wrapper { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-light); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border-light); }
+        .candidate-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; }
+        .timer-box { background: var(--timer-bg); padding: 4px 16px; border-radius: 60px; font-family: monospace; font-size: 1.4rem; font-weight: 800; color: var(--timer-text); }
+        .top-buttons { display: flex; gap: 8px; align-items: center; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 40px; padding: 6px 14px; font-weight: 600; cursor: pointer; color: var(--text-primary); font-size: 0.8rem; transition: 0.2s; }
+        .icon-btn:hover { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .language-toggle { background: var(--accent-dark); color: white; border: none; }
+        .question-container { padding: 0; }
+        .passage-box { background: var(--rc-bg); padding: 15px; border-left: 4px solid var(--rc-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .puzzle-box { background: var(--puzzle-bg); padding: 15px; border: 1px solid var(--puzzle-border); border-radius: 8px; margin: 15px; font-size: 0.95rem; line-height: 1.6; }
+        .question-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.8; white-space: normal; word-wrap: break-word; padding-bottom: 20px; max-width: 100%; overflow-x: auto; }
+        mjx-container { display: inline !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; }
+        .question-text::-webkit-scrollbar { display: none; }
+        .question-text { -ms-overflow-style: none; scrollbar-width: none; }
+        .option-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card-bg); border: 1.5px solid var(--border-light); border-radius: 16px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: 0.1s; word-wrap: break-word; }
+        .option-letter { font-weight: 800; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+        .option-text { flex-grow: 1; min-width: 0; word-wrap: break-word; overflow-wrap: break-word; }
+        .option-text mjx-container { display: inline-block !important; max-width: 100% !important; white-space: normal !important; word-wrap: break-word !important; overflow-x: visible !important; }
+        .option-text mjx-container[jax="CHTML"][display="true"] { margin: 0 !important; }
+        .option-item:hover { background: var(--border-light); transform: scale(0.99); }
+        .option-item.selected { background: var(--accent); border-color: var(--accent-dark); color: white; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 0 16px 12px; gap: 12px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 40px; font-weight: 700; cursor: pointer; background: var(--accent); color: white; font-size: 0.9rem; min-height: 44px; transition: 0.2s; }
+        .btn:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-secondary { background: transparent; border: 1.5px solid var(--border-light); color: var(--text-primary); }
+        .btn-danger { background: #dc2626; }
+        .palette-area { padding: 8px 16px 20px; border-top: 1px solid var(--border-light); }
+        .palette-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .palette-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 6px 2px 12px; }
+        .q-palette { min-width: 44px; height: 44px; border-radius: 14px; background: var(--palette-btn); border: 1.5px solid var(--border-light); font-weight: 800; font-size: 1rem; cursor: pointer; color: var(--text-primary); flex-shrink: 0; transition: 0.1s; }
+        .q-palette.answered { background: var(--accent); color: white; border-color: var(--accent-dark); }
+        .q-palette.current { border: 3px solid #f97316; background: var(--accent-dark); color: white; transform: scale(1.02); }
+        .result-dashboard { background: linear-gradient(145deg, #064e3b, #022c22); color: white; padding: 1.5rem 1rem; text-align: center; border-radius: 1rem; margin: 1rem; }
+        .score-ring { width: 130px; height: 130px; margin: 15px auto; background: conic-gradient(#10b981 0% var(--score-percent, 0%), #2d6a4f var(--score-percent, 0%) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .score-inner { width: 105px; height: 105px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #022c22; }
+        .stats { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+        .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 1rem; padding: 8px 12px; min-width: 80px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; }
+        .review-card { background: var(--card-bg); border-radius: 1rem; padding: 14px; margin-bottom: 12px; border-left: 5px solid; color: var(--text-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .review-card, .review-card p, .review-card strong, .review-card .option-item { word-wrap: break-word !important; overflow-wrap: break-word !important; white-space: normal !important; max-width: 100% !important; }
+        .review-card mjx-container, .review-card svg { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
+        .review-card .MathJax, .review-card .MathJax_Display { white-space: normal !important; overflow-x: auto !important; }
+        .review-card .question-text { overflow-x: hidden !important; white-space: normal !important; word-wrap: break-word !important; }
+        .review-card strong { color: var(--text-primary); font-size: 16px; }
+        .review-card .option-item { background-color: var(--rc-bg); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .review-card .option-item.correct { background-color: rgba(40, 167, 69, 0.1); border: 1px solid #28a745; color: #28a745; font-weight: 600; }
+        .review-card .option-item.wrong { background-color: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; color: #dc3545; }
+        .review-card .option-item .marker { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; }
+        .review-card .option-item.correct .marker { background-color: #28a745; color: white; }
+        .review-card .option-item.wrong .marker { background-color: #dc3545; color: white; }
+        .review-card .your-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-top: 12px; margin-bottom: 4px; }
+        .review-nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px 0; border-top: 1px solid var(--border-light); }
+        .review-nav-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .review-nav-btn:disabled { background: var(--border-light); color: var(--text-primary); opacity: 0.5; cursor: not-allowed; }
+        .review-nav-text { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+        .review-card .correct-answer { font-size: 13px; color: var(--text-primary); opacity: 0.7; margin-bottom: 12px; }
+        .btn-pdf { background: #ef4444; }
+        .start-panel { padding: 1.8rem 1.2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .start-panel > * { width: 100%; }
+        .empty-message { text-align: center; padding: 40px; color: var(--text-primary); font-style: italic; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-container { background: var(--card-bg); border-radius: 1.5rem; max-width: 400px; width: 90%; padding: 1.5rem; text-align: center; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.3); border: 1px solid var(--border-light); }
+        .modal-container h3 { margin-bottom: 1rem; color: var(--accent); }
+        .modal-container p { margin-bottom: 1.5rem; color: var(--text-primary); }
+        .modal-buttons { display: flex; gap: 12px; justify-content: center; }
+        .modal-buttons .btn { min-width: 100px; }
+        .img-zoom-wrapper { width: 100%; margin: 15px 0; background: var(--rc-bg); border-radius: 12px; border: 1px solid var(--border-light); padding: 5px; }
+        .img-zoom-wrapper img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; display: block; }
+        .review-question-img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-light); margin: 10px 0; cursor: zoom-in; display: block; }
+        .medium-zoom-overlay { z-index: 9999 !important; }
+        .medium-zoom-image--opened { z-index: 10000 !important; }
+        @media print { 
+            html, body { background: white !important; color: black !important; min-height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; } 
+            .quiz-wrapper { overflow: visible !important; max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; background: white !important; } 
+            #startScreen, #quizContainer, .header-bar, .palette-area, .nav-buttons, .flex-buttons, .btn, .icon-btn, .review-nav-container, .result-dashboard { display: none !important; } 
+            #resultContainer { display: block !important; max-height: none !important; overflow: visible !important; } 
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; } 
+            .review-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important; background: white !important; color: black !important; margin-bottom: 20px !important; display: block !important; } 
+            .review-card .option-item { border: 1px solid #ccc !important; background: white !important; color: black !important; } 
+            .review-card .option-item.correct { background: #e6ffe6 !important; border-color: #28a745 !important; color: black !important; } 
+            .review-card .option-item.wrong { background: #ffe6e6 !important; border-color: #dc3545 !important; color: black !important; } 
+            @page { size: A4; margin: 1.5cm; } 
+        }
+        @media (max-width: 480px) { .question-text { font-size: 1rem; } .option-item { padding: 10px 14px; } .timer-box { font-size: 1.2rem; padding: 4px 12px; } }
+    </style>
+</head>
+<body>
+<div class="quiz-wrapper" id="app">
+    <div id="startScreen" class="start-panel">
+        <div id="dashboardContainer"></div>
+        <button id="startExamBtn" class="btn" onclick="startNewExam()">▶ START NEW EXAM</button>
+    </div>
+    <div id="quizContainer" style="display: none;">
+        <div class="header-bar">
+            <div class="candidate-badge" id="quizCandidateName">Candidate</div>
+            <div class="timer-box" id="timerDisplay">30:00</div>
+            <div class="top-buttons">
+                <div id="topClearBtnContainer"></div>
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionArea"></div>
+        <div class="nav-buttons" id="navButtons"></div>
+        <div class="palette-area">
+            <div class="palette-title" id="paletteTitle">📌 JUMP TO QUESTION</div>
+            <div class="palette-scroll" id="paletteScroll"></div>
+        </div>
+    </div>
+    <div id="resultContainer" style="display: none; max-height: 100vh; overflow-y: auto; padding-bottom: 120px;">
+        <div id="printHeader" style="display: none;">
+            <h1>DR SAHITHA IAS ACADEMY</h1>
+            <h3>ANSWER KEY & DETAILED REVIEW</h3>
+            <p><strong>Test:</strong> SPT-SC-4 - SCIENCE</p>
+        </div>
+        <div class="result-dashboard">
+            <h2 id="quizCompletedLabel">✨ QUIZ COMPLETED ✨</h2>
+            <div id="resultCandidateName"></div>
+            <div id="resultTopicName" style="margin: 5px 0 10px; font-size: 1rem; opacity: 0.9;"></div>
+            <div class="score-ring" id="scoreRing"><div class="score-inner"><span id="finalScore" style="font-size: 36px;">0</span><span id="totalQsSpan">/25</span></div></div>
+            <div class="stats">
+                <div class="stat-card"><div class="stat-number" id="correctCountStat">0</div><div id="correctLabel">✅ Correct</div></div>
+                <div class="stat-card"><div class="stat-number" id="incorrectCountStat">0</div><div id="incorrectLabel">❌ Incorrect</div></div>
+                <div class="stat-card"><div class="stat-number" id="notAttemptedStat">0</div><div id="notAttemptedLabel">⚠️ Not Attempted</div></div>
+                <div class="stat-card"><div class="stat-number" id="accuracySpan">0%</div><div id="accuracyLabel">Accuracy</div></div>
+                <div class="stat-card"><div class="stat-number" id="timeTakenSpan">0:00</div><div id="timeTakenLabel">Time taken</div></div>
+            </div>
+            <div class="flex-buttons" style="gap:12px; margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap;">
+                <button id="restartQuizBtn" class="btn" onclick="clearAllAndRestart()">🔄 New Attempt</button>
+                <button class="btn" style="background:#F5B700; color:#000;" onclick="openNativeLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-pdf" onclick="downloadPdfWithAssets(this)">📄 Download PDF</button>
+            </div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem 1.2rem;">
+            <h3 id="detailedReviewLabel">📖 Detailed Review (with images)</h3>
+            <div id="reviewList"></div>
+            <div id="reviewPagination" class="review-nav-container" style="display: none;">
+                <button class="review-nav-btn" id="prevReviewBtn" onclick="navigateReview(-1)">◀ PREV</button>
+                <span class="review-nav-text" id="reviewPageText">1 / 25</span>
+                <button class="review-nav-btn" id="nextReviewBtn" onclick="navigateReview(1)">NEXT ▶</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLanguage = "en";
+    const translations = {
+        en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
+        ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
+    };
+    function updateUILanguage() {
+        const t = translations[currentLanguage];
+        const el = (id) => document.getElementById(id);
+        if (el("paletteTitle")) el("paletteTitle").innerText = t.paletteTitle;
+        if (el("quizCompletedLabel")) el("quizCompletedLabel").innerText = t.quizCompleted;
+        if (el("correctLabel")) el("correctLabel").innerText = t.correct;
+        if (el("incorrectLabel")) el("incorrectLabel").innerText = t.incorrect;
+        if (el("notAttemptedLabel")) el("notAttemptedLabel").innerText = t.notAttempted;
+        if (el("accuracyLabel")) el("accuracyLabel").innerText = t.accuracy;
+        if (el("timeTakenLabel")) el("timeTakenLabel").innerText = t.timeTaken;
+        if (el("restartQuizBtn")) el("restartQuizBtn").innerText = t.newAttempt;
+        if (el("langToggleBtn")) el("langToggleBtn").innerText = currentLanguage === "en" ? t.langToggleBtnEn : t.langToggleBtnTa;
+        if (quizActive && !isSubmitted && el("navButtons")) updateNavButtons();
+    }
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "ta" : "en";
+        updateUILanguage();
+        if (quizActive && !isSubmitted && QUESTIONS.length > 0) renderQuestion();
+        if (document.getElementById("resultContainer").style.display === "block") buildDetailedReview();
+        renderDashboard();
+    }
+    let dashboard = {
+        examTitle: "SCIENCE",
+        testNo: "SPT-SC-4",
+        date: "26/11/2026",
+        subject: "SCIENCE",
+        topic: "7TH TERM 1",
+        duration: "30",
+        totalMarks: "0",
+        negativeMark: 0,
+    };
+let QUESTIONS = [
+  {
+    "type": "mcq",
+    "en": "A solid iron cube has sides of 5 cm. If the density of iron is 7.8 g/cm3, the mass of the cube is",
+    "ta": "5 செ.மீ பக்கம் கொண்ட ஒரு திட இரும்பு கனசதுரத்தின் நிறை என்ன? இரும்பின் அடர்த்தி 7.8 கி/செ.மீ³",
+    "optionsEn": [
+      "975 g",
+      "39 g",
+      "97.5 g",
+      "1,560 g"
+    ],
+    "optionsTa": [
+      "975 கி",
+      "39 கி",
+      "97.5 கி",
+      "1,560 கி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "The average distance between the Earth and the Sun, taken as one astronomical unit (1 AU), is",
+    "ta": "பூமிக்கும் சூரியனுக்கும் இடையே உள்ள சராசரி தூரம், ஒரு வானியல் அலகு (1 AU) என எடுத்துக்கொள்ளப்படுகிறது, அது",
+    "optionsEn": [
+      "1.471×10⁸ km",
+      "1.496×10⁸ km",
+      "1.521×10⁸ km",
+      "9.46×10¹² km"
+    ],
+    "optionsTa": [
+      "1.471×10⁸ கி.மீ",
+      "1.496×10⁸ கி.மீ",
+      "1.521×10⁸ கி.மீ",
+      "9.46×10¹² கி.மீ"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair of a derived quantity and its SI unit:",
+    "ta": "வழி அளவு மற்றும் அதன் SI அலகு ஆகியவற்றின் சரியான இணையைத் தேர்ந்தெடுக்கவும்:",
+    "optionsEn": [
+      "Volume – m²",
+      "Speed – m s⁻²",
+      "Electric charge – ampere",
+      "Density – kg m⁻³"
+    ],
+    "optionsTa": [
+      "கன அளவு – மீ²",
+      "வேகம் – மீ வி⁻²",
+      "மின்னூட்டம் – ஆம்பியர்",
+      "அடர்த்தி – கி.கி மீ⁻³"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Find the odd one out with respect to the fundamental units of the SI system:",
+    "ta": "SI முறையின் அடிப்படை அலகுகளைப் பொறுத்து பொருந்தாத ஒன்றைக் கண்டறியவும்:",
+    "optionsEn": [
+      "Kelvin",
+      "Candela",
+      "Coulomb",
+      "Mole"
+    ],
+    "optionsTa": [
+      "கெல்வின்",
+      "கேண்டிலா",
+      "கூலும்",
+      "மோல்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "match",
+    "en": "Match the following:<br><br>a. One astronomical unit – 1. 9.46×10¹⁵ m<br>b. One light year – 2. 1.496×10¹¹ m<br>c. Density of water – 3. 13,600 kg/m³<br>d. Density of mercury – 4. 1,000 kg/m³",
+    "ta": "பின்வருவனவற்றைப் பொருத்துக:<br><br>a. ஒரு வானியல் அலகு – 1. 9.46×10¹⁵ மீ<br>b. ஒரு ஒளி ஆண்டு – 2. 1.496×10¹¹ மீ<br>c. நீரின் அடர்த்தி – 3. 13,600 கி.கி/மீ³<br>d. பாதரசத்தின் அடர்த்தி – 4. 1,000 கி.கி/மீ³",
+    "optionsEn": [
+      "a-1, b-2, c-4, d-3",
+      "a-2, b-1, c-3, d-4",
+      "a-1, b-2, c-3, d-4",
+      "a-2, b-1, c-4, d-3"
+    ],
+    "optionsTa": [
+      "a-1, b-2, c-4, d-3",
+      "a-2, b-1, c-3, d-4",
+      "a-1, b-2, c-3, d-4",
+      "a-2, b-1, c-4, d-3"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Assertion (A): A small metal coin sinks in water, whereas a much heavier wooden log floats.<br>Reason (R): Floating or sinking depends on the density of the material and not merely on its mass.",
+    "ta": "கூற்று (A): ஒரு சிறிய உலோக நாணயம் நீரில் மூழ்கும், ஆனால் மிகவும் கனமான மரக்கட்டை மிதக்கும்.<br>காரணம் (R): மிதப்பதும் மூழ்குவதும் பொருளின் நிறையை மட்டும் சார்ந்தது அல்ல, அதன் அடர்த்தியைச் சார்ந்தது.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, R என்பது A-ன் சரியான விளக்கம்.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-ன் சரியான விளக்கம் அல்ல.",
+      "A சரி, ஆனால் R தவறு.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements:<br>A. The volume of an irregularly shaped solid can be found from the rise in water level in a measuring cylinder, V2-V1.<br>B. 1 litre = 1000 cm³.<br>C. One cubic metre is equal to 1000 cubic centimetres",
+    "ta": "பின்வரும் கூற்றுகளைக் கருதுக:<br>A. ஒழுங்கற்ற வடிவ திடப்பொருளின் கன அளவை அளவு உருளையில் நீர்மட்ட உயர்வு V2-V1 மூலம் காணலாம்.<br>B. 1 லிட்டர் = 1000 செ.மீ³.<br>C. ஒரு கன மீட்டர் என்பது 1000 கன செ.மீ-க்கு சமம்",
+    "optionsEn": [
+      "A only",
+      "A and B only",
+      "B and C only",
+      "A, B and C"
+    ],
+    "optionsTa": [
+      "A மட்டும்",
+      "A மற்றும் B மட்டும்",
+      "B மற்றும் C மட்டும்",
+      "A, B மற்றும் C"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Two spheres of the same size are made of copper (density 8,900 kg/m³) and iron (density 7,800 kg/m³). The ratio of the mass of the copper sphere to the mass of the iron sphere is",
+    "ta": "ஒரே அளவுள்ள இரு கோளங்கள் தாமிரம் (அடர்த்தி 8,900 கி.கி/மீ³) மற்றும் இரும்பு (அடர்த்தி 7,800 கி.கி/மீ³) ஆகியவற்றால் செய்யப்பட்டுள்ளன. தாமிரக் கோளத்தின் நிறைக்கும் இரும்புக் கோளத்தின் நிறைக்கும் உள்ள விகிதம்",
+    "optionsEn": [
+      "78:89",
+      "1:1",
+      "89:78",
+      "8:7"
+    ],
+    "optionsTa": [
+      "78:89",
+      "1:1",
+      "89:78",
+      "8:7"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "A car travels 5 km due east, makes a U-turn and travels 7 km in the opposite direction. The whole journey takes 0.2 h. Taking east as positive, the average velocity of the car is",
+    "ta": "ஒரு கார் கிழக்கு நோக்கி 5 கி.மீ சென்று, U-திருப்பம் செய்து எதிர் திசையில் 7 கி.மீ செல்கிறது. மொத்த பயணம் 0.2 மணி நேரம் ஆகும். கிழக்கை நேர்மறையாக எடுத்துக்கொண்டால், காரின் சராசரி திசைவேகம்",
+    "optionsEn": [
+      "+10 km/h",
+      "+60 km/h",
+      "-60 km/h",
+      "-10 km/h"
+    ],
+    "optionsTa": [
+      "+10 கி.மீ/மணி",
+      "+60 கி.மீ/மணி",
+      "-60 கி.மீ/மணி",
+      "-10 கி.மீ/மணி"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "The velocity of a golf ball rolling in a straight line changes uniformly from 8 m/s to 2 m/s in 10 s. Its acceleration is",
+    "ta": "நேர்க்கோட்டில் உருளும் ஒரு கோல்ஃப் பந்தின் திசைவேகம் 10 வி-யில் 8 மீ/வி-லிருந்து 2 மீ/வி-ஆக சீராக மாறுகிறது. அதன் முடுக்கம்",
+    "optionsEn": [
+      "-0.6 m/s²",
+      "+0.6 m/s²",
+      "-0.8 m/s²",
+      "-6 m/s²"
+    ],
+    "optionsTa": [
+      "-0.6 மீ/வி²",
+      "+0.6 மீ/வி²",
+      "-0.8 மீ/வி²",
+      "-6 மீ/வி²"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair (graph – interpretation):",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும் (வரைபடம் – விளக்கம்):",
+    "optionsEn": [
+      "Distance–time graph with zero gradient – Uniform speed",
+      "Speed–time graph with a positive constant gradient – Uniform acceleration",
+      "Speed–time graph that is a horizontal line – Uniform acceleration",
+      "Distance–time graph with a decreasing gradient – Increasing speed"
+    ],
+    "optionsTa": [
+      "சுழி சாய்வு கொண்ட தொலைவு–நேர வரைபடம் – சீரான வேகம்",
+      "நேர்மறை மாறா சாய்வு கொண்ட வேகம்–நேர வரைபடம் – சீரான முடுக்கம்",
+      "கிடைமட்டக் கோடாக உள்ள வேகம்–நேர வரைபடம் – சீரான முடுக்கம்",
+      "குறையும் சாய்வு கொண்ட தொலைவு–நேர வரைபடம் – அதிகரிக்கும் வேகம்"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Find the odd one out with respect to increasing the stability of an object:",
+    "ta": "ஒரு பொருளின் நிலைத்தன்மையை அதிகரிப்பதைப் பொறுத்து பொருந்தாத ஒன்றைக் கண்டறியவும்:",
+    "optionsEn": [
+      "Lowering the centre of gravity",
+      "Increasing the area of the base",
+      "Using a heavy base",
+      "Raising the centre of gravity"
+    ],
+    "optionsTa": [
+      "ஈர்ப்பு மையத்தைத் தாழ்த்துதல்",
+      "அடிப்பரப்பை அதிகரித்தல்",
+      "கனமான அடிப்பகுதியைப் பயன்படுத்துதல்",
+      "ஈர்ப்பு மையத்தை உயர்த்துதல்"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "match",
+    "en": "Match the following:<br><br>a. Distance–time graph: horizontal line – 1. Uniform speed<br>b. Distance–time graph: straight inclined line – 2. Object at rest<br>c. Distance–time graph: curve with increasing gradient – 3. Increasing speed<br>d. Distance–time graph: curve with decreasing gradient – 4. Decreasing speed",
+    "ta": "பின்வருவனவற்றைப் பொருத்துக:<br><br>a. தொலைவு–நேர வரைபடம்: கிடைமட்டக் கோடு – 1. சீரான வேகம்<br>b. தொலைவு–நேர வரைபடம்: நேரான சாய்ந்த கோடு – 2. பொருள் ஓய்வில் உள்ளது<br>c. தொலைவு–நேர வரைபடம்: அதிகரிக்கும் சாய்வு கொண்ட வளைவு – 3. அதிகரிக்கும் வேகம்<br>d. தொலைவு–நேர வரைபடம்: குறையும் சாய்வு கொண்ட வளைவு – 4. குறையும் வேகம்",
+    "optionsEn": [
+      "a-2, b-1, c-3, d-4",
+      "a-1, b-2, c-3, d-4",
+      "a-2, b-1, c-4, d-3",
+      "a-2, b-3, c-1, d-4"
+    ],
+    "optionsTa": [
+      "a-2, b-1, c-3, d-4",
+      "a-1, b-2, c-3, d-4",
+      "a-2, b-1, c-4, d-3",
+      "a-2, b-3, c-1, d-4"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Assertion (A): The luggage compartment of a tour bus is located at the bottom and not on the roof.<br>Reason (R): Racing cars are built low and broad.",
+    "ta": "கூற்று (A): சுற்றுலா பேருந்தின் சாமான் பெட்டி கூரையில் அல்லாமல் அடிப்பகுதியில் அமைந்துள்ளது.<br>காரணம் (R): பந்தய கார்கள் தாழ்வாகவும் அகலமாகவும் கட்டப்படுகின்றன.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, R என்பது A-ன் சரியான விளக்கம்.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-ன் சரியான விளக்கம் அல்ல.",
+      "A சரி, ஆனால் R தவறு.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements:<br>A. Acceleration is the rate of change of velocity and its SI unit is m/s².<br>B. A body that changes only its direction of motion, at constant speed, is not accelerated.<br>C. If the velocity of an object decreases with time, the object is said to be in negative acceleration (deceleration).",
+    "ta": "பின்வரும் கூற்றுகளைக் கருதுக:<br>A. முடுக்கம் என்பது திசைவேக மாறுபாட்டு வீதம், அதன் SI அலகு மீ/வி².<br>B. மாறா வேகத்தில் இயக்கத் திசையை மட்டும் மாற்றும் பொருள் முடுக்கம் அடையாது.<br>C. ஒரு பொருளின் திசைவேகம் காலத்துடன் குறைந்தால், அப்பொருள் எதிர் முடுக்கத்தில் (ஒடுக்கம்) உள்ளது எனப்படும்",
+    "optionsEn": [
+      "A and B only",
+      "B and C only",
+      "A and C only",
+      "A, B and C"
+    ],
+    "optionsTa": [
+      "A மற்றும் B மட்டும்",
+      "B மற்றும் C மட்டும்",
+      "A மற்றும் C மட்டும்",
+      "A, B மற்றும் C"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "One knot, the unit of speed used for ships and aeroplanes, is equal to",
+    "ta": "கப்பல்கள் மற்றும் விமானங்களுக்குப் பயன்படும் வேக அலகான ஒரு நாட் (knot) என்பது",
+    "optionsEn": [
+      "1.852 km/h",
+      "1 km/h",
+      "1.852 m/s",
+      "1 m/s"
+    ],
+    "optionsTa": [
+      "1.852 கி.மீ/மணி",
+      "1 கி.மீ/மணி",
+      "1.852 மீ/வி",
+      "1 மீ/வி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "A speed of 54 km/h is equal to",
+    "ta": "54 கி.மீ/மணி வேகம் என்பது",
+    "optionsEn": [
+      "5.4 m/s",
+      "30 m/s",
+      "15 m/s",
+      "194.4 m/s"
+    ],
+    "optionsTa": [
+      "5.4 மீ/வி",
+      "30 மீ/வி",
+      "15 மீ/வி",
+      "194.4 மீ/வி"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "A person walks 4 m east, then 2 m south, then 4 m west and finally 2 m north, taking 21 s in all. His average speed and average velocity are respectively",
+    "ta": "ஒருவர் கிழக்கில் 4 மீ, பின் தெற்கில் 2 மீ, பின் மேற்கில் 4 மீ, இறுதியில் வடக்கில் 2 மீ நடக்கிறார். மொத்தம் 21 வி ஆகும். அவரது சராசரி வேகம் மற்றும் சராசரி திசைவேகம் முறையே",
+    "optionsEn": [
+      "0 and 0.57 m/s",
+      "0.57 m/s and 0.57 m/s",
+      "0 and 0",
+      "0.57 m/s and 0"
+    ],
+    "optionsTa": [
+      "0 மற்றும் 0.57 மீ/வி",
+      "0.57 மீ/வி மற்றும் 0.57 மீ/வி",
+      "0 மற்றும் 0",
+      "0.57 மீ/வி மற்றும் 0"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "The atomicity of the phosphorus molecule and the sulphur molecule are respectively",
+    "ta": "பாஸ்பரஸ் மூலக்கூறு மற்றும் கந்தக மூலக்கூறு ஆகியவற்றின் அணுக்கட்டு எண்கள் முறையே",
+    "optionsEn": [
+      "2 and 4",
+      "4 and 8",
+      "8 and 4",
+      "4 and 6"
+    ],
+    "optionsTa": [
+      "2 மற்றும் 4",
+      "4 மற்றும் 8",
+      "8 மற்றும் 4",
+      "4 மற்றும் 6"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "The three most abundant atoms on the Earth are",
+    "ta": "பூமியில் மிக அதிகமாகக் காணப்படும் மூன்று அணுக்கள்",
+    "optionsEn": [
+      "iron, oxygen and silicon",
+      "hydrogen, helium and oxygen",
+      "carbon, hydrogen and oxygen",
+      "nitrogen, oxygen and carbon"
+    ],
+    "optionsTa": [
+      "இரும்பு, ஆக்சிஜன் மற்றும் சிலிக்கான்",
+      "ஹைட்ரஜன், ஹீலியம் மற்றும் ஆக்சிஜன்",
+      "கார்பன், ஹைட்ரஜன் மற்றும் ஆக்சிஜன்",
+      "நைட்ரஜன், ஆக்சிஜன் மற்றும் கார்பன்"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair:",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்:",
+    "optionsEn": [
+      "Bromine – the only metal that is liquid at room temperature",
+      "Graphite – a non-metal that is a good conductor of electricity",
+      "Diamond – the softest natural substance",
+      "Sodium – a hard non-metal"
+    ],
+    "optionsTa": [
+      "புரோமின் – அறை வெப்பநிலையில் திரவமாக உள்ள ஒரே உலோகம்",
+      "கிராஃபைட் – மின்சாரத்தை நன்கு கடத்தும் ஒரு அலோகம்",
+      "வைரம் – மிக மென்மையான இயற்கைப் பொருள்",
+      "சோடியம் – ஒரு கடின அலோகம்"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Find the odd one out with respect to the atomicity of the molecules:",
+    "ta": "மூலக்கூறுகளின் அணுக்கட்டு எண்ணைப் பொறுத்து பொருந்தாத ஒன்றைக் கண்டறியவும்:",
+    "optionsEn": [
+      "Ozone",
+      "Sulphur dioxide",
+      "Oxygen",
+      "Carbon dioxide"
+    ],
+    "optionsTa": [
+      "ஓசோன்",
+      "கந்தக டை ஆக்சைடு",
+      "ஆக்சிஜன்",
+      "கார்பன் டை ஆக்சைடு"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "match",
+    "en": "Match the following:<br><br>a. Glucose – 1. C₂H₅OH<br>b. Ammonia – 2. CH₄<br>c. Methane – 3. NH₃<br>d. Ethanol – 4. C₆H₁₂O₆",
+    "ta": "பின்வருவனவற்றைப் பொருத்துக:<br><br>a. குளுக்கோஸ் – 1. C₂H₅OH<br>b. அம்மோனியா – 2. CH₄<br>c. மீத்தேன் – 3. NH₃<br>d. எத்தனால் – 4. C₆H₁₂O₆",
+    "optionsEn": [
+      "a-4, b-3, c-1, d-2",
+      "a-3, b-4, c-2, d-1",
+      "a-4, b-3, c-2, d-1",
+      "a-1, b-3, c-2, d-4"
+    ],
+    "optionsTa": [
+      "a-4, b-3, c-1, d-2",
+      "a-3, b-4, c-2, d-1",
+      "a-4, b-3, c-2, d-1",
+      "a-1, b-3, c-2, d-4"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Assertion (A): Sodium chloride can be separated into sodium and chlorine by filtration.<br>Reason (R): The constituent elements of a compound are chemically combined in a fixed proportion.",
+    "ta": "கூற்று (A): சோடியம் குளோரைடை வடிகட்டுதல் மூலம் சோடியம் மற்றும் குளோரினாகப் பிரிக்கலாம்.<br>காரணம் (R): ஒரு சேர்மத்தின் உட்கூறு தனிமங்கள் நிலையான விகிதத்தில் வேதியியல் முறையில் இணைந்துள்ளன.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, R என்பது A-ன் சரியான விளக்கம்.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-ன் சரியான விளக்கம் அல்ல.",
+      "A சரி, ஆனால் R தவறு.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Assertion (A): The mass of an iron lock remains the same when it expands on heating.<br>Reason (R): On heating, the particles move slightly apart, but their number and size do not change.",
+    "ta": "கூற்று (A): ஒரு இரும்புப் பூட்டு வெப்பப்படுத்தும்போது விரிவடைந்தாலும் அதன் நிறை அப்படியே இருக்கும்.<br>காரணம் (R): வெப்பப்படுத்தும்போது துகள்கள் சற்று விலகிச் செல்கின்றன, ஆனால் அவற்றின் எண்ணிக்கையும் அளவும் மாறாது.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, R என்பது A-ன் சரியான விளக்கம்.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-ன் சரியான விளக்கம் அல்ல.",
+      "A சரி, ஆனால் R தவறு.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements:<br>A. Nearly 99% of the mass of the human body consists of oxygen, carbon, hydrogen, nitrogen, calcium and phosphorus.<br>B. Of the 118 known elements, 94 occur naturally and 24 are synthesised artificially.<br>C. Argon and carbon dioxide together make up about 99% of air.",
+    "ta": "பின்வரும் கூற்றுகளைக் கருதுக:<br>A. மனித உடல் நிறையில் கிட்டத்தட்ட 99% ஆக்சிஜன், கார்பன், ஹைட்ரஜன், நைட்ரஜன், கால்சியம் மற்றும் பாஸ்பரஸ் ஆகியவற்றால் ஆனது.<br>B. அறியப்பட்ட 118 தனிமங்களில் 94 இயற்கையாகக் கிடைக்கின்றன, 24 செயற்கையாகத் தயாரிக்கப்படுகின்றன.<br>C. ஆர்கான் மற்றும் கார்பன் டை ஆக்சைடு சேர்ந்து காற்றில் கிட்டத்தட்ட 99% உள்ளன",
+    "optionsEn": [
+      "A, B and C",
+      "B and C only",
+      "A and C only",
+      "A and B only"
+    ],
+    "optionsTa": [
+      "A, B மற்றும் C",
+      "B மற்றும் C மட்டும்",
+      "A மற்றும் C மட்டும்",
+      "A மற்றும் B மட்டும்"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "An atom has 17 protons and 18 neutrons. Its mass number and the number of electrons in it are respectively",
+    "ta": "ஒரு அணுவில் 17 புரோட்டான்களும் 18 நியூட்ரான்களும் உள்ளன. அதன் நிறை எண் மற்றும் எலக்ட்ரான்களின் எண்ணிக்கை முறையே",
+    "optionsEn": [
+      "17 and 35",
+      "35 and 17",
+      "35 and 18",
+      "18 and 17"
+    ],
+    "optionsTa": [
+      "17 மற்றும் 35",
+      "35 மற்றும் 17",
+      "35 மற்றும் 18",
+      "18 மற்றும் 17"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair (scientist – contribution):",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும் (அறிவியலாளர் – பங்களிப்பு):",
+    "optionsEn": [
+      "Dalton – proposed that electrons are embedded in a positively charged sphere",
+      "Thomson – discovered the nucleus using alpha particles",
+      "Rutherford – proposed a small, positively charged nucleus from the alpha-particle scattering experiment",
+      "Chadwick – discovered the proton"
+    ],
+    "optionsTa": [
+      "டால்டன் – எலக்ட்ரான்கள் நேர்மின்னூட்டக் கோளத்தில் புதைந்துள்ளன என்றார்",
+      "தாம்சன் – ஆல்பா துகள்களைப் பயன்படுத்தி உட்கருவைக் கண்டறிந்தார்",
+      "ரூதர்போர்டு – ஆல்பா துகள் சிதறல் சோதனையிலிருந்து சிறிய, நேர்மின்னூட்ட உட்கருவை முன்மொழிந்தார்",
+      "சாட்விக் – புரோட்டானைக் கண்டறிந்தார்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "match",
+    "en": "Match the following:<br><br>a. Proton – 1. Discovered by James Chadwick<br>b. Electron – 2. Discovered by Goldstein<br>c. Neutron – 3. Protons and neutrons together<br>d. Nucleons – 4. Discovered by Sir John Joseph Thomson",
+    "ta": "பின்வருவனவற்றைப் பொருத்துக:<br><br>a. புரோட்டான் – 1. ஜேம்ஸ் சாட்விக் கண்டறிந்தார்<br>b. எலக்ட்ரான் – 2. கோல்ட்ஸ்டீன் கண்டறிந்தார்<br>c. நியூட்ரான் – 3. புரோட்டான்கள் மற்றும் நியூட்ரான்கள் சேர்ந்தவை<br>d. நியூக்ளியான்கள் – 4. சர் ஜான் ஜோசப் தாம்சன் கண்டறிந்தார்",
+    "optionsEn": [
+      "a-2, b-4, c-1, d-3",
+      "a-4, b-2, c-1, d-3",
+      "a-2, b-1, c-4, d-3",
+      "a-3, b-4, c-1, d-2"
+    ],
+    "optionsTa": [
+      "a-2, b-4, c-1, d-3",
+      "a-4, b-2, c-1, d-3",
+      "a-2, b-1, c-4, d-3",
+      "a-3, b-4, c-1, d-2"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Find the odd one out with respect to the isotopes of hydrogen:",
+    "ta": "ஹைட்ரஜனின் ஐசோடோப்புகளைப் பொறுத்து பொருந்தாத ஒன்றைக் கண்டறியவும்:",
+    "optionsEn": [
+      "¹H₁",
+      "¹H₂",
+      "²He₄",
+      "¹H₃"
+    ],
+    "optionsTa": [
+      "¹H₁",
+      "¹H₂",
+      "²He₄",
+      "¹H₃"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "The valency of nitrogen in ammonia (NH₃) and the valency of carbon in methane (CH₄) are respectively",
+    "ta": "அம்மோனியாவில் (NH₃) நைட்ரஜனின் இணைதிறனும் மீத்தேனில் (CH₄) கார்பனின் இணைதிறனும் முறையே",
+    "optionsEn": [
+      "4 and 3",
+      "3 and 3",
+      "1 and 4",
+      "3 and 4"
+    ],
+    "optionsTa": [
+      "4 மற்றும் 3",
+      "3 மற்றும் 3",
+      "1 மற்றும் 4",
+      "3 மற்றும் 4"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements:<br>A. The mass of an atom depends mainly on the number of protons and neutrons in its nucleus.<br>B. Atoms of the same element having different mass numbers are called isobars.<br>C. The atomic number of an element is equal to the number of protons in its nucleus.",
+    "ta": "பின்வரும் கூற்றுகளைக் கருதுக:<br>A. ஒரு அணுவின் நிறை முக்கியமாக அதன் உட்கருவில் உள்ள புரோட்டான்கள் மற்றும் நியூட்ரான்களின் எண்ணிக்கையைச் சார்ந்தது.<br>B. ஒரே தனிமத்தின் வெவ்வேறு நிறை எண் கொண்ட அணுக்கள் ஐசோபார்கள் எனப்படும்.<br>C. ஒரு தனிமத்தின் அணு எண் என்பது அதன் உட்கருவில் உள்ள புரோட்டான்களின் எண்ணிக்கைக்குச் சமம்",
+    "optionsEn": [
+      "A and C only",
+      "A and B only",
+      "B and C only",
+      "A, B and C"
+    ],
+    "optionsTa": [
+      "A மற்றும் C மட்டும்",
+      "A மற்றும் B மட்டும்",
+      "B மற்றும் C மட்டும்",
+      "A, B மற்றும் C"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Assertion (A): Most of the alpha particles passed straight through the gold foil in Rutherford's experiment.<br>Reason (R): The nucleus is positively charged and contains most of the mass of the atom.",
+    "ta": "கூற்று (A): ரூதர்போர்டு சோதனையில் பெரும்பாலான ஆல்பா துகள்கள் தங்கத் தகட்டின் வழியே நேராகச் சென்றன.<br>காரணம் (R): உட்கரு நேர்மின்னூட்டம் கொண்டது மற்றும் அணுவின் பெரும்பாலான நிறையைக் கொண்டுள்ளது.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, R என்பது A-ன் சரியான விளக்கம்.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-ன் சரியான விளக்கம் அல்ல.",
+      "A சரி, ஆனால் R தவறு.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Assertion (A): Protium is the only atom whose nucleus contains no neutron.<br>Reason (R): All the isotopes of hydrogen have the same number of neutrons.",
+    "ta": "கூற்று (A): புரோட்டியம் மட்டுமே உட்கருவில் நியூட்ரான் இல்லாத ஒரே அணு.<br>காரணம் (R): ஹைட்ரஜனின் அனைத்து ஐசோடோப்புகளும் ஒரே எண்ணிக்கையிலான நியூட்ரான்களைக் கொண்டுள்ளன.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, R என்பது A-ன் சரியான விளக்கம்.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-ன் சரியான விளக்கம் அல்ல.",
+      "A சரி, ஆனால் R தவறு.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "After fertilization, the ovary and the ovule of a flower develop respectively into",
+    "ta": "கருவுறுதலுக்குப் பின், ஒரு பூவின் சூலகமும் சூலும் முறையே எவையாக வளர்கின்றன?",
+    "optionsEn": [
+      "seed and fruit",
+      "fruit and seed",
+      "fruit and zygote",
+      "seed and zygote"
+    ],
+    "optionsTa": [
+      "விதை மற்றும் கனி",
+      "கனி மற்றும் விதை",
+      "கனி மற்றும் கருமுட்டை",
+      "விதை மற்றும் கருமுட்டை"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair (modified root – shape):",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும் (மாறுபாடடைந்த வேர் – வடிவம்):",
+    "optionsEn": [
+      "Carrot – top shaped root",
+      "Beet root – conical root",
+      "Radish – spindle shaped root",
+      "Turnip – spindle shaped root"
+    ],
+    "optionsTa": [
+      "கேரட் – பம்பர வடிவ வேர்",
+      "பீட்ரூட் – கூம்பு வடிவ வேர்",
+      "முள்ளங்கி – கதிர் வடிவ வேர்",
+      "டர்னிப் – கதிர் வடிவ வேர்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "match",
+    "en": "Match the following:<br><br>a. Opuntia – 1. Phyllode<br>b. Pisum sativum – 2. Leaf modified into a flask-like trap<br>c. Acacia auriculiformis – 3. Leaves modified into spines<br>d. Nepenthes – 4. Terminal leaflets modified into tendrils",
+    "ta": "பின்வருவனவற்றைப் பொருத்துக:<br><br>a. சப்பாத்திக்கள்ளி – 1. பில்லோடு<br>b. பட்டாணி – 2. குடுவை போன்ற பொறியாக மாறிய இலை<br>c. காது வடிவ அக்கேசியா – 3. முட்களாக மாறிய இலைகள்<br>d. நெபந்தஸ் – 4. பற்றுக்கம்பிகளாக மாறிய நுனி சிற்றிலைகள்",
+    "optionsEn": [
+      "a-3, b-4, c-2, d-1",
+      "a-4, b-3, c-1, d-2",
+      "a-3, b-1, c-4, d-2",
+      "a-3, b-4, c-1, d-2"
+    ],
+    "optionsTa": [
+      "a-3, b-4, c-2, d-1",
+      "a-4, b-3, c-1, d-2",
+      "a-3, b-1, c-4, d-2",
+      "a-3, b-4, c-1, d-2"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Find the odd one out with respect to the type of stem modification:",
+    "ta": "தண்டு மாறுபாட்டின் வகையைப் பொறுத்து பொருந்தாத ஒன்றைக் கண்டறியவும்:",
+    "optionsEn": [
+      "Centella (Vallarai)",
+      "Ginger",
+      "Colocasia",
+      "Potato"
+    ],
+    "optionsTa": [
+      "வல்லாரை",
+      "இஞ்சி",
+      "சேப்பங்கிழங்கு",
+      "உருளைக்கிழங்கு"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements:<br>A. Cross-pollination introduces variations in the characteristics of the new plants.<br>B. Self-pollinating plants need not produce pollen grains in large quantities.<br>C. Self-pollination introduces variations in the characteristics of the new plants.",
+    "ta": "பின்வரும் கூற்றுகளைக் கருதுக:<br>A. அயல் மகரந்தச்சேர்க்கை புதிய தாவரங்களின் பண்புகளில் வேறுபாடுகளை ஏற்படுத்தும்.<br>B. தன் மகரந்தச்சேர்க்கை செய்யும் தாவரங்கள் அதிக அளவில் மகரந்தத் துகள்களை உற்பத்தி செய்ய வேண்டியதில்லை.<br>C. தன் மகரந்தச்சேர்க்கை புதிய தாவரங்களின் பண்புகளில் வேறுபாடுகளை ஏற்படுத்தும்",
+    "optionsEn": [
+      "A only",
+      "A and B only",
+      "B and C only",
+      "A, B and C"
+    ],
+    "optionsTa": [
+      "A மட்டும்",
+      "A மற்றும் B மட்டும்",
+      "B மற்றும் C மட்டும்",
+      "A, B மற்றும் C"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair (organism – method of asexual reproduction):",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும் (உயிரினம் – பாலிலா இனப்பெருக்க முறை):",
+    "optionsEn": [
+      "Yeast – fragmentation",
+      "Spirogyra – budding",
+      "Fern – spore formation",
+      "Bryophyllum – spore formation"
+    ],
+    "optionsTa": [
+      "ஈஸ்ட் – துண்டாதல்",
+      "ஸ்பைரோகைரா – மொட்டுவிடுதல்",
+      "பெரணி – வித்து உருவாதல்",
+      "பிரையோஃபில்லம் – வித்து உருவாதல்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "Assertion (A): Ginger is an underground root.<br>Reason (R): Ginger is a rhizome, an underground stem with nodes and internodes bearing scale leaves.",
+    "ta": "கூற்று (A): இஞ்சி ஒரு நிலத்தடி வேர்.<br>காரணம் (R): இஞ்சி ஒரு மட்டத்தண்டு, கணுக்கள் மற்றும் கணுவிடைகள் கொண்ட, செதில் இலைகளைத் தாங்கிய நிலத்தடித் தண்டு.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, R என்பது A-ன் சரியான விளக்கம்.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-ன் சரியான விளக்கம் அல்ல.",
+      "A சரி, ஆனால் R தவறு.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "The smallest seeds in the plant kingdom are produced by",
+    "ta": "தாவர உலகில் மிகச் சிறிய விதைகளை உற்பத்தி செய்பவை",
+    "optionsEn": [
+      "orchids",
+      "tomato",
+      "double coconut",
+      "pea"
+    ],
+    "optionsTa": [
+      "ஆர்க்கிடுகள்",
+      "தக்காளி",
+      "இரட்டைத் தேங்காய்",
+      "பட்டாணி"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "A short, thick lateral branch arising from the axil of a leaf, bearing a tuft of leaves above and a cluster of roots below, as seen in Eichhornia, is called a/an",
+    "ta": "ஆகாயத் தாமரையில் காணப்படுவது போல், இலையின் கோணத்திலிருந்து தோன்றும் குட்டையான, தடித்த பக்கக் கிளை, மேலே இலைக் கொத்தும் கீழே வேர்க் கொத்தும் கொண்டது, இது எனப்படும்",
+    "optionsEn": [
+      "runner",
+      "stolon",
+      "sucker",
+      "offset"
+    ],
+    "optionsTa": [
+      "ஓடு தண்டு (runner)",
+      "ஸ்டோலான்",
+      "சக்கர்",
+      "ஆஃப்செட்"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Choose the correct pair (disease – causative organism):",
+    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும் (நோய் – காரணி):",
+    "optionsEn": [
+      "Cholera – Salmonella typhi",
+      "Tuberculosis – Mycobacterium",
+      "Typhoid – Vibrio cholerae",
+      "Chickenpox – Hepatitis virus"
+    ],
+    "optionsTa": [
+      "காலரா – சால்மோனெல்லா டைஃபி",
+      "காசநோய் – மைக்கோபாக்டீரியம்",
+      "டைஃபாய்டு – விப்ரியோ காலரே",
+      "சின்னம்மை – ஹெபடைடிஸ் வைரஸ்"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "match",
+    "en": "Match the following:<br><br>a. Night blindness – 1. Bacteria producing acids<br>b. Bleeding gums – 2. Vitamin C deficiency<br>c. Conjunctivitis (pink eye) – 3. Vitamin A deficiency<br>d. Tooth decay – 4. Infection by virus and bacteria",
+    "ta": "பின்வருவனவற்றைப் பொருத்துக:<br><br>a. மாலைக்கண் நோய் – 1. அமிலங்களை உற்பத்தி செய்யும் பாக்டீரியா<br>b. ஈறுகளில் இரத்தம் வடிதல் – 2. வைட்டமின் C குறைபாடு<br>c. வெண்படல அழற்சி – 3. வைட்டமின் A குறைபாடு<br>d. பல் சொத்தை – 4. வைரஸ் மற்றும் பாக்டீரியா தொற்று",
+    "optionsEn": [
+      "a-3, b-2, c-4, d-1",
+      "a-2, b-3, c-4, d-1",
+      "a-3, b-2, c-1, d-4",
+      "a-3, b-4, c-2, d-1"
+    ],
+    "optionsTa": [
+      "a-3, b-2, c-4, d-1",
+      "a-2, b-3, c-4, d-1",
+      "a-3, b-2, c-1, d-4",
+      "a-3, b-4, c-2, d-1"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "mcq",
+    "en": "Find the odd one out with respect to communicable diseases:",
+    "ta": "தொற்றும் நோய்களைப் பொறுத்து பொருந்தாத ஒன்றைக் கண்டறியவும்:",
+    "optionsEn": [
+      "Rabies",
+      "Leucoderma",
+      "Chickenpox",
+      "Hepatitis"
+    ],
+    "optionsTa": [
+      "வெறிநாய்க்கடி நோய் (ரேபிஸ்)",
+      "வெண்புள்ளி நோய் (லுகோடெர்மா)",
+      "சின்னம்மை",
+      "ஹெபடைடிஸ்"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "mcq",
+    "en": "Consider the following statements about burns:<br>A. First-degree burns affect only the epidermis.<br>B. Second-degree burns damage the epidermis and the dermis.<br>C. Third-degree burns damage the full depth of the skin and often require skin grafting.",
+    "ta": "தீக்காயங்கள் பற்றிய பின்வரும் கூற்றுகளைக் கருதுக:<br>A. முதல் நிலை தீக்காயம் மேல்தோலை மட்டும் பாதிக்கும்.<br>B. இரண்டாம் நிலை தீக்காயம் மேல்தோல் மற்றும் உள்தோலைப் பாதிக்கும்.<br>C. மூன்றாம் நிலை தீக்காயம் தோலின் முழு ஆழத்தையும் பாதித்து, பெரும்பாலும் தோல் ஒட்டு தேவைப்படும்",
+    "optionsEn": [
+      "A and B only",
+      "B and C only",
+      "A and C only",
+      "A, B and C"
+    ],
+    "optionsTa": [
+      "A மற்றும் B மட்டும்",
+      "B மற்றும் C மட்டும்",
+      "A மற்றும் C மட்டும்",
+      "A, B மற்றும் C"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Which of the following can prevent fatality in rabies?",
+    "ta": "ரேபிஸ் நோயில் உயிரிழப்பைத் தடுக்கக் கூடியது எது?",
+    "optionsEn": [
+      "Antibiotic tablets after the symptoms appear",
+      "BCG vaccination in childhood",
+      "Timely vaccination before the onset of symptoms",
+      "Drinking boiled water"
+    ],
+    "optionsTa": [
+      "அறிகுறிகள் தோன்றிய பின் ஆன்டிபயாடிக் மாத்திரைகள்",
+      "குழந்தைப் பருவத்தில் BCG தடுப்பூசி",
+      "அறிகுறிகள் தோன்றும் முன் சரியான நேரத்தில் தடுப்பூசி",
+      "காய்ச்சிய நீர் குடித்தல்"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "mcq",
+    "en": "The dengue virus, spread by Aedes aegypti mosquitoes, decreases the count of",
+    "ta": "ஏடிஸ் எஜிப்டி கொசுக்களால் பரவும் டெங்கு வைரஸ் எதன் எண்ணிக்கையைக் குறைக்கிறது?",
+    "optionsEn": [
+      "red blood cells",
+      "white blood cells",
+      "plasma",
+      "blood platelets"
+    ],
+    "optionsTa": [
+      "சிவப்பு இரத்த அணுக்கள்",
+      "வெள்ளை இரத்த அணுக்கள்",
+      "பிளாஸ்மா",
+      "இரத்தத் தட்டுகள்"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "mcq",
+    "en": "Assertion (A): Tuberculosis is caused by bacteria.<br>Reason (R): Tuberculosis spreads only through contaminated drinking water.",
+    "ta": "கூற்று (A): காசநோய் பாக்டீரியாவால் ஏற்படுகிறது.<br>காரணம் (R): காசநோய் மாசுபட்ட குடிநீர் மூலம் மட்டுமே பரவுகிறது.",
+    "optionsEn": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "optionsTa": [
+      "A மற்றும் R இரண்டும் சரி, R என்பது A-ன் சரியான விளக்கம்.",
+      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது A-ன் சரியான விளக்கம் அல்ல.",
+      "A சரி, ஆனால் R தவறு.",
+      "A தவறு, ஆனால் R சரி."
+    ],
+    "answer": 2
+  }
+];
+    dashboard.totalMarks = QUESTIONS.length.toString();
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
+    function escapeHtml(s) { if(!s) return ""; return String(s).replace(/[&<>]/g, function(m){ return m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m;}); }
+    function getSafeImageUrl(url) { if (!url) return ""; let c = url.trim(); if (c.includes("github.com") && c.includes("/blob/")) { c = c.replace("github.com","raw.githubusercontent.com").replace("/blob/","/").replace("?raw=true",""); } return c; }
+    function initImageZoom() { if (typeof mediumZoom !== "undefined") { mediumZoom(".img-zoom-wrapper img, .review-question-img", { background: "rgba(0,0,0,0.9)", margin: 20 }); } }
+    function renderDashboard() {
+        const c = document.getElementById("dashboardContainer");
+        if (c) c.innerHTML = `<div class="institute-name">DR SAHITHA IAS ACADEMY</div><div style="font-size:0.9rem;">(Since 2025)</div><div style="margin:8px 0 0; font-size:1.5rem;font-weight:800;color:var(--accent);">📖 ${escapeHtml(dashboard.examTitle)}</div><div>TEST.NO - ${escapeHtml(dashboard.testNo)}</div><div>📅 DATE: ${escapeHtml(dashboard.date)}</div><div>📖 SUBJECT: ${escapeHtml(dashboard.subject)}</div><div>🎯 TOPIC: ${escapeHtml(dashboard.topic)}</div><div>⏱️ DURATION: ${escapeHtml(dashboard.duration)} MIN</div><div>🏆 TOTAL MARKS: ${dashboard.totalMarks}</div>`;
+        const ts = document.getElementById("totalQsSpan"); if (ts) ts.innerText = `/${dashboard.totalMarks}`;
+    }
+    function autoSaveState() { if (!quizActive || isSubmitted) return; try { localStorage.setItem("tetEnglishAutoResume", JSON.stringify({ userAnswers: userAnswers, currentIndex: currentIndex, timeLeft: timeLeft, startTimestamp: startTimestamp, isSubmitted: false, quizActive: true, savedAt: Date.now(), language: currentLanguage })); } catch(e) {} }
+    function showResumePopup(savedState) {
+        const answeredCount = savedState.userAnswers.filter(a => a !== null).length;
+        const remaining = QUESTIONS.length - answeredCount;
+        document.body.insertAdjacentHTML("beforeend", `<div id="resumeModal" class="modal-overlay"><div class="modal-container"><h3>🔄 Unfinished Exam Found</h3><p>You have an incomplete exam.<br><strong>${answeredCount}</strong> questions answered, <strong>${remaining}</strong> remaining.<br>Do you want to continue?</p><div class="modal-buttons"><button id="modalResumeBtn" class="btn">✅ Resume</button><button id="modalNewBtn" class="btn btn-secondary">❌ Start New</button></div></div></div>`);
+        document.getElementById("modalResumeBtn").onclick = () => { document.getElementById("resumeModal").remove(); autoResumeExam(savedState); };
+        document.getElementById("modalNewBtn").onclick = () => { document.getElementById("resumeModal").remove(); try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {} };
+    }
+    function checkForAutoResume() {
+        let saved = null;
+        try { saved = localStorage.getItem("tetEnglishAutoResume"); } catch(e) {}
+        if (saved) {
+            try {
+                const state = JSON.parse(saved);
+                if (state && !state.isSubmitted) {
+                    if (state.language) currentLanguage = state.language;
+                    updateUILanguage();
+                    showResumePopup(state);
+                    return true;
+                } else try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+            } catch(e) { try { localStorage.removeItem("tetEnglishAutoResume"); } catch(er) {} }
+        }
+        return false;
+    }
+    function autoResumeExam(state) {
+        userAnswers = state.userAnswers;
+        currentIndex = state.currentIndex;
+        timeLeft = state.timeLeft;
+        startTimestamp = state.startTimestamp;
+        quizActive = true; isSubmitted = false;
+        if (state.language) currentLanguage = state.language;
+        updateUILanguage();
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+    }
+    function clearAllAndRestart() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        document.getElementById("resultContainer").style.display = "none";
+        document.getElementById("startScreen").style.display = "flex";
+        document.getElementById("quizContainer").style.display = "none";
+        if (timerInterval) clearInterval(timerInterval);
+        quizActive = false; isSubmitted = false;
+        if (window.history && window.history.state && window.history.state.resultPage) {
+            history.back();
+        }
+    }
+    function openNativeLeaderboard() {
+        if (window.AndroidBridge && window.AndroidBridge.openLeaderboard) {
+            window.AndroidBridge.openLeaderboard(dashboard.examTitle + " - " + dashboard.testNo);
+        } else {
+            alert("Leaderboard is only available inside the Android App.");
+        }
+    }
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    if (typeof injectedAnswers !== "undefined" && injectedAnswers.length > 0) { userAnswers = injectedAnswers; }
+    let currentIndex = 0;
+    let timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+    let timerInterval = null;
+    let quizActive = false;
+    let startTimestamp = null;
+    let isSubmitted = false;
+    function getCurrentQuestionText(q) { return currentLanguage === "en" ? q.en : q.ta; }
+    function getCurrentOptions(q) { return currentLanguage === "en" ? q.optionsEn : q.optionsTa; }
+    function renderQuestion() {
+        if (QUESTIONS.length === 0) {
+            document.getElementById("questionArea").innerHTML = '<div class="empty-message">⚠️ No questions loaded.</div>';
+            return;
+        }
+        const q = QUESTIONS[currentIndex];
+        const txt = getCurrentQuestionText(q);
+        const optsArray = getCurrentOptions(q);
+        const sel = userAnswers[currentIndex];
+        let displayTxt = txt;
+        let extraClass = "question-text";
+        let passageHtml = "";
+        if (q.type === "rc") {
+            let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+            if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            else displayTxt = `<div class="passage-box">${txt}</div>`;
+        } else if (q.type === "puzzle") {
+            displayTxt = `<div class="puzzle-box">${txt}</div>`;
+            extraClass = "question-text";
+        }
+        let imageHtml = "";
+        const urlsToLoad = [];
+        if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+        else if (q.imageUrl && q.imageUrl.trim() !== "") urlsToLoad.push(q.imageUrl);
+        urlsToLoad.forEach(url => {
+            let safeUrl = getSafeImageUrl(url);
+            imageHtml += `<div class="img-zoom-wrapper"><img src="${escapeHtml(safeUrl)}" alt="Question image" loading="lazy"></div>`;
+        });
+        let optsHtml = "";
+        optsArray.forEach((opt, i) => {
+            optsHtml += `<div class="option-item ${sel===i ? "selected" : ""}" onclick="selectOption(${i})">
+                <span class="option-letter">${String.fromCharCode(65+i)}.</span>
+                <span class="option-text">${opt}</span>
+            </div>`;
+        });
+        document.getElementById("questionArea").innerHTML = `
+            ${passageHtml}
+            <div style="padding: 0 16px 20px 16px;">
+                ${imageHtml}
+                <div class="${extraClass}">${currentIndex+1}. ${displayTxt}</div>
+                <div>${optsHtml}</div>
+            </div>
+        `;
+        updateTopClearButton();
+        updateNavButtons(); updatePalette();
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+    }
+    function updateTopClearButton() {
+        const container = document.getElementById("topClearBtnContainer");
+        if (!container) return;
+        const sel = userAnswers[currentIndex];
+        if (sel !== null && sel !== undefined) {
+            container.innerHTML = `<button class="btn btn-danger" style="padding: 6px 14px; font-size: 0.8rem; min-height: auto; opacity: 0.9; border-radius: 40px;" onclick="clearSelection()">✖ Clear Selection</button>`;
+        } else {
+            container.innerHTML = "";
+        }
+    }
+    function selectOption(optIndex) {
+        if (isSubmitted) return;
+        if (userAnswers[currentIndex] === optIndex) {
+            userAnswers[currentIndex] = null;
+        } else {
+            userAnswers[currentIndex] = optIndex;
+        }
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+
+    function clearSelection() {
+        if (isSubmitted) return;
+        userAnswers[currentIndex] = null;
+        renderQuestion(); updatePalette(); autoSaveState();
+    }
+    function updateNavButtons() {
+        if (QUESTIONS.length === 0) { document.getElementById("navButtons").innerHTML = ""; return; }
+        const t = translations[currentLanguage];
+        let html = `<button class="btn btn-secondary" onclick="prevQuestion()">${t.prevBtn}</button>`;
+        if (currentIndex === QUESTIONS.length-1) html += `<button class="btn btn-danger" onclick="submitQuiz()">${t.submitBtn}</button>`;
+        else html += `<button class="btn" onclick="nextQuestion()">${t.nextBtn}</button>`;
+        document.getElementById("navButtons").innerHTML = html;
+    }
+    function prevQuestion() { if (!isSubmitted && currentIndex>0) { currentIndex--; renderQuestion(); autoSaveState(); } }
+    function nextQuestion() { if (!isSubmitted && currentIndex<QUESTIONS.length-1) { currentIndex++; renderQuestion(); autoSaveState(); } }
+    function updatePalette() {
+        const ps = document.getElementById("paletteScroll");
+        if (!ps) return;
+        ps.innerHTML = "";
+        if (QUESTIONS.length === 0) return;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i+1; btn.classList.add("q-palette");
+            if (userAnswers[i] !== null) btn.classList.add("answered");
+            if (i === currentIndex) btn.classList.add("current");
+            btn.onclick = (function(idx) { return function() { if (!isSubmitted) { currentIndex = idx; renderQuestion(); updatePalette(); autoSaveState(); } }; })(i);
+            ps.appendChild(btn);
+        }
+    }
+    function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!quizActive || isSubmitted) return;
+            if (timeLeft <= 0) { clearInterval(timerInterval); if (!isSubmitted) submitQuiz(); }
+            else {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById("timerDisplay").innerText = `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+                if (timeLeft % 10 === 0) autoSaveState();
+                if (timeLeft === 0) submitQuiz();
+            }
+        }, 1000);
+    }
+    let currentReviewIndex = 0;
+    function buildDetailedReview() {
+        let html = "";
+        for (let i=0; i<QUESTIONS.length; i++) {
+            const q = QUESTIONS[i]; const u = userAnswers[i]; const corr = q.answer;
+            const isCorr = (u !== null && u !== undefined && u === corr);
+            const txt = getCurrentQuestionText(q) || "";
+            const optsArray = getCurrentOptions(q) || [];
+            let optsHtml = "";
+            optsArray.forEach((_, idx) => {
+                let cssClass = "option-item";
+                let markerHtml = "";
+                if (idx === corr) { cssClass += " correct"; markerHtml = "<div class='marker'>✔</div>"; }
+                else if (u === idx && idx !== corr) { cssClass += " wrong"; markerHtml = "<div class='marker'>✖</div>"; }
+                optsHtml += `<div class="${cssClass}"><span>${String.fromCharCode(65+idx)}. ${optsArray[idx]}</span>${markerHtml}</div>`;
+            });
+            let passageHtml = "";
+            if (q.type === "rc") {
+                let pText = currentLanguage === "en" ? (q.passageTextEN || q.passageEn || q.passage) : (q.passageTextTA || q.passageTa || q.passage);
+                if (pText) passageHtml = `<div class="passage-box">${pText}</div>`;
+            } else if (q.type === "puzzle") {
+                passageHtml = `<div class="puzzle-box">${txt}</div>`;
+            }
+            let imgHtml = "";
+            const urlsToLoad = [];
+            if (q.imageUrls && Array.isArray(q.imageUrls)) q.imageUrls.forEach(u => urlsToLoad.push(u));
+            else if (q.imageUrl && String(q.imageUrl).trim() !== "") urlsToLoad.push(q.imageUrl);
+            urlsToLoad.forEach(url => {
+                let safeUrl = getSafeImageUrl(url);
+                imgHtml += `<img class="review-question-img" src="${escapeHtml(safeUrl)}" alt="Q${i+1} image" loading="eager">`;
+            });
+            const userAns = (u !== null && u !== undefined && u !== -1) ? `${String.fromCharCode(65+u)}. ${optsArray[u]}` : "Not answered";
+            html += `<div class="review-card" id="review-card-${i}" style="display: none;">
+                        <div class="question-text" style="font-weight:bold; font-size:16px; margin-bottom:8px; word-wrap: break-word; overflow-wrap: break-word;">Q${i+1}. ${txt}</div>
+                        ${passageHtml}
+                        ${imgHtml}
+                        <div class="your-answer">Your Answer: ${userAns}</div>
+                        <div class="correct-answer">Correct Answer: ${String.fromCharCode(65+corr)}. ${optsArray[corr]}</div>
+                        ${optsHtml}
+                    </div>`;
+        }
+        document.getElementById("reviewList").innerHTML = html;
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise().catch(function(e){console.error(e);}); }
+        initImageZoom();
+        document.querySelectorAll("#reviewList img").forEach(img => {
+            if (!img.complete) { const pre = new Image(); pre.src = img.src; }
+        });
+        currentReviewIndex = 0;
+        showReviewCard(currentReviewIndex);
+    }
+    function showReviewCard(index) {
+        const cards = document.querySelectorAll(".review-card");
+        if (cards.length === 0) return;
+        cards.forEach(c => c.style.display = "none");
+        cards[index].style.display = "block";
+        document.getElementById("reviewPageText").innerText = `${index + 1} / ${cards.length}`;
+        document.getElementById("prevReviewBtn").disabled = (index === 0);
+        document.getElementById("nextReviewBtn").disabled = (index === cards.length - 1);
+        document.getElementById("reviewPagination").style.display = "flex";
+        window.scrollTo(0, 0);
+    }
+    function navigateReview(direction) {
+        const cards = document.querySelectorAll(".review-card");
+        currentReviewIndex += direction;
+        if (currentReviewIndex >= 0 && currentReviewIndex < cards.length) {
+            showReviewCard(currentReviewIndex);
+        }
+    }
+    async function downloadPdfWithAssets(btn) {
+        const originalText = btn ? btn.innerText : "📄 Download PDF";
+        if (btn) { btn.disabled = true; btn.innerText = "⏳ Preparing..."; }
+        try {
+            if (window.MathJax && MathJax.typesetPromise) { try { await MathJax.typesetPromise(); } catch(e) {} }
+            document.querySelectorAll(".review-card").forEach(c => c.style.display = "block");
+            document.getElementById("reviewPagination").style.display = "none";
+            await new Promise(r => setTimeout(r, 600));
+            if (window.AndroidBridge && window.AndroidBridge.printPage) {
+                window.AndroidBridge.printPage();
+                if (btn) btn.innerText = "✅ Select Save as PDF";
+            } else {
+                window.print();
+            }
+        } catch (e) {
+            console.error("PDF export failed:", e);
+        } finally {
+            setTimeout(() => { 
+                if (btn) { btn.disabled = false; btn.innerText = originalText; }
+                showReviewCard(currentReviewIndex);
+            }, 3000);
+        }
+    }
+    async function sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore) {
+        if (!GOOGLE_SHEET_URL) return;
+        const studentName = window.actualStudentName || "Student";
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "Candidate Name": studentName,
+                    "Test No": dashboard.testNo,
+                    "Subject": dashboard.subject,
+                    "Topic Name": dashboard.topic,
+                    "Total Questions": QUESTIONS.length,
+                    "Correct Answers": correct,
+                    "Incorrect Answers": incorrect,
+                    "Final Score (after negative marking)": finalScore,
+                    "Accuracy (%)": ((correct/QUESTIONS.length)*100).toFixed(1),
+                    "Time Taken": timeStr
+                })
+            });
+        } catch(err) { console.error("Sheet Error:", err); }
+    }
+    function submitQuiz() {
+        if (isSubmitted) return;
+        isSubmitted = true; quizActive = false; clearInterval(timerInterval);
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        try {
+            if (window.AndroidBridge && window.AndroidBridge.submitScore) {
+                window.AndroidBridge.submitScore(JSON.stringify({
+                    testId: dashboard.testNo || "",
+                    testName: dashboard.examTitle + " - " + dashboard.testNo,
+                    correct: correct, wrong: incorrect, skipped: na,
+                    total: QUESTIONS.length, score: finalScore,
+                    stayOnScreen: true, answers: userAnswers, questions: QUESTIONS
+                }));
+            }
+        } catch (e) { console.log("Bridge error", e); }
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        const takenSec = startTimestamp ? Math.floor((Date.now()-startTimestamp)/1000) : ((parseInt(dashboard.duration)||15)*60 - timeLeft);
+        const mins = Math.floor(takenSec/60), secs = takenSec%60, timeStr = `${mins}:${secs.toString().padStart(2,"0")}`;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = `${acc.toFixed(1)}%`;
+        document.getElementById("timeTakenSpan").innerHTML = timeStr;
+        document.getElementById("resultTopicName").innerHTML = `📖 Topic: ${dashboard.topic}`;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", `${pct}%`);
+        buildDetailedReview();
+        sendToGoogleSheet(correct, incorrect, na, timeStr, finalScore);
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        history.replaceState({ resultPage: true }, "", "#result");
+    }
+    function startNewExam() {
+        try { localStorage.removeItem("tetEnglishAutoResume"); } catch(e) {}
+        userAnswers = new Array(QUESTIONS.length).fill(null);
+        currentIndex = 0;
+        timeLeft = (parseInt(dashboard.duration) || 15) * 60;
+        startTimestamp = Date.now();
+        quizActive = true; isSubmitted = false;
+        let candidateName = window.actualStudentName;
+        if (!candidateName || candidateName === "Student" || candidateName === "Candidate") {
+            candidateName = prompt("Please enter your name to start the exam:", "");
+            if (!candidateName) return;
+            window.actualStudentName = candidateName;
+        }
+        document.getElementById("quizCandidateName").innerText = candidateName;
+        renderQuestion(); startTimer();
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+        autoSaveState();
+    }
+    renderDashboard();
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateUILanguage();
+    checkForAutoResume();
+    window.addEventListener("popstate", function(e) {
+        if (isSubmitted && document.getElementById("resultContainer").style.display === "block") {
+            history.pushState({ resultPage: true }, "", "#result");
+            confirmLeaveResult();
+        }
+    });
+    function confirmLeaveResult() {
+        if (window.AndroidBridge && window.AndroidBridge.exitResultPage) {
+            window.AndroidBridge.exitResultPage();
+        } else {
+            history.back();
+        }
+    }
+    window.checkForReview = function() {
+        if (typeof injectedAnswers !== "undefined" && Array.isArray(injectedAnswers)) {
+            userAnswers = injectedAnswers;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("review") === "true") {
+                let savedAnswers = null; try { savedAnswers = localStorage.getItem("reviewAnswers"); } catch(e) {}
+                if (savedAnswers) {
+                    try { userAnswers = JSON.parse(savedAnswers); } catch(e) {}
+                }
+            }
+        }
+        try { localStorage.removeItem("reviewAnswers"); } catch(e) {}
+        isSubmitted = true; quizActive = false;
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+        let correct=0, incorrect=0, na=0;
+        for (let i=0; i<QUESTIONS.length; i++) {
+            if (userAnswers[i] === null || userAnswers[i] === undefined || userAnswers[i] === -1) na++;
+            else if (userAnswers[i] === QUESTIONS[i].answer) correct++;
+            else incorrect++;
+        }
+        const negMark = dashboard.negativeMark || 0;
+        const finalScore = correct - (incorrect * negMark);
+        const acc = (QUESTIONS.length===0)?0:(correct/QUESTIONS.length)*100;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("correctCountStat").innerText = correct;
+        document.getElementById("incorrectCountStat").innerText = incorrect;
+        document.getElementById("notAttemptedStat").innerText = na;
+        document.getElementById("accuracySpan").innerHTML = acc.toFixed(1) + "%";
+        document.getElementById("resultTopicName").innerHTML = "📖 Topic: " + dashboard.topic;
+        const pct = (QUESTIONS.length===0)?0:(finalScore/QUESTIONS.length)*100;
+        document.getElementById("scoreRing").style.setProperty("--score-percent", pct + "%");
+        buildDetailedReview();
+    };
+    window.addEventListener("beforeunload", function() { if (quizActive && !isSubmitted) autoSaveState(); });
+</script>
+</body>
+</html>
