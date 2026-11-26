@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-26T10:28:42.109Z",
+  "version": "2026-11-26T10:31:51.391Z",
   "categories": [
     {
       "id": "BANK",
@@ -3895,6 +3895,20 @@
       "releaseTimestamp": 1795766400000,
       "language": "en",
       "createdAt": 1795688922109
+    },
+    {
+      "testId": "TET-PY-5",
+      "examId": "TET-PSYCHOLOGY",
+      "name": "MOTIVATION AND LEARNING (SET-1)",
+      "topic": "MOTIVATION AND LEARNING",
+      "durationMinutes": 15,
+      "order": 5,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TET-PY-5.html",
+      "releaseTimestamp": 1795766400000,
+      "language": "both",
+      "createdAt": 1795689111391
     }
   ]
 }
