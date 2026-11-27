@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-27T09:02:30.924Z",
+  "version": "2026-11-27T09:05:30.357Z",
   "categories": [
     {
       "id": "BANK",
@@ -4025,14 +4025,14 @@
     {
       "testId": "UGP-5",
       "examId": "UG-PHY",
-      "name": "WAVE OPTICS (SET-1)",
+      "name": "WAVE OPTICS (SET-2)",
       "topic": "WAVE OPTICS",
       "durationMinutes": 25,
       "order": 5,
       "questionCount": 25,
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/UGP-5.html",
-      "releaseTimestamp": 1795507200000,
+      "releaseTimestamp": 1795766400000,
       "language": "en",
       "createdAt": 1795770150924
     }
