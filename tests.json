@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-27T16:11:41.365Z",
+  "version": "2026-11-27T16:25:32.206Z",
   "categories": [
     {
       "id": "BANK",
@@ -4055,6 +4055,20 @@
       "releaseTimestamp": 1795766400000,
       "language": "ta",
       "createdAt": 1795770700921
+    },
+    {
+      "testId": "BQA-5",
+      "examId": "BANK-QA",
+      "name": "BQA-5",
+      "topic": "DGHJGJF",
+      "durationMinutes": 30,
+      "order": 5,
+      "questionCount": 25,
+      "negativeMark": 0.25,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BQA-5.html",
+      "releaseTimestamp": 1795766400000,
+      "language": "both",
+      "createdAt": 1795796732206
     }
   ]
 }
