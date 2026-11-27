@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-27T08:10:13.110Z",
+  "version": "2026-11-27T08:11:36.541Z",
   "categories": [
     {
       "id": "BANK",
@@ -3613,7 +3613,7 @@
       "negativeMark": 0,
       "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/TTA-4.html",
       "releaseTimestamp": 1795766400000,
-      "language": "ta",
+      "language": "both",
       "createdAt": 1795508256761
     },
     {
