@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-27T08:06:36.057Z",
+  "version": "2026-11-27T08:10:13.110Z",
   "categories": [
     {
       "id": "BANK",
@@ -4007,6 +4007,20 @@
       "releaseTimestamp": 1795766400000,
       "language": "en",
       "createdAt": 1795766796057
+    },
+    {
+      "testId": "SGS-13",
+      "examId": "SSC-GS",
+      "name": "PHYSICS - GRAVITY (SET-1)",
+      "topic": "PHYSICS - GRAVITY",
+      "durationMinutes": 15,
+      "order": 13,
+      "questionCount": 25,
+      "negativeMark": 0.5,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGS-13.html",
+      "releaseTimestamp": 1796025600000,
+      "language": "en",
+      "createdAt": 1795767013110
     }
   ]
 }
