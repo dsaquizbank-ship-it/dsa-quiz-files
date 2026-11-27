@@ -133,7 +133,7 @@
             <div class="timer-box" id="timerDisplay">15:00</div>
             <div class="top-buttons">
                 <div id="topClearBtnContainer"></div>
-                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="">தமிழ்</button>
+                <button id="langToggleBtn" class="icon-btn language-toggle" onclick="toggleLanguage()" style="display: none;">தமிழ்</button>
             </div>
         </div>
         <div class="question-container" id="questionArea"></div>
@@ -180,7 +180,7 @@
 </div>
 
 <script>
-    let currentLanguage = "en";
+    let currentLanguage = "ta";
     const translations = {
         en: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ PREV", nextBtn: "NEXT ▶", submitBtn: "✅ SUBMIT QUIZ", paletteTitle: "📌 JUMP TO QUESTION", quizCompleted: "✨ QUIZ COMPLETED ✨", correct: "✅ Correct", incorrect: "❌ Incorrect", notAttempted: "⚠️ Not Attempted", accuracy: "Accuracy", timeTaken: "Time taken", newAttempt: "🔄 New Attempt", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" },
         ta: { startExamBtn: "▶ START NEW EXAM", prevBtn: "◀ முந்தைய", nextBtn: "அடுத்த ▶", submitBtn: "✅ தேர்வைச் சமர்ப்பிக்கவும்", paletteTitle: "📌 கேள்விக்குச் செல்க", quizCompleted: "✨ தேர்வு முடிந்தது ✨", correct: "✅ சரியானவை", incorrect: "❌ தவறானவை", notAttempted: "⚠️ முயற்சிக்கப்படாதவை", accuracy: "துல்லியம்", timeTaken: "எடுத்த நேரம்", newAttempt: "🔄 புதிய முயற்சி", langToggleBtnEn: "தமிழ்", langToggleBtnTa: "English" }
@@ -217,456 +217,456 @@
         negativeMark: 0,
     };
 let QUESTIONS = [
-  {
-    "type": "mcq",
-    "en": "Who caused the fall of Constantinople in 1453, which led Greek scholars to migrate to Italian city-states and trigger the Renaissance?",
-    "ta": "1453ஆம் ஆண்டு கான்ஸ்டாண்டிநோபிள் வீழ்ச்சிக்குக் காரணம் யார்? கிரேக்க அறிஞர்கள் இத்தாலிய நகர அரசுகளுக்கு இடம்பெயர்ந்து மறுமலர்ச்சியைத் தூண்டியதற்குக் காரணமான 1453ஆம் ஆண்டு கான்ஸ்டாண்டிநோபிள் வீழ்ச்சிக்குக் காரணம் யார்?",
-    "optionsEn": [
-      "Spanish victory",
-      "Ottoman Turks",
-      "Portuguese navy",
-      "Mongol invasion"
-    ],
-    "optionsTa": [
-      "ஸ்பானியர்களின் வெற்றி",
-      "உதுமானியத் துருக்கியர்",
-      "போர்ச்சுகீசியக் கடற்படை",
-      "மங்கோலியப் படையெடுப்பு"
-    ],
-    "answer": 1
-  },
-  {
-    "type": "mcq",
-    "en": "Within less than fifty years after Gutenberg invented the printing press, about how many books were printed in Western Europe?",
-    "ta": "கூட்டென்பர்க் அச்சு இயந்திரத்தைக் கண்டுபிடித்த பின் ஐம்பது ஆண்டுகளுக்கும் குறைவான காலத்தில் மேற்கு ஐரோப்பாவில் சுமார் எத்தனை புத்தகங்கள் அச்சிடப்பட்டன?",
-    "optionsEn": [
-      "One million",
-      "Three million",
-      "Six million",
-      "Ten million"
-    ],
-    "optionsTa": [
-      "ஒரு மில்லியன்",
-      "மூன்று மில்லியன்",
-      "ஆறு மில்லியன்",
-      "பத்து மில்லியன்"
-    ],
-    "answer": 2
-  },
-  {
-    "type": "mcq",
-    "en": "Who is called the 'Father of Humanism' for first adopting and expressing classical humanism in his works?",
-    "ta": "செவ்வியல் மனிதநேயத்தை முதலில் தன் படைப்புகளில் ஏற்று வெளிப்படுத்தியதால் 'மனிதநேயத்தின் தந்தை' என அழைக்கப்படுபவர் யார்?",
-    "optionsEn": [
-      "Dante",
-      "Thomas More",
-      "Erasmus",
-      "Petrarch"
-    ],
-    "optionsTa": [
-      "தாந்தே",
-      "தாமஸ் மூர்",
-      "எராஸ்மஸ்",
-      "பெட்ரார்க்"
-    ],
-    "answer": 3
-  },
-  {
-    "type": "mcq",
-    "en": "In his book 'The Prince', Machiavelli said a successful king should at the same time be like what?",
-    "ta": "மாக்கியவெல்லி தனது 'இளவரசன்' நூலில் வெற்றிகரமான அரசன் ஒரே சமயத்தில் எவ்வாறு விளங்க வேண்டும் என்று கூறினார்?",
-    "optionsEn": [
-      "Like a lion and a fox",
-      "Like a saint and a warrior",
-      "Like a guru and a poet",
-      "Like an eagle and a dove"
-    ],
-    "optionsTa": [
-      "சிங்கமாகவும் நரியாகவும்",
-      "துறவியாகவும் வீரனாகவும்",
-      "குருவாகவும் கவிஞனாகவும்",
-      "கழுகாகவும் புறாவாகவும்"
-    ],
-    "answer": 0
-  },
-  {
-    "type": "mcq",
-    "en": "Who proved through a mathematical model that the Earth revolves around the Sun?",
-    "ta": "பூமி சூரியனைச் சுற்றி வருகிறது என்பதைக் கணித மாதிரி மூலம் நிரூபித்தவர் யார்?",
-    "optionsEn": [
-      "Galileo",
-      "William Harvey",
-      "Copernicus",
-      "Ptolemy"
-    ],
-    "optionsTa": [
-      "கலிலியோ",
-      "வில்லியம் ஹார்வி",
-      "கோப்பர்னிகஸ்",
-      "தாலமி"
-    ],
-    "answer": 2
-  },
-  {
-    "type": "mcq",
-    "en": "Choose the correct pair",
-    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்",
-    "optionsEn": [
-      "Thomas More - Utopia",
-      "Dante - In Praise of Folly",
-      "Erasmus - Divine Comedy",
-      "Cervantes - The Prince"
-    ],
-    "optionsTa": [
-      "தாமஸ் மூர் - உட்டோப்பியா",
-      "தாந்தே - மடமையின் புகழ்ச்சி",
-      "எராஸ்மஸ் - டிவைன் காமெடி",
-      "செர்வான்டிஸ் – இளவரசன்"
-    ],
-    "answer": 0
-  },
-  {
-    "type": "mcq",
-    "en": "Choose the correct pair",
-    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்",
-    "optionsEn": [
-      "Leonardo da Vinci - David",
-      "Michelangelo - Mona Lisa",
-      "Raphael - The Last Supper",
-      "Raphael - Madonna"
-    ],
-    "optionsTa": [
-      "லியானர்டோ டாவின்சி - டேவிட்",
-      "மைக்கேல் ஆஞ்சலோ - மோனாலிசா",
-      "ரஃபேல் - கடைசி இரவு விருந்து",
-      "ரஃபேல் - மடோன்னா"
-    ],
-    "answer": 3
-  },
-  {
-    "type": "mcq",
-    "en": "Choose the correct pair",
-    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்",
-    "optionsEn": [
-      "Luther - Institutes of the Christian Religion",
-      "Zwingli - worked from Zurich",
-      "Calvin - Ninety-five Theses",
-      "Ignatius Loyola - founded the Anglican Church"
-    ],
-    "optionsTa": [
-      "லூதர் - கிறிஸ்துவ மதத்தின் நிறுவனங்கள்",
-      "ஸ்விங்லி - ஜூரிச்சிலிருந்து பணியாற்றியவர்",
-      "கால்வின் - தொண்ணூற்றைந்து கொள்கைகள்",
-      "இக்னேஷியஸ் லயோலா - ஆங்கிலிகன் திருச்சபையை நிறுவியவர்"
-    ],
-    "answer": 1
-  },
-  {
-    "type": "mcq",
-    "en": "Choose the correct pair",
-    "ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்",
-    "optionsEn": [
-      "Dias - reached Calicut in 1498",
-      "Vasco da Gama - reached Cape of Good Hope in 1487",
-      "Columbus - reached Bahamas, Cuba, Haiti in 1492",
-      "Amerigo Vespucci - reached Calicut in 1498"
-    ],
-    "optionsTa": [
-      "டயஸ் - 1498இல் கள்ளிக்கோட்டை அடைந்தார்",
-      "வாஸ்கோடகாமா - 1487இல் நன்னம்பிக்கை முனை அடைந்தார்",
-      "கொலம்பஸ் - 1492இல் பஹாமாஸ், கியூபா, ஹைட்டி அடைந்தார்",
-      "அமெரிகோ வெஸ்புகி - 1498இல் கள்ளிக்கோட்டை அடைந்தார்"
-    ],
-    "answer": 2
-  },
-  {
-    "type": "match",
-    "en": "Match the following:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List-I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>List-II</b></td></tr><tr><td style='padding:6px 0;'>A. Petrarch</td><td></td><td style='padding:6px 0;'>1. Canzoniere</td></tr><tr><td style='padding:6px 0;'>B. Dante</td><td></td><td style='padding:6px 0;'>2. Divine Comedy</td></tr><tr><td style='padding:6px 0;'>C. Machiavelli</td><td></td><td style='padding:6px 0;'>3. The Prince</td></tr><tr><td style='padding:6px 0;'>D. Erasmus</td><td></td><td style='padding:6px 0;'>4. In Praise of Folly</td></tr></table>",
-    "ta": "Match the following:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் II</b></td></tr><tr><td style='padding:6px 0;'>A. பெட்ரார்க்</td><td></td><td style='padding:6px 0;'>1. கான்ஸோனியர்</td></tr><tr><td style='padding:6px 0;'>B. தாந்தே</td><td></td><td style='padding:6px 0;'>2. டிவைன் காமெடி</td></tr><tr><td style='padding:6px 0;'>C. மாக்கியவெல்லி</td><td></td><td style='padding:6px 0;'>3. இளவரசன்</td></tr><tr><td style='padding:6px 0;'>D. எராஸ்மஸ்</td><td></td><td style='padding:6px 0;'>4. மடமையின் புகழ்ச்சி</td></tr></table>",
-    "optionsEn": [
-      "A-1 B-2 C-3 D-4",
-      "A-2 B-1 C-3 D-4",
-      "A-1 B-3 C-2 D-4",
-      "A-4 B-2 C-3 D-1"
-    ],
-    "optionsTa": [
-      "A-1 B-2 C-3 D-4",
-      "A-2 B-1 C-3 D-4",
-      "A-1 B-3 C-2 D-4",
-      "A-4 B-2 C-3 D-1"
-    ],
-    "answer": 0
-  },
-  {
-    "type": "match",
-    "en": "Match the following:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List-I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>List-II</b></td></tr><tr><td style='padding:6px 0;'>A. Gutenberg</td><td></td><td style='padding:6px 0;'>1. Printing press, 1394-1468</td></tr><tr><td style='padding:6px 0;'>B. Leonardo da Vinci</td><td></td><td style='padding:6px 0;'>2. Mona Lisa, The Last Supper</td></tr><tr><td style='padding:6px 0;'>C. Michelangelo</td><td></td><td style='padding:6px 0;'>3. David, Sistine Chapel ceiling</td></tr><tr><td style='padding:6px 0;'>D. Raphael</td><td></td><td style='padding:6px 0;'>4. School of Athens</td></tr></table>",
-    "ta": "Match the following:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் II</b></td></tr><tr><td style='padding:6px 0;'>A. கூட்டென்பர்க்</td><td></td><td style='padding:6px 0;'>1. அச்சு இயந்திரம், 1394-1468</td></tr><tr><td style='padding:6px 0;'>B. லியானர்டோ டாவின்சி</td><td></td><td style='padding:6px 0;'>2. மோனாலிசா, கடைசி இரவு விருந்து</td></tr><tr><td style='padding:6px 0;'>C. மைக்கேல் ஆஞ்சலோ</td><td></td><td style='padding:6px 0;'>3. டேவிட், சிஸ்டைன் தேவாலய மேற்கூரை</td></tr><tr><td style='padding:6px 0;'>D. ரஃபேல்</td><td></td><td style='padding:6px 0;'>4. ஏதென்ஸ் பள்ளி</td></tr></table>",
-    "optionsEn": [
-      "A-1 B-2 C-4 D-3",
-      "A-1 B-3 C-2 D-4",
-      "A-2 B-1 C-3 D-4",
-      "A-1 B-2 C-3 D-4"
-    ],
-    "optionsTa": [
-      "A-1 B-2 C-4 D-3",
-      "A-1 B-3 C-2 D-4",
-      "A-2 B-1 C-3 D-4",
-      "A-1 B-2 C-3 D-4"
-    ],
-    "answer": 3
-  },
-  {
-    "type": "match",
-    "en": "Match the following:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List-I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>List-II</b></td></tr><tr><td style='padding:6px 0;'>A. Luther</td><td></td><td style='padding:6px 0;'>1. Justification by faith</td></tr><tr><td style='padding:6px 0;'>B. Calvin</td><td></td><td style='padding:6px 0;'>2. Controlled Geneva from 1541-1564</td></tr><tr><td style='padding:6px 0;'>C. Henry VIII</td><td></td><td style='padding:6px 0;'>3. Broke with Rome and founded the Anglican Church</td></tr><tr><td style='padding:6px 0;'>D. Ignatius Loyola</td><td></td><td style='padding:6px 0;'>4. Founded the Society of Jesus</td></tr></table>",
-    "ta": "Match the following:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் II</b></td></tr><tr><td style='padding:6px 0;'>A. லூதர்</td><td></td><td style='padding:6px 0;'>1. நம்பிக்கையினால் நியாயப்படுத்துதல்</td></tr><tr><td style='padding:6px 0;'>B. கால்வின்</td><td></td><td style='padding:6px 0;'>2. ஜெனீவாவை 1541-1564 வரை கட்டுப்படுத்தியவர்</td></tr><tr><td style='padding:6px 0;'>C. எட்டாம் ஹென்றி</td><td></td><td style='padding:6px 0;'>3. ரோமுடன் முறித்து ஆங்கிலிகன் திருச்சபை நிறுவியவர்</td></tr><tr><td style='padding:6px 0;'>D. இக்னேஷியஸ் லயோலா</td><td></td><td style='padding:6px 0;'>4. இயேசு சபையை நிறுவியவர்</td></tr></table>",
-    "optionsEn": [
-      "A-2 B-1 C-3 D-4",
-      "A-1 B-2 C-3 D-4",
-      "A-1 B-2 C-4 D-3",
-      "A-3 B-2 C-1 D-4"
-    ],
-    "optionsTa": [
-      "A-2 B-1 C-3 D-4",
-      "A-1 B-2 C-3 D-4",
-      "A-1 B-2 C-4 D-3",
-      "A-3 B-2 C-1 D-4"
-    ],
-    "answer": 1
-  },
-  {
-    "type": "match",
-    "en": "Match the following:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>List-I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>List-II</b></td></tr><tr><td style='padding:6px 0;'>A. Prince Henry</td><td></td><td style='padding:6px 0;'>1. Navigation school, compass and astrolabe</td></tr><tr><td style='padding:6px 0;'>B. Lopo Gonçalves</td><td></td><td style='padding:6px 0;'>2. First to cross the Equator</td></tr><tr><td style='padding:6px 0;'>C. Bartolomeu Dias</td><td></td><td style='padding:6px 0;'>3. Cape of Storms, 1487</td></tr><tr><td style='padding:6px 0;'>D. Vasco da Gama</td><td></td><td style='padding:6px 0;'>4. Calicut, 20 May 1498</td></tr></table>",
-    "ta": "Match the following:<br><br><table style='width:100%; border-collapse:collapse;'><tr><td style='width:40%; padding:6px 0;'><b>பட்டியல் I</b></td><td style='width:10%;'></td><td style='width:50%; padding:6px 0;'><b>பட்டியல் II</b></td></tr><tr><td style='padding:6px 0;'>A. இளவரசர் ஹென்றி</td><td></td><td style='padding:6px 0;'>1. கடற்பயணப் பள்ளி, திசைகாட்டும் கருவி மற்றும் வான்நோக்கும் கருவி</td></tr><tr><td style='padding:6px 0;'>B. லோபோ கோன்ஸால்வ்ஸ்</td><td></td><td style='padding:6px 0;'>2. நிலநடுக்கோட்டை முதலில் கடந்தவர்</td></tr><tr><td style='padding:6px 0;'>C. பார்த்தலோமியோ டயஸ்</td><td></td><td style='padding:6px 0;'>3. புயல் முனை, 1487</td></tr><tr><td style='padding:6px 0;'>D. வாஸ்கோடகாமா</td><td></td><td style='padding:6px 0;'>4. கள்ளிக்கோட்டை, 20 மே 1498</td></tr></table>",
-    "optionsEn": [
-      "A-1 B-2 C-3 D-4",
-      "A-2 B-1 C-3 D-4",
-      "A-1 B-2 C-4 D-3",
-      "A-1 B-3 C-2 D-4"
-    ],
-    "optionsTa": [
-      "A-1 B-2 C-3 D-4",
-      "A-2 B-1 C-3 D-4",
-      "A-1 B-2 C-4 D-3",
-      "A-1 B-3 C-2 D-4"
-    ],
-    "answer": 0
-  },
-  {
-    "type": "mcq",
-    "en": "Choose the odd one out - with regard to Renaissance art",
-    "ta": "மாறுபட்ட ஒன்றைத் தேர்ந்தெடுக்கவும் - மறுமலர்ச்சிக் காலக் கலை தொடர்பாக",
-    "optionsEn": [
-      "Mona Lisa",
-      "David",
-      "School of Athens",
-      "Ninety-five Theses"
-    ],
-    "optionsTa": [
-      "மோனாலிசா",
-      "டேவிட்",
-      "ஏதென்ஸ் பள்ளி",
-      "தொண்ணூற்றைந்து கொள்கைகள்"
-    ],
-    "answer": 3
-  },
-  {
-    "type": "mcq",
-    "en": "Choose the odd one out - with regard to the causes of geographical discoveries",
-    "ta": "மாறுபட்ட ஒன்றைத் தேர்ந்தெடுக்கவும் - புவியியல் கண்டுபிடிப்புகளுக்கான காரணங்கள் தொடர்பாக",
-    "optionsEn": [
-      "Land route blocked by Ottoman Turks",
-      "Desire for spices and profit",
-      "Sale of indulgences",
-      "New enthusiasm created by the Renaissance"
-    ],
-    "optionsTa": [
-      "உதுமானியத் துருக்கியரால் நிலவழிப் பாதை அடைக்கப்பட்டது",
-      "நறுமணப் பொருட்கள் மற்றும் இலாபத்திற்கான ஆசை",
-      "பாவமன்னிப்புச் சீட்டுகள் விற்பனை",
-      "மறுமலர்ச்சியால் உருவான புத்தார்வம்"
-    ],
-    "answer": 2
-  },
-  {
-    "type": "mcq",
-    "en": "Choose the odd one out - with regard to things that went from Europe to America in the Columbian Exchange",
-    "ta": "மாறுபட்ட ஒன்றைத் தேர்ந்தெடுக்கவும் - கொலம்பியப் பரிமாற்றத்தில் ஐரோப்பாவிலிருந்து அமெரிக்காவுக்குச் சென்றவை தொடர்பாக",
-    "optionsEn": [
-      "Sugarcane",
-      "Potato",
-      "Horses",
-      "Wheat"
-    ],
-    "optionsTa": [
-      "கரும்பு",
-      "உருளைக்கிழங்கு",
-      "குதிரைகள்",
-      "கோதுமை"
-    ],
-    "answer": 1
-  },
-  {
-    "type": "mcq",
-    "en": "Choose the odd one out - with regard to the Protestant Reformation",
-    "ta": "மாறுபட்ட ஒன்றைத் தேர்ந்தெடுக்கவும் - பிராட்டஸ்டன்ட் மதச்சீர்திருத்தம் தொடர்பாக",
-    "optionsEn": [
-      "Luther",
-      "Zwingli",
-      "Calvin",
-      "Ignatius Loyola"
-    ],
-    "optionsTa": [
-      "லூதர்",
-      "ஸ்விங்லி",
-      "கால்வின்",
-      "இக்னேஷியஸ் லயோலா"
-    ],
-    "answer": 3
-  },
-  {
-    "type": "mcq",
-    "en": "Assertion (A): The Renaissance first appeared in Italy.<br>Reason (R): Italian city-states like Florence, Venice and Milan became wealthy through Mediterranean trade; wealthy families like the Medici patronised art and literature.",
-    "ta": "கூற்று மற்றும் காரணம்<br>கூற்று (A): மறுமலர்ச்சி முதலில் இத்தாலியில் தோன்றியது.<br>காரணம் (R): பிளாரென்ஸ், வெனிஸ், மிலான் போன்ற இத்தாலிய நகர அரசுகள் மத்தியதரைக்கடல் வர்த்தகத்தால் செல்வம் பெற்றன; மெடிசி போன்ற செல்வக் குடும்பங்கள் கலை, இலக்கியத்தை ஆதரித்தன.",
-    "optionsEn": [
-      "Both A and R are true, and R is the correct explanation of A.",
-      "Both A and R are true, but R is not the correct explanation of A.",
-      "A is true, but R is false.",
-      "A is false, but R is true."
-    ],
-    "optionsTa": [
-      "A மற்றும் R இரண்டும் சரி, R என்பது Aஇன் சரியான விளக்கம்",
-      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது Aஇன் சரியான விளக்கம் அல்ல",
-      "A சரி, ஆனால் R தவறு",
-      "A தவறு, ஆனால் R சரி"
-    ],
-    "answer": 0
-  },
-  {
-    "type": "mcq",
-    "en": "Assertion (A): Luther opposed the sale of indulgences.<br>Reason (R): Luther argued that salvation comes only through faith, not through rituals, fasts or buying indulgences.",
-    "ta": "கூற்று மற்றும் காரணம்<br>கூற்று (A): லூதர் பாவமன்னிப்புச் சீட்டுகள் விற்பனையை எதிர்த்தார்.<br>காரணம் (R): சடங்குகளாலோ, நோன்புகளாலோ, சீட்டுகள் வாங்குவதாலோ அல்ல; நம்பிக்கையினால் மட்டுமே ஆன்ம விடுதலை கிடைக்கும் என்று லூதர் வாதிட்டார்.",
-    "optionsEn": [
-      "A is true, but R is false.",
-      "Both A and R are true, but R is not the correct explanation of A.",
-      "Both A and R are true, and R is the correct explanation of A.",
-      "A is false, but R is true."
-    ],
-    "optionsTa": [
-      "A சரி, ஆனால் R தவறு",
-      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது Aஇன் சரியான விளக்கம் அல்ல",
-      "A மற்றும் R இரண்டும் சரி, R என்பது Aஇன் சரியான விளக்கம்",
-      "A தவறு, ஆனால் R சரி"
-    ],
-    "answer": 2
-  },
-  {
-    "type": "mcq",
-    "en": "Assertion (A): Dias named the southern tip of Africa 'Cape of Storms'.<br>Reason (R): He faced a severe storm there in 1487; later King John II renamed it 'Cape of Good Hope' hoping for a sea route to India.",
-    "ta": "கூற்று மற்றும் காரணம்<br>கூற்று (A): டயஸ் ஆப்பிரிக்காவின் தெற்கு முனைக்கு 'புயல் முனை' என்று பெயரிட்டார்.<br>காரணம் (R): 1487இல் அங்கு கடும் புயலை எதிர்கொண்டார்; பின்னர் இரண்டாம் ஜான் அரசர் இந்தியாவுக்குக் கடல்வழி கிடைக்கும் என்ற நம்பிக்கையால் அதை 'நன்னம்பிக்கை முனை' என மறுபெயரிட்டார்.",
-    "optionsEn": [
-      "Both A and R are true, but R is not the correct explanation of A.",
-      "Both A and R are true, and R is the correct explanation of A.",
-      "A is true, but R is false.",
-      "A is false, but R is true."
-    ],
-    "optionsTa": [
-      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது Aஇன் சரியான விளக்கம் அல்ல",
-      "A மற்றும் R இரண்டும் சரி, R என்பது Aஇன் சரியான விளக்கம்",
-      "A சரி, ஆனால் R தவறு",
-      "A தவறு, ஆனால் R சரி"
-    ],
-    "answer": 1
-  },
-  {
-    "type": "mcq",
-    "en": "Assertion (A): America got its name from Amerigo Vespucci.<br>Reason (R): Vespucci first realised that the land Columbus reached was not Asia but a new continent; a German cartographer named it America after him.",
-    "ta": "கூற்று மற்றும் காரணம்<br>கூற்று (A): அமெரிக்கா என்ற பெயர் அமெரிகோ வெஸ்புகியின் பெயரால் வந்தது.<br>காரணம் (R): கொலம்பஸ் அடைந்த நிலம் ஆசியா அல்ல, புதிய கண்டம் என்பதை வெஸ்புகி முதலில் உணர்ந்தார்; ஜெர்மானிய வரைபடவியலாளர் அவர் பெயரால் அமெரிக்கா என அழைத்தார்.",
-    "optionsEn": [
-      "Both A and R are true, and R is the correct explanation of A.",
-      "Both A and R are true, but R is not the correct explanation of A.",
-      "A is true, but R is false.",
-      "A is false, but R is true."
-    ],
-    "optionsTa": [
-      "A மற்றும் R இரண்டும் சரி, R என்பது Aஇன் சரியான விளக்கம்",
-      "A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது Aஇன் சரியான விளக்கம் அல்ல",
-      "A சரி, ஆனால் R தவறு",
-      "A தவறு, ஆனால் R சரி"
-    ],
-    "answer": 0
-  },
-  {
-    "type": "mcq",
-    "en": "Choose the correct statement - about Humanism:<br>I. Humanism emphasised human dignity, reason and life in this world.<br>II. It shifted attention from the spiritual world to the material world, and from life after death to life in this world.<br>III. It rejected Greek and Roman classical literature.",
-    "ta": "சரியான கூற்றைத் தேர்ந்தெடுக்கவும் - மனிதநேயம் குறித்து:<br>I. மனிதநேயம் மனித கண்ணியம், பகுத்தறிவு மற்றும் இவ்வுலக வாழ்வை வலியுறுத்தியது.<br>II. ஆன்மீக உலகிலிருந்து பொருள் உலகை நோக்கியும், மரணத்திற்குப் பின் வாழ்விலிருந்து இவ்வுலக வாழ்வை நோக்கியும் கவனத்தைத் திருப்பியது.<br>III. கிரேக்க, ரோமானிய செவ்வியல் இலக்கியங்களை நிராகரித்தது.",
-    "optionsEn": [
-      "I, II and III",
-      "II and III only",
-      "I and III only",
-      "I and II only"
-    ],
-    "optionsTa": [
-      "I, II மற்றும் III",
-      "II மற்றும் III மட்டும்",
-      "I மற்றும் III மட்டும்",
-      "I மற்றும் II மட்டும்"
-    ],
-    "answer": 3
-  },
-  {
-    "type": "mcq",
-    "en": "Choose the correct statement - about Counter-Reformation:<br>I. The Council of Trent re-emphasised collective worship and festivals; said only the Church could interpret the Bible.<br>II. Sale of church offices was banned and corrupt practices were dealt with strictly.<br>III. The Society of Jesus was given official permission and the Inquisition was revived.",
-    "ta": "சரியான கூற்றைத் தேர்ந்தெடுக்கவும் - எதிர் மதச்சீர்திருத்தம் குறித்து:<br>I. ட்ரென்ட் கவுன்சில் கூட்டு வழிபாடு, விழாக்கள் முக்கியத்துவத்தை மீண்டும் வலியுறுத்தியது; விவிலியத்தைத் திருச்சபை மட்டுமே விளக்க முடியும் என்றது.<br>II. திருச்சபைப் பதவிகள் விற்பனை தடை செய்யப்பட்டு ஊழல்கள் கடுமையாகக் கையாளப்பட்டன.<br>III. இயேசு சபைக்கு அதிகாரப்பூர்வ அனுமதி வழங்கப்பட்டு மத நீதிமன்றத்திற்குப் புத்துயிர் அளிக்கப்பட்டது.",
-    "optionsEn": [
-      "I and II only",
-      "II and III only",
-      "I, II and III",
-      "I and III only"
-    ],
-    "optionsTa": [
-      "I மற்றும் II மட்டும்",
-      "II மற்றும் III மட்டும்",
-      "I, II மற்றும் III",
-      "I மற்றும் III மட்டும்"
-    ],
-    "answer": 2
-  },
-  {
-    "type": "mcq",
-    "en": "Which is correct about the printing press?<br>(A) Before printing, handwritten manuscripts were written on animal skin vellum and were with only a few privileged people.<br>(B) All of the above<br>(C) It spread knowledge widely and promoted critical thinking.<br>(D) Gutenberg invented it in Germany in the middle of the 15th century.",
-    "ta": "அச்சு இயந்திரம் குறித்து எது சரி?<br>(A) அச்சுக்கு முன் கையெழுத்துப் பிரதிகள் விலங்குத் தோலான வெல்லம் மீது எழுதப்பட்டு சிறப்புரிமை பெற்ற சிலரிடம் மட்டுமே இருந்தன.<br>(B) மேற்கண்ட அனைத்தும்<br>(C) அது அறிவைப் பரவலாக்கி விமர்சனச் சிந்தனையை முன்னெடுத்தது.<br>(D) கூட்டென்பர்க் 15ஆம் நூற்றாண்டின் நடுப்பகுதியில் ஜெர்மனியில் அதைக் கண்டுபிடித்தார்.",
-    "optionsEn": [
-      "Before printing, handwritten manuscripts were written on animal skin vellum and were with only a few privileged people.",
-      "All of the above",
-      "It spread knowledge widely and promoted critical thinking.",
-      "Gutenberg invented it in Germany in the middle of the 15th century."
-    ],
-    "optionsTa": [
-      "அச்சுக்கு முன் கையெழுத்துப் பிரதிகள் விலங்குத் தோலான வெல்லம் மீது எழுதப்பட்டு சிறப்புரிமை பெற்ற சிலரிடம் மட்டுமே இருந்தன.",
-      "மேற்கண்ட அனைத்தும்",
-      "அது அறிவைப் பரவலாக்கி விமர்சனச் சிந்தனையை முன்னெடுத்தது.",
-      "கூட்டென்பர்க் 15ஆம் நூற்றாண்டின் நடுப்பகுதியில் ஜெர்மனியில் அதைக் கண்டுபிடித்தார்."
-    ],
-    "answer": 1
-  },
-  {
-    "type": "mcq",
-    "en": "Which is WRONG about geographical discoveries?<br>(A) Pope Alexander VI drew an imaginary line west of the Azores and gave the west to Spain and the east to Portugal.<br>(B) Columbus thought he had reached the edge of Asia and called the local people Indians.<br>(C) Vasco da Gama reached Calicut with the help of an Arab navigator.<br>(D) The economic centre shifted from Spain and Portugal to Italian city-states.",
-    "ta": "புவியியல் கண்டுபிடிப்புகள் குறித்து எது தவறு?<br>(A) ஆறாம் அலெக்ஸாண்டர் போப் அஸோர்ஸ் தீவுக்கு மேற்கே கற்பனைக் கோடு வரைந்து மேற்கை ஸ்பெயினுக்கும் கிழக்கைப் போர்ச்சுகலுக்கும் அளித்தார்.<br>(B) கொலம்பஸ் ஆசியாவின் எல்லைப்புறத்தை அடைந்ததாக நினைத்து உள்ளூர் மக்களை இந்தியர்கள் என அழைத்தார்.<br>(C) வாஸ்கோடகாமா அராபிய கடற்பயண நெறியாளர் உதவியுடன் கள்ளிக்கோட்டை அடைந்தார்.<br>(D) பொருளாதார மையம் ஸ்பெயின், போர்ச்சுகலிலிருந்து இத்தாலிய நகர அரசுகளுக்கு இடம் பெயர்ந்தது.",
-    "optionsEn": [
-      "Pope Alexander VI drew an imaginary line west of the Azores and gave the west to Spain and the east to Portugal.",
-      "Columbus thought he had reached the edge of Asia and called the local people Indians.",
-      "Vasco da Gama reached Calicut with the help of an Arab navigator.",
-      "The economic centre shifted from Spain and Portugal to Italian city-states."
-    ],
-    "optionsTa": [
-      "ஆறாம் அலெக்ஸாண்டர் போப் அஸோர்ஸ் தீவுக்கு மேற்கே கற்பனைக் கோடு வரைந்து மேற்கை ஸ்பெயினுக்கும் கிழக்கைப் போர்ச்சுகலுக்கும் அளித்தார்.",
-      "கொலம்பஸ் ஆசியாவின் எல்லைப்புறத்தை அடைந்ததாக நினைத்து உள்ளூர் மக்களை இந்தியர்கள் என அழைத்தார்.",
-      "வாஸ்கோடகாமா அராபிய கடற்பயண நெறியாளர் உதவியுடன் கள்ளிக்கோட்டை அடைந்தார்.",
-      "பொருளாதார மையம் ஸ்பெயின், போர்ச்சுகலிலிருந்து இத்தாலிய நகர அரசுகளுக்கு இடம் பெயர்ந்தது."
-    ],
-    "answer": 3
-  }
+{
+"type": "mcq",
+"en": "கிரேக்க அறிஞர்கள் இத்தாலிய நகர அரசுகளுக்கு இடம்பெயர்ந்து மறுமலர்ச்சியைத் தூண்டியதற்குக் காரணமான $1453$ஆம் ஆண்டு கான்ஸ்டாண்டிநோபிள் வீழ்ச்சிக்குக் காரணம் யார்?",
+"ta": "கிரேக்க அறிஞர்கள் இத்தாலிய நகர அரசுகளுக்கு இடம்பெயர்ந்து மறுமலர்ச்சியைத் தூண்டியதற்குக் காரணமான $1453$ஆம் ஆண்டு கான்ஸ்டாண்டிநோபிள் வீழ்ச்சிக்குக் காரணம் யார்?",
+"optionsEn": [
+"ஸ்பானியர்களின் வெற்றி",
+"உதுமானியத் துருக்கியர்",
+"போர்ச்சுகீசியக் கடற்படை",
+"மங்கோலியப் படையெடுப்பு"
+],
+"optionsTa": [
+"ஸ்பானியர்களின் வெற்றி",
+"உதுமானியத் துருக்கியர்",
+"போர்ச்சுகீசியக் கடற்படை",
+"மங்கோலியப் படையெடுப்பு"
+],
+"answer": 1
+},
+{
+"type": "mcq",
+"en": "கூட்டென்பர்க் அச்சு இயந்திரத்தைக் கண்டுபிடித்த பின் ஐம்பது ஆண்டுகளுக்கும் குறைவான காலத்தில் மேற்கு ஐரோப்பாவில் சுமார் எத்தனை புத்தகங்கள் அச்சிடப்பட்டன?",
+"ta": "கூட்டென்பர்க் அச்சு இயந்திரத்தைக் கண்டுபிடித்த பின் ஐம்பது ஆண்டுகளுக்கும் குறைவான காலத்தில் மேற்கு ஐரோப்பாவில் சுமார் எத்தனை புத்தகங்கள் அச்சிடப்பட்டன?",
+"optionsEn": [
+"ஒரு மில்லியன்",
+"மூன்று மில்லியன்",
+"ஆறு மில்லியன்",
+"பத்து மில்லியன்"
+],
+"optionsTa": [
+"ஒரு மில்லியன்",
+"மூன்று மில்லியன்",
+"ஆறு மில்லியன்",
+"பத்து மில்லியன்"
+],
+"answer": 2
+},
+{
+"type": "mcq",
+"en": "செவ்வியல் மனிதநேயத்தை முதலில் தன் படைப்புகளில் ஏற்று வெளிப்படுத்தியதால் 'மனிதநேயத்தின் தந்தை' என அழைக்கப்படுபவர் யார்?",
+"ta": "செவ்வியல் மனிதநேயத்தை முதலில் தன் படைப்புகளில் ஏற்று வெளிப்படுத்தியதால் 'மனிதநேயத்தின் தந்தை' என அழைக்கப்படுபவர் யார்?",
+"optionsEn": [
+"தாந்தே",
+"தாமஸ் மூர்",
+"எராஸ்மஸ்",
+"பெட்ரார்க்"
+],
+"optionsTa": [
+"தாந்தே",
+"தாமஸ் மூர்",
+"எராஸ்மஸ்",
+"பெட்ரார்க்"
+],
+"answer": 3
+},
+{
+"type": "mcq",
+"en": "மாக்கியவெல்லி தனது 'இளவரசன்' நூலில் வெற்றிகரமான அரசன் ஒரே சமயத்தில் எவ்வாறு விளங்க வேண்டும் என்று கூறினார்?",
+"ta": "மாக்கியவெல்லி தனது 'இளவரசன்' நூலில் வெற்றிகரமான அரசன் ஒரே சமயத்தில் எவ்வாறு விளங்க வேண்டும் என்று கூறினார்?",
+"optionsEn": [
+"சிங்கமாகவும் நரியாகவும்",
+"துறவியாகவும் வீரனாகவும்",
+"குருவாகவும் கவிஞனாகவும்",
+"கழுகாகவும் புறாவாகவும்"
+],
+"optionsTa": [
+"சிங்கமாகவும் நரியாகவும்",
+"துறவியாகவும் வீரனாகவும்",
+"குருவாகவும் கவிஞனாகவும்",
+"கழுகாகவும் புறாவாகவும்"
+],
+"answer": 0
+},
+{
+"type": "mcq",
+"en": "பூமி சூரியனைச் சுற்றி வருகிறது என்பதைக் கணித மாதிரி மூலம் நிரூபித்தவர் யார்?",
+"ta": "பூமி சூரியனைச் சுற்றி வருகிறது என்பதைக் கணித மாதிரி மூலம் நிரூபித்தவர் யார்?",
+"optionsEn": [
+"கலிலியோ",
+"வில்லியம் ஹார்வி",
+"கோப்பர்னிகஸ்",
+"தாலமி"
+],
+"optionsTa": [
+"கலிலியோ",
+"வில்லியம் ஹார்வி",
+"கோப்பர்னிகஸ்",
+"தாலமி"
+],
+"answer": 2
+},
+{
+"type": "mcq",
+"en": "சரியான இணையைத் தேர்ந்தெடுக்கவும்",
+"ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்",
+"optionsEn": [
+"தாமஸ் மூர் - உட்டோப்பியா",
+"தாந்தே - மடமையின் புகழ்ச்சி",
+"எராஸ்மஸ் - டிவைன் காமெடி",
+"செர்வான்டிஸ் – இளவரசன்"
+],
+"optionsTa": [
+"தாமஸ் மூர் - உட்டோப்பியா",
+"தாந்தே - மடமையின் புகழ்ச்சி",
+"எராஸ்மஸ் - டிவைன் காமெடி",
+"செர்வான்டிஸ் – இளவரசன்"
+],
+"answer": 0
+},
+{
+"type": "mcq",
+"en": "சரியான இணையைத் தேர்ந்தெடுக்கவும்",
+"ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்",
+"optionsEn": [
+"லியானர்டோ டாவின்சி - டேவிட்",
+"மைக்கேல் ஆஞ்சலோ - மோனாலிசா",
+"ரஃபேல் - கடைசி இரவு விருந்து",
+"ரஃபேல் - மடோன்னா"
+],
+"optionsTa": [
+"லியானர்டோ டாவின்சி - டேவிட்",
+"மைக்கேல் ஆஞ்சலோ - மோனாலிசா",
+"ரஃபேல் - கடைசி இரவு விருந்து",
+"ரஃபேல் - மடோன்னா"
+],
+"answer": 3
+},
+{
+"type": "mcq",
+"en": "சரியான இணையைத் தேர்ந்தெடுக்கவும்",
+"ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்",
+"optionsEn": [
+"லூதர் - கிறிஸ்துவ மதத்தின் நிறுவனங்கள்",
+"ஸ்விங்லி - ஜூரிச்சிலிருந்து பணியாற்றியவர்",
+"கால்வின் - தொண்ணூற்றைந்து கொள்கைகள்",
+"இக்னேஷியஸ் லயோலா - ஆங்கிலிகன் திருச்சபையை நிறுவியவர்"
+],
+"optionsTa": [
+"லூதர் - கிறிஸ்துவ மதத்தின் நிறுவனங்கள்",
+"ஸ்விங்லி - ஜூரிச்சிலிருந்து பணியாற்றியவர்",
+"கால்வின் - தொண்ணூற்றைந்து கொள்கைகள்",
+"இக்னேஷியஸ் லயோலா - ஆங்கிலிகன் திருச்சபையை நிறுவியவர்"
+],
+"answer": 1
+},
+{
+"type": "mcq",
+"en": "சரியான இணையைத் தேர்ந்தெடுக்கவும்",
+"ta": "சரியான இணையைத் தேர்ந்தெடுக்கவும்",
+"optionsEn": [
+"டயஸ் - $1498$இல் கள்ளிக்கோட்டை அடைந்தார்",
+"வாஸ்கோடகாமா - $1487$இல் நன்னம்பிக்கை முனை அடைந்தார்",
+"கொலம்பஸ் - $1492$இல் பஹாமாஸ், கியூபா, ஹைட்டி அடைந்தார்",
+"அமெரிகோ வெஸ்புகி - $1498$இல் கள்ளிக்கோட்டை அடைந்தார்"
+],
+"optionsTa": [
+"டயஸ் - $1498$இல் கள்ளிக்கோட்டை அடைந்தார்",
+"வாஸ்கோடகாமா - $1487$இல் நன்னம்பிக்கை முனை அடைந்தார்",
+"கொலம்பஸ் - $1492$இல் பஹாமாஸ், கியூபா, ஹைட்டி அடைந்தார்",
+"அமெரிகோ வெஸ்புகி - $1498$இல் கள்ளிக்கோட்டை அடைந்தார்"
+],
+"answer": 2
+},
+{
+"type": "match",
+"en": "பொருத்துகபட்டியல் Iபட்டியல் IIA. பெட்ரார்க்1. கான்ஸோனியர்B. தாந்தே2. டிவைன் காமெடிC. மாக்கியவெல்லி3. இளவரசன்D. எராஸ்மஸ்4. மடமையின் புகழ்ச்சி",
+"ta": "பொருத்துகபட்டியல் Iபட்டியல் IIA. பெட்ரார்க்1. கான்ஸோனியர்B. தாந்தே2. டிவைன் காமெடிC. மாக்கியவெல்லி3. இளவரசன்D. எராஸ்மஸ்4. மடமையின் புகழ்ச்சி",
+"optionsEn": [
+"A-1 B-2 C-3 D-4",
+"A-2 B-1 C-3 D-4",
+"A-1 B-3 C-2 D-4",
+"A-4 B-2 C-3 D-1"
+],
+"optionsTa": [
+"A-1 B-2 C-3 D-4",
+"A-2 B-1 C-3 D-4",
+"A-1 B-3 C-2 D-4",
+"A-4 B-2 C-3 D-1"
+],
+"answer": 0
+},
+{
+"type": "match",
+"en": "பொருத்துகபட்டியல் Iபட்டியல் IIA. கூட்டென்பர்க்1. அச்சு இயந்திரம், $1394$-$1468$B. லியானர்டோ டாவின்சி2. மோனாலிசா, கடைசி இரவு விருந்துC. மைக்கேல் ஆஞ்சலோ3. டேவிட், சிஸ்டைன் தேவாலய மேற்கூரைD. ரஃபேல்4. ஏதென்ஸ் பள்ளி",
+"ta": "பொருத்துகபட்டியல் Iபட்டியல் IIA. கூட்டென்பர்க்1. அச்சு இயந்திரம், $1394$-$1468$B. லியானர்டோ டாவின்சி2. மோனாலிசா, கடைசி இரவு விருந்துC. மைக்கேல் ஆஞ்சலோ3. டேவிட், சிஸ்டைன் தேவாலய மேற்கூரைD. ரஃபேல்4. ஏதென்ஸ் பள்ளி",
+"optionsEn": [
+"A-1 B-2 C-4 D-3",
+"A-1 B-3 C-2 D-4",
+"A-2 B-1 C-3 D-4",
+"A-1 B-2 C-3 D-4"
+],
+"optionsTa": [
+"A-1 B-2 C-4 D-3",
+"A-1 B-3 C-2 D-4",
+"A-2 B-1 C-3 D-4",
+"A-1 B-2 C-3 D-4"
+],
+"answer": 3
+},
+{
+"type": "match",
+"en": "பொருத்துகபட்டியல் Iபட்டியல் IIA. லூதர்1. நம்பிக்கையினால் நியாயப்படுத்துதல்B. கால்வின்2. ஜெனீவாவை $1541$-$1564$ வரை கட்டுப்படுத்தியவர்C. எட்டாம் ஹென்றி3. ரோமுடன் முறித்து ஆங்கிலிகன் திருச்சபை நிறுவியவர்D. இக்னேஷியஸ் லயோலா4. இயேசு சபையை நிறுவியவர்",
+"ta": "பொருத்துகபட்டியல் Iபட்டியல் IIA. லூதர்1. நம்பிக்கையினால் நியாயப்படுத்துதல்B. கால்வின்2. ஜெனீவாவை $1541$-$1564$ வரை கட்டுப்படுத்தியவர்C. எட்டாம் ஹென்றி3. ரோமுடன் முறித்து ஆங்கிலிகன் திருச்சபை நிறுவியவர்D. இக்னேஷியஸ் லயோலா4. இயேசு சபையை நிறுவியவர்",
+"optionsEn": [
+"A-2 B-1 C-3 D-4",
+"A-1 B-2 C-3 D-4",
+"A-1 B-2 C-4 D-3",
+"A-3 B-2 C-1 D-4"
+],
+"optionsTa": [
+"A-2 B-1 C-3 D-4",
+"A-1 B-2 C-3 D-4",
+"A-1 B-2 C-4 D-3",
+"A-3 B-2 C-1 D-4"
+],
+"answer": 1
+},
+{
+"type": "match",
+"en": "பொருத்துகபட்டியல் Iபட்டியல் IIA. இளவரசர் ஹென்றி1. கடற்பயணப் பள்ளி, திசைகாட்டும் கருவி மற்றும் வான்நோக்கும் கருவிB. லோபோ கோன்ஸால்வ்ஸ்2. நிலநடுக்கோட்டை முதலில் கடந்தவர்C. பார்த்தலோமியோ டயஸ்3. புயல் முனை, $1487$D. வாஸ்கோடகாமா4. கள்ளிக்கோட்டை, $20$ மே $1498$",
+"ta": "பொருத்துகபட்டியல் Iபட்டியல் IIA. இளவரசர் ஹென்றி1. கடற்பயணப் பள்ளி, திசைகாட்டும் கருவி மற்றும் வான்நோக்கும் கருவிB. லோபோ கோன்ஸால்வ்ஸ்2. நிலநடுக்கோட்டை முதலில் கடந்தவர்C. பார்த்தலோமியோ டயஸ்3. புயல் முனை, $1487$D. வாஸ்கோடகாமா4. கள்ளிக்கோட்டை, $20$ மே $1498$",
+"optionsEn": [
+"A-1 B-2 C-3 D-4",
+"A-2 B-1 C-3 D-4",
+"A-1 B-2 C-4 D-3",
+"A-1 B-3 C-2 D-4"
+],
+"optionsTa": [
+"A-1 B-2 C-3 D-4",
+"A-2 B-1 C-3 D-4",
+"A-1 B-2 C-4 D-3",
+"A-1 B-3 C-2 D-4"
+],
+"answer": 0
+},
+{
+"type": "mcq",
+"en": "மாறுபட்ட ஒன்றைத் தேர்ந்தெடுக்கவும் - மறுமலர்ச்சிக் காலக் கலை தொடர்பாக",
+"ta": "மாறுபட்ட ஒன்றைத் தேர்ந்தெடுக்கவும் - மறுமலர்ச்சிக் காலக் கலை தொடர்பாக",
+"optionsEn": [
+"மோனாலிசா",
+"டேவிட்",
+"ஏதென்ஸ் பள்ளி",
+"தொண்ணூற்றைந்து கொள்கைகள்"
+],
+"optionsTa": [
+"மோனாலிசா",
+"டேவிட்",
+"ஏதென்ஸ் பள்ளி",
+"தொண்ணூற்றைந்து கொள்கைகள்"
+],
+"answer": 3
+},
+{
+"type": "mcq",
+"en": "மாறுபட்ட ஒன்றைத் தேர்ந்தெடுக்கவும் - புவியியல் கண்டுபிடிப்புகளுக்கான காரணங்கள் தொடர்பாக",
+"ta": "மாறுபட்ட ஒன்றைத் தேர்ந்தெடுக்கவும் - புவியியல் கண்டுபிடிப்புகளுக்கான காரணங்கள் தொடர்பாக",
+"optionsEn": [
+"உதுமானியத் துருக்கியரால் நிலவழிப் பாதை அடைக்கப்பட்டது",
+"நறுமணப் பொருட்கள் மற்றும் இலாபத்திற்கான ஆசை",
+"பாவமன்னிப்புச் சீட்டுகள் விற்பனை",
+"மறுமலர்ச்சியால் உருவான புத்தார்வம்"
+],
+"optionsTa": [
+"உதுமானியத் துருக்கியரால் நிலவழிப் பாதை அடைக்கப்பட்டது",
+"நறுமணப் பொருட்கள் மற்றும் இலாபத்திற்கான ஆசை",
+"பாவமன்னிப்புச் சீட்டுகள் விற்பனை",
+"மறுமலர்ச்சியால் உருவான புத்தார்வம்"
+],
+"answer": 2
+},
+{
+"type": "mcq",
+"en": "மாறுபட்ட ஒன்றைத் தேர்ந்தெடுக்கவும் - கொலம்பியப் பரிமாற்றத்தில் ஐரோப்பாவிலிருந்து அமெரிக்காவுக்குச் சென்றவை தொடர்பாக",
+"ta": "மாறுபட்ட ஒன்றைத் தேர்ந்தெடுக்கவும் - கொலம்பியப் பரிமாற்றத்தில் ஐரோப்பாவிலிருந்து அமெரிக்காவுக்குச் சென்றவை தொடர்பாக",
+"optionsEn": [
+"கரும்பு",
+"உருளைக்கிழங்கு",
+"குதிரைகள்",
+"கோதுமை"
+],
+"optionsTa": [
+"கரும்பு",
+"உருளைக்கிழங்கு",
+"குதிரைகள்",
+"கோதுமை"
+],
+"answer": 1
+},
+{
+"type": "mcq",
+"en": "மாறுபட்ட ஒன்றைத் தேர்ந்தெடுக்கவும் - பிராட்டஸ்டன்ட் மதச்சீர்திருத்தம் தொடர்பாக",
+"ta": "மாறுபட்ட ஒன்றைத் தேர்ந்தெடுக்கவும் - பிராட்டஸ்டன்ட் மதச்சீர்திருத்தம் தொடர்பாக",
+"optionsEn": [
+"லூதர்",
+"ஸ்விங்லி",
+"கால்வின்",
+"இக்னேஷியஸ் லயோலா"
+],
+"optionsTa": [
+"லூதர்",
+"ஸ்விங்லி",
+"கால்வின்",
+"இக்னேஷியஸ் லயோலா"
+],
+"answer": 3
+},
+{
+"type": "assertion",
+"en": "கூற்று மற்றும் காரணம்கூற்று (A): மறுமலர்ச்சி முதலில் இத்தாலியில் தோன்றியது.காரணம் (R): பிளாரென்ஸ், வெனிஸ், மிலான் போன்ற இத்தாலிய நகர அரசுகள் மத்தியதரைக்கடல் வர்த்தகத்தால் செல்வம் பெற்றன; மெடிசி போன்ற செல்வக் குடும்பங்கள் கலை, இலக்கியத்தை ஆதரித்தன.",
+"ta": "கூற்று மற்றும் காரணம்கூற்று (A): மறுமலர்ச்சி முதலில் இத்தாலியில் தோன்றியது.காரணம் (R): பிளாரென்ஸ், வெனிஸ், மிலான் போன்ற இத்தாலிய நகர அரசுகள் மத்தியதரைக்கடல் வர்த்தகத்தால் செல்வம் பெற்றன; மெடிசி போன்ற செல்வக் குடும்பங்கள் கலை, இலக்கியத்தை ஆதரித்தன.",
+"optionsEn": [
+"A மற்றும் R இரண்டும் சரி, R என்பது Aஇன் சரியான விளக்கம்",
+"A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது Aஇன் சரியான விளக்கம் அல்ல",
+"A சரி, ஆனால் R தவறு",
+"A தவறு, ஆனால் R சரி"
+],
+"optionsTa": [
+"A மற்றும் R இரண்டும் சரி, R என்பது Aஇன் சரியான விளக்கம்",
+"A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது Aஇன் சரியான விளக்கம் அல்ல",
+"A சரி, ஆனால் R தவறு",
+"A தவறு, ஆனால் R சரி"
+],
+"answer": 0
+},
+{
+"type": "assertion",
+"en": "கூற்று மற்றும் காரணம்கூற்று (A): லூதர் பாவமன்னிப்புச் சீட்டுகள் விற்பனையை எதிர்த்தார்.காரணம் (R): சடங்குகளாலோ, நோன்புகளாலோ, சீட்டுகள் வாங்குவதாலோ அல்ல; நம்பிக்கையினால் மட்டுமே ஆன்ம விடுதலை கிடைக்கும் என்று லூதர் வாதிட்டார்.",
+"ta": "கூற்று மற்றும் காரணம்கூற்று (A): லூதர் பாவமன்னிப்புச் சீட்டுகள் விற்பனையை எதிர்த்தார்.காரணம் (R): சடங்குகளாலோ, நோன்புகளாலோ, சீட்டுகள் வாங்குவதாலோ அல்ல; நம்பிக்கையினால் மட்டுமே ஆன்ம விடுதலை கிடைக்கும் என்று லூதர் வாதிட்டார்.",
+"optionsEn": [
+"A சரி, ஆனால் R தவறு",
+"A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது Aஇன் சரியான விளக்கம் அல்ல",
+"A மற்றும் R இரண்டும் சரி, R என்பது Aஇன் சரியான விளக்கம்",
+"A தவறு, ஆனால் R சரி"
+],
+"optionsTa": [
+"A சரி, ஆனால் R தவறு",
+"A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது Aஇன் சரியான விளக்கம் அல்ல",
+"A மற்றும் R இரண்டும் சரி, R என்பது Aஇன் சரியான விளக்கம்",
+"A தவறு, ஆனால் R சரி"
+],
+"answer": 2
+},
+{
+"type": "assertion",
+"en": "கூற்று மற்றும் காரணம்கூற்று (A): டயஸ் ஆப்பிரிக்காவின் தெற்கு முனைக்கு 'புயல் முனை' என்று பெயரிட்டார்.காரணம் (R): $1487$இல் அங்கு கடும் புயலை எதிர்கொண்டார்; பின்னர் இரண்டாம் ஜான் அரசர் இந்தியாவுக்குக் கடல்வழி கிடைக்கும் என்ற நம்பிக்கையால் அதை 'நன்னம்பிக்கை முனை' என மறுபெயரிட்டார்.",
+"ta": "கூற்று மற்றும் காரணம்கூற்று (A): டயஸ் ஆப்பிரிக்காவின் தெற்கு முனைக்கு 'புயல் முனை' என்று பெயரிட்டார்.காரணம் (R): $1487$இல் அங்கு கடும் புயலை எதிர்கொண்டார்; பின்னர் இரண்டாம் ஜான் அரசர் இந்தியாவுக்குக் கடல்வழி கிடைக்கும் என்ற நம்பிக்கையால் அதை 'நன்னம்பிக்கை முனை' என மறுபெயரிட்டார்.",
+"optionsEn": [
+"A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது Aஇன் சரியான விளக்கம் அல்ல",
+"A மற்றும் R இரண்டும் சரி, R என்பது Aஇன் சரியான விளக்கம்",
+"A சரி, ஆனால் R தவறு",
+"A தவறு, ஆனால் R சரி"
+],
+"optionsTa": [
+"A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது Aஇன் சரியான விளக்கம் அல்ல",
+"A மற்றும் R இரண்டும் சரி, R என்பது Aஇன் சரியான விளக்கம்",
+"A சரி, ஆனால் R தவறு",
+"A தவறு, ஆனால் R சரி"
+],
+"answer": 1
+},
+{
+"type": "assertion",
+"en": "கூற்று மற்றும் காரணம்கூற்று (A): அமெரிக்கா என்ற பெயர் அமெரிகோ வெஸ்புகியின் பெயரால் வந்தது.காரணம் (R): கொலம்பஸ் அடைந்த நிலம் ஆசியா அல்ல, புதிய கண்டம் என்பதை வெஸ்புகி முதலில் உணர்ந்தார்; ஜெர்மானிய வரைபடவியலாளர் அவர் பெயரால் அமெரிக்கா என அழைத்தார்.",
+"ta": "கூற்று மற்றும் காரணம்கூற்று (A): அமெரிக்கா என்ற பெயர் அமெரிகோ வெஸ்புகியின் பெயரால் வந்தது.காரணம் (R): கொலம்பஸ் அடைந்த நிலம் ஆசியா அல்ல, புதிய கண்டம் என்பதை வெஸ்புகி முதலில் உணர்ந்தார்; ஜெர்மானிய வரைபடவியலாளர் அவர் பெயரால் அமெரிக்கா என அழைத்தார்.",
+"optionsEn": [
+"A மற்றும் R இரண்டும் சரி, R என்பது Aஇன் சரியான விளக்கம்",
+"A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது Aஇன் சரியான விளக்கம் அல்ல",
+"A சரி, ஆனால் R தவறு",
+"A தவறு, ஆனால் R சரி"
+],
+"optionsTa": [
+"A மற்றும் R இரண்டும் சரி, R என்பது Aஇன் சரியான விளக்கம்",
+"A மற்றும் R இரண்டும் சரி, ஆனால் R என்பது Aஇன் சரியான விளக்கம் அல்ல",
+"A சரி, ஆனால் R தவறு",
+"A தவறு, ஆனால் R சரி"
+],
+"answer": 0
+},
+{
+"type": "mcq",
+"en": "சரியான கூற்றைத் தேர்ந்தெடுக்கவும் - மனிதநேயம் குறித்து:I. மனிதநேயம் மனித கண்ணியம், பகுத்தறிவு மற்றும் இவ்வுலக வாழ்வை வலியுறுத்தியது.II. ஆன்மீக உலகிலிருந்து பொருள் உலகை நோக்கியும், மரணத்திற்குப் பின் வாழ்விலிருந்து இவ்வுலக வாழ்வை நோக்கியும் கவனத்தைத் திருப்பியது.III. கிரேக்க, ரோமானிய செவ்வியல் இலக்கியங்களை நிராகரித்தது.",
+"ta": "சரியான கூற்றைத் தேர்ந்தெடுக்கவும் - மனிதநேயம் குறித்து:I. மனிதநேயம் மனித கண்ணியம், பகுத்தறிவு மற்றும் இவ்வுலக வாழ்வை வலியுறுத்தியது.II. ஆன்மீக உலகிலிருந்து பொருள் உலகை நோக்கியும், மரணத்திற்குப் பின் வாழ்விலிருந்து இவ்வுலக வாழ்வை நோக்கியும் கவனத்தைத் திருப்பியது.III. கிரேக்க, ரோமானிய செவ்வியல் இலக்கியங்களை நிராகரித்தது.",
+"optionsEn": [
+"I, II மற்றும் III",
+"II மற்றும் III மட்டும்",
+"I மற்றும் III மட்டும்",
+"I மற்றும் II மட்டும்"
+],
+"optionsTa": [
+"I, II மற்றும் III",
+"II மற்றும் III மட்டும்",
+"I மற்றும் III மட்டும்",
+"I மற்றும் II மட்டும்"
+],
+"answer": 3
+},
+{
+"type": "mcq",
+"en": "சரியான கூற்றைத் தேர்ந்தெடுக்கவும் - எதிர் மதச்சீர்திருத்தம் குறித்து:I. ட்ரென்ட் கவுன்சில் கூட்டு வழிபாடு, விழாக்கள் முக்கியத்துவத்தை மீண்டும் வலியுறுத்தியது; விவிலியத்தைத் திருச்சபை மட்டுமே விளக்க முடியும் என்றது.II. திருச்சபைப் பதவிகள் விற்பனை தடை செய்யப்பட்டு ஊழல்கள் கடுமையாகக் கையாளப்பட்டன.III. இயேசு சபைக்கு அதிகாரப்பூர்வ அனுமதி வழங்கப்பட்டு மத நீதிமன்றத்திற்குப் புத்துயிர் அளிக்கப்பட்டது.",
+"ta": "சரியான கூற்றைத் தேர்ந்தெடுக்கவும் - எதிர் மதச்சீர்திருத்தம் குறித்து:I. ட்ரென்ட் கவுன்சில் கூட்டு வழிபாடு, விழாக்கள் முக்கியத்துவத்தை மீண்டும் வலியுறுத்தியது; விவிலியத்தைத் திருச்சபை மட்டுமே விளக்க முடியும் என்றது.II. திருச்சபைப் பதவிகள் விற்பனை தடை செய்யப்பட்டு ஊழல்கள் கடுமையாகக் கையாளப்பட்டன.III. இயேசு சபைக்கு அதிகாரப்பூர்வ அனுமதி வழங்கப்பட்டு மத நீதிமன்றத்திற்குப் புத்துயிர் அளிக்கப்பட்டது.",
+"optionsEn": [
+"I மற்றும் II மட்டும்",
+"II மற்றும் III மட்டும்",
+"I, II மற்றும் III",
+"I மற்றும் III மட்டும்"
+],
+"optionsTa": [
+"I மற்றும் II மட்டும்",
+"II மற்றும் III மட்டும்",
+"I, II மற்றும் III",
+"I மற்றும் III மட்டும்"
+],
+"answer": 2
+},
+{
+"type": "mcq",
+"en": "அச்சு இயந்திரம் குறித்து எது சரி?",
+"ta": "அச்சு இயந்திரம் குறித்து எது சரி?",
+"optionsEn": [
+"அச்சுக்கு முன் கையெழுத்துப் பிரதிகள் விலங்குத் தோலான வெல்லம் மீது எழுதப்பட்டு சிறப்புரிமை பெற்ற சிலரிடம் மட்டுமே இருந்தன.",
+"மேற்கண்ட அனைத்தும்",
+"அது அறிவைப் பரவலாக்கி விமர்சனச் சிந்தனையை முன்னெடுத்தது.",
+"கூட்டென்பர்க் $15$ஆம் நூற்றாண்டின் நடுப்பகுதியில் ஜெர்மனியில் அதைக் கண்டுபிடித்தார்."
+],
+"optionsTa": [
+"அச்சுக்கு முன் கையெழுத்துப் பிரதிகள் விலங்குத் தோலான வெல்லம் மீது எழுதப்பட்டு சிறப்புரிமை பெற்ற சிலரிடம் மட்டுமே இருந்தன.",
+"மேற்கண்ட அனைத்தும்",
+"அது அறிவைப் பரவலாக்கி விமர்சனச் சிந்தனையை முன்னெடுத்தது.",
+"கூட்டென்பர்க் $15$ஆம் நூற்றாண்டின் நடுப்பகுதியில் ஜெர்மனியில் அதைக் கண்டுபிடித்தார்."
+],
+"answer": 1
+},
+{
+"type": "mcq",
+"en": "புவியியல் கண்டுபிடிப்புகள் குறித்து எது தவறு?",
+"ta": "புவியியல் கண்டுபிடிப்புகள் குறித்து எது தவறு?",
+"optionsEn": [
+"ஆறாம் அலெக்ஸாண்டர் போப் அஸோர்ஸ் தீவுக்கு மேற்கே கற்பனைக் கோடு வரைந்து மேற்கை ஸ்பெயினுக்கும் கிழக்கைப் போர்ச்சுகலுக்கும் அளித்தார்.",
+"கொலம்பஸ் ஆசியாவின் எல்லைப்புறத்தை அடைந்ததாக நினைத்து உள்ளூர் மக்களை இந்தியர்கள் என அழைத்தார்.",
+"வாஸ்கோடகாமா அராபிய கடற்பயண நெறியாளர் உதவியுடன் கள்ளிக்கோட்டை அடைந்தார்.",
+"பொருளாதார மையம் ஸ்பெயின், போர்ச்சுகலிலிருந்து இத்தாலிய நகர அரசுகளுக்கு இடம் பெயர்ந்தது."
+],
+"optionsTa": [
+"ஆறாம் அலெக்ஸாண்டர் போப் அஸோர்ஸ் தீவுக்கு மேற்கே கற்பனைக் கோடு வரைந்து மேற்கை ஸ்பெயினுக்கும் கிழக்கைப் போர்ச்சுகலுக்கும் அளித்தார்.",
+"கொலம்பஸ் ஆசியாவின் எல்லைப்புறத்தை அடைந்ததாக நினைத்து உள்ளூர் மக்களை இந்தியர்கள் என அழைத்தார்.",
+"வாஸ்கோடகாமா அராபிய கடற்பயண நெறியாளர் உதவியுடன் கள்ளிக்கோட்டை அடைந்தார்.",
+"பொருளாதார மையம் ஸ்பெயின், போர்ச்சுகலிலிருந்து இத்தாலிய நகர அரசுகளுக்கு இடம் பெயர்ந்தது."
+],
+"answer": 3
+}
 ];
     dashboard.totalMarks = QUESTIONS.length.toString();
     const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxGQo6igNL2hA28yetRivo44Kte9LzCuLoNNw-iq7VTEf1MZTLgi9pllqFJfr1zL28rVw/exec";
