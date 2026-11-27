@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-27T09:05:30.357Z",
+  "version": "2026-11-27T09:11:40.921Z",
   "categories": [
     {
       "id": "BANK",
@@ -4035,6 +4035,20 @@
       "releaseTimestamp": 1795766400000,
       "language": "en",
       "createdAt": 1795770150924
+    },
+    {
+      "testId": "COM-TA-7",
+      "examId": "COM-TAM",
+      "name": "10 TH IYAL 7 (SET-1)",
+      "topic": "10 TH IYAL 7",
+      "durationMinutes": 15,
+      "order": 7,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/COM-TA-7.html",
+      "releaseTimestamp": 1795766400000,
+      "language": "ta",
+      "createdAt": 1795770700921
     }
   ]
 }
