@@ -4055,20 +4055,6 @@
       "releaseTimestamp": 1795766400000,
       "language": "ta",
       "createdAt": 1795770700921
-    },
-    {
-      "testId": "BQA-5",
-      "examId": "BANK-QA",
-      "name": "BQA-5",
-      "topic": "DGHJGJF",
-      "durationMinutes": 30,
-      "order": 5,
-      "questionCount": 50,
-      "negativeMark": 0.25,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BQA-5.html",
-      "releaseTimestamp": 1795420800000,
-      "language": "both",
-      "createdAt": 1795795580438
     }
   ]
 }
