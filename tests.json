@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-27T09:29:52.113Z",
+  "version": "2026-11-27T09:33:49.295Z",
   "categories": [
     {
       "id": "BANK",
@@ -4055,20 +4055,6 @@
       "releaseTimestamp": 1795766400000,
       "language": "ta",
       "createdAt": 1795770700921
-    },
-    {
-      "testId": "BQA-5",
-      "examId": "UG-TRB-ZOOLOGY",
-      "name": "FDGDSF",
-      "topic": "SDFGSDF",
-      "durationMinutes": 30,
-      "order": 5,
-      "questionCount": 2,
-      "negativeMark": 0.25,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/BQA-5.html",
-      "releaseTimestamp": 1795852800000,
-      "language": "both",
-      "createdAt": 1795771792113
     }
   ]
 }
