@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-26T10:34:13.625Z",
+  "version": "2026-11-27T07:50:11.754Z",
   "categories": [
     {
       "id": "BANK",
@@ -3923,6 +3923,20 @@
       "releaseTimestamp": 1795766400000,
       "language": "both",
       "createdAt": 1795689253625
+    },
+    {
+      "testId": "SGT-SS-10",
+      "examId": "SGT-SOCIALSCIENCE",
+      "name": "9TH THE BEGINNING OF THE MODERN AGE (SET-1)",
+      "topic": "9TH THE BEGINNING OF THE MODERN AGE",
+      "durationMinutes": 15,
+      "order": 10,
+      "questionCount": 25,
+      "negativeMark": 0,
+      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/SGT-SS-10.html",
+      "releaseTimestamp": 1795766400000,
+      "language": "both",
+      "createdAt": 1795765811754
     }
   ]
 }
