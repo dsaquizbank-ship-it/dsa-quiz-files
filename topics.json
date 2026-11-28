@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-19T09:21:19.993Z",
+  "version": "2026-11-28T07:38:46.847Z",
   "courses": [
     {
       "courseId": "TNPSC",
@@ -9574,52 +9574,52 @@
           "topicName": "Unit VIII - Environmental Biology and Evolution | Abiotic factors (Water, soil, light, temperature) and Biotic factors"
         },
         {
-          "topicId": "UGTRB-ZOO-T133",
-          "topicName": "Unit VIII - Environmental Biology and Evolution | Animal relationships (Symbiosis, Commensalism, Mutualism, Predation, Parasitism)"
+          "topicId": "UGTRB-ZOO-T187",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Animal relationships (Symbiosis, Commensalism, Mutualism, Predation, Parasitism and Competition)"
         },
         {
           "topicId": "UGTRB-ZOO-T134",
           "topicName": "Unit VIII - Environmental Biology and Evolution | Biogeochemical cycles (Nitrogen, Carbon, Oxygen)"
         },
         {
-          "topicId": "UGTRB-ZOO-T135",
-          "topicName": "Unit VIII - Environmental Biology and Evolution | Ecosystem - Pond ecosystem, Primary and secondary production"
+          "topicId": "UGTRB-ZOO-T188",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Ecosystem - Pond ecosystem, Primary and secondary production, Food chain, Food web."
         },
         {
-          "topicId": "UGTRB-ZOO-T136",
-          "topicName": "Unit VIII - Environmental Biology and Evolution | Food chain, Food web, Trophic levels, Ecological pyramids"
+          "topicId": "UGTRB-ZOO-T189",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Trophic levels - Energy flow - Ecological pyramids - Biomass, number and energy."
         },
         {
-          "topicId": "UGTRB-ZOO-T137",
-          "topicName": "Unit VIII - Environmental Biology and Evolution | Terrestrial Ecology - Biomes and Adaptations"
+          "topicId": "UGTRB-ZOO-T190",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Terrestrial Ecology - Biomes - Characters - Tundra, grass land, forest and desert biomes"
         },
         {
-          "topicId": "UGTRB-ZOO-T138",
-          "topicName": "Unit VIII - Environmental Biology and Evolution | Freshwater, Marine and Estuarine Ecology"
+          "topicId": "UGTRB-ZOO-T191",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Types of forests in India - Adaptations of animals inhabiting deserts"
         },
         {
-          "topicId": "UGTRB-ZOO-T139",
-          "topicName": "Unit VIII - Environmental Biology and Evolution | Population Ecology and Community Ecology"
+          "topicId": "UGTRB-ZOO-T192",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Freshwater, Marine and Estuarine Ecology - their characteristics"
         },
         {
-          "topicId": "UGTRB-ZOO-T140",
-          "topicName": "Unit VIII - Environmental Biology and Evolution | Pollution (air, water, land) and wild life management"
+          "topicId": "UGTRB-ZOO-T193",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Biotic communities and their adaptations. Population Ecology - Community Ecology"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T194",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Pollution - air, water and land"
+        },
+        {
+          "topicId": "UGTRB-ZOO-T195",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | wild life management. Preservation - laws enforced - sanctuaries - natural resources management"
         },
         {
           "topicId": "UGTRB-ZOO-T141",
           "topicName": "Unit VIII - Environmental Biology and Evolution | Renewable and non-renewable resources"
         },
         {
-          "topicId": "UGTRB-ZOO-T142",
-          "topicName": "Unit VIII - Environmental Biology and Evolution | Evolution - Lamarckism and Neo Lamarckism"
-        },
-        {
-          "topicId": "UGTRB-ZOO-T143",
-          "topicName": "Unit VIII - Environmental Biology and Evolution | Darwinian theory and Geological time Scale"
-        },
-        {
-          "topicId": "UGTRB-ZOO-T144",
-          "topicName": "Unit VIII - Environmental Biology and Evolution | Fossil and Fossilization, Dating of fossil"
+          "topicId": "UGTRB-ZOO-T196",
+          "topicName": "Unit VIII - Environmental Biology and Evolution | Evolution - Theories and trends - Lamarckism and Neo Lamarckism"
         },
         {
           "topicId": "UGTRB-ZOO-T145",
