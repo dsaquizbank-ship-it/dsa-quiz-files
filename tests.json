@@ -4055,20 +4055,6 @@
       "releaseTimestamp": 1795766400000,
       "language": "ta",
       "createdAt": 1795770700921
-    },
-    {
-      "testId": "D-1",
-      "examId": "DEMO",
-      "name": "FGH",
-      "topic": "FGH",
-      "durationMinutes": 30,
-      "order": 1,
-      "questionCount": 25,
-      "negativeMark": 0,
-      "htmlUrl": "https://dsaquizbank-ship-it.github.io/dsa-quiz-files/D-1.html",
-      "releaseTimestamp": 0,
-      "language": "en",
-      "createdAt": 1795867083697
     }
   ]
 }
